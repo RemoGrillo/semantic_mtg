@@ -21,9 +21,9 @@ ontology is reviewed.
   consistent; 2 negative OWL tests inconsistent as intended.
 - Mapping coverage for every observed source path (Scryfall 198, Spellbook 94, Tagger 19): mapped,
   derived, excluded or deferred, none unmapped.
-- Documentation site (`npm run docs:build` → `site/index.html`, publishable: no Wizards fonts or symbol
-  artwork, ADR-0006) and review mode (`npm run docs:serve`). Private build with Beleren and the official
-  symbols for local viewing only: `npm run docs:build:private` → `site-private/`.
+- Documentation site (`npm run docs:build` → `site/index.html`; published by the GitHub Pages workflow)
+  and review mode (`npm run docs:serve`). Symbols via `mana-font`, headings in Alegreya, full
+  disclaimer in `DISCLAIMER.md` (ADR-0006). Project renamed Semantic MTG, ontology SMTG-O (ADR-0008).
 
 ## Assumptions
 - Namespace `https://w3id.org/smtg/` is a placeholder (ADR-0003).

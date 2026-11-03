@@ -28,7 +28,7 @@ function grouped(m, terms, routeOf) {
   let h = '';
   for (const k of keys) {
     const mod = m.modules.get(k);
-    h += `<li class="nav-sub" aria-hidden="true">${esc(mod ? mod.label.replace(/^SMTG\s+/, '') : 'Other')}</li>`;
+    h += `<li class="nav-sub" aria-hidden="true">${esc(mod ? mod.label.replace(/^SMTG(-O)?\s+/, '') : 'Other')}</li>`;
     for (const t of byMod.get(k).sort((a, b) => a.label.localeCompare(b.label, 'en'))) {
       const kindMark =
         t.kind === 'object' ? '<span class="pk" title="object property">o</span>' : t.kind === 'datatype' ? '<span class="pk" title="datatype property">d</span>' : t.kind === 'annotation' ? '<span class="pk" title="annotation property">a</span>' : '';
@@ -58,13 +58,13 @@ export function sidebar(ctx) {
     .map((md) =>
       md.kind === 'aggregate'
         ? navLink(`module/${md.id}`, 'Aggregate (smtg.ttl)', { search: `${md.iri} ${md.label}`, mark: '<span class="pk" title="aggregate of all modules">∑</span>' })
-        : navLink(`module/${md.id}`, md.label.replace(/^SMTG\s+/, ''), { search: md.iri }),
+        : navLink(`module/${md.id}`, md.label.replace(/^SMTG(-O)?\s+/, ''), { search: md.iri }),
     )
     .join('');
 
   let h = `<nav id="sidebar" class="sidebar" aria-label="Documentation index">
-<div class="brand"><a href="#/overview" class="brand-title">Semantic Magic<span class="brand-the">The Gathering</span></a>
-<div class="brand-sub">${esc(config.shortName || 'SMTG')} ontology · ${esc(config.ontologyVersion || '')}</div></div>
+<div class="brand"><a href="#/overview" class="brand-title">${esc(config.project || 'Semantic MTG')}<span class="brand-the">${esc(config.subtitle || '')}</span></a>
+<div class="brand-sub">${esc(config.ontologyName || 'SMTG-O')} ontology · ${esc(config.ontologyVersion || '')}</div></div>
 <div class="side-filter"><label for="nav-filter" class="sr-only">Filter the index</label><input id="nav-filter" type="search" placeholder="Filter the index…" autocomplete="off" spellcheck="false"><kbd class="kbd-hint" aria-hidden="true">/</kbd></div>
 <p class="review-flag" data-review-only hidden><span aria-hidden="true">●</span> Review mode — suggestions are saved</p>
 <div class="nav-scroll">
@@ -88,7 +88,7 @@ ${section(
 )}
 ${section(
   'Project',
-  list(page('contributing', 'Contributing')) +
+  list(page('contributing', 'Contributing'), page('disclaimer', 'Disclaimer & credits')) +
     (ctx.extraPages.length ? group('More documents', ctx.extraPages.map((x) => navLink(`page/${x.slug}`, x.title)).join(''), { count: ctx.extraPages.length }) : '') +
     list(navLink('about', 'About')),
 )}
@@ -99,7 +99,7 @@ ${section(
 
 export function shell(ctx, { css, sections, mermaidJs, clientJs, data, favicon }) {
   const { config } = ctx;
-  const title = `${config.shortName || 'SMTG'} — ${config.project || 'Semantic Magic: The Gathering'}`;
+  const title = `${config.project || 'Semantic MTG'} — ${config.ontologyName || 'SMTG-O'}`;
   const body = sections
     .map(
       (s, i) =>
@@ -122,12 +122,12 @@ ${css}
 </head>
 <body>
 <a class="skip-link" href="#main" data-skip>Skip to content</a>
-<header class="topbar"><button type="button" class="menu-btn" aria-controls="sidebar" aria-expanded="false"><span aria-hidden="true">☰</span> Index</button><a class="topbar-title" href="#/overview">Semantic Magic</a></header>
+<header class="topbar"><button type="button" class="menu-btn" aria-controls="sidebar" aria-expanded="false"><span aria-hidden="true">☰</span> Index</button><a class="topbar-title" href="#/overview">${esc(config.project || 'Semantic MTG')}</a></header>
 <div class="layout">
 ${sidebar(ctx)}
 <main id="main" tabindex="-1">
 ${body}
-<footer class="site-foot"><p>${esc(config.project || 'Semantic Magic: The Gathering')} is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC. Card data: Scryfall; tags: Tagger; combos: Commander Spellbook — not affiliated. <a href="#/about">About &amp; licensing</a></p></footer>
+<footer class="site-foot"><p>${esc(config.project || 'Semantic MTG')} is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC. Magic: The Gathering, card names, text and symbols belong to Wizards of the Coast; we own none of it. Card data: Scryfall; tags: Tagger; combos: Commander Spellbook — not affiliated. <a href="#/page/disclaimer">Disclaimer &amp; credits</a> · <a href="#/about">About</a></p></footer>
 </main>
 </div>
 <div id="overlay" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="overlay-title">

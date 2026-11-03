@@ -19,7 +19,7 @@
 # =============================================================================
 
 smtgm:provenance a owl:Ontology ;
-  rdfs:label "SMTG Provenance"@en ;
+  rdfs:label "SMTG-O Provenance"@en ;
   dcterms:title "Provenance: sources, snapshots, records and processing activities"@en ;
   dcterms:description """Every fact in SMTG is traceable to a source dataset, an immutable snapshot of it (with its upstream update time, retrieval time and SHA-256), the source record it came from, and the activity (ETL, normalisation, AI classification, inference, review) that produced it, with ontology and mapping versions. Built on PROV-O. Named graphs separate asserted data per source, inferred data per ruleset, projections, provenance and schema; see the graph plan in PLAN §7.3."""@en ;
   owl:versionInfo "0.1.0-draft" ;

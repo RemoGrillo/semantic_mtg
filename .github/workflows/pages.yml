@@ -1,6 +1,6 @@
 name: pages
-# Builds and publishes the documentation site (default build: no Wizards fonts or symbol artwork —
-# see ADR-0006). Runs on every push to main, or manually. Enable it in the repository settings:
+# Builds and publishes the documentation site (see ADR-0006 and DISCLAIMER.md).
+# Runs on every push to main, or manually. Enable once in the repository settings:
 # Settings → Pages → Source: GitHub Actions.
 on:
   push: { branches: [main] }
@@ -15,7 +15,6 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: npm }
       - run: npm ci
-      # Never pass --private-assets here: that build embeds Wizards assets and must not be published.
       - run: npm run docs:build
       - uses: actions/upload-pages-artifact@v3
         with: { path: site }

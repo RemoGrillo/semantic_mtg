@@ -52,12 +52,8 @@ function parseArgs(argv) {
 const args = parseArgs(process.argv.slice(2));
 const INPUT = path.resolve(args.root || ROOT);
 const ONT_DIR = path.resolve(args['ontology-dir'] || path.join(INPUT, 'ontology'));
-const OUT = path.resolve(args.out || p(args.flags.has('private-assets') || process.env.SMTG_PRIVATE_ASSETS === '1' ? 'site-private' : 'site'));
+const OUT = path.resolve(args.out || p('site'));
 const STRICT = args.flags.has('strict');
-// Wizards of the Coast assets (Beleren typeface, official mana/card symbols) are embedded ONLY in an
-// explicit private build (--private-assets, default output site-private/), never in the default
-// build that may be published (GitHub Pages). See docs/adr/0006-licensing-and-wizards-assets.md.
-const PRIVATE_ASSETS = args.flags.has('private-assets') || process.env.SMTG_PRIVATE_ASSETS === '1';
 const QUIET = args.flags.has('quiet');
 
 // ---------- warnings ----------
@@ -227,6 +223,7 @@ async function main() {
     mdDocs.push({ slug, route: `page/${slug}`, file: `docs/ontology/${slug}.md`, title: t, src, extra: true });
   }
   mdDocs.push({ slug: 'contributing', route: 'page/contributing', file: 'CONTRIBUTING.md', title: 'Contributing', src: readText(path.join(INPUT, 'CONTRIBUTING.md')) });
+  mdDocs.push({ slug: 'disclaimer', route: 'page/disclaimer', file: 'DISCLAIMER.md', title: 'Disclaimer & credits', src: readText(path.join(INPUT, 'DISCLAIMER.md')) });
   const adrFiles = walk(path.join(INPUT, 'docs', 'adr'), /\.md$/i).filter((f) => !/^(readme|index)|template/i.test(path.basename(f)));
   const statusMdSrc = readText(path.join(INPUT, 'docs', 'STATUS.md'));
   const readmeSrc = readText(path.join(INPUT, 'README.md'));
@@ -289,8 +286,8 @@ async function main() {
     return `<!--MMD:${diagrams.length - 1}-->`;
   };
 
-  const symbols = new Symbols(p('assets', 'vendor', 'symbols'), warn, { official: PRIVATE_ASSETS });
-  const pipClass = (code) => (symbols.has(code) ? symbols.cssClass(code) : null);
+  const symbols = new Symbols(p('node_modules', 'mana-font'), warn);
+  const pipClass = (code) => symbols.classFor(code);
   m.pipClass = pipClass;
   for (const ov of overlays) ov.model.pipClass = pipClass;
   const repoUrl = (CONFIG.repo?.url || '').trim();
@@ -298,6 +295,7 @@ async function main() {
   const resolveFile = (rel) => {
     if (rel === 'README.md') return '#/overview';
     if (rel === 'CONTRIBUTING.md') return '#/page/contributing';
+    if (rel === 'DISCLAIMER.md') return '#/page/disclaimer';
     if (rel === 'docs/STATUS.md') return '#/status';
     const d = /^docs\/ontology\/([^/]+)\.md$/.exec(rel);
     if (d && mdDocs.some((x) => x.slug === d[1] && x.src)) return `#/page/${d[1]}`;
@@ -331,7 +329,7 @@ async function main() {
 
   const licAdr = adrs.find((a) => /licen[cs]/i.test(a.title + ' ' + a.src.slice(0, 3000)));
   const ctx = {
-    m, shacl, ex, symbols, prefixes, config: CONFIG, inputs, coverage, mappingByTerm, idHref, diagram, warn, warnings, builtAt, overlays, adrs, privateAssets: PRIVATE_ASSETS,
+    m, shacl, ex, symbols, prefixes, config: CONFIG, inputs, coverage, mappingByTerm, idHref, diagram, warn, warnings, builtAt, overlays, adrs,
     hasPage, readmeIntro, statusMd,
     extraPages: mdDocs.filter((d) => d.extra && d.src).map((d) => ({ slug: d.slug, title: d.title })),
     markdownInline: (text) => md(String(text), 'inline', 'inline.md').html,
@@ -461,22 +459,16 @@ ${d.legend ? `<figcaption class="legend-row">${d.legend}</figcaption>` : ''}
 }
 
 function fontFaces() {
-  // Default (publishable): Alegreya / Alegreya SC, SIL Open Font License 1.1 (@fontsource).
-  // Private build only: Beleren (© Wizards of the Coast; no public license) for local viewing.
-  const embed = (family, file, fmt, weight = 700) => {
+  // Headings: Alegreya / Alegreya SC (Huerta Tipográfica), SIL Open Font License 1.1, via @fontsource.
+  const embed = (family, file) => {
     if (!fs.existsSync(file)) {
       warn(`Font file missing: ${rel(file)} — falling back to system serif`, 'assets');
       return '';
     }
-    return `@font-face{font-family:"${family}";src:url(data:font/${fmt};base64,${fs.readFileSync(file).toString('base64')}) format("${fmt}");font-weight:${weight};font-style:normal;font-display:block}\n`;
+    return `@font-face{font-family:"${family}";src:url(data:font/woff2;base64,${fs.readFileSync(file).toString('base64')}) format("woff2");font-weight:700;font-style:normal;font-display:block}\n`;
   };
   const fsrc = (pkg, file) => p('node_modules', '@fontsource', pkg, 'files', file);
-  let css = embed('SMTG Display', fsrc('alegreya', 'alegreya-latin-700-normal.woff2'), 'woff2') + embed('SMTG Display SC', fsrc('alegreya-sc', 'alegreya-sc-latin-700-normal.woff2'), 'woff2');
-  if (PRIVATE_ASSETS) {
-    const dir = p('node_modules', '@saeris', 'typeface-beleren-bold');
-    css += embed('Beleren', path.join(dir, 'Beleren2016-Bold.woff'), 'woff') + embed('Beleren SmallCaps', path.join(dir, 'Beleren2016SmallCaps-Bold.woff'), 'woff');
-  }
-  return css;
+  return embed('SMTG Display', fsrc('alegreya', 'alegreya-latin-700-normal.woff2')) + embed('SMTG Display SC', fsrc('alegreya-sc', 'alegreya-sc-latin-700-normal.woff2'));
 }
 
 function loadMermaid() {

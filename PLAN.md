@@ -1,3 +1,5 @@
+> **Renamed 2026-11-03:** the project is now **Semantic MTG** (linked data for Magic: The Gathering cards) and the ontology is **SMTG-O**, the Semantic MTG Ontology (working name); see `docs/adr/0008-project-and-ontology-names.md`. The plan below keeps its original wording.
+
 # Semantic Magic: The Gathering (SMTG)
 ## Master implementation plan for Claude Code
 

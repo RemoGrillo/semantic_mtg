@@ -16,7 +16,7 @@
 # =============================================================================
 
 smtgm:printings a owl:Ontology ;
-  rdfs:label "SMTG Printings"@en ;
+  rdfs:label "SMTG-O Printings"@en ;
   dcterms:title "Printings: published card objects, printed faces, sets and observations"@en ;
   dcterms:description """The manifestation level. A printing is one published card object — one set, collector number and language, as identified by a Scryfall card ID — and it manifests one Oracle card (two for reversible printings). Each printing has printed faces that carry the localised name and text, flavour text, artwork and images, and the physical side and orientation of each face. Volatile facts that the sources report about cards — legality in a format, prices, popularity ranks — are time-scoped observations, not timeless properties."""@en ;
   owl:versionInfo "0.1.0-draft" ;

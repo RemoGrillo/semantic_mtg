@@ -17,7 +17,7 @@
 # =============================================================================
 
 smtgm:decks a owl:Ontology ;
-  rdfs:label "SMTG Decks"@en ;
+  rdfs:label "SMTG-O Decks"@en ;
   dcterms:title "Decks: decklists, versions, entries and collections"@en ;
   dcterms:description """A decklist is a documented list of cards by an author for a format at a date; its entries are qualified (count, zone such as commander or sideboard, and whether a specific printing or just the Oracle card is meant). A list is not a card and not a combo; a card appearing in a list is evidence of use, not of synergy. Collections (ownership) are a separate optional extension. No decklists are ingested in v1; the module fixes the shape so that user-provided lists can be reasoned about without closed-world shortcuts."""@en ;
   owl:versionInfo "0.1.0-draft" ;

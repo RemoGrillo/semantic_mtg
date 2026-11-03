@@ -23,5 +23,5 @@ SOFTWARE.
 ---
 This license covers the source code in this repository. The ontology, shapes and
 documentation are proposed to be licensed under CC BY 4.0 (see docs/adr/0006).
-Magic: The Gathering and all related names, text, symbols and the Beleren typeface
-are property of Wizards of the Coast LLC and are not covered by this license.
+Magic: The Gathering and all related names, text and symbols are property of
+Wizards of the Coast LLC and are not covered by this license. See DISCLAIMER.md.

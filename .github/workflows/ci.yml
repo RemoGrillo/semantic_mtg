@@ -11,4 +11,10 @@ jobs:
       # Fixtures, examples and generated vocab are committed, so CI validates without downloading dumps.
       - run: npm run validate
       - run: npm run cq
+      - run: npm test
+      # Portable JRE + ROBOT are downloaded by `npm run reason`; cache them between runs.
+      - uses: actions/cache@v4
+        with:
+          path: .tools
+          key: reasoning-tools-${{ runner.os }}-jre21-robot
       - run: npm run reason

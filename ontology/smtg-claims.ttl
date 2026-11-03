@@ -21,7 +21,7 @@
 # =============================================================================
 
 smtgm:claims a owl:Ontology ;
-  rdfs:label "SMTG Claims"@en ;
+  rdfs:label "SMTG-O Claims"@en ;
   dcterms:title "Claims: attributed, qualified statements and their epistemic status"@en ;
   dcterms:description """The epistemic layer. A Claim is a reified statement made by an agent or source at a given time: a Tagger tag assignment, a reported legality, a price, a documented combo, an AI proposal, an inferred synergy hypothesis. Claims keep who said it, when, from which snapshot, how strongly, and with what propositional attitude (knowledge claim, belief, conjecture, hypothesis). The claimed content is never also asserted as a plain triple in the source graphs, so weak or contested statements cannot silently feed OWL entailments. This module is deliberately small and is the intended plug-in point for DEC (a reasoner for conjectural and doxastic attitudes): a DEC-based module can replace or extend it (see docs/ontology/epistemic-layer-dec.md and proposals/)."""@en ;
   owl:versionInfo "0.1.0-draft" ;

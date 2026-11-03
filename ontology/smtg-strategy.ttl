@@ -17,7 +17,7 @@
 # =============================================================================
 
 smtgm:strategy a owl:Ontology ;
-  rdfs:label "SMTG Strategy (sketch)"@en ;
+  rdfs:label "SMTG-O Strategy (sketch)"@en ;
   dcterms:title "Strategy: roles, affordances, resources and patterns (proposal)"@en ;
   dcterms:description """A deliberately small, curated module for later research on explainable strategic inference. Cards may OFFER, REQUIRE, BENEFIT FROM or SUPPRESS abstract affordances (e.g. "sacrifice outlet", "death trigger payoff") with an explicit scope (self, opponents, all players) and resource type. These are qualified, reviewed interpretations — introduced only where a Tagger tag or Spellbook feature has been mapped after review (skos:closeMatch / exactMatch), never assumed from every tag. Any derived "potentially supports" relation is a hypothesis (SynergyHypothesis), written to an inferred graph, never transitive by default. The inference rules live in an opt-in view (ontology/views/)."""@en ;
   owl:versionInfo "0.1.0-draft" ;

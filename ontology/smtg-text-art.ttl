@@ -16,7 +16,7 @@
 # =============================================================================
 
 smtgm:text-art a owl:Ontology ;
-  rdfs:label "SMTG Text & Art"@en ;
+  rdfs:label "SMTG-O Text & Art"@en ;
   dcterms:title "Text and art: text expressions, illustrations, artists, inscriptions and images"@en ;
   dcterms:description """Card text is not one string. SMTG distinguishes the current English Oracle text of a face (versioned by observation), the rules text actually printed on a localised printing, flavour text, flavour names and printed names and type lines — each with its language and the face or printed face it belongs to. Artwork is equally layered: an illustration is a visual work that can appear on many printings; it is credited to artists through contributions; what it depicts and any words visibly written inside it are separate claims; and an image file is a digital representation, not the artwork itself."""@en ;
   owl:versionInfo "0.1.0-draft" ;

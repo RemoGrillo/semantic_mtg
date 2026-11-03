@@ -186,8 +186,8 @@ function addConcept(fb, m, v) {
   const c = m.concepts.get(v);
   const sc = c && m.schemes.get(c.schemes[0]);
   const lab = c ? `${sc && !sc.pseudo ? sc.key + ': ' : ''}${c.notations[0] || c.label}` : shortName(m, v);
-  // official symbol (Scryfall PNG via CSS class) when the concept has smtg:symbol
-  const pip = c?.symbol && m.pipClass ? String(c.symbol).match(/\{[^{}]+\}/g)?.map((x) => m.pipClass(x)).filter(Boolean).map((k) => `<span class='pip ${k}'></span>`).join('') : '';
+  // mana symbol (mana-font glyph) when the concept has smtg:symbol
+  const pip = c?.symbol && m.pipClass ? String(c.symbol).match(/\{[^{}]+\}/g)?.map((x) => m.pipClass(x)).filter(Boolean).map((k) => `<span class='ms ms-${k} ms-cost'></span>`).join('') : '';
   return fb.node(v, `${pip ? pip + ' ' : ''}<span class='mm-cv'>${mtext(trunc(lab, 40))}</span>`, {
     shape: 'stadium',
     cls: 'concept',

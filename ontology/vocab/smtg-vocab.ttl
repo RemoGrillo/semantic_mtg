@@ -18,7 +18,7 @@
 
 smtgm:vocab
   a owl:Ontology ;
-  rdfs:label "SMTG generated vocabularies"@en ;
+  rdfs:label "SMTG-O generated vocabularies"@en ;
   dcterms:title "Generated vocabularies: concepts observed in the sources, with curated definitions"@en ;
   dcterms:description "Controlled-vocabulary concepts generated from Scryfall catalogs, symbology and the values observed in the all_cards snapshot, enriched with curated labels and definitions. Codes are never invented; counts of observations are recorded as smtg:observedCount."@en ;
   owl:versionInfo "0.1.0-draft" ;

@@ -18,7 +18,7 @@
 # =============================================================================
 
 smtgm:core a owl:Ontology ;
-  rdfs:label "SMTG Core"@en ;
+  rdfs:label "SMTG-O Core"@en ;
   dcterms:title "Core: identifiers, vocabulary base classes and documentation conventions"@en ;
   dcterms:description """Foundational module shared by every other module. It declares the documentation annotation properties used across SMTG (rationale, source fields, review questions), the qualified Identifier pattern (a string identifier is never the thing it identifies), and the base class for controlled-vocabulary concepts. It also declares how reused SKOS, PROV-O and Dublin Core terms are typed so that the whole ontology stays within OWL 2 DL and can be checked by a DL reasoner."""@en ;
   owl:versionInfo "0.1.0-draft" ;
@@ -76,7 +76,7 @@ smtg:sourceValueOf a owl:AnnotationProperty ;
 
 smtg:symbol a owl:AnnotationProperty ;
   rdfs:label "symbol"@en ;
-  skos:definition "Brace notation of the symbol(s) associated with a concept (e.g. {W}{U}). The published documentation renders it as text chips; only a private local build shows the official symbol images (ADR-0006)."@en ;
+  skos:definition "Brace notation of the symbol(s) associated with a concept (e.g. {W}{U}); the documentation draws it with the open-source Mana font (mana-font)."@en ;
   rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
 
 smtg:proposalOf a owl:AnnotationProperty ;

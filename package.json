@@ -1,7 +1,7 @@
 {
   "name": "semantic-mtg",
   "version": "0.1.0",
-  "description": "Semantic Magic: The Gathering (SMTG) — an identity-aware, provenance-rich ontology and knowledge graph for Magic: The Gathering card data. Unofficial fan/research project.",
+  "description": "Semantic MTG — linked data for Magic: The Gathering cards. SMTG-O (Semantic MTG Ontology): an identity-aware, provenance-rich ontology, its vocabularies, validation and documentation. Unofficial fan/research project, not affiliated with Wizards of the Coast.",
   "type": "module",
   "private": true,
   "license": "MIT",
@@ -12,7 +12,6 @@
     "audit:fetch": "node tools/audit/fetch-sources.mjs",
     "audit:census": "node tools/audit/census-scryfall.mjs && node tools/audit/profile-tagger.mjs && node tools/audit/profile-spellbook.mjs",
     "fixtures": "node tools/audit/extract-fixtures.mjs",
-    "assets": "node tools/docs/fetch-assets.mjs",
     "vocab": "node tools/vocab/generate-vocab.mjs",
     "map:fixtures": "node tools/map/map-fixtures.mjs",
     "validate": "node tools/validate/validate.mjs",
@@ -23,19 +22,25 @@
     "build": "npm run vocab && npm run map:fixtures && npm run map:coverage && npm run validate && npm run cq && npm run docs:build",
     "test": "node --test tools/",
     "map:coverage": "node tools/map/build-mapping.mjs",
-    "build:docs-only": "npm run map:coverage && npm run validate && npm run cq && npm run docs:build",
-    "docs:build:private": "node tools/docs/build.mjs --private-assets",
-    "docs:serve:private": "node tools/docs/serve.mjs --dir site-private"
+    "build:docs-only": "npm run map:coverage && npm run validate && npm run cq && npm run docs:build"
   },
   "dependencies": {
     "@fontsource/alegreya": "5.3.0",
     "@fontsource/alegreya-sc": "5.3.0",
-    "@saeris/typeface-beleren-bold": "1.0.1",
+    "mana-font": "1.18.0",
     "marked": "16.4.2",
     "mermaid": "12.2.0",
     "n3": "2.13.12",
     "oxigraph": "0.5.13",
     "rdf-validate-shacl": "0.6.5",
     "stream-json": "3.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RemoGrillo/semantic_mtg.git"
+  },
+  "homepage": "https://github.com/RemoGrillo/semantic_mtg#readme",
+  "bugs": {
+    "url": "https://github.com/RemoGrillo/semantic_mtg/issues"
   }
 }

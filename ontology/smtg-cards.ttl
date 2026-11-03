@@ -16,7 +16,7 @@
 # =============================================================================
 
 smtgm:cards a owl:Ontology ;
-  rdfs:label "SMTG Cards"@en ;
+  rdfs:label "SMTG-O Cards"@en ;
   dcterms:title "Cards: Oracle identity, conceptual faces, layouts and characteristics"@en ;
   dcterms:description """The abstract level of the model. An Oracle card is the game-relevant identity shared by all its printings; it always has at least one conceptual face, and characteristics such as mana cost, type line, power or Oracle text belong to faces. The module separates three things that Scryfall flattens into one `layout` string: the face configuration (how many faces, on which physical sides), the layout convention, and — deliberately not modelled in v1 — modal spell semantics ("choose one")."""@en ;
   owl:versionInfo "0.1.0-draft" ;

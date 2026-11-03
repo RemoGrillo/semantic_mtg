@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T13:48:48.416Z",
+  "generatedAt": "2026-11-03T14:05:34.200Z",
   "parse": [
     {
       "file": "ontology/smtg-cards.ttl",
@@ -59,7 +59,7 @@
     {
       "file": "ontology/smtg.ttl",
       "ok": true,
-      "triples": 21
+      "triples": 22
     },
     {
       "file": "ontology/views/smtg-tags-projection-view.ttl",
@@ -448,7 +448,7 @@
         "examples/variable-loyalty.ttl",
         "examples/variable-pt.ttl"
       ],
-      "triples": 54984,
+      "triples": 54985,
       "conforms": true,
       "violations": 0,
       "results": []

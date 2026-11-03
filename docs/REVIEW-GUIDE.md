@@ -1,9 +1,7 @@
 # Review session guide (first draft, 2026-11-03)
 
 A 30–45 minute walkthrough of the draft for ontologists. Open `site/index.html`; for live
-suggestions run `npm run docs:serve` and use the printed URL. On your own screen you may use the
-private build with Beleren and the official symbols (`npm run assets && npm run docs:build:private`,
-then `npm run docs:serve:private`). Don't send or publish that file (ADR-0006).
+suggestions run `npm run docs:serve` and use the printed URL.
 
 ## 1. The problem, in one diagram (5 min)
 *Overview → big-picture diagram.* SMTG keeps apart Oracle card, card face, printing, printed face,

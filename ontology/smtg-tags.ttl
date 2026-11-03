@@ -17,7 +17,7 @@
 # =============================================================================
 
 smtgm:tags a owl:Ontology ;
-  rdfs:label "SMTG Tags"@en ;
+  rdfs:label "SMTG-O Tags"@en ;
   dcterms:title "Tags: Tagger vocabularies and weighted tag assignments"@en ;
   dcterms:description """Scryfall Tagger publishes two community vocabularies: Oracle (functional) tags assigned to Oracle cards, and art tags assigned to illustrations. Each tag has a stable ID, a mutable slug and label, a description, aliases and any number of parents. Each tagging has a weight (observed values in November 2026: weak, median, strong, very_strong). SMTG imports the tags as SKOS concepts in two separate schemes and every tagging as a TagAssignment claim with its weight and snapshot. Tagger parent links are imported as smtg:taggerParent and are NOT treated as skos:broader or rdfs:subClassOf by default: art-tag hierarchies in particular mix instance-of, part-of and thematic links, and propagating weak, community claims through a transitive hierarchy is exactly the kind of inference the DEC collaboration should decide on. Interpretations are provided as opt-in view modules (ontology/views/)."""@en ;
   owl:versionInfo "0.1.0-draft" ;

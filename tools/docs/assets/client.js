@@ -138,7 +138,7 @@
       var fonts = document.fonts;
       fontsReady = fonts && fonts.load
         ? Promise.race([
-            Promise.all([fonts.load('700 14px "Beleren"'), fonts.ready]).catch(function () {}),
+            Promise.all([fonts.load('700 14px "SMTG Display"'), fonts.ready]).catch(function () {}),
             new Promise(function (r) {
               setTimeout(r, 2500);
             }),

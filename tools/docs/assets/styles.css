@@ -1,4 +1,4 @@
-/* SMTG documentation — beige, modern-minimalist; Beleren for titles. Read at build time and inlined. */
+/* Semantic MTG documentation — beige, modern-minimalist; Alegreya for titles. Read at build time and inlined. */
 :root {
   color-scheme: light;
   --bg: #f3ecdd;
@@ -21,10 +21,9 @@
   --bad-bg: #f4dcd7;
   --plum: #6b3f78;
   --plum-bg: #ece0ee;
-  /* "Beleren" is only defined in the private build (--private-assets); the default build uses
-     Alegreya ("SMTG Display", SIL OFL 1.1). */
-  --font-display: "Beleren", "SMTG Display", "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-  --font-sc: "Beleren SmallCaps", "SMTG Display SC", "Beleren", "SMTG Display", "Iowan Old Style", Palatino, Georgia, serif;
+  /* headings: Alegreya / Alegreya SC (SIL OFL 1.1), embedded as "SMTG Display" */
+  --font-display: "SMTG Display", "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-sc: "SMTG Display SC", "SMTG Display", "Iowan Old Style", Palatino, Georgia, serif;
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --measure: none; /* text runs full width (owner's preference); set e.g. 75ch to restore a reading measure */
@@ -83,7 +82,7 @@ main > section.route { max-width: none; }
 }
 .brand { padding: 22px 20px 10px; }
 .brand-title { display: block; font-family: var(--font-display); font-size: 1.32rem; line-height: 1.1; color: var(--ink); text-decoration: none; }
-.brand-the { display: block; font-size: 0.98rem; color: var(--ink-2); margin-top: 2px; }
+.brand-the { display: block; font-family: var(--font-body); font-size: 0.78rem; line-height: 1.35; color: var(--ink-2); margin-top: 4px; }
 .brand-sub { margin-top: 6px; font-size: 0.74rem; color: var(--muted); letter-spacing: 0.03em; }
 .side-filter { position: relative; padding: 6px 16px 10px; }
 .side-filter input {
@@ -478,7 +477,10 @@ svg.chart .bar:focus-visible .ax { fill: var(--accent); font-weight: 600; }
   h2, h3 { break-after: avoid; }
 }
 
-/* ---------- symbol chips (default build: notation as text, no Wizards symbol artwork) ---------- */
+/* ---------- symbols: mana-font glyphs (.ms …) and text chips for codes the font lacks ---------- */
+.ms.ms-cost { font-size: 0.95em; vertical-align: -0.05em; margin: 0 0.06em; }
+table.vocab .ms.ms-cost { font-size: 1.15em; }
+.pips { white-space: nowrap; display: inline-flex; gap: 0.08em; align-items: center; }
 .sym-chip {
   display: inline-flex; align-items: center; justify-content: center; min-width: 1.5em; height: 1.5em; padding: 0 0.32em;
   margin: 0 1px; border-radius: 4px; border: 1px solid var(--line-2); background: #e7e0d1; color: var(--ink-2);

@@ -1,17 +1,24 @@
-# Semantic Magic: The Gathering (SMTG)
+# Semantic MTG
 
-**An identity-aware, provenance-rich ontology for Magic: The Gathering card data**, the first
-step towards a maintained Linked Open Data knowledge graph built from Scryfall, Scryfall Tagger and
-Commander Spellbook and served through QLever.
+**Linked data for Magic: The Gathering cards.** This repository holds **SMTG-O**, the *Semantic MTG
+Ontology* (working name, waiting for a better one): an identity-aware, provenance-rich ontology. It
+is the first step towards a maintained Linked Open Data knowledge graph built from Scryfall,
+Scryfall Tagger and Commander Spellbook, served through QLever.
 
-> **Status: first ontology draft for review (v0.1.0-draft, 2026-11-03).** No production ETL and no
-> public endpoint yet. Per the plan, those wait for the ontology review (see `PLAN.md`, gate 1).
+> **Status: first ontology draft for review (v0.1.0-draft, 2026-11-03).** There is no production ETL
+> and no public endpoint yet. Per the plan, those wait for the ontology review (see `PLAN.md`,
+> gate 1).
 
-SMTG keeps apart what card databases flatten: the **Oracle card** (abstract identity) and its
-**faces**; **printings** and **printed faces**; **illustrations** and **images**; text by **role and
-language**; controlled vocabularies as **open SKOS schemes**; and community tags and other weak or
-time-bound statements as first-class **claims**, with source snapshot, strength and propositional
-attitude.
+SMTG-O keeps apart what card databases flatten:
+- the **Oracle card** (abstract identity) and its **faces**;
+- **printings** and **printed faces**;
+- **illustrations** and **images**;
+- text, by **role and language**;
+- controlled vocabularies, as **open SKOS schemes**;
+- community tags and other weak or time-bound statements, as first-class **claims** with source
+  snapshot, strength and propositional attitude.
+
+**Documentation:** build it locally (below) or see the project's GitHub Pages site once it is enabled.
 
 ## Quick start
 
@@ -20,20 +27,20 @@ npm install
 npm run audit:fetch      # download source snapshots (manifest-driven, checksummed) into data/raw/
 npm run build            # vocab → fixture examples → SHACL validation → competency questions → docs
 npm run reason           # OWL DL check with HermiT (bootstraps a portable JRE + ROBOT in .tools/)
-open site/index.html     # the documentation: a single self-contained file that works offline (safe to publish)
+open site/index.html     # the documentation: a single self-contained file that works offline
 npm run docs:serve       # review mode: per-concept suggestion box, saved under review/suggestions/
-
-# optional, PRIVATE (your own screen only — never publish): Beleren + official mana symbols
-npm run assets && npm run docs:build:private && open site-private/index.html
 ```
+
+You only need `npm run audit:fetch` to regenerate vocabularies and examples from fresh source data.
+The documentation builds from the committed files: `npm install && npm run docs:build`.
 
 ## Repository map
 
 | Path | What |
 |---|---|
-| `ontology/` | the ontology: `smtg.ttl` (aggregate) + one file per module; `vocab/` (generated); `views/` (opt-in interpretations); `catalog-v001.xml` (for Protégé/ROBOT) |
+| `ontology/` | SMTG-O: `smtg.ttl` (aggregate) plus one file per module; `vocab/` (generated); `views/` (opt-in interpretations); `catalog-v001.xml` (for Protégé/ROBOT) |
 | `shapes/` | SHACL shapes (closed-world validation) |
-| `fixtures/` | small, real source excerpts (`scryfall/`, `tagger/`, `spellbook/`) and deliberately invalid data (`invalid-rdf/`, `invalid-owl/`) |
+| `fixtures/` | small real source excerpts (`scryfall/`, `tagger/`, `spellbook/`) and deliberately invalid data (`invalid-rdf/`, `invalid-owl/`) |
 | `examples/` | example RDF generated from the fixtures by the prototype mapper |
 | `queries/competency/` | competency questions as SPARQL |
 | `mappings/` | source field → ontology term dispositions |
@@ -43,22 +50,29 @@ npm run assets && npm run docs:build:private && open site-private/index.html
 | `tools/` | Node tooling (audit, vocab, map, validate, reason, docs) |
 
 ## How to review or change the ontology
-See **[CONTRIBUTING.md](CONTRIBUTING.md)**. In short: comment on a concept page in review mode,
-open an issue, edit the Turtle and rebuild, or put a whole alternative module in `proposals/`.
+See **[CONTRIBUTING.md](CONTRIBUTING.md)**. In short:
+- comment on a concept page in review mode, or open an issue;
+- edit the Turtle and rebuild;
+- or put a whole alternative module in `proposals/`.
 
-## Legal
-Semantic Magic: The Gathering is unofficial Fan Content permitted under the Fan Content Policy. Not
+## Disclaimer
+
+**Semantic MTG is unofficial Fan Content permitted under the Fan Content Policy. Not
 approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast.
-©Wizards of the Coast LLC. Magic: The Gathering, card names, card text, mana symbols, set symbols and
-the Beleren typeface are property of Wizards of the Coast LLC.
+©Wizards of the Coast LLC.**
 
-The Fan Content Policy lists the mana symbols among the trademarks fan content may not include, and
-Beleren has no public license. So the default, publishable documentation build uses **no Wizards
-symbol artwork and no Wizards fonts**: symbols are shown as their text notation, and headings use
-Alegreya (SIL OFL 1.1). An opt-in private build (`npm run docs:build:private` → `site-private/`,
-gitignored) embeds them for viewing on your own machine only. See ADR-0006.
+Magic: The Gathering, MTG, card names, card text, mana and card symbols, set symbols, artwork and
+all related marks belong to Wizards of the Coast LLC (and to the respective artists). **We own none
+of it**, and the project is not affiliated with or endorsed by Wizards of the Coast, Hasbro,
+Scryfall or Commander Spellbook.
+- Symbols in the documentation are drawn with the open-source Mana font (`mana-font`, Andrew Gioia).
+- Card data comes courtesy of [Scryfall](https://scryfall.com) and the
+  [Tagger](https://tagger.scryfall.com) community; combo data comes from
+  [Commander Spellbook](https://commanderspellbook.com).
+- Source dumps and card images are not redistributed.
 
-Card data courtesy of [Scryfall](https://scryfall.com) and the [Tagger](https://tagger.scryfall.com)
-community; combo data from [Commander Spellbook](https://commanderspellbook.com). SMTG is not
-affiliated with any of them. Source dumps, images, symbols and fonts are **not** redistributed in
-this repository. Code: MIT (`LICENSE`). Ontology and documentation: CC BY 4.0 (proposed, ADR-0006).
+Read the full statement, the takedown contact and all third-party licences in
+**[DISCLAIMER.md](DISCLAIMER.md)**.
+
+Licences: code MIT (`LICENSE`); ontology and documentation CC BY 4.0 (proposed, ADR-0006). They
+cover only the project's own work.

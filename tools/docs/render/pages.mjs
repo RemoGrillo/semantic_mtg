@@ -17,8 +17,8 @@ export function overviewPage(ctx) {
   const concepts = m.concepts.size;
   const cq = inputs.cq?.results || [];
   const intro = ctx.readmeIntro;
-  let h = `<header class="page-head hero"><p class="eyebrow">${esc(config.shortName || 'SMTG')} · ontology ${esc(config.ontologyVersion || '')}</p>
-<h1 class="hero-title">${esc(config.project || 'Semantic Magic: The Gathering')}</h1>
+  let h = `<header class="page-head hero"><p class="eyebrow">${esc(config.ontologyName || 'SMTG-O')} · ontology ${esc(config.ontologyVersion || '')}</p>
+<h1 class="hero-title">${esc(config.project || 'Semantic MTG')}</h1>${config.subtitle ? `<p class="hero-sub">${esc(config.subtitle)} · ontology <strong>${esc(config.ontologyName || 'SMTG-O')}</strong> (${esc(config.ontologyLongName || '')})</p>` : ''}
 ${intro ? '' : '<p class="hero-sub">An identity-aware, provenance-rich ontology for <em>Magic: The Gathering</em> card data — first draft for ontology review.</p>'}</header>`;
   if (intro) h += `<div class="prose intro">${intro}</div>`;
   h += kpis([
@@ -415,41 +415,36 @@ export function proposalsIndex(ctx, overlays) {
 
 export function aboutPage(ctx) {
   const { config } = ctx;
+  const project = config.project || 'Semantic MTG';
   const h = `<header class="page-head"><h1>About</h1></header>
 <div class="prose">
 <h2>The project</h2>
-<p><strong>${esc(config.project || 'Semantic Magic: The Gathering')}</strong> (${esc(config.shortName || 'SMTG')}) is an unofficial research and fan project: an ontology and knowledge graph that keeps apart what card data usually flattens — the abstract Oracle card, its printings, faces, artworks and texts, community tags, combos and decks — and records where every statement comes from. This site documents the first ontology draft (${esc(
+<p><strong>${esc(project)}</strong>, ${esc(config.subtitle || '')}, is an unofficial research and fan project. Its ontology, <strong>${esc(config.ontologyName || 'SMTG-O')}</strong> (${esc(config.ontologyLongName || 'Semantic MTG Ontology')}; ${esc(config.ontologyNameStatus || 'working name')}), keeps apart what card data usually flattens: the abstract Oracle card, its printings, faces, artworks and texts, community tags, combos and decks. It also records where every statement comes from. This site documents the first ontology draft (${esc(
     config.ontologyVersion || '',
-  )}) for review by ontologists.</p>
+  )}) for review.</p>
 
-<h2>Wizards of the Coast Fan Content Policy</h2>
-<blockquote class="legal"><p>Semantic Magic: The Gathering is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</p></blockquote>
-<p>Magic: The Gathering, card names, card text, the mana and card symbols, set symbols and the Beleren typeface are property and/or trademarks of Wizards of the Coast LLC. See the <a class="ext" href="https://company.wizards.com/en/legal/fancontentpolicy" rel="noopener" target="_blank">Wizards of the Coast Fan Content Policy</a>.</p>
-${
-  ctx.privateAssets
-    ? `<p><strong>Private build.</strong> This copy embeds the Beleren typeface and Scryfall's official symbol images (© Wizards of the Coast) for viewing on the owner's machine only. The Fan Content Policy lists the mana symbols among the marks fan content may not include, and Beleren has no public license, so <strong>do not publish or redistribute this file</strong>; publish the default build instead.</p>`
-    : `<p>To respect the Fan Content Policy, which lists the mana symbols among the trademarks fan content may not include, and because the Beleren typeface has no public license, this site uses <strong>no Wizards symbol artwork and no Wizards fonts</strong>: symbols appear as their text notation (e.g. <span class="sym-chip sym-w">W</span> <span class="sym-chip">2/U</span> <span class="sym-chip">T</span>), and headings are set in Alegreya (Huerta Tipográfica, SIL Open Font License 1.1).</p>`
-}
+<h2>Disclaimer</h2>
+<blockquote class="legal"><p>${esc(project)} is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</p></blockquote>
+<p>Magic: The Gathering, card names, card text, mana and card symbols, set symbols, artwork and all related marks belong to Wizards of the Coast LLC and the respective artists. <strong>We own none of it</strong> and are not affiliated with or endorsed by Wizards of the Coast, Hasbro, Scryfall or Commander Spellbook. Symbols are drawn with the open-source Mana font (<code>mana-font</code>, Andrew Gioia). The full statement, the data sources, the takedown contact and all third-party licences are on the <a href="#/page/disclaimer">Disclaimer &amp; credits</a> page.</p>
 
-<h2>Data sources and attribution</h2>
+<h2>Data sources</h2>
 <ul>
 <li>Card data from <a class="ext" href="https://scryfall.com" rel="noopener" target="_blank">Scryfall</a> (bulk data and API).</li>
 <li>Community tags from Tagger via Scryfall (<a class="ext" href="https://tagger.scryfall.com" rel="noopener" target="_blank">tagger.scryfall.com</a>).</li>
 <li>Combo data from <a class="ext" href="https://commanderspellbook.com" rel="noopener" target="_blank">Commander Spellbook</a>.</li>
 </ul>
-<p>The project is not affiliated with, endorsed by or sponsored by Scryfall, Tagger or Commander Spellbook. Card images are not shown or stored; the ontology only links to Scryfall-hosted images.</p>
+<p>Card images are not shown or stored; the ontology only links to Scryfall-hosted images.</p>
 
 <h2>Licensing (proposal)</h2>
 <ul>
 <li>Code: MIT.</li>
 <li>Ontology and documentation: CC BY 4.0.</li>
-<li>Source dumps are <strong>not</strong> redistributed in the repository (only small fixtures, with attribution); Wizards of the Coast fonts and symbol images are neither in the repository nor in the published site.</li>
-<li>Headings: Alegreya / Alegreya SC, SIL Open Font License 1.1.</li>
+<li>These licences cover only the project's own work, never third-party material.</li>
 </ul>
 <p class="muted">This licensing scheme is a proposal pending review${ctx.adrLink ? ` — see ${ctx.adrLink}` : ' — see the ADRs'}.</p>
 
 <h2>This site</h2>
-<p>Generated from the Turtle sources by <code>tools/docs/build.mjs</code> (built ${esc(ctx.builtAt)}). It is a single self-contained HTML file that works offline. Fonts and diagrams are embedded; diagrams are rendered with Mermaid.${ctx.privateAssets ? ' Private build (Wizards assets embedded — not for publication).' : ''}</p>
+<p>Generated from the Turtle sources by <code>tools/docs/build.mjs</code> (built ${esc(ctx.builtAt)}). It is a single self-contained HTML file that works offline. Fonts (Alegreya, Mana) and diagrams are embedded; diagrams are rendered with Mermaid.${config.repo?.url ? ` Source: <a class="ext" href="${esc(config.repo.url)}" rel="noopener" target="_blank">${esc(config.repo.url.replace(/^https?:\/\//, ''))}</a>.` : ''}</p>
 </div>`;
   return section('about', 'About', h);
 }

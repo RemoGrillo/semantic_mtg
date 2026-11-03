@@ -1,6 +1,10 @@
 {
-  "project": "Semantic Magic: The Gathering",
+  "project": "Semantic MTG",
+  "subtitle": "Linked data for Magic: The Gathering cards",
   "shortName": "SMTG",
+  "ontologyName": "SMTG-O",
+  "ontologyLongName": "Semantic MTG Ontology",
+  "ontologyNameStatus": "working name, waiting for a better one",
   "ontologyVersion": "0.1.0-draft",
   "namespaces": {
     "base": "https://w3id.org/smtg/",
@@ -10,8 +14,8 @@
   },
   "namespaceStatus": "placeholder — see ADR-0003 and RQ-NS-1",
   "repo": {
-    "url": "",
-    "note": "Set to the GitHub repository URL once pushed; the docs then link 'Suggest a change' to prefilled issues."
+    "url": "https://github.com/RemoGrillo/semantic_mtg",
+    "note": "Used for the docs \"Suggest a change\" links (prefilled GitHub issues)."
   },
   "userAgent": "SMTG-audit/0.1 (+research; contact via repository)",
   "sources": {

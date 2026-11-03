@@ -1,4 +1,4 @@
-// Small HTML toolkit: escaping, badges, official symbol pips, code highlighting.
+// Small HTML toolkit: escaping, badges, mana symbols (mana-font), code highlighting.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -66,78 +66,76 @@ export function kindBadge(kind) {
   return `<span class="kind k-${esc(kind)}">${esc(L[kind] || kind)}</span>`;
 }
 
-// ---------- official symbols (Scryfall SVG rasterised to PNG) ----------
 
-// Text chips used by the default (publishable) build: the brace notation itself, with a plain colour
-// swatch for the five colours — no Wizards symbol artwork (the Fan Content Policy lists the mana
-// symbols among the marks fan content may not include).
+// ---------- mana & card symbols (mana-font npm package) ----------
+// Symbols are drawn with the open-source Mana font by Andrew Gioia (npm `mana-font`; font SIL OFL 1.1,
+// CSS MIT; the symbol designs are © Wizards of the Coast). Codes the font lacks fall back to a text chip.
+
 const CHIP_COLOUR = { W: 'w', U: 'u', B: 'b', R: 'r', G: 'g', C: 'c' };
 export function textChip(code) {
   const inner = String(code).replace(/^\{|\}$/g, '');
-  const parts = inner.split('/');
-  const cls = parts.length === 1 && CHIP_COLOUR[inner] ? ` sym-${CHIP_COLOUR[inner]}` : '';
+  const cls = CHIP_COLOUR[inner] ? ` sym-${CHIP_COLOUR[inner]}` : '';
   return `<span class="sym-chip${cls}" title="${esc(code)}">${esc(inner)}</span>`;
 }
 
+// Scryfall code (inside braces) → mana-font class, for codes whose name is not simply the lower-cased letters
+const SPECIAL = { T: 'tap', Q: 'untap', '½': '1-2', '∞': 'infinity', PW: 'planeswalker', CHAOS: 'chaos', A: 'acorn', TK: 'ticket', E: 'e', P: 'p', H: 'h', HW: 'w', HR: 'r' };
+
 export class Symbols {
-  constructor(dir, warn = () => {}, { official = false } = {}) {
-    this.dir = dir;
-    this.map = {};
-    this.used = new Map(); // code -> css class
-    this.missing = new Set();
+  constructor(manaDir, warn = () => {}) {
     this.warn = warn;
-    this.official = official;
-    if (!official) return; // publishable build: text chips only
+    this.cssText = '';
+    this.classes = new Set();
+    this.missing = new Set();
     try {
-      const idx = JSON.parse(fs.readFileSync(path.join(dir, 'index.json'), 'utf8'));
-      this.map = idx.symbols || {};
-    } catch {
-      warn('Mana symbols missing (assets/vendor/symbols/index.json) — run `npm run assets`; falling back to text codes', 'assets');
+      let css = fs.readFileSync(path.join(manaDir, 'css', 'mana.css'), 'utf8');
+      const woff2 = fs.readFileSync(path.join(manaDir, 'fonts', 'mana.woff2')).toString('base64');
+      // keep only the Mana @font-face (drop MPlantin, a commercial typeface) and embed the font as data: URI
+      css = css.replace(/@font-face\s*{[^}]*MPlantin[^}]*}/g, '');
+      css = css.replace(/@font-face\s*{[^}]*font-family:\s*"Mana";[^}]*}/, `@font-face{font-family:"Mana";src:url(data:font/woff2;base64,${woff2}) format("woff2");font-weight:normal;font-style:normal;font-display:block}`);
+      css = css.replace(/\/\*# sourceMappingURL=.*?\*\//g, '');
+      this.cssText = css;
+      for (const m of css.matchAll(/\.ms-([a-z0-9-]+)/g)) this.classes.add(m[1]);
+    } catch (e) {
+      warn(`mana-font not found (${e.message}) — run npm install; symbols fall back to text`, 'assets');
     }
+  }
+  /** mana-font class for a Scryfall code like "{W/U}" (or null). */
+  classFor(code) {
+    const inner = String(code).replace(/^\{|\}$/g, '');
+    const cands = [SPECIAL[inner], inner.toLowerCase().replace(/\//g, ''), inner.toLowerCase()].filter(Boolean);
+    return cands.find((c) => this.classes.has(c)) ?? null;
   }
   has(code) {
-    return !!this.map[code];
+    return !!this.classFor(code);
   }
-  cssClass(code) {
-    if (!this.used.has(code)) this.used.set(code, `ms${this.used.size}`);
-    return this.used.get(code);
-  }
-  /** One symbol code like "{W}" → pip span (or text fallback). */
+  /** HTML for one symbol code: a mana-font glyph in a cost circle (or a text chip). */
   pip(code) {
-    const s = this.map[code];
-    if (!this.official) return textChip(code);
-    if (!s || !fs.existsSync(path.join(this.dir, 'png', s.png))) {
-      if (!this.missing.has(code)) {
+    const k = this.classFor(code);
+    if (!k) {
+      if (!this.missing.has(code) && this.classes.size) {
         this.missing.add(code);
-        if (Object.keys(this.map).length) this.warn(`No official symbol image for ${code}; showing text`, 'assets');
+        this.warn(`mana-font has no glyph for ${code}; showing text`, 'assets');
       }
-      return `<code class="sym-text">${esc(code)}</code>`;
+      return textChip(code);
     }
-    const wide = s.width && s.height && s.width / s.height > 1.3 ? ' wide' : '';
-    const title = s.english ? `${code} — ${s.english}` : code;
-    return `<span class="pip ${this.cssClass(code)}${wide}" role="img" aria-label="${esc(code)}" title="${esc(title)}"></span>`;
+    return `<span class="ms ms-${k} ms-cost" role="img" aria-label="${esc(code)}" title="${esc(code)}"></span>`;
   }
-  /** "{W}{U}" → pips; returns '' for empty. */
+  /** "{W}{U}" → symbols; '' for empty. */
   pips(str) {
     if (!str) return '';
     const codes = String(str).match(/\{[^{}]+\}/g);
-    if (!codes) return this.official ? `<code class="sym-text">${esc(str)}</code>` : textChip(str);
+    if (!codes) return textChip(str);
     return `<span class="pips">${codes.map((c) => this.pip(c)).join('')}</span>`;
   }
   /** Escape text and replace known symbol codes inline (e.g. definitions mentioning {T}). */
   inline(text) {
     const parts = String(text ?? '').split(/(\{[^{}\s]{1,12}\})/g);
-    return parts.map((p, i) => (i % 2 === 1 && this.map[p] ? this.pip(p) : esc(p))).join('');
+    return parts.map((p, i) => (i % 2 === 1 && this.has(p) ? this.pip(p) : esc(p))).join('');
   }
-  /** CSS rules (data: URIs) for the symbols actually used on the page. */
+  /** CSS for the page: the mana-font stylesheet with the font embedded. */
   css() {
-    let out = '';
-    for (const [code, cls] of this.used) {
-      const s = this.map[code];
-      const b64 = fs.readFileSync(path.join(this.dir, 'png', s.png)).toString('base64');
-      out += `.${cls}{background-image:url(data:image/png;base64,${b64})}\n`;
-    }
-    return out;
+    return this.cssText;
   }
 }
 

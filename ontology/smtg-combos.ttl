@@ -17,7 +17,7 @@
 # =============================================================================
 
 smtgm:combos a owl:Ontology ;
-  rdfs:label "SMTG Combos"@en ;
+  rdfs:label "SMTG-O Combos"@en ;
   dcterms:title "Combos: documented combo variants, recipes, features, and synergy hypotheses"@en ;
   dcterms:description """Commander Spellbook distinguishes editor-authored combos (recipes) from generated variants: concrete multisets of cards (plus template placeholders) with prerequisites, steps and the features they produce. Its bulk export contains variants; recipes appear only as IDs (of / includes). SMTG models a variant as a community-curated claim, its card uses, template requirements and feature productions as qualified nodes, and keeps step descriptions as text — it never simulates the combo. Synergy hypotheses inferred by SMTG and statistical co-occurrence associations are separate claim types, so "documented combo", "observed together" and "potentially supports" stay distinguishable in SPARQL."""@en ;
   owl:versionInfo "0.1.0-draft" ;

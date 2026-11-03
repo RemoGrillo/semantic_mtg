@@ -16,7 +16,7 @@
 # =============================================================================
 
 smtgm:taxonomies a owl:Ontology ;
-  rdfs:label "SMTG Taxonomies"@en ;
+  rdfs:label "SMTG-O Taxonomies"@en ;
   dcterms:title "Taxonomies: controlled vocabularies for card characteristics and printing attributes"@en ;
   dcterms:description """Classes for every controlled vocabulary SMTG uses: card types, supertypes and type-qualified subtype schemes, colours and the 32 colour combinations, mana symbols, keywords, layouts, face configurations, object kinds, formats and legality statuses, rarities, finishes, frames, border colours, promo types, games, languages and more. All are SKOS concepts (open, extensible) typed with an OWL class so that properties can have precise ranges. The individual concepts are generated from the sources into ontology/vocab/ and enriched with curated definitions."""@en ;
   owl:versionInfo "0.1.0-draft" ;
