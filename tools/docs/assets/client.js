@@ -354,6 +354,12 @@
         return !li.hidden;
       });
     });
+    // sections (Introduction, Ontology, …): hide when none of their lists or groups shows anything
+    $$('#sidebar section.nav-sec').forEach(function (sec) {
+      sec.hidden = terms.length > 0 && !$$('ul.nav-top, details.nav-group', sec).some(function (el) {
+        return !el.hidden;
+      });
+    });
   }
   if (filter) {
     filter.addEventListener('input', applyFilter);
