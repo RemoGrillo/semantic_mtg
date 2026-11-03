@@ -12,7 +12,7 @@ ontology is reviewed.
 - Field census and profiles: `docs/source-audit/`.
 - Ontology draft v0.1.0: 11 modules + a generated vocabulary module (41 schemes, 2,358 concepts)
   + 2 opt-in views. 325 SMTG terms, all labelled and defined.
-- SHACL shapes (20 node shapes) and 8 deliberately invalid fixtures, all rejected with the expected
+- SHACL shapes (19 node shapes) and 8 deliberately invalid fixtures, all rejected with the expected
   message.
 - Real fixtures for the plan's §4.2 edge cases, and the example RDF generated from them by a
   fixture-only prototype mapper.
