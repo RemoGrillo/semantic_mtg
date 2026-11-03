@@ -66,23 +66,44 @@ await new Promise((r) => server.listen(0, '127.0.0.1', r));
 const BASE = `http://127.0.0.1:${server.address().port}${PREFIX}`;
 
 // ---- Firefox over WebDriver BiDi
+// Connect to the address Firefox itself announces on stderr ("WebDriver BiDi listening on ws://…"):
+// depending on the system, "localhost" may be 127.0.0.1 or ::1.
 const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'smtg-smoke-'));
 const port = 9300 + Math.floor(Math.random() * 600);
-const ff = spawn(firefox, ['--headless', '--no-remote', '--profile', profile, '--remote-debugging-port', String(port), '--window-size=1400,1000', 'about:blank'], { stdio: 'ignore' });
+const ff = spawn(firefox, ['--headless', '--no-remote', '--profile', profile, '--remote-debugging-port', String(port), '--window-size=1400,1000', 'about:blank'], { stdio: ['ignore', 'pipe', 'pipe'] });
+const ffOutput = [];
+let ffExit = null;
+let bidiUrl = null;
+for (const stream of [ff.stdout, ff.stderr])
+  stream.on('data', (d) => {
+    for (const line of String(d).split('\n').filter(Boolean)) {
+      ffOutput.push(line);
+      if (ffOutput.length > 40) ffOutput.shift();
+      bidiUrl ??= line.match(/WebDriver BiDi listening on (ws:\/\/\S+)/)?.[1]?.replace(/\/$/, '') ?? null;
+    }
+  });
+ff.on('exit', (code, signal) => (ffExit = signal ?? code));
+const STARTUP_S = 90;
 let ws;
-for (let i = 0; i < 80 && !ws; i++) {
+const t0 = Date.now();
+while (!ws && ffExit === null && Date.now() - t0 < STARTUP_S * 1000) {
   await sleep(250);
-  try {
-    const w = new WebSocket(`ws://127.0.0.1:${port}/session`);
-    await new Promise((res, rej) => {
-      w.onopen = res;
-      w.onerror = rej;
-    });
-    ws = w;
-  } catch {
-    /* not up yet */
+  // until Firefox announces its address, try both loopback addresses
+  for (const url of bidiUrl ? [bidiUrl] : [`ws://127.0.0.1:${port}`, `ws://[::1]:${port}`]) {
+    try {
+      const w = new WebSocket(`${url}/session`);
+      await new Promise((res, rej) => {
+        w.onopen = res;
+        w.onerror = rej;
+      });
+      ws = w;
+      break;
+    } catch {
+      /* not up yet */
+    }
   }
 }
+const startupSecs = ((Date.now() - t0) / 1000).toFixed(1);
 let msgId = 0;
 const pending = new Map();
 const consoleErrors = [];
@@ -111,17 +132,29 @@ setTimeout(() => {
 
 const failures = [];
 let checks = 0;
+// on GitHub Actions, failures also become annotations (shown on the run page, and readable
+// through the public API without access to the logs)
+const annotate = (msg) => {
+  if (process.env.GITHUB_ACTIONS) console.log(`::error title=docs smoke test::${String(msg).replace(/%/g, '%25').replace(/\r?\n/g, '%0A')}`);
+};
 const check = (ok, what, detail) => {
   checks++;
   if (ok) log(`  ok   ${what}`);
   else {
     failures.push(what);
     log(`  FAIL ${what}${detail ? `\n         ${detail}` : ''}`);
+    annotate(`${what}${detail ? `\n${detail}` : ''}`);
   }
 };
 
 try {
-  if (!ws) throw new Error(`could not connect to Firefox (${firefox}) on port ${port}`);
+  if (!ws)
+    throw new Error(
+      `could not connect to Firefox (${firefox}) within ${startupSecs} s` +
+        (ffExit !== null ? `; Firefox exited (${ffExit})` : '') +
+        `; announced address: ${bidiUrl ?? 'none'}; last Firefox output:\n         ${ffOutput.slice(-15).join('\n         ') || '(none)'}`,
+    );
+  log(`Firefox connected in ${startupSecs} s (${bidiUrl ?? `port ${port}`})`);
   ws.onmessage = (ev) => {
     const m = JSON.parse(ev.data);
     if (m.id && pending.has(m.id)) {
@@ -148,7 +181,21 @@ try {
     errors: (window.__smtg && window.__smtg.errors) || []
   })`;
   const state = async () => JSON.parse(await evaluate(STATE));
-  const settle = () => evaluate('new Promise((r) => setTimeout(() => r(1), 700))');
+  // wait until the page has done its work (loaded, diagrams of the shown page rendered), then a
+  // little longer for scrolling; no fixed sleeps, so a slow machine is not a failure
+  const settle = () =>
+    evaluate(
+      `new Promise((resolve) => {
+        const t0 = Date.now();
+        const ready = () => document.readyState === 'complete' && window.__smtg &&
+          !document.querySelector('section.route:not([hidden]) figure.diagram:not([data-done="1"]):not([data-done="error"])');
+        (function poll() {
+          if (ready() || Date.now() - t0 > 15000) setTimeout(() => resolve(Date.now() - t0), 400);
+          else setTimeout(poll, 100);
+        })();
+      })`,
+      30_000,
+    );
   const freshLoad = async (hash) => {
     await send('browsingContext.navigate', { context: ctx, url: 'about:blank', wait: 'complete' });
     await send('browsingContext.navigate', { context: ctx, url: BASE + hash, wait: 'complete' });
@@ -231,6 +278,7 @@ try {
 } catch (e) {
   failures.push(e.message);
   log(`  FAIL ${e.message}`);
+  annotate(e.message);
 } finally {
   try {
     ws?.close();
@@ -242,5 +290,5 @@ try {
   await sleep(300);
   fs.rmSync(profile, { recursive: true, force: true });
 }
-log(failures.length ? `smoke test FAILED: ${failures.length} of ${checks} checks` : `smoke test passed: ${checks} checks`);
+log(failures.length ? `smoke test FAILED: ${failures.length} failure(s), ${checks} checks run` : `smoke test passed: ${checks} checks`);
 process.exit(failures.length ? 1 : 0);
