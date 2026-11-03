@@ -86,12 +86,28 @@ for (let i = 0; i < 80 && !ws; i++) {
 let msgId = 0;
 const pending = new Map();
 const consoleErrors = [];
-const send = (method, params = {}) =>
+// every browser command has a time limit, so a stalled page or browser fails the test instead of
+// hanging it (rendering every diagram gets longer)
+const send = (method, params = {}, timeoutMs = 60_000) =>
   new Promise((res, rej) => {
     const i = ++msgId;
-    pending.set(i, { res, rej });
+    const timer = setTimeout(() => {
+      pending.delete(i);
+      rej(new Error(`${method} did not answer within ${timeoutMs / 1000} s`));
+    }, timeoutMs);
+    pending.set(i, {
+      res: (v) => (clearTimeout(timer), res(v)),
+      rej: (e) => (clearTimeout(timer), rej(e)),
+    });
     ws.send(JSON.stringify({ id: i, method, params }));
   });
+// and the whole run too
+const WATCHDOG_MIN = 10;
+setTimeout(() => {
+  console.error(`smoke test FAILED: still running after ${WATCHDOG_MIN} minutes`);
+  ff.kill('SIGKILL');
+  process.exit(1);
+}, WATCHDOG_MIN * 60_000).unref();
 
 const failures = [];
 let checks = 0;
@@ -119,8 +135,8 @@ try {
   await send('session.new', { capabilities: {} });
   await send('session.subscribe', { events: ['log.entryAdded'] });
   const ctx = (await send('browsingContext.getTree')).contexts[0].context;
-  const evaluate = async (expr) => {
-    const r = await send('script.evaluate', { expression: expr, target: { context: ctx }, awaitPromise: true });
+  const evaluate = async (expr, timeoutMs) => {
+    const r = await send('script.evaluate', { expression: expr, target: { context: ctx }, awaitPromise: true }, timeoutMs);
     if (r.type === 'exception') throw new Error(r.exceptionDetails?.text ?? 'exception in page');
     return r.result?.value;
   };
@@ -206,7 +222,7 @@ try {
   if (!args.has('--quick')) {
     await freshLoad('');
     const t0 = Date.now();
-    const out = JSON.parse(await evaluate(`window.__smtg.renderAll().then((o) => JSON.stringify(o))`));
+    const out = JSON.parse(await evaluate(`window.__smtg.renderAll().then((o) => JSON.stringify(o))`, 300_000));
     check(out.failed.length === 0, `${out.diagrams} diagrams on ${out.routes} pages render (${((Date.now() - t0) / 1000).toFixed(0)} s)`, out.failed.slice(0, 10).join('\n         '));
   }
 
