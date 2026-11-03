@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T11:21:37.895Z",
+  "generatedAt": "2026-11-03T14:25:00.706Z",
   "reasoner": "hermit",
   "steps": [
     {
@@ -30,9 +30,9 @@
       "name": "ROBOT report generated",
       "ok": true,
       "byRule": {
-        "ERROR duplicate_label": 125,
+        "ERROR duplicate_label": 127,
         "ERROR missing_label": 48,
-        "WARN missing_definition": 330,
+        "WARN missing_definition": 332,
         "INFO missing_superclass": 25
       }
     }
@@ -45,23 +45,23 @@
       "file": "fixtures/invalid-owl/adventure-and-mdfc.ttl",
       "inconsistentAsExpected": true,
       "log": [
-        "2026-11-03 12:22:09,509 ERROR org.obolibrary.robot.ReasonerHelper - The ontology is inconsistent. TIP: use a tool like Protege to find explanations"
+        "2026-11-03 15:25:38,431 ERROR org.obolibrary.robot.ReasonerHelper - The ontology is inconsistent. TIP: use a tool like Protege to find explanations"
       ]
     },
     {
       "file": "fixtures/invalid-owl/printing-is-oracle-card.ttl",
       "inconsistentAsExpected": true,
       "log": [
-        "2026-11-03 12:22:12,969 ERROR org.obolibrary.robot.ReasonerHelper - The ontology is inconsistent. TIP: use a tool like Protege to find explanations"
+        "2026-11-03 15:25:42,457 ERROR org.obolibrary.robot.ReasonerHelper - The ontology is inconsistent. TIP: use a tool like Protege to find explanations"
       ]
     }
   ],
   "report": {
-    "rows": 528,
+    "rows": 532,
     "byRule": {
-      "ERROR duplicate_label": 125,
+      "ERROR duplicate_label": 127,
       "ERROR missing_label": 48,
-      "WARN missing_definition": 330,
+      "WARN missing_definition": 332,
       "INFO missing_superclass": 25
     },
     "sample": [
@@ -334,16 +334,16 @@
       [
         "ERROR",
         "duplicate_label",
-        "https://w3id.org/smtg/vocab/card-type/planeswalker",
+        "https://w3id.org/smtg/vocab/keyword-ability/plot",
         "rdfs:label",
-        "Planeswalker@en"
+        "Plot@en"
       ],
       [
         "ERROR",
         "duplicate_label",
-        "https://w3id.org/smtg/vocab/watermark/planeswalker",
+        "https://w3id.org/smtg/vocab/keyword-action/plot",
         "rdfs:label",
-        "Planeswalker@en"
+        "Plot@en"
       ]
     ]
   }

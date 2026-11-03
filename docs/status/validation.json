@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T14:05:34.200Z",
+  "generatedAt": "2026-11-03T14:24:52.762Z",
   "parse": [
     {
       "file": "ontology/smtg-cards.ttl",
@@ -49,7 +49,7 @@
     {
       "file": "ontology/smtg-taxonomies.ttl",
       "ok": true,
-      "triples": 439
+      "triples": 449
     },
     {
       "file": "ontology/smtg-text-art.ttl",
@@ -74,7 +74,7 @@
     {
       "file": "ontology/vocab/smtg-vocab.ttl",
       "ok": true,
-      "triples": 20515
+      "triples": 21084
     },
     {
       "file": "shapes/smtg-shapes.ttl",
@@ -448,7 +448,7 @@
         "examples/variable-loyalty.ttl",
         "examples/variable-pt.ttl"
       ],
-      "triples": 54985,
+      "triples": 55564,
       "conforms": true,
       "violations": 0,
       "results": []
@@ -814,7 +814,7 @@
     ]
   },
   "lint": {
-    "terms": 327,
+    "terms": 329,
     "incomplete": []
   },
   "summary": {

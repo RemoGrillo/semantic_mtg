@@ -14,6 +14,7 @@ import { p, rawFile, rawManifest, readJSON, writeJSON, ensureDir, log } from '..
 import { prefixBlock, iri, lit, en, slug, symbolSlug, block, V } from '../lib/rdf.mjs';
 import * as C from './curated.mjs';
 import { loadTypeSystem, parseTypeLine as parseTypeLineShared, SUBTYPE_CATALOGS } from '../lib/typeline.mjs';
+import { parseComprehensiveRules, crKey } from '../lib/cr.mjs';
 
 const FORCE = process.argv.includes('--rescan');
 const CACHE = p('data', 'derived', 'enum-values.json');
@@ -151,6 +152,7 @@ function concept(schemeId, code, cls, { label, def, alt = [], notation = code, c
 }
 const allDifferent = (iris) => out.push(`[] a owl:AllDifferent ; owl:distinctMembers ( ${iris.map(iri).join(' ')} ) .\n`);
 const title = (s) => s.replace(/_/g, ' ').replace(/^./, (c) => c.toUpperCase());
+const plural = (s) => (/y$/.test(s) ? s.slice(0, -1) + 'ies' : s + 's');
 
 // Face configurations & object kinds (curated, conceptual)
 scheme('face-configuration', 'Face configurations', 'FaceConfiguration', 'Physical arrangements of card faces.');
@@ -274,14 +276,99 @@ for (const [w, ctx] of Object.entries(scan.residue.subtypes).sort()) {
   });
 }
 
-// Keywords
+// Keywords — Scryfall catalogs, cross-checked against the Comprehensive Rules (CR):
+// 207.2c ability words, 701.x keyword actions, 702.x keyword abilities. Scryfall's classification is
+// kept (it is what the data's `keywords` field uses); every concept is annotated with its CR rule, or
+// flagged when the CR does not define it, and CR entries missing from Scryfall are added (unstable).
 const kwSchemes = { 'keyword-ability': ['keyword-abilities', 'KeywordAbility'], 'keyword-action': ['keyword-actions', 'KeywordAction'], 'ability-word': ['ability-words', 'AbilityWord'], 'flavor-word': ['flavor-words', 'FlavorWord'] };
+const crFile = (() => { try { return rawFile('wotc:comprehensive-rules'); } catch { return null; } })();
+const CR = crFile ? parseComprehensiveRules(crFile) : null;
+const crBody = crFile ? fs.readFileSync(crFile, 'utf8').split(/\r?\n/) : [];
+const CR_KIND = { 'ability-word': 'abilityWords', 'keyword-action': 'keywordActions', 'keyword-ability': 'keywordAbilities' };
+const CR_SECTION = { abilityWords: '207.2c', keywordActions: '701.', keywordAbilities: '702.' };
+const KIND_LABEL = { abilityWords: 'ability word (207.2c)', keywordActions: 'keyword action (701)', keywordAbilities: 'keyword ability (702)' };
+const wordRe = (w) => new RegExp(`(^|[^a-z])${w.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z]|$)`);
+const crMatched = new Set(); // "kind|rule|name" of CR entries matched by some Scryfall concept
+function crLookup(name, schemeId) {
+  if (!CR) return null;
+  const k = crKey(name);
+  // 1. exact match in any CR list (records cross-classification, e.g. "Start your engines!")
+  for (const kind of Object.keys(CR_SECTION)) {
+    const hit = CR[kind].find((e) => crKey(e.name) === k);
+    if (hit) return { how: 'exact', kind, entries: [hit] };
+  }
+  const kind = CR_KIND[schemeId];
+  if (!kind) return null;
+  // 2. documented family rules: …walk → Landwalk (702.14), …cycling → Cycling (702.29)
+  const fam = /walk$/.test(k) ? 'landwalk' : /cycling$/.test(k) ? 'cycling' : null;
+  if (fam && kind === 'keywordAbilities') {
+    const hit = CR.keywordAbilities.find((e) => crKey(e.name) === fam);
+    if (hit) return { how: 'family', kind, entries: [hit] };
+  }
+  // 3. defined inside a rule of the same section: the rule text starts with the name
+  //    ("“Choose a Background” means …", "Megamorph is a variant …") or lists it as "partner—Friends forever"
+  const sec = CR_SECTION[kind];
+  if (kind !== 'abilityWords') {
+    const esc = k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const defRe = new RegExp(`^\\d{3}\\.\\d+[a-z]\\s+(?:[“"]${esc}\\b|${esc}\\b[^.]*\\bis a\\b)|[—-]${esc}\\b`, 'i');
+    const line = crBody.find((l) => l.startsWith(sec) && defRe.test(crKey(l).replace(/^(\d{3}\.\d+[a-z])/, '$1')));
+    if (line) return { how: 'mentioned', kind, entries: [{ rule: line.split(' ')[0].replace(/\.$/, ''), name }] };
+  }
+  // 4. whole-word containment within the same CR list (Descend ⊂ "descend 4"; "Tap" ⊂ "Tap and Untap")
+  const cont = CR[kind].filter((e) => wordRe(k).test(crKey(e.name)) || wordRe(crKey(e.name)).test(k));
+  if (cont.length) return { how: 'variant', kind, entries: cont };
+  return { how: 'none', kind, elsewhere: crBody.find((l) => /^\d{3}\.\d+[a-z]?\.? /.test(l) && wordRe(k).test(l.toLowerCase()))?.split(' ')[0].replace(/\.$/, '') ?? null };
+}
+const crReport = [];
 const kwKnown = new Set();
 for (const [schemeId, [cat, cls]] of Object.entries(kwSchemes)) {
-  scheme(schemeId, title(schemeId.replace('-', ' ')) + 's', cls, `Scryfall catalog "${cat}".`);
+  scheme(schemeId, plural(title(schemeId.replace('-', ' '))), cls, `Scryfall catalog "${cat}"${CR && CR_KIND[schemeId] ? `, cross-checked against the Comprehensive Rules (${CR.effective}), ${KIND_LABEL[CR_KIND[schemeId]]}` : ''}.`);
   for (const k of catalog(cat)) {
     kwKnown.add(k);
-    concept(schemeId, slug(k), cls, { label: k, notation: k, count: obs('keywords')[k] ?? 0, sourceValueOf: 'scryfall:keywords' });
+    const m = CR_KIND[schemeId] ? crLookup(k, schemeId) : null;
+    const extra = [];
+    let status;
+    if (m && m.how !== 'none') {
+      // a cross-classified match (other CR section) does not cover the CR entry: it gets its own concept
+      if (m.kind === CR_KIND[schemeId]) for (const e of m.entries) crMatched.add(`${m.kind}|${e.rule}|${crKey(e.name)}`);
+      extra.push(['smtg:comprehensiveRulesRef', lit([...new Set(m.entries.map((e) => e.rule))].join(', '))]);
+      const names = m.entries.map((e) => e.name).join(', ');
+      if (m.kind !== CR_KIND[schemeId]) {
+        extra.push(['skos:editorialNote', en(`Scryfall lists this as ${schemeId.replace('-', ' ')}; the Comprehensive Rules define it as a ${KIND_LABEL[m.kind]} — ${names} (${m.entries[0].rule}).`)]);
+        status = 'unstable';
+      } else if (m.how === 'family') extra.push(['skos:editorialNote', en(`Variant of ${names} (CR ${m.entries[0].rule}), which the rules define generically.`)]);
+      else if (m.how === 'variant') extra.push(['skos:editorialNote', en(`The Comprehensive Rules name it differently: ${names}.`)]);
+      else if (m.how === 'mentioned') extra.push(['skos:editorialNote', en(`Defined as part of CR ${m.entries[0].rule}, not under its own heading.`)]);
+    } else if (m && m.how === 'none') {
+      extra.push(['smtg:inComprehensiveRules', lit('false', 'xsd:boolean')]);
+      extra.push(['skos:editorialNote', en(`Not defined in the Comprehensive Rules (${CR.effective}) as a ${KIND_LABEL[m.kind]}${m.elsewhere ? `; the term appears in CR ${m.elsewhere}` : ''}. Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules.`)]);
+      status = 'unstable';
+    }
+    const iri = concept(schemeId, slug(k), cls, { label: k, notation: k, count: obs('keywords')[k] ?? 0, sourceValueOf: 'scryfall:keywords', status, extra });
+    crReport.push({ scheme: schemeId, name: k, observed: obs('keywords')[k] ?? 0, cr: m ? { how: m.how, kind: m.kind, rules: m.entries?.map((e) => e.rule) ?? [], names: m.entries?.map((e) => e.name) ?? [], elsewhere: m.elsewhere ?? null } : null });
+  }
+}
+// CR entries that no Scryfall catalog value represents → added as concepts (status unstable)
+const crOnly = [];
+if (CR) {
+  const SCHEME_OF = { abilityWords: ['ability-word', 'AbilityWord'], keywordActions: ['keyword-action', 'KeywordAction'], keywordAbilities: ['keyword-ability', 'KeywordAbility'] };
+  for (const kind of Object.keys(CR_SECTION)) {
+    for (const e of CR[kind]) {
+      if (crMatched.has(`${kind}|${e.rule}|${crKey(e.name)}`)) continue;
+      const [schemeId, cls] = SCHEME_OF[kind];
+      const label = e.name.replace(/^./, (c) => c.toUpperCase());
+      const cIri = concept(schemeId, slug(e.name) || `cr-${e.rule}`, cls, {
+        label, notation: e.name, count: 0, status: 'unstable', sourceValueOf: `wotc-cr:${e.rule}`,
+        def: `${KIND_LABEL[kind].replace(/ \(.*\)/, '')} defined in the Comprehensive Rules, ${e.rule}.`,
+        extra: [['smtg:comprehensiveRulesRef', lit(e.rule)], ['skos:editorialNote', en(`In the Comprehensive Rules (${CR.effective}) but not in Scryfall's ${schemeId} catalog.`)]],
+      });
+      crOnly.push({ kind, rule: e.rule, name: e.name, iri: cIri });
+    }
+  }
+  // cross-classified pairs: Scryfall concept in one scheme ↔ CR-only concept in the CR's scheme
+  for (const r of crReport.filter((x) => x.cr && x.cr.how === 'exact' && CR_KIND[x.scheme] !== x.cr.kind)) {
+    const other = crOnly.find((o) => o.kind === r.cr.kind && crKey(o.name) === crKey(r.name));
+    if (other) out.push(`<${V}${r.scheme}/${slug(r.name)}> skos:exactMatch <${other.iri}> .\n`);
   }
 }
 const kwOther = Object.keys(obs('keywords')).filter((k) => !kwKnown.has(k));
@@ -289,6 +376,7 @@ if (kwOther.length) {
   scheme('keyword-other', 'Uncatalogued keywords', 'Keyword', 'Values of the Scryfall keywords field not present in any keyword catalog.');
   for (const k of kwOther.sort()) concept('keyword-other', slug(k), 'Keyword', { label: k, notation: k, count: obs('keywords')[k], status: 'unstable', sourceValueOf: 'scryfall:keywords' });
 }
+if (CR) writeCrossCheck(CR, crReport, crOnly, kwOther);
 
 // Formats & legality
 scheme('format', 'Formats', 'Format', 'Formats for which Scryfall reports legality (keys of legalities).');
@@ -331,3 +419,43 @@ for (const [k, l] of Object.entries(C.ZONES)) concept('zone', k, 'Zone', { label
 ensureDir(p('ontology', 'vocab'));
 fs.writeFileSync(p('ontology', 'vocab', 'smtg-vocab.ttl'), out.join('\n'));
 log(`wrote ontology/vocab/smtg-vocab.ttl: ${schemes.length} schemes, ${Object.keys(conceptIris).length} concepts`);
+
+function writeCrossCheck(CR, report, crOnly, uncatalogued) {
+  const crFileRec = rawManifest().files.filter((f) => f.key === 'wotc:comprehensive-rules').at(-1);
+  const catRec = (n) => rawManifest().files.filter((f) => f.key === `scryfall:catalog:${n}`).at(-1);
+  const groups = { exact: 'exact match', family: 'variant of a generically defined keyword', variant: 'named differently in the rules', mentioned: 'defined inside another rule', none: 'NOT in the Comprehensive Rules' };
+  const crossClass = report.filter((r) => r.cr && r.cr.how !== 'none' && r.cr.kind !== CR_KIND[r.scheme]);
+  writeJSON(p('docs', 'source-audit', 'keyword-crosscheck.json'), { generatedAt: new Date().toISOString(), comprehensiveRules: { effective: CR.effective, file: crFileRec?.localPath, sha256: crFileRec?.sha256, url: crFileRec?.url }, counts: { abilityWords: CR.abilityWords.length, keywordActions: CR.keywordActions.length, keywordAbilities: CR.keywordAbilities.length }, report, crOnly, crossClassified: crossClass, uncatalogued });
+  const L = [`# Vocabulary cross-check: Scryfall keyword catalogs vs. the Comprehensive Rules
+
+GENERATED by \`npm run vocab\` (tools/vocab/generate-vocab.mjs) — do not edit.
+
+The keyword vocabularies are generated **deterministically** from two snapshots:
+- the Scryfall catalogs (\`/catalog/keyword-abilities\`, \`keyword-actions\`, \`ability-words\`, \`flavor-words\`; retrieved ${catRec('ability-words')?.retrievedAt?.slice(0, 10) ?? '?'}), which is the classification the card data's \`keywords\` field uses;
+- the **Magic: The Gathering Comprehensive Rules**, effective ${CR.effective} (SHA-256 \`${crFileRec?.sha256?.slice(0, 16)}…\`), the official definitions: 207.2c (ability words), 701 (keyword actions) and 702 (keyword abilities).
+
+Scryfall's classification is kept. Each concept carries \`smtg:comprehensiveRulesRef\` when the rules define it, or \`smtg:inComprehensiveRules false\` when they don't. Rules entries missing from Scryfall are added as concepts with status *unstable*. Neither source is treated as complete on its own (RQ-TY-3).
+
+| | Comprehensive Rules | Scryfall catalog |
+|---|---|---|
+| Ability words | ${CR.abilityWords.length} | ${catalog('ability-words').length} |
+| Keyword actions | ${CR.keywordActions.length} | ${catalog('keyword-actions').length} |
+| Keyword abilities | ${CR.keywordAbilities.length} | ${catalog('keyword-abilities').length} |
+| Flavor words | (not listed in the rules) | ${catalog('flavor-words').length} |
+`];
+  for (const schemeId of ['ability-word', 'keyword-action', 'keyword-ability']) {
+    const rows = report.filter((r) => r.scheme === schemeId);
+    const by = {};
+    for (const r of rows) (by[r.cr?.how ?? 'none'] ??= []).push(r);
+    L.push(`\n## ${plural(title(schemeId.replace('-', ' ')))} (${rows.length} in Scryfall)\n`);
+    for (const how of Object.keys(groups)) {
+      if (!by[how]?.length) continue;
+      L.push(`**${groups[how]}** (${by[how].length}): ${by[how].map((r) => `${r.name}${r.cr?.rules?.length ? ` (${[...new Set(r.cr.rules)].join(', ')})` : ''}${r.cr?.elsewhere ? ` [term in ${r.cr.elsewhere}]` : ''}`).join(' · ')}\n`);
+    }
+    const missing = crOnly.filter((o) => o.kind === CR_KIND[schemeId]);
+    if (missing.length) L.push(`**in the rules, missing from Scryfall's catalog — added** (${missing.length}): ${missing.map((o) => `${o.name} (${o.rule})`).join(' · ')}\n`);
+  }
+  if (crossClass.length) L.push(`\n## Classified differently\n\n${crossClass.map((r) => `- **${r.name}**: Scryfall *${r.scheme.replace('-', ' ')}*, rules *${KIND_LABEL[r.cr.kind]}* (${[...new Set(r.cr.rules)].join(', ')})`).join('\n')}\n`);
+  fs.writeFileSync(p('docs', 'ontology', 'vocabulary-crosscheck.md'), L.join('\n'));
+  log(`keyword cross-check: ${crOnly.length} CR-only entries added, ${report.filter((r) => r.cr?.how === 'none').length} Scryfall entries not in CR, ${crossClass.length} classified differently`);
+}

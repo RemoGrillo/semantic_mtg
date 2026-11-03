@@ -298,6 +298,16 @@ smtg:Zone a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Gam
   skos:definition "A game zone (battlefield, hand, graveyard, exile, library, command zone), used e.g. for the starting locations of combo pieces."@en ;
   rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
 
+smtg:comprehensiveRulesRef a owl:AnnotationProperty ;
+  rdfs:label "Comprehensive Rules reference"@en ;
+  skos:definition "The rule number(s) of the Magic: The Gathering Comprehensive Rules that define the concept (e.g. 702.2 for deathtouch, 207.2c for ability words)."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:inComprehensiveRules a owl:AnnotationProperty ;
+  rdfs:label "in Comprehensive Rules"@en ;
+  skos:definition "False when a source lists the concept but the Comprehensive Rules release used for the cross-check do not define it (digital-only, Un-set, shorthand or newer than the rules)."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
 smtg:ordinalRank a owl:DatatypeProperty , owl:FunctionalProperty ;
   rdfs:label "ordinal rank"@en ;
   skos:definition "Position of a concept in an ordered scale (higher = more). Used for rarities and tagging weights. Ordinal only: differences are not meaningful."@en ;

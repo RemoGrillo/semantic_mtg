@@ -99,11 +99,30 @@ plus Un-card jokes; the left-hand words are mostly `Card`, `Stickers` and old `S
 as `smtg:OtherSubtype` (status *unstable*), not dropped. Multi-word planar types are currently split
 incorrectly ("Las" + "Vegas"): we need a planar-type catalog or a curated list.
 
-### RQ-TY-3 — Keywords vs ability words vs keyword actions
+### RQ-TY-3 — Keywords vs ability words vs keyword actions: which authority?
 Scryfall's `keywords` array mixes keyword abilities, keyword actions and ability words. The draft
-resolves each value against the catalogs, in the order ability, action, ability word, flavor word.
-*Question:* should a card's keyword list also record which catalog matched (provenance of the
-normalization)?
+resolves each value against Scryfall's catalogs and cross-checks every catalog against the
+**Comprehensive Rules** (207.2c, 701, 702); see the generated *Vocabulary cross-check* page.
+
+*Findings (Comprehensive Rules effective 25 September 2026):*
+- **Ability words.** Scryfall has 73 and the rules list 61, so Scryfall's list is a superset. All
+  61 are present, with "descend 4" and "descend 8" merged as *Descend*. The 12 extras are not in the
+  rules: Un/playtest cards, Alchemy, memorabilia, recent Universes Beyond, and also *Corrupted*.
+- **Keyword actions.** Scryfall has 80 and the rules 70. Scryfall lacks *Search*, *The Ring Tempts
+  You* and *Face a Villainous Choice*. It adds token shorthands (Food, Treasure, Role token) and
+  digital-only actions.
+- **Keyword abilities.** Scryfall has 224 and the rules have 194 headings. Scryfall splits variants
+  (landwalk and cycling families, Partner variants, Megamorph …). It lacks *Space Sculptor*,
+  *Visit*, *Plot*, *Start Your Engines!* and *∞*.
+- **Classified differently:** *Start your engines!* (Scryfall: ability word; rules: keyword ability
+  702.179) and *Plot* (Scryfall: keyword action; rules: keyword ability 702.170).
+
+*Draft:* keep Scryfall's classification (the data uses it). Annotate each concept with
+`smtg:comprehensiveRulesRef`, or with `smtg:inComprehensiveRules false`. Add the rules-only
+entries, and link cross-classified pairs with `skos:exactMatch`.
+*Questions:* should the rules be the primary classification, with Scryfall's values only as
+`skos:notation` mappings? Should a card's keyword list record which catalog matched (provenance
+of the normalization)?
 
 ### RQ-TX-1 — Versioning of Oracle text
 *Draft:* `OracleText` nodes are minted per snapshot (`…/oracle-text/<snapshot>`), so errata produce

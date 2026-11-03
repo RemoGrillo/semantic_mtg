@@ -25,6 +25,7 @@ documentation's *Source audit* and *Mapping coverage* pages render.
 | Scryfall symbology | https://api.scryfall.com/symbology | mana/card symbols (SVG) | fetched; 84 symbols |
 | Scryfall sets | https://api.scryfall.com/sets | set metadata | fetched |
 | Scryfall API docs | https://scryfall.com/docs/api · https://github.com/scryfall/api-types | field semantics | transcribed by hand into the census drift check (not fetched live; see `drift.basis`) |
+| Magic Comprehensive Rules (TXT) | https://magic.wizards.com/en/rules (link read at run time) | authoritative ability-word / keyword lists (207.2c, 701, 702) | downloaded into `data/raw/wotc/` (not committed), checksummed; effective 25 September 2026 |
 | Commander Spellbook bulk | https://json.commanderspellbook.com/variants.json.gz | variants (version 7.3.4) | downloaded raw gzip (server also sends `Content-Encoding: gzip`; raw bytes preserved), profiled |
 | Commander Spellbook docs | https://spacecowmedia.github.io/commander-spellbook-backend/ | domain model (variant vs combo) | to verify in review (RQ-CB-1, RQ-CB-3) |
 | QLever docs | https://docs.qlever.dev/ | later phases | not yet used |

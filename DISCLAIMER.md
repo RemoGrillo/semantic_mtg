@@ -44,6 +44,9 @@ Tipográfica, SIL Open Font License 1.1).
   assignments are the work of the Tagger community contributors.
 - **Commander Spellbook** (<https://commanderspellbook.com>): combo data is the work of the
   Commander Spellbook project and its contributors. It is not affiliated with this project.
+- **Magic: The Gathering Comprehensive Rules** (<https://magic.wizards.com/en/rules>, © Wizards of the
+  Coast) are used only as a reference to cross-check keyword and ability-word lists. Rule numbers are
+  cited; the rules text is not redistributed.
 - **Card images are not stored, copied or hosted here.** The data only *links* to images hosted by
   Scryfall. Only small source excerpts (fixtures) are kept in the repository, with their origin and
   checksum. Full source dumps are never committed.

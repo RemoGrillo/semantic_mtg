@@ -10671,12 +10671,12 @@ smtg:observedCount
   skos:scopeNote "Observed with card types: (none) (1)."@en .
 
 
-# ---- Keyword abilitys ----
+# ---- Keyword abilities ----
 
 <https://w3id.org/smtg/vocab/keyword-ability>
   a skos:ConceptScheme ;
-  rdfs:label "Keyword abilitys"@en ;
-  skos:definition "Scryfall catalog \"keyword-abilities\"."@en ;
+  rdfs:label "Keyword abilities"@en ;
+  skos:definition "Scryfall catalog \"keyword-abilities\", cross-checked against the Comprehensive Rules (September 25, 2026), keyword ability (702)."@en ;
   smtg:conceptClass smtg:KeywordAbility ;
   rdfs:isDefinedBy smtgm:vocab .
 
@@ -10688,7 +10688,8 @@ smtg:observedCount
   skos:notation "Living weapon" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 361 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.92" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/jump-start>
   a smtg:KeywordAbility ;
@@ -10698,7 +10699,8 @@ smtg:observedCount
   skos:notation "Jump-start" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 178 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.133" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/commander-ninjutsu>
   a smtg:KeywordAbility ;
@@ -10708,7 +10710,9 @@ smtg:observedCount
   skos:notation "Commander ninjutsu" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 48 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.49d" ;
+  skos:editorialNote "Defined as part of CR 702.49d, not under its own heading."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/legendary-landwalk>
   a smtg:KeywordAbility ;
@@ -10718,7 +10722,9 @@ smtg:observedCount
   skos:notation "Legendary landwalk" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 11 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.14" ;
+  skos:editorialNote "Variant of Landwalk (CR 702.14), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/nonbasic-landwalk>
   a smtg:KeywordAbility ;
@@ -10728,7 +10734,9 @@ smtg:observedCount
   skos:notation "Nonbasic landwalk" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 9 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.14" ;
+  skos:editorialNote "Variant of Landwalk (CR 702.14), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/megamorph>
   a smtg:KeywordAbility ;
@@ -10738,7 +10746,9 @@ smtg:observedCount
   skos:notation "Megamorph" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 442 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.37b" ;
+  skos:editorialNote "Defined as part of CR 702.37b, not under its own heading."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/haunt>
   a smtg:KeywordAbility ;
@@ -10748,7 +10758,8 @@ smtg:observedCount
   skos:notation "Haunt" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 125 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.55" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/forecast>
   a smtg:KeywordAbility ;
@@ -10758,7 +10769,8 @@ smtg:observedCount
   skos:notation "Forecast" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 156 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.57" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/graft>
   a smtg:KeywordAbility ;
@@ -10768,7 +10780,8 @@ smtg:observedCount
   skos:notation "Graft" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 236 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.58" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/fortify>
   a smtg:KeywordAbility ;
@@ -10778,7 +10791,8 @@ smtg:observedCount
   skos:notation "Fortify" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 18 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.67" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/frenzy>
   a smtg:KeywordAbility ;
@@ -10788,7 +10802,8 @@ smtg:observedCount
   skos:notation "Frenzy" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.68" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/gravestorm>
   a smtg:KeywordAbility ;
@@ -10798,7 +10813,8 @@ smtg:observedCount
   skos:notation "Gravestorm" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 29 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.69" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/hideaway>
   a smtg:KeywordAbility ;
@@ -10808,7 +10824,8 @@ smtg:observedCount
   skos:notation "Hideaway" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 488 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.75" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/level-up>
   a smtg:KeywordAbility ;
@@ -10818,7 +10835,8 @@ smtg:observedCount
   skos:notation "Level Up" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 311 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.87" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/infect>
   a smtg:KeywordAbility ;
@@ -10828,7 +10846,8 @@ smtg:observedCount
   skos:notation "Infect" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 561 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.90" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/reach>
   a smtg:KeywordAbility ;
@@ -10838,7 +10857,8 @@ smtg:observedCount
   skos:notation "Reach" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 5518 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.17" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/rampage>
   a smtg:KeywordAbility ;
@@ -10848,7 +10868,8 @@ smtg:observedCount
   skos:notation "Rampage" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 103 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.23" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/phasing>
   a smtg:KeywordAbility ;
@@ -10858,7 +10879,8 @@ smtg:observedCount
   skos:notation "Phasing" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 99 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.26" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/multikicker>
   a smtg:KeywordAbility ;
@@ -10868,7 +10890,9 @@ smtg:observedCount
   skos:notation "Multikicker" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 456 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.33c" ;
+  skos:editorialNote "Defined as part of CR 702.33c, not under its own heading."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/morph>
   a smtg:KeywordAbility ;
@@ -10878,7 +10902,8 @@ smtg:observedCount
   skos:notation "Morph" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 2129 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.37" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/provoke>
   a smtg:KeywordAbility ;
@@ -10888,7 +10913,8 @@ smtg:observedCount
   skos:notation "Provoke" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 80 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.39" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/modular>
   a smtg:KeywordAbility ;
@@ -10898,7 +10924,8 @@ smtg:observedCount
   skos:notation "Modular" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 277 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.43" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/ninjutsu>
   a smtg:KeywordAbility ;
@@ -10908,7 +10935,8 @@ smtg:observedCount
   skos:notation "Ninjutsu" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 827 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.49" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/replicate>
   a smtg:KeywordAbility ;
@@ -10918,7 +10946,8 @@ smtg:observedCount
   skos:notation "Replicate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 229 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.56" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/recover>
   a smtg:KeywordAbility ;
@@ -10928,7 +10957,8 @@ smtg:observedCount
   skos:notation "Recover" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 58 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.59" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/poisonous>
   a smtg:KeywordAbility ;
@@ -10938,7 +10968,8 @@ smtg:observedCount
   skos:notation "Poisonous" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.70" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/reinforce>
   a smtg:KeywordAbility ;
@@ -10948,7 +10979,8 @@ smtg:observedCount
   skos:notation "Reinforce" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 139 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.77" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/persist>
   a smtg:KeywordAbility ;
@@ -10958,7 +10990,8 @@ smtg:observedCount
   skos:notation "Persist" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 345 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.79" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/retrace>
   a smtg:KeywordAbility ;
@@ -10968,7 +11001,8 @@ smtg:observedCount
   skos:notation "Retrace" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 293 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.81" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/rebound>
   a smtg:KeywordAbility ;
@@ -10978,7 +11012,8 @@ smtg:observedCount
   skos:notation "Rebound" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 536 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.88" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/miracle>
   a smtg:KeywordAbility ;
@@ -10988,7 +11023,8 @@ smtg:observedCount
   skos:notation "Miracle" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 270 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.94" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/overload>
   a smtg:KeywordAbility ;
@@ -10998,7 +11034,8 @@ smtg:observedCount
   skos:notation "Overload" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 634 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.96" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/outlast>
   a smtg:KeywordAbility ;
@@ -11008,7 +11045,8 @@ smtg:observedCount
   skos:notation "Outlast" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 264 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.107" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/prowess>
   a smtg:KeywordAbility ;
@@ -11018,7 +11056,8 @@ smtg:observedCount
   skos:notation "Prowess" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1222 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.108" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/renown>
   a smtg:KeywordAbility ;
@@ -11028,7 +11067,8 @@ smtg:observedCount
   skos:notation "Renown" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 270 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.112" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/myriad>
   a smtg:KeywordAbility ;
@@ -11038,7 +11078,8 @@ smtg:observedCount
   skos:notation "Myriad" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 257 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.116" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/shroud>
   a smtg:KeywordAbility ;
@@ -11048,7 +11089,8 @@ smtg:observedCount
   skos:notation "Shroud" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 519 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.18" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/trample>
   a smtg:KeywordAbility ;
@@ -11058,7 +11100,8 @@ smtg:observedCount
   skos:notation "Trample" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 14096 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.19" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/vigilance>
   a smtg:KeywordAbility ;
@@ -11068,7 +11111,8 @@ smtg:observedCount
   skos:notation "Vigilance" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 10282 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.20" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/soulshift>
   a smtg:KeywordAbility ;
@@ -11078,7 +11122,8 @@ smtg:observedCount
   skos:notation "Soulshift" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 226 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.46" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/splice>
   a smtg:KeywordAbility ;
@@ -11088,7 +11133,8 @@ smtg:observedCount
   skos:notation "Splice" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 269 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.47" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/transmute>
   a smtg:KeywordAbility ;
@@ -11098,7 +11144,8 @@ smtg:observedCount
   skos:notation "Transmute" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 218 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.53" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/ripple>
   a smtg:KeywordAbility ;
@@ -11108,7 +11155,8 @@ smtg:observedCount
   skos:notation "Ripple" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 42 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.60" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/vanishing>
   a smtg:KeywordAbility ;
@@ -11118,7 +11166,8 @@ smtg:observedCount
   skos:notation "Vanishing" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 315 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.63" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/transfigure>
   a smtg:KeywordAbility ;
@@ -11128,7 +11177,8 @@ smtg:observedCount
   skos:notation "Transfigure" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 9 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.71" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/wither>
   a smtg:KeywordAbility ;
@@ -11138,7 +11188,8 @@ smtg:observedCount
   skos:notation "Wither" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 278 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.80" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/soulbond>
   a smtg:KeywordAbility ;
@@ -11148,7 +11199,8 @@ smtg:observedCount
   skos:notation "Soulbond" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 326 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.95" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/unleash>
   a smtg:KeywordAbility ;
@@ -11158,7 +11210,8 @@ smtg:observedCount
   skos:notation "Unleash" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 213 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.98" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/ascend>
   a smtg:KeywordAbility ;
@@ -11168,7 +11221,8 @@ smtg:observedCount
   skos:notation "Ascend" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 450 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.131" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/assist>
   a smtg:KeywordAbility ;
@@ -11178,7 +11232,8 @@ smtg:observedCount
   skos:notation "Assist" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 52 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.132" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/afterlife>
   a smtg:KeywordAbility ;
@@ -11188,7 +11243,8 @@ smtg:observedCount
   skos:notation "Afterlife" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 183 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.135" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/companion>
   a smtg:KeywordAbility ;
@@ -11198,7 +11254,8 @@ smtg:observedCount
   skos:notation "Companion" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 283 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.139" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/fabricate>
   a smtg:KeywordAbility ;
@@ -11208,7 +11265,8 @@ smtg:observedCount
   skos:notation "Fabricate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 261 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.123" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/embalm>
   a smtg:KeywordAbility ;
@@ -11218,7 +11276,8 @@ smtg:observedCount
   skos:notation "Embalm" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 227 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.128" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/escape>
   a smtg:KeywordAbility ;
@@ -11228,7 +11287,8 @@ smtg:observedCount
   skos:notation "Escape" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 468 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.138" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/fuse>
   a smtg:KeywordAbility ;
@@ -11238,7 +11298,8 @@ smtg:observedCount
   skos:notation "Fuse" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 73 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.102" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/menace>
   a smtg:KeywordAbility ;
@@ -11248,7 +11309,8 @@ smtg:observedCount
   skos:notation "Menace" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 5150 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.111" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/ingest>
   a smtg:KeywordAbility ;
@@ -11258,7 +11320,8 @@ smtg:observedCount
   skos:notation "Ingest" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 104 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.115" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/melee>
   a smtg:KeywordAbility ;
@@ -11268,7 +11331,8 @@ smtg:observedCount
   skos:notation "Melee" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 122 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.121" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/improvise>
   a smtg:KeywordAbility ;
@@ -11278,7 +11342,8 @@ smtg:observedCount
   skos:notation "Improvise" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 394 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.126" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/mentor>
   a smtg:KeywordAbility ;
@@ -11288,7 +11353,8 @@ smtg:observedCount
   skos:notation "Mentor" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 350 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.134" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/partner>
   a smtg:KeywordAbility ;
@@ -11298,7 +11364,8 @@ smtg:observedCount
   skos:notation "Partner" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1898 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.124" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/mutate>
   a smtg:KeywordAbility ;
@@ -11308,7 +11375,8 @@ smtg:observedCount
   skos:notation "Mutate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 570 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.140" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/scavenge>
   a smtg:KeywordAbility ;
@@ -11318,7 +11386,8 @@ smtg:observedCount
   skos:notation "Scavenge" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 214 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.97" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/tribute>
   a smtg:KeywordAbility ;
@@ -11328,7 +11397,8 @@ smtg:observedCount
   skos:notation "Tribute" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 125 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.104" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/surge>
   a smtg:KeywordAbility ;
@@ -11338,7 +11408,8 @@ smtg:observedCount
   skos:notation "Surge" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 136 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.117" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/skulk>
   a smtg:KeywordAbility ;
@@ -11348,7 +11419,8 @@ smtg:observedCount
   skos:notation "Skulk" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 203 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.118" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/riot>
   a smtg:KeywordAbility ;
@@ -11358,7 +11430,8 @@ smtg:observedCount
   skos:notation "Riot" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 178 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.136" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/spectacle>
   a smtg:KeywordAbility ;
@@ -11368,7 +11441,8 @@ smtg:observedCount
   skos:notation "Spectacle" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 214 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.137" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/forestwalk>
   a smtg:KeywordAbility ;
@@ -11378,7 +11452,9 @@ smtg:observedCount
   skos:notation "Forestwalk" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 423 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.14" ;
+  skos:editorialNote "Variant of Landwalk (CR 702.14), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/islandwalk>
   a smtg:KeywordAbility ;
@@ -11388,7 +11464,9 @@ smtg:observedCount
   skos:notation "Islandwalk" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 607 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.14" ;
+  skos:editorialNote "Variant of Landwalk (CR 702.14), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/mountainwalk>
   a smtg:KeywordAbility ;
@@ -11398,7 +11476,9 @@ smtg:observedCount
   skos:notation "Mountainwalk" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 225 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.14" ;
+  skos:editorialNote "Variant of Landwalk (CR 702.14), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/double-strike>
   a smtg:KeywordAbility ;
@@ -11408,7 +11488,8 @@ smtg:observedCount
   skos:notation "Double strike" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1803 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.4" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/cumulative-upkeep>
   a smtg:KeywordAbility ;
@@ -11418,7 +11499,8 @@ smtg:observedCount
   skos:notation "Cumulative upkeep" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 686 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.24" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/first-strike>
   a smtg:KeywordAbility ;
@@ -11428,7 +11510,8 @@ smtg:observedCount
   skos:notation "First strike" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 5905 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.7" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/encore>
   a smtg:KeywordAbility ;
@@ -11438,7 +11521,8 @@ smtg:observedCount
   skos:notation "Encore" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 346 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.141" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/deathtouch>
   a smtg:KeywordAbility ;
@@ -11448,7 +11532,8 @@ smtg:observedCount
   skos:notation "Deathtouch" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 5244 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.2" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/defender>
   a smtg:KeywordAbility ;
@@ -11458,7 +11543,8 @@ smtg:observedCount
   skos:notation "Defender" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 4648 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.3" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/amplify>
   a smtg:KeywordAbility ;
@@ -11468,7 +11554,8 @@ smtg:observedCount
   skos:notation "Amplify" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 86 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.38" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/affinity>
   a smtg:KeywordAbility ;
@@ -11478,7 +11565,8 @@ smtg:observedCount
   skos:notation "Affinity" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1073 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.41" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/bushido>
   a smtg:KeywordAbility ;
@@ -11488,7 +11576,8 @@ smtg:observedCount
   skos:notation "Bushido" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 305 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.45" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/convoke>
   a smtg:KeywordAbility ;
@@ -11498,7 +11587,8 @@ smtg:observedCount
   skos:notation "Convoke" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1715 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.51" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/bloodthirst>
   a smtg:KeywordAbility ;
@@ -11508,7 +11598,8 @@ smtg:observedCount
   skos:notation "Bloodthirst" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 336 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.54" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/absorb>
   a smtg:KeywordAbility ;
@@ -11518,7 +11609,8 @@ smtg:observedCount
   skos:notation "Absorb" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.64" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/aura-swap>
   a smtg:KeywordAbility ;
@@ -11528,7 +11620,8 @@ smtg:observedCount
   skos:notation "Aura Swap" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 8 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.65" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/changeling>
   a smtg:KeywordAbility ;
@@ -11538,7 +11631,8 @@ smtg:observedCount
   skos:notation "Changeling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1078 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.73" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/conspire>
   a smtg:KeywordAbility ;
@@ -11548,7 +11642,8 @@ smtg:observedCount
   skos:notation "Conspire" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 101 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.78" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/cascade>
   a smtg:KeywordAbility ;
@@ -11558,7 +11653,8 @@ smtg:observedCount
   skos:notation "Cascade" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 793 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.85" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/annihilator>
   a smtg:KeywordAbility ;
@@ -11568,7 +11664,8 @@ smtg:observedCount
   skos:notation "Annihilator" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 277 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.86" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/battle-cry>
   a smtg:KeywordAbility ;
@@ -11578,7 +11675,8 @@ smtg:observedCount
   skos:notation "Battle Cry" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 173 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.91" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/cipher>
   a smtg:KeywordAbility ;
@@ -11588,7 +11686,8 @@ smtg:observedCount
   skos:notation "Cipher" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 215 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.99" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/bestow>
   a smtg:KeywordAbility ;
@@ -11598,7 +11697,8 @@ smtg:observedCount
   skos:notation "Bestow" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 576 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.103" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/dash>
   a smtg:KeywordAbility ;
@@ -11608,7 +11708,8 @@ smtg:observedCount
   skos:notation "Dash" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 331 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.109" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/awaken>
   a smtg:KeywordAbility ;
@@ -11618,7 +11719,8 @@ smtg:observedCount
   skos:notation "Awaken" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 210 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.113" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/crew>
   a smtg:KeywordAbility ;
@@ -11628,7 +11730,8 @@ smtg:observedCount
   skos:notation "Crew" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 2508 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.122" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/aftermath>
   a smtg:KeywordAbility ;
@@ -11638,7 +11741,8 @@ smtg:observedCount
   skos:notation "Aftermath" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 435 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.127" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/afflict>
   a smtg:KeywordAbility ;
@@ -11648,7 +11752,8 @@ smtg:observedCount
   skos:notation "Afflict" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 152 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.130" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/flanking>
   a smtg:KeywordAbility ;
@@ -11658,7 +11763,8 @@ smtg:observedCount
   skos:notation "Flanking" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 361 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.25" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/foretell>
   a smtg:KeywordAbility ;
@@ -11668,7 +11774,8 @@ smtg:observedCount
   skos:notation "Foretell" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 729 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.143" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/fading>
   a smtg:KeywordAbility ;
@@ -11678,7 +11785,8 @@ smtg:observedCount
   skos:notation "Fading" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 164 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.32" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/eternalize>
   a smtg:KeywordAbility ;
@@ -11688,7 +11796,8 @@ smtg:observedCount
   skos:notation "Eternalize" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 232 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.129" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/entwine>
   a smtg:KeywordAbility ;
@@ -11698,7 +11807,8 @@ smtg:observedCount
   skos:notation "Entwine" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 390 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.42" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/epic>
   a smtg:KeywordAbility ;
@@ -11708,7 +11818,8 @@ smtg:observedCount
   skos:notation "Epic" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 42 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.50" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/dredge>
   a smtg:KeywordAbility ;
@@ -11718,7 +11829,8 @@ smtg:observedCount
   skos:notation "Dredge" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 329 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.52" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/delve>
   a smtg:KeywordAbility ;
@@ -11728,7 +11840,8 @@ smtg:observedCount
   skos:notation "Delve" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 566 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.66" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/evoke>
   a smtg:KeywordAbility ;
@@ -11738,7 +11851,8 @@ smtg:observedCount
   skos:notation "Evoke" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 854 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.74" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/exalted>
   a smtg:KeywordAbility ;
@@ -11748,7 +11862,8 @@ smtg:observedCount
   skos:notation "Exalted" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 512 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.83" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/evolve>
   a smtg:KeywordAbility ;
@@ -11758,7 +11873,8 @@ smtg:observedCount
   skos:notation "Evolve" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 373 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.100" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/extort>
   a smtg:KeywordAbility ;
@@ -11768,7 +11884,8 @@ smtg:observedCount
   skos:notation "Extort" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 354 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.101" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/dethrone>
   a smtg:KeywordAbility ;
@@ -11778,7 +11895,8 @@ smtg:observedCount
   skos:notation "Dethrone" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 106 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.105" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/exploit>
   a smtg:KeywordAbility ;
@@ -11788,7 +11906,8 @@ smtg:observedCount
   skos:notation "Exploit" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 314 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.110" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/devoid>
   a smtg:KeywordAbility ;
@@ -11798,7 +11917,8 @@ smtg:observedCount
   skos:notation "Devoid" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1537 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.114" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/emerge>
   a smtg:KeywordAbility ;
@@ -11808,7 +11928,8 @@ smtg:observedCount
   skos:notation "Emerge" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 207 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.119" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/escalate>
   a smtg:KeywordAbility ;
@@ -11818,7 +11939,8 @@ smtg:observedCount
   skos:notation "Escalate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 153 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.120" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/flying>
   a smtg:KeywordAbility ;
@@ -11828,7 +11950,8 @@ smtg:observedCount
   skos:notation "Flying" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 51297 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.9" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/haste>
   a smtg:KeywordAbility ;
@@ -11838,7 +11961,8 @@ smtg:observedCount
   skos:notation "Haste" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 9792 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.10" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/hexproof>
   a smtg:KeywordAbility ;
@@ -11848,7 +11972,8 @@ smtg:observedCount
   skos:notation "Hexproof" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1434 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.11" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/indestructible>
   a smtg:KeywordAbility ;
@@ -11858,7 +11983,8 @@ smtg:observedCount
   skos:notation "Indestructible" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 2210 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.12" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/intimidate>
   a smtg:KeywordAbility ;
@@ -11868,7 +11994,8 @@ smtg:observedCount
   skos:notation "Intimidate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 362 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.13" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/lifelink>
   a smtg:KeywordAbility ;
@@ -11878,7 +12005,8 @@ smtg:observedCount
   skos:notation "Lifelink" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 5770 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.15" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/horsemanship>
   a smtg:KeywordAbility ;
@@ -11888,7 +12016,8 @@ smtg:observedCount
   skos:notation "Horsemanship" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 153 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.31" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/kicker>
   a smtg:KeywordAbility ;
@@ -11898,7 +12027,8 @@ smtg:observedCount
   skos:notation "Kicker" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 3074 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.33" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/madness>
   a smtg:KeywordAbility ;
@@ -11908,7 +12038,8 @@ smtg:observedCount
   skos:notation "Madness" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1178 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.35" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/swampwalk>
   a smtg:KeywordAbility ;
@@ -11918,7 +12049,9 @@ smtg:observedCount
   skos:notation "Swampwalk" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 695 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.14" ;
+  skos:editorialNote "Variant of Landwalk (CR 702.14), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/desertwalk>
   a smtg:KeywordAbility ;
@@ -11928,7 +12061,9 @@ smtg:observedCount
   skos:notation "Desertwalk" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 16 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.14" ;
+  skos:editorialNote "Variant of Landwalk (CR 702.14), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/craft>
   a smtg:KeywordAbility ;
@@ -11938,7 +12073,8 @@ smtg:observedCount
   skos:notation "Craft" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 167 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.167" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/plainswalk>
   a smtg:KeywordAbility ;
@@ -11948,7 +12084,9 @@ smtg:observedCount
   skos:notation "Plainswalk" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 33 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.14" ;
+  skos:editorialNote "Variant of Landwalk (CR 702.14), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/split-second>
   a smtg:KeywordAbility ;
@@ -11958,7 +12096,8 @@ smtg:observedCount
   skos:notation "Split second" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 421 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.61" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/augment>
   a smtg:KeywordAbility ;
@@ -11968,7 +12107,10 @@ smtg:observedCount
   skos:notation "Augment" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 17 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword ability (702). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/double-agenda>
   a smtg:KeywordAbility ;
@@ -11978,7 +12120,9 @@ smtg:observedCount
   skos:notation "Double agenda" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 3 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.106f" ;
+  skos:editorialNote "Defined as part of CR 702.106f, not under its own heading."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/reconfigure>
   a smtg:KeywordAbility ;
@@ -11988,7 +12132,8 @@ smtg:observedCount
   skos:notation "Reconfigure" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 323 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.151" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/ward>
   a smtg:KeywordAbility ;
@@ -11998,7 +12143,8 @@ smtg:observedCount
   skos:notation "Ward" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 2605 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.21" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/partner-with>
   a smtg:KeywordAbility ;
@@ -12008,7 +12154,9 @@ smtg:observedCount
   skos:notation "Partner with" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 465 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.124j" ;
+  skos:editorialNote "Defined as part of CR 702.124j, not under its own heading."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/nightbound>
   a smtg:KeywordAbility ;
@@ -12018,7 +12166,9 @@ smtg:observedCount
   skos:notation "Nightbound" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 435 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.145" ;
+  skos:editorialNote "The Comprehensive Rules name it differently: Daybound and Nightbound."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/decayed>
   a smtg:KeywordAbility ;
@@ -12028,7 +12178,8 @@ smtg:observedCount
   skos:notation "Decayed" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 18 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.147" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/disturb>
   a smtg:KeywordAbility ;
@@ -12038,7 +12189,8 @@ smtg:observedCount
   skos:notation "Disturb" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 295 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.146" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/squad>
   a smtg:KeywordAbility ;
@@ -12048,7 +12200,8 @@ smtg:observedCount
   skos:notation "Squad" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 130 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.157" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/enlist>
   a smtg:KeywordAbility ;
@@ -12058,7 +12211,8 @@ smtg:observedCount
   skos:notation "Enlist" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 119 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.154" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/read-ahead>
   a smtg:KeywordAbility ;
@@ -12068,7 +12222,8 @@ smtg:observedCount
   skos:notation "Read Ahead" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 95 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.155" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/ravenous>
   a smtg:KeywordAbility ;
@@ -12078,7 +12233,8 @@ smtg:observedCount
   skos:notation "Ravenous" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 108 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.156" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/blitz>
   a smtg:KeywordAbility ;
@@ -12088,7 +12244,8 @@ smtg:observedCount
   skos:notation "Blitz" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 261 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.152" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/offering>
   a smtg:KeywordAbility ;
@@ -12098,7 +12255,8 @@ smtg:observedCount
   skos:notation "Offering" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 66 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.48" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/suspend>
   a smtg:KeywordAbility ;
@@ -12108,7 +12266,8 @@ smtg:observedCount
   skos:notation "Suspend" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1346 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.62" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/living-metal>
   a smtg:KeywordAbility ;
@@ -12118,7 +12277,8 @@ smtg:observedCount
   skos:notation "Living metal" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 25 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.161" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/backup>
   a smtg:KeywordAbility ;
@@ -12128,7 +12288,8 @@ smtg:observedCount
   skos:notation "Backup" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 277 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.165" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/banding>
   a smtg:KeywordAbility ;
@@ -12138,7 +12299,8 @@ smtg:observedCount
   skos:notation "Banding" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 296 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.22" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/hidden-agenda>
   a smtg:KeywordAbility ;
@@ -12148,7 +12310,8 @@ smtg:observedCount
   skos:notation "Hidden agenda" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 46 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.106" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/for-mirrodin>
   a smtg:KeywordAbility ;
@@ -12158,7 +12321,8 @@ smtg:observedCount
   skos:notation "For Mirrodin!" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 153 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.163" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/friends-forever>
   a smtg:KeywordAbility ;
@@ -12168,7 +12332,9 @@ smtg:observedCount
   skos:notation "Friends forever" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.124i" ;
+  skos:editorialNote "Defined as part of CR 702.124i, not under its own heading."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/casualty>
   a smtg:KeywordAbility ;
@@ -12178,7 +12344,8 @@ smtg:observedCount
   skos:notation "Casualty" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 235 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.153" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/protection>
   a smtg:KeywordAbility ;
@@ -12188,7 +12355,8 @@ smtg:observedCount
   skos:notation "Protection" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 2767 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.16" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/compleated>
   a smtg:KeywordAbility ;
@@ -12198,7 +12366,8 @@ smtg:observedCount
   skos:notation "Compleated" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 179 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.150" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/enchant>
   a smtg:KeywordAbility ;
@@ -12208,7 +12377,8 @@ smtg:observedCount
   skos:notation "Enchant" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 18913 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.5" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/flash>
   a smtg:KeywordAbility ;
@@ -12218,7 +12388,8 @@ smtg:observedCount
   skos:notation "Flash" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 8872 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.8" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/boast>
   a smtg:KeywordAbility ;
@@ -12228,7 +12399,8 @@ smtg:observedCount
   skos:notation "Boast" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 260 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.142" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/landwalk>
   a smtg:KeywordAbility ;
@@ -12238,7 +12410,8 @@ smtg:observedCount
   skos:notation "Landwalk" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1990 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.14" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/typecycling>
   a smtg:KeywordAbility ;
@@ -12248,7 +12421,9 @@ smtg:observedCount
   skos:notation "Typecycling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1378 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.29" ;
+  skos:editorialNote "Variant of Cycling (CR 702.29), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/demonstrate>
   a smtg:KeywordAbility ;
@@ -12258,7 +12433,8 @@ smtg:observedCount
   skos:notation "Demonstrate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 115 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.144" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/sunburst>
   a smtg:KeywordAbility ;
@@ -12268,7 +12444,8 @@ smtg:observedCount
   skos:notation "Sunburst" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 183 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.44" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/flashback>
   a smtg:KeywordAbility ;
@@ -12278,7 +12455,8 @@ smtg:observedCount
   skos:notation "Flashback" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 3751 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.34" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/cycling>
   a smtg:KeywordAbility ;
@@ -12288,7 +12466,8 @@ smtg:observedCount
   skos:notation "Cycling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 7116 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.29" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/buyback>
   a smtg:KeywordAbility ;
@@ -12298,7 +12477,8 @@ smtg:observedCount
   skos:notation "Buyback" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 476 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.27" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/hexproof-from>
   a smtg:KeywordAbility ;
@@ -12308,7 +12488,9 @@ smtg:observedCount
   skos:notation "Hexproof from" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 260 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.11d" ;
+  skos:editorialNote "Defined as part of CR 702.11d, not under its own heading."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/landcycling>
   a smtg:KeywordAbility ;
@@ -12318,7 +12500,9 @@ smtg:observedCount
   skos:notation "Landcycling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1326 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.29" ;
+  skos:editorialNote "Variant of Cycling (CR 702.29), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/more-than-meets-the-eye>
   a smtg:KeywordAbility ;
@@ -12328,7 +12512,8 @@ smtg:observedCount
   skos:notation "More Than Meets the Eye" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 29 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.162" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/cleave>
   a smtg:KeywordAbility ;
@@ -12338,7 +12523,8 @@ smtg:observedCount
   skos:notation "Cleave" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 195 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.148" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/champion>
   a smtg:KeywordAbility ;
@@ -12348,7 +12534,8 @@ smtg:observedCount
   skos:notation "Champion" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 136 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.72" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/specialize>
   a smtg:KeywordAbility ;
@@ -12358,7 +12545,10 @@ smtg:observedCount
   skos:notation "Specialize" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 19 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword ability (702). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/training>
   a smtg:KeywordAbility ;
@@ -12368,7 +12558,8 @@ smtg:observedCount
   skos:notation "Training" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 170 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.149" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/prototype>
   a smtg:KeywordAbility ;
@@ -12378,7 +12569,8 @@ smtg:observedCount
   skos:notation "Prototype" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 210 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.160" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/toxic>
   a smtg:KeywordAbility ;
@@ -12388,7 +12580,8 @@ smtg:observedCount
   skos:notation "Toxic" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 427 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.164" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/unearth>
   a smtg:KeywordAbility ;
@@ -12398,7 +12591,8 @@ smtg:observedCount
   skos:notation "Unearth" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 693 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.84" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/intensity>
   a smtg:KeywordAbility ;
@@ -12408,7 +12602,10 @@ smtg:observedCount
   skos:notation "Intensity" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 20 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword ability (702). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/disguise>
   a smtg:KeywordAbility ;
@@ -12418,7 +12615,8 @@ smtg:observedCount
   skos:notation "Disguise" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 447 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.168" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/slivercycling>
   a smtg:KeywordAbility ;
@@ -12428,7 +12626,9 @@ smtg:observedCount
   skos:notation "Slivercycling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 21 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.29" ;
+  skos:editorialNote "Variant of Cycling (CR 702.29), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/plainscycling>
   a smtg:KeywordAbility ;
@@ -12438,7 +12638,9 @@ smtg:observedCount
   skos:notation "Plainscycling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 243 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.29" ;
+  skos:editorialNote "Variant of Cycling (CR 702.29), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/swampcycling>
   a smtg:KeywordAbility ;
@@ -12448,7 +12650,9 @@ smtg:observedCount
   skos:notation "Swampcycling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 142 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.29" ;
+  skos:editorialNote "Variant of Cycling (CR 702.29), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/basic-landcycling>
   a smtg:KeywordAbility ;
@@ -12458,7 +12662,9 @@ smtg:observedCount
   skos:notation "Basic landcycling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 585 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.29" ;
+  skos:editorialNote "Variant of Cycling (CR 702.29), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/islandcycling>
   a smtg:KeywordAbility ;
@@ -12468,7 +12674,9 @@ smtg:observedCount
   skos:notation "Islandcycling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 109 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.29" ;
+  skos:editorialNote "Variant of Cycling (CR 702.29), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/mountaincycling>
   a smtg:KeywordAbility ;
@@ -12478,7 +12686,9 @@ smtg:observedCount
   skos:notation "Mountaincycling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 173 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.29" ;
+  skos:editorialNote "Variant of Cycling (CR 702.29), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/forestcycling>
   a smtg:KeywordAbility ;
@@ -12488,7 +12698,9 @@ smtg:observedCount
   skos:notation "Forestcycling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 133 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.29" ;
+  skos:editorialNote "Variant of Cycling (CR 702.29), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/wizardcycling>
   a smtg:KeywordAbility ;
@@ -12498,7 +12710,9 @@ smtg:observedCount
   skos:notation "Wizardcycling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 31 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.29" ;
+  skos:editorialNote "Variant of Cycling (CR 702.29), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/bargain>
   a smtg:KeywordAbility ;
@@ -12508,7 +12722,8 @@ smtg:observedCount
   skos:notation "Bargain" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 202 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.166" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/doctors-companion>
   a smtg:KeywordAbility ;
@@ -12518,7 +12733,9 @@ smtg:observedCount
   skos:notation "Doctor's companion" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 221 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.124m" ;
+  skos:editorialNote "Defined as part of CR 702.124m, not under its own heading."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/choose-a-background>
   a smtg:KeywordAbility ;
@@ -12528,7 +12745,9 @@ smtg:observedCount
   skos:notation "Choose a background" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 704 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.124k" ;
+  skos:editorialNote "Defined as part of CR 702.124k, not under its own heading."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/echo>
   a smtg:KeywordAbility ;
@@ -12538,7 +12757,8 @@ smtg:observedCount
   skos:notation "Echo" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 753 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.30" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/umbra-armor>
   a smtg:KeywordAbility ;
@@ -12548,7 +12768,8 @@ smtg:observedCount
   skos:notation "Umbra armor" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 263 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.89" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/freerunning>
   a smtg:KeywordAbility ;
@@ -12558,7 +12779,8 @@ smtg:observedCount
   skos:notation "Freerunning" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 123 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.173" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/spree>
   a smtg:KeywordAbility ;
@@ -12568,7 +12790,8 @@ smtg:observedCount
   skos:notation "Spree" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 242 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.172" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/saddle>
   a smtg:KeywordAbility ;
@@ -12578,7 +12801,8 @@ smtg:observedCount
   skos:notation "Saddle" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 331 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.171" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/shadow>
   a smtg:KeywordAbility ;
@@ -12588,7 +12812,8 @@ smtg:observedCount
   skos:notation "Shadow" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 506 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.28" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/warp>
   a smtg:KeywordAbility ;
@@ -12598,7 +12823,8 @@ smtg:observedCount
   skos:notation "Warp" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 301 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.185" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/station>
   a smtg:KeywordAbility ;
@@ -12608,7 +12834,8 @@ smtg:observedCount
   skos:notation "Station" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 365 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.184" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/devour>
   a smtg:KeywordAbility ;
@@ -12618,7 +12845,8 @@ smtg:observedCount
   skos:notation "Devour" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 297 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.82" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/undaunted>
   a smtg:KeywordAbility ;
@@ -12628,7 +12856,8 @@ smtg:observedCount
   skos:notation "Undaunted" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 105 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.125" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/gift>
   a smtg:KeywordAbility ;
@@ -12638,7 +12867,8 @@ smtg:observedCount
   skos:notation "Gift" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 219 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.174" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/offspring>
   a smtg:KeywordAbility ;
@@ -12648,7 +12878,8 @@ smtg:observedCount
   skos:notation "Offspring" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 189 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.175" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/impending>
   a smtg:KeywordAbility ;
@@ -12658,7 +12889,8 @@ smtg:observedCount
   skos:notation "Impending" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 87 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.176" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/harmonize>
   a smtg:KeywordAbility ;
@@ -12668,7 +12900,8 @@ smtg:observedCount
   skos:notation "Harmonize" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 90 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.180" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/exhaust>
   a smtg:KeywordAbility ;
@@ -12678,7 +12911,8 @@ smtg:observedCount
   skos:notation "Exhaust" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 401 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.177" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/max-speed>
   a smtg:KeywordAbility ;
@@ -12688,7 +12922,8 @@ smtg:observedCount
   skos:notation "Max speed" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 358 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.178" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/tiered>
   a smtg:KeywordAbility ;
@@ -12698,7 +12933,8 @@ smtg:observedCount
   skos:notation "Tiered" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 46 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.183" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/mobilize>
   a smtg:KeywordAbility ;
@@ -12708,7 +12944,8 @@ smtg:observedCount
   skos:notation "Mobilize" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 115 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.181" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/double-team>
   a smtg:KeywordAbility ;
@@ -12718,7 +12955,10 @@ smtg:observedCount
   skos:notation "Double team" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 19 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword ability (702). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/job-select>
   a smtg:KeywordAbility ;
@@ -12728,7 +12968,8 @@ smtg:observedCount
   skos:notation "Job select" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 134 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.182" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/mayhem>
   a smtg:KeywordAbility ;
@@ -12738,7 +12979,8 @@ smtg:observedCount
   skos:notation "Mayhem" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 150 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.187" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/web-slinging>
   a smtg:KeywordAbility ;
@@ -12748,7 +12990,8 @@ smtg:observedCount
   skos:notation "Web-slinging" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 101 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.188" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/prowl>
   a smtg:KeywordAbility ;
@@ -12758,7 +13001,8 @@ smtg:observedCount
   skos:notation "Prowl" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 123 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.76" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/solved>
   a smtg:KeywordAbility ;
@@ -12768,7 +13012,8 @@ smtg:observedCount
   skos:notation "Solved" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 115 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.169" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/sneak>
   a smtg:KeywordAbility ;
@@ -12778,7 +13023,8 @@ smtg:observedCount
   skos:notation "Sneak" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 312 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.190" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/increment>
   a smtg:KeywordAbility ;
@@ -12788,7 +13034,8 @@ smtg:observedCount
   skos:notation "Increment" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 70 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.191" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/paradigm>
   a smtg:KeywordAbility ;
@@ -12798,7 +13045,8 @@ smtg:observedCount
   skos:notation "Paradigm" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 65 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.192" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/teamwork>
   a smtg:KeywordAbility ;
@@ -12808,7 +13056,8 @@ smtg:observedCount
   skos:notation "Teamwork" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 108 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.194" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/storm>
   a smtg:KeywordAbility ;
@@ -12818,7 +13067,8 @@ smtg:observedCount
   skos:notation "Storm" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 673 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.40" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/fear>
   a smtg:KeywordAbility ;
@@ -12828,7 +13078,8 @@ smtg:observedCount
   skos:notation "Fear" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 672 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.36" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/storied>
   a smtg:KeywordAbility ;
@@ -12838,7 +13089,8 @@ smtg:observedCount
   skos:notation "Storied" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 72 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.195" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/firebending>
   a smtg:KeywordAbility ;
@@ -12848,7 +13100,8 @@ smtg:observedCount
   skos:notation "Firebending" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 235 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.189" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/power-up>
   a smtg:KeywordAbility ;
@@ -12858,7 +13111,8 @@ smtg:observedCount
   skos:notation "Power-up" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 258 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.193" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/halflingcycling>
   a smtg:KeywordAbility ;
@@ -12868,7 +13122,9 @@ smtg:observedCount
   skos:notation "Halflingcycling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 6 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.29" ;
+  skos:editorialNote "Variant of Cycling (CR 702.29), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/equip>
   a smtg:KeywordAbility ;
@@ -12878,7 +13134,8 @@ smtg:observedCount
   skos:notation "Equip" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 9358 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.6" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/affinitycycling>
   a smtg:KeywordAbility ;
@@ -12888,7 +13145,9 @@ smtg:observedCount
   skos:notation "Affinitycycling" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.29" ;
+  skos:editorialNote "Variant of Cycling (CR 702.29), which the rules define generically."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/daybound>
   a smtg:KeywordAbility ;
@@ -12898,7 +13157,9 @@ smtg:observedCount
   skos:notation "Daybound" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 436 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.145" ;
+  skos:editorialNote "The Comprehensive Rules name it differently: Daybound and Nightbound."@en .
 
 <https://w3id.org/smtg/vocab/keyword-ability/undying>
   a smtg:KeywordAbility ;
@@ -12908,7 +13169,8 @@ smtg:observedCount
   skos:notation "Undying" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 301 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.93" .
 
 <https://w3id.org/smtg/vocab/keyword-ability/follow-the-3rd-rule>
   a smtg:KeywordAbility ;
@@ -12918,7 +13180,10 @@ smtg:observedCount
   skos:notation "Follow the 3rd Rule" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword ability (702). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 
 # ---- Keyword actions ----
@@ -12926,7 +13191,7 @@ smtg:observedCount
 <https://w3id.org/smtg/vocab/keyword-action>
   a skos:ConceptScheme ;
   rdfs:label "Keyword actions"@en ;
-  skos:definition "Scryfall catalog \"keyword-actions\"."@en ;
+  skos:definition "Scryfall catalog \"keyword-actions\", cross-checked against the Comprehensive Rules (September 25, 2026), keyword action (701)."@en ;
   smtg:conceptClass smtg:KeywordAction ;
   rdfs:isDefinedBy smtgm:vocab .
 
@@ -12938,7 +13203,8 @@ smtg:observedCount
   skos:notation "Scry" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 7780 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.22" .
 
 <https://w3id.org/smtg/vocab/keyword-action/seek>
   a smtg:KeywordAction ;
@@ -12948,7 +13214,10 @@ smtg:observedCount
   skos:notation "Seek" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 140 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword action (701). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/heal>
   a smtg:KeywordAction ;
@@ -12958,7 +13227,8 @@ smtg:observedCount
   skos:notation "Heal" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 940 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.69" .
 
 <https://w3id.org/smtg/vocab/keyword-action/activate>
   a smtg:KeywordAction ;
@@ -12968,7 +13238,8 @@ smtg:observedCount
   skos:notation "Activate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.2" .
 
 <https://w3id.org/smtg/vocab/keyword-action/attach>
   a smtg:KeywordAction ;
@@ -12978,7 +13249,8 @@ smtg:observedCount
   skos:notation "Attach" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.3" .
 
 <https://w3id.org/smtg/vocab/keyword-action/cast>
   a smtg:KeywordAction ;
@@ -12988,7 +13260,8 @@ smtg:observedCount
   skos:notation "Cast" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.5" .
 
 <https://w3id.org/smtg/vocab/keyword-action/counter>
   a smtg:KeywordAction ;
@@ -12998,7 +13271,8 @@ smtg:observedCount
   skos:notation "Counter" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.6" .
 
 <https://w3id.org/smtg/vocab/keyword-action/create>
   a smtg:KeywordAction ;
@@ -13008,7 +13282,8 @@ smtg:observedCount
   skos:notation "Create" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.7" .
 
 <https://w3id.org/smtg/vocab/keyword-action/destroy>
   a smtg:KeywordAction ;
@@ -13018,7 +13293,8 @@ smtg:observedCount
   skos:notation "Destroy" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.8" .
 
 <https://w3id.org/smtg/vocab/keyword-action/discard>
   a smtg:KeywordAction ;
@@ -13028,7 +13304,8 @@ smtg:observedCount
   skos:notation "Discard" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.9" .
 
 <https://w3id.org/smtg/vocab/keyword-action/exchange>
   a smtg:KeywordAction ;
@@ -13038,7 +13315,8 @@ smtg:observedCount
   skos:notation "Exchange" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.12" .
 
 <https://w3id.org/smtg/vocab/keyword-action/exile>
   a smtg:KeywordAction ;
@@ -13048,7 +13326,8 @@ smtg:observedCount
   skos:notation "Exile" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.13" .
 
 <https://w3id.org/smtg/vocab/keyword-action/adapt>
   a smtg:KeywordAction ;
@@ -13058,7 +13337,8 @@ smtg:observedCount
   skos:notation "Adapt" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 356 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.46" .
 
 <https://w3id.org/smtg/vocab/keyword-action/support>
   a smtg:KeywordAction ;
@@ -13068,7 +13348,8 @@ smtg:observedCount
   skos:notation "Support" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 297 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.41" .
 
 <https://w3id.org/smtg/vocab/keyword-action/play>
   a smtg:KeywordAction ;
@@ -13078,7 +13359,8 @@ smtg:observedCount
   skos:notation "Play" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.18" .
 
 <https://w3id.org/smtg/vocab/keyword-action/reveal>
   a smtg:KeywordAction ;
@@ -13088,7 +13370,8 @@ smtg:observedCount
   skos:notation "Reveal" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.20" .
 
 <https://w3id.org/smtg/vocab/keyword-action/sacrifice>
   a smtg:KeywordAction ;
@@ -13098,7 +13381,8 @@ smtg:observedCount
   skos:notation "Sacrifice" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.21" .
 
 <https://w3id.org/smtg/vocab/keyword-action/shuffle>
   a smtg:KeywordAction ;
@@ -13108,7 +13392,8 @@ smtg:observedCount
   skos:notation "Shuffle" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.24" .
 
 <https://w3id.org/smtg/vocab/keyword-action/tap>
   a smtg:KeywordAction ;
@@ -13118,7 +13403,9 @@ smtg:observedCount
   skos:notation "Tap" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.26" ;
+  skos:editorialNote "The Comprehensive Rules name it differently: Tap and Untap."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/untap>
   a smtg:KeywordAction ;
@@ -13128,7 +13415,9 @@ smtg:observedCount
   skos:notation "Untap" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.26" ;
+  skos:editorialNote "The Comprehensive Rules name it differently: Tap and Untap."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/vote>
   a smtg:KeywordAction ;
@@ -13138,7 +13427,8 @@ smtg:observedCount
   skos:notation "Vote" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.38" .
 
 <https://w3id.org/smtg/vocab/keyword-action/time-travel>
   a smtg:KeywordAction ;
@@ -13148,7 +13438,8 @@ smtg:observedCount
   skos:notation "Time Travel" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 63 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.56" .
 
 <https://w3id.org/smtg/vocab/keyword-action/goad>
   a smtg:KeywordAction ;
@@ -13158,7 +13449,8 @@ smtg:observedCount
   skos:notation "Goad" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1263 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.15" .
 
 <https://w3id.org/smtg/vocab/keyword-action/transform>
   a smtg:KeywordAction ;
@@ -13168,7 +13460,8 @@ smtg:observedCount
   skos:notation "Transform" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 4925 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.27" .
 
 <https://w3id.org/smtg/vocab/keyword-action/surveil>
   a smtg:KeywordAction ;
@@ -13178,7 +13471,8 @@ smtg:observedCount
   skos:notation "Surveil" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 2821 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.25" .
 
 <https://w3id.org/smtg/vocab/keyword-action/planeswalk>
   a smtg:KeywordAction ;
@@ -13188,7 +13482,8 @@ smtg:observedCount
   skos:notation "Planeswalk" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.31" .
 
 <https://w3id.org/smtg/vocab/keyword-action/empower-jace>
   a smtg:KeywordAction ;
@@ -13198,7 +13493,8 @@ smtg:observedCount
   skos:notation "Empower Jace" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 279 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.71" .
 
 <https://w3id.org/smtg/vocab/keyword-action/mill>
   a smtg:KeywordAction ;
@@ -13208,7 +13504,8 @@ smtg:observedCount
   skos:notation "Mill" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 8544 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.17" .
 
 <https://w3id.org/smtg/vocab/keyword-action/learn>
   a smtg:KeywordAction ;
@@ -13218,7 +13515,8 @@ smtg:observedCount
   skos:notation "Learn" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 279 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.48" .
 
 <https://w3id.org/smtg/vocab/keyword-action/connive>
   a smtg:KeywordAction ;
@@ -13228,7 +13526,8 @@ smtg:observedCount
   skos:notation "Connive" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 611 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.50" .
 
 <https://w3id.org/smtg/vocab/keyword-action/venture-into-the-dungeon>
   a smtg:KeywordAction ;
@@ -13238,7 +13537,8 @@ smtg:observedCount
   skos:notation "Venture into the dungeon" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 594 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.49" .
 
 <https://w3id.org/smtg/vocab/keyword-action/regenerate>
   a smtg:KeywordAction ;
@@ -13248,7 +13548,8 @@ smtg:observedCount
   skos:notation "Regenerate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 3935 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.19" .
 
 <https://w3id.org/smtg/vocab/keyword-action/open-an-attraction>
   a smtg:KeywordAction ;
@@ -13258,7 +13559,8 @@ smtg:observedCount
   skos:notation "Open an Attraction" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 96 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.51" .
 
 <https://w3id.org/smtg/vocab/keyword-action/food>
   a smtg:KeywordAction ;
@@ -13268,7 +13570,10 @@ smtg:observedCount
   skos:notation "Food" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1748 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword action (701); the term appears in CR 111.10b. Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/discover>
   a smtg:KeywordAction ;
@@ -13278,7 +13583,8 @@ smtg:observedCount
   skos:notation "Discover" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 359 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.57" .
 
 <https://w3id.org/smtg/vocab/keyword-action/abandon>
   a smtg:KeywordAction ;
@@ -13288,7 +13594,8 @@ smtg:observedCount
   skos:notation "Abandon" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.33" .
 
 <https://w3id.org/smtg/vocab/keyword-action/explore>
   a smtg:KeywordAction ;
@@ -13298,7 +13605,8 @@ smtg:observedCount
   skos:notation "Explore" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 695 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.44" .
 
 <https://w3id.org/smtg/vocab/keyword-action/treasure>
   a smtg:KeywordAction ;
@@ -13308,7 +13616,10 @@ smtg:observedCount
   skos:notation "Treasure" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 5743 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword action (701); the term appears in CR 111.10a. Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/roll-to-visit-your-attractions>
   a smtg:KeywordAction ;
@@ -13318,7 +13629,8 @@ smtg:observedCount
   skos:notation "Roll to Visit Your Attractions" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 6 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.52" .
 
 <https://w3id.org/smtg/vocab/keyword-action/set-in-motion>
   a smtg:KeywordAction ;
@@ -13328,7 +13640,8 @@ smtg:observedCount
   skos:notation "Set in motion" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.32" .
 
 <https://w3id.org/smtg/vocab/keyword-action/fateseal>
   a smtg:KeywordAction ;
@@ -13338,7 +13651,8 @@ smtg:observedCount
   skos:notation "Fateseal" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 22 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.29" .
 
 <https://w3id.org/smtg/vocab/keyword-action/manifest>
   a smtg:KeywordAction ;
@@ -13348,7 +13662,8 @@ smtg:observedCount
   skos:notation "Manifest" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 874 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.40" .
 
 <https://w3id.org/smtg/vocab/keyword-action/populate>
   a smtg:KeywordAction ;
@@ -13358,7 +13673,8 @@ smtg:observedCount
   skos:notation "Populate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 417 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.36" .
 
 <https://w3id.org/smtg/vocab/keyword-action/detain>
   a smtg:KeywordAction ;
@@ -13368,7 +13684,8 @@ smtg:observedCount
   skos:notation "Detain" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 189 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.35" .
 
 <https://w3id.org/smtg/vocab/keyword-action/investigate>
   a smtg:KeywordAction ;
@@ -13378,7 +13695,8 @@ smtg:observedCount
   skos:notation "Investigate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1785 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.16" .
 
 <https://w3id.org/smtg/vocab/keyword-action/monstrosity>
   a smtg:KeywordAction ;
@@ -13388,7 +13706,8 @@ smtg:observedCount
   skos:notation "Monstrosity" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 508 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.37" .
 
 <https://w3id.org/smtg/vocab/keyword-action/clash>
   a smtg:KeywordAction ;
@@ -13398,7 +13717,8 @@ smtg:observedCount
   skos:notation "Clash" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 297 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.30" .
 
 <https://w3id.org/smtg/vocab/keyword-action/incubate>
   a smtg:KeywordAction ;
@@ -13408,7 +13728,8 @@ smtg:observedCount
   skos:notation "Incubate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 370 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.53" .
 
 <https://w3id.org/smtg/vocab/keyword-action/proliferate>
   a smtg:KeywordAction ;
@@ -13418,7 +13739,8 @@ smtg:observedCount
   skos:notation "Proliferate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1587 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.34" .
 
 <https://w3id.org/smtg/vocab/keyword-action/meld>
   a smtg:KeywordAction ;
@@ -13428,7 +13750,8 @@ smtg:observedCount
   skos:notation "Meld" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 91 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.42" .
 
 <https://w3id.org/smtg/vocab/keyword-action/fight>
   a smtg:KeywordAction ;
@@ -13438,7 +13761,8 @@ smtg:observedCount
   skos:notation "Fight" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 2156 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.14" .
 
 <https://w3id.org/smtg/vocab/keyword-action/bolster>
   a smtg:KeywordAction ;
@@ -13448,7 +13772,8 @@ smtg:observedCount
   skos:notation "Bolster" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 360 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.39" .
 
 <https://w3id.org/smtg/vocab/keyword-action/assemble>
   a smtg:KeywordAction ;
@@ -13458,7 +13783,8 @@ smtg:observedCount
   skos:notation "Assemble" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 37 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.45" .
 
 <https://w3id.org/smtg/vocab/keyword-action/conjure>
   a smtg:KeywordAction ;
@@ -13468,7 +13794,10 @@ smtg:observedCount
   skos:notation "Conjure" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 213 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword action (701). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/cloak>
   a smtg:KeywordAction ;
@@ -13478,7 +13807,8 @@ smtg:observedCount
   skos:notation "Cloak" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 167 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.58" .
 
 <https://w3id.org/smtg/vocab/keyword-action/suspect>
   a smtg:KeywordAction ;
@@ -13488,7 +13818,8 @@ smtg:observedCount
   skos:notation "Suspect" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 200 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.60" .
 
 <https://w3id.org/smtg/vocab/keyword-action/collect-evidence>
   a smtg:KeywordAction ;
@@ -13498,7 +13829,8 @@ smtg:observedCount
   skos:notation "Collect evidence" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 252 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.59" .
 
 <https://w3id.org/smtg/vocab/keyword-action/role-token>
   a smtg:KeywordAction ;
@@ -13508,7 +13840,10 @@ smtg:observedCount
   skos:notation "Role token" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 383 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword action (701); the term appears in CR 111.10j. Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/plot>
   a smtg:KeywordAction ;
@@ -13518,7 +13853,10 @@ smtg:observedCount
   skos:notation "Plot" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 426 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.170" ;
+  skos:editorialNote "Scryfall lists this as keyword action; the Comprehensive Rules define it as a keyword ability (702) — Plot (702.170)."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/harness>
   a smtg:KeywordAction ;
@@ -13528,7 +13866,8 @@ smtg:observedCount
   skos:notation "Harness" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 0 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.64" .
 
 <https://w3id.org/smtg/vocab/keyword-action/draft-from-a-spellbook>
   a smtg:KeywordAction ;
@@ -13538,7 +13877,10 @@ smtg:observedCount
   skos:notation "Draft from a spellbook" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 44 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword action (701). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/heist>
   a smtg:KeywordAction ;
@@ -13548,7 +13890,10 @@ smtg:observedCount
   skos:notation "Heist" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 9 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword action (701). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/forage>
   a smtg:KeywordAction ;
@@ -13558,7 +13903,8 @@ smtg:observedCount
   skos:notation "Forage" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 62 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.61" .
 
 <https://w3id.org/smtg/vocab/keyword-action/manifest-dread>
   a smtg:KeywordAction ;
@@ -13568,7 +13914,8 @@ smtg:observedCount
   skos:notation "Manifest dread" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 239 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.62" .
 
 <https://w3id.org/smtg/vocab/keyword-action/endure>
   a smtg:KeywordAction ;
@@ -13578,7 +13925,8 @@ smtg:observedCount
   skos:notation "Endure" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 86 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.63" .
 
 <https://w3id.org/smtg/vocab/keyword-action/prepared>
   a smtg:KeywordAction ;
@@ -13588,7 +13936,10 @@ smtg:observedCount
   skos:notation "Prepared" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 586 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword action (701); the term appears in CR 722.3a. Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/incorporate>
   a smtg:KeywordAction ;
@@ -13598,7 +13949,10 @@ smtg:observedCount
   skos:notation "Incorporate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 6 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword action (701). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/exert>
   a smtg:KeywordAction ;
@@ -13608,7 +13962,8 @@ smtg:observedCount
   skos:notation "Exert" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 466 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.43" .
 
 <https://w3id.org/smtg/vocab/keyword-action/convert>
   a smtg:KeywordAction ;
@@ -13618,7 +13973,8 @@ smtg:observedCount
   skos:notation "Convert" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 29 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.28" .
 
 <https://w3id.org/smtg/vocab/keyword-action/waterbend>
   a smtg:KeywordAction ;
@@ -13628,7 +13984,8 @@ smtg:observedCount
   skos:notation "Waterbend" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 232 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.67" .
 
 <https://w3id.org/smtg/vocab/keyword-action/airbend>
   a smtg:KeywordAction ;
@@ -13638,7 +13995,8 @@ smtg:observedCount
   skos:notation "Airbend" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 103 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.65" .
 
 <https://w3id.org/smtg/vocab/keyword-action/earthbend>
   a smtg:KeywordAction ;
@@ -13648,7 +14006,8 @@ smtg:observedCount
   skos:notation "Earthbend" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 270 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.66" .
 
 <https://w3id.org/smtg/vocab/keyword-action/blight>
   a smtg:KeywordAction ;
@@ -13658,7 +14017,8 @@ smtg:observedCount
   skos:notation "Blight" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 192 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.68" .
 
 <https://w3id.org/smtg/vocab/keyword-action/assimilate>
   a smtg:KeywordAction ;
@@ -13668,7 +14028,10 @@ smtg:observedCount
   skos:notation "Assimilate" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 18 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword action (701). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/behold>
   a smtg:KeywordAction ;
@@ -13678,7 +14041,8 @@ smtg:observedCount
   skos:notation "Behold" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 197 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.4" .
 
 <https://w3id.org/smtg/vocab/keyword-action/double>
   a smtg:KeywordAction ;
@@ -13688,7 +14052,8 @@ smtg:observedCount
   skos:notation "Double" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1989 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.10" .
 
 <https://w3id.org/smtg/vocab/keyword-action/triple>
   a smtg:KeywordAction ;
@@ -13698,7 +14063,8 @@ smtg:observedCount
   skos:notation "Triple" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 72 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.11" .
 
 <https://w3id.org/smtg/vocab/keyword-action/face-a-dilemma>
   a smtg:KeywordAction ;
@@ -13708,7 +14074,10 @@ smtg:observedCount
   skos:notation "Face a dilemma" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 11 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a keyword action (701). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/keyword-action/amass>
   a smtg:KeywordAction ;
@@ -13718,7 +14087,8 @@ smtg:observedCount
   skos:notation "Amass" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 884 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.47" .
 
 <https://w3id.org/smtg/vocab/keyword-action/recruit>
   a smtg:KeywordAction ;
@@ -13728,7 +14098,8 @@ smtg:observedCount
   skos:notation "Recruit" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 77 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.70" .
 
 
 # ---- Ability words ----
@@ -13736,7 +14107,7 @@ smtg:observedCount
 <https://w3id.org/smtg/vocab/ability-word>
   a skos:ConceptScheme ;
   rdfs:label "Ability words"@en ;
-  skos:definition "Scryfall catalog \"ability-words\"."@en ;
+  skos:definition "Scryfall catalog \"ability-words\", cross-checked against the Comprehensive Rules (September 25, 2026), ability word (207.2c)."@en ;
   smtg:conceptClass smtg:AbilityWord ;
   rdfs:isDefinedBy smtgm:vocab .
 
@@ -13748,7 +14119,8 @@ smtg:observedCount
   skos:notation "Eerie" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 137 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/battalion>
   a smtg:AbilityWord ;
@@ -13758,7 +14130,8 @@ smtg:observedCount
   skos:notation "Battalion" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 304 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/bloodrush>
   a smtg:AbilityWord ;
@@ -13768,7 +14141,8 @@ smtg:observedCount
   skos:notation "Bloodrush" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 237 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/channel>
   a smtg:AbilityWord ;
@@ -13778,7 +14152,8 @@ smtg:observedCount
   skos:notation "Channel" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 583 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/chroma>
   a smtg:AbilityWord ;
@@ -13788,7 +14163,8 @@ smtg:observedCount
   skos:notation "Chroma" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 91 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/cohort>
   a smtg:AbilityWord ;
@@ -13798,7 +14174,8 @@ smtg:observedCount
   skos:notation "Cohort" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 106 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/constellation>
   a smtg:AbilityWord ;
@@ -13808,7 +14185,8 @@ smtg:observedCount
   skos:notation "Constellation" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 560 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/converge>
   a smtg:AbilityWord ;
@@ -13818,7 +14196,8 @@ smtg:observedCount
   skos:notation "Converge" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 419 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/delirium>
   a smtg:AbilityWord ;
@@ -13828,7 +14207,8 @@ smtg:observedCount
   skos:notation "Delirium" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 935 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/domain>
   a smtg:AbilityWord ;
@@ -13838,7 +14218,8 @@ smtg:observedCount
   skos:notation "Domain" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 747 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/fateful-hour>
   a smtg:AbilityWord ;
@@ -13848,7 +14229,8 @@ smtg:observedCount
   skos:notation "Fateful hour" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 105 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/ferocious>
   a smtg:AbilityWord ;
@@ -13858,7 +14240,8 @@ smtg:observedCount
   skos:notation "Ferocious" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 444 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/formidable>
   a smtg:AbilityWord ;
@@ -13868,7 +14251,8 @@ smtg:observedCount
   skos:notation "Formidable" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 155 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/grandeur>
   a smtg:AbilityWord ;
@@ -13878,7 +14262,8 @@ smtg:observedCount
   skos:notation "Grandeur" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 69 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/hellbent>
   a smtg:AbilityWord ;
@@ -13888,7 +14273,8 @@ smtg:observedCount
   skos:notation "Hellbent" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 316 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/heroic>
   a smtg:AbilityWord ;
@@ -13898,7 +14284,8 @@ smtg:observedCount
   skos:notation "Heroic" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 583 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/imprint>
   a smtg:AbilityWord ;
@@ -13908,7 +14295,8 @@ smtg:observedCount
   skos:notation "Imprint" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 510 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/inspired>
   a smtg:AbilityWord ;
@@ -13918,7 +14306,8 @@ smtg:observedCount
   skos:notation "Inspired" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 213 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/join-forces>
   a smtg:AbilityWord ;
@@ -13928,7 +14317,8 @@ smtg:observedCount
   skos:notation "Join forces" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 67 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/kinship>
   a smtg:AbilityWord ;
@@ -13938,7 +14328,8 @@ smtg:observedCount
   skos:notation "Kinship" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 110 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/landfall>
   a smtg:AbilityWord ;
@@ -13948,7 +14339,8 @@ smtg:observedCount
   skos:notation "Landfall" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 3417 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/lieutenant>
   a smtg:AbilityWord ;
@@ -13958,7 +14350,8 @@ smtg:observedCount
   skos:notation "Lieutenant" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 270 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/metalcraft>
   a smtg:AbilityWord ;
@@ -13968,7 +14361,8 @@ smtg:observedCount
   skos:notation "Metalcraft" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 585 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/morbid>
   a smtg:AbilityWord ;
@@ -13978,7 +14372,8 @@ smtg:observedCount
   skos:notation "Morbid" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 481 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/parley>
   a smtg:AbilityWord ;
@@ -13988,7 +14383,8 @@ smtg:observedCount
   skos:notation "Parley" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 108 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/radiance>
   a smtg:AbilityWord ;
@@ -13998,7 +14394,8 @@ smtg:observedCount
   skos:notation "Radiance" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 113 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/raid>
   a smtg:AbilityWord ;
@@ -14008,7 +14405,8 @@ smtg:observedCount
   skos:notation "Raid" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 559 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/rally>
   a smtg:AbilityWord ;
@@ -14018,7 +14416,8 @@ smtg:observedCount
   skos:notation "Rally" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 162 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/spell-mastery>
   a smtg:AbilityWord ;
@@ -14028,7 +14427,8 @@ smtg:observedCount
   skos:notation "Spell mastery" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 252 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/strive>
   a smtg:AbilityWord ;
@@ -14038,7 +14438,8 @@ smtg:observedCount
   skos:notation "Strive" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 269 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/sweep>
   a smtg:AbilityWord ;
@@ -14048,7 +14449,8 @@ smtg:observedCount
   skos:notation "Sweep" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 33 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/tempting-offer>
   a smtg:AbilityWord ;
@@ -14058,7 +14460,8 @@ smtg:observedCount
   skos:notation "Tempting offer" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 95 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/threshold>
   a smtg:AbilityWord ;
@@ -14068,7 +14471,8 @@ smtg:observedCount
   skos:notation "Threshold" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1243 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/will-of-the-council>
   a smtg:AbilityWord ;
@@ -14078,7 +14482,8 @@ smtg:observedCount
   skos:notation "Will of the council" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 147 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/adamant>
   a smtg:AbilityWord ;
@@ -14088,7 +14493,8 @@ smtg:observedCount
   skos:notation "Adamant" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 198 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/addendum>
   a smtg:AbilityWord ;
@@ -14098,7 +14504,8 @@ smtg:observedCount
   skos:notation "Addendum" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 215 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/councils-dilemma>
   a smtg:AbilityWord ;
@@ -14108,7 +14515,8 @@ smtg:observedCount
   skos:notation "Council's dilemma" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 78 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/eminence>
   a smtg:AbilityWord ;
@@ -14118,7 +14526,8 @@ smtg:observedCount
   skos:notation "Eminence" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 109 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/enrage>
   a smtg:AbilityWord ;
@@ -14128,7 +14537,8 @@ smtg:observedCount
   skos:notation "Enrage" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 341 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/heros-reward>
   a smtg:AbilityWord ;
@@ -14138,7 +14548,10 @@ smtg:observedCount
   skos:notation "Hero's Reward" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 15 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a ability word (207.2c). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/ability-word/kinfall>
   a smtg:AbilityWord ;
@@ -14148,7 +14561,10 @@ smtg:observedCount
   skos:notation "Kinfall" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 2 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a ability word (207.2c). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/ability-word/landship>
   a smtg:AbilityWord ;
@@ -14158,7 +14574,10 @@ smtg:observedCount
   skos:notation "Landship" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 2 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a ability word (207.2c). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/ability-word/legacy>
   a smtg:AbilityWord ;
@@ -14168,7 +14587,10 @@ smtg:observedCount
   skos:notation "Legacy" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 4 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a ability word (207.2c). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/ability-word/revolt>
   a smtg:AbilityWord ;
@@ -14178,7 +14600,8 @@ smtg:observedCount
   skos:notation "Revolt" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 289 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/underdog>
   a smtg:AbilityWord ;
@@ -14188,7 +14611,10 @@ smtg:observedCount
   skos:notation "Underdog" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 2 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a ability word (207.2c). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/ability-word/undergrowth>
   a smtg:AbilityWord ;
@@ -14198,7 +14624,8 @@ smtg:observedCount
   skos:notation "Undergrowth" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 230 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/void>
   a smtg:AbilityWord ;
@@ -14208,7 +14635,8 @@ smtg:observedCount
   skos:notation "Void" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 109 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/descend>
   a smtg:AbilityWord ;
@@ -14218,7 +14646,9 @@ smtg:observedCount
   skos:notation "Descend" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 188 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" ;
+  skos:editorialNote "The Comprehensive Rules name it differently: descend 4, descend 8."@en .
 
 <https://w3id.org/smtg/vocab/ability-word/fathomless-descent>
   a smtg:AbilityWord ;
@@ -14228,7 +14658,8 @@ smtg:observedCount
   skos:notation "Fathomless descent" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 71 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/magecraft>
   a smtg:AbilityWord ;
@@ -14238,7 +14669,8 @@ smtg:observedCount
   skos:notation "Magecraft" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 550 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/pack-tactics>
   a smtg:AbilityWord ;
@@ -14248,7 +14680,8 @@ smtg:observedCount
   skos:notation "Pack tactics" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 134 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/coven>
   a smtg:AbilityWord ;
@@ -14258,7 +14691,8 @@ smtg:observedCount
   skos:notation "Coven" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 304 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/alliance>
   a smtg:AbilityWord ;
@@ -14268,7 +14702,8 @@ smtg:observedCount
   skos:notation "Alliance" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 289 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/corrupted>
   a smtg:AbilityWord ;
@@ -14278,7 +14713,10 @@ smtg:observedCount
   skos:notation "Corrupted" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 263 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a ability word (207.2c). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/ability-word/secret-council>
   a smtg:AbilityWord ;
@@ -14288,7 +14726,8 @@ smtg:observedCount
   skos:notation "Secret council" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 57 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/actualize>
   a smtg:AbilityWord ;
@@ -14298,7 +14737,10 @@ smtg:observedCount
   skos:notation "Actualize" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 4 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a ability word (207.2c). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/ability-word/celebration>
   a smtg:AbilityWord ;
@@ -14308,7 +14750,8 @@ smtg:observedCount
   skos:notation "Celebration" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 111 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/paradox>
   a smtg:AbilityWord ;
@@ -14318,7 +14761,8 @@ smtg:observedCount
   skos:notation "Paradox" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 70 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/disappear>
   a smtg:AbilityWord ;
@@ -14328,7 +14772,8 @@ smtg:observedCount
   skos:notation "Disappear" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 67 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/will-of-the-planeswalkers>
   a smtg:AbilityWord ;
@@ -14338,7 +14783,10 @@ smtg:observedCount
   skos:notation "Will of the Planeswalkers" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 65 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a ability word (207.2c). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/ability-word/survival>
   a smtg:AbilityWord ;
@@ -14348,7 +14796,8 @@ smtg:observedCount
   skos:notation "Survival" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 119 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/flurry>
   a smtg:AbilityWord ;
@@ -14358,7 +14807,8 @@ smtg:observedCount
   skos:notation "Flurry" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 88 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/valiant>
   a smtg:AbilityWord ;
@@ -14368,7 +14818,8 @@ smtg:observedCount
   skos:notation "Valiant" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 76 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/strange-new-worlds>
   a smtg:AbilityWord ;
@@ -14378,7 +14829,10 @@ smtg:observedCount
   skos:notation "Strange new worlds" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 39 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a ability word (207.2c). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/ability-word/start-your-engines>
   a smtg:AbilityWord ;
@@ -14388,7 +14842,10 @@ smtg:observedCount
   skos:notation "Start your engines!" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 453 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.179" ;
+  skos:editorialNote "Scryfall lists this as ability word; the Comprehensive Rules define it as a keyword ability (702) — Start Your Engines! (702.179)."@en .
 
 <https://w3id.org/smtg/vocab/ability-word/renew>
   a smtg:AbilityWord ;
@@ -14398,7 +14855,8 @@ smtg:observedCount
   skos:notation "Renew" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 114 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/repartee>
   a smtg:AbilityWord ;
@@ -14408,7 +14866,8 @@ smtg:observedCount
   skos:notation "Repartee" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 89 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/opus>
   a smtg:AbilityWord ;
@@ -14418,7 +14877,8 @@ smtg:observedCount
   skos:notation "Opus" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 79 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/infusion>
   a smtg:AbilityWord ;
@@ -14428,7 +14888,8 @@ smtg:observedCount
   skos:notation "Infusion" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 90 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/covercast>
   a smtg:AbilityWord ;
@@ -14438,7 +14899,10 @@ smtg:observedCount
   skos:notation "Covercast" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a ability word (207.2c). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/ability-word/seek-out>
   a smtg:AbilityWord ;
@@ -14448,7 +14912,10 @@ smtg:observedCount
   skos:notation "Seek out" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 26 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a ability word (207.2c). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 <https://w3id.org/smtg/vocab/ability-word/vivid>
   a smtg:AbilityWord ;
@@ -14458,7 +14925,8 @@ smtg:observedCount
   skos:notation "Vivid" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 153 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "207.2c" .
 
 <https://w3id.org/smtg/vocab/ability-word/battlefront>
   a smtg:AbilityWord ;
@@ -14468,7 +14936,10 @@ smtg:observedCount
   skos:notation "Battlefront" ;
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 16 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:inComprehensiveRules "false"^^xsd:boolean ;
+  skos:editorialNote "Not defined in the Comprehensive Rules (September 25, 2026) as a ability word (207.2c). Typically digital-only (Alchemy), Un-set, token shorthand or newer than the rules."@en .
 
 
 # ---- Flavor words ----
@@ -21739,6 +22210,122 @@ smtg:observedCount
   smtg:sourceValueOf "scryfall:keywords" ;
   smtg:observedCount 1 ;
   rdfs:isDefinedBy smtgm:vocab .
+
+<https://w3id.org/smtg/vocab/keyword-action/search>
+  a smtg:KeywordAction ;
+  skos:inScheme <https://w3id.org/smtg/vocab/keyword-action> ;
+  skos:prefLabel "Search"@en ;
+  rdfs:label "Search"@en ;
+  skos:notation "Search" ;
+  skos:definition "keyword action defined in the Comprehensive Rules, 701.23."@en ;
+  smtg:sourceValueOf "wotc-cr:701.23" ;
+  smtg:observedCount 0 ;
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.23" ;
+  skos:editorialNote "In the Comprehensive Rules (September 25, 2026) but not in Scryfall's keyword-action catalog."@en .
+
+<https://w3id.org/smtg/vocab/keyword-action/the-ring-tempts-you>
+  a smtg:KeywordAction ;
+  skos:inScheme <https://w3id.org/smtg/vocab/keyword-action> ;
+  skos:prefLabel "The Ring Tempts You"@en ;
+  rdfs:label "The Ring Tempts You"@en ;
+  skos:notation "The Ring Tempts You" ;
+  skos:definition "keyword action defined in the Comprehensive Rules, 701.54."@en ;
+  smtg:sourceValueOf "wotc-cr:701.54" ;
+  smtg:observedCount 0 ;
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.54" ;
+  skos:editorialNote "In the Comprehensive Rules (September 25, 2026) but not in Scryfall's keyword-action catalog."@en .
+
+<https://w3id.org/smtg/vocab/keyword-action/face-a-villainous-choice>
+  a smtg:KeywordAction ;
+  skos:inScheme <https://w3id.org/smtg/vocab/keyword-action> ;
+  skos:prefLabel "Face a Villainous Choice"@en ;
+  rdfs:label "Face a Villainous Choice"@en ;
+  skos:notation "Face a Villainous Choice" ;
+  skos:definition "keyword action defined in the Comprehensive Rules, 701.55."@en ;
+  smtg:sourceValueOf "wotc-cr:701.55" ;
+  smtg:observedCount 0 ;
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "701.55" ;
+  skos:editorialNote "In the Comprehensive Rules (September 25, 2026) but not in Scryfall's keyword-action catalog."@en .
+
+<https://w3id.org/smtg/vocab/keyword-ability/space-sculptor>
+  a smtg:KeywordAbility ;
+  skos:inScheme <https://w3id.org/smtg/vocab/keyword-ability> ;
+  skos:prefLabel "Space Sculptor"@en ;
+  rdfs:label "Space Sculptor"@en ;
+  skos:notation "Space Sculptor" ;
+  skos:definition "keyword ability defined in the Comprehensive Rules, 702.158."@en ;
+  smtg:sourceValueOf "wotc-cr:702.158" ;
+  smtg:observedCount 0 ;
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.158" ;
+  skos:editorialNote "In the Comprehensive Rules (September 25, 2026) but not in Scryfall's keyword-ability catalog."@en .
+
+<https://w3id.org/smtg/vocab/keyword-ability/visit>
+  a smtg:KeywordAbility ;
+  skos:inScheme <https://w3id.org/smtg/vocab/keyword-ability> ;
+  skos:prefLabel "Visit"@en ;
+  rdfs:label "Visit"@en ;
+  skos:notation "Visit" ;
+  skos:definition "keyword ability defined in the Comprehensive Rules, 702.159."@en ;
+  smtg:sourceValueOf "wotc-cr:702.159" ;
+  smtg:observedCount 0 ;
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.159" ;
+  skos:editorialNote "In the Comprehensive Rules (September 25, 2026) but not in Scryfall's keyword-ability catalog."@en .
+
+<https://w3id.org/smtg/vocab/keyword-ability/plot>
+  a smtg:KeywordAbility ;
+  skos:inScheme <https://w3id.org/smtg/vocab/keyword-ability> ;
+  skos:prefLabel "Plot"@en ;
+  rdfs:label "Plot"@en ;
+  skos:notation "Plot" ;
+  skos:definition "keyword ability defined in the Comprehensive Rules, 702.170."@en ;
+  smtg:sourceValueOf "wotc-cr:702.170" ;
+  smtg:observedCount 0 ;
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.170" ;
+  skos:editorialNote "In the Comprehensive Rules (September 25, 2026) but not in Scryfall's keyword-ability catalog."@en .
+
+<https://w3id.org/smtg/vocab/keyword-ability/start-your-engines>
+  a smtg:KeywordAbility ;
+  skos:inScheme <https://w3id.org/smtg/vocab/keyword-ability> ;
+  skos:prefLabel "Start Your Engines!"@en ;
+  rdfs:label "Start Your Engines!"@en ;
+  skos:notation "Start Your Engines!" ;
+  skos:definition "keyword ability defined in the Comprehensive Rules, 702.179."@en ;
+  smtg:sourceValueOf "wotc-cr:702.179" ;
+  smtg:observedCount 0 ;
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.179" ;
+  skos:editorialNote "In the Comprehensive Rules (September 25, 2026) but not in Scryfall's keyword-ability catalog."@en .
+
+<https://w3id.org/smtg/vocab/keyword-ability/infinity>
+  a smtg:KeywordAbility ;
+  skos:inScheme <https://w3id.org/smtg/vocab/keyword-ability> ;
+  skos:prefLabel "∞ (Infinity)"@en ;
+  rdfs:label "∞ (Infinity)"@en ;
+  skos:notation "∞ (Infinity)" ;
+  skos:definition "keyword ability defined in the Comprehensive Rules, 702.186."@en ;
+  smtg:sourceValueOf "wotc-cr:702.186" ;
+  smtg:observedCount 0 ;
+  vs:term_status "unstable" ;
+  rdfs:isDefinedBy smtgm:vocab ;
+  smtg:comprehensiveRulesRef "702.186" ;
+  skos:editorialNote "In the Comprehensive Rules (September 25, 2026) but not in Scryfall's keyword-ability catalog."@en .
+
+<https://w3id.org/smtg/vocab/keyword-action/plot> skos:exactMatch <https://w3id.org/smtg/vocab/keyword-ability/plot> .
+
+<https://w3id.org/smtg/vocab/ability-word/start-your-engines> skos:exactMatch <https://w3id.org/smtg/vocab/keyword-ability/start-your-engines> .
 
 
 # ---- Formats ----

@@ -134,7 +134,17 @@ if (want('scryfall:api')) {
   log('Scryfall catalogs, symbology and sets saved');
 }
 
-// 3. Commander Spellbook bulk variants (snapshot, not a delta feed)
+// 3. Wizards of the Coast Comprehensive Rules (plain text) — authority for keyword / ability-word lists.
+//    The download link is read from the rules page at run time (it changes with every release).
+if (want('wotc')) {
+  const page = await (await fetch('https://magic.wizards.com/en/rules', { headers: { ...HEADERS, Accept: 'text/html' } })).text();
+  const txt = page.match(/https:\/\/media\.wizards\.com\/[^"']*?\.txt/)?.[0];
+  if (!txt) throw new Error('Comprehensive Rules .txt link not found on https://magic.wizards.com/en/rules');
+  const url = encodeURI(decodeURI(txt));
+  await download('wotc:comprehensive-rules', url, `data/raw/wotc/${path.basename(decodeURI(txt)).replace(/\s+/g, '-')}`, { format: 'txt' });
+}
+
+// 4. Commander Spellbook bulk variants (snapshot, not a delta feed)
 if (want('spellbook')) {
   await download('spellbook:variants', CONFIG.sources.spellbookVariants, `data/raw/spellbook/variants-${today}.json.gz`, { format: 'json.gz' });
 }
