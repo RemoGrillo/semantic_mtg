@@ -1,0 +1,2071 @@
+{
+  "slug": "lightning-bolt",
+  "purpose": "Tagger tags assigned to the cards/illustrations of fixtures/scryfall/lightning-bolt.json, plus the full parent chain of each tag.",
+  "selector": "oracle_tags: taggings[].oracle_id ∈ fixture oracle ids; art_tags: taggings[].illustration_id ∈ fixture illustration ids. Per target, tags sorted by (tagging has annotation / non-median weight first, tag has parents first, slug) and capped at 15 oracle / 10 art tags. Ancestors = transitive closure over parent_ids. taggings[] filtered to the fixture targets. Available per target: 4457ed35…: 5 oracle tags; 013e7eda…: 10 art tags; 2cb6200c…: 8 art tags; 58884d99…: 13 art tags; 928b4c38…: 8 art tags.",
+  "note": "Tag records are the original Tagger objects except: (1) taggings[] is FILTERED (see selector) and the fixture-added key `taggingsTotal` gives the unfiltered count; (2) child_ids[] is filtered to tags present in this file and the fixture-added key `childIdsTotal` gives the unfiltered count. parent_ids[] is complete: every ancestor is included, so the file is a closed sub-hierarchy in which child_ids is still the exact inverse of parent_ids. `taggingsTotal` and `childIdsTotal` are NOT source fields.",
+  "source": {
+    "key": "scryfall:oracle_tags",
+    "file": "oracle-tags-20261103100032.jsonl.gz",
+    "sha256": "23d94bab24a5e4a9376ddc66ae3018c215dac693455fecdf2be83e86a43c1e5e",
+    "sourceUpdatedAt": "2026-11-03T10:00:32.540+00:00"
+  },
+  "extraSources": [
+    {
+      "key": "scryfall:art_tags",
+      "file": "art-tags-20261103100113.jsonl.gz",
+      "sha256": "9d963522897dbcf58e168a6cf4063bed908b87c2b0d7cd2bbce4557bd6d33d71",
+      "sourceUpdatedAt": "2026-11-03T10:01:13.387+00:00"
+    }
+  ],
+  "targets": [
+    "4457ed35-7c10-48c8-9776-456485fdf070",
+    "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+    "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+    "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+    "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e"
+  ],
+  "recordIndex": [
+    {
+      "id": "97dc6a1e-f6d5-46b6-afee-df9cd1c865c1",
+      "slug": "meme",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4457ed35-7c10-48c8-9776-456485fdf070",
+      "parents": 0
+    },
+    {
+      "id": "d58bcedc-2dcd-42c3-8b52-5359457e6802",
+      "slug": "burn-any",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4457ed35-7c10-48c8-9776-456485fdf070",
+      "parents": 4
+    },
+    {
+      "id": "41738dc6-42bc-4c6e-b44d-174b2fe67ae6",
+      "slug": "cycle-lea-boon",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4457ed35-7c10-48c8-9776-456485fdf070",
+      "parents": 1
+    },
+    {
+      "id": "cc12d27d-1d0e-4849-9551-71caead74d24",
+      "slug": "spot-removal",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4457ed35-7c10-48c8-9776-456485fdf070",
+      "parents": 1
+    },
+    {
+      "id": "1a19fbcd-ec54-417c-baa0-01c53b32388b",
+      "slug": "single-target-instant-sorcery",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4457ed35-7c10-48c8-9776-456485fdf070",
+      "parents": 0
+    },
+    {
+      "id": "2e1756a1-2542-45fb-aa1e-a4896d186676",
+      "slug": "red-lightning",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+      "parents": 1
+    },
+    {
+      "id": "e36b4c55-940b-4da7-823a-d36182e9a2e3",
+      "slug": "arm-raised",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+      "parents": 1
+    },
+    {
+      "id": "f70e8a36-302c-4db4-a8e4-8ce1054d2ae1",
+      "slug": "facing-away",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+      "parents": 1
+    },
+    {
+      "id": "e0385f83-c3c8-4cf1-aa81-f291756050c7",
+      "slug": "standing-on-edge",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+      "parents": 1
+    },
+    {
+      "id": "4e41b934-0be4-4b47-bef9-72bdc50993ce",
+      "slug": "windswept-hair",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+      "parents": 1
+    },
+    {
+      "id": "6921d06c-0a94-4c63-970e-c41a2cf13c3c",
+      "slug": "cloud",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+      "parents": 0
+    },
+    {
+      "id": "c356d6a7-22bc-4384-8547-f8f5155d7bd4",
+      "slug": "mage",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+      "parents": 0
+    },
+    {
+      "id": "b5662701-af09-4044-b36b-09e60fc9065a",
+      "slug": "mountain",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+      "parents": 0
+    },
+    {
+      "id": "a477fe5b-02aa-42d8-a537-5e38841d6da5",
+      "slug": "snow",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+      "parents": 0
+    },
+    {
+      "id": "7ff6bf5f-a816-4820-87b3-530872c8b12e",
+      "slug": "storm",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+      "parents": 0
+    },
+    {
+      "id": "b1248602-1af8-4830-85b9-b24961f57f66",
+      "slug": "artist-signature",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+      "parents": 1
+    },
+    {
+      "id": "f014c07f-acb7-4fcc-8236-82b77447e1e9",
+      "slug": "lightning",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+      "parents": 1
+    },
+    {
+      "id": "f7fc2aed-02f0-4f54-905d-51d22d5de4dc",
+      "slug": "stormy-sky",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+      "parents": 1
+    },
+    {
+      "id": "9bbdfd65-edd1-4e98-a049-7ff3feba5a84",
+      "slug": "hill",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+      "parents": 0
+    },
+    {
+      "id": "da61e878-49ff-40b2-ad93-ac8d1e04dd8e",
+      "slug": "no-one",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+      "parents": 0
+    },
+    {
+      "id": "4aacfbbc-56e2-4524-a7ca-3c28e54c39d1",
+      "slug": "overcast",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+      "parents": 0
+    },
+    {
+      "id": "726fb52d-5368-41a0-ac9a-9fbbee4b8768",
+      "slug": "acrylic-paint",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+      "parents": 1
+    },
+    {
+      "id": "3ac58a5a-7cf2-42ae-a936-df294bab8320",
+      "slug": "cape",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+      "parents": 1
+    },
+    {
+      "id": "e277877b-ceab-4900-bd15-1664f2e1ba67",
+      "slug": "thor-marvel",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+      "parents": 2
+    },
+    {
+      "id": "aaee7fe7-f0bf-4b88-83a7-177521a83fe7",
+      "slug": "thor-s-hammer",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+      "parents": 2
+    },
+    {
+      "id": "62d721b7-8e57-41d1-b717-555521ad8bee",
+      "slug": "weapon-raised",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+      "parents": 1
+    },
+    {
+      "id": "a6039075-7e27-4ea0-b1d9-1360c424d98e",
+      "slug": "winged-helmet",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+      "parents": 1
+    },
+    {
+      "id": "dfafe464-6746-4780-af11-2261d9e86dde",
+      "slug": "bisexual-lighting",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+      "parents": 0
+    },
+    {
+      "id": "c2f89f67-302f-4b31-b2f1-9c518e09bad1",
+      "slug": "loose-lips",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+      "parents": 0
+    },
+    {
+      "id": "113b3f6e-a385-4839-8aab-22fc0c67d65d",
+      "slug": "cloudy-sky",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+      "parents": 2
+    },
+    {
+      "id": "6eee0036-9dba-402b-8ace-719b9a61081d",
+      "slug": "mountain-top",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+      "parents": 1
+    },
+    {
+      "id": "224a4134-43c1-473b-a865-f8e00de9e99f",
+      "slug": "white-glow",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+      "parents": 1
+    },
+    {
+      "id": "f7994d85-236c-42d3-ae50-e5792a83acf2",
+      "slug": "yellow-sky",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+      "parents": 1
+    },
+    {
+      "id": "f8242049-3425-4b1b-b302-257037c710f1",
+      "slug": "blue-orange",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+      "parents": 0
+    },
+    {
+      "id": "8a561e49-b62f-4972-b74c-d8caed33fe01",
+      "slug": "mount-rider",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+      "parents": 0
+    },
+    {
+      "id": "ed45c82b-fb1b-4d13-b0a6-8b12be616273",
+      "slug": "outdoor",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+      "parents": 0
+    },
+    {
+      "id": "da0770e8-e41b-4a29-93a0-4b6b7ce85a89",
+      "slug": "armor",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "b47e31c4-70ae-471d-b51b-55742fd8f763",
+      "slug": "art-media",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "1c8b704d-66db-4995-8edb-c905127eba0c",
+      "slug": "asgardian",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "7b155ecc-bd5e-4757-bde2-c029b6978bad",
+      "slug": "character",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "9fe7fa00-c601-43f0-a530-85ca7f4d6b44",
+      "slug": "clothing",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "b289dc71-dd5d-4245-b96f-46218ba34aa3",
+      "slug": "electricity",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "8b7d22d4-f840-471d-832e-27b5af6d1d63",
+      "slug": "external-ip",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "d40d2636-9622-4dc8-92db-07dd6c044f48",
+      "slug": "glow",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "011f67cf-9b4f-4eaa-8af7-a7a1444ccbfa",
+      "slug": "god",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "9d199558-3c4d-4a00-9913-35cd78a12de1",
+      "slug": "hair",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "029db109-924f-410a-8f2a-9c0ee78e85e3",
+      "slug": "hammer",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "120a9ca4-3086-4f73-82df-a541b1119d86",
+      "slug": "hat",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "11db0d15-0849-455b-ae6c-df094de16fd9",
+      "slug": "helmet",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "19a5494b-7362-438d-88dc-40e7117b2cd7",
+      "slug": "male",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "b45dc384-8fbe-4ed8-8420-7b7ba6801f17",
+      "slug": "marvel-god",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "9b21da2d-b6f9-4447-8585-ff2b29cbc096",
+      "slug": "marvel-universe",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "21d1e5b1-1a01-4f12-a4e2-b04d390cbfd4",
+      "slug": "pose",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "e9d5d154-3473-4fb4-8353-3ffb7e275283",
+      "slug": "signature",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "00a7cfaa-4d0b-481d-b9d4-499ff9642c79",
+      "slug": "sky",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "03e982c8-e357-4a7e-96d0-4013bbdac837",
+      "slug": "standing",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "ed7a3b88-8e75-4ff1-86be-4f1c726784e7",
+      "slug": "tool",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "e1e261ac-5c06-410f-8e60-0680da9cbf63",
+      "slug": "weapon",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "0641a74c-4dd5-426d-be58-2ab86d71995d",
+      "slug": "burn",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "c80fafa2-d5c9-47e5-8ef9-cbf7c1316d0a",
+      "slug": "burn-battle",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "01c171be-e0db-443c-830d-578873c27792",
+      "slug": "burn-creature",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "9b437740-9a6c-40cd-90db-a2b057df8e3f",
+      "slug": "burn-planeswalker",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "081ebf89-e53b-47ff-88e8-1535068212b0",
+      "slug": "burn-player",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "1adda1a4-e23d-4212-a4da-58303a20e00c",
+      "slug": "cycle",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "444f824c-f910-4530-9dbe-ede7a84cd7f9",
+      "slug": "removal",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "7a0d9ee9-b672-451a-8722-0c5fc6087ff0",
+      "slug": "removal-burn",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "d91e421d-ff87-4aad-a4bf-5aefc51252b6",
+      "slug": "removal-creature",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "591fb358-e9d7-490e-8c15-24aecbbe697e",
+      "slug": "removal-planeswalker",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    }
+  ],
+  "records": [
+    {
+      "object": "tag",
+      "id": "97dc6a1e-f6d5-46b6-afee-df9cd1c865c1",
+      "label": "meme",
+      "slug": "meme",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/meme",
+      "description": "Cards that have become memes in Magic, or are explicitly based off of memes.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "4457ed35-7c10-48c8-9776-456485fdf070",
+          "weight": "median",
+          "annotation": "An iconic card, \"Dies to Bolt\" has been both a meme and a general test on a creature's usefulness."
+        }
+      ],
+      "taggingsTotal": 130,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "d58bcedc-2dcd-42c3-8b52-5359457e6802",
+      "label": "burn any",
+      "slug": "burn-any",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-any",
+      "description": "Cards that burn any target: players, creatures, battles, or planeswalkers.",
+      "parent_ids": [
+        "081ebf89-e53b-47ff-88e8-1535068212b0",
+        "c80fafa2-d5c9-47e5-8ef9-cbf7c1316d0a",
+        "9b437740-9a6c-40cd-90db-a2b057df8e3f",
+        "01c171be-e0db-443c-830d-578873c27792"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "4457ed35-7c10-48c8-9776-456485fdf070",
+          "weight": "very_strong"
+        }
+      ],
+      "taggingsTotal": 914,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "41738dc6-42bc-4c6e-b44d-174b2fe67ae6",
+      "label": "cycle-lea-boon",
+      "slug": "cycle-lea-boon",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/cycle-lea-boon",
+      "description": null,
+      "parent_ids": [
+        "1adda1a4-e23d-4212-a4da-58303a20e00c"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "cycle-boon"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "4457ed35-7c10-48c8-9776-456485fdf070",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 5,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "cc12d27d-1d0e-4849-9551-71caead74d24",
+      "label": "spot removal",
+      "slug": "spot-removal",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/spot-removal",
+      "description": "Removal for one target specifically.  See also [sweeper](sweeper) and [multi removal](multi-removal).",
+      "parent_ids": [
+        "444f824c-f910-4530-9dbe-ede7a84cd7f9"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "4457ed35-7c10-48c8-9776-456485fdf070",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 5541,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "1a19fbcd-ec54-417c-baa0-01c53b32388b",
+      "label": "single target instant/sorcery",
+      "slug": "single-target-instant-sorcery",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/single-target-instant-sorcery",
+      "description": "Instant/sorcery spells that may target only one target. This is materially important for some effects that care about single targets. Not mutually exclusive with [multiple targets](/tags/card/multiple-targets).",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "single target spell"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "4457ed35-7c10-48c8-9776-456485fdf070",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 4731,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "2e1756a1-2542-45fb-aa1e-a4896d186676",
+      "label": "red lightning",
+      "slug": "red-lightning",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/red-lightning",
+      "description": null,
+      "parent_ids": [
+        "f014c07f-acb7-4fcc-8236-82b77447e1e9"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+          "weight": "very_strong"
+        }
+      ],
+      "taggingsTotal": 33,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "e36b4c55-940b-4da7-823a-d36182e9a2e3",
+      "label": "arm raised",
+      "slug": "arm-raised",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/arm-raised",
+      "description": null,
+      "parent_ids": [
+        "21d1e5b1-1a01-4f12-a4e2-b04d390cbfd4"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "raised arm",
+        "arms raised",
+        "hand raised"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1517,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "f70e8a36-302c-4db4-a8e4-8ce1054d2ae1",
+      "label": "facing away",
+      "slug": "facing-away",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/facing-away",
+      "description": "Creatures looking toward the back of the piece, not toward us.",
+      "parent_ids": [
+        "21d1e5b1-1a01-4f12-a4e2-b04d390cbfd4"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "looking away"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 536,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "e0385f83-c3c8-4cf1-aa81-f291756050c7",
+      "label": "standing on edge",
+      "slug": "standing-on-edge",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/standing-on-edge",
+      "description": null,
+      "parent_ids": [
+        "03e982c8-e357-4a7e-96d0-4013bbdac837"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "it's the circle of life"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1029,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "4e41b934-0be4-4b47-bef9-72bdc50993ce",
+      "label": "windswept hair",
+      "slug": "windswept-hair",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/windswept-hair",
+      "description": "Hair fluttering in the wind dramatically.",
+      "parent_ids": [
+        "9d199558-3c4d-4a00-9913-35cd78a12de1"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "windblown hair"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 775,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "6921d06c-0a94-4c63-970e-c41a2cf13c3c",
+      "label": "cloud",
+      "slug": "cloud",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/cloud",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "113b3f6e-a385-4839-8aab-22fc0c67d65d"
+      ],
+      "aliases": [
+        "clouds"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1238,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "c356d6a7-22bc-4384-8547-f8f5155d7bd4",
+      "label": "mage",
+      "slug": "mage",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/mage",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 25,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "b5662701-af09-4044-b36b-09e60fc9065a",
+      "label": "mountain",
+      "slug": "mountain",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/mountain",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "6eee0036-9dba-402b-8ace-719b9a61081d"
+      ],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1220,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "a477fe5b-02aa-42d8-a537-5e38841d6da5",
+      "label": "snow",
+      "slug": "snow",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/snow",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "snow-covered",
+        "snowing"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1254,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "7ff6bf5f-a816-4820-87b3-530872c8b12e",
+      "label": "storm",
+      "slug": "storm",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/storm",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 110,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "b1248602-1af8-4830-85b9-b24961f57f66",
+      "label": "artist signature",
+      "slug": "artist-signature",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/artist-signature",
+      "description": "The artist's personal mark, identifying the work as their own. (Artist signatures might be cropped out in some versions of the same art.)",
+      "parent_ids": [
+        "e9d5d154-3473-4fb4-8353-3ffb7e275283"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 9272,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "f014c07f-acb7-4fcc-8236-82b77447e1e9",
+      "label": "lightning",
+      "slug": "lightning",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/lightning",
+      "description": null,
+      "parent_ids": [
+        "b289dc71-dd5d-4245-b96f-46218ba34aa3"
+      ],
+      "child_ids": [
+        "2e1756a1-2542-45fb-aa1e-a4896d186676"
+      ],
+      "aliases": [
+        "lightning bolt"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1169,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "f7fc2aed-02f0-4f54-905d-51d22d5de4dc",
+      "label": "stormy sky",
+      "slug": "stormy-sky",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/stormy-sky",
+      "description": null,
+      "parent_ids": [
+        "00a7cfaa-4d0b-481d-b9d4-499ff9642c79"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 179,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "9bbdfd65-edd1-4e98-a049-7ff3feba5a84",
+      "label": "hill",
+      "slug": "hill",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/hill",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 155,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "da61e878-49ff-40b2-ad93-ac8d1e04dd8e",
+      "label": "no one",
+      "slug": "no-one",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/no-one",
+      "description": "Nobody is present in this art.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "no figure",
+        "zero figures"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 2643,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "4aacfbbc-56e2-4524-a7ca-3c28e54c39d1",
+      "label": "overcast",
+      "slug": "overcast",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/overcast",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 170,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "726fb52d-5368-41a0-ac9a-9fbbee4b8768",
+      "label": "acrylic paint",
+      "slug": "acrylic-paint",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/acrylic-paint",
+      "description": null,
+      "parent_ids": [
+        "b47e31c4-70ae-471d-b51b-55742fd8f763"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 2290,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "3ac58a5a-7cf2-42ae-a936-df294bab8320",
+      "label": "cape",
+      "slug": "cape",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/cape",
+      "description": null,
+      "parent_ids": [
+        "9fe7fa00-c601-43f0-a530-85ca7f4d6b44"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "billowing cape",
+        "blue cape",
+        "white cape"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1035,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "e277877b-ceab-4900-bd15-1664f2e1ba67",
+      "label": "thor (marvel)",
+      "slug": "thor-marvel",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/thor-marvel",
+      "description": null,
+      "parent_ids": [
+        "19a5494b-7362-438d-88dc-40e7117b2cd7",
+        "1c8b704d-66db-4995-8edb-c905127eba0c"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 57,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "aaee7fe7-f0bf-4b88-83a7-177521a83fe7",
+      "label": "thor's hammer",
+      "slug": "thor-s-hammer",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/thor-s-hammer",
+      "description": null,
+      "parent_ids": [
+        "9b21da2d-b6f9-4447-8585-ff2b29cbc096",
+        "029db109-924f-410a-8f2a-9c0ee78e85e3"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "mjölnir (marvel)"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 56,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "62d721b7-8e57-41d1-b717-555521ad8bee",
+      "label": "weapon raised",
+      "slug": "weapon-raised",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/weapon-raised",
+      "description": null,
+      "parent_ids": [
+        "e1e261ac-5c06-410f-8e60-0680da9cbf63"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 228,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "a6039075-7e27-4ea0-b1d9-1360c424d98e",
+      "label": "winged helmet",
+      "slug": "winged-helmet",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/winged-helmet",
+      "description": null,
+      "parent_ids": [
+        "11db0d15-0849-455b-ae6c-df094de16fd9"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 114,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "dfafe464-6746-4780-af11-2261d9e86dde",
+      "label": "bisexual lighting",
+      "slug": "bisexual-lighting",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/bisexual-lighting",
+      "description": "Pink and blue lighting on a scene. Doesn't necessarily imply bisexuality; the name comes from the resemblance of the colors to the bisexual pride flag. Compare and contrast [blue/orange](blue-orange).",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 481,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "c2f89f67-302f-4b31-b2f1-9c518e09bad1",
+      "label": "loose lips",
+      "slug": "loose-lips",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/loose-lips",
+      "description": "Depicts a subject with an open mouth (see Knight of the Kitchen Sink)",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "open mouth",
+        "mouth open"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 6506,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "113b3f6e-a385-4839-8aab-22fc0c67d65d",
+      "label": "cloudy sky",
+      "slug": "cloudy-sky",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/cloudy-sky",
+      "description": null,
+      "parent_ids": [
+        "00a7cfaa-4d0b-481d-b9d4-499ff9642c79",
+        "6921d06c-0a94-4c63-970e-c41a2cf13c3c"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "cloudy",
+        "clouded sky"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 2208,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "6eee0036-9dba-402b-8ace-719b9a61081d",
+      "label": "mountain top",
+      "slug": "mountain-top",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/mountain-top",
+      "description": null,
+      "parent_ids": [
+        "b5662701-af09-4044-b36b-09e60fc9065a"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 40,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "224a4134-43c1-473b-a865-f8e00de9e99f",
+      "label": "white glow",
+      "slug": "white-glow",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/white-glow",
+      "description": null,
+      "parent_ids": [
+        "d40d2636-9622-4dc8-92db-07dd6c044f48"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 268,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "f7994d85-236c-42d3-ae50-e5792a83acf2",
+      "label": "yellow sky",
+      "slug": "yellow-sky",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/yellow-sky",
+      "description": null,
+      "parent_ids": [
+        "00a7cfaa-4d0b-481d-b9d4-499ff9642c79"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 122,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "f8242049-3425-4b1b-b302-257037c710f1",
+      "label": "blue/orange",
+      "slug": "blue-orange",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/blue-orange",
+      "description": "Features heavy amounts of the complimentary colors blue and orange, similar to a movie poster. Compare [bisexual lighting](bisexual-lighting).",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "orange/blue",
+        "movie poster",
+        "blue orange contrast"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 153,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "8a561e49-b62f-4972-b74c-d8caed33fe01",
+      "label": "mount & rider",
+      "slug": "mount-rider",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/mount-rider",
+      "description": "A creature that's mounted or being ridden, and its rider.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "rider",
+        "mount and rider",
+        "riding",
+        "mount"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1174,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "ed45c82b-fb1b-4d13-b0a6-8b12be616273",
+      "label": "outdoor",
+      "slug": "outdoor",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/outdoor",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1220,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "da0770e8-e41b-4a29-93a0-4b6b7ce85a89",
+      "label": "armor",
+      "slug": "armor",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/armor",
+      "description": "Garments designed to protect one from physical harm.",
+      "parent_ids": [],
+      "child_ids": [
+        "11db0d15-0849-455b-ae6c-df094de16fd9"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 1261,
+      "childIdsTotal": 32
+    },
+    {
+      "object": "tag",
+      "id": "b47e31c4-70ae-471d-b51b-55742fd8f763",
+      "label": "art media",
+      "slug": "art-media",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/art-media",
+      "description": "Media used to render the artwork.",
+      "parent_ids": [],
+      "child_ids": [
+        "726fb52d-5368-41a0-ac9a-9fbbee4b8768"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 40
+    },
+    {
+      "object": "tag",
+      "id": "1c8b704d-66db-4995-8edb-c905127eba0c",
+      "label": "asgardian",
+      "slug": "asgardian",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/asgardian",
+      "description": null,
+      "parent_ids": [
+        "b45dc384-8fbe-4ed8-8420-7b7ba6801f17"
+      ],
+      "child_ids": [
+        "e277877b-ceab-4900-bd15-1664f2e1ba67"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 2,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "7b155ecc-bd5e-4757-bde2-c029b6978bad",
+      "label": "character",
+      "slug": "character",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/character",
+      "description": "Named characters.",
+      "parent_ids": [],
+      "child_ids": [
+        "011f67cf-9b4f-4eaa-8af7-a7a1444ccbfa"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 3104
+    },
+    {
+      "object": "tag",
+      "id": "9fe7fa00-c601-43f0-a530-85ca7f4d6b44",
+      "label": "clothing",
+      "slug": "clothing",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/clothing",
+      "description": "Tags describing varieties of clothing.",
+      "parent_ids": [],
+      "child_ids": [
+        "120a9ca4-3086-4f73-82df-a541b1119d86",
+        "3ac58a5a-7cf2-42ae-a936-df294bab8320"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 84
+    },
+    {
+      "object": "tag",
+      "id": "b289dc71-dd5d-4245-b96f-46218ba34aa3",
+      "label": "electricity",
+      "slug": "electricity",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/electricity",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "f014c07f-acb7-4fcc-8236-82b77447e1e9"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 501,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "8b7d22d4-f840-471d-832e-27b5af6d1d63",
+      "label": "external ip",
+      "slug": "external-ip",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/external-ip",
+      "description": "Art set in distinct universes outside any Magic multiverse.",
+      "parent_ids": [],
+      "child_ids": [
+        "9b21da2d-b6f9-4447-8585-ff2b29cbc096"
+      ],
+      "aliases": [
+        "external property",
+        "universes beyond",
+        "external properties",
+        "alternate settings"
+      ],
+      "taggings": [],
+      "taggingsTotal": 5,
+      "childIdsTotal": 61
+    },
+    {
+      "object": "tag",
+      "id": "d40d2636-9622-4dc8-92db-07dd6c044f48",
+      "label": "glow",
+      "slug": "glow",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/glow",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "224a4134-43c1-473b-a865-f8e00de9e99f"
+      ],
+      "aliases": [
+        "glowing"
+      ],
+      "taggings": [],
+      "taggingsTotal": 339,
+      "childIdsTotal": 23
+    },
+    {
+      "object": "tag",
+      "id": "011f67cf-9b4f-4eaa-8af7-a7a1444ccbfa",
+      "label": "god",
+      "slug": "god",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/god",
+      "description": "The gods of various planes.",
+      "parent_ids": [
+        "7b155ecc-bd5e-4757-bde2-c029b6978bad"
+      ],
+      "child_ids": [
+        "b45dc384-8fbe-4ed8-8420-7b7ba6801f17"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 1,
+      "childIdsTotal": 10
+    },
+    {
+      "object": "tag",
+      "id": "9d199558-3c4d-4a00-9913-35cd78a12de1",
+      "label": "hair",
+      "slug": "hair",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/hair",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "4e41b934-0be4-4b47-bef9-72bdc50993ce"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 16,
+      "childIdsTotal": 19
+    },
+    {
+      "object": "tag",
+      "id": "029db109-924f-410a-8f2a-9c0ee78e85e3",
+      "label": "hammer",
+      "slug": "hammer",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/hammer",
+      "description": "A tool for applying a large force to a small area all at once. 🔨",
+      "parent_ids": [
+        "ed7a3b88-8e75-4ff1-86be-4f1c726784e7",
+        "e1e261ac-5c06-410f-8e60-0680da9cbf63"
+      ],
+      "child_ids": [
+        "aaee7fe7-f0bf-4b88-83a7-177521a83fe7"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 366,
+      "childIdsTotal": 6
+    },
+    {
+      "object": "tag",
+      "id": "120a9ca4-3086-4f73-82df-a541b1119d86",
+      "label": "hat",
+      "slug": "hat",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/hat",
+      "description": "Clothing worn on the head.",
+      "parent_ids": [
+        "9fe7fa00-c601-43f0-a530-85ca7f4d6b44"
+      ],
+      "child_ids": [
+        "11db0d15-0849-455b-ae6c-df094de16fd9"
+      ],
+      "aliases": [
+        "headgear"
+      ],
+      "taggings": [],
+      "taggingsTotal": 975,
+      "childIdsTotal": 34
+    },
+    {
+      "object": "tag",
+      "id": "11db0d15-0849-455b-ae6c-df094de16fd9",
+      "label": "helmet",
+      "slug": "helmet",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/helmet",
+      "description": null,
+      "parent_ids": [
+        "da0770e8-e41b-4a29-93a0-4b6b7ce85a89",
+        "120a9ca4-3086-4f73-82df-a541b1119d86"
+      ],
+      "child_ids": [
+        "a6039075-7e27-4ea0-b1d9-1360c424d98e"
+      ],
+      "aliases": [
+        "helm"
+      ],
+      "taggings": [],
+      "taggingsTotal": 1366,
+      "childIdsTotal": 10
+    },
+    {
+      "object": "tag",
+      "id": "19a5494b-7362-438d-88dc-40e7117b2cd7",
+      "label": "male",
+      "slug": "male",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/male",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "e277877b-ceab-4900-bd15-1664f2e1ba67"
+      ],
+      "aliases": [
+        "man"
+      ],
+      "taggings": [],
+      "taggingsTotal": 3634,
+      "childIdsTotal": 1784
+    },
+    {
+      "object": "tag",
+      "id": "b45dc384-8fbe-4ed8-8420-7b7ba6801f17",
+      "label": "marvel god",
+      "slug": "marvel-god",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/marvel-god",
+      "description": null,
+      "parent_ids": [
+        "9b21da2d-b6f9-4447-8585-ff2b29cbc096",
+        "011f67cf-9b4f-4eaa-8af7-a7a1444ccbfa"
+      ],
+      "child_ids": [
+        "1c8b704d-66db-4995-8edb-c905127eba0c"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 4,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "9b21da2d-b6f9-4447-8585-ff2b29cbc096",
+      "label": "marvel (universe)",
+      "slug": "marvel-universe",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/marvel-universe",
+      "description": null,
+      "parent_ids": [
+        "8b7d22d4-f840-471d-832e-27b5af6d1d63"
+      ],
+      "child_ids": [
+        "aaee7fe7-f0bf-4b88-83a7-177521a83fe7",
+        "b45dc384-8fbe-4ed8-8420-7b7ba6801f17"
+      ],
+      "aliases": [
+        "marvel comics"
+      ],
+      "taggings": [],
+      "taggingsTotal": 82,
+      "childIdsTotal": 594
+    },
+    {
+      "object": "tag",
+      "id": "21d1e5b1-1a01-4f12-a4e2-b04d390cbfd4",
+      "label": "pose",
+      "slug": "pose",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/pose",
+      "description": "Tags describing someone's pose.",
+      "parent_ids": [],
+      "child_ids": [
+        "03e982c8-e357-4a7e-96d0-4013bbdac837",
+        "e36b4c55-940b-4da7-823a-d36182e9a2e3",
+        "f70e8a36-302c-4db4-a8e4-8ce1054d2ae1"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 70
+    },
+    {
+      "object": "tag",
+      "id": "e9d5d154-3473-4fb4-8353-3ffb7e275283",
+      "label": "signature",
+      "slug": "signature",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/signature",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "b1248602-1af8-4830-85b9-b24961f57f66"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 7,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "00a7cfaa-4d0b-481d-b9d4-499ff9642c79",
+      "label": "sky",
+      "slug": "sky",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/sky",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "113b3f6e-a385-4839-8aab-22fc0c67d65d",
+        "f7fc2aed-02f0-4f54-905d-51d22d5de4dc",
+        "f7994d85-236c-42d3-ae50-e5792a83acf2"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 14
+    },
+    {
+      "object": "tag",
+      "id": "03e982c8-e357-4a7e-96d0-4013bbdac837",
+      "label": "standing",
+      "slug": "standing",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/standing",
+      "description": null,
+      "parent_ids": [
+        "21d1e5b1-1a01-4f12-a4e2-b04d390cbfd4"
+      ],
+      "child_ids": [
+        "e0385f83-c3c8-4cf1-aa81-f291756050c7"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 42,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "ed7a3b88-8e75-4ff1-86be-4f1c726784e7",
+      "label": "tool",
+      "slug": "tool",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/tool",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "029db109-924f-410a-8f2a-9c0ee78e85e3"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 47,
+      "childIdsTotal": 38
+    },
+    {
+      "object": "tag",
+      "id": "e1e261ac-5c06-410f-8e60-0680da9cbf63",
+      "label": "weapon",
+      "slug": "weapon",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/weapon",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "029db109-924f-410a-8f2a-9c0ee78e85e3",
+        "62d721b7-8e57-41d1-b717-555521ad8bee"
+      ],
+      "aliases": [
+        "multiple weapons"
+      ],
+      "taggings": [],
+      "taggingsTotal": 8,
+      "childIdsTotal": 66
+    },
+    {
+      "object": "tag",
+      "id": "0641a74c-4dd5-426d-be58-2ab86d71995d",
+      "label": "burn",
+      "slug": "burn",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn",
+      "description": "Effects that deal damage, whether to creatures, players, or planeswalkers.",
+      "parent_ids": [],
+      "child_ids": [
+        "081ebf89-e53b-47ff-88e8-1535068212b0",
+        "c80fafa2-d5c9-47e5-8ef9-cbf7c1316d0a",
+        "7a0d9ee9-b672-451a-8722-0c5fc6087ff0"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "c80fafa2-d5c9-47e5-8ef9-cbf7c1316d0a",
+      "label": "burn battle",
+      "slug": "burn-battle",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-battle",
+      "description": null,
+      "parent_ids": [
+        "0641a74c-4dd5-426d-be58-2ab86d71995d"
+      ],
+      "child_ids": [
+        "d58bcedc-2dcd-42c3-8b52-5359457e6802"
+      ],
+      "aliases": [
+        "removal-battle-burn"
+      ],
+      "taggings": [],
+      "taggingsTotal": 13,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "01c171be-e0db-443c-830d-578873c27792",
+      "label": "burn creature",
+      "slug": "burn-creature",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-creature",
+      "description": null,
+      "parent_ids": [
+        "7a0d9ee9-b672-451a-8722-0c5fc6087ff0",
+        "d91e421d-ff87-4aad-a4bf-5aefc51252b6"
+      ],
+      "child_ids": [
+        "d58bcedc-2dcd-42c3-8b52-5359457e6802"
+      ],
+      "aliases": [
+        "removal-creature-burn"
+      ],
+      "taggings": [],
+      "taggingsTotal": 1050,
+      "childIdsTotal": 7
+    },
+    {
+      "object": "tag",
+      "id": "9b437740-9a6c-40cd-90db-a2b057df8e3f",
+      "label": "burn planeswalker",
+      "slug": "burn-planeswalker",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-planeswalker",
+      "description": null,
+      "parent_ids": [
+        "7a0d9ee9-b672-451a-8722-0c5fc6087ff0",
+        "591fb358-e9d7-490e-8c15-24aecbbe697e"
+      ],
+      "child_ids": [
+        "d58bcedc-2dcd-42c3-8b52-5359457e6802"
+      ],
+      "aliases": [
+        "removal-planeswalker-burn"
+      ],
+      "taggings": [],
+      "taggingsTotal": 384,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "081ebf89-e53b-47ff-88e8-1535068212b0",
+      "label": "burn player",
+      "slug": "burn-player",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-player",
+      "description": null,
+      "parent_ids": [
+        "0641a74c-4dd5-426d-be58-2ab86d71995d"
+      ],
+      "child_ids": [
+        "d58bcedc-2dcd-42c3-8b52-5359457e6802"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 906,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "1adda1a4-e23d-4212-a4da-58303a20e00c",
+      "label": "cycle",
+      "slug": "cycle",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/cycle",
+      "description": "All the cycles from Magic history.",
+      "parent_ids": [],
+      "child_ids": [
+        "41738dc6-42bc-4c6e-b44d-174b2fe67ae6"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 1354
+    },
+    {
+      "object": "tag",
+      "id": "444f824c-f910-4530-9dbe-ede7a84cd7f9",
+      "label": "removal",
+      "slug": "removal",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/removal",
+      "description": "Get things off the table.",
+      "parent_ids": [],
+      "child_ids": [
+        "d91e421d-ff87-4aad-a4bf-5aefc51252b6",
+        "591fb358-e9d7-490e-8c15-24aecbbe697e",
+        "cc12d27d-1d0e-4849-9551-71caead74d24",
+        "7a0d9ee9-b672-451a-8722-0c5fc6087ff0"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 25
+    },
+    {
+      "object": "tag",
+      "id": "7a0d9ee9-b672-451a-8722-0c5fc6087ff0",
+      "label": "removal-burn",
+      "slug": "removal-burn",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/removal-burn",
+      "description": null,
+      "parent_ids": [
+        "0641a74c-4dd5-426d-be58-2ab86d71995d",
+        "444f824c-f910-4530-9dbe-ede7a84cd7f9"
+      ],
+      "child_ids": [
+        "01c171be-e0db-443c-830d-578873c27792",
+        "9b437740-9a6c-40cd-90db-a2b057df8e3f"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "d91e421d-ff87-4aad-a4bf-5aefc51252b6",
+      "label": "removal-creature",
+      "slug": "removal-creature",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/removal-creature",
+      "description": null,
+      "parent_ids": [
+        "444f824c-f910-4530-9dbe-ede7a84cd7f9"
+      ],
+      "child_ids": [
+        "01c171be-e0db-443c-830d-578873c27792"
+      ],
+      "aliases": [
+        "creature removal"
+      ],
+      "taggings": [],
+      "taggingsTotal": 1940,
+      "childIdsTotal": 10
+    },
+    {
+      "object": "tag",
+      "id": "591fb358-e9d7-490e-8c15-24aecbbe697e",
+      "label": "removal-planeswalker",
+      "slug": "removal-planeswalker",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/removal-planeswalker",
+      "description": null,
+      "parent_ids": [
+        "444f824c-f910-4530-9dbe-ede7a84cd7f9"
+      ],
+      "child_ids": [
+        "9b437740-9a6c-40cd-90db-a2b057df8e3f"
+      ],
+      "aliases": [
+        "planeswalker removal"
+      ],
+      "taggings": [],
+      "taggingsTotal": 160,
+      "childIdsTotal": 5
+    }
+  ]
+}

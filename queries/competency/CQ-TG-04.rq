@@ -1,0 +1,17 @@
+# id: CQ-TG-04
+# title: Weak and annotated art taggings
+# question: Which art tag assignments have weight weak or a free-text annotation, and on which illustration?
+# kind: SPARQL
+# expects: nonempty
+# modules: tags, text-art
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?tag ?weight ?annotation ?illustration WHERE {
+  ?a a smtg:ArtTagAssignment ; smtg:assignedTag/skos:prefLabel ?tag ; smtg:assignmentTarget ?illustration ; smtg:taggingWeight/skos:notation ?weight .
+  OPTIONAL { ?a smtg:taggingAnnotation ?annotation }
+  FILTER(?weight = "weak" || BOUND(?annotation))
+} ORDER BY ?weight ?tag

@@ -1,0 +1,1200 @@
+{
+  "slug": "ashnods-altar",
+  "purpose": "Tagger tags assigned to the cards/illustrations of fixtures/scryfall/ashnods-altar.json, plus the full parent chain of each tag.",
+  "selector": "oracle_tags: taggings[].oracle_id ∈ fixture oracle ids; art_tags: taggings[].illustration_id ∈ fixture illustration ids. Per target, tags sorted by (tagging has annotation / non-median weight first, tag has parents first, slug) and capped at 15 oracle / 10 art tags. Ancestors = transitive closure over parent_ids. taggings[] filtered to the fixture targets. Available per target: 4d18bcba…: 9 oracle tags; 18ad1104…: 11 art tags; 5abdc37b…: 10 art tags.",
+  "note": "Tag records are the original Tagger objects except: (1) taggings[] is FILTERED (see selector) and the fixture-added key `taggingsTotal` gives the unfiltered count; (2) child_ids[] is filtered to tags present in this file and the fixture-added key `childIdsTotal` gives the unfiltered count. parent_ids[] is complete: every ancestor is included, so the file is a closed sub-hierarchy in which child_ids is still the exact inverse of parent_ids. `taggingsTotal` and `childIdsTotal` are NOT source fields.",
+  "source": {
+    "key": "scryfall:oracle_tags",
+    "file": "oracle-tags-20261103100032.jsonl.gz",
+    "sha256": "23d94bab24a5e4a9376ddc66ae3018c215dac693455fecdf2be83e86a43c1e5e",
+    "sourceUpdatedAt": "2026-11-03T10:00:32.540+00:00"
+  },
+  "extraSources": [
+    {
+      "key": "scryfall:art_tags",
+      "file": "art-tags-20261103100113.jsonl.gz",
+      "sha256": "9d963522897dbcf58e168a6cf4063bed908b87c2b0d7cd2bbce4557bd6d33d71",
+      "sourceUpdatedAt": "2026-11-03T10:01:13.387+00:00"
+    }
+  ],
+  "targets": [
+    "4d18bcba-a346-445e-a182-6cc30b7e066d",
+    "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+    "18ad1104-51e7-41a8-ab39-3a0cde3b170f"
+  ],
+  "recordIndex": [
+    {
+      "id": "2ffaa10e-0f39-4a97-a7d2-a78f76826334",
+      "slug": "free-sacrifice-outlet",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+      "parents": 1
+    },
+    {
+      "id": "a3909e64-69d4-442e-8da1-fffa309492b8",
+      "slug": "alliteration",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+      "parents": 1
+    },
+    {
+      "id": "523a4f29-25ee-483c-8123-a8e62b62af5a",
+      "slug": "mana-rock",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+      "parents": 1
+    },
+    {
+      "id": "a798d4bf-1499-4a50-931e-bfbaaf46f4df",
+      "slug": "namesake-spell",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+      "parents": 1
+    },
+    {
+      "id": "d5dcbcc6-d49b-4d76-9272-35a062bcb656",
+      "slug": "sacrifice-outlet-creature",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+      "parents": 1
+    },
+    {
+      "id": "36f3801c-18c7-4cbd-828d-5cc7642edea2",
+      "slug": "virtual-legendary",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+      "parents": 1
+    },
+    {
+      "id": "acf78b42-a1d5-4829-bef0-69204f29e260",
+      "slug": "activated-ability",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+      "parents": 0
+    },
+    {
+      "id": "458887e7-bfa8-4933-8746-4c9efb578c54",
+      "slug": "adds-multiple-mana",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+      "parents": 0
+    },
+    {
+      "id": "82e2cb8b-1a53-4814-a7a2-76c1369055b4",
+      "slug": "refund",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+      "parents": 0
+    },
+    {
+      "id": "b1248602-1af8-4830-85b9-b24961f57f66",
+      "slug": "artist-signature",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+      "parents": 1
+    },
+    {
+      "id": "48991205-43ef-40ee-b2aa-471b97e1c40c",
+      "slug": "bottle",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+      "parents": 1
+    },
+    {
+      "id": "238f834d-e96b-4792-9475-24df121f7200",
+      "slug": "dominaria",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+      "parents": 1
+    },
+    {
+      "id": "e1449723-59f7-4b15-bc60-c0d33e9f50a1",
+      "slug": "green-liquid",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+      "parents": 1
+    },
+    {
+      "id": "5c298b65-b2fc-4c93-b5cd-e274c7f25f1b",
+      "slug": "cage",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+      "parents": 0
+    },
+    {
+      "id": "6e939f60-263d-4a5f-8423-8fe2120a41c6",
+      "slug": "creation-date",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+      "parents": 0
+    },
+    {
+      "id": "eb2553de-b289-4163-9a35-35d09abeba42",
+      "slug": "elixir",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+      "parents": 0
+    },
+    {
+      "id": "b1e93d89-3f55-4fdd-a6aa-e7edfe3973fc",
+      "slug": "laboratory",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+      "parents": 0
+    },
+    {
+      "id": "da61e878-49ff-40b2-ad93-ac8d1e04dd8e",
+      "slug": "no-one",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+      "parents": 0
+    },
+    {
+      "id": "b5c14d97-3afd-49f4-923f-8e0336d2adf9",
+      "slug": "still-life",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+      "parents": 0
+    },
+    {
+      "id": "d19734e3-9027-4d6b-ad39-3e1311ee4004",
+      "slug": "shackle",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+      "parents": 1
+    },
+    {
+      "id": "243e0b3a-a5d3-48ad-8c90-fc71c0fc7f74",
+      "slug": "chain",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+      "parents": 0
+    },
+    {
+      "id": "a5ee7a31-d833-4712-bb02-702611a6c8a9",
+      "slug": "gear",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+      "parents": 0
+    },
+    {
+      "id": "25b71206-ca2d-43a3-86c3-54169fe14a6c",
+      "slug": "tank-container",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+      "parents": 1
+    },
+    {
+      "id": "93749f93-e3a1-40f3-8d8f-6884306295ee",
+      "slug": "vial",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+      "parents": 1
+    },
+    {
+      "id": "20d6e596-9902-44d2-93ba-88bc8e3b549f",
+      "slug": "corpse",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+      "parents": 0
+    },
+    {
+      "id": "752829ee-634c-4588-b1ae-64b673cc7cf2",
+      "slug": "emaciated",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+      "parents": 0
+    },
+    {
+      "id": "1171e693-8dfc-431b-888a-ad85d62948c6",
+      "slug": "indoor",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+      "parents": 0
+    },
+    {
+      "id": "d25fe04d-5d21-41e6-9cd7-dfc5535559df",
+      "slug": "operating-table",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+      "parents": 0
+    },
+    {
+      "id": "5576576c-4131-4d6d-a7c7-7ea89a3b9435",
+      "slug": "pipe",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+      "parents": 0
+    },
+    {
+      "id": "5b71c69f-41f2-4cb4-9f26-e0901955ba19",
+      "slug": "bondage",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "a1aad32d-2a04-4f9e-b558-d6d924c8379b",
+      "slug": "container",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "1271b962-dd0c-48bb-9a35-10bb5f4fc747",
+      "slug": "liquid",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa",
+      "slug": "plane",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "e9d5d154-3473-4fb4-8353-3ffb7e275283",
+      "slug": "signature",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "5a0a0531-5462-477d-add9-886148c4413f",
+      "slug": "card-names",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "5f1260dd-e1dc-435a-a9ff-ce7172b7a5cd",
+      "slug": "mana-producer",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "2f3e4ad7-5e60-41b4-bdbc-653f16869cf6",
+      "slug": "ramp",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "aa908dd5-bf9e-4835-bbbb-77579a1f0e5f",
+      "slug": "repeatable-sacrifice-outlet",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "c7bd55a7-1ea0-49da-b25e-0be470fbe8ec",
+      "slug": "sacrifice-outlet",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    }
+  ],
+  "records": [
+    {
+      "object": "tag",
+      "id": "2ffaa10e-0f39-4a97-a7d2-a78f76826334",
+      "label": "free sacrifice outlet",
+      "slug": "free-sacrifice-outlet",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/free-sacrifice-outlet",
+      "description": "Ways to sacrifice a permanent repeatedly that require no additional cost.",
+      "parent_ids": [
+        "aa908dd5-bf9e-4835-bbbb-77579a1f0e5f"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "free-sac-outlet"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+          "weight": "very_strong"
+        }
+      ],
+      "taggingsTotal": 192,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "a3909e64-69d4-442e-8da1-fffa309492b8",
+      "label": "alliteration",
+      "slug": "alliteration",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/alliteration",
+      "description": "Cards that alliterate, either properly or per Treacherous Trapezist.",
+      "parent_ids": [
+        "5a0a0531-5462-477d-add9-886148c4413f"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 4527,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "523a4f29-25ee-483c-8123-a8e62b62af5a",
+      "label": "mana rock",
+      "slug": "mana-rock",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/mana-rock",
+      "description": "Noncreature artifacts that net increase your mana.",
+      "parent_ids": [
+        "5f1260dd-e1dc-435a-a9ff-ce7172b7a5cd"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "manarock-cc",
+        "manarock-any-color",
+        "manarock-chosen-color",
+        "manarock-c",
+        "manarock-ccc",
+        "manarock"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 110,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "a798d4bf-1499-4a50-931e-bfbaaf46f4df",
+      "label": "namesake spell",
+      "slug": "namesake-spell",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/namesake-spell",
+      "description": "Spells (or, mostly spells) with names that identify them with a specific named character.",
+      "parent_ids": [
+        "5a0a0531-5462-477d-add9-886148c4413f"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1641,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "d5dcbcc6-d49b-4d76-9272-35a062bcb656",
+      "label": "sacrifice outlet-creature",
+      "slug": "sacrifice-outlet-creature",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/sacrifice-outlet-creature",
+      "description": null,
+      "parent_ids": [
+        "c7bd55a7-1ea0-49da-b25e-0be470fbe8ec"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "sac outlet-creature"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 903,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "36f3801c-18c7-4cbd-828d-5cc7642edea2",
+      "label": "virtual legendary",
+      "slug": "virtual-legendary",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/virtual-legendary",
+      "description": "This card represents a one-of-a-kind creature or object (and is named accordingly), and could conceivably have been legendary. Usually cards are in this category because they were printed before legendary existed or have a mechanical need to not be legendary.",
+      "parent_ids": [
+        "5a0a0531-5462-477d-add9-886148c4413f"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 220,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "acf78b42-a1d5-4829-bef0-69204f29e260",
+      "label": "activated ability",
+      "slug": "activated-ability",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/activated-ability",
+      "description": "Cards with activated abilities. Not for cards that only gain or give activated abilities.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 9235,
+      "childIdsTotal": 7
+    },
+    {
+      "object": "tag",
+      "id": "458887e7-bfa8-4933-8746-4c9efb578c54",
+      "label": "adds multiple mana",
+      "slug": "adds-multiple-mana",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/adds-multiple-mana",
+      "description": "Cards that net you more than one mana at a time.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "produces multiple mana"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 536,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "82e2cb8b-1a53-4814-a7a2-76c1369055b4",
+      "label": "refund",
+      "slug": "refund",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/refund",
+      "description": "Immediately get mana or untapped lands back.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "instant rebate"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 276,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "b1248602-1af8-4830-85b9-b24961f57f66",
+      "label": "artist signature",
+      "slug": "artist-signature",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/artist-signature",
+      "description": "The artist's personal mark, identifying the work as their own. (Artist signatures might be cropped out in some versions of the same art.)",
+      "parent_ids": [
+        "e9d5d154-3473-4fb4-8353-3ffb7e275283"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 9272,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "48991205-43ef-40ee-b2aa-471b97e1c40c",
+      "label": "bottle",
+      "slug": "bottle",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/bottle",
+      "description": null,
+      "parent_ids": [
+        "a1aad32d-2a04-4f9e-b558-d6d924c8379b"
+      ],
+      "child_ids": [
+        "93749f93-e3a1-40f3-8d8f-6884306295ee"
+      ],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 182,
+      "childIdsTotal": 4
+    },
+    {
+      "object": "tag",
+      "id": "238f834d-e96b-4792-9475-24df121f7200",
+      "label": "dominaria",
+      "slug": "dominaria",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/dominaria",
+      "description": null,
+      "parent_ids": [
+        "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 3146,
+      "childIdsTotal": 12
+    },
+    {
+      "object": "tag",
+      "id": "e1449723-59f7-4b15-bc60-c0d33e9f50a1",
+      "label": "green liquid",
+      "slug": "green-liquid",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/green-liquid",
+      "description": null,
+      "parent_ids": [
+        "1271b962-dd0c-48bb-9a35-10bb5f4fc747"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 103,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "5c298b65-b2fc-4c93-b5cd-e274c7f25f1b",
+      "label": "cage",
+      "slug": "cage",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/cage",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 82,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "6e939f60-263d-4a5f-8423-8fe2120a41c6",
+      "label": "creation date",
+      "slug": "creation-date",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/creation-date",
+      "description": "The artist included that date of the piece's creation within the card art.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 2100,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "eb2553de-b289-4163-9a35-35d09abeba42",
+      "label": "elixir",
+      "slug": "elixir",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/elixir",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 4,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "b1e93d89-3f55-4fdd-a6aa-e7edfe3973fc",
+      "label": "laboratory",
+      "slug": "laboratory",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/laboratory",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "lab"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 166,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "da61e878-49ff-40b2-ad93-ac8d1e04dd8e",
+      "label": "no one",
+      "slug": "no-one",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/no-one",
+      "description": "Nobody is present in this art.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "no figure",
+        "zero figures"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 2643,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "b5c14d97-3afd-49f4-923f-8e0336d2adf9",
+      "label": "still life",
+      "slug": "still-life",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/still-life",
+      "description": "Art depicting inanimate, non-moving objects.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 57,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "d19734e3-9027-4d6b-ad39-3e1311ee4004",
+      "label": "shackle",
+      "slug": "shackle",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/shackle",
+      "description": null,
+      "parent_ids": [
+        "5b71c69f-41f2-4cb4-9f26-e0901955ba19"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "manacle"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+          "weight": "weak"
+        }
+      ],
+      "taggingsTotal": 67,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "243e0b3a-a5d3-48ad-8c90-fc71c0fc7f74",
+      "label": "chain",
+      "slug": "chain",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/chain",
+      "description": "A series of interlocked links; individually rigid, but together forming something akin to rope. 🔗",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+          "weight": "weak"
+        }
+      ],
+      "taggingsTotal": 953,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "a5ee7a31-d833-4712-bb02-702611a6c8a9",
+      "label": "gear",
+      "slug": "gear",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/gear",
+      "description": "A wheel with teeth, to transfer rotation between it and other gears meshed with it.  ⚙",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "cog"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+          "weight": "weak"
+        }
+      ],
+      "taggingsTotal": 262,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "25b71206-ca2d-43a3-86c3-54169fe14a6c",
+      "label": "tank (container)",
+      "slug": "tank-container",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/tank-container",
+      "description": null,
+      "parent_ids": [
+        "a1aad32d-2a04-4f9e-b558-d6d924c8379b"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 17,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "93749f93-e3a1-40f3-8d8f-6884306295ee",
+      "label": "vial",
+      "slug": "vial",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/vial",
+      "description": "A glass container or test tube.",
+      "parent_ids": [
+        "48991205-43ef-40ee-b2aa-471b97e1c40c"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "flask",
+        "test tube"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 281,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "20d6e596-9902-44d2-93ba-88bc8e3b549f",
+      "label": "corpse",
+      "slug": "corpse",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/corpse",
+      "description": "He's dead, Jim.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "dead body"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 535,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "752829ee-634c-4588-b1ae-64b673cc7cf2",
+      "label": "emaciated",
+      "slug": "emaciated",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/emaciated",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 37,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "1171e693-8dfc-431b-888a-ad85d62948c6",
+      "label": "indoor",
+      "slug": "indoor",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/indoor",
+      "description": "Objects, scenes, characters and events that are or occur indoors, and not outside.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 981,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "d25fe04d-5d21-41e6-9cd7-dfc5535559df",
+      "label": "operating table",
+      "slug": "operating-table",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/operating-table",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 19,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "5576576c-4131-4d6d-a7c7-7ea89a3b9435",
+      "label": "pipe",
+      "slug": "pipe",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/pipe",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "tube"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 238,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "5b71c69f-41f2-4cb4-9f26-e0901955ba19",
+      "label": "bondage",
+      "slug": "bondage",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/bondage",
+      "description": "Chained up, bound and gagged, etc.",
+      "parent_ids": [],
+      "child_ids": [
+        "d19734e3-9027-4d6b-ad39-3e1311ee4004"
+      ],
+      "aliases": [
+        "tied",
+        "bound",
+        "ensnared"
+      ],
+      "taggings": [],
+      "taggingsTotal": 194,
+      "childIdsTotal": 4
+    },
+    {
+      "object": "tag",
+      "id": "a1aad32d-2a04-4f9e-b558-d6d924c8379b",
+      "label": "container",
+      "slug": "container",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/container",
+      "description": "Things designed to hold other things.",
+      "parent_ids": [],
+      "child_ids": [
+        "48991205-43ef-40ee-b2aa-471b97e1c40c",
+        "25b71206-ca2d-43a3-86c3-54169fe14a6c"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 28
+    },
+    {
+      "object": "tag",
+      "id": "1271b962-dd0c-48bb-9a35-10bb5f4fc747",
+      "label": "liquid",
+      "slug": "liquid",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/liquid",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "e1449723-59f7-4b15-bc60-c0d33e9f50a1"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 22,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa",
+      "label": "plane",
+      "slug": "plane",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/plane",
+      "description": "A collection of art tags that relate to specific planes.",
+      "parent_ids": [],
+      "child_ids": [
+        "238f834d-e96b-4792-9475-24df121f7200"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 72
+    },
+    {
+      "object": "tag",
+      "id": "e9d5d154-3473-4fb4-8353-3ffb7e275283",
+      "label": "signature",
+      "slug": "signature",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/signature",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "b1248602-1af8-4830-85b9-b24961f57f66"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 7,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "5a0a0531-5462-477d-add9-886148c4413f",
+      "label": "card names",
+      "slug": "card-names",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/card-names",
+      "description": "A collection of tags identifying properties and naming schemes in cards.",
+      "parent_ids": [],
+      "child_ids": [
+        "a3909e64-69d4-442e-8da1-fffa309492b8",
+        "a798d4bf-1499-4a50-931e-bfbaaf46f4df",
+        "36f3801c-18c7-4cbd-828d-5cc7642edea2"
+      ],
+      "aliases": [
+        "naming scheme"
+      ],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 33
+    },
+    {
+      "object": "tag",
+      "id": "5f1260dd-e1dc-435a-a9ff-ce7172b7a5cd",
+      "label": "mana producer",
+      "slug": "mana-producer",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/mana-producer",
+      "description": "Nonland cards that generate mana.",
+      "parent_ids": [
+        "2f3e4ad7-5e60-41b4-bdbc-653f16869cf6"
+      ],
+      "child_ids": [
+        "523a4f29-25ee-483c-8123-a8e62b62af5a"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 127,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "2f3e4ad7-5e60-41b4-bdbc-653f16869cf6",
+      "label": "ramp",
+      "slug": "ramp",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/ramp",
+      "description": "Effects that increase available mana for current or later turns.",
+      "parent_ids": [],
+      "child_ids": [
+        "5f1260dd-e1dc-435a-a9ff-ce7172b7a5cd"
+      ],
+      "aliases": [
+        "mana ramp",
+        "acceleration"
+      ],
+      "taggings": [],
+      "taggingsTotal": 583,
+      "childIdsTotal": 8
+    },
+    {
+      "object": "tag",
+      "id": "aa908dd5-bf9e-4835-bbbb-77579a1f0e5f",
+      "label": "repeatable sacrifice outlet",
+      "slug": "repeatable-sacrifice-outlet",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/repeatable-sacrifice-outlet",
+      "description": "Repeatedly sacrifice stuff.",
+      "parent_ids": [
+        "c7bd55a7-1ea0-49da-b25e-0be470fbe8ec"
+      ],
+      "child_ids": [
+        "2ffaa10e-0f39-4a97-a7d2-a78f76826334"
+      ],
+      "aliases": [
+        "repeatable sac outlet"
+      ],
+      "taggings": [],
+      "taggingsTotal": 600,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "c7bd55a7-1ea0-49da-b25e-0be470fbe8ec",
+      "label": "sacrifice outlet",
+      "slug": "sacrifice-outlet",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/sacrifice-outlet",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "d5dcbcc6-d49b-4d76-9272-35a062bcb656",
+        "aa908dd5-bf9e-4835-bbbb-77579a1f0e5f"
+      ],
+      "aliases": [
+        "sac outlet"
+      ],
+      "taggings": [],
+      "taggingsTotal": 12,
+      "childIdsTotal": 14
+    }
+  ]
+}

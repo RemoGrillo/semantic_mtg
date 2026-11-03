@@ -1,0 +1,10 @@
+# SYNTHETIC invalid fixture for the OWL reasoner (not SHACL).
+# why: negative test NT-01 — an Oracle card cannot be both an Adventurer card and an MDFC.
+# expect: inconsistent (hasLayout is functional; layout concepts are pairwise different)
+@prefix smtg: <https://w3id.org/smtg/ontology#> .
+@prefix x: <https://w3id.org/smtg/id/synthetic/> .
+@prefix v: <https://w3id.org/smtg/vocab/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+x:bad a smtg:OracleCard ;
+  smtg:hasLayout <https://w3id.org/smtg/vocab/layout/adventure> , <https://w3id.org/smtg/vocab/layout/modal_dfc> .

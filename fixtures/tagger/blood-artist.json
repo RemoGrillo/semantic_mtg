@@ -1,0 +1,1410 @@
+{
+  "slug": "blood-artist",
+  "purpose": "Tagger tags assigned to the cards/illustrations of fixtures/scryfall/blood-artist.json, plus the full parent chain of each tag.",
+  "selector": "oracle_tags: taggings[].oracle_id ∈ fixture oracle ids; art_tags: taggings[].illustration_id ∈ fixture illustration ids. Per target, tags sorted by (tagging has annotation / non-median weight first, tag has parents first, slug) and capped at 15 oracle / 10 art tags. Ancestors = transitive closure over parent_ids. taggings[] filtered to the fixture targets. Available per target: 310f141c…: 4 oracle tags; 421d8c79…: 28 art tags; b690eb18…: 22 art tags.",
+  "note": "Tag records are the original Tagger objects except: (1) taggings[] is FILTERED (see selector) and the fixture-added key `taggingsTotal` gives the unfiltered count; (2) child_ids[] is filtered to tags present in this file and the fixture-added key `childIdsTotal` gives the unfiltered count. parent_ids[] is complete: every ancestor is included, so the file is a closed sub-hierarchy in which child_ids is still the exact inverse of parent_ids. `taggingsTotal` and `childIdsTotal` are NOT source fields.",
+  "source": {
+    "key": "scryfall:oracle_tags",
+    "file": "oracle-tags-20261103100032.jsonl.gz",
+    "sha256": "23d94bab24a5e4a9376ddc66ae3018c215dac693455fecdf2be83e86a43c1e5e",
+    "sourceUpdatedAt": "2026-11-03T10:00:32.540+00:00"
+  },
+  "extraSources": [
+    {
+      "key": "scryfall:art_tags",
+      "file": "art-tags-20261103100113.jsonl.gz",
+      "sha256": "9d963522897dbcf58e168a6cf4063bed908b87c2b0d7cd2bbce4557bd6d33d71",
+      "sourceUpdatedAt": "2026-11-03T10:01:13.387+00:00"
+    }
+  ],
+  "targets": [
+    "310f141c-7f37-4729-aed6-dd9c09db448d",
+    "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+    "421d8c79-f811-4320-bb67-848464b4460a"
+  ],
+  "recordIndex": [
+    {
+      "id": "00dd108a-d034-45a8-92e1-02c8fc59980d",
+      "slug": "blood-artist-ability",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "310f141c-7f37-4729-aed6-dd9c09db448d",
+      "parents": 3
+    },
+    {
+      "id": "d64ac955-31ac-4cf8-951c-abb67ecc989a",
+      "slug": "inscryption-achievement",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "310f141c-7f37-4729-aed6-dd9c09db448d",
+      "parents": 1
+    },
+    {
+      "id": "c0d4b22b-b12e-44c8-8485-36a7247b660f",
+      "slug": "opponent-loses-life",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "310f141c-7f37-4729-aed6-dd9c09db448d",
+      "parents": 0
+    },
+    {
+      "id": "5a314bf9-8038-4acd-8cab-6b683caeb35f",
+      "slug": "repeatable-crime",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "310f141c-7f37-4729-aed6-dd9c09db448d",
+      "parents": 0
+    },
+    {
+      "id": "19f19d97-227a-498a-8f6f-34a228e863e2",
+      "slug": "blood-glass",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "421d8c79-f811-4320-bb67-848464b4460a",
+      "parents": 2
+    },
+    {
+      "id": "20d6e596-9902-44d2-93ba-88bc8e3b549f",
+      "slug": "corpse",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "421d8c79-f811-4320-bb67-848464b4460a",
+      "parents": 0
+    },
+    {
+      "id": "93746453-92d4-442e-b0f8-09fe49226b2a",
+      "slug": "easter-egg",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "421d8c79-f811-4320-bb67-848464b4460a",
+      "parents": 0
+    },
+    {
+      "id": "ae02654c-63dc-40fb-846f-5185d5af5bc9",
+      "slug": "barefoot",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "421d8c79-f811-4320-bb67-848464b4460a",
+      "parents": 0
+    },
+    {
+      "id": "91a9cb7a-19f1-42fb-a636-c8a7fff47626",
+      "slug": "blonde-hair",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "421d8c79-f811-4320-bb67-848464b4460a",
+      "parents": 1
+    },
+    {
+      "id": "fd0f33a5-ede4-41ff-a330-acc74869a347",
+      "slug": "constructed-archway",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "421d8c79-f811-4320-bb67-848464b4460a",
+      "parents": 1
+    },
+    {
+      "id": "3ef0e759-a6e1-4be3-b822-12e5d40c0715",
+      "slug": "cravat",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "421d8c79-f811-4320-bb67-848464b4460a",
+      "parents": 1
+    },
+    {
+      "id": "45d99a5c-aa29-44f3-b664-1de0f73e97a4",
+      "slug": "digital-painting",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "421d8c79-f811-4320-bb67-848464b4460a",
+      "parents": 1
+    },
+    {
+      "id": "c811558d-76f6-43bd-b56e-e4ec98267162",
+      "slug": "first-person",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "421d8c79-f811-4320-bb67-848464b4460a",
+      "parents": 1
+    },
+    {
+      "id": "10edc314-1565-4e06-86af-db4378482e64",
+      "slug": "innistrad",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "421d8c79-f811-4320-bb67-848464b4460a",
+      "parents": 1
+    },
+    {
+      "id": "5bf17da9-7457-48ac-85cb-6ba500850457",
+      "slug": "blood-petal",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+      "parents": 1
+    },
+    {
+      "id": "d98bedcd-d72a-4420-892a-b0ee866acb37",
+      "slug": "blue-dress",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+      "parents": 1
+    },
+    {
+      "id": "c699ae0a-430a-4b9e-ac2b-992447fad551",
+      "slug": "bowl",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+      "parents": 1
+    },
+    {
+      "id": "89581485-a5bb-4c8e-81fa-7878d6dcb4d5",
+      "slug": "falkenrath",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+      "parents": 1
+    },
+    {
+      "id": "120a9ca4-3086-4f73-82df-a541b1119d86",
+      "slug": "hat",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+      "parents": 1
+    },
+    {
+      "id": "b66287dd-085c-4d36-9283-7a7f4a48ca63",
+      "slug": "paintbrush",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+      "parents": 1
+    },
+    {
+      "id": "b08709f7-85db-4f5e-9e8e-b7abd3b0f3d3",
+      "slug": "shiny-clothing",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+      "parents": 1
+    },
+    {
+      "id": "89ce1cd9-6b94-44cf-9364-10d9dc811d70",
+      "slug": "archway",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "b47e31c4-70ae-471d-b51b-55742fd8f763",
+      "slug": "art-media",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "5a8ae0e9-256d-49a1-b6b6-cb6a0ec42b74",
+      "slug": "blood",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "9fe7fa00-c601-43f0-a530-85ca7f4d6b44",
+      "slug": "clothing",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "a1aad32d-2a04-4f9e-b558-d6d924c8379b",
+      "slug": "container",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "e17eed2e-fe0d-4e9b-9758-23db66226b97",
+      "slug": "cup",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "4925b026-e444-4a92-a96d-434b6e248b27",
+      "slug": "dress",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "0fb81aa6-a1fb-442d-9c12-725760be8ad7",
+      "slug": "glass",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "1700944a-d3f7-41d9-a6f6-4dd02b03f29f",
+      "slug": "glass-cup",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "9d199558-3c4d-4a00-9913-35cd78a12de1",
+      "slug": "hair",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "af16c922-5e58-43ee-a880-fc92d13f8c60",
+      "slug": "hair-colors",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "f4bcde00-f534-4cfa-9c04-f1c714881ef8",
+      "slug": "innistrad-bloodlines",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "832b4218-4aab-4c06-adfe-25d48fda93cc",
+      "slug": "innistrad-origin",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "fdbda1f3-227a-4fd4-941b-e4c81cf78ce6",
+      "slug": "perspective",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "47cdef3f-de51-49dc-b571-34f1bb78ccc0",
+      "slug": "petal",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "ba7bdc73-1186-4525-8451-165d12ce1da0",
+      "slug": "planar-origin",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa",
+      "slug": "plane",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "ed7a3b88-8e75-4ff1-86be-4f1c726784e7",
+      "slug": "tool",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "3e161698-cf99-4922-89f9-99445373cfbb",
+      "slug": "vampire",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "5a0a0531-5462-477d-add9-886148c4413f",
+      "slug": "card-names",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "3bcd7cdd-61ca-42dd-adc5-1a695eaec2d2",
+      "slug": "death-trigger",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "f82e12a7-1031-4235-b44e-10b0aca1a923",
+      "slug": "drain-life",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "94115d85-4d3a-4a71-9eca-b3be2a2e13b6",
+      "slug": "inverted-effects",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "4caab3cc-1d60-44fb-a26a-cc833bc67c97",
+      "slug": "lifegain",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "2dabdf83-e041-48a4-b0e5-08e1842f008c",
+      "slug": "repeatable-lifegain",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "4d7fc833-e0af-4022-b298-6a9c99a56ac1",
+      "slug": "triggered-ability",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    }
+  ],
+  "records": [
+    {
+      "object": "tag",
+      "id": "00dd108a-d034-45a8-92e1-02c8fc59980d",
+      "label": "blood artist ability",
+      "slug": "blood-artist-ability",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/blood-artist-ability",
+      "description": "Cards that have abilities along the lines of: \"Whenever creature dies target/each opponent loses X life and you gain X life.\"",
+      "parent_ids": [
+        "3bcd7cdd-61ca-42dd-adc5-1a695eaec2d2",
+        "f82e12a7-1031-4235-b44e-10b0aca1a923",
+        "2dabdf83-e041-48a4-b0e5-08e1842f008c"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "310f141c-7f37-4729-aed6-dd9c09db448d",
+          "weight": "very_strong"
+        }
+      ],
+      "taggingsTotal": 40,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "d64ac955-31ac-4cf8-951c-abb67ecc989a",
+      "label": "inscryption achievement",
+      "slug": "inscryption-achievement",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/inscryption-achievement",
+      "description": "Cards that share a name with achievements in the PC game Inscryption",
+      "parent_ids": [
+        "5a0a0531-5462-477d-add9-886148c4413f"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "310f141c-7f37-4729-aed6-dd9c09db448d",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 40,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "c0d4b22b-b12e-44c8-8485-36a7247b660f",
+      "label": "opponent loses life",
+      "slug": "opponent-loses-life",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/opponent-loses-life",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "310f141c-7f37-4729-aed6-dd9c09db448d",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 919,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "5a314bf9-8038-4acd-8cab-6b683caeb35f",
+      "label": "repeatable crime",
+      "slug": "repeatable-crime",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/repeatable-crime",
+      "description": "Repeatable ways to commit crimes by targeting an opponent or something they control.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "310f141c-7f37-4729-aed6-dd9c09db448d",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 3734,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "19f19d97-227a-498a-8f6f-34a228e863e2",
+      "label": "blood glass",
+      "slug": "blood-glass",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/blood-glass",
+      "description": "Vampires sure do drink a lot of red wine huh....WAIT A SECOND",
+      "parent_ids": [
+        "1700944a-d3f7-41d9-a6f6-4dd02b03f29f",
+        "5a8ae0e9-256d-49a1-b6b6-cb6a0ec42b74"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "421d8c79-f811-4320-bb67-848464b4460a",
+          "weight": "median",
+          "annotation": "The paintbrush water jar is a drinking glass"
+        },
+        {
+          "illustration_id": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 29,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "20d6e596-9902-44d2-93ba-88bc8e3b549f",
+      "label": "corpse",
+      "slug": "corpse",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/corpse",
+      "description": "He's dead, Jim.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "dead body"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "421d8c79-f811-4320-bb67-848464b4460a",
+          "weight": "median",
+          "annotation": "not *just* the art on the easel, but one hanging from their legs in the background also"
+        }
+      ],
+      "taggingsTotal": 535,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "93746453-92d4-442e-b0f8-09fe49226b2a",
+      "label": "easter egg",
+      "slug": "easter-egg",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/easter-egg",
+      "description": "The artist(s) has hidden some subtle, amusing details in these images.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "421d8c79-f811-4320-bb67-848464b4460a",
+          "weight": "median",
+          "annotation": "The girl in the painting is also being drained of blood in the background."
+        }
+      ],
+      "taggingsTotal": 75,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "ae02654c-63dc-40fb-846f-5185d5af5bc9",
+      "label": "barefoot",
+      "slug": "barefoot",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/barefoot",
+      "description": "Things that aren't wearing shoes that probably could/should wear them.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "bare feet",
+        "feet"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "421d8c79-f811-4320-bb67-848464b4460a",
+          "weight": "weak"
+        }
+      ],
+      "taggingsTotal": 520,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "91a9cb7a-19f1-42fb-a636-c8a7fff47626",
+      "label": "blonde hair",
+      "slug": "blonde-hair",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/blonde-hair",
+      "description": null,
+      "parent_ids": [
+        "af16c922-5e58-43ee-a880-fc92d13f8c60"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "blond",
+        "blond hair"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "421d8c79-f811-4320-bb67-848464b4460a",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 765,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "fd0f33a5-ede4-41ff-a330-acc74869a347",
+      "label": "constructed archway",
+      "slug": "constructed-archway",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/constructed-archway",
+      "description": null,
+      "parent_ids": [
+        "89ce1cd9-6b94-44cf-9364-10d9dc811d70"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "421d8c79-f811-4320-bb67-848464b4460a",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 550,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "3ef0e759-a6e1-4be3-b822-12e5d40c0715",
+      "label": "cravat",
+      "slug": "cravat",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/cravat",
+      "description": "A style of tie (maybe frilly) worn around the neck.",
+      "parent_ids": [
+        "9fe7fa00-c601-43f0-a530-85ca7f4d6b44"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "421d8c79-f811-4320-bb67-848464b4460a",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 68,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "45d99a5c-aa29-44f3-b664-1de0f73e97a4",
+      "label": "digital painting",
+      "slug": "digital-painting",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/digital-painting",
+      "description": null,
+      "parent_ids": [
+        "b47e31c4-70ae-471d-b51b-55742fd8f763"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "digital illustration"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "421d8c79-f811-4320-bb67-848464b4460a",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 14060,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "c811558d-76f6-43bd-b56e-e4ec98267162",
+      "label": "first-person",
+      "slug": "first-person",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/first-person",
+      "description": "Artwork from the first-person perspective of someone diegetically present.",
+      "parent_ids": [
+        "fdbda1f3-227a-4fd4-941b-e4c81cf78ce6"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "approaches",
+        "at viewer",
+        "point of view"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "421d8c79-f811-4320-bb67-848464b4460a",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 597,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "10edc314-1565-4e06-86af-db4378482e64",
+      "label": "innistrad",
+      "slug": "innistrad",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/innistrad",
+      "description": null,
+      "parent_ids": [
+        "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "421d8c79-f811-4320-bb67-848464b4460a",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 2846,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "5bf17da9-7457-48ac-85cb-6ba500850457",
+      "label": "blood petal",
+      "slug": "blood-petal",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/blood-petal",
+      "description": "Petals used to depict blood beyond the usual depictions in Innistrad",
+      "parent_ids": [
+        "47cdef3f-de51-49dc-b571-34f1bb78ccc0"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 93,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "d98bedcd-d72a-4420-892a-b0ee866acb37",
+      "label": "blue dress",
+      "slug": "blue-dress",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/blue-dress",
+      "description": null,
+      "parent_ids": [
+        "4925b026-e444-4a92-a96d-434b6e248b27"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 90,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "c699ae0a-430a-4b9e-ac2b-992447fad551",
+      "label": "bowl",
+      "slug": "bowl",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/bowl",
+      "description": null,
+      "parent_ids": [
+        "a1aad32d-2a04-4f9e-b558-d6d924c8379b"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 117,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "89581485-a5bb-4c8e-81fa-7878d6dcb4d5",
+      "label": "falkenrath",
+      "slug": "falkenrath",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/falkenrath",
+      "description": "A bloodline of vampires on Innistrad.",
+      "parent_ids": [
+        "f4bcde00-f534-4cfa-9c04-f1c714881ef8"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 23,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "120a9ca4-3086-4f73-82df-a541b1119d86",
+      "label": "hat",
+      "slug": "hat",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/hat",
+      "description": "Clothing worn on the head.",
+      "parent_ids": [
+        "9fe7fa00-c601-43f0-a530-85ca7f4d6b44"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "headgear"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 975,
+      "childIdsTotal": 34
+    },
+    {
+      "object": "tag",
+      "id": "b66287dd-085c-4d36-9283-7a7f4a48ca63",
+      "label": "paintbrush",
+      "slug": "paintbrush",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/paintbrush",
+      "description": null,
+      "parent_ids": [
+        "ed7a3b88-8e75-4ff1-86be-4f1c726784e7"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "421d8c79-f811-4320-bb67-848464b4460a",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 63,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "b08709f7-85db-4f5e-9e8e-b7abd3b0f3d3",
+      "label": "shiny clothing",
+      "slug": "shiny-clothing",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/shiny-clothing",
+      "description": "Art depicting a character with shiny clothing. Could be anything ranging from leather to pvc or latex.",
+      "parent_ids": [
+        "9fe7fa00-c601-43f0-a530-85ca7f4d6b44"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 39,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "89ce1cd9-6b94-44cf-9364-10d9dc811d70",
+      "label": "archway",
+      "slug": "archway",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/archway",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "fd0f33a5-ede4-41ff-a330-acc74869a347"
+      ],
+      "aliases": [
+        "arch"
+      ],
+      "taggings": [],
+      "taggingsTotal": 110,
+      "childIdsTotal": 4
+    },
+    {
+      "object": "tag",
+      "id": "b47e31c4-70ae-471d-b51b-55742fd8f763",
+      "label": "art media",
+      "slug": "art-media",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/art-media",
+      "description": "Media used to render the artwork.",
+      "parent_ids": [],
+      "child_ids": [
+        "45d99a5c-aa29-44f3-b664-1de0f73e97a4"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 40
+    },
+    {
+      "object": "tag",
+      "id": "5a8ae0e9-256d-49a1-b6b6-cb6a0ec42b74",
+      "label": "blood",
+      "slug": "blood",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/blood",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "19f19d97-227a-498a-8f6f-34a228e863e2"
+      ],
+      "aliases": [
+        "bloody",
+        "bleeding"
+      ],
+      "taggings": [],
+      "taggingsTotal": 827,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "9fe7fa00-c601-43f0-a530-85ca7f4d6b44",
+      "label": "clothing",
+      "slug": "clothing",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/clothing",
+      "description": "Tags describing varieties of clothing.",
+      "parent_ids": [],
+      "child_ids": [
+        "120a9ca4-3086-4f73-82df-a541b1119d86",
+        "4925b026-e444-4a92-a96d-434b6e248b27",
+        "b08709f7-85db-4f5e-9e8e-b7abd3b0f3d3",
+        "3ef0e759-a6e1-4be3-b822-12e5d40c0715"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 84
+    },
+    {
+      "object": "tag",
+      "id": "a1aad32d-2a04-4f9e-b558-d6d924c8379b",
+      "label": "container",
+      "slug": "container",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/container",
+      "description": "Things designed to hold other things.",
+      "parent_ids": [],
+      "child_ids": [
+        "e17eed2e-fe0d-4e9b-9758-23db66226b97",
+        "c699ae0a-430a-4b9e-ac2b-992447fad551"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 28
+    },
+    {
+      "object": "tag",
+      "id": "e17eed2e-fe0d-4e9b-9758-23db66226b97",
+      "label": "cup",
+      "slug": "cup",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/cup",
+      "description": "various styles of drinking vessel",
+      "parent_ids": [
+        "a1aad32d-2a04-4f9e-b558-d6d924c8379b"
+      ],
+      "child_ids": [
+        "1700944a-d3f7-41d9-a6f6-4dd02b03f29f"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 49,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "4925b026-e444-4a92-a96d-434b6e248b27",
+      "label": "dress",
+      "slug": "dress",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/dress",
+      "description": null,
+      "parent_ids": [
+        "9fe7fa00-c601-43f0-a530-85ca7f4d6b44"
+      ],
+      "child_ids": [
+        "d98bedcd-d72a-4420-892a-b0ee866acb37"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 143,
+      "childIdsTotal": 15
+    },
+    {
+      "object": "tag",
+      "id": "0fb81aa6-a1fb-442d-9c12-725760be8ad7",
+      "label": "glass",
+      "slug": "glass",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/glass",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "1700944a-d3f7-41d9-a6f6-4dd02b03f29f"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 28,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "1700944a-d3f7-41d9-a6f6-4dd02b03f29f",
+      "label": "glass (cup)",
+      "slug": "glass-cup",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/glass-cup",
+      "description": null,
+      "parent_ids": [
+        "0fb81aa6-a1fb-442d-9c12-725760be8ad7",
+        "e17eed2e-fe0d-4e9b-9758-23db66226b97"
+      ],
+      "child_ids": [
+        "19f19d97-227a-498a-8f6f-34a228e863e2"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 38,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "9d199558-3c4d-4a00-9913-35cd78a12de1",
+      "label": "hair",
+      "slug": "hair",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/hair",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "af16c922-5e58-43ee-a880-fc92d13f8c60"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 16,
+      "childIdsTotal": 19
+    },
+    {
+      "object": "tag",
+      "id": "af16c922-5e58-43ee-a880-fc92d13f8c60",
+      "label": "hair colors",
+      "slug": "hair-colors",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/hair-colors",
+      "description": null,
+      "parent_ids": [
+        "9d199558-3c4d-4a00-9913-35cd78a12de1"
+      ],
+      "child_ids": [
+        "91a9cb7a-19f1-42fb-a636-c8a7fff47626"
+      ],
+      "aliases": [
+        "colored hair"
+      ],
+      "taggings": [],
+      "taggingsTotal": 1,
+      "childIdsTotal": 13
+    },
+    {
+      "object": "tag",
+      "id": "f4bcde00-f534-4cfa-9c04-f1c714881ef8",
+      "label": "innistrad bloodlines",
+      "slug": "innistrad-bloodlines",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/innistrad-bloodlines",
+      "description": null,
+      "parent_ids": [
+        "832b4218-4aab-4c06-adfe-25d48fda93cc",
+        "3e161698-cf99-4922-89f9-99445373cfbb"
+      ],
+      "child_ids": [
+        "89581485-a5bb-4c8e-81fa-7878d6dcb4d5"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 6
+    },
+    {
+      "object": "tag",
+      "id": "832b4218-4aab-4c06-adfe-25d48fda93cc",
+      "label": "innistrad (origin)",
+      "slug": "innistrad-origin",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/innistrad-origin",
+      "description": null,
+      "parent_ids": [
+        "ba7bdc73-1186-4525-8451-165d12ce1da0"
+      ],
+      "child_ids": [
+        "f4bcde00-f534-4cfa-9c04-f1c714881ef8"
+      ],
+      "aliases": [
+        "innistradi"
+      ],
+      "taggings": [],
+      "taggingsTotal": 8,
+      "childIdsTotal": 81
+    },
+    {
+      "object": "tag",
+      "id": "fdbda1f3-227a-4fd4-941b-e4c81cf78ce6",
+      "label": "perspective",
+      "slug": "perspective",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/perspective",
+      "description": "Tags describing art perspectives.",
+      "parent_ids": [],
+      "child_ids": [
+        "c811558d-76f6-43bd-b56e-e4ec98267162"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 16
+    },
+    {
+      "object": "tag",
+      "id": "47cdef3f-de51-49dc-b571-34f1bb78ccc0",
+      "label": "petal",
+      "slug": "petal",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/petal",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "5bf17da9-7457-48ac-85cb-6ba500850457"
+      ],
+      "aliases": [
+        "flower petal"
+      ],
+      "taggings": [],
+      "taggingsTotal": 116,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "ba7bdc73-1186-4525-8451-165d12ce1da0",
+      "label": "planar origin",
+      "slug": "planar-origin",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/planar-origin",
+      "description": "Tags classifying the origins of creatures and objects from across the multiverse.",
+      "parent_ids": [],
+      "child_ids": [
+        "832b4218-4aab-4c06-adfe-25d48fda93cc"
+      ],
+      "aliases": [
+        "origin"
+      ],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 47
+    },
+    {
+      "object": "tag",
+      "id": "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa",
+      "label": "plane",
+      "slug": "plane",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/plane",
+      "description": "A collection of art tags that relate to specific planes.",
+      "parent_ids": [],
+      "child_ids": [
+        "10edc314-1565-4e06-86af-db4378482e64"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 72
+    },
+    {
+      "object": "tag",
+      "id": "ed7a3b88-8e75-4ff1-86be-4f1c726784e7",
+      "label": "tool",
+      "slug": "tool",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/tool",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "b66287dd-085c-4d36-9283-7a7f4a48ca63"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 47,
+      "childIdsTotal": 38
+    },
+    {
+      "object": "tag",
+      "id": "3e161698-cf99-4922-89f9-99445373cfbb",
+      "label": "vampire",
+      "slug": "vampire",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/vampire",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "f4bcde00-f534-4cfa-9c04-f1c714881ef8"
+      ],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "421d8c79-f811-4320-bb67-848464b4460a",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 696,
+      "childIdsTotal": 65
+    },
+    {
+      "object": "tag",
+      "id": "5a0a0531-5462-477d-add9-886148c4413f",
+      "label": "card names",
+      "slug": "card-names",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/card-names",
+      "description": "A collection of tags identifying properties and naming schemes in cards.",
+      "parent_ids": [],
+      "child_ids": [
+        "d64ac955-31ac-4cf8-951c-abb67ecc989a"
+      ],
+      "aliases": [
+        "naming scheme"
+      ],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 33
+    },
+    {
+      "object": "tag",
+      "id": "3bcd7cdd-61ca-42dd-adc5-1a695eaec2d2",
+      "label": "death trigger",
+      "slug": "death-trigger",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/death-trigger",
+      "description": "Abilities that trigger from permanents being sent to a graveyard. See also [leaves trigger](leaves-battlefield-trigger).",
+      "parent_ids": [
+        "4d7fc833-e0af-4022-b298-6a9c99a56ac1"
+      ],
+      "child_ids": [
+        "00dd108a-d034-45a8-92e1-02c8fc59980d"
+      ],
+      "aliases": [
+        "deathtrigger"
+      ],
+      "taggings": [],
+      "taggingsTotal": 597,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "f82e12a7-1031-4235-b44e-10b0aca1a923",
+      "label": "drain life",
+      "slug": "drain-life",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/drain-life",
+      "description": "Hurt your opponent and gain life to match.",
+      "parent_ids": [
+        "4caab3cc-1d60-44fb-a26a-cc833bc67c97",
+        "94115d85-4d3a-4a71-9eca-b3be2a2e13b6"
+      ],
+      "child_ids": [
+        "00dd108a-d034-45a8-92e1-02c8fc59980d"
+      ],
+      "aliases": [
+        "life drain"
+      ],
+      "taggings": [],
+      "taggingsTotal": 398,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "94115d85-4d3a-4a71-9eca-b3be2a2e13b6",
+      "label": "inverted effects",
+      "slug": "inverted-effects",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/inverted-effects",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "f82e12a7-1031-4235-b44e-10b0aca1a923"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 72,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "4caab3cc-1d60-44fb-a26a-cc833bc67c97",
+      "label": "lifegain",
+      "slug": "lifegain",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/lifegain",
+      "description": "Cards that cause you to gain life.",
+      "parent_ids": [],
+      "child_ids": [
+        "f82e12a7-1031-4235-b44e-10b0aca1a923",
+        "2dabdf83-e041-48a4-b0e5-08e1842f008c"
+      ],
+      "aliases": [
+        "life gain"
+      ],
+      "taggings": [],
+      "taggingsTotal": 892,
+      "childIdsTotal": 7
+    },
+    {
+      "object": "tag",
+      "id": "2dabdf83-e041-48a4-b0e5-08e1842f008c",
+      "label": "repeatable lifegain",
+      "slug": "repeatable-lifegain",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/repeatable-lifegain",
+      "description": null,
+      "parent_ids": [
+        "4caab3cc-1d60-44fb-a26a-cc833bc67c97"
+      ],
+      "child_ids": [
+        "00dd108a-d034-45a8-92e1-02c8fc59980d"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 1410,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "4d7fc833-e0af-4022-b298-6a9c99a56ac1",
+      "label": "triggered ability",
+      "slug": "triggered-ability",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/triggered-ability",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "3bcd7cdd-61ca-42dd-adc5-1a695eaec2d2"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 8066,
+      "childIdsTotal": 21
+    }
+  ]
+}

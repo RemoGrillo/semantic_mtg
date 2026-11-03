@@ -1,0 +1,427 @@
+{
+  "slug": "multi-parent-tag",
+  "purpose": "An oracle tag with ≥3 parents (multiple inheritance in the Tagger hierarchy) and its full parent chain (PLAN §4.2 #16).",
+  "selector": "oracle_tags: parent_ids.length >= 3; prefer tags with a tagging on any Scryfall fixture oracle id, then most taggings, then slug → burn-any (4 parents). taggings[] filtered to Scryfall fixture oracle ids (fallback: first 3 by oracle_id).",
+  "note": "Tag records are the original Tagger objects except: (1) taggings[] is FILTERED (see selector) and the fixture-added key `taggingsTotal` gives the unfiltered count; (2) child_ids[] is filtered to tags present in this file and the fixture-added key `childIdsTotal` gives the unfiltered count. parent_ids[] is complete: every ancestor is included, so the file is a closed sub-hierarchy in which child_ids is still the exact inverse of parent_ids. `taggingsTotal` and `childIdsTotal` are NOT source fields.",
+  "source": {
+    "key": "scryfall:oracle_tags",
+    "file": "oracle-tags-20261103100032.jsonl.gz",
+    "sha256": "23d94bab24a5e4a9376ddc66ae3018c215dac693455fecdf2be83e86a43c1e5e",
+    "sourceUpdatedAt": "2026-11-03T10:00:32.540+00:00"
+  },
+  "targets": [
+    "4457ed35-7c10-48c8-9776-456485fdf070",
+    "58884d99-ed2d-4efd-b192-b1eb6f87c39f",
+    "2cb6200c-d05b-419c-bd10-8b9c146e2339",
+    "013e7eda-ef8e-44cd-9832-4033d9de1c34",
+    "928b4c38-1997-4a49-8ce4-d5e0b7d98f4e",
+    "310f141c-7f37-4729-aed6-dd9c09db448d",
+    "b690eb18-6cb0-4db4-8ffb-4c342cafdc98",
+    "421d8c79-f811-4320-bb67-848464b4460a",
+    "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+    "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+    "c2b5f731-771b-4949-90f3-0ad40d676100",
+    "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57",
+    "562d71b9-1646-474e-9293-55da6947a758",
+    "25af817b-39a3-4b56-af19-fc1688cb4bc1",
+    "1c9bcbf6-513d-4a50-aa91-3ab0b74ad7b2",
+    "9c4fd66b-b125-4e63-a0ee-d49ec58fc381",
+    "259cbafd-c75a-45b1-9b1e-a428796aa977",
+    "b23da373-4077-447e-b509-3d3d20780e50",
+    "d13c8ed1-e707-4a07-a7d8-8094b4b7eb8a",
+    "ae92942b-919c-4ea9-b693-85fcef765d5a",
+    "c890cb20-7e04-4ad0-96a6-8854cd409c14",
+    "56fd8895-3be2-4591-86fa-87567d9cdc14",
+    "f99e2092-e035-4043-b813-9dd1d32de0a0",
+    "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5",
+    "0c8fd763-d266-4ac8-ab17-e729cf179e89",
+    "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+    "c7f49422-def6-4502-bc02-38aee9924371",
+    "47795817-73e5-4af6-bd1e-d69b193e8e9e",
+    "54705304-6aeb-4722-9a17-9006db12b939",
+    "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+    "f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22",
+    "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+    "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+    "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+    "9528e065-5297-4d91-bf75-3c175b54f0d4",
+    "9728dec9-d482-4c7a-8cdc-44d010dc878d",
+    "a3a98bc9-caa0-49b7-951c-fe4e4f54e4ba",
+    "988614d8-1379-470a-bae0-767858be8adb",
+    "ba23fb60-f170-40cc-8d2e-fe88ba070269",
+    "679dad4c-bba0-463e-b140-b30e15c70730",
+    "058cdb0a-4b08-40a2-86ed-8c357e5058bd",
+    "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+    "f0e6096a-33a4-467a-918c-2fe77af29ea6",
+    "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+    "fdb96b5c-ecac-4db3-8b9a-24f824149f91",
+    "13d2f913-8d69-4811-8eb0-5f90e5d44823",
+    "8faa4330-07bb-4b65-810a-bbce29d3cd42",
+    "f580122c-7d41-48f1-95fb-00ef6346b125",
+    "9890958e-7f57-449e-ac4c-adfb0591ae2a",
+    "45f1e957-09f0-4d46-8e32-238f26060a87",
+    "ad9fbd57-2375-42c7-8fe7-39b01adacda3",
+    "792f8235-f23b-4858-bdd4-c7a186b7a470",
+    "9ae9a302-297a-46e0-ac1d-7eef4f0cea61",
+    "f00bc101-8082-4459-b987-f0c4b7a12344",
+    "f63d84f5-754d-4631-a635-e214326cd582",
+    "51042581-4add-4487-a1b6-85446539b975",
+    "24a39ca3-a51f-4b7b-9aa2-1b933b11d096",
+    "2f5f46ed-b8aa-4864-bd20-17281d4632bf",
+    "c1f8e669-60d0-4e66-b85a-07dafb9782a9",
+    "4d18bcba-a346-445e-a182-6cc30b7e066d",
+    "5abdc37b-1ed5-45e2-8237-30ce034ecc95",
+    "18ad1104-51e7-41a8-ab39-3a0cde3b170f",
+    "61fbaaf2-4286-4e9a-b9cb-aa31262b596a",
+    "b0b6be0c-41cf-4757-9f0e-87227b6ba6b3",
+    "6b8fb6bb-c0d1-4715-a4df-e4f4695c6130",
+    "faebc2ac-9b6e-477d-869e-cee314d26cc0",
+    "b486d3c5-41ba-4236-a726-4b9c81de3b00",
+    "8642d280-5c69-4a32-9ea8-4980d002d63c",
+    "de505901-bbf7-4973-91b5-bdb5e99a021e",
+    "c3204342-9eea-41f8-9fe3-e6b36c5e3a9c",
+    "96247b92-0c7a-4410-85a4-598916541b1d",
+    "dc4e2134-f0c2-49aa-9ea3-ebf83af1445c",
+    "1dbe0618-dd47-442c-acf6-ac5e4b136e5a",
+    "17549447-6f19-4d87-8af1-58b6bb387003",
+    "5da6e7ad-d754-4dc9-8910-b9f0f002fbd3",
+    "5bac5225-70e4-4614-bb2f-49518ad93646",
+    "f4d7ecaa-2203-4228-9204-f5f50cc9c3cc",
+    "22eb9692-580f-4ce0-96c2-9170d56d4b0c",
+    "11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5",
+    "8a0194dc-01f8-4a30-ba6e-741c7d4bcecf",
+    "79df732b-9414-4a8e-b63d-4cbae8c038bd",
+    "7d22ee5b-1f37-414d-9105-fd00a80f9b5a",
+    "0415bb62-819c-4c42-bc76-b9cfa9f5bb51",
+    "eecf6742-8c6f-4034-bf79-9e2f90193baa",
+    "176eeafd-0482-4fa4-9174-10f8b9494d9b",
+    "0c316059-8ba5-4274-893d-283d1392ba35",
+    "7185e345-d8a1-4dd3-a071-f90f265634b4",
+    "7325f854-e119-439d-9c00-9eb76c502c44",
+    "8ce30f1b-0be8-4b71-838b-6130089f3135"
+  ],
+  "recordIndex": [
+    {
+      "id": "d58bcedc-2dcd-42c3-8b52-5359457e6802",
+      "slug": "burn-any",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "example-multi-parent",
+      "parents": 4
+    },
+    {
+      "id": "0641a74c-4dd5-426d-be58-2ab86d71995d",
+      "slug": "burn",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "c80fafa2-d5c9-47e5-8ef9-cbf7c1316d0a",
+      "slug": "burn-battle",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "01c171be-e0db-443c-830d-578873c27792",
+      "slug": "burn-creature",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "9b437740-9a6c-40cd-90db-a2b057df8e3f",
+      "slug": "burn-planeswalker",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "081ebf89-e53b-47ff-88e8-1535068212b0",
+      "slug": "burn-player",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "444f824c-f910-4530-9dbe-ede7a84cd7f9",
+      "slug": "removal",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "7a0d9ee9-b672-451a-8722-0c5fc6087ff0",
+      "slug": "removal-burn",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "d91e421d-ff87-4aad-a4bf-5aefc51252b6",
+      "slug": "removal-creature",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "591fb358-e9d7-490e-8c15-24aecbbe697e",
+      "slug": "removal-planeswalker",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    }
+  ],
+  "records": [
+    {
+      "object": "tag",
+      "id": "d58bcedc-2dcd-42c3-8b52-5359457e6802",
+      "label": "burn any",
+      "slug": "burn-any",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-any",
+      "description": "Cards that burn any target: players, creatures, battles, or planeswalkers.",
+      "parent_ids": [
+        "081ebf89-e53b-47ff-88e8-1535068212b0",
+        "c80fafa2-d5c9-47e5-8ef9-cbf7c1316d0a",
+        "9b437740-9a6c-40cd-90db-a2b057df8e3f",
+        "01c171be-e0db-443c-830d-578873c27792"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "ae92942b-919c-4ea9-b693-85fcef765d5a",
+          "weight": "median"
+        },
+        {
+          "oracle_id": "45f1e957-09f0-4d46-8e32-238f26060a87",
+          "weight": "median"
+        },
+        {
+          "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "weight": "median"
+        },
+        {
+          "oracle_id": "4457ed35-7c10-48c8-9776-456485fdf070",
+          "weight": "very_strong"
+        }
+      ],
+      "taggingsTotal": 914,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "0641a74c-4dd5-426d-be58-2ab86d71995d",
+      "label": "burn",
+      "slug": "burn",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn",
+      "description": "Effects that deal damage, whether to creatures, players, or planeswalkers.",
+      "parent_ids": [],
+      "child_ids": [
+        "081ebf89-e53b-47ff-88e8-1535068212b0",
+        "c80fafa2-d5c9-47e5-8ef9-cbf7c1316d0a",
+        "7a0d9ee9-b672-451a-8722-0c5fc6087ff0"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "c80fafa2-d5c9-47e5-8ef9-cbf7c1316d0a",
+      "label": "burn battle",
+      "slug": "burn-battle",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-battle",
+      "description": null,
+      "parent_ids": [
+        "0641a74c-4dd5-426d-be58-2ab86d71995d"
+      ],
+      "child_ids": [
+        "d58bcedc-2dcd-42c3-8b52-5359457e6802"
+      ],
+      "aliases": [
+        "removal-battle-burn"
+      ],
+      "taggings": [],
+      "taggingsTotal": 13,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "01c171be-e0db-443c-830d-578873c27792",
+      "label": "burn creature",
+      "slug": "burn-creature",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-creature",
+      "description": null,
+      "parent_ids": [
+        "7a0d9ee9-b672-451a-8722-0c5fc6087ff0",
+        "d91e421d-ff87-4aad-a4bf-5aefc51252b6"
+      ],
+      "child_ids": [
+        "d58bcedc-2dcd-42c3-8b52-5359457e6802"
+      ],
+      "aliases": [
+        "removal-creature-burn"
+      ],
+      "taggings": [],
+      "taggingsTotal": 1050,
+      "childIdsTotal": 7
+    },
+    {
+      "object": "tag",
+      "id": "9b437740-9a6c-40cd-90db-a2b057df8e3f",
+      "label": "burn planeswalker",
+      "slug": "burn-planeswalker",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-planeswalker",
+      "description": null,
+      "parent_ids": [
+        "7a0d9ee9-b672-451a-8722-0c5fc6087ff0",
+        "591fb358-e9d7-490e-8c15-24aecbbe697e"
+      ],
+      "child_ids": [
+        "d58bcedc-2dcd-42c3-8b52-5359457e6802"
+      ],
+      "aliases": [
+        "removal-planeswalker-burn"
+      ],
+      "taggings": [],
+      "taggingsTotal": 384,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "081ebf89-e53b-47ff-88e8-1535068212b0",
+      "label": "burn player",
+      "slug": "burn-player",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-player",
+      "description": null,
+      "parent_ids": [
+        "0641a74c-4dd5-426d-be58-2ab86d71995d"
+      ],
+      "child_ids": [
+        "d58bcedc-2dcd-42c3-8b52-5359457e6802"
+      ],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "f00bc101-8082-4459-b987-f0c4b7a12344",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 906,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "444f824c-f910-4530-9dbe-ede7a84cd7f9",
+      "label": "removal",
+      "slug": "removal",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/removal",
+      "description": "Get things off the table.",
+      "parent_ids": [],
+      "child_ids": [
+        "d91e421d-ff87-4aad-a4bf-5aefc51252b6",
+        "591fb358-e9d7-490e-8c15-24aecbbe697e",
+        "7a0d9ee9-b672-451a-8722-0c5fc6087ff0"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 25
+    },
+    {
+      "object": "tag",
+      "id": "7a0d9ee9-b672-451a-8722-0c5fc6087ff0",
+      "label": "removal-burn",
+      "slug": "removal-burn",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/removal-burn",
+      "description": null,
+      "parent_ids": [
+        "0641a74c-4dd5-426d-be58-2ab86d71995d",
+        "444f824c-f910-4530-9dbe-ede7a84cd7f9"
+      ],
+      "child_ids": [
+        "01c171be-e0db-443c-830d-578873c27792",
+        "9b437740-9a6c-40cd-90db-a2b057df8e3f"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "d91e421d-ff87-4aad-a4bf-5aefc51252b6",
+      "label": "removal-creature",
+      "slug": "removal-creature",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/removal-creature",
+      "description": null,
+      "parent_ids": [
+        "444f824c-f910-4530-9dbe-ede7a84cd7f9"
+      ],
+      "child_ids": [
+        "01c171be-e0db-443c-830d-578873c27792"
+      ],
+      "aliases": [
+        "creature removal"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "51042581-4add-4487-a1b6-85446539b975",
+          "weight": "median"
+        },
+        {
+          "oracle_id": "0415bb62-819c-4c42-bc76-b9cfa9f5bb51",
+          "weight": "median"
+        },
+        {
+          "oracle_id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1940,
+      "childIdsTotal": 10
+    },
+    {
+      "object": "tag",
+      "id": "591fb358-e9d7-490e-8c15-24aecbbe697e",
+      "label": "removal-planeswalker",
+      "slug": "removal-planeswalker",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/removal-planeswalker",
+      "description": null,
+      "parent_ids": [
+        "444f824c-f910-4530-9dbe-ede7a84cd7f9"
+      ],
+      "child_ids": [
+        "9b437740-9a6c-40cd-90db-a2b057df8e3f"
+      ],
+      "aliases": [
+        "planeswalker removal"
+      ],
+      "taggings": [],
+      "taggingsTotal": 160,
+      "childIdsTotal": 5
+    }
+  ]
+}

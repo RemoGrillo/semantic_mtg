@@ -1,0 +1,17 @@
+# id: CQ-FL-01
+# title: Modal double-faced cards and their faces
+# question: Which Oracle cards are modal double-faced cards, and what are their faces (in order)?
+# kind: SPARQL
+# expects: nonempty
+# modules: cards
+# note: classification by authoritative layout; with OWL reasoning the same set is the extension of smtg:ModalDoubleFacedCard.
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?card ?index ?faceName ?typeLine WHERE {
+  ?card smtg:hasLayout <https://w3id.org/smtg/vocab/layout/modal_dfc> ; smtg:hasFace ?f .
+  ?f smtg:faceIndex ?index ; smtg:name ?faceName ; smtg:typeLine ?typeLine .
+} ORDER BY ?card ?index

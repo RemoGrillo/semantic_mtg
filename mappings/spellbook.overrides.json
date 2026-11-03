@@ -1,0 +1,175 @@
+{
+  "_comment": "Explicit dispositions for Commander Spellbook variant fields not covered by smtg:sourceField annotations. Paths are relative to variants[].",
+  "uses[].card": {
+    "disposition": "derived",
+    "note": "Embedded card summary; only oracleId is used (→ smtg:usesCard). Other subfields are denormalised Scryfall data."
+  },
+  "uses[].card.name": {
+    "disposition": "derived",
+    "note": "Denormalised copy of the Oracle name (recoverable via oracleId)."
+  },
+  "uses[].card.typeLine": {
+    "disposition": "derived",
+    "note": "Denormalised copy of the Oracle type line."
+  },
+  "uses[].card.faces": {
+    "disposition": "derived",
+    "note": "Face count of the card (recoverable from the Oracle card)."
+  },
+  "uses[].card.spoiler": {
+    "disposition": "deferred",
+    "note": "Spoiler flag (unreleased card); to be mapped together with variant spoiler status."
+  },
+  "uses[].card.layoutRotationFront": {
+    "disposition": "excluded",
+    "note": "Display hint for image rotation."
+  },
+  "uses[].card.imageUriFrontPng": {
+    "disposition": "excluded",
+    "note": "Scryfall image URLs duplicated by Spellbook; images come from Scryfall directly."
+  },
+  "uses[].card.imageUriFrontLarge": {
+    "disposition": "excluded",
+    "note": "See imageUriFrontPng."
+  },
+  "uses[].card.imageUriFrontNormal": {
+    "disposition": "excluded",
+    "note": "See imageUriFrontPng."
+  },
+  "uses[].card.imageUriFrontSmall": {
+    "disposition": "excluded",
+    "note": "See imageUriFrontPng."
+  },
+  "uses[].card.imageUriFrontArtCrop": {
+    "disposition": "excluded",
+    "note": "See imageUriFrontPng."
+  },
+  "uses[].card.imageUriBackPng": {
+    "disposition": "excluded",
+    "note": "See imageUriFrontPng."
+  },
+  "uses[].card.imageUriBackLarge": {
+    "disposition": "excluded",
+    "note": "See imageUriFrontPng."
+  },
+  "uses[].card.imageUriBackNormal": {
+    "disposition": "excluded",
+    "note": "See imageUriFrontPng."
+  },
+  "uses[].card.imageUriBackSmall": {
+    "disposition": "excluded",
+    "note": "See imageUriFrontPng."
+  },
+  "uses[].card.imageUriBackArtCrop": {
+    "disposition": "excluded",
+    "note": "See imageUriFrontPng."
+  },
+  "uses[].usedFace": {
+    "disposition": "deferred",
+    "note": "Which face of a multi-faced card the combo uses; to be linked to CardFace."
+  },
+  "requires[].battlefieldCardState": {
+    "disposition": "mapped",
+    "note": "smtg:requiredCardState on TemplateRequirement."
+  },
+  "requires[].exileCardState": {
+    "disposition": "mapped",
+    "note": "smtg:requiredCardState."
+  },
+  "requires[].graveyardCardState": {
+    "disposition": "mapped",
+    "note": "smtg:requiredCardState."
+  },
+  "requires[].libraryCardState": {
+    "disposition": "mapped",
+    "note": "smtg:requiredCardState."
+  },
+  "requires[].mustBeCommander": {
+    "disposition": "mapped",
+    "note": "smtg:mustBeCommander."
+  },
+  "requires[].zoneLocations": {
+    "disposition": "mapped",
+    "note": "smtg:startsInZone."
+  },
+  "requires[].zoneLocations[]": {
+    "disposition": "mapped",
+    "note": "smtg:startsInZone."
+  },
+  "requires[].template.id": {
+    "disposition": "mapped",
+    "note": "Identifier (spellbook-template-id)."
+  },
+  "requires[].template.name": {
+    "disposition": "mapped",
+    "note": "rdfs:label of ComboTemplate."
+  },
+  "requires[].template.scryfallQuery": {
+    "disposition": "mapped",
+    "note": "smtg:templateQuery."
+  },
+  "requires[].template.scryfallApi": {
+    "disposition": "derived",
+    "note": "API URL form of scryfallQuery."
+  },
+  "produces[].feature.name": {
+    "disposition": "mapped",
+    "note": "rdfs:label of ComboFeature."
+  },
+  "uses[].zoneLocations[]": {
+    "disposition": "mapped",
+    "note": "smtg:startsInZone."
+  },
+  "includes[]": {
+    "disposition": "mapped",
+    "note": "smtg:includesRecipe."
+  },
+  "of[]": {
+    "disposition": "mapped",
+    "note": "smtg:generatedFromRecipe."
+  },
+  "legalities": {
+    "disposition": "deferred",
+    "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase)."
+  },
+  "prices": {
+    "disposition": "deferred",
+    "note": "Aggregate prices per vendor; PriceObservation about a variant (RQ-PR-2)."
+  },
+  "popularity": {
+    "disposition": "deferred",
+    "note": "Usage statistic; candidate ObservedAssociation/RankObservation (claimed by Spellbook)."
+  },
+  "salt": {
+    "disposition": "deferred",
+    "note": "Community 'salt' score; a doxastic, aggregated judgement — good DEC example."
+  },
+  "saltVoteCount": {
+    "disposition": "deferred",
+    "note": "See salt."
+  },
+  "bracketTag": {
+    "disposition": "deferred",
+    "note": "Commander bracket classification by Spellbook; time-sensitive claim."
+  },
+  "spoiler": {
+    "disposition": "deferred",
+    "note": "Variant involves unreleased cards."
+  },
+  "notes": {
+    "disposition": "deferred",
+    "note": "Free-text curator notes; candidate text expression."
+  },
+  "variantCount": {
+    "disposition": "deferred",
+    "note": "Number of variants of the recipe; derived statistic."
+  },
+  "of": {
+    "disposition": "mapped",
+    "note": "smtg:generatedFromRecipe (one per of[].id)."
+  },
+  "includes": {
+    "disposition": "mapped",
+    "note": "smtg:includesRecipe (one per includes[].id)."
+  }
+}

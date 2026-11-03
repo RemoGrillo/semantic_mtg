@@ -1,0 +1,16 @@
+# id: CQ-FL-02
+# title: Negative test NT-01 — an Adventure is not an MDFC
+# question: Is any Oracle card both an adventurer card and a modal double-faced card?
+# kind: negative
+# expects: empty
+# modules: cards
+# note: also enforced logically: hasLayout is functional and layouts are pairwise different (see reasoner negative test).
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?card WHERE {
+  ?card smtg:hasLayout <https://w3id.org/smtg/vocab/layout/adventure> , <https://w3id.org/smtg/vocab/layout/modal_dfc> .
+}

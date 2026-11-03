@@ -1,0 +1,16 @@
+# id: CQ-FL-06
+# title: Modal spell is not a modal double-faced card
+# question: Kolaghan's Command lets you choose modes — is it (wrongly) classified as a modal double-faced card?
+# kind: negative
+# expects: empty
+# modules: cards
+# note: 'modal' layout vs 'choose one' ability are different notions (AP-06).
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?card WHERE {
+  ?card smtg:name "Kolaghan's Command" ; smtg:hasLayout <https://w3id.org/smtg/vocab/layout/modal_dfc> .
+}

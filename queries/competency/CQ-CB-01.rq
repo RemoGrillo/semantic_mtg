@@ -1,0 +1,16 @@
+# id: CQ-CB-01
+# title: Documented combos using a card
+# question: Which documented Commander Spellbook variants use Blood Artist, and which features are they documented to produce?
+# kind: SPARQL
+# expects: nonempty
+# modules: combos, claims
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?variant (GROUP_CONCAT(DISTINCT ?featureName; separator=' · ') AS ?features) WHERE {
+  ?card smtg:name "Blood Artist" .
+  ?variant a smtg:ComboVariant ; smtg:hasCardUse/smtg:usesCard ?card ; smtg:hasFeatureProduction/smtg:producesFeature/rdfs:label ?featureName .
+} GROUP BY ?variant

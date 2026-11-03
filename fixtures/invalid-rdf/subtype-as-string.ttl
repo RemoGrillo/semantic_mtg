@@ -1,0 +1,9 @@
+# SYNTHETIC invalid fixture — not source data.
+# why: subtypes must be scheme-qualified concepts, not bare strings (AP-08)
+# expect: Subtypes must be concepts of a type-qualified subtype scheme
+@prefix smtg: <https://w3id.org/smtg/ontology#> .
+@prefix x: <https://w3id.org/smtg/id/synthetic/> .
+@prefix v: <https://w3id.org/smtg/vocab/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+x:f6 a smtg:CardFace ; smtg:hasSubtype "Elf" .

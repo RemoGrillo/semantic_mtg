@@ -1,0 +1,17 @@
+# id: CQ-FL-03
+# title: Several faces on one physical side
+# question: Which Oracle cards have two or more faces printed on the same physical side, and by which layout?
+# kind: SPARQL
+# expects: nonempty
+# modules: cards, taxonomies
+# note: uses the layout → face-configuration mapping instead of memorising layout codes.
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?name ?layoutLabel (COUNT(?f) AS ?faces) WHERE {
+  ?card smtg:name ?name ; smtg:hasLayout ?layout ; smtg:hasFace ?f .
+  ?layout smtg:impliesFaceConfiguration <https://w3id.org/smtg/vocab/face-configuration/same-side-parts> ; skos:prefLabel ?layoutLabel .
+} GROUP BY ?name ?layoutLabel ORDER BY ?layoutLabel ?name

@@ -1,0 +1,18 @@
+# id: CQ-ID-05
+# title: One Oracle card, normal and reversible printings
+# question: Which Oracle cards have both an ordinary printing and a reversible-card printing, and how many printed faces does each printing have?
+# kind: SPARQL
+# expects: nonempty
+# modules: cards, printings
+# note: reversible_card is a printing layout; the Oracle card keeps its game layout (RQ-LY-2).
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?name ?printingLayout (COUNT(DISTINCT ?pf) AS ?printedFaces) ?printing WHERE {
+  ?card smtg:name ?name ; smtg:hasPrinting|^smtg:isPrintingOf ?printing .
+  ?printing smtg:printingLayout ?printingLayout ; smtg:hasPrintedFace ?pf .
+  FILTER EXISTS { ?card ^smtg:isPrintingOf/smtg:printingLayout <https://w3id.org/smtg/vocab/layout/reversible_card> }
+} GROUP BY ?name ?printingLayout ?printing ORDER BY ?name ?printingLayout

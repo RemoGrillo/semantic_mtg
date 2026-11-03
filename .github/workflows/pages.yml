@@ -1,0 +1,25 @@
+name: pages
+# Builds the documentation site. Disabled until the licensing question in ADR-0006
+# (embedding Wizards symbols and the Beleren font in a public build) is settled.
+on: { workflow_dispatch: {} }
+permissions: { contents: read, pages: write, id-token: write }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
+      - run: npm run audit:fetch -- --only scryfall:api || true
+      - run: npm run assets || true
+      - run: npm run docs:build
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: github-pages }
+    steps:
+      - uses: actions/deploy-pages@v4

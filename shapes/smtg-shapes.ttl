@@ -1,0 +1,173 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgsh:  <https://w3id.org/smtg/shapes#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+# =============================================================================
+#  SMTG SHACL shapes — closed-world STRUCTURAL validation of instance graphs.
+#  OWL (open world) says what things mean; SHACL says what a well-formed SMTG
+#  graph produced by the pipeline must contain. A SHACL violation is a data
+#  quality error, never a statement about the card.
+# =============================================================================
+
+smtgsh:OracleCardShape a sh:NodeShape ;
+  sh:targetClass smtg:OracleCard ;
+  rdfs:comment "Every Oracle card has a name, at least one face, exactly one Scryfall Oracle identifier, one layout and one colour identity."@en ;
+  sh:property [
+    sh:path smtg:name ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+    sh:message "An Oracle card must have exactly one (combined) name."@en ] ;
+  sh:property [
+    sh:path smtg:hasFace ; sh:minCount 1 ; sh:class smtg:CardFace ;
+    sh:message "An Oracle card must have at least one CardFace (single-faced cards included)."@en ] ;
+  sh:property [
+    sh:path smtg:hasLayout ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:Layout ;
+    sh:message "An Oracle card must have exactly one layout concept."@en ] ;
+  sh:property [
+    sh:path smtg:hasColorIdentity ; sh:maxCount 1 ; sh:class smtg:ColorCombination ;
+    sh:message "Colour identity must be a single ColorCombination concept."@en ] ;
+  sh:property [
+    sh:path ( smtg:hasIdentifier smtg:identifierScheme ) ;
+    sh:qualifiedValueShape [ sh:hasValue <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-oracle-id> ] ;
+    sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+    sh:message "An Oracle card must carry exactly one Scryfall Oracle ID identifier."@en ] ;
+  sh:property [
+    sh:path rdf:type ; sh:not [ sh:hasValue smtg:CardPrinting ] ;
+    sh:message "An Oracle card must not also be typed as a printing (AP-01)."@en ] .
+
+smtgsh:CardFaceShape a sh:NodeShape ;
+  sh:targetClass smtg:CardFace ;
+  sh:property [ sh:path smtg:faceOf ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:OracleCard ;
+    sh:message "A face belongs to exactly one Oracle card."@en ] ;
+  sh:property [ sh:path smtg:faceIndex ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:nonNegativeInteger ;
+    sh:message "A face needs exactly one nonNegativeInteger faceIndex."@en ] ;
+  sh:property [ sh:path smtg:name ; sh:minCount 1 ; sh:maxCount 1 ;
+    sh:message "A face needs exactly one name."@en ] ;
+  sh:property [ sh:path smtg:hasColors ; sh:maxCount 1 ; sh:class smtg:ColorCombination ] ;
+  sh:property [ sh:path smtg:hasSubtype ; sh:class smtg:Subtype ;
+    sh:message "Subtypes must be concepts of a type-qualified subtype scheme, not strings."@en ] ;
+  sh:property [ sh:path smtg:powerText ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path smtg:powerValue ; sh:maxCount 1 ; sh:datatype xsd:decimal ] .
+
+smtgsh:ManaCostXorEmpty a sh:NodeShape ;
+  sh:targetClass smtg:CardFace ;
+  rdfs:comment "A face cannot both have a ManaCost and be declared to have no mana cost."@en ;
+  sh:not [ sh:and (
+    [ sh:path smtg:hasManaCost ; sh:minCount 1 ]
+    [ sh:path smtg:hasNoManaCost ; sh:hasValue true ] ) ] ;
+  sh:message "Contradiction: face has a ManaCost and hasNoManaCost true (AP-05)."@en .
+
+smtgsh:ManaCostShape a sh:NodeShape ;
+  sh:targetClass smtg:ManaCost ;
+  sh:property [ sh:path smtg:manaCostNotation ; sh:minCount 1 ; sh:maxCount 1 ;
+    sh:pattern "^(\\{[^{}]+\\})+$" ;
+    sh:message "Mana cost notation must be a non-empty sequence of {…} symbols."@en ] .
+
+smtgsh:CardPrintingShape a sh:NodeShape ;
+  sh:targetClass smtg:CardPrinting ;
+  sh:property [ sh:path smtg:isPrintingOf ; sh:minCount 1 ; sh:maxCount 2 ; sh:class smtg:OracleCard ;
+    sh:message "A printing manifests one Oracle card (two for reversible printings)."@en ] ;
+  sh:property [ sh:path smtg:inSet ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:MtgSet ;
+    sh:message "A printing belongs to exactly one set."@en ] ;
+  sh:property [ sh:path smtg:collectorNumber ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path smtg:inLanguage ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:Language ] ;
+  sh:property [ sh:path smtg:hasPrintedFace ; sh:minCount 1 ; sh:class smtg:PrintedFace ;
+    sh:message "A printing has at least one printed face."@en ] ;
+  sh:property [
+    sh:path ( smtg:hasIdentifier smtg:identifierScheme ) ;
+    sh:qualifiedValueShape [ sh:hasValue <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-id> ] ;
+    sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+    sh:message "A printing must carry exactly one Scryfall card ID identifier."@en ] .
+
+smtgsh:PrintedFaceShape a sh:NodeShape ;
+  sh:targetClass smtg:PrintedFace ;
+  sh:property [ sh:path smtg:manifestsFace ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:CardFace ] ;
+  sh:property [ sh:path smtg:onSide ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:Side ] ;
+  sh:property [ sh:path smtg:showsIllustration ; sh:maxCount 1 ; sh:class smtg:Illustration ] ;
+  sh:property [ sh:path smtg:hasPrintedText ; sh:class smtg:TextExpression ] .
+
+smtgsh:TextExpressionShape a sh:NodeShape ;
+  sh:targetClass smtg:TextExpression ;
+  sh:property [ sh:path smtg:textValue ; sh:minCount 1 ; sh:maxCount 1 ;
+    sh:message "A text expression has exactly one text value."@en ] .
+
+smtgsh:FlavorNotOracle a sh:NodeShape ;
+  sh:targetClass smtg:FlavorText ;
+  sh:not [ sh:class smtg:OracleText ] ;
+  sh:message "Flavor text is never Oracle rules text (AP-13)."@en .
+
+smtgsh:IdentifierShape a sh:NodeShape ;
+  sh:targetClass smtg:Identifier ;
+  sh:property [ sh:path smtg:identifierValue ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path smtg:identifierScheme ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:IdentifierScheme ] .
+
+smtgsh:ClaimShape a sh:NodeShape ;
+  sh:targetClass smtg:Claim ;
+  rdfs:comment "Every claim is attributed and traceable to a source snapshot (per-assertion provenance)."@en ;
+  sh:property [ sh:path smtg:claimedBy ; sh:minCount 1 ;
+    sh:message "A claim must be attributed to an agent (smtg:claimedBy)."@en ] ;
+  sh:property [ sh:path smtg:observedIn ; sh:minCount 1 ; sh:class smtg:SourceSnapshot ;
+    sh:message "A claim must be observed in at least one SourceSnapshot."@en ] ;
+  sh:property [ sh:path smtg:hasEpistemicStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:EpistemicStatus ] ;
+  sh:property [ sh:path smtg:hasAttitude ; sh:maxCount 1 ; sh:class smtg:PropositionalAttitude ] ;
+  sh:property [ sh:path smtg:confidence ; sh:maxCount 1 ; sh:datatype xsd:decimal ;
+    sh:minInclusive 0 ; sh:maxInclusive 1 ] .
+
+smtgsh:TagAssignmentShape a sh:NodeShape ;
+  sh:targetClass smtg:TagAssignment ;
+  sh:property [ sh:path smtg:assignedTag ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:TagConcept ] ;
+  sh:property [ sh:path smtg:assignmentTarget ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path smtg:taggingWeight ; sh:maxCount 1 ; sh:class smtg:TaggingWeight ] .
+
+smtgsh:OracleTagAssignmentShape a sh:NodeShape ;
+  sh:targetClass smtg:OracleTagAssignment ;
+  sh:property [ sh:path smtg:assignedTag ; sh:class smtg:OracleTag ;
+    sh:message "An Oracle tag assignment must assign an Oracle tag."@en ] ;
+  sh:property [ sh:path smtg:assignmentTarget ; sh:class smtg:OracleCard ;
+    sh:message "An Oracle tag is assigned to an Oracle card, not to a printing or illustration."@en ] .
+
+smtgsh:ArtTagAssignmentShape a sh:NodeShape ;
+  sh:targetClass smtg:ArtTagAssignment ;
+  sh:property [ sh:path smtg:assignedTag ; sh:class smtg:ArtTag ;
+    sh:message "An art tag assignment must assign an art tag."@en ] ;
+  sh:property [ sh:path smtg:assignmentTarget ; sh:class smtg:Illustration ;
+    sh:message "An art tag is assigned to an illustration, not to a card."@en ] .
+
+smtgsh:TagConceptShape a sh:NodeShape ;
+  sh:targetClass smtg:TagConcept ;
+  sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ] ;
+  sh:property [ sh:path skos:inScheme ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path smtg:taggerParent ; sh:class smtg:TagConcept ] .
+
+smtgsh:LegalityAssertionShape a sh:NodeShape ;
+  sh:targetClass smtg:LegalityAssertion ;
+  sh:property [ sh:path smtg:legalityOf ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path smtg:inFormat ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:Format ] ;
+  sh:property [ sh:path smtg:hasLegalityStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:LegalityStatus ] .
+
+smtgsh:ComboVariantShape a sh:NodeShape ;
+  sh:targetClass smtg:ComboVariant ;
+  sh:property [ sh:path smtg:hasCardUse ; sh:minCount 1 ; sh:class smtg:ComboCardUse ;
+    sh:message "A combo variant uses at least one card."@en ] ;
+  sh:property [ sh:path smtg:hasFeatureProduction ; sh:class smtg:FeatureProduction ] .
+
+smtgsh:ComboCardUseShape a sh:NodeShape ;
+  sh:targetClass smtg:ComboCardUse ;
+  sh:property [ sh:path smtg:usesCard ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:OracleCard ;
+    sh:message "A card use refers to exactly one Oracle card (templates are TemplateRequirements)."@en ] ;
+  sh:property [ sh:path smtg:quantity ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:positiveInteger ] .
+
+smtgsh:SourceSnapshotShape a sh:NodeShape ;
+  sh:targetClass smtg:SourceSnapshot ;
+  sh:property [ sh:path smtg:snapshotOf ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:SourceDataset ] ;
+  sh:property [ sh:path smtg:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] ;
+  sh:property [ sh:path smtg:retrievedAt ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:dateTime ] .
+
+smtgsh:NoSameAs a sh:NodeShape ;
+  sh:targetSubjectsOf <http://www.w3.org/2002/07/owl#sameAs> ;
+  sh:property [ sh:path <http://www.w3.org/2002/07/owl#sameAs> ; sh:maxCount 0 ;
+    sh:message "owl:sameAs is not used in SMTG instance data (two printings sharing an image, or two cards sharing a name, are not identical — AP-03, AP-04)."@en ] .

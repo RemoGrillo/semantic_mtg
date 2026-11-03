@@ -1,0 +1,13 @@
+# id: CQ-ID-03
+# title: Negative test — a printing is not an Oracle card
+# question: Is any resource typed both as Oracle card and as printing?
+# kind: negative
+# expects: empty
+# modules: cards, printings
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?x WHERE { ?x a smtg:OracleCard , smtg:CardPrinting . }

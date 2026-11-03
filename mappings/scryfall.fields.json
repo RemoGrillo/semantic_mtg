@@ -1,0 +1,1843 @@
+[
+  {
+    "path": "all_parts",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:PartRelationship"
+    ],
+    "present": 27511
+  },
+  {
+    "path": "all_parts[]",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:PartRelationship"
+    ],
+    "present": 27511
+  },
+  {
+    "path": "all_parts[].component",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:PartComponent",
+      "smtg:PartRelationship",
+      "smtg:partRole"
+    ],
+    "present": 27511
+  },
+  {
+    "path": "all_parts[].id",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:PartRelationship"
+    ],
+    "present": 27511
+  },
+  {
+    "path": "all_parts[].name",
+    "scope": "oracle card",
+    "disposition": "derived",
+    "terms": [],
+    "note": "Denormalised copy of the related printing's name; recoverable from the related object.",
+    "present": 27511
+  },
+  {
+    "path": "all_parts[].object",
+    "scope": "oracle card",
+    "disposition": "excluded",
+    "terms": [],
+    "note": "JSON object-type discriminator (\"related_card\").",
+    "present": 27511
+  },
+  {
+    "path": "all_parts[].type_line",
+    "scope": "oracle card",
+    "disposition": "derived",
+    "terms": [],
+    "note": "Denormalised copy of the related printing's type line.",
+    "present": 27511
+  },
+  {
+    "path": "all_parts[].uri",
+    "scope": "oracle card",
+    "disposition": "derived",
+    "terms": [],
+    "note": "API URL of the related printing; recoverable from its id.",
+    "present": 27511
+  },
+  {
+    "path": "arena_id",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier"
+    ],
+    "present": 19830
+  },
+  {
+    "path": "artist",
+    "scope": "illustration",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:creditedAs"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "artist_ids",
+    "scope": "illustration",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Artist",
+      "smtg:hasIdentifier"
+    ],
+    "present": 547017
+  },
+  {
+    "path": "artist_ids[]",
+    "scope": "illustration",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Artist",
+      "smtg:hasIdentifier"
+    ],
+    "present": 547017
+  },
+  {
+    "path": "attraction_lights",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "Unfinity attraction lights; to be modelled as a face characteristic.",
+    "present": 135
+  },
+  {
+    "path": "attraction_lights[]",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "See attraction_lights.",
+    "present": 135
+  },
+  {
+    "path": "booster",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:inBooster"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "border_color",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:BorderColor",
+      "smtg:hasBorderColor"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "card_back_id",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "card_faces",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:CardFace",
+      "smtg:PrintedFace",
+      "smtg:hasFace"
+    ],
+    "present": 12498
+  },
+  {
+    "path": "card_faces[]",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:CardFace",
+      "smtg:PrintedFace",
+      "smtg:hasFace"
+    ],
+    "present": 12498
+  },
+  {
+    "path": "card_faces[].artist",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:creditedAs"
+    ],
+    "present": 12419
+  },
+  {
+    "path": "card_faces[].artist_id",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Artist"
+    ],
+    "present": 12419
+  },
+  {
+    "path": "card_faces[].cmc",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:manaValue"
+    ],
+    "present": 83
+  },
+  {
+    "path": "card_faces[].color_indicator",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasColorIndicator"
+    ],
+    "present": 3564
+  },
+  {
+    "path": "card_faces[].color_indicator[]",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasColorIndicator"
+    ],
+    "present": 3564
+  },
+  {
+    "path": "card_faces[].colors",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasColors"
+    ],
+    "present": 8632
+  },
+  {
+    "path": "card_faces[].colors[]",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasColors"
+    ],
+    "present": 5261
+  },
+  {
+    "path": "card_faces[].defense",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:defenseText"
+    ],
+    "present": 306
+  },
+  {
+    "path": "card_faces[].flavor_name",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:FlavorName"
+    ],
+    "present": 16
+  },
+  {
+    "path": "card_faces[].flavor_text",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:FlavorText"
+    ],
+    "present": 4479
+  },
+  {
+    "path": "card_faces[].illustration_id",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Illustration",
+      "smtg:showsIllustration"
+    ],
+    "present": 12426
+  },
+  {
+    "path": "card_faces[].image_uris",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage"
+    ],
+    "present": 8470
+  },
+  {
+    "path": "card_faces[].image_uris.art",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage"
+    ],
+    "present": 8470
+  },
+  {
+    "path": "card_faces[].image_uris.art_crop",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage"
+    ],
+    "present": 8470
+  },
+  {
+    "path": "card_faces[].image_uris.border_crop",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage"
+    ],
+    "present": 8470
+  },
+  {
+    "path": "card_faces[].image_uris.crop",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage"
+    ],
+    "present": 8470
+  },
+  {
+    "path": "card_faces[].image_uris.display",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage"
+    ],
+    "present": 8470
+  },
+  {
+    "path": "card_faces[].image_uris.grid",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage"
+    ],
+    "present": 8470
+  },
+  {
+    "path": "card_faces[].image_uris.jpeg",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage"
+    ],
+    "present": 8470
+  },
+  {
+    "path": "card_faces[].image_uris.large",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage"
+    ],
+    "present": 8470
+  },
+  {
+    "path": "card_faces[].image_uris.normal",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage"
+    ],
+    "present": 8470
+  },
+  {
+    "path": "card_faces[].image_uris.png",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage"
+    ],
+    "present": 8470
+  },
+  {
+    "path": "card_faces[].image_uris.small",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage"
+    ],
+    "present": 8470
+  },
+  {
+    "path": "card_faces[].image_uris.thumb",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage"
+    ],
+    "present": 8470
+  },
+  {
+    "path": "card_faces[].layout",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasLayout"
+    ],
+    "present": 83
+  },
+  {
+    "path": "card_faces[].loyalty",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:loyaltyText"
+    ],
+    "present": 278
+  },
+  {
+    "path": "card_faces[].mana_cost",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:ManaCost",
+      "smtg:hasManaCost"
+    ],
+    "present": 12498
+  },
+  {
+    "path": "card_faces[].name",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:name"
+    ],
+    "present": 12498
+  },
+  {
+    "path": "card_faces[].object",
+    "scope": "face",
+    "disposition": "excluded",
+    "terms": [],
+    "note": "JSON object-type discriminator (\"card_face\").",
+    "present": 12498
+  },
+  {
+    "path": "card_faces[].oracle_id",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:OracleCard",
+      "smtg:isPrintingOf"
+    ],
+    "present": 83
+  },
+  {
+    "path": "card_faces[].oracle_text",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:OracleText"
+    ],
+    "present": 12498
+  },
+  {
+    "path": "card_faces[].power",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:powerText"
+    ],
+    "present": 6595
+  },
+  {
+    "path": "card_faces[].printed_name",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:PrintedName"
+    ],
+    "present": 7065
+  },
+  {
+    "path": "card_faces[].printed_text",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:PrintedRulesText"
+    ],
+    "present": 7021
+  },
+  {
+    "path": "card_faces[].printed_type_line",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:PrintedTypeLine"
+    ],
+    "present": 5879
+  },
+  {
+    "path": "card_faces[].toughness",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:toughnessText"
+    ],
+    "present": 6595
+  },
+  {
+    "path": "card_faces[].type_line",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:typeLine"
+    ],
+    "present": 12498
+  },
+  {
+    "path": "card_faces[].watermark",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasWatermark"
+    ],
+    "present": 654
+  },
+  {
+    "path": "cardmarket_id",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier"
+    ],
+    "present": 107964
+  },
+  {
+    "path": "cmc",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:manaValue"
+    ],
+    "present": 547870
+  },
+  {
+    "path": "collector_number",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:collectorNumber"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "color_identity",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasColorIdentity"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "color_identity[]",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasColorIdentity"
+    ],
+    "present": 488959
+  },
+  {
+    "path": "color_indicator",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasColorIndicator"
+    ],
+    "present": 547
+  },
+  {
+    "path": "color_indicator[]",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasColorIndicator"
+    ],
+    "present": 547
+  },
+  {
+    "path": "colors",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasColors"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "colors[]",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasColors"
+    ],
+    "present": 429347
+  },
+  {
+    "path": "content_warning",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasContentWarning"
+    ],
+    "present": 91
+  },
+  {
+    "path": "defense",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:defenseText"
+    ],
+    "present": 2
+  },
+  {
+    "path": "digital",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:isDigitalOnly"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "edhrec_rank",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:RankObservation"
+    ],
+    "present": 515550
+  },
+  {
+    "path": "finishes",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Finish",
+      "smtg:availableInFinish"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "finishes[]",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Finish",
+      "smtg:availableInFinish"
+    ],
+    "present": 547950
+  },
+  {
+    "path": "flavor_name",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:FlavorName"
+    ],
+    "present": 769
+  },
+  {
+    "path": "flavor_text",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:FlavorText"
+    ],
+    "present": 275815
+  },
+  {
+    "path": "foil",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:availableInFinish"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "frame",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:FrameVersion",
+      "smtg:hasFrameVersion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "frame_effects",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:FrameEffect",
+      "smtg:hasFrameEffect"
+    ],
+    "present": 76938
+  },
+  {
+    "path": "frame_effects[]",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:FrameEffect",
+      "smtg:hasFrameEffect"
+    ],
+    "present": 76938
+  },
+  {
+    "path": "full_art",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:isFullArt"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "game_changer",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:isGameChanger"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "games",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Game",
+      "smtg:availableInGame"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "games[]",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Game",
+      "smtg:availableInGame"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "hand_modifier",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:handModifierText"
+    ],
+    "present": 119
+  },
+  {
+    "path": "highres_image",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasImageStatus"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "id",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:CardPrinting",
+      "smtg:hasIdentifier"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "illustration_id",
+    "scope": "illustration",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Illustration",
+      "smtg:hasIdentifier",
+      "smtg:showsIllustration"
+    ],
+    "present": 538597
+  },
+  {
+    "path": "image_status",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:ImageStatus",
+      "smtg:hasImageStatus"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "image_updated_at",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "Image freshness timestamp; candidate provenance attribute of DigitalImage (new field vs. older Scryfall docs).",
+    "present": 547953
+  },
+  {
+    "path": "image_uris",
+    "scope": "image",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage",
+      "smtg:ImageVariant"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "image_uris.art",
+    "scope": "image",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage",
+      "smtg:ImageVariant"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "image_uris.art_crop",
+    "scope": "image",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage",
+      "smtg:ImageVariant"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "image_uris.border_crop",
+    "scope": "image",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage",
+      "smtg:ImageVariant"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "image_uris.crop",
+    "scope": "image",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage",
+      "smtg:ImageVariant"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "image_uris.display",
+    "scope": "image",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage",
+      "smtg:ImageVariant"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "image_uris.grid",
+    "scope": "image",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage",
+      "smtg:ImageVariant"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "image_uris.jpeg",
+    "scope": "image",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage",
+      "smtg:ImageVariant"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "image_uris.large",
+    "scope": "image",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage",
+      "smtg:ImageVariant"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "image_uris.normal",
+    "scope": "image",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage",
+      "smtg:ImageVariant"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "image_uris.png",
+    "scope": "image",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage",
+      "smtg:ImageVariant"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "image_uris.small",
+    "scope": "image",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage",
+      "smtg:ImageVariant"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "image_uris.thumb",
+    "scope": "image",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:DigitalImage",
+      "smtg:ImageVariant"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "keywords",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasKeyword"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "keywords[]",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasKeyword"
+    ],
+    "present": 240302
+  },
+  {
+    "path": "lang",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Language",
+      "smtg:inLanguage"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "layout",
+    "scope": "oracle card / face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Layout",
+      "smtg:hasLayout",
+      "smtg:printingLayout"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.alchemy",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.brawl",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.commander",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.competitivebrawl",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.duel",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.future",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.gladiator",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.historic",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.legacy",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.modern",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.oathbreaker",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.oldschool",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.pauper",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.paupercommander",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.penny",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.pioneer",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.predh",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.premodern",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.standard",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.standardbrawl",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.timeless",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.tlr",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "legalities.vintage",
+    "scope": "observation (Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Format",
+      "smtg:LegalityAssertion"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "life_modifier",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:lifeModifierText"
+    ],
+    "present": 119
+  },
+  {
+    "path": "loyalty",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:loyaltyText"
+    ],
+    "present": 5955
+  },
+  {
+    "path": "mana_cost",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:ManaCost",
+      "smtg:hasManaCost"
+    ],
+    "present": 539321
+  },
+  {
+    "path": "mtgo_foil_id",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier"
+    ],
+    "present": 24341
+  },
+  {
+    "path": "mtgo_id",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier"
+    ],
+    "present": 63248
+  },
+  {
+    "path": "multiverse_ids",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "multiverse_ids[]",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier"
+    ],
+    "present": 415657
+  },
+  {
+    "path": "name",
+    "scope": "oracle card / face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:name"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "nonfoil",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:availableInFinish"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "object",
+    "scope": "printing",
+    "disposition": "excluded",
+    "terms": [],
+    "note": "JSON object-type discriminator (always \"card\"); carries no domain information.",
+    "present": 547953
+  },
+  {
+    "path": "oracle_id",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:OracleCard",
+      "smtg:hasIdentifier",
+      "smtg:isPrintingOf"
+    ],
+    "present": 547870
+  },
+  {
+    "path": "oracle_text",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:OracleText"
+    ],
+    "present": 535455
+  },
+  {
+    "path": "oversized",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:isOversized"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "penny_rank",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:RankObservation"
+    ],
+    "present": 347822
+  },
+  {
+    "path": "power",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:powerText"
+    ],
+    "present": 265889
+  },
+  {
+    "path": "preview",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "Spoiler/preview provenance (source, date); candidate Claim 'previewed by' — RQ to be opened.",
+    "present": 17365
+  },
+  {
+    "path": "preview.previewed_at",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "See preview.",
+    "present": 17365
+  },
+  {
+    "path": "preview.source",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "See preview.",
+    "present": 17365
+  },
+  {
+    "path": "preview.source_uri",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "See preview.",
+    "present": 17365
+  },
+  {
+    "path": "prices",
+    "scope": "observation (printing)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Currency",
+      "smtg:PriceObservation"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "prices.eur",
+    "scope": "observation (printing)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Currency",
+      "smtg:PriceObservation"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "prices.eur_foil",
+    "scope": "observation (printing)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Currency",
+      "smtg:PriceObservation"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "prices.tix",
+    "scope": "observation (printing)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Currency",
+      "smtg:PriceObservation"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "prices.usd",
+    "scope": "observation (printing)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Currency",
+      "smtg:PriceObservation"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "prices.usd_etched",
+    "scope": "observation (printing)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Currency",
+      "smtg:PriceObservation"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "prices.usd_foil",
+    "scope": "observation (printing)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Currency",
+      "smtg:PriceObservation"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "printed_name",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:PrintedName"
+    ],
+    "present": 409683
+  },
+  {
+    "path": "printed_text",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:PrintedRulesText"
+    ],
+    "present": 359069
+  },
+  {
+    "path": "printed_type_line",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:PrintedTypeLine"
+    ],
+    "present": 346497
+  },
+  {
+    "path": "prints_search_uri",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:sourceURL"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "produced_mana",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:producesManaSymbol"
+    ],
+    "present": 82346
+  },
+  {
+    "path": "produced_mana[]",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:producesManaSymbol"
+    ],
+    "present": 82346
+  },
+  {
+    "path": "promo",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:isPromo"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "promo_types",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:PromoType",
+      "smtg:hasPromoType"
+    ],
+    "present": 100005
+  },
+  {
+    "path": "promo_types[]",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:PromoType",
+      "smtg:hasPromoType"
+    ],
+    "present": 100005
+  },
+  {
+    "path": "purchase_uris",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "Commercial outbound links; an ExternalResourceLink pattern is not designed yet (RQ-PR-2).",
+    "present": 544366
+  },
+  {
+    "path": "purchase_uris.cardhoarder",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "See purchase_uris.",
+    "present": 544366
+  },
+  {
+    "path": "purchase_uris.cardmarket",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "See purchase_uris.",
+    "present": 544366
+  },
+  {
+    "path": "purchase_uris.tcgplayer",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "See purchase_uris.",
+    "present": 544366
+  },
+  {
+    "path": "rarity",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Rarity",
+      "smtg:hasRarity"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "related_uris",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "Outbound links (Gatherer, EDHREC, TCGplayer articles); ExternalResourceLink pattern pending.",
+    "present": 547953
+  },
+  {
+    "path": "related_uris.edhrec",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "See related_uris.",
+    "present": 547862
+  },
+  {
+    "path": "related_uris.gatherer",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "See related_uris.",
+    "present": 415657
+  },
+  {
+    "path": "related_uris.tcgplayer_infinite_articles",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "See related_uris.",
+    "present": 547862
+  },
+  {
+    "path": "related_uris.tcgplayer_infinite_decks",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "See related_uris.",
+    "present": 547862
+  },
+  {
+    "path": "released_at",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:releasedOn"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "reprint",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:isReprint"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "reserved",
+    "scope": "oracle card",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:onReservedList"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "resource_id",
+    "scope": "printing",
+    "disposition": "deferred",
+    "terms": [],
+    "note": "Undocumented Scryfall field observed in 2026 data; semantics to be verified before mapping (schema drift).",
+    "present": 40321
+  },
+  {
+    "path": "rulings_uri",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:sourceURL"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "scryfall_set_uri",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:inSet"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "scryfall_uri",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:sourceURL"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "security_stamp",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:SecurityStamp",
+      "smtg:hasSecurityStamp"
+    ],
+    "present": 170361
+  },
+  {
+    "path": "set",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:MtgSet",
+      "smtg:inSet"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "set_id",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:MtgSet",
+      "smtg:hasIdentifier",
+      "smtg:inSet"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "set_name",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:inSet"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "set_search_uri",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:inSet"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "set_type",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:SetType",
+      "smtg:inSet"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "set_uri",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:inSet"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "story_spotlight",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:isStorySpotlight"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "tcgplayer_etched_id",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier"
+    ],
+    "present": 1225
+  },
+  {
+    "path": "tcgplayer_id",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier"
+    ],
+    "present": 104213
+  },
+  {
+    "path": "textless",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:isTextless"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "toughness",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:toughnessText"
+    ],
+    "present": 265889
+  },
+  {
+    "path": "type_line",
+    "scope": "face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:typeLine"
+    ],
+    "present": 547870
+  },
+  {
+    "path": "uri",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:sourceURL"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "variation",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:isVariation"
+    ],
+    "present": 547953
+  },
+  {
+    "path": "variation_of",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:variationOf"
+    ],
+    "present": 122
+  },
+  {
+    "path": "watermark",
+    "scope": "printed-face",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:Watermark",
+      "smtg:hasWatermark"
+    ],
+    "present": 37097
+  }
+]

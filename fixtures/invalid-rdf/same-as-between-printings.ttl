@@ -1,0 +1,9 @@
+# SYNTHETIC invalid fixture — not source data.
+# why: two printings sharing an illustration are not identical (AP-03)
+# expect: owl:sameAs is not used in SMTG instance data
+@prefix smtg: <https://w3id.org/smtg/ontology#> .
+@prefix x: <https://w3id.org/smtg/id/synthetic/> .
+@prefix v: <https://w3id.org/smtg/vocab/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+x:p7 owl:sameAs x:p8 .

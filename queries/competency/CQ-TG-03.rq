@@ -1,0 +1,18 @@
+# id: CQ-TG-03
+# title: Hierarchical tag expansion (explicit interpretation)
+# question: Which ancestor tags are reachable from the tags directly assigned to Lightning Bolt, and through how many parent links?
+# kind: SPARQL
+# expects: nonempty
+# modules: tags
+# note: this is the opt-in SKOS-view reading made explicit with a property path. The assigned leaf tag and its weight stay visible; ancestors are NOT claimed to be assigned (RQ-TG-1, DEC).
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT DISTINCT ?assigned ?weight ?ancestor WHERE {
+  ?card smtg:name "Lightning Bolt" .
+  ?a smtg:assignmentTarget ?card ; smtg:assignedTag ?t ; smtg:taggingWeight/skos:notation ?weight .
+  ?t skos:prefLabel ?assigned ; smtg:taggerParent+ ?anc . ?anc skos:prefLabel ?ancestor .
+} ORDER BY ?assigned ?ancestor

@@ -1,0 +1,17 @@
+# id: CQ-PV-02
+# title: Time-scoped legality
+# question: What legality status did Scryfall report for Lightning Bolt in each of modern, legacy and standard, and in which snapshot?
+# kind: SPARQL
+# expects: nonempty
+# modules: printings, claims, provenance
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?format ?status ?observedAt WHERE {
+  ?card smtg:name "Lightning Bolt" .
+  ?la smtg:legalityOf ?card ; smtg:inFormat ?f ; smtg:hasLegalityStatus/skos:notation ?status ; smtg:observedIn/smtg:sourceUpdatedAt ?observedAt .
+  ?f skos:notation ?format . FILTER(?format IN ("modern", "legacy", "standard"))
+} ORDER BY ?format

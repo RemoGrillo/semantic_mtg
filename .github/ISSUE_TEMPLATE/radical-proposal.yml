@@ -1,0 +1,19 @@
+name: Radical proposal
+description: Propose restructuring a module or an alternative modelling approach
+title: "[proposal] "
+labels: ["ontology", "proposal"]
+body:
+  - type: input
+    id: module
+    attributes: { label: Module(s) concerned, description: "e.g. claims, tags, cards" }
+    validations: { required: true }
+  - type: textarea
+    id: idea
+    attributes: { label: The idea, description: "What would the model look like instead? (A sketch is fine; a proposals/<name>/ module is even better.)" }
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes: { label: Why, description: "Which problems, review questions or anti-patterns does it address? What would it break?" }
+  - type: textarea
+    id: reasoning
+    attributes: { label: Reasoning / profile implications, description: "OWL profile, reasoner (HermiT, ELK, DEC…), SHACL, SPARQL consequences." }

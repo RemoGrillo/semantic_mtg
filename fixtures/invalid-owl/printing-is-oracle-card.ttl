@@ -1,0 +1,9 @@
+# SYNTHETIC invalid fixture for the OWL reasoner (not SHACL).
+# why: negative test NT-03 — a printing is not an Oracle card (disjoint classes).
+# expect: inconsistent
+@prefix smtg: <https://w3id.org/smtg/ontology#> .
+@prefix x: <https://w3id.org/smtg/id/synthetic/> .
+@prefix v: <https://w3id.org/smtg/vocab/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+x:both a smtg:OracleCard , smtg:CardPrinting .

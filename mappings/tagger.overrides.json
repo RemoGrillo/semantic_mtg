@@ -1,0 +1,13 @@
+{
+  "_comment": "Explicit dispositions for Tagger bulk fields not covered by smtg:sourceField annotations.",
+  "object": { "disposition": "excluded", "note": "JSON object-type discriminator (\"tag\")." },
+  "type": { "disposition": "derived", "note": "oracle | illustration → class OracleTag / ArtTag and scheme (annotated as tagger:type=oracle / =illustration)." },
+  "child_ids": { "disposition": "derived", "note": "Inverse of parent_ids (checked consistent in the profile); not stored separately." },
+  "child_ids[]": { "disposition": "derived", "note": "See child_ids." },
+  "parent_ids[]": { "disposition": "mapped", "note": "smtg:taggerParent (see parent_ids)." },
+  "aliases[]": { "disposition": "mapped", "note": "skos:altLabel." },
+  "taggings": { "disposition": "mapped", "note": "One TagAssignment claim per tagging." },
+  "label": { "disposition": "mapped", "note": "skos:prefLabel (mutable; not identity)." },
+  "description": { "disposition": "mapped", "note": "skos:definition (community-written)." },
+  "aliases": { "disposition": "mapped", "note": "skos:altLabel." }
+}

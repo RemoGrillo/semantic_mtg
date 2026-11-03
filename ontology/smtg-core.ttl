@@ -185,6 +185,10 @@ smtg:hasIdentifier a owl:ObjectProperty ;
   rdfs:label "has identifier"@en ;
   skos:definition "Relates an entity to an Identifier assigned to it."@en ;
   rdfs:range smtg:Identifier ;
+  smtg:sourceField "scryfall:id" , "scryfall:oracle_id" , "scryfall:illustration_id" , "scryfall:set_id" , "scryfall:artist_ids" ,
+    "scryfall:multiverse_ids" , "scryfall:mtgo_id" , "scryfall:mtgo_foil_id" , "scryfall:arena_id" , "scryfall:tcgplayer_id" ,
+    "scryfall:tcgplayer_etched_id" , "scryfall:cardmarket_id" , "scryfall:card_back_id" , "tagger:id" ,
+    "spellbook:variants[].id" , "spellbook:variants[].uses[].card.id" , "spellbook:variants[].of[].id" , "spellbook:variants[].produces[].feature.id" ;
   rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
 
 smtg:identifierValue a owl:DatatypeProperty , owl:FunctionalProperty ;
@@ -200,6 +204,22 @@ smtg:identifierScheme a owl:ObjectProperty , owl:FunctionalProperty ;
   rdfs:domain smtg:Identifier ;
   rdfs:range smtg:IdentifierScheme ;
   rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:formerIdentifier a owl:ObjectProperty ;
+  rdfs:subPropertyOf smtg:hasIdentifier ;
+  rdfs:label "former identifier"@en ;
+  skos:definition "An identifier the source previously used for the entity and now redirects to it (e.g. a Commander Spellbook variant alias)."@en ;
+  skos:scopeNote "Keeps identifier history resolvable without minting a second resource for the same entity."@en ;
+  rdfs:range smtg:Identifier ;
+  smtg:sourceField "spellbook:aliases[].id" ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "unstable" .
+
+smtg:identifierWithdrawn a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "identifier withdrawn"@en ;
+  skos:definition "True when the source reports the identifier as withdrawn with no successor (e.g. a Spellbook alias pointing to null). Withdrawn entities leave the current view but remain resolvable in history."@en ;
+  rdfs:domain smtg:Identifier ; rdfs:range xsd:boolean ;
+  smtg:sourceField "spellbook:aliases[].variant" ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "unstable" .
 
 smtg:sourceURL a owl:DatatypeProperty ;
   rdfs:label "source URL"@en ;

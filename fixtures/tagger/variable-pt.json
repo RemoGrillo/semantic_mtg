@@ -1,0 +1,936 @@
+{
+  "slug": "variable-pt",
+  "purpose": "Tagger tags assigned to the cards/illustrations of fixtures/scryfall/variable-pt.json, plus the full parent chain of each tag.",
+  "selector": "oracle_tags: taggings[].oracle_id ∈ fixture oracle ids; art_tags: taggings[].illustration_id ∈ fixture illustration ids. Per target, tags sorted by (tagging has annotation / non-median weight first, tag has parents first, slug) and capped at 15 oracle / 10 art tags. Ancestors = transitive closure over parent_ids. taggings[] filtered to the fixture targets. Available per target: 45900b2f…: 7 oracle tags; abf5b6d9…: 8 art tags; f0e6096a…: 6 art tags.",
+  "note": "Tag records are the original Tagger objects except: (1) taggings[] is FILTERED (see selector) and the fixture-added key `taggingsTotal` gives the unfiltered count; (2) child_ids[] is filtered to tags present in this file and the fixture-added key `childIdsTotal` gives the unfiltered count. parent_ids[] is complete: every ancestor is included, so the file is a closed sub-hierarchy in which child_ids is still the exact inverse of parent_ids. `taggingsTotal` and `childIdsTotal` are NOT source fields.",
+  "source": {
+    "key": "scryfall:oracle_tags",
+    "file": "oracle-tags-20261103100032.jsonl.gz",
+    "sha256": "23d94bab24a5e4a9376ddc66ae3018c215dac693455fecdf2be83e86a43c1e5e",
+    "sourceUpdatedAt": "2026-11-03T10:00:32.540+00:00"
+  },
+  "extraSources": [
+    {
+      "key": "scryfall:art_tags",
+      "file": "art-tags-20261103100113.jsonl.gz",
+      "sha256": "9d963522897dbcf58e168a6cf4063bed908b87c2b0d7cd2bbce4557bd6d33d71",
+      "sourceUpdatedAt": "2026-11-03T10:01:13.387+00:00"
+    }
+  ],
+  "targets": [
+    "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+    "f0e6096a-33a4-467a-918c-2fe77af29ea6",
+    "abf5b6d9-61e7-47f0-b187-a6bdfec68f58"
+  ],
+  "recordIndex": [
+    {
+      "id": "2bd5f2fe-ee4c-4a3c-a10c-bd4aab447216",
+      "slug": "mechanical-foreshadow",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+      "parents": 0
+    },
+    {
+      "id": "88fbefff-9a13-4029-b31d-c3980fd0f47e",
+      "slug": "card-types-in-graveyard-matter",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+      "parents": 2
+    },
+    {
+      "id": "a7aedbff-fad6-41ce-a30b-b60d2f21fdbf",
+      "slug": "cda-power",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+      "parents": 1
+    },
+    {
+      "id": "c69cb22a-d45f-49f1-be2f-553fb074cc1f",
+      "slug": "cda-toughness",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+      "parents": 1
+    },
+    {
+      "id": "1ac18133-4f7b-41ef-ac84-d367059757a7",
+      "slug": "has-identical-token",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+      "parents": 1
+    },
+    {
+      "id": "820a167d-f9f2-4db8-9f55-b1ab0fc6a07d",
+      "slug": "lhurgoyf",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+      "parents": 1
+    },
+    {
+      "id": "12588acd-f297-4b17-9b1a-912091027423",
+      "slug": "fulfilled-futureshift",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+      "parents": 0
+    },
+    {
+      "id": "584bf31f-389d-4010-98e3-9d3f1cfb6f0a",
+      "slug": "toe",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+      "parents": 0
+    },
+    {
+      "id": "986aa664-5247-44e9-a161-ccabfa0897db",
+      "slug": "human",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+      "parents": 1
+    },
+    {
+      "id": "88c6b224-bf4b-400a-bb2a-e26af35d98f4",
+      "slug": "skull",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+      "parents": 1
+    },
+    {
+      "id": "029ebcde-7e7f-4046-8c45-bdda61a8f730",
+      "slug": "tree",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+      "parents": 1
+    },
+    {
+      "id": "ae02654c-63dc-40fb-846f-5185d5af5bc9",
+      "slug": "barefoot",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+      "parents": 0
+    },
+    {
+      "id": "64d5d8cc-6f1f-4d85-a1e6-cbb213deba43",
+      "slug": "eaten-alive",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+      "parents": 0
+    },
+    {
+      "id": "24b67963-f310-4407-bd8b-749871f5faee",
+      "slug": "imminent-death",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+      "parents": 0
+    },
+    {
+      "id": "fb606f5e-7490-4e7a-a71a-860a50563062",
+      "slug": "lhurgoyf",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+      "parents": 0
+    },
+    {
+      "id": "9f830c73-db73-4e05-b0b5-669b14dda950",
+      "slug": "hexhaven-location",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "f0e6096a-33a4-467a-918c-2fe77af29ea6",
+      "parents": 1
+    },
+    {
+      "id": "7b1e1110-3866-4918-8671-bd4d1cc06319",
+      "slug": "mage-hunter",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "f0e6096a-33a4-467a-918c-2fe77af29ea6",
+      "parents": 1
+    },
+    {
+      "id": "6330333c-32fe-403f-92c6-f393b3a7e40b",
+      "slug": "oil-paint",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "f0e6096a-33a4-467a-918c-2fe77af29ea6",
+      "parents": 1
+    },
+    {
+      "id": "613413ee-8a85-4985-b185-f73fa731a3b6",
+      "slug": "horde",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "f0e6096a-33a4-467a-918c-2fe77af29ea6",
+      "parents": 0
+    },
+    {
+      "id": "c2f89f67-302f-4b31-b2f1-9c518e09bad1",
+      "slug": "loose-lips",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "f0e6096a-33a4-467a-918c-2fe77af29ea6",
+      "parents": 0
+    },
+    {
+      "id": "b47e31c4-70ae-471d-b51b-55742fd8f763",
+      "slug": "art-media",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "a24ae5d9-1708-4217-8e93-d4fca0dd009a",
+      "slug": "bones",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "3391ffd9-73fc-4f0a-8bce-5f9b70f6e573",
+      "slug": "echoverse",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "7d7ea2fd-4ad6-4842-b5c5-9d6702b25a68",
+      "slug": "echoverse-arcavios",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "7d6ba894-88f5-4b46-ab44-36f4e84e1d05",
+      "slug": "horror",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "4d6023b4-bb31-4e43-a41b-05814561e850",
+      "slug": "humanoid",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "fcfcb847-3f93-4be0-8e34-de0b4a31e0d2",
+      "slug": "plant",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "e5f5dc64-cf46-4e48-8bde-1f79f13efde2",
+      "slug": "card-types-matter",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "7b69d9ad-db35-4299-9335-76e20e01e709",
+      "slug": "cards-in-graveyard-matter",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "194c7e79-2d53-4510-9569-14193b33a672",
+      "slug": "characteristic-defining-ability",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "78f49da2-3dac-4c5e-a141-628e61de7c14",
+      "slug": "token-versions-of-cards",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    }
+  ],
+  "records": [
+    {
+      "object": "tag",
+      "id": "2bd5f2fe-ee4c-4a3c-a10c-bd4aab447216",
+      "label": "mechanical foreshadow",
+      "slug": "mechanical-foreshadow",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/mechanical-foreshadow",
+      "description": "Cards that refer to another card, card type, or named mechanic that was not yet in the game (or sometimes later in Standard's rotation) until a later product's release. ",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+          "weight": "median",
+          "annotation": "Its Future Sight print mentioned the planeswalker card type in the reminder text, which was released the next set."
+        }
+      ],
+      "taggingsTotal": 13,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "88fbefff-9a13-4029-b31d-c3980fd0f47e",
+      "label": "card types in graveyard matter",
+      "slug": "card-types-in-graveyard-matter",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/card-types-in-graveyard-matter",
+      "description": "Cards that care about the card types of cards in a graveyard.",
+      "parent_ids": [
+        "7b69d9ad-db35-4299-9335-76e20e01e709",
+        "e5f5dc64-cf46-4e48-8bde-1f79f13efde2"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 105,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "a7aedbff-fad6-41ce-a30b-b60d2f21fdbf",
+      "label": "cda-power",
+      "slug": "cda-power",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/cda-power",
+      "description": "Creatures that have their power determined by a characteristic-defining ability.",
+      "parent_ids": [
+        "194c7e79-2d53-4510-9569-14193b33a672"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 256,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "c69cb22a-d45f-49f1-be2f-553fb074cc1f",
+      "label": "cda-toughness",
+      "slug": "cda-toughness",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/cda-toughness",
+      "description": "Creatures whose toughness is determined via a characteristic-defining ability.",
+      "parent_ids": [
+        "194c7e79-2d53-4510-9569-14193b33a672"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 194,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "1ac18133-4f7b-41ef-ac84-d367059757a7",
+      "label": "has identical token",
+      "slug": "has-identical-token",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/has-identical-token",
+      "description": "A token exists that's identical to these cards. See more: [token versions of cards](token-versions-of-cards).",
+      "parent_ids": [
+        "78f49da2-3dac-4c5e-a141-628e61de7c14"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 39,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "820a167d-f9f2-4db8-9f55-b1ab0fc6a07d",
+      "label": "lhurgoyf",
+      "slug": "lhurgoyf",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/lhurgoyf",
+      "description": "Cards with power and/or toughness equal to number of cards in the graveyard, or a similar variant. This term is referenced from the Mechanical Color Pie 2017 article by Mark Rosewater. See also [maro](maro) and [warlord](warlord).",
+      "parent_ids": [
+        "7b69d9ad-db35-4299-9335-76e20e01e709"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 116,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "12588acd-f297-4b17-9b1a-912091027423",
+      "label": "fulfilled futureshift",
+      "slug": "fulfilled-futureshift",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/fulfilled-futureshift",
+      "description": "This card was initially futureshifted, and has now received its proper print in its future expansion.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 13,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "584bf31f-389d-4010-98e3-9d3f1cfb6f0a",
+      "label": "toe",
+      "slug": "toe",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/toe",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "toes"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+          "weight": "weak"
+        }
+      ],
+      "taggingsTotal": 40,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "986aa664-5247-44e9-a161-ccabfa0897db",
+      "label": "human",
+      "slug": "human",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/human",
+      "description": null,
+      "parent_ids": [
+        "4d6023b4-bb31-4e43-a41b-05814561e850"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 6353,
+      "childIdsTotal": 1434
+    },
+    {
+      "object": "tag",
+      "id": "88c6b224-bf4b-400a-bb2a-e26af35d98f4",
+      "label": "skull",
+      "slug": "skull",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/skull",
+      "description": null,
+      "parent_ids": [
+        "a24ae5d9-1708-4217-8e93-d4fca0dd009a"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1362,
+      "childIdsTotal": 4
+    },
+    {
+      "object": "tag",
+      "id": "029ebcde-7e7f-4046-8c45-bdda61a8f730",
+      "label": "tree",
+      "slug": "tree",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/tree",
+      "description": null,
+      "parent_ids": [
+        "fcfcb847-3f93-4be0-8e34-de0b4a31e0d2"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 3432,
+      "childIdsTotal": 24
+    },
+    {
+      "object": "tag",
+      "id": "ae02654c-63dc-40fb-846f-5185d5af5bc9",
+      "label": "barefoot",
+      "slug": "barefoot",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/barefoot",
+      "description": "Things that aren't wearing shoes that probably could/should wear them.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "bare feet",
+        "feet"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 520,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "64d5d8cc-6f1f-4d85-a1e6-cbb213deba43",
+      "label": "eaten alive",
+      "slug": "eaten-alive",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/eaten-alive",
+      "description": "Things eating things.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "vore"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 38,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "24b67963-f310-4407-bd8b-749871f5faee",
+      "label": "imminent death",
+      "slug": "imminent-death",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/imminent-death",
+      "description": "Things that are about to meet their (usually untimely) demise.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "final moment"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 153,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "fb606f5e-7490-4e7a-a71a-860a50563062",
+      "label": "lhurgoyf",
+      "slug": "lhurgoyf",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/lhurgoyf",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "abf5b6d9-61e7-47f0-b187-a6bdfec68f58",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "f0e6096a-33a4-467a-918c-2fe77af29ea6",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 31,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "9f830c73-db73-4e05-b0b5-669b14dda950",
+      "label": "hexhaven (location)",
+      "slug": "hexhaven-location",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/hexhaven-location",
+      "description": null,
+      "parent_ids": [
+        "7d7ea2fd-4ad6-4842-b5c5-9d6702b25a68"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "hexhaven"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "f0e6096a-33a4-467a-918c-2fe77af29ea6",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 151,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "7b1e1110-3866-4918-8671-bd4d1cc06319",
+      "label": "mage hunter",
+      "slug": "mage-hunter",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/mage-hunter",
+      "description": null,
+      "parent_ids": [
+        "7d6ba894-88f5-4b46-ab44-36f4e84e1d05"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "f0e6096a-33a4-467a-918c-2fe77af29ea6",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 16,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "6330333c-32fe-403f-92c6-f393b3a7e40b",
+      "label": "oil paint",
+      "slug": "oil-paint",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/oil-paint",
+      "description": "Magic card art that was rendered with oils.",
+      "parent_ids": [
+        "b47e31c4-70ae-471d-b51b-55742fd8f763"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "oil painting (medium)"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "f0e6096a-33a4-467a-918c-2fe77af29ea6",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 3912,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "613413ee-8a85-4985-b185-f73fa731a3b6",
+      "label": "horde",
+      "slug": "horde",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/horde",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "f0e6096a-33a4-467a-918c-2fe77af29ea6",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 31,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "c2f89f67-302f-4b31-b2f1-9c518e09bad1",
+      "label": "loose lips",
+      "slug": "loose-lips",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/loose-lips",
+      "description": "Depicts a subject with an open mouth (see Knight of the Kitchen Sink)",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "open mouth",
+        "mouth open"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "f0e6096a-33a4-467a-918c-2fe77af29ea6",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 6506,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "b47e31c4-70ae-471d-b51b-55742fd8f763",
+      "label": "art media",
+      "slug": "art-media",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/art-media",
+      "description": "Media used to render the artwork.",
+      "parent_ids": [],
+      "child_ids": [
+        "6330333c-32fe-403f-92c6-f393b3a7e40b"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 40
+    },
+    {
+      "object": "tag",
+      "id": "a24ae5d9-1708-4217-8e93-d4fca0dd009a",
+      "label": "bones",
+      "slug": "bones",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/bones",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "88c6b224-bf4b-400a-bb2a-e26af35d98f4"
+      ],
+      "aliases": [
+        "bone"
+      ],
+      "taggings": [],
+      "taggingsTotal": 199,
+      "childIdsTotal": 10
+    },
+    {
+      "object": "tag",
+      "id": "3391ffd9-73fc-4f0a-8bce-5f9b70f6e573",
+      "label": "echoverse",
+      "slug": "echoverse",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/echoverse",
+      "description": "The alternate universe that Jace Beleren created ",
+      "parent_ids": [],
+      "child_ids": [
+        "7d7ea2fd-4ad6-4842-b5c5-9d6702b25a68"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 114,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "7d7ea2fd-4ad6-4842-b5c5-9d6702b25a68",
+      "label": "echoverse arcavios",
+      "slug": "echoverse-arcavios",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/echoverse-arcavios",
+      "description": null,
+      "parent_ids": [
+        "3391ffd9-73fc-4f0a-8bce-5f9b70f6e573"
+      ],
+      "child_ids": [
+        "9f830c73-db73-4e05-b0b5-669b14dda950"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 2,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "7d6ba894-88f5-4b46-ab44-36f4e84e1d05",
+      "label": "horror",
+      "slug": "horror",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/horror",
+      "description": "As in the creature type.",
+      "parent_ids": [],
+      "child_ids": [
+        "7b1e1110-3866-4918-8671-bd4d1cc06319"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 420,
+      "childIdsTotal": 33
+    },
+    {
+      "object": "tag",
+      "id": "4d6023b4-bb31-4e43-a41b-05814561e850",
+      "label": "humanoid",
+      "slug": "humanoid",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/humanoid",
+      "description": "Beings shaped like humans. For critters that look similar to humans but aren't necessarily shaped like one, see [anthropomorphic](anthropomorphic).",
+      "parent_ids": [],
+      "child_ids": [
+        "986aa664-5247-44e9-a161-ccabfa0897db"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 142,
+      "childIdsTotal": 136
+    },
+    {
+      "object": "tag",
+      "id": "fcfcb847-3f93-4be0-8e34-de0b4a31e0d2",
+      "label": "plant",
+      "slug": "plant",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/plant",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "029ebcde-7e7f-4046-8c45-bdda61a8f730"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 158,
+      "childIdsTotal": 31
+    },
+    {
+      "object": "tag",
+      "id": "e5f5dc64-cf46-4e48-8bde-1f79f13efde2",
+      "label": "card types matter",
+      "slug": "card-types-matter",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/card-types-matter",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "88fbefff-9a13-4029-b31d-c3980fd0f47e"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 14,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "7b69d9ad-db35-4299-9335-76e20e01e709",
+      "label": "cards in graveyard matter",
+      "slug": "cards-in-graveyard-matter",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/cards-in-graveyard-matter",
+      "description": "Mechanics that care about the cards in one or more graveyards.",
+      "parent_ids": [],
+      "child_ids": [
+        "88fbefff-9a13-4029-b31d-c3980fd0f47e",
+        "820a167d-f9f2-4db8-9f55-b1ab0fc6a07d"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 223,
+      "childIdsTotal": 6
+    },
+    {
+      "object": "tag",
+      "id": "194c7e79-2d53-4510-9569-14193b33a672",
+      "label": "characteristic-defining ability",
+      "slug": "characteristic-defining-ability",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/characteristic-defining-ability",
+      "description": "Cards that have an ability that define something about it that would normally be found somewhere else on the card. Speicifcally, CDAs set color, types, subtypes, power, and/or toughness.",
+      "parent_ids": [],
+      "child_ids": [
+        "a7aedbff-fad6-41ce-a30b-b60d2f21fdbf",
+        "c69cb22a-d45f-49f1-be2f-553fb074cc1f"
+      ],
+      "aliases": [
+        "cda"
+      ],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 4
+    },
+    {
+      "object": "tag",
+      "id": "78f49da2-3dac-4c5e-a141-628e61de7c14",
+      "label": "token versions of cards",
+      "slug": "token-versions-of-cards",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/token-versions-of-cards",
+      "description": "Some cards create tokens identical to existing cards (except for CMC). See: [cards creating these tokens](/tags/card/creates-token-of-a-card),  [printed tokens](/tags/card/token-version-of-a-card), and [the cards recreated in token form](/tags/card/has-identical-token).",
+      "parent_ids": [],
+      "child_ids": [
+        "1ac18133-4f7b-41ef-ac84-d367059757a7"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 3
+    }
+  ]
+}

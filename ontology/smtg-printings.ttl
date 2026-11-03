@@ -330,3 +330,7 @@ smtg:rankValue a owl:DatatypeProperty , owl:FunctionalProperty ;
   rdfs:label "rank value"@en ; skos:definition "The observed rank (1 = most popular)."@en ;
   rdfs:domain smtg:RankObservation ; rdfs:range xsd:positiveInteger ;
   rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+
+# --- Documentation examples (instances generated from real fixtures in examples/) ---
+smtg:CardPrinting smtg:docExample <https://w3id.org/smtg/id/printing/906e1087-e6e3-452b-a73f-b3bc1506d67b> .
+smtg:PrintedFace smtg:docExample <https://w3id.org/smtg/id/printing/906e1087-e6e3-452b-a73f-b3bc1506d67b/face/0> .

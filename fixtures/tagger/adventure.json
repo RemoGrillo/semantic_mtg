@@ -1,0 +1,1327 @@
+{
+  "slug": "adventure",
+  "purpose": "Tagger tags assigned to the cards/illustrations of fixtures/scryfall/adventure.json, plus the full parent chain of each tag.",
+  "selector": "oracle_tags: taggings[].oracle_id ∈ fixture oracle ids; art_tags: taggings[].illustration_id ∈ fixture illustration ids. Per target, tags sorted by (tagging has annotation / non-median weight first, tag has parents first, slug) and capped at 15 oracle / 10 art tags. Ancestors = transitive closure over parent_ids. taggings[] filtered to the fixture targets. Available per target: d6d72f5f…: 11 oracle tags; c7f49422…: 20 art tags.",
+  "note": "Tag records are the original Tagger objects except: (1) taggings[] is FILTERED (see selector) and the fixture-added key `taggingsTotal` gives the unfiltered count; (2) child_ids[] is filtered to tags present in this file and the fixture-added key `childIdsTotal` gives the unfiltered count. parent_ids[] is complete: every ancestor is included, so the file is a closed sub-hierarchy in which child_ids is still the exact inverse of parent_ids. `taggingsTotal` and `childIdsTotal` are NOT source fields.",
+  "source": {
+    "key": "scryfall:oracle_tags",
+    "file": "oracle-tags-20261103100032.jsonl.gz",
+    "sha256": "23d94bab24a5e4a9376ddc66ae3018c215dac693455fecdf2be83e86a43c1e5e",
+    "sourceUpdatedAt": "2026-11-03T10:00:32.540+00:00"
+  },
+  "extraSources": [
+    {
+      "key": "scryfall:art_tags",
+      "file": "art-tags-20261103100113.jsonl.gz",
+      "sha256": "9d963522897dbcf58e168a6cf4063bed908b87c2b0d7cd2bbce4557bd6d33d71",
+      "sourceUpdatedAt": "2026-11-03T10:01:13.387+00:00"
+    }
+  ],
+  "targets": [
+    "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+    "c7f49422-def6-4502-bc02-38aee9924371"
+  ],
+  "recordIndex": [
+    {
+      "id": "d58bcedc-2dcd-42c3-8b52-5359457e6802",
+      "slug": "burn-any",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+      "parents": 4
+    },
+    {
+      "id": "330c3d98-c1ed-4eed-82da-63ff282846c0",
+      "slug": "castable-from-exile",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+      "parents": 2
+    },
+    {
+      "id": "4f2e64c5-3288-4138-a2d2-57137d59f0a9",
+      "slug": "cycle-eld-r-adventurer",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+      "parents": 1
+    },
+    {
+      "id": "3b2b0b5b-077e-426b-ad75-00b9653d114d",
+      "slug": "hate-target",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+      "parents": 1
+    },
+    {
+      "id": "cc12d27d-1d0e-4849-9551-71caead74d24",
+      "slug": "spot-removal",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+      "parents": 1
+    },
+    {
+      "id": "41001ec8-915d-4113-9f6d-e4d103cc4b5d",
+      "slug": "cheaper-than-mv",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+      "parents": 0
+    },
+    {
+      "id": "9e39900a-5ff6-45a2-8039-bc0f9784e82e",
+      "slug": "exile-self",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+      "parents": 0
+    },
+    {
+      "id": "a96e7ee2-d411-435f-978f-0f50e1ce7a16",
+      "slug": "pinger",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+      "parents": 0
+    },
+    {
+      "id": "1a19fbcd-ec54-417c-baa0-01c53b32388b",
+      "slug": "single-target-instant-sorcery",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+      "parents": 0
+    },
+    {
+      "id": "4d7fc833-e0af-4022-b298-6a9c99a56ac1",
+      "slug": "triggered-ability",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+      "parents": 0
+    },
+    {
+      "id": "c9e48b02-ed6e-4ffa-a363-e63a9deaa01b",
+      "slug": "unpreventable-damage",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+      "parents": 0
+    },
+    {
+      "id": "2de482d8-0650-4ba8-8760-4e1c92914874",
+      "slug": "white-horse",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c7f49422-def6-4502-bc02-38aee9924371",
+      "parents": 1
+    },
+    {
+      "id": "1d92e6c1-5196-4791-b6e2-35837e4e9911",
+      "slug": "fleeing",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c7f49422-def6-4502-bc02-38aee9924371",
+      "parents": 0
+    },
+    {
+      "id": "24b67963-f310-4407-bd8b-749871f5faee",
+      "slug": "imminent-death",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c7f49422-def6-4502-bc02-38aee9924371",
+      "parents": 0
+    },
+    {
+      "id": "02cfe9ee-6039-4cd7-8a80-79c6bf26374c",
+      "slug": "ardenvale-symbol",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c7f49422-def6-4502-bc02-38aee9924371",
+      "parents": 1
+    },
+    {
+      "id": "fae14cd2-b2bf-4b0e-afc8-4108d6ea465f",
+      "slug": "axe",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c7f49422-def6-4502-bc02-38aee9924371",
+      "parents": 2
+    },
+    {
+      "id": "45d99a5c-aa29-44f3-b664-1de0f73e97a4",
+      "slug": "digital-painting",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c7f49422-def6-4502-bc02-38aee9924371",
+      "parents": 1
+    },
+    {
+      "id": "259fead0-4e2d-485d-9ba0-37b681df5b08",
+      "slug": "dutch-angle",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c7f49422-def6-4502-bc02-38aee9924371",
+      "parents": 1
+    },
+    {
+      "id": "a95d66d6-68ab-4f23-be82-094de38d56e8",
+      "slug": "eldraine",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c7f49422-def6-4502-bc02-38aee9924371",
+      "parents": 1
+    },
+    {
+      "id": "6fbb0be1-03ca-425a-8d6b-b8c65b514326",
+      "slug": "giant",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c7f49422-def6-4502-bc02-38aee9924371",
+      "parents": 1
+    },
+    {
+      "id": "986aa664-5247-44e9-a161-ccabfa0897db",
+      "slug": "human",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c7f49422-def6-4502-bc02-38aee9924371",
+      "parents": 1
+    },
+    {
+      "id": "32e84266-800f-427c-9b9e-d0138c7491db",
+      "slug": "animal",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "b47e31c4-70ae-471d-b51b-55742fd8f763",
+      "slug": "art-media",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "e19b1c36-e195-4338-ac81-9aaca366fafa",
+      "slug": "blade",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "3eb76b6e-57f0-4191-a4a1-68475997f880",
+      "slug": "eldraine-faction-symbol",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "3ee7a5e3-d48e-498a-a35c-4620216c346a",
+      "slug": "faction-symbol",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "17626d7c-cd15-4800-af95-62edcc664886",
+      "slug": "horse",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "4d6023b4-bb31-4e43-a41b-05814561e850",
+      "slug": "humanoid",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "fdbda1f3-227a-4fd4-941b-e4c81cf78ce6",
+      "slug": "perspective",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa",
+      "slug": "plane",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "cc7cac73-c03c-4f85-82aa-dec1145abee6",
+      "slug": "symbol",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "e1e261ac-5c06-410f-8e60-0680da9cbf63",
+      "slug": "weapon",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "0641a74c-4dd5-426d-be58-2ab86d71995d",
+      "slug": "burn",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "c80fafa2-d5c9-47e5-8ef9-cbf7c1316d0a",
+      "slug": "burn-battle",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "01c171be-e0db-443c-830d-578873c27792",
+      "slug": "burn-creature",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "9b437740-9a6c-40cd-90db-a2b057df8e3f",
+      "slug": "burn-planeswalker",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "081ebf89-e53b-47ff-88e8-1535068212b0",
+      "slug": "burn-player",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "65d43202-9817-4f68-89cf-02792cc2c9be",
+      "slug": "castable-from-nonhand",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "1adda1a4-e23d-4212-a4da-58303a20e00c",
+      "slug": "cycle",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "249eaa21-acc1-45de-bb29-757cd60dffb8",
+      "slug": "hate",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "444f824c-f910-4530-9dbe-ede7a84cd7f9",
+      "slug": "removal",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "7a0d9ee9-b672-451a-8722-0c5fc6087ff0",
+      "slug": "removal-burn",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "d91e421d-ff87-4aad-a4bf-5aefc51252b6",
+      "slug": "removal-creature",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "591fb358-e9d7-490e-8c15-24aecbbe697e",
+      "slug": "removal-planeswalker",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "7ef982da-7f7a-4003-8bb9-84fd368f4441",
+      "slug": "unexile",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    }
+  ],
+  "records": [
+    {
+      "object": "tag",
+      "id": "d58bcedc-2dcd-42c3-8b52-5359457e6802",
+      "label": "burn any",
+      "slug": "burn-any",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-any",
+      "description": "Cards that burn any target: players, creatures, battles, or planeswalkers.",
+      "parent_ids": [
+        "081ebf89-e53b-47ff-88e8-1535068212b0",
+        "c80fafa2-d5c9-47e5-8ef9-cbf7c1316d0a",
+        "9b437740-9a6c-40cd-90db-a2b057df8e3f",
+        "01c171be-e0db-443c-830d-578873c27792"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 914,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "330c3d98-c1ed-4eed-82da-63ff282846c0",
+      "label": "castable from exile",
+      "slug": "castable-from-exile",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/castable-from-exile",
+      "description": "Cards you can cast or access from exile.",
+      "parent_ids": [
+        "65d43202-9817-4f68-89cf-02792cc2c9be",
+        "7ef982da-7f7a-4003-8bb9-84fd368f4441"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 433,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "4f2e64c5-3288-4138-a2d2-57137d59f0a9",
+      "label": "cycle-eld-r-adventurer",
+      "slug": "cycle-eld-r-adventurer",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/cycle-eld-r-adventurer",
+      "description": null,
+      "parent_ids": [
+        "1adda1a4-e23d-4212-a4da-58303a20e00c"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 5,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "3b2b0b5b-077e-426b-ad75-00b9653d114d",
+      "label": "hate-target",
+      "slug": "hate-target",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/hate-target",
+      "description": "Cards that make it harder for your opponents to target your stuff or punish them for doing so. ",
+      "parent_ids": [
+        "249eaa21-acc1-45de-bb29-757cd60dffb8"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 58,
+      "childIdsTotal": 4
+    },
+    {
+      "object": "tag",
+      "id": "cc12d27d-1d0e-4849-9551-71caead74d24",
+      "label": "spot removal",
+      "slug": "spot-removal",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/spot-removal",
+      "description": "Removal for one target specifically.  See also [sweeper](sweeper) and [multi removal](multi-removal).",
+      "parent_ids": [
+        "444f824c-f910-4530-9dbe-ede7a84cd7f9"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 5541,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "41001ec8-915d-4113-9f6d-e4d103cc4b5d",
+      "label": "cheaper than mv",
+      "slug": "cheaper-than-mv",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/cheaper-than-mv",
+      "description": "The actual cost you pay for an effect (or for an alternate mode) will often be lower than the card's mana value.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "less expensive than mv"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1382,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "9e39900a-5ff6-45a2-8039-bc0f9784e82e",
+      "label": "exile-self",
+      "slug": "exile-self",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/exile-self",
+      "description": "Cards which exile themselves (from the battlefield, from the graveyard, from your hand, etc.)",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "exiles-self"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 814,
+      "childIdsTotal": 7
+    },
+    {
+      "object": "tag",
+      "id": "a96e7ee2-d411-435f-978f-0f50e1ce7a16",
+      "label": "pinger",
+      "slug": "pinger",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/pinger",
+      "description": "Effects that deal just 1-2 damage repeatedly.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "tim"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 776,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "1a19fbcd-ec54-417c-baa0-01c53b32388b",
+      "label": "single target instant/sorcery",
+      "slug": "single-target-instant-sorcery",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/single-target-instant-sorcery",
+      "description": "Instant/sorcery spells that may target only one target. This is materially important for some effects that care about single targets. Not mutually exclusive with [multiple targets](/tags/card/multiple-targets).",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "single target spell"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 4731,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "4d7fc833-e0af-4022-b298-6a9c99a56ac1",
+      "label": "triggered ability",
+      "slug": "triggered-ability",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/triggered-ability",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 8066,
+      "childIdsTotal": 21
+    },
+    {
+      "object": "tag",
+      "id": "c9e48b02-ed6e-4ffa-a363-e63a9deaa01b",
+      "label": "unpreventable-damage",
+      "slug": "unpreventable-damage",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/unpreventable-damage",
+      "description": "Damage can't be prevented, whether universally or for specific sources.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 35,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "2de482d8-0650-4ba8-8760-4e1c92914874",
+      "label": "white horse",
+      "slug": "white-horse",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/white-horse",
+      "description": null,
+      "parent_ids": [
+        "17626d7c-cd15-4800-af95-62edcc664886"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "c7f49422-def6-4502-bc02-38aee9924371",
+          "weight": "weak"
+        }
+      ],
+      "taggingsTotal": 53,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "1d92e6c1-5196-4791-b6e2-35837e4e9911",
+      "label": "fleeing",
+      "slug": "fleeing",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/fleeing",
+      "description": "Things running away from other things. ",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "run away"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "c7f49422-def6-4502-bc02-38aee9924371",
+          "weight": "weak"
+        }
+      ],
+      "taggingsTotal": 294,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "24b67963-f310-4407-bd8b-749871f5faee",
+      "label": "imminent death",
+      "slug": "imminent-death",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/imminent-death",
+      "description": "Things that are about to meet their (usually untimely) demise.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "final moment"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "c7f49422-def6-4502-bc02-38aee9924371",
+          "weight": "very_strong"
+        }
+      ],
+      "taggingsTotal": 153,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "02cfe9ee-6039-4cd7-8a80-79c6bf26374c",
+      "label": "ardenvale symbol",
+      "slug": "ardenvale-symbol",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/ardenvale-symbol",
+      "description": "A circle-bound flame, the symbol of the white faction of Ardenvale on Eldraine.",
+      "parent_ids": [
+        "3eb76b6e-57f0-4191-a4a1-68475997f880"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "c7f49422-def6-4502-bc02-38aee9924371",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 51,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "fae14cd2-b2bf-4b0e-afc8-4108d6ea465f",
+      "label": "axe",
+      "slug": "axe",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/axe",
+      "description": null,
+      "parent_ids": [
+        "e1e261ac-5c06-410f-8e60-0680da9cbf63",
+        "e19b1c36-e195-4338-ac81-9aaca366fafa"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "c7f49422-def6-4502-bc02-38aee9924371",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 933,
+      "childIdsTotal": 4
+    },
+    {
+      "object": "tag",
+      "id": "45d99a5c-aa29-44f3-b664-1de0f73e97a4",
+      "label": "digital painting",
+      "slug": "digital-painting",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/digital-painting",
+      "description": null,
+      "parent_ids": [
+        "b47e31c4-70ae-471d-b51b-55742fd8f763"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "digital illustration"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "c7f49422-def6-4502-bc02-38aee9924371",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 14060,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "259fead0-4e2d-485d-9ba0-37b681df5b08",
+      "label": "dutch angle",
+      "slug": "dutch-angle",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/dutch-angle",
+      "description": "A tilted view that puts the horizon at a diagonal. Sometimes used to create an effect of disorientation or unease; sometimes just used to make a composition work well.",
+      "parent_ids": [
+        "fdbda1f3-227a-4fd4-941b-e4c81cf78ce6"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "perspective-rotated",
+        "tilted scene"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "c7f49422-def6-4502-bc02-38aee9924371",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 2417,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "a95d66d6-68ab-4f23-be82-094de38d56e8",
+      "label": "eldraine",
+      "slug": "eldraine",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/eldraine",
+      "description": null,
+      "parent_ids": [
+        "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "c7f49422-def6-4502-bc02-38aee9924371",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 667,
+      "childIdsTotal": 15
+    },
+    {
+      "object": "tag",
+      "id": "6fbb0be1-03ca-425a-8d6b-b8c65b514326",
+      "label": "giant",
+      "slug": "giant",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/giant",
+      "description": null,
+      "parent_ids": [
+        "4d6023b4-bb31-4e43-a41b-05814561e850"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "c7f49422-def6-4502-bc02-38aee9924371",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 397,
+      "childIdsTotal": 27
+    },
+    {
+      "object": "tag",
+      "id": "986aa664-5247-44e9-a161-ccabfa0897db",
+      "label": "human",
+      "slug": "human",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/human",
+      "description": null,
+      "parent_ids": [
+        "4d6023b4-bb31-4e43-a41b-05814561e850"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "c7f49422-def6-4502-bc02-38aee9924371",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 6353,
+      "childIdsTotal": 1434
+    },
+    {
+      "object": "tag",
+      "id": "32e84266-800f-427c-9b9e-d0138c7491db",
+      "label": "animal",
+      "slug": "animal",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/animal",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "17626d7c-cd15-4800-af95-62edcc664886"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 121
+    },
+    {
+      "object": "tag",
+      "id": "b47e31c4-70ae-471d-b51b-55742fd8f763",
+      "label": "art media",
+      "slug": "art-media",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/art-media",
+      "description": "Media used to render the artwork.",
+      "parent_ids": [],
+      "child_ids": [
+        "45d99a5c-aa29-44f3-b664-1de0f73e97a4"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 40
+    },
+    {
+      "object": "tag",
+      "id": "e19b1c36-e195-4338-ac81-9aaca366fafa",
+      "label": "blade",
+      "slug": "blade",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/blade",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "fae14cd2-b2bf-4b0e-afc8-4108d6ea465f"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 99,
+      "childIdsTotal": 16
+    },
+    {
+      "object": "tag",
+      "id": "3eb76b6e-57f0-4191-a4a1-68475997f880",
+      "label": "eldraine faction symbol",
+      "slug": "eldraine-faction-symbol",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/eldraine-faction-symbol",
+      "description": "Faction symbols found on Eldraine.",
+      "parent_ids": [
+        "3ee7a5e3-d48e-498a-a35c-4620216c346a"
+      ],
+      "child_ids": [
+        "02cfe9ee-6039-4cd7-8a80-79c6bf26374c"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "3ee7a5e3-d48e-498a-a35c-4620216c346a",
+      "label": "faction symbol",
+      "slug": "faction-symbol",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/faction-symbol",
+      "description": null,
+      "parent_ids": [
+        "cc7cac73-c03c-4f85-82aa-dec1145abee6"
+      ],
+      "child_ids": [
+        "3eb76b6e-57f0-4191-a4a1-68475997f880"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 41
+    },
+    {
+      "object": "tag",
+      "id": "17626d7c-cd15-4800-af95-62edcc664886",
+      "label": "horse",
+      "slug": "horse",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/horse",
+      "description": "🐎A horse is a horse, of course.",
+      "parent_ids": [
+        "32e84266-800f-427c-9b9e-d0138c7491db"
+      ],
+      "child_ids": [
+        "2de482d8-0650-4ba8-8760-4e1c92914874"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 733,
+      "childIdsTotal": 14
+    },
+    {
+      "object": "tag",
+      "id": "4d6023b4-bb31-4e43-a41b-05814561e850",
+      "label": "humanoid",
+      "slug": "humanoid",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/humanoid",
+      "description": "Beings shaped like humans. For critters that look similar to humans but aren't necessarily shaped like one, see [anthropomorphic](anthropomorphic).",
+      "parent_ids": [],
+      "child_ids": [
+        "986aa664-5247-44e9-a161-ccabfa0897db",
+        "6fbb0be1-03ca-425a-8d6b-b8c65b514326"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 142,
+      "childIdsTotal": 136
+    },
+    {
+      "object": "tag",
+      "id": "fdbda1f3-227a-4fd4-941b-e4c81cf78ce6",
+      "label": "perspective",
+      "slug": "perspective",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/perspective",
+      "description": "Tags describing art perspectives.",
+      "parent_ids": [],
+      "child_ids": [
+        "259fead0-4e2d-485d-9ba0-37b681df5b08"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 16
+    },
+    {
+      "object": "tag",
+      "id": "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa",
+      "label": "plane",
+      "slug": "plane",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/plane",
+      "description": "A collection of art tags that relate to specific planes.",
+      "parent_ids": [],
+      "child_ids": [
+        "a95d66d6-68ab-4f23-be82-094de38d56e8"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 72
+    },
+    {
+      "object": "tag",
+      "id": "cc7cac73-c03c-4f85-82aa-dec1145abee6",
+      "label": "symbol",
+      "slug": "symbol",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/symbol",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "3ee7a5e3-d48e-498a-a35c-4620216c346a"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 91,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "e1e261ac-5c06-410f-8e60-0680da9cbf63",
+      "label": "weapon",
+      "slug": "weapon",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/weapon",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "fae14cd2-b2bf-4b0e-afc8-4108d6ea465f"
+      ],
+      "aliases": [
+        "multiple weapons"
+      ],
+      "taggings": [],
+      "taggingsTotal": 8,
+      "childIdsTotal": 66
+    },
+    {
+      "object": "tag",
+      "id": "0641a74c-4dd5-426d-be58-2ab86d71995d",
+      "label": "burn",
+      "slug": "burn",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn",
+      "description": "Effects that deal damage, whether to creatures, players, or planeswalkers.",
+      "parent_ids": [],
+      "child_ids": [
+        "081ebf89-e53b-47ff-88e8-1535068212b0",
+        "c80fafa2-d5c9-47e5-8ef9-cbf7c1316d0a",
+        "7a0d9ee9-b672-451a-8722-0c5fc6087ff0"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "c80fafa2-d5c9-47e5-8ef9-cbf7c1316d0a",
+      "label": "burn battle",
+      "slug": "burn-battle",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-battle",
+      "description": null,
+      "parent_ids": [
+        "0641a74c-4dd5-426d-be58-2ab86d71995d"
+      ],
+      "child_ids": [
+        "d58bcedc-2dcd-42c3-8b52-5359457e6802"
+      ],
+      "aliases": [
+        "removal-battle-burn"
+      ],
+      "taggings": [],
+      "taggingsTotal": 13,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "01c171be-e0db-443c-830d-578873c27792",
+      "label": "burn creature",
+      "slug": "burn-creature",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-creature",
+      "description": null,
+      "parent_ids": [
+        "7a0d9ee9-b672-451a-8722-0c5fc6087ff0",
+        "d91e421d-ff87-4aad-a4bf-5aefc51252b6"
+      ],
+      "child_ids": [
+        "d58bcedc-2dcd-42c3-8b52-5359457e6802"
+      ],
+      "aliases": [
+        "removal-creature-burn"
+      ],
+      "taggings": [],
+      "taggingsTotal": 1050,
+      "childIdsTotal": 7
+    },
+    {
+      "object": "tag",
+      "id": "9b437740-9a6c-40cd-90db-a2b057df8e3f",
+      "label": "burn planeswalker",
+      "slug": "burn-planeswalker",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-planeswalker",
+      "description": null,
+      "parent_ids": [
+        "7a0d9ee9-b672-451a-8722-0c5fc6087ff0",
+        "591fb358-e9d7-490e-8c15-24aecbbe697e"
+      ],
+      "child_ids": [
+        "d58bcedc-2dcd-42c3-8b52-5359457e6802"
+      ],
+      "aliases": [
+        "removal-planeswalker-burn"
+      ],
+      "taggings": [],
+      "taggingsTotal": 384,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "081ebf89-e53b-47ff-88e8-1535068212b0",
+      "label": "burn player",
+      "slug": "burn-player",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/burn-player",
+      "description": null,
+      "parent_ids": [
+        "0641a74c-4dd5-426d-be58-2ab86d71995d"
+      ],
+      "child_ids": [
+        "d58bcedc-2dcd-42c3-8b52-5359457e6802"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 906,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "65d43202-9817-4f68-89cf-02792cc2c9be",
+      "label": "castable from nonhand",
+      "slug": "castable-from-nonhand",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/castable-from-nonhand",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "330c3d98-c1ed-4eed-82da-63ff282846c0"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "1adda1a4-e23d-4212-a4da-58303a20e00c",
+      "label": "cycle",
+      "slug": "cycle",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/cycle",
+      "description": "All the cycles from Magic history.",
+      "parent_ids": [],
+      "child_ids": [
+        "4f2e64c5-3288-4138-a2d2-57137d59f0a9"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 1354
+    },
+    {
+      "object": "tag",
+      "id": "249eaa21-acc1-45de-bb29-757cd60dffb8",
+      "label": "hate",
+      "slug": "hate",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/hate",
+      "description": "Cards that hate on things — colors, card types, zones, etc.",
+      "parent_ids": [],
+      "child_ids": [
+        "3b2b0b5b-077e-426b-ad75-00b9653d114d"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 126
+    },
+    {
+      "object": "tag",
+      "id": "444f824c-f910-4530-9dbe-ede7a84cd7f9",
+      "label": "removal",
+      "slug": "removal",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/removal",
+      "description": "Get things off the table.",
+      "parent_ids": [],
+      "child_ids": [
+        "d91e421d-ff87-4aad-a4bf-5aefc51252b6",
+        "591fb358-e9d7-490e-8c15-24aecbbe697e",
+        "cc12d27d-1d0e-4849-9551-71caead74d24",
+        "7a0d9ee9-b672-451a-8722-0c5fc6087ff0"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 25
+    },
+    {
+      "object": "tag",
+      "id": "7a0d9ee9-b672-451a-8722-0c5fc6087ff0",
+      "label": "removal-burn",
+      "slug": "removal-burn",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/removal-burn",
+      "description": null,
+      "parent_ids": [
+        "0641a74c-4dd5-426d-be58-2ab86d71995d",
+        "444f824c-f910-4530-9dbe-ede7a84cd7f9"
+      ],
+      "child_ids": [
+        "01c171be-e0db-443c-830d-578873c27792",
+        "9b437740-9a6c-40cd-90db-a2b057df8e3f"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "d91e421d-ff87-4aad-a4bf-5aefc51252b6",
+      "label": "removal-creature",
+      "slug": "removal-creature",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/removal-creature",
+      "description": null,
+      "parent_ids": [
+        "444f824c-f910-4530-9dbe-ede7a84cd7f9"
+      ],
+      "child_ids": [
+        "01c171be-e0db-443c-830d-578873c27792"
+      ],
+      "aliases": [
+        "creature removal"
+      ],
+      "taggings": [],
+      "taggingsTotal": 1940,
+      "childIdsTotal": 10
+    },
+    {
+      "object": "tag",
+      "id": "591fb358-e9d7-490e-8c15-24aecbbe697e",
+      "label": "removal-planeswalker",
+      "slug": "removal-planeswalker",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/removal-planeswalker",
+      "description": null,
+      "parent_ids": [
+        "444f824c-f910-4530-9dbe-ede7a84cd7f9"
+      ],
+      "child_ids": [
+        "9b437740-9a6c-40cd-90db-a2b057df8e3f"
+      ],
+      "aliases": [
+        "planeswalker removal"
+      ],
+      "taggings": [],
+      "taggingsTotal": 160,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "7ef982da-7f7a-4003-8bb9-84fd368f4441",
+      "label": "unexile",
+      "slug": "unexile",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/unexile",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "330c3d98-c1ed-4eed-82da-63ff282846c0"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 12,
+      "childIdsTotal": 3
+    }
+  ]
+}

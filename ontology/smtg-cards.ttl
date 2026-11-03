@@ -153,7 +153,7 @@ smtg:hasLayout a owl:ObjectProperty , owl:FunctionalProperty ;
   skos:scopeNote """Functional: an Oracle card has one layout. Printing-only conventions (reversible_card, art_series) are recorded on the printing with smtg:printingLayout, because a reversible printing presents an ordinarily single-faced Oracle card twice (RQ-LY-2). Layout values are open SKOS concepts, so new layouts are additions to the vocabulary, not schema changes."""@en ;
   rdfs:domain smtg:OracleCard ;
   rdfs:range smtg:Layout ;
-  smtg:sourceField "scryfall:layout" ;
+  smtg:sourceField "scryfall:layout" , "scryfall:card_faces[].layout" ;
   smtg:reviewQuestion "RQ-LY-2" ;
   rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
 
@@ -414,3 +414,11 @@ smtg:lifeModifierText a owl:DatatypeProperty ;
   smtg:intendedDomain smtg:CardFace ; rdfs:range xsd:string ;
   smtg:sourceField "scryfall:life_modifier" ;
   rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+# --- Documentation examples (instances generated from real fixtures in examples/) ---
+smtg:OracleCard smtg:docExample <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902> .
+smtg:CardFace smtg:docExample <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902/face/1> .
+smtg:AdventurerCard smtg:docExample <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902> .
+smtg:TransformingDoubleFacedCard smtg:docExample <https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf> .
+smtg:FlipCard smtg:docExample <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e> .
+smtg:ManaCost smtg:docExample <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902/face/0/mana-cost> .

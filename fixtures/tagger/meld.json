@@ -1,0 +1,2206 @@
+{
+  "slug": "meld",
+  "purpose": "Tagger tags assigned to the cards/illustrations of fixtures/scryfall/meld.json, plus the full parent chain of each tag.",
+  "selector": "oracle_tags: taggings[].oracle_id ∈ fixture oracle ids; art_tags: taggings[].illustration_id ∈ fixture illustration ids. Per target, tags sorted by (tagging has annotation / non-median weight first, tag has parents first, slug) and capped at 15 oracle / 10 art tags. Ancestors = transitive closure over parent_ids. taggings[] filtered to the fixture targets. Available per target: b23587e0…: 7 oracle tags; bce7e45d…: 7 oracle tags; f3e23d5e…: 4 oracle tags; 4c8cee4a…: 23 art tags; 9528e065…: 14 art tags; db5289ab…: 15 art tags.",
+  "note": "Tag records are the original Tagger objects except: (1) taggings[] is FILTERED (see selector) and the fixture-added key `taggingsTotal` gives the unfiltered count; (2) child_ids[] is filtered to tags present in this file and the fixture-added key `childIdsTotal` gives the unfiltered count. parent_ids[] is complete: every ancestor is included, so the file is a closed sub-hierarchy in which child_ids is still the exact inverse of parent_ids. `taggingsTotal` and `childIdsTotal` are NOT source fields.",
+  "source": {
+    "key": "scryfall:oracle_tags",
+    "file": "oracle-tags-20261103100032.jsonl.gz",
+    "sha256": "23d94bab24a5e4a9376ddc66ae3018c215dac693455fecdf2be83e86a43c1e5e",
+    "sourceUpdatedAt": "2026-11-03T10:00:32.540+00:00"
+  },
+  "extraSources": [
+    {
+      "key": "scryfall:art_tags",
+      "file": "art-tags-20261103100113.jsonl.gz",
+      "sha256": "9d963522897dbcf58e168a6cf4063bed908b87c2b0d7cd2bbce4557bd6d33d71",
+      "sourceUpdatedAt": "2026-11-03T10:01:13.387+00:00"
+    }
+  ],
+  "targets": [
+    "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+    "f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22",
+    "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+    "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+    "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+    "9528e065-5297-4d91-bf75-3c175b54f0d4"
+  ],
+  "recordIndex": [
+    {
+      "id": "2dabdf83-e041-48a4-b0e5-08e1842f008c",
+      "slug": "repeatable-lifegain",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+      "parents": 1
+    },
+    {
+      "id": "c7756471-d290-452f-bfc6-24866c841f28",
+      "slug": "evasion",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+      "parents": 0
+    },
+    {
+      "id": "2bcab7f4-d89b-4f8a-979f-f2f6c3c02346",
+      "slug": "mana-value-matters",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+      "parents": 0
+    },
+    {
+      "id": "e7209681-3921-4d27-b105-00bf2fd0ad5c",
+      "slug": "multiple-species-types",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+      "parents": 0
+    },
+    {
+      "id": "87d5c272-1a31-4412-9ec8-789365ce22d4",
+      "slug": "prevent-cast",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+      "parents": 0
+    },
+    {
+      "id": "83df38ae-43e7-406b-99c5-331e96ffcdfe",
+      "slug": "unique-p-t",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+      "parents": 0
+    },
+    {
+      "id": "32600fa3-0c49-439d-8ff0-900829cbfebc",
+      "slug": "unique-type-line",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+      "parents": 0
+    },
+    {
+      "id": "238fae23-46b6-4d30-ad00-9a020cc58756",
+      "slug": "cast-trigger-self",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+      "parents": 1
+    },
+    {
+      "id": "c05a300c-2ec4-446a-a399-b3c314497de7",
+      "slug": "reanimate-creature",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+      "parents": 2
+    },
+    {
+      "id": "21928865-c466-4e4e-9fbb-5314abf264ea",
+      "slug": "typal-angel",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+      "parents": 1
+    },
+    {
+      "id": "4044e837-0f66-40d2-96bc-35ba32e31f51",
+      "slug": "typal-human",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+      "parents": 1
+    },
+    {
+      "id": "753182c1-1be9-4b6a-b12c-4fb359fd528c",
+      "slug": "typal-coupling",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+      "parents": 0
+    },
+    {
+      "id": "a3909e64-69d4-442e-8da1-fffa309492b8",
+      "slug": "alliteration",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22",
+      "parents": 1
+    },
+    {
+      "id": "68f9547a-5c51-4d1b-86c4-8c07e654f789",
+      "slug": "intervening-if-clause",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22",
+      "parents": 1
+    },
+    {
+      "id": "ef209b15-3491-4412-b676-162d40538390",
+      "slug": "emrakul",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+      "parents": 3
+    },
+    {
+      "id": "2668bdf3-5234-494f-9420-c2bc4a696c14",
+      "slug": "bruna",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+      "parents": 3
+    },
+    {
+      "id": "23ccb0a0-05dd-4b76-806c-30ec3ce97016",
+      "slug": "billowing-skirt",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+      "parents": 1
+    },
+    {
+      "id": "e6724b79-7d2a-4031-9b6b-23ea37916f64",
+      "slug": "black-hair",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+      "parents": 1
+    },
+    {
+      "id": "8919c4eb-b203-49ce-ab65-a3ba7eec8471",
+      "slug": "broken-weapon",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+      "parents": 1
+    },
+    {
+      "id": "113b3f6e-a385-4839-8aab-22fc0c67d65d",
+      "slug": "cloudy-sky",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+      "parents": 2
+    },
+    {
+      "id": "28d052ec-461c-423f-9f83-930b95433ef0",
+      "slug": "deformed-avacyn-s-collar",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+      "parents": 1
+    },
+    {
+      "id": "34b71d5c-2a74-4c7d-bdab-096bd44128cc",
+      "slug": "emrakul-s-infestation",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+      "parents": 1
+    },
+    {
+      "id": "be0fdd81-30dd-4517-9667-dd411b312ccd",
+      "slug": "glowing-eye",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+      "parents": 2
+    },
+    {
+      "id": "10edc314-1565-4e06-86af-db4378482e64",
+      "slug": "innistrad",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+      "parents": 1
+    },
+    {
+      "id": "f48498bf-541f-4bef-81c2-62754e1fa54e",
+      "slug": "brisela",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+      "parents": 3
+    },
+    {
+      "id": "7f95cbd4-bb49-47c0-a445-0579fd53aea4",
+      "slug": "black-wing",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+      "parents": 1
+    },
+    {
+      "id": "476d4e39-aee6-4fac-b56c-c88a4255f951",
+      "slug": "emrakul-s-brood",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+      "parents": 1
+    },
+    {
+      "id": "d71ac247-dd18-4771-b144-4ea48c3800b9",
+      "slug": "gisela",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+      "parents": 3
+    },
+    {
+      "id": "e4c72cb0-0c74-4bab-bd7c-64501be3717d",
+      "slug": "red-eye",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+      "parents": 1
+    },
+    {
+      "id": "76a2f654-9181-45b4-846e-53b638fcef81",
+      "slug": "two-headed",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+      "parents": 1
+    },
+    {
+      "id": "0c843b0e-17be-49ea-a0d6-c6d0c30beb92",
+      "slug": "avacyn-s-collar",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+      "parents": 1
+    },
+    {
+      "id": "b9423058-8aa0-48a7-a664-9972f6ae0b14",
+      "slug": "boot",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+      "parents": 1
+    },
+    {
+      "id": "45d99a5c-aa29-44f3-b664-1de0f73e97a4",
+      "slug": "digital-painting",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+      "parents": 1
+    },
+    {
+      "id": "4f4a84d8-aba5-4fc2-832a-12d1da0b0493",
+      "slug": "dual-wielding",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+      "parents": 1
+    },
+    {
+      "id": "7cc8c62b-a50e-4895-ba88-3ca77c4cdfb6",
+      "slug": "pink-hair",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+      "parents": 1
+    },
+    {
+      "id": "b7636791-c403-435a-a512-2943f6119489",
+      "slug": "sword",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+      "parents": 2
+    },
+    {
+      "id": "da0770e8-e41b-4a29-93a0-4b6b7ce85a89",
+      "slug": "armor",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+      "parents": 0
+    },
+    {
+      "id": "d9337147-16ee-439c-869b-d8682b6e6472",
+      "slug": "angel",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "b47e31c4-70ae-471d-b51b-55742fd8f763",
+      "slug": "art-media",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "e19b1c36-e195-4338-ac81-9aaca366fafa",
+      "slug": "blade",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "7b155ecc-bd5e-4757-bde2-c029b6978bad",
+      "slug": "character",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "9fe7fa00-c601-43f0-a530-85ca7f4d6b44",
+      "slug": "clothing",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "6921d06c-0a94-4c63-970e-c41a2cf13c3c",
+      "slug": "cloud",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "d90ef9c7-83bc-4765-9ac5-2337f3ae1872",
+      "slug": "eldrazi",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "89a8cb92-707b-4162-a900-e9bbb7faec01",
+      "slug": "eye",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "d2a4f985-1ac7-46c7-b833-b88ba6d3013b",
+      "slug": "eye-colors",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "3ee7a5e3-d48e-498a-a35c-4620216c346a",
+      "slug": "faction-symbol",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "b8ad94e6-a042-49ff-bf9e-b963ade6e176",
+      "slug": "female",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "ebe7fdb8-c323-4faa-953a-6454c5aabec9",
+      "slug": "footwear",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "d40d2636-9622-4dc8-92db-07dd6c044f48",
+      "slug": "glow",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "9d199558-3c4d-4a00-9913-35cd78a12de1",
+      "slug": "hair",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "af16c922-5e58-43ee-a880-fc92d13f8c60",
+      "slug": "hair-colors",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "955ba145-4606-43ad-9295-5a168a96e4ed",
+      "slug": "innistrad-angel",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 2
+    },
+    {
+      "id": "7e447714-50ba-44a5-b345-2776eaed92dd",
+      "slug": "innistrad-faction-symbol",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "832b4218-4aab-4c06-adfe-25d48fda93cc",
+      "slug": "innistrad-origin",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "f6d2f875-3a8c-405d-a798-0beb2114bc15",
+      "slug": "multiple-heads",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "ba7bdc73-1186-4525-8451-165d12ce1da0",
+      "slug": "planar-origin",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa",
+      "slug": "plane",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "ccdd32e8-7c06-428c-99aa-c83203d4f329",
+      "slug": "skirt",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "00a7cfaa-4d0b-481d-b9d4-499ff9642c79",
+      "slug": "sky",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "cc7cac73-c03c-4f85-82aa-dec1145abee6",
+      "slug": "symbol",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "e1e261ac-5c06-410f-8e60-0680da9cbf63",
+      "slug": "weapon",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "32035413-f38b-4ad8-8230-53251e8f965e",
+      "slug": "wing",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "5a0a0531-5462-477d-add9-886148c4413f",
+      "slug": "card-names",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "4539431a-4109-4fee-91fc-caea0fcccb88",
+      "slug": "cast-trigger",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "4caab3cc-1d60-44fb-a26a-cc833bc67c97",
+      "slug": "lifegain",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "524d7da0-9b4b-4567-bf38-a867673e21f3",
+      "slug": "reanimate",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "82b824ad-648f-467f-a190-2e0fa9a795d2",
+      "slug": "recursion",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "a72183e8-512d-4be2-8eef-65e43db6cad0",
+      "slug": "recursion-creature",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "4d7fc833-e0af-4022-b298-6a9c99a56ac1",
+      "slug": "triggered-ability",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "883f5110-3773-45fe-8ef7-a3b90a8f77ad",
+      "slug": "typal",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "8047bd80-db1d-4437-ad82-7e9bca525a79",
+      "slug": "typal-creature",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    }
+  ],
+  "records": [
+    {
+      "object": "tag",
+      "id": "2dabdf83-e041-48a4-b0e5-08e1842f008c",
+      "label": "repeatable lifegain",
+      "slug": "repeatable-lifegain",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/repeatable-lifegain",
+      "description": null,
+      "parent_ids": [
+        "4caab3cc-1d60-44fb-a26a-cc833bc67c97"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+          "weight": "median"
+        },
+        {
+          "oracle_id": "f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1410,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "c7756471-d290-452f-bfc6-24866c841f28",
+      "label": "evasion",
+      "slug": "evasion",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/evasion",
+      "description": "Creatures that are harder to block through keywords (flying, menace) or other means.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+          "weight": "median"
+        },
+        {
+          "oracle_id": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+          "weight": "median"
+        },
+        {
+          "oracle_id": "f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 4713,
+      "childIdsTotal": 22
+    },
+    {
+      "object": "tag",
+      "id": "2bcab7f4-d89b-4f8a-979f-f2f6c3c02346",
+      "label": "mana value matters",
+      "slug": "mana-value-matters",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/mana-value-matters",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "converted mana cost matters",
+        "cmc matters"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 302,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "e7209681-3921-4d27-b105-00bf2fd0ad5c",
+      "label": "multiple species types",
+      "slug": "multiple-species-types",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/multiple-species-types",
+      "description": "Creatures that have two or more types that are considered to be a species, such as \"Human\" or \"Elf\"",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+          "weight": "median"
+        },
+        {
+          "oracle_id": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 96,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "87d5c272-1a31-4412-9ec8-789365ce22d4",
+      "label": "prevent cast",
+      "slug": "prevent-cast",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/prevent-cast",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "prevents casting"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 45,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "83df38ae-43e7-406b-99c5-331e96ffcdfe",
+      "label": "unique p/t",
+      "slug": "unique-p-t",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/unique-p-t",
+      "description": "Cards with a power/toughness not seen on any other card.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 38,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "32600fa3-0c49-439d-8ff0-900829cbfebc",
+      "label": "unique type line",
+      "slug": "unique-type-line",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/unique-type-line",
+      "description": "No other card has this same type line. Acorn, playtest, and rebalanced cards may count as unique, but they don't make non-acorn, non-playtest, non-rebalanced cards stop counting as unique.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 2314,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "238fae23-46b6-4d30-ad00-9a020cc58756",
+      "label": "cast trigger-self",
+      "slug": "cast-trigger-self",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/cast-trigger-self",
+      "description": "Cards that have a trigger when they are cast",
+      "parent_ids": [
+        "4539431a-4109-4fee-91fc-caea0fcccb88"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 254,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "c05a300c-2ec4-446a-a399-b3c314497de7",
+      "label": "reanimate-creature",
+      "slug": "reanimate-creature",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/reanimate-creature",
+      "description": "Return creature cards currently in the graveyard to the battlefield. Not to be confused with [cheat death](/tags/card/cheat-death), which interacts right as the creature dies.",
+      "parent_ids": [
+        "524d7da0-9b4b-4567-bf38-a867673e21f3",
+        "a72183e8-512d-4be2-8eef-65e43db6cad0"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 565,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "21928865-c466-4e4e-9fbb-5314abf264ea",
+      "label": "typal-angel",
+      "slug": "typal-angel",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/typal-angel",
+      "description": null,
+      "parent_ids": [
+        "8047bd80-db1d-4437-ad82-7e9bca525a79"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "tribal-angel"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 24,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "4044e837-0f66-40d2-96bc-35ba32e31f51",
+      "label": "typal-human",
+      "slug": "typal-human",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/typal-human",
+      "description": null,
+      "parent_ids": [
+        "8047bd80-db1d-4437-ad82-7e9bca525a79"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "human tribal",
+        "tribal-human"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 105,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "753182c1-1be9-4b6a-b12c-4fb359fd528c",
+      "label": "typal coupling",
+      "slug": "typal-coupling",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/typal-coupling",
+      "description": "Cards that care about two or more different creature types.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "tribal coupling"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 192,
+      "childIdsTotal": 9
+    },
+    {
+      "object": "tag",
+      "id": "a3909e64-69d4-442e-8da1-fffa309492b8",
+      "label": "alliteration",
+      "slug": "alliteration",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/alliteration",
+      "description": "Cards that alliterate, either properly or per Treacherous Trapezist.",
+      "parent_ids": [
+        "5a0a0531-5462-477d-add9-886148c4413f"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 4527,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "68f9547a-5c51-4d1b-86c4-8c07e654f789",
+      "label": "intervening if clause",
+      "slug": "intervening-if-clause",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/intervening-if-clause",
+      "description": "At/When/Whenever [event], if [clause], [effect].",
+      "parent_ids": [
+        "4d7fc833-e0af-4022-b298-6a9c99a56ac1"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 2217,
+      "childIdsTotal": 6
+    },
+    {
+      "object": "tag",
+      "id": "ef209b15-3491-4412-b676-162d40538390",
+      "label": "emrakul",
+      "slug": "emrakul",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/emrakul",
+      "description": null,
+      "parent_ids": [
+        "b8ad94e6-a042-49ff-bf9e-b963ade6e176",
+        "d90ef9c7-83bc-4765-9ac5-2337f3ae1872",
+        "7b155ecc-bd5e-4757-bde2-c029b6978bad"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+          "weight": "weak",
+          "annotation": "Her tentacles in the sky"
+        }
+      ],
+      "taggingsTotal": 37,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "2668bdf3-5234-494f-9420-c2bc4a696c14",
+      "label": "bruna",
+      "slug": "bruna",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/bruna",
+      "description": null,
+      "parent_ids": [
+        "b8ad94e6-a042-49ff-bf9e-b963ade6e176",
+        "7b155ecc-bd5e-4757-bde2-c029b6978bad",
+        "955ba145-4606-43ad-9295-5a168a96e4ed"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+          "weight": "strong"
+        },
+        {
+          "illustration_id": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 5,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "23ccb0a0-05dd-4b76-806c-30ec3ce97016",
+      "label": "billowing skirt",
+      "slug": "billowing-skirt",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/billowing-skirt",
+      "description": null,
+      "parent_ids": [
+        "ccdd32e8-7c06-428c-99aa-c83203d4f329"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 149,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "e6724b79-7d2a-4031-9b6b-23ea37916f64",
+      "label": "black hair",
+      "slug": "black-hair",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/black-hair",
+      "description": null,
+      "parent_ids": [
+        "af16c922-5e58-43ee-a880-fc92d13f8c60"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1833,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "8919c4eb-b203-49ce-ab65-a3ba7eec8471",
+      "label": "broken weapon",
+      "slug": "broken-weapon",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/broken-weapon",
+      "description": null,
+      "parent_ids": [
+        "e1e261ac-5c06-410f-8e60-0680da9cbf63"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 36,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "113b3f6e-a385-4839-8aab-22fc0c67d65d",
+      "label": "cloudy sky",
+      "slug": "cloudy-sky",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/cloudy-sky",
+      "description": null,
+      "parent_ids": [
+        "00a7cfaa-4d0b-481d-b9d4-499ff9642c79",
+        "6921d06c-0a94-4c63-970e-c41a2cf13c3c"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "cloudy",
+        "clouded sky"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 2208,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "28d052ec-461c-423f-9f83-930b95433ef0",
+      "label": "deformed avacyn's collar",
+      "slug": "deformed-avacyn-s-collar",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/deformed-avacyn-s-collar",
+      "description": "The (warped) symbol of her (corrupted) church.",
+      "parent_ids": [
+        "0c843b0e-17be-49ea-a0d6-c6d0c30beb92"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 10,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "34b71d5c-2a74-4c7d-bdab-096bd44128cc",
+      "label": "emrakul's infestation",
+      "slug": "emrakul-s-infestation",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/emrakul-s-infestation",
+      "description": "Signs of Emrakul's infestation on Innistrad, taking the form of a fleshy latticed pattern and/or tentacles.",
+      "parent_ids": [
+        "d90ef9c7-83bc-4765-9ac5-2337f3ae1872"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 144,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "be0fdd81-30dd-4517-9667-dd411b312ccd",
+      "label": "glowing eye",
+      "slug": "glowing-eye",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/glowing-eye",
+      "description": null,
+      "parent_ids": [
+        "89a8cb92-707b-4162-a900-e9bbb7faec01",
+        "d40d2636-9622-4dc8-92db-07dd6c044f48"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "glowing eyes"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1756,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "10edc314-1565-4e06-86af-db4378482e64",
+      "label": "innistrad",
+      "slug": "innistrad",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/innistrad",
+      "description": null,
+      "parent_ids": [
+        "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 2846,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "f48498bf-541f-4bef-81c2-62754e1fa54e",
+      "label": "brisela",
+      "slug": "brisela",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/brisela",
+      "description": null,
+      "parent_ids": [
+        "d90ef9c7-83bc-4765-9ac5-2337f3ae1872",
+        "7b155ecc-bd5e-4757-bde2-c029b6978bad",
+        "955ba145-4606-43ad-9295-5a168a96e4ed"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+          "weight": "very_strong"
+        }
+      ],
+      "taggingsTotal": 3,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "7f95cbd4-bb49-47c0-a445-0579fd53aea4",
+      "label": "black wing",
+      "slug": "black-wing",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/black-wing",
+      "description": null,
+      "parent_ids": [
+        "32035413-f38b-4ad8-8230-53251e8f965e"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 180,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "476d4e39-aee6-4fac-b56c-c88a4255f951",
+      "label": "emrakul's brood",
+      "slug": "emrakul-s-brood",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/emrakul-s-brood",
+      "description": null,
+      "parent_ids": [
+        "d90ef9c7-83bc-4765-9ac5-2337f3ae1872"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 80,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "d71ac247-dd18-4771-b144-4ea48c3800b9",
+      "label": "gisela",
+      "slug": "gisela",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/gisela",
+      "description": null,
+      "parent_ids": [
+        "7b155ecc-bd5e-4757-bde2-c029b6978bad",
+        "b8ad94e6-a042-49ff-bf9e-b963ade6e176",
+        "955ba145-4606-43ad-9295-5a168a96e4ed"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+          "weight": "strong"
+        }
+      ],
+      "taggingsTotal": 8,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "e4c72cb0-0c74-4bab-bd7c-64501be3717d",
+      "label": "red eye",
+      "slug": "red-eye",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/red-eye",
+      "description": "Red eyes, possibly of the glowing variety.",
+      "parent_ids": [
+        "d2a4f985-1ac7-46c7-b833-b88ba6d3013b"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "red eyes"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 711,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "76a2f654-9181-45b4-846e-53b638fcef81",
+      "label": "two-headed",
+      "slug": "two-headed",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/two-headed",
+      "description": "Having two heads is better than one. ",
+      "parent_ids": [
+        "f6d2f875-3a8c-405d-a798-0beb2114bc15"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "two heads"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "9528e065-5297-4d91-bf75-3c175b54f0d4",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 70,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "0c843b0e-17be-49ea-a0d6-c6d0c30beb92",
+      "label": "avacyn's collar",
+      "slug": "avacyn-s-collar",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/avacyn-s-collar",
+      "description": "The symbol of her church.",
+      "parent_ids": [
+        "7e447714-50ba-44a5-b345-2776eaed92dd"
+      ],
+      "child_ids": [
+        "28d052ec-461c-423f-9f83-930b95433ef0"
+      ],
+      "aliases": [
+        "avacyn symbol"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 389,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "b9423058-8aa0-48a7-a664-9972f6ae0b14",
+      "label": "boot",
+      "slug": "boot",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/boot",
+      "description": null,
+      "parent_ids": [
+        "ebe7fdb8-c323-4faa-953a-6454c5aabec9"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "leather boot",
+        "leather boots",
+        "boots"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 264,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "45d99a5c-aa29-44f3-b664-1de0f73e97a4",
+      "label": "digital painting",
+      "slug": "digital-painting",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/digital-painting",
+      "description": null,
+      "parent_ids": [
+        "b47e31c4-70ae-471d-b51b-55742fd8f763"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "digital illustration"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 14060,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "4f4a84d8-aba5-4fc2-832a-12d1da0b0493",
+      "label": "dual wielding",
+      "slug": "dual-wielding",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/dual-wielding",
+      "description": "Because holding two weapons is better than one.",
+      "parent_ids": [
+        "e1e261ac-5c06-410f-8e60-0680da9cbf63"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 848,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "7cc8c62b-a50e-4895-ba88-3ca77c4cdfb6",
+      "label": "pink hair",
+      "slug": "pink-hair",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/pink-hair",
+      "description": null,
+      "parent_ids": [
+        "af16c922-5e58-43ee-a880-fc92d13f8c60"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 104,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "b7636791-c403-435a-a512-2943f6119489",
+      "label": "sword",
+      "slug": "sword",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/sword",
+      "description": null,
+      "parent_ids": [
+        "e1e261ac-5c06-410f-8e60-0680da9cbf63",
+        "e19b1c36-e195-4338-ac81-9aaca366fafa"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "4c8cee4a-a9a4-42eb-9cbf-fcc6c6344d00",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 3366,
+      "childIdsTotal": 46
+    },
+    {
+      "object": "tag",
+      "id": "da0770e8-e41b-4a29-93a0-4b6b7ce85a89",
+      "label": "armor",
+      "slug": "armor",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/armor",
+      "description": "Garments designed to protect one from physical harm.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "db5289ab-8aa4-412d-afd4-f7b7fef475fb",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 1261,
+      "childIdsTotal": 32
+    },
+    {
+      "object": "tag",
+      "id": "d9337147-16ee-439c-869b-d8682b6e6472",
+      "label": "angel",
+      "slug": "angel",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/angel",
+      "description": "Creature type generally with wings, and serving some form of god or other higher power, to do good.",
+      "parent_ids": [
+        "32035413-f38b-4ad8-8230-53251e8f965e"
+      ],
+      "child_ids": [
+        "955ba145-4606-43ad-9295-5a168a96e4ed"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 334,
+      "childIdsTotal": 39
+    },
+    {
+      "object": "tag",
+      "id": "b47e31c4-70ae-471d-b51b-55742fd8f763",
+      "label": "art media",
+      "slug": "art-media",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/art-media",
+      "description": "Media used to render the artwork.",
+      "parent_ids": [],
+      "child_ids": [
+        "45d99a5c-aa29-44f3-b664-1de0f73e97a4"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 40
+    },
+    {
+      "object": "tag",
+      "id": "e19b1c36-e195-4338-ac81-9aaca366fafa",
+      "label": "blade",
+      "slug": "blade",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/blade",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "b7636791-c403-435a-a512-2943f6119489"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 99,
+      "childIdsTotal": 16
+    },
+    {
+      "object": "tag",
+      "id": "7b155ecc-bd5e-4757-bde2-c029b6978bad",
+      "label": "character",
+      "slug": "character",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/character",
+      "description": "Named characters.",
+      "parent_ids": [],
+      "child_ids": [
+        "ef209b15-3491-4412-b676-162d40538390",
+        "2668bdf3-5234-494f-9420-c2bc4a696c14",
+        "f48498bf-541f-4bef-81c2-62754e1fa54e",
+        "d71ac247-dd18-4771-b144-4ea48c3800b9"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 3104
+    },
+    {
+      "object": "tag",
+      "id": "9fe7fa00-c601-43f0-a530-85ca7f4d6b44",
+      "label": "clothing",
+      "slug": "clothing",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/clothing",
+      "description": "Tags describing varieties of clothing.",
+      "parent_ids": [],
+      "child_ids": [
+        "ebe7fdb8-c323-4faa-953a-6454c5aabec9",
+        "ccdd32e8-7c06-428c-99aa-c83203d4f329"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 84
+    },
+    {
+      "object": "tag",
+      "id": "6921d06c-0a94-4c63-970e-c41a2cf13c3c",
+      "label": "cloud",
+      "slug": "cloud",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/cloud",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "113b3f6e-a385-4839-8aab-22fc0c67d65d"
+      ],
+      "aliases": [
+        "clouds"
+      ],
+      "taggings": [],
+      "taggingsTotal": 1238,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "d90ef9c7-83bc-4765-9ac5-2337f3ae1872",
+      "label": "eldrazi",
+      "slug": "eldrazi",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/eldrazi",
+      "description": "Creatures native to the Blind Eternities—the space between the planes—which consume mana and entire planes. Best known for posing existential threat to Zendikar and its denizens, and later to Innistrad.",
+      "parent_ids": [],
+      "child_ids": [
+        "ef209b15-3491-4412-b676-162d40538390",
+        "476d4e39-aee6-4fac-b56c-c88a4255f951",
+        "f48498bf-541f-4bef-81c2-62754e1fa54e",
+        "34b71d5c-2a74-4c7d-bdab-096bd44128cc"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 25,
+      "childIdsTotal": 12
+    },
+    {
+      "object": "tag",
+      "id": "89a8cb92-707b-4162-a900-e9bbb7faec01",
+      "label": "eye",
+      "slug": "eye",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/eye",
+      "description": "Tags describing eyes. See also [eyes covered](/tags/artwork/eyes-covered) and [eyepatch](/tags/artwork/eyepatch). For the creature, see [eye (creature)](/tags/artwork/eye-creature).",
+      "parent_ids": [],
+      "child_ids": [
+        "be0fdd81-30dd-4517-9667-dd411b312ccd",
+        "d2a4f985-1ac7-46c7-b833-b88ba6d3013b"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 28
+    },
+    {
+      "object": "tag",
+      "id": "d2a4f985-1ac7-46c7-b833-b88ba6d3013b",
+      "label": "eye colors",
+      "slug": "eye-colors",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/eye-colors",
+      "description": "Tags describing eye colors, including all-white or all-black eyes.",
+      "parent_ids": [
+        "89a8cb92-707b-4162-a900-e9bbb7faec01"
+      ],
+      "child_ids": [
+        "e4c72cb0-0c74-4bab-bd7c-64501be3717d"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 12
+    },
+    {
+      "object": "tag",
+      "id": "3ee7a5e3-d48e-498a-a35c-4620216c346a",
+      "label": "faction symbol",
+      "slug": "faction-symbol",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/faction-symbol",
+      "description": null,
+      "parent_ids": [
+        "cc7cac73-c03c-4f85-82aa-dec1145abee6"
+      ],
+      "child_ids": [
+        "7e447714-50ba-44a5-b345-2776eaed92dd"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 41
+    },
+    {
+      "object": "tag",
+      "id": "b8ad94e6-a042-49ff-bf9e-b963ade6e176",
+      "label": "female",
+      "slug": "female",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/female",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "ef209b15-3491-4412-b676-162d40538390",
+        "2668bdf3-5234-494f-9420-c2bc4a696c14",
+        "d71ac247-dd18-4771-b144-4ea48c3800b9"
+      ],
+      "aliases": [
+        "woman"
+      ],
+      "taggings": [],
+      "taggingsTotal": 4775,
+      "childIdsTotal": 1147
+    },
+    {
+      "object": "tag",
+      "id": "ebe7fdb8-c323-4faa-953a-6454c5aabec9",
+      "label": "footwear",
+      "slug": "footwear",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/footwear",
+      "description": "Clothing for the feet. See: shoe, boot, etc.",
+      "parent_ids": [
+        "9fe7fa00-c601-43f0-a530-85ca7f4d6b44"
+      ],
+      "child_ids": [
+        "b9423058-8aa0-48a7-a664-9972f6ae0b14"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 8
+    },
+    {
+      "object": "tag",
+      "id": "d40d2636-9622-4dc8-92db-07dd6c044f48",
+      "label": "glow",
+      "slug": "glow",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/glow",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "be0fdd81-30dd-4517-9667-dd411b312ccd"
+      ],
+      "aliases": [
+        "glowing"
+      ],
+      "taggings": [],
+      "taggingsTotal": 339,
+      "childIdsTotal": 23
+    },
+    {
+      "object": "tag",
+      "id": "9d199558-3c4d-4a00-9913-35cd78a12de1",
+      "label": "hair",
+      "slug": "hair",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/hair",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "af16c922-5e58-43ee-a880-fc92d13f8c60"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 16,
+      "childIdsTotal": 19
+    },
+    {
+      "object": "tag",
+      "id": "af16c922-5e58-43ee-a880-fc92d13f8c60",
+      "label": "hair colors",
+      "slug": "hair-colors",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/hair-colors",
+      "description": null,
+      "parent_ids": [
+        "9d199558-3c4d-4a00-9913-35cd78a12de1"
+      ],
+      "child_ids": [
+        "e6724b79-7d2a-4031-9b6b-23ea37916f64",
+        "7cc8c62b-a50e-4895-ba88-3ca77c4cdfb6"
+      ],
+      "aliases": [
+        "colored hair"
+      ],
+      "taggings": [],
+      "taggingsTotal": 1,
+      "childIdsTotal": 13
+    },
+    {
+      "object": "tag",
+      "id": "955ba145-4606-43ad-9295-5a168a96e4ed",
+      "label": "innistrad angel",
+      "slug": "innistrad-angel",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/innistrad-angel",
+      "description": null,
+      "parent_ids": [
+        "d9337147-16ee-439c-869b-d8682b6e6472",
+        "832b4218-4aab-4c06-adfe-25d48fda93cc"
+      ],
+      "child_ids": [
+        "f48498bf-541f-4bef-81c2-62754e1fa54e",
+        "2668bdf3-5234-494f-9420-c2bc4a696c14",
+        "d71ac247-dd18-4771-b144-4ea48c3800b9"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 69,
+      "childIdsTotal": 7
+    },
+    {
+      "object": "tag",
+      "id": "7e447714-50ba-44a5-b345-2776eaed92dd",
+      "label": "innistrad faction symbol",
+      "slug": "innistrad-faction-symbol",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/innistrad-faction-symbol",
+      "description": "Faction symbols found on Innistrad.",
+      "parent_ids": [
+        "3ee7a5e3-d48e-498a-a35c-4620216c346a"
+      ],
+      "child_ids": [
+        "0c843b0e-17be-49ea-a0d6-c6d0c30beb92"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "832b4218-4aab-4c06-adfe-25d48fda93cc",
+      "label": "innistrad (origin)",
+      "slug": "innistrad-origin",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/innistrad-origin",
+      "description": null,
+      "parent_ids": [
+        "ba7bdc73-1186-4525-8451-165d12ce1da0"
+      ],
+      "child_ids": [
+        "955ba145-4606-43ad-9295-5a168a96e4ed"
+      ],
+      "aliases": [
+        "innistradi"
+      ],
+      "taggings": [],
+      "taggingsTotal": 8,
+      "childIdsTotal": 81
+    },
+    {
+      "object": "tag",
+      "id": "f6d2f875-3a8c-405d-a798-0beb2114bc15",
+      "label": "multiple heads",
+      "slug": "multiple-heads",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/multiple-heads",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "76a2f654-9181-45b4-846e-53b638fcef81"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 69,
+      "childIdsTotal": 4
+    },
+    {
+      "object": "tag",
+      "id": "ba7bdc73-1186-4525-8451-165d12ce1da0",
+      "label": "planar origin",
+      "slug": "planar-origin",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/planar-origin",
+      "description": "Tags classifying the origins of creatures and objects from across the multiverse.",
+      "parent_ids": [],
+      "child_ids": [
+        "832b4218-4aab-4c06-adfe-25d48fda93cc"
+      ],
+      "aliases": [
+        "origin"
+      ],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 47
+    },
+    {
+      "object": "tag",
+      "id": "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa",
+      "label": "plane",
+      "slug": "plane",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/plane",
+      "description": "A collection of art tags that relate to specific planes.",
+      "parent_ids": [],
+      "child_ids": [
+        "10edc314-1565-4e06-86af-db4378482e64"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 72
+    },
+    {
+      "object": "tag",
+      "id": "ccdd32e8-7c06-428c-99aa-c83203d4f329",
+      "label": "skirt",
+      "slug": "skirt",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/skirt",
+      "description": null,
+      "parent_ids": [
+        "9fe7fa00-c601-43f0-a530-85ca7f4d6b44"
+      ],
+      "child_ids": [
+        "23ccb0a0-05dd-4b76-806c-30ec3ce97016"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 162,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "00a7cfaa-4d0b-481d-b9d4-499ff9642c79",
+      "label": "sky",
+      "slug": "sky",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/sky",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "113b3f6e-a385-4839-8aab-22fc0c67d65d"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 14
+    },
+    {
+      "object": "tag",
+      "id": "cc7cac73-c03c-4f85-82aa-dec1145abee6",
+      "label": "symbol",
+      "slug": "symbol",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/symbol",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "3ee7a5e3-d48e-498a-a35c-4620216c346a"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 91,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "e1e261ac-5c06-410f-8e60-0680da9cbf63",
+      "label": "weapon",
+      "slug": "weapon",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/weapon",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "b7636791-c403-435a-a512-2943f6119489",
+        "8919c4eb-b203-49ce-ab65-a3ba7eec8471",
+        "4f4a84d8-aba5-4fc2-832a-12d1da0b0493"
+      ],
+      "aliases": [
+        "multiple weapons"
+      ],
+      "taggings": [],
+      "taggingsTotal": 8,
+      "childIdsTotal": 66
+    },
+    {
+      "object": "tag",
+      "id": "32035413-f38b-4ad8-8230-53251e8f965e",
+      "label": "wing",
+      "slug": "wing",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/wing",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "d9337147-16ee-439c-869b-d8682b6e6472",
+        "7f95cbd4-bb49-47c0-a445-0579fd53aea4"
+      ],
+      "aliases": [
+        "wings"
+      ],
+      "taggings": [],
+      "taggingsTotal": 3077,
+      "childIdsTotal": 16
+    },
+    {
+      "object": "tag",
+      "id": "5a0a0531-5462-477d-add9-886148c4413f",
+      "label": "card names",
+      "slug": "card-names",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/card-names",
+      "description": "A collection of tags identifying properties and naming schemes in cards.",
+      "parent_ids": [],
+      "child_ids": [
+        "a3909e64-69d4-442e-8da1-fffa309492b8"
+      ],
+      "aliases": [
+        "naming scheme"
+      ],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 33
+    },
+    {
+      "object": "tag",
+      "id": "4539431a-4109-4fee-91fc-caea0fcccb88",
+      "label": "cast trigger",
+      "slug": "cast-trigger",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/cast-trigger",
+      "description": null,
+      "parent_ids": [
+        "4d7fc833-e0af-4022-b298-6a9c99a56ac1"
+      ],
+      "child_ids": [
+        "238fae23-46b6-4d30-ad00-9a020cc58756"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 146,
+      "childIdsTotal": 4
+    },
+    {
+      "object": "tag",
+      "id": "4caab3cc-1d60-44fb-a26a-cc833bc67c97",
+      "label": "lifegain",
+      "slug": "lifegain",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/lifegain",
+      "description": "Cards that cause you to gain life.",
+      "parent_ids": [],
+      "child_ids": [
+        "2dabdf83-e041-48a4-b0e5-08e1842f008c"
+      ],
+      "aliases": [
+        "life gain"
+      ],
+      "taggings": [],
+      "taggingsTotal": 892,
+      "childIdsTotal": 7
+    },
+    {
+      "object": "tag",
+      "id": "524d7da0-9b4b-4567-bf38-a867673e21f3",
+      "label": "reanimate",
+      "slug": "reanimate",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/reanimate",
+      "description": "Return permanent cards from the graveyard to the battlefield.",
+      "parent_ids": [
+        "82b824ad-648f-467f-a190-2e0fa9a795d2"
+      ],
+      "child_ids": [
+        "c05a300c-2ec4-446a-a399-b3c314497de7"
+      ],
+      "aliases": [
+        "zombify",
+        "resurrect"
+      ],
+      "taggings": [],
+      "taggingsTotal": 11,
+      "childIdsTotal": 23
+    },
+    {
+      "object": "tag",
+      "id": "82b824ad-648f-467f-a190-2e0fa9a795d2",
+      "label": "recursion",
+      "slug": "recursion",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/recursion",
+      "description": "Get stuff back from your graveyard to use it again. See: reanimate (to battlefield), regrowth (to hand), and restock (to library).",
+      "parent_ids": [],
+      "child_ids": [
+        "524d7da0-9b4b-4567-bf38-a867673e21f3",
+        "a72183e8-512d-4be2-8eef-65e43db6cad0"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 19
+    },
+    {
+      "object": "tag",
+      "id": "a72183e8-512d-4be2-8eef-65e43db6cad0",
+      "label": "recursion-creature",
+      "slug": "recursion-creature",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/recursion-creature",
+      "description": null,
+      "parent_ids": [
+        "82b824ad-648f-467f-a190-2e0fa9a795d2"
+      ],
+      "child_ids": [
+        "c05a300c-2ec4-446a-a399-b3c314497de7"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 1,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "4d7fc833-e0af-4022-b298-6a9c99a56ac1",
+      "label": "triggered ability",
+      "slug": "triggered-ability",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/triggered-ability",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "68f9547a-5c51-4d1b-86c4-8c07e654f789",
+        "4539431a-4109-4fee-91fc-caea0fcccb88"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 8066,
+      "childIdsTotal": 21
+    },
+    {
+      "object": "tag",
+      "id": "883f5110-3773-45fe-8ef7-a3b90a8f77ad",
+      "label": "typal",
+      "slug": "typal",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/typal",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "8047bd80-db1d-4437-ad82-7e9bca525a79"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 1
+    },
+    {
+      "object": "tag",
+      "id": "8047bd80-db1d-4437-ad82-7e9bca525a79",
+      "label": "typal-creature",
+      "slug": "typal-creature",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/typal-creature",
+      "description": null,
+      "parent_ids": [
+        "883f5110-3773-45fe-8ef7-a3b90a8f77ad"
+      ],
+      "child_ids": [
+        "21928865-c466-4e4e-9fbb-5314abf264ea",
+        "4044e837-0f66-40d2-96bc-35ba32e31f51"
+      ],
+      "aliases": [
+        "kindred",
+        "tribal"
+      ],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 237
+    }
+  ]
+}

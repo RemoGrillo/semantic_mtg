@@ -1,0 +1,21 @@
+name: Concept change
+description: Suggest a change to one ontology term (class, property, vocabulary concept)
+title: "[concept] "
+labels: ["ontology", "review"]
+body:
+  - type: input
+    id: term
+    attributes: { label: Term, description: "IRI or prefixed name, e.g. smtg:CardFace" }
+    validations: { required: true }
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of change
+      options: [definition / wording, axiom (subclass, domain/range, disjointness), new term, deprecate / remove, mapping to a source field, other]
+  - type: textarea
+    id: proposal
+    attributes: { label: Proposal, description: "What should change, and why? Cite RQ-/AP-/CQ- IDs if relevant." }
+    validations: { required: true }
+  - type: textarea
+    id: evidence
+    attributes: { label: Evidence or counterexample, description: "Real cards/fixtures, rules references, competency questions affected." }

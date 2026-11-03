@@ -1,0 +1,345 @@
+{
+  "slug": "ashnods-altar-variants",
+  "purpose": "Small Commander Spellbook variants using Ashnod's Altar (and not Blood Artist), linkable to fixtures/scryfall/ashnods-altar.json.",
+  "selector": "variants: status == 'OK' and uses[].card.oracleId == 4d18bcba-a346-445e-a182-6cc30b7e066d (Ashnod's Altar) and not Blood Artist; sorted by (uses.length, requires.length, serialized length, id) ascending; first 2.",
+  "source": {
+    "key": "spellbook:variants",
+    "file": "variants-2026-11-03.json.gz",
+    "sha256": "86f908606cf2216d7bfed47970a6280172d8424243f6b27ea2c94c568d72d425",
+    "sourceUpdatedAt": null,
+    "exportTimestamp": "2026-11-03T10:39:04.244417+00:00",
+    "exportVersion": "7.3.4"
+  },
+  "recordIndex": [
+    {
+      "id": "2034-4385",
+      "role": "variant",
+      "status": "OK",
+      "cards": [
+        "Sliver Queen",
+        "Ashnod's Altar"
+      ],
+      "templates": [],
+      "features": 4
+    },
+    {
+      "id": "2034-2143",
+      "role": "variant",
+      "status": "OK",
+      "cards": [
+        "Spawnsire of Ulamog",
+        "Ashnod's Altar"
+      ],
+      "templates": [],
+      "features": 4
+    }
+  ],
+  "records": [
+    {
+      "id": "2034-4385",
+      "status": "OK",
+      "uses": [
+        {
+          "card": {
+            "id": 4385,
+            "name": "Sliver Queen",
+            "oracleId": "b8376cca-ea96-478a-8e98-c4482031300a",
+            "spoiler": false,
+            "faces": 1,
+            "typeLine": "Legendary Creature — Sliver",
+            "imageUriFrontPng": "https://cards.scryfall.io/png/front/0/9/096cff82-28eb-4096-be1d-a02b9a56e682.png?1783938450",
+            "imageUriFrontLarge": "https://cards.scryfall.io/display/front/0/9/096cff82-28eb-4096-be1d-a02b9a56e682.webp?1783938450",
+            "imageUriFrontNormal": "https://cards.scryfall.io/grid/front/0/9/096cff82-28eb-4096-be1d-a02b9a56e682.webp?1783938450",
+            "imageUriFrontSmall": "https://cards.scryfall.io/thumb/front/0/9/096cff82-28eb-4096-be1d-a02b9a56e682.webp?1783938450",
+            "imageUriFrontArtCrop": "https://cards.scryfall.io/art/front/0/9/096cff82-28eb-4096-be1d-a02b9a56e682.webp?1783938450",
+            "layoutRotationFront": null,
+            "imageUriBackPng": null,
+            "imageUriBackLarge": null,
+            "imageUriBackNormal": null,
+            "imageUriBackSmall": null,
+            "imageUriBackArtCrop": null
+          },
+          "zoneLocations": [
+            "B"
+          ],
+          "battlefieldCardState": "",
+          "exileCardState": "",
+          "libraryCardState": "",
+          "graveyardCardState": "",
+          "mustBeCommander": false,
+          "quantity": 1,
+          "usedFace": null
+        },
+        {
+          "card": {
+            "id": 2034,
+            "name": "Ashnod's Altar",
+            "oracleId": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+            "spoiler": false,
+            "faces": 1,
+            "typeLine": "Artifact",
+            "imageUriFrontPng": "https://cards.scryfall.io/png/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.png?1783915605",
+            "imageUriFrontLarge": "https://cards.scryfall.io/display/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.webp?1783915605",
+            "imageUriFrontNormal": "https://cards.scryfall.io/grid/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.webp?1783915605",
+            "imageUriFrontSmall": "https://cards.scryfall.io/thumb/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.webp?1783915605",
+            "imageUriFrontArtCrop": "https://cards.scryfall.io/art/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.webp?1783915605",
+            "layoutRotationFront": null,
+            "imageUriBackPng": null,
+            "imageUriBackLarge": null,
+            "imageUriBackNormal": null,
+            "imageUriBackSmall": null,
+            "imageUriBackArtCrop": null
+          },
+          "zoneLocations": [
+            "B"
+          ],
+          "battlefieldCardState": "",
+          "exileCardState": "",
+          "libraryCardState": "",
+          "graveyardCardState": "",
+          "mustBeCommander": false,
+          "quantity": 1,
+          "usedFace": null
+        }
+      ],
+      "requires": [],
+      "produces": [
+        {
+          "feature": {
+            "id": 7,
+            "name": "Infinite death triggers",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 4,
+            "name": "Infinite creature ETB",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 3,
+            "name": "Infinite creature LTB",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 6,
+            "name": "Infinite creature sacrifice triggers",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        }
+      ],
+      "of": [
+        {
+          "id": 5324
+        }
+      ],
+      "includes": [
+        {
+          "id": 5324
+        }
+      ],
+      "identity": "WUBRG",
+      "manaNeeded": "",
+      "manaValueNeeded": 0,
+      "easyPrerequisites": "",
+      "notablePrerequisites": "",
+      "description": "Activate Sliver Queen by paying {2}, creating a 1/1 Sliver token.\nActivate Ashnod's Altar by sacrificing the Sliver token, adding {C}{C}.\nRepeat.",
+      "notes": "",
+      "popularity": 2143,
+      "salt": null,
+      "saltVoteCount": 2,
+      "spoiler": false,
+      "bracketTag": "E",
+      "legalities": {
+        "commander": true,
+        "pauperCommanderMain": false,
+        "pauperCommander": false,
+        "oathbreaker": true,
+        "predh": true,
+        "standardBrawl": false,
+        "brawl": false,
+        "competitiveBrawl": false,
+        "alchemy": false,
+        "vintage": true,
+        "legacy": true,
+        "premodern": true,
+        "modern": false,
+        "pioneer": false,
+        "standard": false,
+        "pauper": false
+      },
+      "prices": {
+        "tcgplayer": "319.96",
+        "cardkingdom": "268.98",
+        "cardmarket": "185.79"
+      },
+      "variantCount": 1
+    },
+    {
+      "id": "2034-2143",
+      "status": "OK",
+      "uses": [
+        {
+          "card": {
+            "id": 2143,
+            "name": "Spawnsire of Ulamog",
+            "oracleId": "b90d2f4d-b4ea-40af-aea0-1ab4234ab80f",
+            "spoiler": false,
+            "faces": 1,
+            "typeLine": "Creature — Eldrazi",
+            "imageUriFrontPng": "https://cards.scryfall.io/png/front/9/f/9ff46819-bfb3-4448-ab4f-f22ff9e2b2b4.png?1783942012",
+            "imageUriFrontLarge": "https://cards.scryfall.io/display/front/9/f/9ff46819-bfb3-4448-ab4f-f22ff9e2b2b4.webp?1783942012",
+            "imageUriFrontNormal": "https://cards.scryfall.io/grid/front/9/f/9ff46819-bfb3-4448-ab4f-f22ff9e2b2b4.webp?1783942012",
+            "imageUriFrontSmall": "https://cards.scryfall.io/thumb/front/9/f/9ff46819-bfb3-4448-ab4f-f22ff9e2b2b4.webp?1783942012",
+            "imageUriFrontArtCrop": "https://cards.scryfall.io/art/front/9/f/9ff46819-bfb3-4448-ab4f-f22ff9e2b2b4.webp?1783942012",
+            "layoutRotationFront": null,
+            "imageUriBackPng": null,
+            "imageUriBackLarge": null,
+            "imageUriBackNormal": null,
+            "imageUriBackSmall": null,
+            "imageUriBackArtCrop": null
+          },
+          "zoneLocations": [
+            "B"
+          ],
+          "battlefieldCardState": "",
+          "exileCardState": "",
+          "libraryCardState": "",
+          "graveyardCardState": "",
+          "mustBeCommander": false,
+          "quantity": 1,
+          "usedFace": null
+        },
+        {
+          "card": {
+            "id": 2034,
+            "name": "Ashnod's Altar",
+            "oracleId": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+            "spoiler": false,
+            "faces": 1,
+            "typeLine": "Artifact",
+            "imageUriFrontPng": "https://cards.scryfall.io/png/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.png?1783915605",
+            "imageUriFrontLarge": "https://cards.scryfall.io/display/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.webp?1783915605",
+            "imageUriFrontNormal": "https://cards.scryfall.io/grid/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.webp?1783915605",
+            "imageUriFrontSmall": "https://cards.scryfall.io/thumb/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.webp?1783915605",
+            "imageUriFrontArtCrop": "https://cards.scryfall.io/art/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.webp?1783915605",
+            "layoutRotationFront": null,
+            "imageUriBackPng": null,
+            "imageUriBackLarge": null,
+            "imageUriBackNormal": null,
+            "imageUriBackSmall": null,
+            "imageUriBackArtCrop": null
+          },
+          "zoneLocations": [
+            "B"
+          ],
+          "battlefieldCardState": "",
+          "exileCardState": "",
+          "libraryCardState": "",
+          "graveyardCardState": "",
+          "mustBeCommander": false,
+          "quantity": 1,
+          "usedFace": null
+        }
+      ],
+      "requires": [],
+      "produces": [
+        {
+          "feature": {
+            "id": 7,
+            "name": "Infinite death triggers",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 4,
+            "name": "Infinite creature ETB",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 3,
+            "name": "Infinite creature LTB",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 6,
+            "name": "Infinite creature sacrifice triggers",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        }
+      ],
+      "of": [
+        {
+          "id": 4905
+        }
+      ],
+      "includes": [
+        {
+          "id": 4905
+        }
+      ],
+      "identity": "C",
+      "manaNeeded": "{4}",
+      "manaValueNeeded": 4,
+      "easyPrerequisites": "",
+      "notablePrerequisites": "",
+      "description": "Activate Spawnsire of Ulamog's first abiltiy by paying {4}, create two 0/1 Eldrazi Spawn creature tokens.\nActivate Ashnod's Altar twice by sacrificing two Eldrazi Spawn tokens, adding {C}{C}{C}{C}.\nRepeat.",
+      "notes": "",
+      "popularity": 1301,
+      "salt": null,
+      "saltVoteCount": 0,
+      "spoiler": false,
+      "bracketTag": "E",
+      "legalities": {
+        "commander": true,
+        "pauperCommanderMain": false,
+        "pauperCommander": false,
+        "oathbreaker": true,
+        "predh": true,
+        "standardBrawl": false,
+        "brawl": false,
+        "competitiveBrawl": false,
+        "alchemy": false,
+        "vintage": true,
+        "legacy": true,
+        "premodern": false,
+        "modern": false,
+        "pioneer": false,
+        "standard": false,
+        "pauper": false
+      },
+      "prices": {
+        "tcgplayer": "22.07",
+        "cardkingdom": "25.48",
+        "cardmarket": "13.63"
+      },
+      "variantCount": 1
+    }
+  ]
+}

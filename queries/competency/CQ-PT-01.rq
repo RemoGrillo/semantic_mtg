@@ -1,0 +1,16 @@
+# id: CQ-PT-01
+# title: Non-numeric power and toughness
+# question: Which faces have a power or toughness that is not a plain number (e.g. * or 1+*)?
+# kind: SPARQL
+# expects: nonempty
+# modules: cards
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?faceName ?power ?toughness WHERE {
+  ?f smtg:name ?faceName ; smtg:powerText ?power ; smtg:toughnessText ?toughness .
+  FILTER NOT EXISTS { ?f smtg:powerValue ?pv . ?f smtg:toughnessValue ?tv . }
+} ORDER BY ?faceName

@@ -1,0 +1,419 @@
+{
+  "slug": "blood-artist-variants",
+  "purpose": "Small Commander Spellbook variants using Blood Artist (cards → features), linkable to fixtures/scryfall/blood-artist.json.",
+  "selector": "variants: status == 'OK' and uses[].card.oracleId == 310f141c-7f37-4729-aed6-dd9c09db448d (Blood Artist); sorted by (uses.length, requires.length, serialized length, id) ascending; first 2.",
+  "source": {
+    "key": "spellbook:variants",
+    "file": "variants-2026-11-03.json.gz",
+    "sha256": "86f908606cf2216d7bfed47970a6280172d8424243f6b27ea2c94c568d72d425",
+    "sourceUpdatedAt": null,
+    "exportTimestamp": "2026-11-03T10:39:04.244417+00:00",
+    "exportVersion": "7.3.4"
+  },
+  "recordIndex": [
+    {
+      "id": "2842-6215",
+      "role": "variant",
+      "status": "OK",
+      "cards": [
+        "Tombstone Stairwell",
+        "Blood Artist"
+      ],
+      "templates": [],
+      "features": 6
+    },
+    {
+      "id": "397-2842-5670",
+      "role": "variant",
+      "status": "OK",
+      "cards": [
+        "Stimulus Package",
+        "Warren Soultrader",
+        "Blood Artist"
+      ],
+      "templates": [],
+      "features": 6
+    }
+  ],
+  "records": [
+    {
+      "id": "2842-6215",
+      "status": "OK",
+      "uses": [
+        {
+          "card": {
+            "id": 6215,
+            "name": "Tombstone Stairwell",
+            "oracleId": "9aaf1149-eccb-434a-a1a7-14b93fa50141",
+            "spoiler": false,
+            "faces": 1,
+            "typeLine": "World Enchantment",
+            "imageUriFrontPng": "https://cards.scryfall.io/png/front/f/8/f8fe2f99-7ec2-490c-8ec3-aa2fb4680826.png?1783947085",
+            "imageUriFrontLarge": "https://cards.scryfall.io/display/front/f/8/f8fe2f99-7ec2-490c-8ec3-aa2fb4680826.webp?1783947085",
+            "imageUriFrontNormal": "https://cards.scryfall.io/grid/front/f/8/f8fe2f99-7ec2-490c-8ec3-aa2fb4680826.webp?1783947085",
+            "imageUriFrontSmall": "https://cards.scryfall.io/thumb/front/f/8/f8fe2f99-7ec2-490c-8ec3-aa2fb4680826.webp?1783947085",
+            "imageUriFrontArtCrop": "https://cards.scryfall.io/art/front/f/8/f8fe2f99-7ec2-490c-8ec3-aa2fb4680826.webp?1783947085",
+            "layoutRotationFront": null,
+            "imageUriBackPng": null,
+            "imageUriBackLarge": null,
+            "imageUriBackNormal": null,
+            "imageUriBackSmall": null,
+            "imageUriBackArtCrop": null
+          },
+          "zoneLocations": [
+            "B"
+          ],
+          "battlefieldCardState": "",
+          "exileCardState": "",
+          "libraryCardState": "",
+          "graveyardCardState": "",
+          "mustBeCommander": false,
+          "quantity": 1,
+          "usedFace": null
+        },
+        {
+          "card": {
+            "id": 2842,
+            "name": "Blood Artist",
+            "oracleId": "310f141c-7f37-4729-aed6-dd9c09db448d",
+            "spoiler": false,
+            "faces": 1,
+            "typeLine": "Creature — Vampire",
+            "imageUriFrontPng": "https://cards.scryfall.io/png/front/b/5/b5275d76-2947-4219-be21-614c7421614a.png?1783903786",
+            "imageUriFrontLarge": "https://cards.scryfall.io/display/front/b/5/b5275d76-2947-4219-be21-614c7421614a.webp?1783903786",
+            "imageUriFrontNormal": "https://cards.scryfall.io/grid/front/b/5/b5275d76-2947-4219-be21-614c7421614a.webp?1783903786",
+            "imageUriFrontSmall": "https://cards.scryfall.io/thumb/front/b/5/b5275d76-2947-4219-be21-614c7421614a.webp?1783903786",
+            "imageUriFrontArtCrop": "https://cards.scryfall.io/art/front/b/5/b5275d76-2947-4219-be21-614c7421614a.webp?1783903786",
+            "layoutRotationFront": null,
+            "imageUriBackPng": null,
+            "imageUriBackLarge": null,
+            "imageUriBackNormal": null,
+            "imageUriBackSmall": null,
+            "imageUriBackArtCrop": null
+          },
+          "zoneLocations": [
+            "B"
+          ],
+          "battlefieldCardState": "",
+          "exileCardState": "",
+          "libraryCardState": "",
+          "graveyardCardState": "",
+          "mustBeCommander": false,
+          "quantity": 1,
+          "usedFace": null
+        }
+      ],
+      "requires": [],
+      "produces": [
+        {
+          "feature": {
+            "id": 49,
+            "name": "Near-infinite lifeloss",
+            "uncountable": true,
+            "status": "S"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 60,
+            "name": "Near-infinite creature ETB",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 79,
+            "name": "Near-infinite creature LTB",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 134,
+            "name": "Near-infinite death triggers",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 46,
+            "name": "Near-infinite lifegain",
+            "uncountable": true,
+            "status": "S"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 59,
+            "name": "Near-infinite lifegain triggers",
+            "uncountable": true,
+            "status": "C"
+          },
+          "quantity": 1
+        }
+      ],
+      "of": [
+        {
+          "id": 28962
+        }
+      ],
+      "includes": [
+        {
+          "id": 27821
+        },
+        {
+          "id": 28962
+        }
+      ],
+      "identity": "B",
+      "manaNeeded": "",
+      "manaValueNeeded": 0,
+      "easyPrerequisites": "",
+      "notablePrerequisites": "",
+      "description": "At the beginning of each upkeep, Tombostone Stairwell's first ability triggers, causing each player to create a 2/2 Zombie creature token for each creature card in their graveyard.\nAt the beginning of each end step, Tombstone Stairwell's second ability triggers, destroying all tokens created by it.\nWhen the token(s) die, Blood Artist triggers that many times, causing an opponent to lose that much life and you to gain that much life.\nRepeat during each turn.",
+      "notes": "",
+      "popularity": 6679,
+      "salt": null,
+      "saltVoteCount": 1,
+      "spoiler": false,
+      "bracketTag": "R",
+      "legalities": {
+        "commander": true,
+        "pauperCommanderMain": false,
+        "pauperCommander": false,
+        "oathbreaker": true,
+        "predh": false,
+        "standardBrawl": false,
+        "brawl": false,
+        "competitiveBrawl": false,
+        "alchemy": false,
+        "vintage": true,
+        "legacy": true,
+        "premodern": false,
+        "modern": false,
+        "pioneer": false,
+        "standard": false,
+        "pauper": false
+      },
+      "prices": {
+        "tcgplayer": "54.93",
+        "cardkingdom": "68.98",
+        "cardmarket": "29.48"
+      },
+      "variantCount": 5
+    },
+    {
+      "id": "397-2842-5670",
+      "status": "OK",
+      "uses": [
+        {
+          "card": {
+            "id": 397,
+            "name": "Stimulus Package",
+            "oracleId": "ce76d17e-d536-46f0-98e2-3e1b1b4f61a4",
+            "spoiler": false,
+            "faces": 1,
+            "typeLine": "Enchantment",
+            "imageUriFrontPng": "https://cards.scryfall.io/png/front/e/c/ecbe7459-8613-4ab8-84dc-deab19c08511.png?1783923068",
+            "imageUriFrontLarge": "https://cards.scryfall.io/display/front/e/c/ecbe7459-8613-4ab8-84dc-deab19c08511.webp?1783923068",
+            "imageUriFrontNormal": "https://cards.scryfall.io/grid/front/e/c/ecbe7459-8613-4ab8-84dc-deab19c08511.webp?1783923068",
+            "imageUriFrontSmall": "https://cards.scryfall.io/thumb/front/e/c/ecbe7459-8613-4ab8-84dc-deab19c08511.webp?1783923068",
+            "imageUriFrontArtCrop": "https://cards.scryfall.io/art/front/e/c/ecbe7459-8613-4ab8-84dc-deab19c08511.webp?1783923068",
+            "layoutRotationFront": null,
+            "imageUriBackPng": null,
+            "imageUriBackLarge": null,
+            "imageUriBackNormal": null,
+            "imageUriBackSmall": null,
+            "imageUriBackArtCrop": null
+          },
+          "zoneLocations": [
+            "B"
+          ],
+          "battlefieldCardState": "",
+          "exileCardState": "",
+          "libraryCardState": "",
+          "graveyardCardState": "",
+          "mustBeCommander": false,
+          "quantity": 1,
+          "usedFace": null
+        },
+        {
+          "card": {
+            "id": 5670,
+            "name": "Warren Soultrader",
+            "oracleId": "ace86e56-efde-4eb7-8815-71456a4c3abe",
+            "spoiler": false,
+            "faces": 1,
+            "typeLine": "Creature — Zombie Goblin Wizard",
+            "imageUriFrontPng": "https://cards.scryfall.io/png/front/b/3/b334e4c6-d316-4141-8889-f95afcc04701.png?1784634565",
+            "imageUriFrontLarge": "https://cards.scryfall.io/display/front/b/3/b334e4c6-d316-4141-8889-f95afcc04701.webp?1784634565",
+            "imageUriFrontNormal": "https://cards.scryfall.io/grid/front/b/3/b334e4c6-d316-4141-8889-f95afcc04701.webp?1784634565",
+            "imageUriFrontSmall": "https://cards.scryfall.io/thumb/front/b/3/b334e4c6-d316-4141-8889-f95afcc04701.webp?1784634565",
+            "imageUriFrontArtCrop": "https://cards.scryfall.io/art/front/b/3/b334e4c6-d316-4141-8889-f95afcc04701.webp?1784634565",
+            "layoutRotationFront": null,
+            "imageUriBackPng": null,
+            "imageUriBackLarge": null,
+            "imageUriBackNormal": null,
+            "imageUriBackSmall": null,
+            "imageUriBackArtCrop": null
+          },
+          "zoneLocations": [
+            "B"
+          ],
+          "battlefieldCardState": "",
+          "exileCardState": "",
+          "libraryCardState": "",
+          "graveyardCardState": "",
+          "mustBeCommander": false,
+          "quantity": 1,
+          "usedFace": null
+        },
+        {
+          "card": {
+            "id": 2842,
+            "name": "Blood Artist",
+            "oracleId": "310f141c-7f37-4729-aed6-dd9c09db448d",
+            "spoiler": false,
+            "faces": 1,
+            "typeLine": "Creature — Vampire",
+            "imageUriFrontPng": "https://cards.scryfall.io/png/front/b/5/b5275d76-2947-4219-be21-614c7421614a.png?1783903786",
+            "imageUriFrontLarge": "https://cards.scryfall.io/display/front/b/5/b5275d76-2947-4219-be21-614c7421614a.webp?1783903786",
+            "imageUriFrontNormal": "https://cards.scryfall.io/grid/front/b/5/b5275d76-2947-4219-be21-614c7421614a.webp?1783903786",
+            "imageUriFrontSmall": "https://cards.scryfall.io/thumb/front/b/5/b5275d76-2947-4219-be21-614c7421614a.webp?1783903786",
+            "imageUriFrontArtCrop": "https://cards.scryfall.io/art/front/b/5/b5275d76-2947-4219-be21-614c7421614a.webp?1783903786",
+            "layoutRotationFront": null,
+            "imageUriBackPng": null,
+            "imageUriBackLarge": null,
+            "imageUriBackNormal": null,
+            "imageUriBackSmall": null,
+            "imageUriBackArtCrop": null
+          },
+          "zoneLocations": [
+            "B"
+          ],
+          "battlefieldCardState": "",
+          "exileCardState": "",
+          "libraryCardState": "",
+          "graveyardCardState": "",
+          "mustBeCommander": false,
+          "quantity": 1,
+          "usedFace": null
+        }
+      ],
+      "requires": [],
+      "produces": [
+        {
+          "feature": {
+            "id": 3,
+            "name": "Infinite creature LTB",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 4,
+            "name": "Infinite creature ETB",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 6,
+            "name": "Infinite creature sacrifice triggers",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 7,
+            "name": "Infinite death triggers",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 14,
+            "name": "Infinite lifegain triggers",
+            "uncountable": true,
+            "status": "C"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 26,
+            "name": "Infinite lifeloss",
+            "uncountable": true,
+            "status": "S"
+          },
+          "quantity": 1
+        }
+      ],
+      "of": [
+        {
+          "id": 29107
+        }
+      ],
+      "includes": [
+        {
+          "id": 27807
+        },
+        {
+          "id": 29107
+        }
+      ],
+      "identity": "BRG",
+      "manaNeeded": "",
+      "manaValueNeeded": 0,
+      "easyPrerequisites": "",
+      "notablePrerequisites": "You control an additional creature.\nYour life total is at least 2.",
+      "description": "Activate Warren Soultrader by paying 1 life and sacrificing a creature.\nWhen the creature dies, Blood Artist triggers, causing you to gain 1 life and an opponent to lose 1 life.\nResolve the Warren Soultrader ability, creating a Treasure token.\nActivate Stimulus Package by sacrificing the Treasure, creating a 1/1 Citizen creature token.\nRepeat.",
+      "notes": "",
+      "popularity": 212,
+      "salt": null,
+      "saltVoteCount": 0,
+      "spoiler": false,
+      "bracketTag": "E",
+      "legalities": {
+        "commander": true,
+        "pauperCommanderMain": false,
+        "pauperCommander": false,
+        "oathbreaker": true,
+        "predh": false,
+        "standardBrawl": false,
+        "brawl": true,
+        "competitiveBrawl": true,
+        "alchemy": false,
+        "vintage": true,
+        "legacy": true,
+        "premodern": false,
+        "modern": true,
+        "pioneer": false,
+        "standard": false,
+        "pauper": false
+      },
+      "prices": {
+        "tcgplayer": "22.16",
+        "cardkingdom": "32.33",
+        "cardmarket": "17.32"
+      },
+      "variantCount": 9
+    }
+  ]
+}

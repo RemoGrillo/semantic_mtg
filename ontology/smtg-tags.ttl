@@ -201,3 +201,8 @@ smtgv:tagger-art-tags a skos:ConceptScheme ;
   rdfs:label "Tagger art tags"@en ;
   skos:definition "Scheme of all Tagger art (illustration) tags."@en ;
   smtg:conceptClass smtg:ArtTag ; rdfs:isDefinedBy smtgm:tags .
+
+# --- Documentation examples (instances generated from real fixtures in examples/) ---
+smtg:TagAssignment smtg:docExample <https://w3id.org/smtg/id/claim/tagging/cc12d27d-1d0e-4849-9551-71caead74d24/4457ed35-7c10-48c8-9776-456485fdf070> .
+smtg:OracleTagAssignment smtg:docExample <https://w3id.org/smtg/id/claim/tagging/cc12d27d-1d0e-4849-9551-71caead74d24/4457ed35-7c10-48c8-9776-456485fdf070> .
+smtg:ArtTagAssignment smtg:docExample <https://w3id.org/smtg/id/claim/tagging/584bf31f-389d-4010-98e3-9d3f1cfb6f0a/abf5b6d9-61e7-47f0-b187-a6bdfec68f58> .

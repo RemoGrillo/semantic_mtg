@@ -1,0 +1,61 @@
+{
+  "slug": "aliases",
+  "purpose": "Alias records from the export: former variant ids that redirect to a current variant id, or to null.",
+  "selector": "aliases: variant == null → first 2 by id; variant != null → first 2 by id.",
+  "source": {
+    "key": "spellbook:variants",
+    "file": "variants-2026-11-03.json.gz",
+    "sha256": "86f908606cf2216d7bfed47970a6280172d8424243f6b27ea2c94c568d72d425",
+    "sourceUpdatedAt": null,
+    "exportTimestamp": "2026-11-03T10:39:04.244417+00:00",
+    "exportVersion": "7.3.4"
+  },
+  "recordIndex": [
+    {
+      "id": "1-1401-1786-6282",
+      "role": "alias",
+      "cards": [],
+      "templates": [],
+      "features": 0
+    },
+    {
+      "id": "1-1401-2275-6282",
+      "role": "alias",
+      "cards": [],
+      "templates": [],
+      "features": 0
+    },
+    {
+      "id": "1061-1576-3499-4428",
+      "role": "alias",
+      "cards": [],
+      "templates": [],
+      "features": 0
+    },
+    {
+      "id": "1061-1576-4428-5295",
+      "role": "alias",
+      "cards": [],
+      "templates": [],
+      "features": 0
+    }
+  ],
+  "records": [
+    {
+      "id": "1-1401-1786-6282",
+      "variant": null
+    },
+    {
+      "id": "1-1401-2275-6282",
+      "variant": null
+    },
+    {
+      "id": "1061-1576-3499-4428",
+      "variant": "1061-1576-4428"
+    },
+    {
+      "id": "1061-1576-4428-5295",
+      "variant": "1061-1576-4428"
+    }
+  ]
+}

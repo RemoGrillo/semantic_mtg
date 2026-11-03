@@ -1,0 +1,12 @@
+# SYNTHETIC invalid fixture — not source data.
+# why: a printing must belong to exactly one set
+# expect: A printing belongs to exactly one set.
+@prefix smtg: <https://w3id.org/smtg/ontology#> .
+@prefix x: <https://w3id.org/smtg/id/synthetic/> .
+@prefix v: <https://w3id.org/smtg/vocab/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+x:p1 a smtg:CardPrinting ; smtg:isPrintingOf x:o1 ; smtg:collectorNumber "1" ;
+  smtg:inLanguage <https://w3id.org/smtg/vocab/language/en> ; smtg:hasPrintedFace x:p1f0 .
+x:o1 a smtg:OracleCard .
+x:p1f0 a smtg:PrintedFace .

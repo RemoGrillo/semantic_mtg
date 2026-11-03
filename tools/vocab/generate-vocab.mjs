@@ -165,6 +165,7 @@ function concept(schemeId, code, cls, { label, def, alt = [], notation = code, c
     ['a', `smtg:${cls}`],
     ['skos:inScheme', iri(V + schemeId)],
     ['skos:prefLabel', en(label ?? code)],
+    ['rdfs:label', en(label ?? code)],
     ...alt.map((a) => ['skos:altLabel', en(a)]),
     ['skos:notation', lit(notation)],
     ['skos:definition', def ? en(def) : undefined],

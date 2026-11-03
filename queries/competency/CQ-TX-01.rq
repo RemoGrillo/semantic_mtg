@@ -1,0 +1,16 @@
+# id: CQ-TX-01
+# title: Flavour text belongs to printings
+# question: Which different flavour texts appear on printings of the same Oracle card?
+# kind: SPARQL
+# expects: nonempty
+# modules: text-art, printings
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?name ?set ?flavor WHERE {
+  ?printing smtg:isPrintingOf/smtg:name ?name ; smtg:inSet/smtg:setCode ?set ; smtg:hasPrintedFace/smtg:hasPrintedText ?ft .
+  ?ft a smtg:FlavorText ; smtg:textValue ?flavor .
+} ORDER BY ?name ?set

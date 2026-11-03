@@ -1,0 +1,20 @@
+# id: CQ-ID-01
+# title: Localised printings of an Oracle card
+# question: Which printings of Lightning Bolt exist in Italian, and what name and rules text are printed on them?
+# kind: SPARQL
+# expects: nonempty
+# modules: cards, printings, text-art
+# note: Oracle card vs printing vs printed face vs text expression — four distinct levels in one join.
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?printing ?set ?printedName ?printedText WHERE {
+  ?card a smtg:OracleCard ; smtg:name "Lightning Bolt" .
+  ?printing smtg:isPrintingOf ?card ; smtg:inLanguage <https://w3id.org/smtg/vocab/language/it> ;
+            smtg:inSet/smtg:setCode ?set ; smtg:hasPrintedFace ?pf .
+  ?pf smtg:hasPrintedText ?n . ?n a smtg:PrintedName ; smtg:textValue ?printedName .
+  OPTIONAL { ?pf smtg:hasPrintedText ?t . ?t a smtg:PrintedRulesText ; smtg:textValue ?printedText . }
+}

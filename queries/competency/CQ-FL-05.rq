@@ -1,0 +1,15 @@
+# id: CQ-FL-05
+# title: Meld pairs
+# question: Which cards meld into which meld result?
+# kind: SPARQL
+# expects: nonempty
+# modules: cards
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT DISTINCT ?half ?result WHERE {
+  ?h smtg:meldsInto ?r . ?h smtg:name ?half . ?r smtg:name ?result .
+} ORDER BY ?half

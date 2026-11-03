@@ -1,0 +1,10 @@
+# SYNTHETIC invalid fixture — not source data.
+# why: face order must be explicit
+# expect: A face needs exactly one nonNegativeInteger faceIndex.
+@prefix smtg: <https://w3id.org/smtg/ontology#> .
+@prefix x: <https://w3id.org/smtg/id/synthetic/> .
+@prefix v: <https://w3id.org/smtg/vocab/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+x:o9 a smtg:OracleCard ; smtg:hasFace x:f9 .
+x:f9 a smtg:CardFace ; smtg:faceOf x:o9 ; smtg:name "Nameless Index" .

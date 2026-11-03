@@ -1,0 +1,2631 @@
+{
+  "generatedAt": "2026-11-03T11:16:18.218Z",
+  "sources": {
+    "oracle": {
+      "key": "scryfall:oracle_tags",
+      "file": "oracle-tags-20261103100032.jsonl.gz",
+      "url": "https://data.scryfall.io/oracle-tags/oracle-tags-20261103100032.jsonl.gz",
+      "bytes": 6098245,
+      "sha256": "23d94bab24a5e4a9376ddc66ae3018c215dac693455fecdf2be83e86a43c1e5e",
+      "sourceUpdatedAt": "2026-11-03T10:00:32.540+00:00",
+      "retrievedAt": "2026-11-03T10:47:11.264Z",
+      "sha256Verified": true
+    },
+    "art": {
+      "key": "scryfall:art_tags",
+      "file": "art-tags-20261103100113.jsonl.gz",
+      "url": "https://data.scryfall.io/art-tags/art-tags-20261103100113.jsonl.gz",
+      "bytes": 13300159,
+      "sha256": "9d963522897dbcf58e168a6cf4063bed908b87c2b0d7cd2bbce4557bd6d33d71",
+      "sourceUpdatedAt": "2026-11-03T10:01:13.387+00:00",
+      "retrievedAt": "2026-11-03T10:47:10.758Z",
+      "sha256Verified": true
+    }
+  },
+  "tagIdsSharedBetweenFiles": 0,
+  "oracle": {
+    "snapshot": {
+      "key": "scryfall:oracle_tags",
+      "file": "oracle-tags-20261103100032.jsonl.gz",
+      "url": "https://data.scryfall.io/oracle-tags/oracle-tags-20261103100032.jsonl.gz",
+      "bytes": 6098245,
+      "sha256": "23d94bab24a5e4a9376ddc66ae3018c215dac693455fecdf2be83e86a43c1e5e",
+      "sourceUpdatedAt": "2026-11-03T10:00:32.540+00:00",
+      "retrievedAt": "2026-11-03T10:47:11.264Z",
+      "sha256Verified": true
+    },
+    "tags": 4601,
+    "objects": {
+      "tag": 4601
+    },
+    "types": {
+      "oracle": 4601
+    },
+    "taggings": 239926,
+    "taggingKeys": {
+      "oracle_id": 239926,
+      "weight": 239926,
+      "annotation": 3389
+    },
+    "tagsWithZeroTaggings": 140,
+    "duplicateTaggingsWithinTag": 0,
+    "weights": {
+      "median": 239296,
+      "very_strong": 629,
+      "strong": 1
+    },
+    "taggingsWithAnnotation": 3389,
+    "distinctAnnotations": 2703,
+    "annotationSamples": [
+      {
+        "tag": "blood-artist-ability",
+        "oracle_id": "d2c6502d-fefd-4c9f-9d7b-6dfcc43316e1",
+        "weight": "median",
+        "annotation": "Blood Artist"
+      },
+      {
+        "tag": "uninspired",
+        "oracle_id": "2b204c47-1d9e-413d-b963-683918b45d2f",
+        "weight": "median",
+        "annotation": "Stonybrook Schoolmaster"
+      },
+      {
+        "tag": "seek-cast",
+        "oracle_id": "139efb5c-55a1-4890-9212-ac2e8ea4ee7d",
+        "weight": "median",
+        "annotation": "Proto-Seek"
+      }
+    ],
+    "tagsWithDescription": 1380,
+    "tagsWithAliases": 750,
+    "aliasesTotal": 857,
+    "aliasSamples": [
+      {
+        "slug": "tutor-creature-giant",
+        "aliases": [
+          "tutor-giant"
+        ]
+      },
+      {
+        "slug": "typal-fish",
+        "aliases": [
+          "tribal-fish"
+        ]
+      },
+      {
+        "slug": "tutor-enchantment-aura",
+        "aliases": [
+          "tutor-aura"
+        ]
+      },
+      {
+        "slug": "typal-reveler",
+        "aliases": [
+          "tribal-reveler"
+        ]
+      },
+      {
+        "slug": "freeze-permanent-any",
+        "aliases": [
+          "stun-permanent",
+          "stun-permanent-any",
+          "freeze-permanent",
+          "freeze-any",
+          "stun-any"
+        ]
+      }
+    ],
+    "labelDiffersFromSlug": 1273,
+    "labelDiffersFromSlugSamples": [
+      {
+        "label": "grave pact",
+        "slug": "grave-pact"
+      },
+      {
+        "label": "keywords matter",
+        "slug": "keywords-matter"
+      },
+      {
+        "label": "reminder text matters",
+        "slug": "reminder-text-matters"
+      },
+      {
+        "label": "activate from exile",
+        "slug": "activate-from-exile"
+      },
+      {
+        "label": "blood artist ability",
+        "slug": "blood-artist-ability"
+      }
+    ],
+    "parentCountHistogram": {
+      "0": 921,
+      "1": 2969,
+      "2": 575,
+      "3": 90,
+      "4": 26,
+      "5+": 20
+    },
+    "childCountHistogram": {
+      "0": 3898,
+      "1": 250,
+      "2": 169,
+      "3": 90,
+      "4": 43,
+      "5+": 151
+    },
+    "multiParentTags": 711,
+    "maxParents": 10,
+    "roots": 921,
+    "rootsSample": [
+      {
+        "slug": "cycle",
+        "label": "cycle",
+        "children": 1354,
+        "taggings": 0
+      },
+      {
+        "slug": "hate",
+        "label": "hate",
+        "children": 126,
+        "taggings": 0
+      },
+      {
+        "slug": "draft-signpost",
+        "label": "draft signpost",
+        "children": 79,
+        "taggings": 0
+      },
+      {
+        "slug": "tapland",
+        "label": "tapland",
+        "children": 62,
+        "taggings": 61
+      },
+      {
+        "slug": "face-commander",
+        "label": "face-commander",
+        "children": 34,
+        "taggings": 23
+      },
+      {
+        "slug": "card-names",
+        "label": "card names",
+        "children": 33,
+        "taggings": 0
+      },
+      {
+        "slug": "alt-commander",
+        "label": "alt-commander",
+        "children": 28,
+        "taggings": 32
+      },
+      {
+        "slug": "tutor",
+        "label": "tutor",
+        "children": 27,
+        "taggings": 0
+      },
+      {
+        "slug": "removal",
+        "label": "removal",
+        "children": 25,
+        "taggings": 0
+      },
+      {
+        "slug": "evasion",
+        "label": "evasion",
+        "children": 22,
+        "taggings": 4713
+      },
+      {
+        "slug": "conditional-tapland",
+        "label": "conditional tapland",
+        "children": 21,
+        "taggings": 21
+      },
+      {
+        "slug": "triggered-ability",
+        "label": "triggered ability",
+        "children": 21,
+        "taggings": 8066
+      },
+      {
+        "slug": "copy",
+        "label": "copy",
+        "children": 19,
+        "taggings": 7
+      },
+      {
+        "slug": "recursion",
+        "label": "recursion",
+        "children": 19,
+        "taggings": 0
+      },
+      {
+        "slug": "cost-reducer",
+        "label": "cost reducer",
+        "children": 17,
+        "taggings": 114
+      }
+    ],
+    "leaves": {
+      "byChildIds": 3898,
+      "byInverseOfParentIds": 3898
+    },
+    "depthHistogram": {
+      "0": 921,
+      "1": 2107,
+      "2": 1123,
+      "3": 353,
+      "4": 84,
+      "5": 7,
+      "6": 6
+    },
+    "maxDepth": 6,
+    "dag": {
+      "acyclic": true,
+      "tagsOnCycles": 0,
+      "sampleCycles": [],
+      "selfParent": []
+    },
+    "danglingParentIds": {
+      "count": 0,
+      "samples": []
+    },
+    "parentIdsInOtherTagFile": {
+      "count": 0,
+      "samples": []
+    },
+    "danglingChildIds": {
+      "count": 0,
+      "samples": []
+    },
+    "duplicateParentRefs": 0,
+    "childParentConsistency": {
+      "parentEdges": 4618,
+      "childEdges": 4618,
+      "inParentIdsNotInChildIds": 0,
+      "inChildIdsNotInParentIds": 0,
+      "exactInverse": true,
+      "samplesParentOnly": [],
+      "samplesChildOnly": []
+    },
+    "ancestorAssignmentsMaterialised": {
+      "note": "For every tagging (tag, target) and every direct parent P of tag: is (P, target) also an explicit tagging?",
+      "checks": 174755,
+      "parentAlsoAssigned": 0,
+      "share": 0
+    },
+    "topByTaggings": [
+      {
+        "slug": "activated-ability",
+        "label": "activated ability",
+        "taggings": 9235,
+        "parents": []
+      },
+      {
+        "slug": "triggered-ability",
+        "label": "triggered ability",
+        "taggings": 8066,
+        "parents": []
+      },
+      {
+        "slug": "spot-removal",
+        "label": "spot removal",
+        "taggings": 5541,
+        "parents": [
+          "removal"
+        ]
+      },
+      {
+        "slug": "single-target-instant-sorcery",
+        "label": "single target instant/sorcery",
+        "taggings": 4731,
+        "parents": []
+      },
+      {
+        "slug": "evasion",
+        "label": "evasion",
+        "taggings": 4713,
+        "parents": []
+      },
+      {
+        "slug": "alliteration",
+        "label": "alliteration",
+        "taggings": 4527,
+        "parents": [
+          "card names"
+        ]
+      },
+      {
+        "slug": "repeatable-crime",
+        "label": "repeatable crime",
+        "taggings": 3734,
+        "parents": []
+      },
+      {
+        "slug": "unique-type-line",
+        "label": "unique type line",
+        "taggings": 2314,
+        "parents": []
+      },
+      {
+        "slug": "intervening-if-clause",
+        "label": "intervening if clause",
+        "taggings": 2217,
+        "parents": [
+          "triggered ability"
+        ]
+      },
+      {
+        "slug": "gains-pp-counters",
+        "label": "gains pp counters",
+        "taggings": 2135,
+        "parents": []
+      },
+      {
+        "slug": "attack-trigger",
+        "label": "attack trigger",
+        "taggings": 2082,
+        "parents": [
+          "triggered ability"
+        ]
+      },
+      {
+        "slug": "removal-creature",
+        "label": "removal-creature",
+        "taggings": 1940,
+        "parents": [
+          "removal"
+        ]
+      },
+      {
+        "slug": "repeatable-removal",
+        "label": "repeatable removal",
+        "taggings": 1780,
+        "parents": [
+          "removal"
+        ]
+      },
+      {
+        "slug": "repeatable-pp-counters",
+        "label": "repeatable pp counters",
+        "taggings": 1763,
+        "parents": []
+      },
+      {
+        "slug": "removal-destroy",
+        "label": "removal-destroy",
+        "taggings": 1724,
+        "parents": [
+          "removal"
+        ]
+      }
+    ],
+    "multiParentExamples": [
+      {
+        "slug": "repeatable-pure-draw",
+        "label": "repeatable pure draw",
+        "taggings": 1443,
+        "parents": [
+          "pure draw",
+          "repeatable draw"
+        ]
+      },
+      {
+        "slug": "burn-creature",
+        "label": "burn creature",
+        "taggings": 1050,
+        "parents": [
+          "removal-burn",
+          "removal-creature"
+        ]
+      },
+      {
+        "slug": "burn-any",
+        "label": "burn any",
+        "taggings": 914,
+        "parents": [
+          "burn player",
+          "burn battle",
+          "burn planeswalker",
+          "burn creature"
+        ]
+      },
+      {
+        "slug": "discard",
+        "label": "discard",
+        "taggings": 575,
+        "parents": [
+          "hand disruption",
+          "black effect"
+        ]
+      },
+      {
+        "slug": "reanimate-creature",
+        "label": "reanimate-creature",
+        "taggings": 565,
+        "parents": [
+          "reanimate",
+          "recursion-creature"
+        ]
+      },
+      {
+        "slug": "castable-from-exile",
+        "label": "castable from exile",
+        "taggings": 433,
+        "parents": [
+          "castable from nonhand",
+          "unexile"
+        ]
+      },
+      {
+        "slug": "removal-nonland",
+        "label": "removal-nonland",
+        "taggings": 400,
+        "parents": [
+          "removal",
+          "removal-artifact",
+          "removal-enchantment",
+          "removal-creature",
+          "removal-planeswalker",
+          "removal-battle",
+          "removal-equipment",
+          "removal-aura",
+          "removal-spacecraft",
+          "removal-vehicle"
+        ]
+      },
+      {
+        "slug": "drain-life",
+        "label": "drain life",
+        "taggings": 398,
+        "parents": [
+          "lifegain",
+          "inverted effects"
+        ]
+      },
+      {
+        "slug": "burn-planeswalker",
+        "label": "burn planeswalker",
+        "taggings": 384,
+        "parents": [
+          "removal-burn",
+          "removal-planeswalker"
+        ]
+      },
+      {
+        "slug": "removal-bounce",
+        "label": "removal-bounce",
+        "taggings": 347,
+        "parents": [
+          "removal",
+          "bounce",
+          "blue effect"
+        ]
+      }
+    ],
+    "distinctTargets": 36449,
+    "tagsPerTargetHistogram": {
+      "1": 1166,
+      "2": 1835,
+      "3": 3153,
+      "5": 9146,
+      "10": 16840,
+      "20": 4223,
+      "50": 85,
+      "51+": 1
+    },
+    "fields": [
+      {
+        "path": "aliases",
+        "present": 4601,
+        "occurrences": 4601,
+        "nulls": 0,
+        "types": {
+          "array": 4601
+        },
+        "kind": "array",
+        "arrayLengths": {
+          "0": 3851,
+          "1": 665,
+          "2": 69,
+          "3": 13,
+          "4": 1,
+          "5": 1,
+          "6": 1
+        },
+        "byType": {
+          "oracle": 4601
+        }
+      },
+      {
+        "path": "aliases[]",
+        "present": 750,
+        "occurrences": 857,
+        "nulls": 0,
+        "types": {
+          "string": 857
+        },
+        "kind": "string",
+        "distinct": 857,
+        "topValues": [
+          [
+            "107.3f x card",
+            1
+          ],
+          [
+            "ability counter",
+            1
+          ],
+          [
+            "abu dual land",
+            1
+          ],
+          [
+            "acceleration",
+            1
+          ],
+          [
+            "additional upkeep",
+            1
+          ],
+          [
+            "affinity for spells in graveyard",
+            1
+          ],
+          [
+            "afterlife",
+            1
+          ],
+          [
+            "ageless entity",
+            1
+          ],
+          [
+            "alliance",
+            1
+          ],
+          [
+            "alternate-cost",
+            1
+          ],
+          [
+            "alternate-cost-pitch",
+            1
+          ],
+          [
+            "alternate-cost-tap-creature",
+            1
+          ],
+          [
+            "arena-only mechanics",
+            1
+          ],
+          [
+            "arrest",
+            1
+          ],
+          [
+            "artifact matters",
+            1
+          ],
+          [
+            "artifact removal",
+            1
+          ],
+          [
+            "assistant card",
+            1
+          ],
+          [
+            "assistant cards",
+            1
+          ],
+          [
+            "automatic win",
+            1
+          ],
+          [
+            "backbone",
+            1
+          ],
+          [
+            "banish with set mechanic",
+            1
+          ],
+          [
+            "bear with set mechanic",
+            1
+          ],
+          [
+            "beast within",
+            1
+          ],
+          [
+            "becomes artifact",
+            1
+          ],
+          [
+            "becomes aura",
+            1
+          ]
+        ],
+        "samples": [
+          "tutor-giant",
+          "tribal-fish",
+          "tutor-aura"
+        ],
+        "stringLength": {
+          "avg": 15.1,
+          "max": 32
+        },
+        "byType": {
+          "oracle": 750
+        }
+      },
+      {
+        "path": "child_ids",
+        "present": 4601,
+        "occurrences": 4601,
+        "nulls": 0,
+        "types": {
+          "array": 4601
+        },
+        "kind": "array",
+        "arrayLengths": {
+          "0": 3898,
+          "1": 250,
+          "2": 169,
+          "3": 90,
+          "4": 43,
+          "5": 35,
+          "6": 18,
+          "7": 18,
+          "8": 9,
+          "9": 7,
+          "10+": 64
+        },
+        "byType": {
+          "oracle": 4601
+        }
+      },
+      {
+        "path": "child_ids[]",
+        "present": 703,
+        "occurrences": 4618,
+        "nulls": 0,
+        "types": {
+          "string": 4618
+        },
+        "kind": "uuid",
+        "distinct": 3680,
+        "samples": [
+          "3bdbdc4b-3fc6-48c1-b959-aedcb5466aeb",
+          "33d9d89a-9a6f-4513-aa3f-cfc3e0d08490",
+          "8e93c98c-5715-49a4-9749-8007f3867e31"
+        ],
+        "stringLength": {
+          "avg": 36,
+          "max": 36
+        },
+        "byType": {
+          "oracle": 703
+        }
+      },
+      {
+        "path": "description",
+        "present": 4601,
+        "occurrences": 4601,
+        "nulls": 3221,
+        "types": {
+          "null": 3221,
+          "string": 1380
+        },
+        "kind": "text",
+        "distinct": 1380,
+        "samples": [
+          "Cards that tutor Giant cards.",
+          "Cards that tutor battle cards.",
+          "Cards that have abilities worded: \"whenever creature you contol dies, each opponent sacrifices a creature.\""
+        ],
+        "stringLength": {
+          "avg": 83.8,
+          "max": 280
+        },
+        "withNewlines": 5,
+        "byType": {
+          "oracle": 4601
+        }
+      },
+      {
+        "path": "id",
+        "present": 4601,
+        "occurrences": 4601,
+        "nulls": 0,
+        "types": {
+          "string": 4601
+        },
+        "kind": "uuid",
+        "distinct": 4601,
+        "samples": [
+          "00155182-3099-4742-be68-f8b4ea259d78",
+          "001a0b7a-9224-4e8d-8ee7-7895afc21b28",
+          "001b5d5f-2ce6-4377-9f51-a8dfd91835ae"
+        ],
+        "stringLength": {
+          "avg": 36,
+          "max": 36
+        },
+        "byType": {
+          "oracle": 4601
+        }
+      },
+      {
+        "path": "label",
+        "present": 4601,
+        "occurrences": 4601,
+        "nulls": 0,
+        "types": {
+          "string": 4601
+        },
+        "kind": "string",
+        "distinct": 4601,
+        "topValues": [
+          [
+            "40k model",
+            1
+          ],
+          [
+            "5c set mechanic commander",
+            1
+          ],
+          [
+            "ablative armor",
+            1
+          ],
+          [
+            "abrade",
+            1
+          ],
+          [
+            "absorb",
+            1
+          ],
+          [
+            "abyss",
+            1
+          ],
+          [
+            "activate from command zone",
+            1
+          ],
+          [
+            "activate from exile",
+            1
+          ],
+          [
+            "activate from graveyard",
+            1
+          ],
+          [
+            "activate from hand",
+            1
+          ],
+          [
+            "activate from stack",
+            1
+          ],
+          [
+            "activated ability",
+            1
+          ],
+          [
+            "addendum",
+            1
+          ],
+          [
+            "additional cost",
+            1
+          ],
+          [
+            "adds multiple mana",
+            1
+          ],
+          [
+            "aesthetic counter",
+            1
+          ],
+          [
+            "affinity",
+            1
+          ],
+          [
+            "affinity for allies",
+            1
+          ],
+          [
+            "affinity for artifacts",
+            1
+          ],
+          [
+            "affinity for attacking",
+            1
+          ],
+          [
+            "affinity for birds",
+            1
+          ],
+          [
+            "affinity for cats",
+            1
+          ],
+          [
+            "affinity for caves",
+            1
+          ],
+          [
+            "affinity for citizens",
+            1
+          ],
+          [
+            "affinity for creature type",
+            1
+          ]
+        ],
+        "samples": [
+          "tutor-creature-giant",
+          "tutor-battle",
+          "cycle-cmr-artifact-partner"
+        ],
+        "stringLength": {
+          "avg": 17.5,
+          "max": 34
+        },
+        "byType": {
+          "oracle": 4601
+        }
+      },
+      {
+        "path": "object",
+        "present": 4601,
+        "occurrences": 4601,
+        "nulls": 0,
+        "types": {
+          "string": 4601
+        },
+        "kind": "enum",
+        "distinct": 1,
+        "topValues": [
+          [
+            "tag",
+            4601
+          ]
+        ],
+        "samples": [
+          "tag"
+        ],
+        "stringLength": {
+          "avg": 3,
+          "max": 3
+        },
+        "byType": {
+          "oracle": 4601
+        }
+      },
+      {
+        "path": "parent_ids",
+        "present": 4601,
+        "occurrences": 4601,
+        "nulls": 0,
+        "types": {
+          "array": 4601
+        },
+        "kind": "array",
+        "arrayLengths": {
+          "0": 921,
+          "1": 2969,
+          "2": 575,
+          "3": 90,
+          "4": 26,
+          "5": 12,
+          "6": 2,
+          "7": 2,
+          "9": 1,
+          "10+": 3
+        },
+        "byType": {
+          "oracle": 4601
+        }
+      },
+      {
+        "path": "parent_ids[]",
+        "present": 3680,
+        "occurrences": 4618,
+        "nulls": 0,
+        "types": {
+          "string": 4618
+        },
+        "kind": "uuid",
+        "distinct": 703,
+        "samples": [
+          "23fd5e7c-3ddc-49b0-818f-bd5fabb04d8f",
+          "c768d2ec-3264-4a90-a98f-bea8467857d3",
+          "1adda1a4-e23d-4212-a4da-58303a20e00c"
+        ],
+        "stringLength": {
+          "avg": 36,
+          "max": 36
+        },
+        "byType": {
+          "oracle": 3680
+        }
+      },
+      {
+        "path": "slug",
+        "present": 4601,
+        "occurrences": 4601,
+        "nulls": 0,
+        "types": {
+          "string": 4601
+        },
+        "kind": "string",
+        "distinct": 4601,
+        "topValues": [
+          [
+            "40k-model",
+            1
+          ],
+          [
+            "5c-set-mechanic-commander",
+            1
+          ],
+          [
+            "ablative-armor",
+            1
+          ],
+          [
+            "abrade",
+            1
+          ],
+          [
+            "absorb",
+            1
+          ],
+          [
+            "abyss",
+            1
+          ],
+          [
+            "activate-from-command-zone",
+            1
+          ],
+          [
+            "activate-from-exile",
+            1
+          ],
+          [
+            "activate-from-graveyard",
+            1
+          ],
+          [
+            "activate-from-hand",
+            1
+          ],
+          [
+            "activate-from-stack",
+            1
+          ],
+          [
+            "activated-ability",
+            1
+          ],
+          [
+            "addendum",
+            1
+          ],
+          [
+            "additional-cost",
+            1
+          ],
+          [
+            "adds-multiple-mana",
+            1
+          ],
+          [
+            "aesthetic-counter",
+            1
+          ],
+          [
+            "affinity",
+            1
+          ],
+          [
+            "affinity-for-allies",
+            1
+          ],
+          [
+            "affinity-for-artifacts",
+            1
+          ],
+          [
+            "affinity-for-attacking",
+            1
+          ],
+          [
+            "affinity-for-birds",
+            1
+          ],
+          [
+            "affinity-for-cats",
+            1
+          ],
+          [
+            "affinity-for-caves",
+            1
+          ],
+          [
+            "affinity-for-citizens",
+            1
+          ],
+          [
+            "affinity-for-creature-type",
+            1
+          ]
+        ],
+        "samples": [
+          "tutor-creature-giant",
+          "tutor-battle",
+          "cycle-cmr-artifact-partner"
+        ],
+        "stringLength": {
+          "avg": 17.5,
+          "max": 34
+        },
+        "byType": {
+          "oracle": 4601
+        }
+      },
+      {
+        "path": "taggings",
+        "present": 4601,
+        "occurrences": 4601,
+        "nulls": 0,
+        "types": {
+          "array": 4601
+        },
+        "kind": "array",
+        "arrayLengths": {
+          "0": 140,
+          "1": 452,
+          "2": 224,
+          "3": 218,
+          "4": 216,
+          "5": 1246,
+          "6": 120,
+          "7": 86,
+          "8": 68,
+          "9": 60,
+          "10+": 1771
+        },
+        "byType": {
+          "oracle": 4601
+        }
+      },
+      {
+        "path": "taggings[]",
+        "present": 4461,
+        "occurrences": 239926,
+        "nulls": 0,
+        "types": {
+          "object": 239926
+        },
+        "kind": "object",
+        "byType": {
+          "oracle": 4461
+        }
+      },
+      {
+        "path": "taggings[].annotation",
+        "present": 474,
+        "occurrences": 3389,
+        "nulls": 0,
+        "types": {
+          "string": 3389
+        },
+        "kind": "text",
+        "distinct": 2703,
+        "samples": [
+          "Blood Artist",
+          "Stonybrook Schoolmaster",
+          "Proto-Seek"
+        ],
+        "stringLength": {
+          "avg": 41,
+          "max": 204
+        },
+        "withNewlines": 1,
+        "byType": {
+          "oracle": 474
+        }
+      },
+      {
+        "path": "taggings[].oracle_id",
+        "present": 4461,
+        "occurrences": 239926,
+        "nulls": 0,
+        "types": {
+          "string": 239926
+        },
+        "kind": "uuid",
+        "distinct": 5000,
+        "distinctCapped": true,
+        "samples": [
+          "2445e58b-87ed-4ab2-8209-a5e1f566fba7",
+          "fe84933e-d98f-4cbc-b272-387a80894e31",
+          "4feca1da-dcc8-440c-8933-bab91782b015"
+        ],
+        "stringLength": {
+          "avg": 36,
+          "max": 36
+        },
+        "byType": {
+          "oracle": 4461
+        }
+      },
+      {
+        "path": "taggings[].weight",
+        "present": 4461,
+        "occurrences": 239926,
+        "nulls": 0,
+        "types": {
+          "string": 239926
+        },
+        "kind": "enum",
+        "distinct": 3,
+        "topValues": [
+          [
+            "median",
+            239296
+          ],
+          [
+            "very_strong",
+            629
+          ],
+          [
+            "strong",
+            1
+          ]
+        ],
+        "samples": [
+          "median",
+          "very_strong",
+          "strong"
+        ],
+        "stringLength": {
+          "avg": 6,
+          "max": 11
+        },
+        "byType": {
+          "oracle": 4461
+        }
+      },
+      {
+        "path": "type",
+        "present": 4601,
+        "occurrences": 4601,
+        "nulls": 0,
+        "types": {
+          "string": 4601
+        },
+        "kind": "enum",
+        "distinct": 1,
+        "topValues": [
+          [
+            "oracle",
+            4601
+          ]
+        ],
+        "samples": [
+          "oracle"
+        ],
+        "stringLength": {
+          "avg": 6,
+          "max": 6
+        },
+        "byType": {
+          "oracle": 4601
+        }
+      },
+      {
+        "path": "uri",
+        "present": 4601,
+        "occurrences": 4601,
+        "nulls": 0,
+        "types": {
+          "string": 4601
+        },
+        "kind": "url",
+        "distinct": 4601,
+        "samples": [
+          "https://tagger.scryfall.com/tags/card/tutor-creature-giant",
+          "https://tagger.scryfall.com/tags/card/tutor-battle",
+          "https://tagger.scryfall.com/tags/card/cycle-cmr-artifact-partner"
+        ],
+        "stringLength": {
+          "avg": 55.5,
+          "max": 72
+        },
+        "byType": {
+          "oracle": 4601
+        }
+      }
+    ]
+  },
+  "art": {
+    "snapshot": {
+      "key": "scryfall:art_tags",
+      "file": "art-tags-20261103100113.jsonl.gz",
+      "url": "https://data.scryfall.io/art-tags/art-tags-20261103100113.jsonl.gz",
+      "bytes": 13300159,
+      "sha256": "9d963522897dbcf58e168a6cf4063bed908b87c2b0d7cd2bbce4557bd6d33d71",
+      "sourceUpdatedAt": "2026-11-03T10:01:13.387+00:00",
+      "retrievedAt": "2026-11-03T10:47:10.758Z",
+      "sha256Verified": true
+    },
+    "tags": 11828,
+    "objects": {
+      "tag": 11828
+    },
+    "types": {
+      "illustration": 11828
+    },
+    "taggings": 505125,
+    "taggingKeys": {
+      "illustration_id": 505125,
+      "weight": 505125,
+      "annotation": 5432
+    },
+    "tagsWithZeroTaggings": 254,
+    "duplicateTaggingsWithinTag": 0,
+    "weights": {
+      "median": 491612,
+      "strong": 6072,
+      "weak": 4718,
+      "very_strong": 2723
+    },
+    "taggingsWithAnnotation": 5432,
+    "distinctAnnotations": 3369,
+    "annotationSamples": [
+      {
+        "tag": "second-sun",
+        "illustration_id": "9496e654-b1b9-429e-872d-ea2d3e3a2ae6",
+        "weight": "median",
+        "annotation": "Partially behind a tree; to the left of the horns."
+      },
+      {
+        "tag": "minfilia-warde",
+        "illustration_id": "d8c26d1e-4bfc-4d1d-a53d-4093e4986e06",
+        "weight": "median",
+        "annotation": "Depending on when this image is supposed to take place, this could be Minfilia inhabiting the body of who would later be called Ryne"
+      },
+      {
+        "tag": "minfilia-warde",
+        "illustration_id": "89324993-717e-43d2-b3a6-a05d27094c9a",
+        "weight": "weak",
+        "annotation": "Possesing the body of Ryne."
+      }
+    ],
+    "tagsWithDescription": 1973,
+    "tagsWithAliases": 1101,
+    "aliasesTotal": 1428,
+    "aliasSamples": [
+      {
+        "slug": "running",
+        "aliases": [
+          "run"
+        ]
+      },
+      {
+        "slug": "the-great-wave-off-kanagawa",
+        "aliases": [
+          "the great wave"
+        ]
+      },
+      {
+        "slug": "trumpet",
+        "aliases": [
+          "bugle"
+        ]
+      },
+      {
+        "slug": "jiang-yanggu",
+        "aliases": [
+          "yanggu"
+        ]
+      },
+      {
+        "slug": "grixis-origin",
+        "aliases": [
+          "grixian"
+        ]
+      }
+    ],
+    "labelDiffersFromSlug": 5208,
+    "labelDiffersFromSlugSamples": [
+      {
+        "label": "rashida scalebane",
+        "slug": "rashida-scalebane"
+      },
+      {
+        "label": "pink magic",
+        "slug": "pink-magic"
+      },
+      {
+        "label": "target orc",
+        "slug": "target-orc"
+      },
+      {
+        "label": "big red button",
+        "slug": "big-red-button"
+      },
+      {
+        "label": "cait sith",
+        "slug": "cait-sith"
+      }
+    ],
+    "parentCountHistogram": {
+      "0": 3232,
+      "1": 3474,
+      "2": 1712,
+      "3": 1069,
+      "4": 1649,
+      "5+": 692
+    },
+    "childCountHistogram": {
+      "0": 10034,
+      "1": 685,
+      "2": 304,
+      "3": 135,
+      "4": 101,
+      "5+": 569
+    },
+    "multiParentTags": 5122,
+    "maxParents": 8,
+    "roots": 3232,
+    "rootsSample": [
+      {
+        "slug": "character",
+        "label": "character",
+        "children": 3104,
+        "taggings": 0
+      },
+      {
+        "slug": "male",
+        "label": "male",
+        "children": 1784,
+        "taggings": 3634
+      },
+      {
+        "slug": "female",
+        "label": "female",
+        "children": 1147,
+        "taggings": 4775
+      },
+      {
+        "slug": "location",
+        "label": "location",
+        "children": 328,
+        "taggings": 0
+      },
+      {
+        "slug": "person-of-color",
+        "label": "person of color",
+        "children": 191,
+        "taggings": 986
+      },
+      {
+        "slug": "panorama",
+        "label": "panorama",
+        "children": 161,
+        "taggings": 0
+      },
+      {
+        "slug": "humanoid",
+        "label": "humanoid",
+        "children": 136,
+        "taggings": 142
+      },
+      {
+        "slug": "superhero",
+        "label": "superhero",
+        "children": 123,
+        "taggings": 7
+      },
+      {
+        "slug": "animal",
+        "label": "animal",
+        "children": 121,
+        "taggings": 0
+      },
+      {
+        "slug": "mutant",
+        "label": "mutant",
+        "children": 118,
+        "taggings": 101
+      },
+      {
+        "slug": "supervillain",
+        "label": "supervillain",
+        "children": 116,
+        "taggings": 2
+      },
+      {
+        "slug": "clothing",
+        "label": "clothing",
+        "children": 84,
+        "taggings": 0
+      },
+      {
+        "slug": "plane",
+        "label": "plane",
+        "children": 72,
+        "taggings": 0
+      },
+      {
+        "slug": "pose",
+        "label": "pose",
+        "children": 70,
+        "taggings": 0
+      },
+      {
+        "slug": "weapon",
+        "label": "weapon",
+        "children": 66,
+        "taggings": 8
+      }
+    ],
+    "leaves": {
+      "byChildIds": 10034,
+      "byInverseOfParentIds": 10034
+    },
+    "depthHistogram": {
+      "0": 3232,
+      "1": 1808,
+      "2": 3632,
+      "3": 2219,
+      "4": 713,
+      "5": 166,
+      "6": 40,
+      "7": 15,
+      "8": 2,
+      "9": 1
+    },
+    "maxDepth": 9,
+    "dag": {
+      "acyclic": true,
+      "tagsOnCycles": 0,
+      "sampleCycles": [],
+      "selfParent": []
+    },
+    "danglingParentIds": {
+      "count": 0,
+      "samples": []
+    },
+    "parentIdsInOtherTagFile": {
+      "count": 0,
+      "samples": []
+    },
+    "danglingChildIds": {
+      "count": 0,
+      "samples": []
+    },
+    "duplicateParentRefs": 0,
+    "childParentConsistency": {
+      "parentEdges": 20278,
+      "childEdges": 20278,
+      "inParentIdsNotInChildIds": 0,
+      "inChildIdsNotInParentIds": 0,
+      "exactInverse": true,
+      "samplesParentOnly": [],
+      "samplesChildOnly": []
+    },
+    "ancestorAssignmentsMaterialised": {
+      "note": "For every tagging (tag, target) and every direct parent P of tag: is (P, target) also an explicit tagging?",
+      "checks": 402225,
+      "parentAlsoAssigned": 0,
+      "share": 0
+    },
+    "topByTaggings": [
+      {
+        "slug": "digital-painting",
+        "label": "digital painting",
+        "taggings": 14060,
+        "parents": [
+          "art media"
+        ]
+      },
+      {
+        "slug": "artist-signature",
+        "label": "artist signature",
+        "taggings": 9272,
+        "parents": [
+          "signature"
+        ]
+      },
+      {
+        "slug": "solo",
+        "label": "solo",
+        "taggings": 9000,
+        "parents": []
+      },
+      {
+        "slug": "loose-lips",
+        "label": "loose lips",
+        "taggings": 6506,
+        "parents": []
+      },
+      {
+        "slug": "human",
+        "label": "human",
+        "taggings": 6353,
+        "parents": [
+          "humanoid"
+        ]
+      },
+      {
+        "slug": "tail",
+        "label": "tail",
+        "taggings": 4834,
+        "parents": []
+      },
+      {
+        "slug": "female",
+        "label": "female",
+        "taggings": 4775,
+        "parents": []
+      },
+      {
+        "slug": "dominaria-origin",
+        "label": "dominaria (origin)",
+        "taggings": 4372,
+        "parents": [
+          "planar origin"
+        ]
+      },
+      {
+        "slug": "oil-paint",
+        "label": "oil paint",
+        "taggings": 3912,
+        "parents": [
+          "art media"
+        ]
+      },
+      {
+        "slug": "male",
+        "label": "male",
+        "taggings": 3634,
+        "parents": []
+      },
+      {
+        "slug": "tree",
+        "label": "tree",
+        "taggings": 3432,
+        "parents": [
+          "plant"
+        ]
+      },
+      {
+        "slug": "sword",
+        "label": "sword",
+        "taggings": 3366,
+        "parents": [
+          "weapon",
+          "blade"
+        ]
+      },
+      {
+        "slug": "smile",
+        "label": "smile",
+        "taggings": 3320,
+        "parents": []
+      },
+      {
+        "slug": "two-figures",
+        "label": "two figures",
+        "taggings": 3242,
+        "parents": []
+      },
+      {
+        "slug": "dominaria",
+        "label": "dominaria",
+        "taggings": 3146,
+        "parents": [
+          "plane"
+        ]
+      }
+    ],
+    "multiParentExamples": [
+      {
+        "slug": "sword",
+        "label": "sword",
+        "taggings": 3366,
+        "parents": [
+          "weapon",
+          "blade"
+        ]
+      },
+      {
+        "slug": "cloudy-sky",
+        "label": "cloudy sky",
+        "taggings": 2208,
+        "parents": [
+          "sky",
+          "cloud"
+        ]
+      },
+      {
+        "slug": "glowing-eye",
+        "label": "glowing eye",
+        "taggings": 1756,
+        "parents": [
+          "eye",
+          "glow"
+        ]
+      },
+      {
+        "slug": "helmet",
+        "label": "helmet",
+        "taggings": 1366,
+        "parents": [
+          "armor",
+          "hat"
+        ]
+      },
+      {
+        "slug": "otaria",
+        "label": "otaria",
+        "taggings": 1227,
+        "parents": [
+          "dominaria",
+          "location"
+        ]
+      },
+      {
+        "slug": "terisiare",
+        "label": "terisiare",
+        "taggings": 1055,
+        "parents": [
+          "dominaria",
+          "location"
+        ]
+      },
+      {
+        "slug": "dagger",
+        "label": "dagger",
+        "taggings": 1039,
+        "parents": [
+          "weapon",
+          "blade"
+        ]
+      },
+      {
+        "slug": "hand-outstretched",
+        "label": "hand outstretched",
+        "taggings": 1035,
+        "parents": [
+          "hand",
+          "pose"
+        ]
+      },
+      {
+        "slug": "pauldron",
+        "label": "pauldron",
+        "taggings": 1005,
+        "parents": [
+          "armor",
+          "shoulder pad"
+        ]
+      },
+      {
+        "slug": "axe",
+        "label": "axe",
+        "taggings": 933,
+        "parents": [
+          "weapon",
+          "blade"
+        ]
+      }
+    ],
+    "distinctTargets": 54010,
+    "tagsPerTargetHistogram": {
+      "1": 257,
+      "2": 623,
+      "3": 1436,
+      "5": 6728,
+      "10": 27159,
+      "20": 16769,
+      "50": 1037,
+      "51+": 1
+    },
+    "fields": [
+      {
+        "path": "aliases",
+        "present": 11828,
+        "occurrences": 11828,
+        "nulls": 0,
+        "types": {
+          "array": 11828
+        },
+        "kind": "array",
+        "arrayLengths": {
+          "0": 10727,
+          "1": 882,
+          "2": 141,
+          "3": 59,
+          "4": 10,
+          "5": 7,
+          "6": 2
+        },
+        "byType": {
+          "illustration": 11828
+        }
+      },
+      {
+        "path": "aliases[]",
+        "present": 1101,
+        "occurrences": 1428,
+        "nulls": 0,
+        "types": {
+          "string": 1428
+        },
+        "kind": "string",
+        "distinct": 1428,
+        "topValues": [
+          [
+            "2 people",
+            1
+          ],
+          [
+            "3 legs",
+            1
+          ],
+          [
+            "3 people",
+            1
+          ],
+          [
+            "3d glasses",
+            1
+          ],
+          [
+            "4 legs",
+            1
+          ],
+          [
+            "8-ball (marvel)",
+            1
+          ],
+          [
+            "8472",
+            1
+          ],
+          [
+            "absolute territory",
+            1
+          ],
+          [
+            "abzan house",
+            1
+          ],
+          [
+            "abzan houses",
+            1
+          ],
+          [
+            "ace",
+            1
+          ],
+          [
+            "actor aang",
+            1
+          ],
+          [
+            "actor azula",
+            1
+          ],
+          [
+            "actor katara",
+            1
+          ],
+          [
+            "adeptus sororita",
+            1
+          ],
+          [
+            "admiral janeway",
+            1
+          ],
+          [
+            "admiral zhao",
+            1
+          ],
+          [
+            "aerial perspective",
+            1
+          ],
+          [
+            "aetherspark",
+            1
+          ],
+          [
+            "agatha's soul cauldron",
+            1
+          ],
+          [
+            "age of sigmar",
+            1
+          ],
+          [
+            "agent bishop",
+            1
+          ],
+          [
+            "agent daniels",
+            1
+          ],
+          [
+            "aid",
+            1
+          ],
+          [
+            "aim",
+            1
+          ]
+        ],
+        "samples": [
+          "run",
+          "the great wave",
+          "bugle"
+        ],
+        "stringLength": {
+          "avg": 10.6,
+          "max": 35
+        },
+        "byType": {
+          "illustration": 1101
+        }
+      },
+      {
+        "path": "child_ids",
+        "present": 11828,
+        "occurrences": 11828,
+        "nulls": 0,
+        "types": {
+          "array": 11828
+        },
+        "kind": "array",
+        "arrayLengths": {
+          "0": 10034,
+          "1": 685,
+          "2": 304,
+          "3": 135,
+          "4": 101,
+          "5": 98,
+          "6": 81,
+          "7": 50,
+          "8": 48,
+          "9": 26,
+          "10+": 266
+        },
+        "byType": {
+          "illustration": 11828
+        }
+      },
+      {
+        "path": "child_ids[]",
+        "present": 1794,
+        "occurrences": 20278,
+        "nulls": 0,
+        "types": {
+          "string": 20278
+        },
+        "kind": "uuid",
+        "distinct": 5000,
+        "distinctCapped": true,
+        "samples": [
+          "f07aac6e-28e5-478c-9609-dc8aa794525d",
+          "113b3f6e-a385-4839-8aab-22fc0c67d65d",
+          "0d13a9e2-2dd6-4e2e-a549-0cffefc4b8be"
+        ],
+        "stringLength": {
+          "avg": 36,
+          "max": 36
+        },
+        "byType": {
+          "illustration": 1794
+        }
+      },
+      {
+        "path": "description",
+        "present": 11828,
+        "occurrences": 11828,
+        "nulls": 9855,
+        "types": {
+          "null": 9855,
+          "string": 1973
+        },
+        "kind": "text",
+        "distinct": 1951,
+        "samples": [
+          "One of the ten realms of Kaldheim, land of dwarves.",
+          "Not to be confused with the Baghdad in [Rabiah](rabiah).",
+          "Starfleet's science division is identifiable by their blue uniforms—except in the [Enterprise](star-trek-enterprise) an…"
+        ],
+        "stringLength": {
+          "avg": 68.7,
+          "max": 278
+        },
+        "withNewlines": 11,
+        "byType": {
+          "illustration": 11828
+        }
+      },
+      {
+        "path": "id",
+        "present": 11828,
+        "occurrences": 11828,
+        "nulls": 0,
+        "types": {
+          "string": 11828
+        },
+        "kind": "uuid",
+        "distinct": 5000,
+        "distinctCapped": true,
+        "samples": [
+          "0000e92e-5afb-4790-9875-e8f06bd9ed06",
+          "00026ad2-e3a8-4298-a4f0-1f3d9bb24947",
+          "0009a55c-89a8-402e-9b90-52b6e7ce2012"
+        ],
+        "stringLength": {
+          "avg": 36,
+          "max": 36
+        },
+        "byType": {
+          "illustration": 11828
+        }
+      },
+      {
+        "path": "label",
+        "present": 11828,
+        "occurrences": 11828,
+        "nulls": 0,
+        "types": {
+          "string": 11828
+        },
+        "kind": "string",
+        "distinct": 5000,
+        "distinctCapped": true,
+        "topValues": [
+          [
+            "a town called christmas",
+            1
+          ],
+          [
+            "aang",
+            1
+          ],
+          [
+            "aardvark",
+            1
+          ],
+          [
+            "abeir-toril",
+            1
+          ],
+          [
+            "aboleth",
+            1
+          ],
+          [
+            "abraham van helsing",
+            1
+          ],
+          [
+            "abseiling",
+            1
+          ],
+          [
+            "absorbing man",
+            1
+          ],
+          [
+            "abu ja'far",
+            1
+          ],
+          [
+            "academic cap",
+            1
+          ],
+          [
+            "academy",
+            1
+          ],
+          [
+            "accident",
+            1
+          ],
+          [
+            "accordion",
+            1
+          ],
+          [
+            "ace (doctor who)",
+            1
+          ],
+          [
+            "ace duck",
+            1
+          ],
+          [
+            "achilles davenport",
+            1
+          ],
+          [
+            "acid",
+            1
+          ],
+          [
+            "acorn",
+            1
+          ],
+          [
+            "acornelia",
+            1
+          ],
+          [
+            "acoustic guitar",
+            1
+          ],
+          [
+            "acrobat",
+            1
+          ],
+          [
+            "actor iroh",
+            1
+          ],
+          [
+            "adan",
+            1
+          ],
+          [
+            "adarkar",
+            1
+          ],
+          [
+            "adeptus mechanicus",
+            1
+          ]
+        ],
+        "topValuesApproximate": true,
+        "samples": [
+          "rashida scalebane",
+          "juri",
+          "bayo"
+        ],
+        "stringLength": {
+          "avg": 10.2,
+          "max": 33
+        },
+        "byType": {
+          "illustration": 11828
+        }
+      },
+      {
+        "path": "object",
+        "present": 11828,
+        "occurrences": 11828,
+        "nulls": 0,
+        "types": {
+          "string": 11828
+        },
+        "kind": "enum",
+        "distinct": 1,
+        "topValues": [
+          [
+            "tag",
+            11828
+          ]
+        ],
+        "samples": [
+          "tag"
+        ],
+        "stringLength": {
+          "avg": 3,
+          "max": 3
+        },
+        "byType": {
+          "illustration": 11828
+        }
+      },
+      {
+        "path": "parent_ids",
+        "present": 11828,
+        "occurrences": 11828,
+        "nulls": 0,
+        "types": {
+          "array": 11828
+        },
+        "kind": "array",
+        "arrayLengths": {
+          "0": 3232,
+          "1": 3474,
+          "2": 1712,
+          "3": 1069,
+          "4": 1649,
+          "5": 589,
+          "6": 90,
+          "7": 12,
+          "8": 1
+        },
+        "byType": {
+          "illustration": 11828
+        }
+      },
+      {
+        "path": "parent_ids[]",
+        "present": 8596,
+        "occurrences": 20278,
+        "nulls": 0,
+        "types": {
+          "string": 20278
+        },
+        "kind": "uuid",
+        "distinct": 1794,
+        "samples": [
+          "7b155ecc-bd5e-4757-bde2-c029b6978bad",
+          "986aa664-5247-44e9-a161-ccabfa0897db",
+          "b8ad94e6-a042-49ff-bf9e-b963ade6e176"
+        ],
+        "stringLength": {
+          "avg": 36,
+          "max": 36
+        },
+        "byType": {
+          "illustration": 8596
+        }
+      },
+      {
+        "path": "slug",
+        "present": 11828,
+        "occurrences": 11828,
+        "nulls": 0,
+        "types": {
+          "string": 11828
+        },
+        "kind": "string",
+        "distinct": 5000,
+        "distinctCapped": true,
+        "topValues": [
+          [
+            "a-town-called-christmas",
+            1
+          ],
+          [
+            "aang",
+            1
+          ],
+          [
+            "aardvark",
+            1
+          ],
+          [
+            "abeir-toril",
+            1
+          ],
+          [
+            "aboleth",
+            1
+          ],
+          [
+            "abraham-van-helsing",
+            1
+          ],
+          [
+            "abseiling",
+            1
+          ],
+          [
+            "absorbing-man",
+            1
+          ],
+          [
+            "abu-ja-far",
+            1
+          ],
+          [
+            "academic-cap",
+            1
+          ],
+          [
+            "academy",
+            1
+          ],
+          [
+            "accident",
+            1
+          ],
+          [
+            "accordion",
+            1
+          ],
+          [
+            "ace-doctor-who",
+            1
+          ],
+          [
+            "ace-duck",
+            1
+          ],
+          [
+            "achilles-davenport",
+            1
+          ],
+          [
+            "acid",
+            1
+          ],
+          [
+            "acorn",
+            1
+          ],
+          [
+            "acornelia",
+            1
+          ],
+          [
+            "acoustic-guitar",
+            1
+          ],
+          [
+            "acrobat",
+            1
+          ],
+          [
+            "actor-iroh",
+            1
+          ],
+          [
+            "adan",
+            1
+          ],
+          [
+            "adarkar",
+            1
+          ],
+          [
+            "adeptus-mechanicus",
+            1
+          ]
+        ],
+        "topValuesApproximate": true,
+        "samples": [
+          "rashida-scalebane",
+          "juri",
+          "bayo"
+        ],
+        "stringLength": {
+          "avg": 10.1,
+          "max": 33
+        },
+        "byType": {
+          "illustration": 11828
+        }
+      },
+      {
+        "path": "taggings",
+        "present": 11828,
+        "occurrences": 11828,
+        "nulls": 0,
+        "types": {
+          "array": 11828
+        },
+        "kind": "array",
+        "arrayLengths": {
+          "0": 254,
+          "1": 2514,
+          "2": 1617,
+          "3": 962,
+          "4": 695,
+          "5": 486,
+          "6": 423,
+          "7": 308,
+          "8": 274,
+          "9": 246,
+          "10+": 4049
+        },
+        "byType": {
+          "illustration": 11828
+        }
+      },
+      {
+        "path": "taggings[]",
+        "present": 11574,
+        "occurrences": 505125,
+        "nulls": 0,
+        "types": {
+          "object": 505125
+        },
+        "kind": "object",
+        "byType": {
+          "illustration": 11574
+        }
+      },
+      {
+        "path": "taggings[].annotation",
+        "present": 1472,
+        "occurrences": 5432,
+        "nulls": 0,
+        "types": {
+          "string": 5432
+        },
+        "kind": "string",
+        "distinct": 3369,
+        "topValues": [
+          [
+            "Bottom right",
+            278
+          ],
+          [
+            "ArtStation",
+            241
+          ],
+          [
+            "Bottom left",
+            218
+          ],
+          [
+            "lower right",
+            110
+          ],
+          [
+            "Instagram",
+            104
+          ],
+          [
+            "lower left",
+            68
+          ],
+          [
+            "Includes a clue to a Murders at Karlov Manor ARG puzzle.",
+            67
+          ],
+          [
+            "Gouache, acrylic and colored pencil, then finished digitally",
+            44
+          ],
+          [
+            "Digital color",
+            40
+          ],
+          [
+            "bottom right",
+            36
+          ],
+          [
+            "Top left",
+            30
+          ],
+          [
+            "Bottom right of center",
+            26
+          ],
+          [
+            "Bottom center",
+            25
+          ],
+          [
+            "Top right",
+            21
+          ],
+          [
+            "Under the text box",
+            21
+          ],
+          [
+            "The 3x6 panorama can be viewed row by row following the collector numbers.",
+            17
+          ],
+          [
+            "Gold leaf",
+            16
+          ],
+          [
+            "bottom right corner",
+            14
+          ],
+          [
+            "Under text box",
+            13
+          ],
+          [
+            "bottom left",
+            12
+          ],
+          [
+            "Tagged Digital 2D, Traditional, and Mixed Media on ArtStation",
+            12
+          ],
+          [
+            "Oil and gold leaf",
+            11
+          ],
+          [
+            "Bottom left of center",
+            10
+          ],
+          [
+            "Collage + ink jet",
+            10
+          ],
+          [
+            "Ink with digital color",
+            10
+          ]
+        ],
+        "samples": [
+          "Partially behind a tree; to the left of the horns.",
+          "Depending on when this image is supposed to take place, this could be Minfilia inhabiting the body of who would later b…",
+          "Possesing the body of Ryne."
+        ],
+        "stringLength": {
+          "avg": 35.6,
+          "max": 150
+        },
+        "byType": {
+          "illustration": 1472
+        }
+      },
+      {
+        "path": "taggings[].illustration_id",
+        "present": 11574,
+        "occurrences": 505125,
+        "nulls": 0,
+        "types": {
+          "string": 505125
+        },
+        "kind": "uuid",
+        "distinct": 5000,
+        "distinctCapped": true,
+        "samples": [
+          "baa61cf8-613e-49d3-bfd8-246824b1536e",
+          "ba2e79a6-8983-473d-a69c-2c2f3a636efc",
+          "ad944d1b-cf17-4de1-a676-392dbc77026f"
+        ],
+        "stringLength": {
+          "avg": 36,
+          "max": 36
+        },
+        "byType": {
+          "illustration": 11574
+        }
+      },
+      {
+        "path": "taggings[].weight",
+        "present": 11574,
+        "occurrences": 505125,
+        "nulls": 0,
+        "types": {
+          "string": 505125
+        },
+        "kind": "enum",
+        "distinct": 4,
+        "topValues": [
+          [
+            "median",
+            491612
+          ],
+          [
+            "strong",
+            6072
+          ],
+          [
+            "weak",
+            4718
+          ],
+          [
+            "very_strong",
+            2723
+          ]
+        ],
+        "samples": [
+          "very_strong",
+          "strong",
+          "median"
+        ],
+        "stringLength": {
+          "avg": 6,
+          "max": 11
+        },
+        "byType": {
+          "illustration": 11574
+        }
+      },
+      {
+        "path": "type",
+        "present": 11828,
+        "occurrences": 11828,
+        "nulls": 0,
+        "types": {
+          "string": 11828
+        },
+        "kind": "enum",
+        "distinct": 1,
+        "topValues": [
+          [
+            "illustration",
+            11828
+          ]
+        ],
+        "samples": [
+          "illustration"
+        ],
+        "stringLength": {
+          "avg": 12,
+          "max": 12
+        },
+        "byType": {
+          "illustration": 11828
+        }
+      },
+      {
+        "path": "uri",
+        "present": 11828,
+        "occurrences": 11828,
+        "nulls": 0,
+        "types": {
+          "string": 11828
+        },
+        "kind": "url",
+        "distinct": 5000,
+        "distinctCapped": true,
+        "samples": [
+          "https://tagger.scryfall.com/tags/artwork/rashida-scalebane",
+          "https://tagger.scryfall.com/tags/artwork/juri",
+          "https://tagger.scryfall.com/tags/artwork/bayo"
+        ],
+        "stringLength": {
+          "avg": 51.1,
+          "max": 74
+        },
+        "byType": {
+          "illustration": 11828
+        }
+      }
+    ]
+  },
+  "crossCheck": {
+    "method": "Tagging targets compared to every oracle_id / illustration_id string (root or card_faces[]) in all_cards, and to root oracle ids in oracle_cards.",
+    "allCardsRecords": 547953,
+    "oracle": {
+      "distinctTargets": 36449,
+      "foundInAllCards": 36449,
+      "notFoundInAllCards": 0,
+      "notFoundSamples": [],
+      "foundAsOracleCardsRoot": 36449,
+      "foundOnlyAsFaceOracleIdInOracleCards": 0,
+      "allCardsOracleIdsWithAnyOracleTag": 36449,
+      "allCardsOracleIds": 39287
+    },
+    "art": {
+      "distinctTargets": 54010,
+      "foundInAllCards": 54010,
+      "notFoundInAllCards": 0,
+      "notFoundSamples": [],
+      "allCardsIllustrationIdsWithAnyArtTag": 54010,
+      "allCardsIllustrationIds": 57043
+    }
+  }
+}

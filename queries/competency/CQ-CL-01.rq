@@ -1,0 +1,18 @@
+# id: CQ-CL-01
+# title: Colour identity within a commander's colours
+# question: Which Oracle cards have a colour identity that fits inside an Esper (WUB) commander's identity?
+# kind: SPARQL
+# expects: nonempty
+# modules: cards, taxonomies
+# note: subCombinationOf is a true partial order, safe to traverse (contrast with Tagger parents).
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?name ?identity WHERE {
+  ?card a smtg:OracleCard ; smtg:name ?name ; smtg:hasColorIdentity ?ci .
+  ?ci smtg:subCombinationOf <https://w3id.org/smtg/vocab/color-combination/WUB> ; skos:prefLabel ?identity .
+  FILTER NOT EXISTS { ?card smtg:hasObjectKind ?k FILTER(?k != <https://w3id.org/smtg/vocab/object-kind/traditional-card>) }
+} ORDER BY ?identity ?name

@@ -1,0 +1,16 @@
+# id: CQ-TY-01
+# title: Subtypes with their scheme
+# question: For every creature face, which subtypes does it have and from which type-qualified scheme?
+# kind: SPARQL
+# expects: nonempty
+# modules: cards, taxonomies
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?faceName ?subtype ?scheme WHERE {
+  ?f smtg:hasCardType <https://w3id.org/smtg/vocab/card-type/creature> ; smtg:name ?faceName ; smtg:hasSubtype ?st .
+  ?st skos:prefLabel ?subtype ; skos:inScheme/rdfs:label ?scheme .
+} ORDER BY ?faceName ?subtype

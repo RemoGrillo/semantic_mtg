@@ -1,0 +1,350 @@
+{
+  "generatedAt": "2026-11-03T11:21:37.895Z",
+  "reasoner": "hermit",
+  "steps": [
+    {
+      "name": "merge TBox via owl:imports closure",
+      "ok": true,
+      "modules": 15,
+      "log": ""
+    },
+    {
+      "name": "TBox reasoning (hermit): consistent, no unsatisfiable classes",
+      "ok": true,
+      "log": ""
+    },
+    {
+      "name": "TBox + example ABox consistent",
+      "ok": true,
+      "log": ""
+    },
+    {
+      "name": "negative OWL test adventure-and-mdfc.ttl is inconsistent",
+      "ok": true
+    },
+    {
+      "name": "negative OWL test printing-is-oracle-card.ttl is inconsistent",
+      "ok": true
+    },
+    {
+      "name": "ROBOT report generated",
+      "ok": true,
+      "byRule": {
+        "ERROR duplicate_label": 125,
+        "ERROR missing_label": 48,
+        "WARN missing_definition": 330,
+        "INFO missing_superclass": 25
+      }
+    }
+  ],
+  "consistent": true,
+  "unsatisfiable": [],
+  "aboxConsistent": true,
+  "negative": [
+    {
+      "file": "fixtures/invalid-owl/adventure-and-mdfc.ttl",
+      "inconsistentAsExpected": true,
+      "log": [
+        "2026-11-03 12:22:09,509 ERROR org.obolibrary.robot.ReasonerHelper - The ontology is inconsistent. TIP: use a tool like Protege to find explanations"
+      ]
+    },
+    {
+      "file": "fixtures/invalid-owl/printing-is-oracle-card.ttl",
+      "inconsistentAsExpected": true,
+      "log": [
+        "2026-11-03 12:22:12,969 ERROR org.obolibrary.robot.ReasonerHelper - The ontology is inconsistent. TIP: use a tool like Protege to find explanations"
+      ]
+    }
+  ],
+  "report": {
+    "rows": 528,
+    "byRule": {
+      "ERROR duplicate_label": 125,
+      "ERROR missing_label": 48,
+      "WARN missing_definition": 330,
+      "INFO missing_superclass": 25
+    },
+    "sample": [
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/border-color/white",
+        "rdfs:label",
+        "White@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/color/W",
+        "rdfs:label",
+        "White@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/card-type/vanguard",
+        "rdfs:label",
+        "Vanguard@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/layout/vanguard",
+        "rdfs:label",
+        "Vanguard@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/object-kind/vanguard",
+        "rdfs:label",
+        "Vanguard@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/set-type/vanguard",
+        "rdfs:label",
+        "Vanguard@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/artifact-type/treasure",
+        "rdfs:label",
+        "Treasure@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/keyword-action/treasure",
+        "rdfs:label",
+        "Treasure@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/keyword-action/transform",
+        "rdfs:label",
+        "Transform@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/layout/transform",
+        "rdfs:label",
+        "Transform@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/flavor-word/top-of-the-food-chain",
+        "rdfs:label",
+        "Top of the Food Chain@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/flavor-word/top-of-the-food-chain__2",
+        "rdfs:label",
+        "Top of the Food Chain@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/layout/token",
+        "rdfs:label",
+        "Token@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/object-kind/token",
+        "rdfs:label",
+        "Token@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/part-component/token",
+        "rdfs:label",
+        "Token@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/set-type/token",
+        "rdfs:label",
+        "Token@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/supertype/token",
+        "rdfs:label",
+        "Token@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/flavor-word/thunder",
+        "rdfs:label",
+        "Thunder@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/other-subtype/thunder",
+        "rdfs:label",
+        "Thunder@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/other-subtype/tarkir",
+        "rdfs:label",
+        "Tarkir@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/watermark/tarkir",
+        "rdfs:label",
+        "Tarkir@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/frame-effect/surgefoil",
+        "rdfs:label",
+        "Surgefoil@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/promo-type/surgefoil",
+        "rdfs:label",
+        "Surgefoil@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/frame-effect/spree",
+        "rdfs:label",
+        "Spree@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/keyword-ability/spree",
+        "rdfs:label",
+        "Spree@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/flavor-word/split",
+        "rdfs:label",
+        "Split@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/layout/split",
+        "rdfs:label",
+        "Split@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/frame-effect/snow",
+        "rdfs:label",
+        "Snow@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/supertype/snow",
+        "rdfs:label",
+        "Snow@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/ontology#MtgSet",
+        "rdfs:label",
+        "Set@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/watermark/set",
+        "rdfs:label",
+        "Set@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/card-type/scheme",
+        "rdfs:label",
+        "Scheme@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/layout/scheme",
+        "rdfs:label",
+        "Scheme@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/object-kind/scheme",
+        "rdfs:label",
+        "Scheme@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/enchantment-type/saga",
+        "rdfs:label",
+        "Saga@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/layout/saga",
+        "rdfs:label",
+        "Saga@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/keyword-ability/prototype",
+        "rdfs:label",
+        "Prototype@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/layout/prototype",
+        "rdfs:label",
+        "Prototype@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/card-type/planeswalker",
+        "rdfs:label",
+        "Planeswalker@en"
+      ],
+      [
+        "ERROR",
+        "duplicate_label",
+        "https://w3id.org/smtg/vocab/watermark/planeswalker",
+        "rdfs:label",
+        "Planeswalker@en"
+      ]
+    ]
+  }
+}

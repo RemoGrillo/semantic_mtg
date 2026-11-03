@@ -1,0 +1,980 @@
+{
+  "slug": "transform-dfc",
+  "purpose": "Tagger tags assigned to the cards/illustrations of fixtures/scryfall/transform-dfc.json, plus the full parent chain of each tag.",
+  "selector": "oracle_tags: taggings[].oracle_id ∈ fixture oracle ids; art_tags: taggings[].illustration_id ∈ fixture illustration ids. Per target, tags sorted by (tagging has annotation / non-median weight first, tag has parents first, slug) and capped at 15 oracle / 10 art tags. Ancestors = transitive closure over parent_ids. taggings[] filtered to the fixture targets. Available per target: edd531b9…: 8 oracle tags; 1c2fee9b…: 15 art tags; c2b5f731…: 7 art tags.",
+  "note": "Tag records are the original Tagger objects except: (1) taggings[] is FILTERED (see selector) and the fixture-added key `taggingsTotal` gives the unfiltered count; (2) child_ids[] is filtered to tags present in this file and the fixture-added key `childIdsTotal` gives the unfiltered count. parent_ids[] is complete: every ancestor is included, so the file is a closed sub-hierarchy in which child_ids is still the exact inverse of parent_ids. `taggingsTotal` and `childIdsTotal` are NOT source fields.",
+  "source": {
+    "key": "scryfall:oracle_tags",
+    "file": "oracle-tags-20261103100032.jsonl.gz",
+    "sha256": "23d94bab24a5e4a9376ddc66ae3018c215dac693455fecdf2be83e86a43c1e5e",
+    "sourceUpdatedAt": "2026-11-03T10:00:32.540+00:00"
+  },
+  "extraSources": [
+    {
+      "key": "scryfall:art_tags",
+      "file": "art-tags-20261103100113.jsonl.gz",
+      "sha256": "9d963522897dbcf58e168a6cf4063bed908b87c2b0d7cd2bbce4557bd6d33d71",
+      "sourceUpdatedAt": "2026-11-03T10:01:13.387+00:00"
+    }
+  ],
+  "targets": [
+    "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+    "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+    "c2b5f731-771b-4949-90f3-0ad40d676100"
+  ],
+  "recordIndex": [
+    {
+      "id": "f55a5d7c-7c74-4142-aa21-10971152aa10",
+      "slug": "cycle-inr-delver",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+      "parents": 1
+    },
+    {
+      "id": "76817e41-7a85-4245-b493-7d0181242854",
+      "slug": "cycle-mid-alt-transform",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+      "parents": 1
+    },
+    {
+      "id": "68a5c081-8ebc-480a-8afc-d7bea07a7e8f",
+      "slug": "peek-library",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+      "parents": 1
+    },
+    {
+      "id": "c7756471-d290-452f-bfc6-24866c841f28",
+      "slug": "evasion",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+      "parents": 0
+    },
+    {
+      "id": "643c76a4-7481-4105-9a00-f523cf984056",
+      "slug": "synergy-instant",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+      "parents": 0
+    },
+    {
+      "id": "8babb8fc-230a-4a2f-b948-722402e7d6d9",
+      "slug": "synergy-sorcery",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+      "parents": 0
+    },
+    {
+      "id": "5db159b8-366a-49ec-a169-83e60490c551",
+      "slug": "top-matters",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+      "parents": 0
+    },
+    {
+      "id": "4d7fc833-e0af-4022-b298-6a9c99a56ac1",
+      "slug": "triggered-ability",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "assigned-oracle-tag",
+      "for": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+      "parents": 0
+    },
+    {
+      "id": "fd968114-b88d-4ff8-b589-d0fc3d0f2632",
+      "slug": "mantis",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+      "parents": 1
+    },
+    {
+      "id": "58ad3ed0-8165-473b-8942-ae0c722c98a3",
+      "slug": "beetle",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+      "parents": 1
+    },
+    {
+      "id": "32c331aa-b544-4296-b24a-142246904081",
+      "slug": "butterfly",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+      "parents": 1
+    },
+    {
+      "id": "986aa664-5247-44e9-a161-ccabfa0897db",
+      "slug": "human",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+      "parents": 1
+    },
+    {
+      "id": "10edc314-1565-4e06-86af-db4378482e64",
+      "slug": "innistrad",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+      "parents": 1
+    },
+    {
+      "id": "8526301a-6ad6-46a0-93eb-8e3fb61da951",
+      "slug": "robe",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+      "parents": 1
+    },
+    {
+      "id": "93749f93-e3a1-40f3-8d8f-6884306295ee",
+      "slug": "vial",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+      "parents": 1
+    },
+    {
+      "id": "227c9a17-d350-4b1e-b53b-39a454e50ed8",
+      "slug": "bald",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+      "parents": 0
+    },
+    {
+      "id": "5ff5b95c-ebe1-47b3-98bc-a55d5fe7aeb9",
+      "slug": "bird-cage",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+      "parents": 0
+    },
+    {
+      "id": "5c298b65-b2fc-4c93-b5cd-e274c7f25f1b",
+      "slug": "cage",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+      "parents": 0
+    },
+    {
+      "id": "15051b34-f72d-4f53-b26c-fb76699c100b",
+      "slug": "bug",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c2b5f731-771b-4949-90f3-0ad40d676100",
+      "parents": 1
+    },
+    {
+      "id": "48b23aed-77b3-4b10-aa28-f7ffa43659a8",
+      "slug": "body-horror",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c2b5f731-771b-4949-90f3-0ad40d676100",
+      "parents": 0
+    },
+    {
+      "id": "b1e93d89-3f55-4fdd-a6aa-e7edfe3973fc",
+      "slug": "laboratory",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c2b5f731-771b-4949-90f3-0ad40d676100",
+      "parents": 0
+    },
+    {
+      "id": "d5bb11db-fb7b-4fa9-954b-46c9986f7780",
+      "slug": "transformation",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c2b5f731-771b-4949-90f3-0ad40d676100",
+      "parents": 0
+    },
+    {
+      "id": "32035413-f38b-4ad8-8230-53251e8f965e",
+      "slug": "wing",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "assigned-art-tag",
+      "for": "c2b5f731-771b-4949-90f3-0ad40d676100",
+      "parents": 0
+    },
+    {
+      "id": "32e84266-800f-427c-9b9e-d0138c7491db",
+      "slug": "animal",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "48991205-43ef-40ee-b2aa-471b97e1c40c",
+      "slug": "bottle",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 1
+    },
+    {
+      "id": "9fe7fa00-c601-43f0-a530-85ca7f4d6b44",
+      "slug": "clothing",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "a1aad32d-2a04-4f9e-b558-d6d924c8379b",
+      "slug": "container",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "4d6023b4-bb31-4e43-a41b-05814561e850",
+      "slug": "humanoid",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa",
+      "slug": "plane",
+      "type": "illustration",
+      "sourceKey": "scryfall:art_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "1adda1a4-e23d-4212-a4da-58303a20e00c",
+      "slug": "cycle",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "f7f1c8d4-9cbf-4001-9dfa-ce018132bf0b",
+      "slug": "peek",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 0
+    },
+    {
+      "id": "4d7412d3-1d3b-478e-a3c6-028a2a4c17b0",
+      "slug": "vertical-cycle",
+      "type": "oracle",
+      "sourceKey": "scryfall:oracle_tags",
+      "role": "ancestor",
+      "parents": 1
+    }
+  ],
+  "records": [
+    {
+      "object": "tag",
+      "id": "f55a5d7c-7c74-4142-aa21-10971152aa10",
+      "label": "cycle-inr-delver",
+      "slug": "cycle-inr-delver",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/cycle-inr-delver",
+      "description": "Mega vertical cycle of one researchers descent into madness, reprinted together for the first time in INR",
+      "parent_ids": [
+        "4d7412d3-1d3b-478e-a3c6-028a2a4c17b0"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 3,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "76817e41-7a85-4245-b493-7d0181242854",
+      "label": "cycle-mid-alt-transform",
+      "slug": "cycle-mid-alt-transform",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/cycle-mid-alt-transform",
+      "description": null,
+      "parent_ids": [
+        "1adda1a4-e23d-4212-a4da-58303a20e00c"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 5,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "68a5c081-8ebc-480a-8afc-d7bea07a7e8f",
+      "label": "peek-library",
+      "slug": "peek-library",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/peek-library",
+      "description": "Look at some number of cards from the top of libraries",
+      "parent_ids": [
+        "f7f1c8d4-9cbf-4001-9dfa-ce018132bf0b"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "spy library"
+      ],
+      "taggings": [
+        {
+          "oracle_id": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 66,
+      "childIdsTotal": 7
+    },
+    {
+      "object": "tag",
+      "id": "c7756471-d290-452f-bfc6-24866c841f28",
+      "label": "evasion",
+      "slug": "evasion",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/evasion",
+      "description": "Creatures that are harder to block through keywords (flying, menace) or other means.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 4713,
+      "childIdsTotal": 22
+    },
+    {
+      "object": "tag",
+      "id": "643c76a4-7481-4105-9a00-f523cf984056",
+      "label": "synergy-instant",
+      "slug": "synergy-instant",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/synergy-instant",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 472,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "8babb8fc-230a-4a2f-b948-722402e7d6d9",
+      "label": "synergy-sorcery",
+      "slug": "synergy-sorcery",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/synergy-sorcery",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 470,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "5db159b8-366a-49ec-a169-83e60490c551",
+      "label": "top matters",
+      "slug": "top-matters",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/top-matters",
+      "description": "The top card of your library matters for purposes other than playing it or drawing it.",
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 92,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "4d7fc833-e0af-4022-b298-6a9c99a56ac1",
+      "label": "triggered ability",
+      "slug": "triggered-ability",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/triggered-ability",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "oracle_id": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 8066,
+      "childIdsTotal": 21
+    },
+    {
+      "object": "tag",
+      "id": "fd968114-b88d-4ff8-b589-d0fc3d0f2632",
+      "label": "mantis",
+      "slug": "mantis",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/mantis",
+      "description": null,
+      "parent_ids": [
+        "15051b34-f72d-4f53-b26c-fb76699c100b"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+          "weight": "strong"
+        }
+      ],
+      "taggingsTotal": 16,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "58ad3ed0-8165-473b-8942-ae0c722c98a3",
+      "label": "beetle",
+      "slug": "beetle",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/beetle",
+      "description": null,
+      "parent_ids": [
+        "15051b34-f72d-4f53-b26c-fb76699c100b"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 100,
+      "childIdsTotal": 4
+    },
+    {
+      "object": "tag",
+      "id": "32c331aa-b544-4296-b24a-142246904081",
+      "label": "butterfly",
+      "slug": "butterfly",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/butterfly",
+      "description": null,
+      "parent_ids": [
+        "15051b34-f72d-4f53-b26c-fb76699c100b"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 176,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "986aa664-5247-44e9-a161-ccabfa0897db",
+      "label": "human",
+      "slug": "human",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/human",
+      "description": null,
+      "parent_ids": [
+        "4d6023b4-bb31-4e43-a41b-05814561e850"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 6353,
+      "childIdsTotal": 1434
+    },
+    {
+      "object": "tag",
+      "id": "10edc314-1565-4e06-86af-db4378482e64",
+      "label": "innistrad",
+      "slug": "innistrad",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/innistrad",
+      "description": null,
+      "parent_ids": [
+        "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa"
+      ],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "c2b5f731-771b-4949-90f3-0ad40d676100",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 2846,
+      "childIdsTotal": 5
+    },
+    {
+      "object": "tag",
+      "id": "8526301a-6ad6-46a0-93eb-8e3fb61da951",
+      "label": "robe",
+      "slug": "robe",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/robe",
+      "description": null,
+      "parent_ids": [
+        "9fe7fa00-c601-43f0-a530-85ca7f4d6b44"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "hat robe"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 401,
+      "childIdsTotal": 6
+    },
+    {
+      "object": "tag",
+      "id": "93749f93-e3a1-40f3-8d8f-6884306295ee",
+      "label": "vial",
+      "slug": "vial",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/vial",
+      "description": "A glass container or test tube.",
+      "parent_ids": [
+        "48991205-43ef-40ee-b2aa-471b97e1c40c"
+      ],
+      "child_ids": [],
+      "aliases": [
+        "flask",
+        "test tube"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 281,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "227c9a17-d350-4b1e-b53b-39a454e50ed8",
+      "label": "bald",
+      "slug": "bald",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/bald",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "bald head",
+        "no hair"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 813,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "5ff5b95c-ebe1-47b3-98bc-a55d5fe7aeb9",
+      "label": "bird cage",
+      "slug": "bird-cage",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/bird-cage",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "c2b5f731-771b-4949-90f3-0ad40d676100",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 23,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "5c298b65-b2fc-4c93-b5cd-e274c7f25f1b",
+      "label": "cage",
+      "slug": "cage",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/cage",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 82,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "15051b34-f72d-4f53-b26c-fb76699c100b",
+      "label": "bug",
+      "slug": "bug",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/bug",
+      "description": null,
+      "parent_ids": [
+        "32e84266-800f-427c-9b9e-d0138c7491db"
+      ],
+      "child_ids": [
+        "fd968114-b88d-4ff8-b589-d0fc3d0f2632",
+        "58ad3ed0-8165-473b-8942-ae0c722c98a3",
+        "32c331aa-b544-4296-b24a-142246904081"
+      ],
+      "aliases": [
+        "insect"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "c2b5f731-771b-4949-90f3-0ad40d676100",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 200,
+      "childIdsTotal": 31
+    },
+    {
+      "object": "tag",
+      "id": "48b23aed-77b3-4b10-aa28-f7ffa43659a8",
+      "label": "body horror",
+      "slug": "body-horror",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/body-horror",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "c2b5f731-771b-4949-90f3-0ad40d676100",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 233,
+      "childIdsTotal": 2
+    },
+    {
+      "object": "tag",
+      "id": "b1e93d89-3f55-4fdd-a6aa-e7edfe3973fc",
+      "label": "laboratory",
+      "slug": "laboratory",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/laboratory",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "lab"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "1c2fee9b-89ea-4ab1-a751-451c3cd65a88",
+          "weight": "median"
+        },
+        {
+          "illustration_id": "c2b5f731-771b-4949-90f3-0ad40d676100",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 166,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "d5bb11db-fb7b-4fa9-954b-46c9986f7780",
+      "label": "transformation",
+      "slug": "transformation",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/transformation",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [],
+      "taggings": [
+        {
+          "illustration_id": "c2b5f731-771b-4949-90f3-0ad40d676100",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 129,
+      "childIdsTotal": 0
+    },
+    {
+      "object": "tag",
+      "id": "32035413-f38b-4ad8-8230-53251e8f965e",
+      "label": "wing",
+      "slug": "wing",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/wing",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [],
+      "aliases": [
+        "wings"
+      ],
+      "taggings": [
+        {
+          "illustration_id": "c2b5f731-771b-4949-90f3-0ad40d676100",
+          "weight": "median"
+        }
+      ],
+      "taggingsTotal": 3077,
+      "childIdsTotal": 16
+    },
+    {
+      "object": "tag",
+      "id": "32e84266-800f-427c-9b9e-d0138c7491db",
+      "label": "animal",
+      "slug": "animal",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/animal",
+      "description": null,
+      "parent_ids": [],
+      "child_ids": [
+        "15051b34-f72d-4f53-b26c-fb76699c100b"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 121
+    },
+    {
+      "object": "tag",
+      "id": "48991205-43ef-40ee-b2aa-471b97e1c40c",
+      "label": "bottle",
+      "slug": "bottle",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/bottle",
+      "description": null,
+      "parent_ids": [
+        "a1aad32d-2a04-4f9e-b558-d6d924c8379b"
+      ],
+      "child_ids": [
+        "93749f93-e3a1-40f3-8d8f-6884306295ee"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 182,
+      "childIdsTotal": 4
+    },
+    {
+      "object": "tag",
+      "id": "9fe7fa00-c601-43f0-a530-85ca7f4d6b44",
+      "label": "clothing",
+      "slug": "clothing",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/clothing",
+      "description": "Tags describing varieties of clothing.",
+      "parent_ids": [],
+      "child_ids": [
+        "8526301a-6ad6-46a0-93eb-8e3fb61da951"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 84
+    },
+    {
+      "object": "tag",
+      "id": "a1aad32d-2a04-4f9e-b558-d6d924c8379b",
+      "label": "container",
+      "slug": "container",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/container",
+      "description": "Things designed to hold other things.",
+      "parent_ids": [],
+      "child_ids": [
+        "48991205-43ef-40ee-b2aa-471b97e1c40c"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 28
+    },
+    {
+      "object": "tag",
+      "id": "4d6023b4-bb31-4e43-a41b-05814561e850",
+      "label": "humanoid",
+      "slug": "humanoid",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/humanoid",
+      "description": "Beings shaped like humans. For critters that look similar to humans but aren't necessarily shaped like one, see [anthropomorphic](anthropomorphic).",
+      "parent_ids": [],
+      "child_ids": [
+        "986aa664-5247-44e9-a161-ccabfa0897db"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 142,
+      "childIdsTotal": 136
+    },
+    {
+      "object": "tag",
+      "id": "0ba2639c-7fa4-4bf5-acc7-39f16e1753aa",
+      "label": "plane",
+      "slug": "plane",
+      "type": "illustration",
+      "uri": "https://tagger.scryfall.com/tags/artwork/plane",
+      "description": "A collection of art tags that relate to specific planes.",
+      "parent_ids": [],
+      "child_ids": [
+        "10edc314-1565-4e06-86af-db4378482e64"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 72
+    },
+    {
+      "object": "tag",
+      "id": "1adda1a4-e23d-4212-a4da-58303a20e00c",
+      "label": "cycle",
+      "slug": "cycle",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/cycle",
+      "description": "All the cycles from Magic history.",
+      "parent_ids": [],
+      "child_ids": [
+        "76817e41-7a85-4245-b493-7d0181242854",
+        "4d7412d3-1d3b-478e-a3c6-028a2a4c17b0"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 1354
+    },
+    {
+      "object": "tag",
+      "id": "f7f1c8d4-9cbf-4001-9dfa-ce018132bf0b",
+      "label": "peek",
+      "slug": "peek",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/peek",
+      "description": "Cards that give you access to hidden information (Yours or other players)",
+      "parent_ids": [],
+      "child_ids": [
+        "68a5c081-8ebc-480a-8afc-d7bea07a7e8f"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 3
+    },
+    {
+      "object": "tag",
+      "id": "4d7412d3-1d3b-478e-a3c6-028a2a4c17b0",
+      "label": "vertical-cycle",
+      "slug": "vertical-cycle",
+      "type": "oracle",
+      "uri": "https://tagger.scryfall.com/tags/card/vertical-cycle",
+      "description": "Cycles where the cards are in different states of progressions, usually by increasing costs, effects, and/or colors.",
+      "parent_ids": [
+        "1adda1a4-e23d-4212-a4da-58303a20e00c"
+      ],
+      "child_ids": [
+        "f55a5d7c-7c74-4142-aa21-10971152aa10"
+      ],
+      "aliases": [],
+      "taggings": [],
+      "taggingsTotal": 0,
+      "childIdsTotal": 44
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+# SYNTHETIC invalid fixture — not source data.
+# why: art tags are assigned to illustrations, never to Oracle cards
+# expect: An art tag is assigned to an illustration
+@prefix smtg: <https://w3id.org/smtg/ontology#> .
+@prefix x: <https://w3id.org/smtg/id/synthetic/> .
+@prefix v: <https://w3id.org/smtg/vocab/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+x:t1 a smtg:ArtTag ; <http://www.w3.org/2004/02/skos/core#prefLabel> "dragon"@en ;
+  <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/smtg/vocab/tagger-art-tags> .
+x:o3 a smtg:OracleCard .
+x:a1 a smtg:ArtTagAssignment ; smtg:assignedTag x:t1 ; smtg:assignmentTarget x:o3 ;
+  smtg:claimedBy <https://w3id.org/smtg/id/agent/tagger-community> ;
+  smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/community-curated> .

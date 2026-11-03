@@ -1,0 +1,564 @@
+{
+  "note": "Words in English type lines that are not in the Scryfall supertype/card-type/subtype catalogs. Not dropped: unknown subtypes become smtg:OtherSubtype concepts; non-type words (e.g. Token) are reported here for review (RQ-TY-2).",
+  "snapshot": "data/raw/scryfall/all_cards/all-cards-20261103102350.jsonl.gz",
+  "typeWords": {
+    "Card": 6350,
+    "Stickers": 54,
+    "Tribal": 4,
+    "Summon": 17,
+    "Host": 29,
+    "Wolf": 2,
+    "Licid": 1,
+    "Elemental": 2,
+    "Eaturecray": 1,
+    "Dragon": 3,
+    "Poly": 1,
+    "instant": 1,
+    "pLAnE": 1,
+    "Jaguar": 2,
+    "Knights": 1,
+    "Goblin": 1,
+    "Phenome-nom": 1,
+    "Universewalker": 1,
+    "Scariest": 1,
+    "You'll": 1,
+    "Ever": 1,
+    "See": 1,
+    "Legend": 1
+  },
+  "subtypes": {
+    "Dominaria": {
+      "Plane": 18
+    },
+    "Ergamon": {
+      "Plane": 3
+    },
+    "Innistrad": {
+      "Plane": 11
+    },
+    "Cyborg": {
+      "Artifact Creature": 23
+    },
+    "Koala": {
+      "Creature": 1
+    },
+    "Luvion": {
+      "Plane": 3
+    },
+    "Kyneth": {
+      "Plane": 2
+    },
+    "Las": {
+      "Plane": 6
+    },
+    "Vegas": {
+      "Plane": 6
+    },
+    "Ixalan": {
+      "Plane": 3
+    },
+    "Lorwyn": {
+      "Plane": 9
+    },
+    "Barnyard": {
+      "Land": 1
+    },
+    "Rabiah": {
+      "Plane": 2
+    },
+    "Realm": {
+      "Enchantment": 1,
+      "Plane": 4
+    },
+    "Mirrodin": {
+      "Plane": 8
+    },
+    "Moag": {
+      "Plane": 2
+    },
+    "Athlete": {
+      "Creature": 5
+    },
+    "Designer": {
+      "Creature": 5
+    },
+    "Donkey": {
+      "Creature": 7
+    },
+    "Ulgrotha": {
+      "Plane": 2
+    },
+    "Hatificer": {
+      "Creature": 4
+    },
+    "Avishkar": {
+      "Plane": 2
+    },
+    "Control": {
+      "Battle": 2
+    },
+    "Point": {
+      "Battle": 2
+    },
+    "Kephalai": {
+      "Plane": 2
+    },
+    "Kamigawa": {
+      "Plane": 11
+    },
+    "Karsus": {
+      "Plane": 3
+    },
+    "Gallifrey": {
+      "Plane": 3
+    },
+    "MagicCon": {
+      "Plane": 9
+    },
+    "Mongseng": {
+      "Plane": 3
+    },
+    "Mime": {
+      "Creature": 3,
+      "Artifact Creature": 2
+    },
+    "Rath": {
+      "Plane": 3
+    },
+    "Judge": {
+      "Creature": 2
+    },
+    "The": {
+      "Plane": 3,
+      "Creature": 1
+    },
+    "Asylum": {
+      "Plane": 1
+    },
+    "Alara": {
+      "Plane": 12
+    },
+    "Zendikar": {
+      "Plane": 10
+    },
+    "New": {
+      "Plane": 6
+    },
+    "Phyrexia": {
+      "Plane": 7
+    },
+    "Clamfolk": {
+      "Creature": 5
+    },
+    "Muraganda": {
+      "Plane": 2
+    },
+    "Human?": {
+      "Creature": 1
+    },
+    "Eldraine": {
+      "Plane": 2
+    },
+    "Killbot": {
+      "Artifact Creature": 4
+    },
+    "Grandchild": {
+      "Creature": 2
+    },
+    "Mars": {
+      "Plane": 2
+    },
+    "Trenzalore": {
+      "Plane": 1
+    },
+    "Artist": {
+      "Creature": 3
+    },
+    "Kaldheim": {
+      "Plane": 3
+    },
+    "Ravnica": {
+      "Plane": 18
+    },
+    "Vibranium": {
+      "Artifact": 2
+    },
+    "Equilor": {
+      "Plane": 5
+    },
+    "Belenon": {
+      "Plane": 4
+    },
+    "Earth": {
+      "Plane": 13
+    },
+    "Undercity": {
+      "Dungeon": 2
+    },
+    "Arkhos": {
+      "Plane": 2
+    },
+    "Shandalar": {
+      "Plane": 4
+    },
+    "Key": {
+      "Artifact": 2
+    },
+    "Chameleon": {
+      "Creature": 2
+    },
+    "Foldaria": {
+      "Plane": 1
+    },
+    "Segovia": {
+      "Plane": 2
+    },
+    "Wildfire": {
+      "Plane": 2
+    },
+    "Cow": {
+      "Creature": 3
+    },
+    "Fire": {
+      "Instant": 2
+    },
+    "Bloomburrow": {
+      "Plane": 1
+    },
+    "Igpay": {
+      "(none)": 1
+    },
+    "Iquatana": {
+      "Plane": 3
+    },
+    "Blind": {
+      "Plane": 1
+    },
+    "Eternities": {
+      "Plane": 1
+    },
+    "Apalapucia": {
+      "Plane": 1
+    },
+    "Valla": {
+      "Plane": 2
+    },
+    "Omenpath": {
+      "Land": 1
+    },
+    "Townsfolk": {
+      "Creature": 2
+    },
+    "Duskmourn": {
+      "Plane": 2
+    },
+    "Kylem": {
+      "Plane": 1
+    },
+    "Lander": {
+      "Artifact": 5,
+      "Artifact Creature": 1
+    },
+    "Gobakhan": {
+      "Plane": 1
+    },
+    "Tarkir": {
+      "Plane": 1
+    },
+    "Outside": {
+      "Plane": 1
+    },
+    "Mutter's": {
+      "Plane": 1
+    },
+    "Spiral": {
+      "Plane": 1
+    },
+    "Bureaucrat": {
+      "Creature": 3
+    },
+    "Serra's": {
+      "Plane": 2
+    },
+    "Secret": {
+      "Plane": 9,
+      "Conspiracy": 1
+    },
+    "Kandoka": {
+      "Plane": 1
+    },
+    "Regatha": {
+      "Plane": 2
+    },
+    "Skaro": {
+      "Plane": 1
+    },
+    "Gargantikar": {
+      "Plane": 1
+    },
+    "Bolas's": {
+      "Plane": 2
+    },
+    "Meditation": {
+      "Plane": 2
+    },
+    "Alicorn": {
+      "Creature": 3
+    },
+    "Unknown": {
+      "Plane": 1
+    },
+    "Kolbahan": {
+      "Plane": 2
+    },
+    "Thunder": {
+      "Plane": 2
+    },
+    "Junction": {
+      "Plane": 2
+    },
+    "Xerex": {
+      "Plane": 3
+    },
+    "Paratrooper": {
+      "Creature": 1
+    },
+    "Amsterdam": {
+      "Plane": 3
+    },
+    "Pyrulea": {
+      "Plane": 3
+    },
+    "Chicago": {
+      "Plane": 8
+    },
+    "Wrestler": {
+      "Creature": 2
+    },
+    "Horsehead": {
+      "Plane": 1
+    },
+    "Nebula": {
+      "Plane": 1
+    },
+    "Mutagen": {
+      "Artifact": 1
+    },
+    "Foundations": {
+      "Plane": 1
+    },
+    "sECreT": {
+      "(none)": 1
+    },
+    "LaIR": {
+      "(none)": 1
+    },
+    "Arcavios": {
+      "Plane": 1
+    },
+    "Cridhe": {
+      "Plane": 1
+    },
+    "Spuzzem": {
+      "Creature": 1
+    },
+    "Zhalfir": {
+      "Plane": 1
+    },
+    "Ir": {
+      "Plane": 3
+    },
+    "Waiter": {
+      "Creature": 2
+    },
+    "Elemental?": {
+      "Creature": 2
+    },
+    "Lady": {
+      "Creature": 1
+    },
+    "of": {
+      "Creature": 1
+    },
+    "Proper": {
+      "Creature": 1
+    },
+    "Etiquette": {
+      "Creature": 1
+    },
+    "Time": {
+      "Plane": 1
+    },
+    "Vengeance": {
+      "Sorcery": 1
+    },
+    "Fabacin": {
+      "Plane": 3
+    },
+    "Champion": {
+      "Artifact Creature": 1
+    },
+    "Amonkhet": {
+      "Plane": 1
+    },
+    "Hell": {
+      "Plane": 1
+    },
+    "Androzani": {
+      "Plane": 1
+    },
+    "Minor": {
+      "Plane": 1
+    },
+    "Alfava": {
+      "Plane": 1
+    },
+    "Metraxis": {
+      "Plane": 1
+    },
+    "Armored": {
+      "Creature": 1
+    },
+    "Hawk": {
+      "Creature": 1
+    },
+    "Ikoria": {
+      "Plane": 1
+    },
+    "Mercadia": {
+      "Plane": 2
+    },
+    "Elves": {
+      "Creature": 2
+    },
+    "Zonian": {
+      "Creature": 1
+    },
+    "Shadowmoor": {
+      "Plane": 2
+    },
+    "Vampyre": {
+      "Creature": 1
+    },
+    "Echoir": {
+      "Plane": 1
+    },
+    "Pony": {
+      "Creature": 2
+    },
+    "Biggest,": {
+      "Creature": 1
+    },
+    "Baddest,": {
+      "Creature": 1
+    },
+    "Nastiest,": {
+      "Creature": 1
+    },
+    "Mammoth": {
+      "Creature": 2
+    },
+    "Tree": {
+      "Creature": 1
+    },
+    "Clamhattan": {
+      "Plane": 1
+    },
+    "Chef": {
+      "Creature": 2
+    },
+    "Darillium": {
+      "Plane": 1
+    },
+    "Kinshala": {
+      "Plane": 3
+    },
+    "Mummy": {
+      "Creature": 1
+    },
+    "Azgol": {
+      "Plane": 2
+    },
+    "Moon": {
+      "Plane": 1
+    },
+    "Penguin": {
+      "Creature": 1
+    },
+    "Art": {
+      "Creature": 1
+    },
+    "Library": {
+      "Plane": 1
+    },
+    "You": {
+      "Planeswalker": 1
+    },
+    "Deer": {
+      "Creature": 1
+    },
+    "Byode": {
+      "(none)": 1
+    },
+    "Cephalid": {
+      "Creature": 2
+    },
+    "Shenmeng": {
+      "Plane": 1
+    },
+    "Theros": {
+      "Plane": 1
+    },
+    "Gus": {
+      "Creature": 1
+    },
+    "and/or": {
+      "Creature": 1
+    },
+    "Capenna": {
+      "Plane": 1
+    },
+    "Vryn": {
+      "Plane": 2
+    },
+    "Autobot": {
+      "Artifact Creature": 2
+    },
+    "Heartwood": {
+      "Artifact": 1
+    },
+    "Necros": {
+      "Plane": 1
+    },
+    "Quest": {
+      "Enchantment": 1
+    },
+    "Mission": {
+      "Conspiracy": 1
+    },
+    "Ship": {
+      "Artifact Creature": 1
+    },
+    "Ulamog's": {
+      "Land": 1
+    },
+    "Universia": {
+      "Plane": 1
+    },
+    "Beyondia": {
+      "Plane": 1
+    },
+    "Boxer": {
+      "Creature": 1
+    },
+    "Abyss": {
+      "Plane": 1
+    },
+    "Antausia": {
+      "Plane": 1
+    },
+    "Fiora": {
+      "Plane": 1
+    }
+  }
+}

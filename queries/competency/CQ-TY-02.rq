@@ -1,0 +1,15 @@
+# id: CQ-TY-02
+# title: Ambiguous subtype words
+# question: Which subtype words occur in more than one type-qualified scheme (same label, different concepts)?
+# kind: SPARQL
+# expects: any
+# modules: taxonomies, vocab
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?word (GROUP_CONCAT(DISTINCT ?schemeLabel; separator=' | ') AS ?schemes) WHERE {
+  ?c a/rdfs:subClassOf smtg:Subtype ; skos:notation ?word ; skos:inScheme/rdfs:label ?schemeLabel .
+} GROUP BY ?word HAVING (COUNT(DISTINCT ?c) > 1) ORDER BY ?word

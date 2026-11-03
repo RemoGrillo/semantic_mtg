@@ -1,0 +1,17 @@
+# id: CQ-TG-01
+# title: Weighted, attributed Oracle tags of a card
+# question: Which Oracle tags does Tagger assign to Blood Artist, with which weight, attitude and source snapshot?
+# kind: SPARQL
+# expects: nonempty
+# modules: tags, claims, provenance
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?tag ?weight ?attitude ?snapshotDate WHERE {
+  ?card smtg:name "Blood Artist" .
+  ?a a smtg:OracleTagAssignment ; smtg:assignmentTarget ?card ; smtg:assignedTag/skos:prefLabel ?tag ;
+     smtg:taggingWeight/skos:notation ?weight ; smtg:hasAttitude/skos:notation ?attitude ; smtg:observedIn/smtg:sourceUpdatedAt ?snapshotDate .
+} ORDER BY ?tag

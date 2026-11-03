@@ -258,3 +258,6 @@ smtg:derivedByRule a owl:ObjectProperty ;
   skos:definition "The documented inference rule (see the inference rule catalogue) that produced a hypothesis."@en ;
   smtg:intendedDomain smtg:SynergyHypothesis ;
   rdfs:isDefinedBy smtgm:combos ; vs:term_status "proposal" .
+
+# --- Documentation examples (instances generated from real fixtures in examples/) ---
+smtg:ComboVariant smtg:docExample <https://w3id.org/smtg/id/combo-variant/397-2842-5670> .

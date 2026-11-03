@@ -1,0 +1,5397 @@
+{
+  "generatedAt": "2026-11-03T11:16:29.330Z",
+  "source": "spellbook:variants",
+  "snapshot": {
+    "key": "spellbook:variants",
+    "file": "variants-2026-11-03.json.gz",
+    "url": "https://json.commanderspellbook.com/variants.json.gz",
+    "bytes": 31270675,
+    "sha256": "86f908606cf2216d7bfed47970a6280172d8424243f6b27ea2c94c568d72d425",
+    "sourceUpdatedAt": null,
+    "retrievedAt": "2026-11-03T10:48:31.582Z",
+    "sha256Verified": true
+  },
+  "topLevelKeys": [
+    "timestamp",
+    "version",
+    "variants",
+    "aliases"
+  ],
+  "timestamp": "2026-11-03T10:39:04.244417+00:00",
+  "version": "7.3.4",
+  "otherTopLevel": {},
+  "variants": 117875,
+  "statuses": {
+    "OK": 117875
+  },
+  "nonOkSamples": [],
+  "aliases": {
+    "count": 5856,
+    "keys": {
+      "id": 5856,
+      "variant": 5856
+    },
+    "withVariantNull": 5737,
+    "withVariantPointingToExportedVariant": 119,
+    "aliasIdAlsoAVariantId": 0,
+    "samples": [
+      {
+        "id": "1003-1458-2617",
+        "variant": null
+      },
+      {
+        "id": "1003-1778-2232-2895-4986",
+        "variant": null
+      },
+      {
+        "id": "1003-1778-2232-4986-5754",
+        "variant": null
+      }
+    ],
+    "redirectSamples": [
+      {
+        "id": "1061-1576-3499-4428",
+        "variant": "1061-1576-4428"
+      },
+      {
+        "id": "1061-1576-4428-5295",
+        "variant": "1061-1576-4428"
+      },
+      {
+        "id": "112-1367-6876",
+        "variant": "112-1367-6496"
+      },
+      {
+        "id": "112-2103-6876",
+        "variant": "112-2103-6496"
+      },
+      {
+        "id": "112-2104-6876",
+        "variant": "112-2104-6496"
+      }
+    ],
+    "note": "Alias = a former variant id; `variant` is the current variant id it redirects to, or null (no current variant)."
+  },
+  "variantIdComposition": {
+    "rule": "variant id == uses[].card.id sorted numerically joined with \"-\", followed by \"--<template id>\" for each requires[].template.id in numeric order",
+    "matchesRule": 117875,
+    "other": 0,
+    "otherSamples": []
+  },
+  "uses": {
+    "entries": 417397,
+    "cardsPerVariantHistogram": {
+      "1": 7,
+      "2": 5307,
+      "3": 52519,
+      "4": 51071,
+      "5": 8924,
+      "6": 30,
+      "7": 7,
+      "8": 5,
+      "9": 4,
+      "10+": 1
+    },
+    "totalQuantityPerVariantHistogram": {
+      "1": 7,
+      "2": 5307,
+      "3": 52518,
+      "4": 51072,
+      "5": 8924,
+      "6": 30,
+      "7": 7,
+      "8": 5,
+      "9": 4,
+      "10+": 1
+    },
+    "zoneLocations": {
+      "B": 361227,
+      "H": 41641,
+      "G": 12118,
+      "E": 4870,
+      "C": 2124,
+      "L": 1608
+    },
+    "zoneLocationCombinations": {
+      "B": 359156,
+      "H": 37271,
+      "G": 10223,
+      "E": 4159,
+      "HC": 1248,
+      "HG": 1046,
+      "HB": 960,
+      "HL": 652,
+      "L": 591,
+      "C": 540,
+      "BE": 401,
+      "BG": 365,
+      "HGL": 138,
+      "BC": 101,
+      "EG": 94,
+      "HBCEGL": 87,
+      "GL": 83,
+      "HBC": 72,
+      "HE": 71,
+      "BL": 40,
+      "HBCEG": 34,
+      "HCG": 30,
+      "HCEG": 11,
+      "HBL": 9,
+      "HEG": 5,
+      "HEL": 4,
+      "EL": 3,
+      "HBG": 1,
+      "HBGL": 1,
+      "HCE": 1
+    },
+    "usedFace": {
+      "1": 463,
+      "2": 4267,
+      "null": 412667
+    },
+    "mustBeCommander": 1296,
+    "nonEmptyCardState": {
+      "battlefieldCardState": 31547,
+      "exileCardState": 3228,
+      "libraryCardState": 574,
+      "graveyardCardState": 32
+    }
+  },
+  "requires": {
+    "variantsWithRequires": 6472,
+    "requiresPerVariantHistogram": {
+      "0": 111403,
+      "1": 6220,
+      "2": 252
+    },
+    "zoneLocations": {
+      "B": 5146,
+      "H": 1222,
+      "G": 1155,
+      "E": 119,
+      "C": 24,
+      "L": 23
+    },
+    "distinctTemplates": 178,
+    "templateKeys": {
+      "id": 178,
+      "name": 178,
+      "scryfallApi": 178,
+      "scryfallQuery": 178
+    },
+    "topTemplates": [
+      {
+        "id": 5,
+        "name": "Persist Creature",
+        "scryfallQuery": "keyword:persist t:creature",
+        "scryfallApi": "https://api.scryfall.com/cards/search?q=%28keyword%3Apersist+t%3Acreature%29+legal%3Acommander",
+        "variants": 1265
+      },
+      {
+        "id": 216,
+        "name": "Creature with Undying",
+        "scryfallQuery": "kw:undying t:creature",
+        "scryfallApi": "https://api.scryfall.com/cards/search?q=%28kw%3Aundying+t%3Acreature%29+legal%3Acommander",
+        "variants": 522
+      },
+      {
+        "id": 52,
+        "name": "Creature Castable for One Colored Mana",
+        "scryfallQuery": "(t:creature mv=1 -mana:{X} -mana:{C}) or (t:creature mv=0 mana={X}) or (t:creature mv=0 toughness>=1 -t:land)",
+        "scryfallApi": "https://api.scryfall.com/cards/search?q=%28%28t%3Acreature+mv%3D1+-mana%3A%7BX%7D+-mana%3A%7BC%7D%29+or+%28t%3Acreature+mv%3D0+mana%3D%7BX%7D%29+or+%28t%3Acreature+mv%3D0+toughness%3E%3D1+-t%3Aland%29%29+legal%3Acommander",
+        "variants": 448
+      },
+      {
+        "id": 202,
+        "name": "Artifact Castable for Exactly {1}",
+        "scryfallQuery": "t:artifact -t:land (mana=1 or otag:potentially-free)",
+        "scryfallApi": "https://api.scryfall.com/cards/search?q=%28t%3Aartifact+-t%3Aland+%28mana%3D1+or+otag%3Apotentially-free%29%29+legal%3Acommander",
+        "variants": 434
+      },
+      {
+        "id": 44,
+        "name": "Artifact Castable for {0} that survives",
+        "scryfallQuery": "t:artifact (mv=0 or otag:potentially-free) (-t:creature or toughness>0) -m<{0}",
+        "scryfallApi": "https://api.scryfall.com/cards/search?q=%28t%3Aartifact+%28mv%3D0+or+otag%3Apotentially-free%29+%28-t%3Acreature+or+toughness%3E0%29+-m%3C%7B0%7D%29+legal%3Acommander",
+        "variants": 405
+      },
+      {
+        "id": 112,
+        "name": "Effects that Alter a Creature's Power/Toughness (Anthem Effects)",
+        "scryfallQuery": null,
+        "scryfallApi": null,
+        "variants": 339
+      },
+      {
+        "id": 85,
+        "name": "Haste Enabler",
+        "scryfallQuery": null,
+        "scryfallApi": null,
+        "variants": 318
+      },
+      {
+        "id": 165,
+        "name": "Hero Creature",
+        "scryfallQuery": "(kw:changeling or t:hero or o:\"This creature is the chosen type\") t:creature",
+        "scryfallApi": "https://api.scryfall.com/cards/search?q=%28%28kw%3Achangeling+or+t%3Ahero+or+o%3A%22This+creature+is+the+chosen+type%22%29+t%3Acreature%29+legal%3Acommander",
+        "variants": 314
+      },
+      {
+        "id": 6,
+        "name": "Undying Creature",
+        "scryfallQuery": "keyword:undying t:creature",
+        "scryfallApi": "https://api.scryfall.com/cards/search?q=%28keyword%3Aundying+t%3Acreature%29+legal%3Acommander",
+        "variants": 239
+      },
+      {
+        "id": 196,
+        "name": "Gives +1/+1 counter to creatures that enter",
+        "scryfallQuery": null,
+        "scryfallApi": null,
+        "variants": 150
+      }
+    ]
+  },
+  "produces": {
+    "producesPerVariantHistogram": {
+      "0": 1,
+      "1": 6634,
+      "2": 15039,
+      "3": 9600,
+      "4": 11382,
+      "5": 19817,
+      "6": 16805,
+      "7": 12302,
+      "8": 11339,
+      "9": 6880,
+      "10+": 8076
+    },
+    "distinctFeatures": 1102,
+    "featureStatusDistinctFeatures": {
+      "H": 532,
+      "S": 309,
+      "C": 261
+    },
+    "featureStatusInProducesEntries": {
+      "H": 430058,
+      "S": 152444,
+      "C": 61225
+    },
+    "featureUncountable": {
+      "true": 1007,
+      "false": 95
+    },
+    "statusNote": "Feature status codes are not explained in the export; their meaning must be verified against the Commander Spellbook backend/API docs.",
+    "topFeatures": [
+      {
+        "id": 4,
+        "name": "Infinite creature ETB",
+        "uncountable": true,
+        "status": "H",
+        "variants": 75664
+      },
+      {
+        "id": 3,
+        "name": "Infinite creature LTB",
+        "uncountable": true,
+        "status": "H",
+        "variants": 65979
+      },
+      {
+        "id": 7,
+        "name": "Infinite death triggers",
+        "uncountable": true,
+        "status": "H",
+        "variants": 53130
+      },
+      {
+        "id": 6,
+        "name": "Infinite creature sacrifice triggers",
+        "uncountable": true,
+        "status": "H",
+        "variants": 51116
+      },
+      {
+        "id": 17,
+        "name": "Infinite storm count",
+        "uncountable": true,
+        "status": "H",
+        "variants": 26620
+      },
+      {
+        "id": 2408,
+        "name": "Infinite artifact ETB",
+        "uncountable": true,
+        "status": "H",
+        "variants": 15046
+      },
+      {
+        "id": 5,
+        "name": "Infinite colored mana",
+        "uncountable": true,
+        "status": "S",
+        "variants": 14894
+      },
+      {
+        "id": 2244,
+        "name": "Infinite +1/+1 counters on a creature",
+        "uncountable": true,
+        "status": "C",
+        "variants": 14736
+      },
+      {
+        "id": 2409,
+        "name": "Infinite artifact LTB",
+        "uncountable": true,
+        "status": "H",
+        "variants": 13479
+      },
+      {
+        "id": 14,
+        "name": "Infinite lifegain triggers",
+        "uncountable": true,
+        "status": "C",
+        "variants": 12804
+      },
+      {
+        "id": 61,
+        "name": "Infinite draw triggers",
+        "uncountable": true,
+        "status": "H",
+        "variants": 12747
+      },
+      {
+        "id": 21,
+        "name": "Infinite creature tokens",
+        "uncountable": true,
+        "status": "S",
+        "variants": 12409
+      },
+      {
+        "id": 119,
+        "name": "Infinite landfall triggers",
+        "uncountable": true,
+        "status": "H",
+        "variants": 11111
+      },
+      {
+        "id": 2419,
+        "name": "Infinite artifact sacrifice triggers",
+        "uncountable": true,
+        "status": "H",
+        "variants": 10486
+      },
+      {
+        "id": 24,
+        "name": "Infinite card draw",
+        "uncountable": true,
+        "status": "S",
+        "variants": 10054
+      }
+    ]
+  },
+  "combos": {
+    "distinctOfIds": 27060,
+    "distinctIncludesIds": 28689,
+    "ofPerVariantHistogram": {
+      "1": 116596,
+      "2": 1276,
+      "3": 3
+    },
+    "variantsWhereOfNotSubsetOfIncludes": 1,
+    "note": "`of` / `includes` carry only combo ids; editor-authored combo records are NOT in the bulk export."
+  },
+  "identity": {
+    "GU": 6286,
+    "WB": 5761,
+    "WUBRG": 5428,
+    "RWB": 4707,
+    "U": 4702,
+    "UR": 4660,
+    "BG": 4472,
+    "GWU": 4253,
+    "BR": 4220,
+    "GW": 4201,
+    "WBG": 4119,
+    "G": 4008,
+    "RG": 3880,
+    "BRG": 3855,
+    "UB": 3807,
+    "B": 3686,
+    "GUR": 3675,
+    "RGW": 3639,
+    "WUB": 3590,
+    "WU": 3502,
+    "BGU": 3453,
+    "URW": 3360,
+    "RGWU": 3322,
+    "BRGW": 3179,
+    "RW": 3171,
+    "W": 2828,
+    "UBR": 2772,
+    "GWUB": 2321,
+    "R": 2236,
+    "UBRG": 1987,
+    "WUBR": 1938,
+    "C": 857
+  },
+  "bracketTag": {
+    "E": 91070,
+    "S": 11772,
+    "R": 6657,
+    "O": 3676,
+    "P": 2585,
+    "B": 1853,
+    "C": 262
+  },
+  "variantCountField": {
+    "1": 23433,
+    "2": 395,
+    "5": 2163,
+    "10": 3788,
+    "20": 12721,
+    "50": 14835,
+    "100": 12110,
+    "101+": 48430
+  },
+  "spoilerVariants": 1804,
+  "cards": {
+    "distinctSpellbookCardIds": 7492,
+    "distinctOracleIds": 7492,
+    "cardIdsWithMultipleOracleIds": 0,
+    "oracleIdsWithMultipleCardIds": 0,
+    "oracleMultiCardSamples": [],
+    "topCards": [
+      {
+        "id": 2034,
+        "name": "Ashnod's Altar",
+        "oracleId": "4d18bcba-a346-445e-a182-6cc30b7e066d",
+        "variants": 6258
+      },
+      {
+        "id": 4050,
+        "name": "Phyrexian Altar",
+        "oracleId": "8d02b297-97c4-4379-9862-0a462400f66f",
+        "variants": 5348
+      },
+      {
+        "id": 4871,
+        "name": "Pitiless Plunderer",
+        "oracleId": "a784481f-eccb-4112-bb38-04a659319660",
+        "variants": 3151
+      },
+      {
+        "id": 5078,
+        "name": "Sensei's Divining Top",
+        "oracleId": "13575cf9-65c1-4861-b21e-eb2155e07766",
+        "variants": 3113
+      },
+      {
+        "id": 5220,
+        "name": "Mortuary",
+        "oracleId": "8bd2af55-5a48-4300-a893-ae6cd548db24",
+        "variants": 2829
+      },
+      {
+        "id": 5231,
+        "name": "Thermopod",
+        "oracleId": "c886fa01-bcee-4c73-9c46-2328711fc4f0",
+        "variants": 2674
+      },
+      {
+        "id": 6972,
+        "name": "Eirdu, Carrier of Dawn // Isilu, Carrier of Twilight",
+        "oracleId": "36af3c2c-49d7-46ea-ab02-c254b332448e",
+        "variants": 2369
+      },
+      {
+        "id": 5256,
+        "name": "Altar of Dementia",
+        "oracleId": "d64e9152-ef24-4394-aeb0-9c3befc56549",
+        "variants": 2316
+      },
+      {
+        "id": 3490,
+        "name": "Animation Module",
+        "oracleId": "af42079b-a3c0-448c-9bb2-b915252e87a9",
+        "variants": 2174
+      },
+      {
+        "id": 3259,
+        "name": "Breath of Fury",
+        "oracleId": "fdaa0faf-e7ee-48b3-9330-de0fc3792ad3",
+        "variants": 2117
+      },
+      {
+        "id": 5147,
+        "name": "Goblin Bombardment",
+        "oracleId": "edad60c6-80de-4033-af1b-a703ac332983",
+        "variants": 1980
+      },
+      {
+        "id": 2292,
+        "name": "Viscera Seer",
+        "oracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+        "variants": 1928
+      },
+      {
+        "id": 2438,
+        "name": "Carrion Feeder",
+        "oracleId": "a1cc5e37-b09a-4b7f-afd5-77c1c35aa425",
+        "variants": 1879
+      },
+      {
+        "id": 4659,
+        "name": "Krark-Clan Ironworks",
+        "oracleId": "68e1f7e0-a9b3-437f-8086-0c0cb85f2880",
+        "variants": 1847
+      },
+      {
+        "id": 1170,
+        "name": "Displacer Kitten",
+        "oracleId": "09ef446c-a13d-49d9-a94c-cd5f5a2d440b",
+        "variants": 1822
+      }
+    ]
+  },
+  "scryfallCrossCheck": {
+    "method": "uses[].card.oracleId compared to root and card_faces[] oracle ids in Scryfall oracle_cards (same snapshot day).",
+    "usesEntries": 417397,
+    "oracleIdNullOrMissing": 0,
+    "distinctOracleIdsNotFound": 0,
+    "notFoundSamples": [],
+    "distinctOracleIdsWithNameMismatch": 0,
+    "nameMismatchSamples": []
+  },
+  "fields": [
+    {
+      "path": "bracketTag",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "string": 117875
+      },
+      "kind": "enum",
+      "distinct": 7,
+      "topValues": [
+        [
+          "E",
+          91070
+        ],
+        [
+          "S",
+          11772
+        ],
+        [
+          "R",
+          6657
+        ],
+        [
+          "O",
+          3676
+        ],
+        [
+          "P",
+          2585
+        ],
+        [
+          "B",
+          1853
+        ],
+        [
+          "C",
+          262
+        ]
+      ],
+      "samples": [
+        "E",
+        "B",
+        "O"
+      ],
+      "stringLength": {
+        "avg": 1,
+        "max": 1
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "description",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "string": 117875
+      },
+      "kind": "text",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "samples": [
+        "Activate Ashnod's Altar by sacrificing Eternal Scourge, adidng {C}{C}.\nWhen Eternal Scourge dies, Kinzu of the Bleak Co…",
+        "Activate Ashnod's Altar by sacrificing Eternal Scourge, adidng {C}{C}.\nWhen Eternal Scourge dies, Kinzu of the Bleak Co…",
+        "Activate Ashnod's Altar by sacrificing Eternal Scourge, adidng {C}{C}.\nWhen Eternal Scourge dies, Kinzu of the Bleak Co…"
+      ],
+      "stringLength": {
+        "avg": 440.6,
+        "max": 2924
+      },
+      "withNewlines": 117706,
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "easyPrerequisites",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "string": 117875
+      },
+      "kind": "text",
+      "distinct": 2498,
+      "samples": [
+        "Your life total is at least 2.",
+        "Funeral Room is unlocked.\nYour life total is at least 2.",
+        ""
+      ],
+      "stringLength": {
+        "avg": 13.8,
+        "max": 284
+      },
+      "emptyStrings": 90342,
+      "withNewlines": 7298,
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "id",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "string": 117875
+      },
+      "kind": "string",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "topValues": [
+        [
+          "1003-2034-5006-8170",
+          1
+        ],
+        [
+          "1003-2292-5006-8170",
+          1
+        ],
+        [
+          "1003-2438-5006-8170",
+          1
+        ],
+        [
+          "1003-2511-5006-8170",
+          1
+        ],
+        [
+          "1003-2921-5006-8170",
+          1
+        ],
+        [
+          "1003-3899-5006-8170",
+          1
+        ],
+        [
+          "1003-3967-5006-8170",
+          1
+        ],
+        [
+          "1003-4050-5006-8170",
+          1
+        ],
+        [
+          "1003-4247-5006-8170",
+          1
+        ],
+        [
+          "1003-5006-5147-8170",
+          1
+        ],
+        [
+          "1003-5006-5231-8170",
+          1
+        ],
+        [
+          "1003-5006-5256-8170",
+          1
+        ],
+        [
+          "1003-5006-5686-8170",
+          1
+        ],
+        [
+          "1003-5006-6495-8170",
+          1
+        ],
+        [
+          "1003-5006-6797-8170",
+          1
+        ],
+        [
+          "1003-5006-6798-8170",
+          1
+        ],
+        [
+          "1003-5006-7272-8170",
+          1
+        ],
+        [
+          "1003-5006-8095-8170",
+          1
+        ],
+        [
+          "1003-5006-8170-8227",
+          1
+        ],
+        [
+          "1003-5006-8170-8249",
+          1
+        ],
+        [
+          "1003-5006-8170-8250",
+          1
+        ],
+        [
+          "101-4113-4598",
+          1
+        ],
+        [
+          "101-4113-5895",
+          1
+        ],
+        [
+          "1031-2134-4050-8240",
+          1
+        ],
+        [
+          "1068-8266",
+          1
+        ]
+      ],
+      "topValuesApproximate": true,
+      "samples": [
+        "483-720-1806-2034",
+        "720-1806-2034-3845",
+        "720-1806-1829-2034"
+      ],
+      "stringLength": {
+        "avg": 16.4,
+        "max": 49
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "identity",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "string": 117875
+      },
+      "kind": "enum",
+      "distinct": 32,
+      "topValues": [
+        [
+          "GU",
+          6286
+        ],
+        [
+          "WB",
+          5761
+        ],
+        [
+          "WUBRG",
+          5428
+        ],
+        [
+          "RWB",
+          4707
+        ],
+        [
+          "U",
+          4702
+        ],
+        [
+          "UR",
+          4660
+        ],
+        [
+          "BG",
+          4472
+        ],
+        [
+          "GWU",
+          4253
+        ],
+        [
+          "BR",
+          4220
+        ],
+        [
+          "GW",
+          4201
+        ],
+        [
+          "WBG",
+          4119
+        ],
+        [
+          "G",
+          4008
+        ],
+        [
+          "RG",
+          3880
+        ],
+        [
+          "BRG",
+          3855
+        ],
+        [
+          "UB",
+          3807
+        ],
+        [
+          "B",
+          3686
+        ],
+        [
+          "GUR",
+          3675
+        ],
+        [
+          "RGW",
+          3639
+        ],
+        [
+          "WUB",
+          3590
+        ],
+        [
+          "WU",
+          3502
+        ],
+        [
+          "BGU",
+          3453
+        ],
+        [
+          "URW",
+          3360
+        ],
+        [
+          "RGWU",
+          3322
+        ],
+        [
+          "BRGW",
+          3179
+        ],
+        [
+          "RW",
+          3171
+        ]
+      ],
+      "samples": [
+        "WB",
+        "B",
+        "BG"
+      ],
+      "stringLength": {
+        "avg": 2.5,
+        "max": 5
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "includes",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "array": 117875
+      },
+      "kind": "array",
+      "arrayLengths": {
+        "1": 31294,
+        "2": 43341,
+        "3": 20049,
+        "4": 8614,
+        "5": 3996,
+        "6": 2424,
+        "7": 1597,
+        "8": 1267,
+        "9": 1014,
+        "10+": 4279
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "includes[]",
+      "present": 117875,
+      "occurrences": 340222,
+      "nulls": 0,
+      "types": {
+        "object": 340222
+      },
+      "kind": "object",
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "includes[].id",
+      "present": 117875,
+      "occurrences": 340222,
+      "nulls": 0,
+      "types": {
+        "number": 340222
+      },
+      "kind": "integer",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "topValues": [
+        [
+          27481,
+          14110
+        ],
+        [
+          26876,
+          10594
+        ],
+        [
+          26313,
+          9344
+        ],
+        [
+          32272,
+          7300
+        ],
+        [
+          27045,
+          5583
+        ],
+        [
+          32056,
+          5427
+        ],
+        [
+          26311,
+          5246
+        ],
+        [
+          26672,
+          4018
+        ],
+        [
+          28137,
+          3916
+        ],
+        [
+          27501,
+          3222
+        ],
+        [
+          26302,
+          3009
+        ],
+        [
+          32273,
+          2619
+        ],
+        [
+          26309,
+          2572
+        ],
+        [
+          33431,
+          2282
+        ],
+        [
+          28220,
+          2223
+        ],
+        [
+          27521,
+          2081
+        ],
+        [
+          26406,
+          2076
+        ],
+        [
+          27807,
+          2011
+        ],
+        [
+          26308,
+          1981
+        ],
+        [
+          26301,
+          1775
+        ],
+        [
+          30919,
+          1593
+        ],
+        [
+          26310,
+          1591
+        ],
+        [
+          26878,
+          1563
+        ],
+        [
+          27480,
+          1560
+        ],
+        [
+          26315,
+          1551
+        ]
+      ],
+      "topValuesApproximate": true,
+      "samples": [
+        18397,
+        27807,
+        28785
+      ],
+      "numberStats": {
+        "min": 1,
+        "max": 34496,
+        "mean": 27036.385
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "object": 117875
+      },
+      "kind": "object",
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.alchemy",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          117618
+        ],
+        [
+          true,
+          257
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.brawl",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          100943
+        ],
+        [
+          true,
+          16932
+        ]
+      ],
+      "samples": [
+        true,
+        false
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.commander",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          true,
+          116022
+        ],
+        [
+          false,
+          1853
+        ]
+      ],
+      "samples": [
+        true,
+        false
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.competitiveBrawl",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          100490
+        ],
+        [
+          true,
+          17385
+        ]
+      ],
+      "samples": [
+        true,
+        false
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.legacy",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          true,
+          109899
+        ],
+        [
+          false,
+          7976
+        ]
+      ],
+      "samples": [
+        true,
+        false
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.modern",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          81177
+        ],
+        [
+          true,
+          36698
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.oathbreaker",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          true,
+          115779
+        ],
+        [
+          false,
+          2096
+        ]
+      ],
+      "samples": [
+        true,
+        false
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.pauper",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          117707
+        ],
+        [
+          true,
+          168
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.pauperCommander",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          117490
+        ],
+        [
+          true,
+          385
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.pauperCommanderMain",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          117674
+        ],
+        [
+          true,
+          201
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.pioneer",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          112973
+        ],
+        [
+          true,
+          4902
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.predh",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          114018
+        ],
+        [
+          true,
+          3857
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.premodern",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          117582
+        ],
+        [
+          true,
+          293
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.standard",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          117421
+        ],
+        [
+          true,
+          454
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.standardBrawl",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          117418
+        ],
+        [
+          true,
+          457
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "legalities.vintage",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          true,
+          116274
+        ],
+        [
+          false,
+          1601
+        ]
+      ],
+      "samples": [
+        true,
+        false
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "manaNeeded",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "string": 117875
+      },
+      "kind": "string",
+      "distinct": 2131,
+      "topValues": [
+        [
+          "",
+          69870
+        ],
+        [
+          "{1}",
+          6216
+        ],
+        [
+          "{2}",
+          3225
+        ],
+        [
+          "{1}{G}",
+          2247
+        ],
+        [
+          "{G}",
+          1467
+        ],
+        [
+          "{B}",
+          1267
+        ],
+        [
+          "{6}",
+          1206
+        ],
+        [
+          "{3}",
+          1117
+        ],
+        [
+          "{1}{U}",
+          1099
+        ],
+        [
+          "{U}",
+          1029
+        ],
+        [
+          "{1}{W}",
+          977
+        ],
+        [
+          "{R}",
+          757
+        ],
+        [
+          "{2}{B}",
+          726
+        ],
+        [
+          "{2}{U}",
+          609
+        ],
+        [
+          "{W}",
+          526
+        ],
+        [
+          "{4}",
+          519
+        ],
+        [
+          "{B}{B}",
+          487
+        ],
+        [
+          "{1}{R}",
+          482
+        ],
+        [
+          "{2}{G}",
+          469
+        ],
+        [
+          "{2}{B}{B}",
+          429
+        ],
+        [
+          "{1}{B}",
+          420
+        ],
+        [
+          "{W/P}",
+          418
+        ],
+        [
+          "{2}{R}",
+          403
+        ],
+        [
+          "{2}{W}",
+          379
+        ],
+        [
+          "{3}{U}{U} each turn",
+          349
+        ]
+      ],
+      "samples": [
+        "",
+        "{U}{R}{W} plus commander tax if applicable",
+        "{U}{R}{W}"
+      ],
+      "stringLength": {
+        "avg": 4.4,
+        "max": 170
+      },
+      "emptyStrings": 69870,
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "manaValueNeeded",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "number": 117875
+      },
+      "kind": "integer",
+      "distinct": 23,
+      "topValues": [
+        [
+          0,
+          69954
+        ],
+        [
+          1,
+          12413
+        ],
+        [
+          2,
+          11326
+        ],
+        [
+          3,
+          6356
+        ],
+        [
+          4,
+          4578
+        ],
+        [
+          5,
+          3448
+        ],
+        [
+          6,
+          3366
+        ],
+        [
+          7,
+          2175
+        ],
+        [
+          8,
+          1580
+        ],
+        [
+          9,
+          1019
+        ],
+        [
+          10,
+          679
+        ],
+        [
+          11,
+          306
+        ],
+        [
+          12,
+          237
+        ],
+        [
+          20,
+          168
+        ],
+        [
+          13,
+          112
+        ],
+        [
+          14,
+          50
+        ],
+        [
+          15,
+          39
+        ],
+        [
+          17,
+          34
+        ],
+        [
+          16,
+          25
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          21,
+          1
+        ],
+        [
+          23,
+          1
+        ]
+      ],
+      "samples": [
+        0,
+        3,
+        5
+      ],
+      "numberStats": {
+        "min": 0,
+        "max": 23,
+        "mean": 1.418
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "notablePrerequisites",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "string": 117875
+      },
+      "kind": "text",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "samples": [
+        "",
+        "You control at least one Cleric",
+        "You have max speed."
+      ],
+      "stringLength": {
+        "avg": 30.6,
+        "max": 475
+      },
+      "emptyStrings": 67646,
+      "withNewlines": 13951,
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "notes",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "string": 117875
+      },
+      "kind": "text",
+      "distinct": 1705,
+      "samples": [
+        "",
+        "You can also do this combo in one turn if you give the ability to a creature that has haste (excluding Aurelia) instead…",
+        "You can use either Olag and Miau trigger to put a +1/+1 counter on the Zombie Cat. The other ability can put the counte…"
+      ],
+      "stringLength": {
+        "avg": 17,
+        "max": 762
+      },
+      "emptyStrings": 105354,
+      "withNewlines": 327,
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "of",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "array": 117875
+      },
+      "kind": "array",
+      "arrayLengths": {
+        "1": 116596,
+        "2": 1276,
+        "3": 3
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "of[]",
+      "present": 117875,
+      "occurrences": 119157,
+      "nulls": 0,
+      "types": {
+        "object": 119157
+      },
+      "kind": "object",
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "of[].id",
+      "present": 117875,
+      "occurrences": 119157,
+      "nulls": 0,
+      "types": {
+        "number": 119157
+      },
+      "kind": "integer",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "topValues": [
+        [
+          31005,
+          1045
+        ],
+        [
+          23850,
+          877
+        ],
+        [
+          31051,
+          865
+        ],
+        [
+          30670,
+          850
+        ],
+        [
+          32377,
+          825
+        ],
+        [
+          30580,
+          810
+        ],
+        [
+          28576,
+          775
+        ],
+        [
+          33779,
+          732
+        ],
+        [
+          32301,
+          703
+        ],
+        [
+          28373,
+          675
+        ],
+        [
+          28362,
+          660
+        ],
+        [
+          29790,
+          612
+        ],
+        [
+          20098,
+          595
+        ],
+        [
+          33778,
+          594
+        ],
+        [
+          5710,
+          586
+        ],
+        [
+          26524,
+          576
+        ],
+        [
+          28745,
+          558
+        ],
+        [
+          26956,
+          541
+        ],
+        [
+          33262,
+          528
+        ],
+        [
+          2104,
+          522
+        ],
+        [
+          26957,
+          508
+        ],
+        [
+          31765,
+          484
+        ],
+        [
+          33653,
+          480
+        ],
+        [
+          589,
+          457
+        ],
+        [
+          28654,
+          440
+        ]
+      ],
+      "topValuesApproximate": true,
+      "samples": [
+        18397,
+        34486,
+        34485
+      ],
+      "numberStats": {
+        "min": 1,
+        "max": 34496,
+        "mean": 24059.182
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "popularity",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "number": 117875
+      },
+      "kind": "integer",
+      "distinct": 4165,
+      "topValues": [
+        [
+          0,
+          48970
+        ],
+        [
+          1,
+          13314
+        ],
+        [
+          2,
+          6144
+        ],
+        [
+          3,
+          3938
+        ],
+        [
+          4,
+          2878
+        ],
+        [
+          5,
+          2271
+        ],
+        [
+          6,
+          1746
+        ],
+        [
+          7,
+          1478
+        ],
+        [
+          8,
+          1321
+        ],
+        [
+          9,
+          1132
+        ],
+        [
+          10,
+          993
+        ],
+        [
+          11,
+          855
+        ],
+        [
+          12,
+          804
+        ],
+        [
+          13,
+          722
+        ],
+        [
+          14,
+          675
+        ],
+        [
+          15,
+          627
+        ],
+        [
+          16,
+          584
+        ],
+        [
+          17,
+          550
+        ],
+        [
+          20,
+          463
+        ],
+        [
+          18,
+          460
+        ],
+        [
+          19,
+          448
+        ],
+        [
+          21,
+          423
+        ],
+        [
+          23,
+          360
+        ],
+        [
+          22,
+          356
+        ],
+        [
+          24,
+          333
+        ]
+      ],
+      "samples": [
+        0,
+        2,
+        20
+      ],
+      "numberStats": {
+        "min": 0,
+        "max": 365390,
+        "mean": 253.215
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "prices",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "object": 117875
+      },
+      "kind": "object",
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "prices.cardkingdom",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "string": 117875
+      },
+      "kind": "string",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "topValues": [
+        [
+          "4.83",
+          612
+        ],
+        [
+          "1.83",
+          477
+        ],
+        [
+          "1.19",
+          422
+        ],
+        [
+          "4.69",
+          412
+        ],
+        [
+          "9.33",
+          356
+        ],
+        [
+          "5.33",
+          343
+        ],
+        [
+          "1.33",
+          333
+        ],
+        [
+          "1.43",
+          298
+        ],
+        [
+          "9.47",
+          292
+        ],
+        [
+          "2.33",
+          288
+        ],
+        [
+          "1.69",
+          286
+        ],
+        [
+          "4.97",
+          276
+        ],
+        [
+          "6.83",
+          276
+        ],
+        [
+          "7.83",
+          268
+        ],
+        [
+          "6.33",
+          260
+        ],
+        [
+          "10.83",
+          258
+        ],
+        [
+          "6.47",
+          255
+        ],
+        [
+          "11.47",
+          252
+        ],
+        [
+          "2.83",
+          252
+        ],
+        [
+          "5.83",
+          248
+        ],
+        [
+          "6.97",
+          245
+        ],
+        [
+          "8.83",
+          244
+        ],
+        [
+          "25.83",
+          242
+        ],
+        [
+          "6.32",
+          242
+        ],
+        [
+          "14.97",
+          232
+        ]
+      ],
+      "topValuesApproximate": true,
+      "samples": [
+        "22.56",
+        "21.12",
+        "21.16"
+      ],
+      "stringLength": {
+        "avg": 4.7,
+        "max": 8
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "prices.cardmarket",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "string": 117875
+      },
+      "kind": "string",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "topValues": [
+        [
+          "0.93",
+          126
+        ],
+        [
+          "0.96",
+          126
+        ],
+        [
+          "0.81",
+          124
+        ],
+        [
+          "0.95",
+          120
+        ],
+        [
+          "1.29",
+          120
+        ],
+        [
+          "0.76",
+          119
+        ],
+        [
+          "0.61",
+          118
+        ],
+        [
+          "0.67",
+          118
+        ],
+        [
+          "0.69",
+          117
+        ],
+        [
+          "1.24",
+          117
+        ],
+        [
+          "0.88",
+          116
+        ],
+        [
+          "0.86",
+          114
+        ],
+        [
+          "1.16",
+          113
+        ],
+        [
+          "1.17",
+          113
+        ],
+        [
+          "0.91",
+          112
+        ],
+        [
+          "1.21",
+          111
+        ],
+        [
+          "0.73",
+          110
+        ],
+        [
+          "0.80",
+          110
+        ],
+        [
+          "0.85",
+          110
+        ],
+        [
+          "1.00",
+          110
+        ],
+        [
+          "1.28",
+          110
+        ],
+        [
+          "1.10",
+          109
+        ],
+        [
+          "1.13",
+          109
+        ],
+        [
+          "0.74",
+          108
+        ],
+        [
+          "0.70",
+          107
+        ]
+      ],
+      "topValuesApproximate": true,
+      "samples": [
+        "11.37",
+        "10.50",
+        "10.56"
+      ],
+      "stringLength": {
+        "avg": 4.5,
+        "max": 8
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "prices.tcgplayer",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "string": 117875
+      },
+      "kind": "string",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "topValues": [
+        [
+          "0.81",
+          129
+        ],
+        [
+          "0.87",
+          126
+        ],
+        [
+          "0.86",
+          125
+        ],
+        [
+          "0.93",
+          125
+        ],
+        [
+          "0.90",
+          120
+        ],
+        [
+          "0.89",
+          116
+        ],
+        [
+          "0.92",
+          114
+        ],
+        [
+          "0.96",
+          114
+        ],
+        [
+          "0.84",
+          112
+        ],
+        [
+          "0.78",
+          111
+        ],
+        [
+          "0.95",
+          110
+        ],
+        [
+          "0.83",
+          109
+        ],
+        [
+          "0.91",
+          109
+        ],
+        [
+          "0.94",
+          108
+        ],
+        [
+          "0.98",
+          107
+        ],
+        [
+          "1.09",
+          107
+        ],
+        [
+          "1.10",
+          106
+        ],
+        [
+          "1.14",
+          106
+        ],
+        [
+          "0.79",
+          104
+        ],
+        [
+          "0.88",
+          104
+        ],
+        [
+          "0.74",
+          100
+        ],
+        [
+          "0.82",
+          100
+        ],
+        [
+          "0.97",
+          100
+        ],
+        [
+          "0.77",
+          99
+        ],
+        [
+          "1.01",
+          99
+        ]
+      ],
+      "topValuesApproximate": true,
+      "samples": [
+        "15.70",
+        "15.22",
+        "15.28"
+      ],
+      "stringLength": {
+        "avg": 4.6,
+        "max": 8
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "produces",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "array": 117875
+      },
+      "kind": "array",
+      "arrayLengths": {
+        "0": 1,
+        "1": 6634,
+        "2": 15039,
+        "3": 9600,
+        "4": 11382,
+        "5": 19817,
+        "6": 16805,
+        "7": 12302,
+        "8": 11339,
+        "9": 6880,
+        "10+": 8076
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "produces[]",
+      "present": 117874,
+      "occurrences": 643727,
+      "nulls": 0,
+      "types": {
+        "object": 643727
+      },
+      "kind": "object",
+      "byStatus": {
+        "OK": 117874
+      }
+    },
+    {
+      "path": "produces[].feature",
+      "present": 117874,
+      "occurrences": 643727,
+      "nulls": 0,
+      "types": {
+        "object": 643727
+      },
+      "kind": "object",
+      "byStatus": {
+        "OK": 117874
+      }
+    },
+    {
+      "path": "produces[].feature.id",
+      "present": 117874,
+      "occurrences": 643727,
+      "nulls": 0,
+      "types": {
+        "number": 643727
+      },
+      "kind": "integer",
+      "distinct": 1102,
+      "topValues": [
+        [
+          4,
+          75664
+        ],
+        [
+          3,
+          65979
+        ],
+        [
+          7,
+          53130
+        ],
+        [
+          6,
+          51116
+        ],
+        [
+          17,
+          26620
+        ],
+        [
+          2408,
+          15046
+        ],
+        [
+          5,
+          14894
+        ],
+        [
+          2244,
+          14736
+        ],
+        [
+          2409,
+          13479
+        ],
+        [
+          14,
+          12804
+        ],
+        [
+          61,
+          12747
+        ],
+        [
+          21,
+          12409
+        ],
+        [
+          119,
+          11111
+        ],
+        [
+          2419,
+          10486
+        ],
+        [
+          24,
+          10054
+        ],
+        [
+          11,
+          9955
+        ],
+        [
+          15,
+          8897
+        ],
+        [
+          60,
+          8869
+        ],
+        [
+          77,
+          8181
+        ],
+        [
+          13,
+          7878
+        ],
+        [
+          79,
+          7507
+        ],
+        [
+          2617,
+          7044
+        ],
+        [
+          134,
+          6610
+        ],
+        [
+          136,
+          6222
+        ],
+        [
+          587,
+          6201
+        ]
+      ],
+      "samples": [
+        11,
+        4,
+        3
+      ],
+      "numberStats": {
+        "min": 1,
+        "max": 2905,
+        "mean": 370.533
+      },
+      "byStatus": {
+        "OK": 117874
+      }
+    },
+    {
+      "path": "produces[].feature.name",
+      "present": 117874,
+      "occurrences": 643727,
+      "nulls": 0,
+      "types": {
+        "string": 643727
+      },
+      "kind": "string",
+      "distinct": 1102,
+      "topValues": [
+        [
+          "Infinite creature ETB",
+          75664
+        ],
+        [
+          "Infinite creature LTB",
+          65979
+        ],
+        [
+          "Infinite death triggers",
+          53130
+        ],
+        [
+          "Infinite creature sacrifice triggers",
+          51116
+        ],
+        [
+          "Infinite storm count",
+          26620
+        ],
+        [
+          "Infinite artifact ETB",
+          15046
+        ],
+        [
+          "Infinite colored mana",
+          14894
+        ],
+        [
+          "Infinite +1/+1 counters on a creature",
+          14736
+        ],
+        [
+          "Infinite artifact LTB",
+          13479
+        ],
+        [
+          "Infinite lifegain triggers",
+          12804
+        ],
+        [
+          "Infinite draw triggers",
+          12747
+        ],
+        [
+          "Infinite creature tokens",
+          12409
+        ],
+        [
+          "Infinite landfall triggers",
+          11111
+        ],
+        [
+          "Infinite artifact sacrifice triggers",
+          10486
+        ],
+        [
+          "Infinite card draw",
+          10054
+        ],
+        [
+          "Infinite colorless mana",
+          9955
+        ],
+        [
+          "Infinite lifegain",
+          8897
+        ],
+        [
+          "Near-infinite creature ETB",
+          8869
+        ],
+        [
+          "Infinite magecraft triggers",
+          8181
+        ],
+        [
+          "Infinite damage",
+          7878
+        ],
+        [
+          "Near-infinite creature LTB",
+          7507
+        ],
+        [
+          "Lock",
+          7044
+        ],
+        [
+          "Near-infinite death triggers",
+          6610
+        ],
+        [
+          "Near-infinite creature sacrifice triggers",
+          6222
+        ],
+        [
+          "Infinite artifact tokens",
+          6201
+        ]
+      ],
+      "samples": [
+        "Infinite colorless mana",
+        "Infinite creature ETB",
+        "Infinite creature LTB"
+      ],
+      "stringLength": {
+        "avg": 26.3,
+        "max": 147
+      },
+      "byStatus": {
+        "OK": 117874
+      }
+    },
+    {
+      "path": "produces[].feature.status",
+      "present": 117874,
+      "occurrences": 643727,
+      "nulls": 0,
+      "types": {
+        "string": 643727
+      },
+      "kind": "enum",
+      "distinct": 3,
+      "topValues": [
+        [
+          "H",
+          430058
+        ],
+        [
+          "S",
+          152444
+        ],
+        [
+          "C",
+          61225
+        ]
+      ],
+      "samples": [
+        "S",
+        "H",
+        "C"
+      ],
+      "stringLength": {
+        "avg": 1,
+        "max": 1
+      },
+      "byStatus": {
+        "OK": 117874
+      }
+    },
+    {
+      "path": "produces[].feature.uncountable",
+      "present": 117874,
+      "occurrences": 643727,
+      "nulls": 0,
+      "types": {
+        "boolean": 643727
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          true,
+          640914
+        ],
+        [
+          false,
+          2813
+        ]
+      ],
+      "samples": [
+        true,
+        false
+      ],
+      "byStatus": {
+        "OK": 117874
+      }
+    },
+    {
+      "path": "produces[].quantity",
+      "present": 117874,
+      "occurrences": 643727,
+      "nulls": 0,
+      "types": {
+        "number": 643727
+      },
+      "kind": "integer",
+      "distinct": 2,
+      "topValues": [
+        [
+          1,
+          643710
+        ],
+        [
+          2,
+          17
+        ]
+      ],
+      "samples": [
+        1,
+        2
+      ],
+      "numberStats": {
+        "min": 1,
+        "max": 2,
+        "mean": 1
+      },
+      "byStatus": {
+        "OK": 117874
+      }
+    },
+    {
+      "path": "requires",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "array": 117875
+      },
+      "kind": "array",
+      "arrayLengths": {
+        "0": 111403,
+        "1": 6220,
+        "2": 252
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "requires[]",
+      "present": 6472,
+      "occurrences": 6724,
+      "nulls": 0,
+      "types": {
+        "object": 6724
+      },
+      "kind": "object",
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "requires[].battlefieldCardState",
+      "present": 6472,
+      "occurrences": 6724,
+      "nulls": 0,
+      "types": {
+        "string": 6724
+      },
+      "kind": "enum",
+      "distinct": 9,
+      "topValues": [
+        [
+          "",
+          5975
+        ],
+        [
+          "without a -1/-1 counter on it",
+          487
+        ],
+        [
+          "without a +1/+1 counter on it",
+          195
+        ],
+        [
+          "without summoning sickness and cannot be blcoked and killed by an opponent",
+          30
+        ],
+        [
+          "without a finality counter on it",
+          20
+        ],
+        [
+          "without summoning sickness",
+          12
+        ],
+        [
+          "without a -1/-1 counter on it without a -1/-1 counter on it",
+          2
+        ],
+        [
+          "without summoning sickness (if applicable)",
+          2
+        ],
+        [
+          "If the card is anger",
+          1
+        ]
+      ],
+      "samples": [
+        "",
+        "without summoning sickness and cannot be blcoked and killed by an opponent",
+        "without a -1/-1 counter on it"
+      ],
+      "stringLength": {
+        "avg": 3.4,
+        "max": 74
+      },
+      "emptyStrings": 5975,
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "requires[].exileCardState",
+      "present": 6472,
+      "occurrences": 6724,
+      "nulls": 0,
+      "types": {
+        "string": 6724
+      },
+      "kind": "enum",
+      "distinct": 8,
+      "topValues": [
+        [
+          "",
+          6647
+        ],
+        [
+          "with a takeover counter on it",
+          40
+        ],
+        [
+          "exiled by Agatha's Soul Cauldron",
+          16
+        ],
+        [
+          "with time counter(s) on it",
+          16
+        ],
+        [
+          "exiled by Mimic Vat",
+          2
+        ],
+        [
+          "exiled by Locus of Enlightenment",
+          1
+        ],
+        [
+          "exiled by Myr Welder",
+          1
+        ],
+        [
+          "exiled by Prototype Portal",
+          1
+        ]
+      ],
+      "samples": [
+        "",
+        "with a takeover counter on it",
+        "exiled by Mimic Vat"
+      ],
+      "stringLength": {
+        "avg": 0.3,
+        "max": 32
+      },
+      "emptyStrings": 6647,
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "requires[].graveyardCardState",
+      "present": 6472,
+      "occurrences": 6724,
+      "nulls": 0,
+      "types": {
+        "string": 6724
+      },
+      "kind": "string",
+      "distinct": 1,
+      "topValues": [
+        [
+          "",
+          6724
+        ]
+      ],
+      "samples": [
+        ""
+      ],
+      "stringLength": {
+        "avg": 0,
+        "max": 0
+      },
+      "emptyStrings": 6724,
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "requires[].libraryCardState",
+      "present": 6472,
+      "occurrences": 6724,
+      "nulls": 0,
+      "types": {
+        "string": 6724
+      },
+      "kind": "string",
+      "distinct": 1,
+      "topValues": [
+        [
+          "",
+          6724
+        ]
+      ],
+      "samples": [
+        ""
+      ],
+      "stringLength": {
+        "avg": 0,
+        "max": 0
+      },
+      "emptyStrings": 6724,
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "requires[].mustBeCommander",
+      "present": 6472,
+      "occurrences": 6724,
+      "nulls": 0,
+      "types": {
+        "boolean": 6724
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          6721
+        ],
+        [
+          true,
+          3
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "requires[].quantity",
+      "present": 6472,
+      "occurrences": 6724,
+      "nulls": 0,
+      "types": {
+        "number": 6724
+      },
+      "kind": "integer",
+      "distinct": 3,
+      "topValues": [
+        [
+          1,
+          6394
+        ],
+        [
+          2,
+          327
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "samples": [
+        1,
+        3,
+        2
+      ],
+      "numberStats": {
+        "min": 1,
+        "max": 3,
+        "mean": 1.05
+      },
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "requires[].template",
+      "present": 6472,
+      "occurrences": 6724,
+      "nulls": 0,
+      "types": {
+        "object": 6724
+      },
+      "kind": "object",
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "requires[].template.id",
+      "present": 6472,
+      "occurrences": 6724,
+      "nulls": 0,
+      "types": {
+        "number": 6724
+      },
+      "kind": "integer",
+      "distinct": 178,
+      "topValues": [
+        [
+          5,
+          1265
+        ],
+        [
+          216,
+          522
+        ],
+        [
+          52,
+          448
+        ],
+        [
+          202,
+          434
+        ],
+        [
+          44,
+          405
+        ],
+        [
+          112,
+          339
+        ],
+        [
+          85,
+          318
+        ],
+        [
+          165,
+          314
+        ],
+        [
+          6,
+          239
+        ],
+        [
+          196,
+          150
+        ],
+        [
+          195,
+          100
+        ],
+        [
+          106,
+          97
+        ],
+        [
+          211,
+          74
+        ],
+        [
+          56,
+          74
+        ],
+        [
+          183,
+          72
+        ],
+        [
+          20,
+          71
+        ],
+        [
+          90,
+          71
+        ],
+        [
+          24,
+          67
+        ],
+        [
+          73,
+          60
+        ],
+        [
+          173,
+          58
+        ],
+        [
+          180,
+          52
+        ],
+        [
+          201,
+          42
+        ],
+        [
+          109,
+          40
+        ],
+        [
+          111,
+          39
+        ],
+        [
+          118,
+          39
+        ]
+      ],
+      "samples": [
+        225,
+        73,
+        24
+      ],
+      "numberStats": {
+        "min": 1,
+        "max": 225,
+        "mean": 98.296
+      },
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "requires[].template.name",
+      "present": 6472,
+      "occurrences": 6724,
+      "nulls": 0,
+      "types": {
+        "string": 6724
+      },
+      "kind": "string",
+      "distinct": 178,
+      "topValues": [
+        [
+          "Persist Creature",
+          1265
+        ],
+        [
+          "Creature with Undying",
+          522
+        ],
+        [
+          "Creature Castable for One Colored Mana",
+          448
+        ],
+        [
+          "Artifact Castable for Exactly {1}",
+          434
+        ],
+        [
+          "Artifact Castable for {0} that survives",
+          405
+        ],
+        [
+          "Effects that Alter a Creature's Power/Toughness (Anthem Effects)",
+          339
+        ],
+        [
+          "Haste Enabler",
+          318
+        ],
+        [
+          "Hero Creature",
+          314
+        ],
+        [
+          "Undying Creature",
+          239
+        ],
+        [
+          "Gives +1/+1 counter to creatures that enter",
+          150
+        ],
+        [
+          "Increases +1/+1 Counter Placement but not -1/-1",
+          100
+        ],
+        [
+          "Permanent with Landfall Ability: Create Creature Token(s)",
+          97
+        ],
+        [
+          "Creature with ETB: Earthbend",
+          74
+        ],
+        [
+          "Zombie Creature",
+          74
+        ],
+        [
+          "Creature that earthbends on entering",
+          72
+        ],
+        [
+          "Creature with Bloodthirst",
+          71
+        ],
+        [
+          "Noncreature Artifact with MV<=1",
+          71
+        ],
+        [
+          "Knight Creature with MV<=3",
+          67
+        ],
+        [
+          "Creature with Persist or Undying",
+          60
+        ],
+        [
+          "Creature castable for {0} that survives",
+          58
+        ],
+        [
+          "Goblin, Orc or Army Creature Castable for One Colored Mana",
+          52
+        ],
+        [
+          "Changeling Creature",
+          42
+        ],
+        [
+          "Card Giving Creatures -1/-1",
+          40
+        ],
+        [
+          "Card That Animates a Land",
+          39
+        ],
+        [
+          "Card that Animates an Artifact",
+          39
+        ]
+      ],
+      "samples": [
+        "Zombie Cat Creature",
+        "Creature with Persist or Undying",
+        "Knight Creature with MV<=3"
+      ],
+      "stringLength": {
+        "avg": 29.2,
+        "max": 91
+      },
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "requires[].template.scryfallApi",
+      "present": 6472,
+      "occurrences": 6724,
+      "nulls": 1310,
+      "types": {
+        "string": 5414,
+        "null": 1310
+      },
+      "kind": "url",
+      "distinct": 154,
+      "samples": [
+        "https://api.scryfall.com/cards/search?q=%28t%3Acreature+%28kw%3Achangeling+or+t%3Azombie+t%3Acat%29%29+legal%3Acommander",
+        "https://api.scryfall.com/cards/search?q=%28t%3Acreature+%28keyword%3Apersist+or+keyword%3Aundying%29%29+legal%3Acommand…",
+        "https://api.scryfall.com/cards/search?q=%28mv%3C%3D3+t%3Acreature+%28t%3Aknight+or+keyword%3Achangeling%29%29+legal%3Ac…"
+      ],
+      "stringLength": {
+        "avg": 126.8,
+        "max": 860
+      },
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "requires[].template.scryfallQuery",
+      "present": 6472,
+      "occurrences": 6724,
+      "nulls": 1310,
+      "types": {
+        "string": 5414,
+        "null": 1310
+      },
+      "kind": "string",
+      "distinct": 154,
+      "topValues": [
+        [
+          "keyword:persist t:creature",
+          1265
+        ],
+        [
+          "kw:undying t:creature",
+          522
+        ],
+        [
+          "(t:creature mv=1 -mana:{X} -mana:{C}) or (t:creature mv=0 mana={X}) or (t:creat…",
+          448
+        ],
+        [
+          "t:artifact -t:land (mana=1 or otag:potentially-free)",
+          434
+        ],
+        [
+          "t:artifact (mv=0 or otag:potentially-free) (-t:creature or toughness>0) -m<{0}",
+          405
+        ],
+        [
+          "(kw:changeling or t:hero or o:\"This creature is the chosen type\") t:creature",
+          314
+        ],
+        [
+          "keyword:undying t:creature",
+          239
+        ],
+        [
+          "(!\"Bumi, King of Three Trials\" or o:\"when ~ enters, earthbend\") -!\"Toph, Greate…",
+          74
+        ],
+        [
+          "(keyword:changeling or t:zombie) t:creature",
+          74
+        ],
+        [
+          "keyword:bloodthirst",
+          71
+        ],
+        [
+          "t:artifact mv<=1 -t:creature -t:attraction",
+          71
+        ],
+        [
+          "mv<=3 t:creature (t:knight or keyword:changeling)",
+          67
+        ],
+        [
+          "t:creature (keyword:persist or keyword:undying)",
+          60
+        ],
+        [
+          "t:creature toughness!=0 mv=0 -m<{0}",
+          58
+        ],
+        [
+          "t:creature (kw:changeling or t:goblin or t:orc or t:army) mv<=1",
+          52
+        ],
+        [
+          "kw:changeling t:creature",
+          42
+        ],
+        [
+          "otag:animate-artifact",
+          39
+        ],
+        [
+          "t:Creature (t:zombie or kw:changeling) mv<=1 -!\"Accursed Centaur\" -!\"Cobbled La…",
+          39
+        ],
+        [
+          "t:creature (keyword:changeling or t:dinosaur)",
+          35
+        ],
+        [
+          "o:/^cycling (\\{1\\}|\\sc)$/ t:land",
+          34
+        ],
+        [
+          "otag:adds-multiple-mana t:land",
+          32
+        ],
+        [
+          "otag:gives-lifelink -!\"Abigale, Eloquent First-Year\"",
+          32
+        ],
+        [
+          "t:artifact t:creature toughness=0 (mana={X} or mana={X}{X})",
+          32
+        ],
+        [
+          "t:saga -t:legendary",
+          32
+        ],
+        [
+          "kw:earthbend",
+          30
+        ]
+      ],
+      "samples": [
+        "t:creature (kw:changeling or t:zombie t:cat)",
+        "t:creature (keyword:persist or keyword:undying)",
+        "mv<=3 t:creature (t:knight or keyword:changeling)"
+      ],
+      "stringLength": {
+        "avg": 48.8,
+        "max": 588
+      },
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "requires[].zoneLocations",
+      "present": 6472,
+      "occurrences": 6724,
+      "nulls": 0,
+      "types": {
+        "array": 6724
+      },
+      "kind": "array",
+      "arrayLengths": {
+        "1": 5846,
+        "2": 854,
+        "3": 3,
+        "6": 21
+      },
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "requires[].zoneLocations[]",
+      "present": 6472,
+      "occurrences": 7689,
+      "nulls": 0,
+      "types": {
+        "string": 7689
+      },
+      "kind": "enum",
+      "distinct": 6,
+      "topValues": [
+        [
+          "B",
+          5146
+        ],
+        [
+          "H",
+          1222
+        ],
+        [
+          "G",
+          1155
+        ],
+        [
+          "E",
+          119
+        ],
+        [
+          "C",
+          24
+        ],
+        [
+          "L",
+          23
+        ]
+      ],
+      "samples": [
+        "B",
+        "H",
+        "G"
+      ],
+      "stringLength": {
+        "avg": 1,
+        "max": 1
+      },
+      "byStatus": {
+        "OK": 6472
+      }
+    },
+    {
+      "path": "salt",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 117744,
+      "types": {
+        "null": 117744,
+        "number": 131
+      },
+      "kind": "number",
+      "distinct": 71,
+      "topValues": [
+        [
+          2,
+          7
+        ],
+        [
+          1.67,
+          6
+        ],
+        [
+          1.8,
+          6
+        ],
+        [
+          2.2,
+          6
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1.33,
+          5
+        ],
+        [
+          2.6,
+          4
+        ],
+        [
+          2.8,
+          4
+        ],
+        [
+          1.29,
+          3
+        ],
+        [
+          1.4,
+          3
+        ],
+        [
+          1.5,
+          3
+        ],
+        [
+          1.6,
+          3
+        ],
+        [
+          1.83,
+          3
+        ],
+        [
+          2.17,
+          3
+        ],
+        [
+          2.43,
+          3
+        ],
+        [
+          1.11,
+          2
+        ],
+        [
+          1.17,
+          2
+        ],
+        [
+          1.2,
+          2
+        ],
+        [
+          1.25,
+          2
+        ],
+        [
+          1.71,
+          2
+        ],
+        [
+          1.88,
+          2
+        ],
+        [
+          1.93,
+          2
+        ],
+        [
+          2.14,
+          2
+        ],
+        [
+          2.5,
+          2
+        ],
+        [
+          2.57,
+          2
+        ]
+      ],
+      "samples": [
+        1.9,
+        2.4,
+        1.17
+      ],
+      "numberStats": {
+        "min": 0.2,
+        "max": 3.48,
+        "mean": 1.894
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "saltVoteCount",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "number": 117875
+      },
+      "kind": "integer",
+      "distinct": 21,
+      "topValues": [
+        [
+          0,
+          114309
+        ],
+        [
+          1,
+          2669
+        ],
+        [
+          2,
+          483
+        ],
+        [
+          3,
+          197
+        ],
+        [
+          4,
+          86
+        ],
+        [
+          5,
+          33
+        ],
+        [
+          6,
+          25
+        ],
+        [
+          7,
+          20
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          18,
+          2
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          28,
+          1
+        ],
+        [
+          46,
+          1
+        ]
+      ],
+      "samples": [
+        1,
+        0,
+        3
+      ],
+      "numberStats": {
+        "min": 0,
+        "max": 46,
+        "mean": 0.048
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "spoiler",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "boolean": 117875
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          116071
+        ],
+        [
+          true,
+          1804
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "status",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "string": 117875
+      },
+      "kind": "enum",
+      "distinct": 1,
+      "topValues": [
+        [
+          "OK",
+          117875
+        ]
+      ],
+      "samples": [
+        "OK"
+      ],
+      "stringLength": {
+        "avg": 2,
+        "max": 2
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "array": 117875
+      },
+      "kind": "array",
+      "arrayLengths": {
+        "1": 7,
+        "2": 5307,
+        "3": 52519,
+        "4": 51071,
+        "5": 8924,
+        "6": 30,
+        "7": 7,
+        "8": 5,
+        "9": 4,
+        "10+": 1
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[]",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "object": 417397
+      },
+      "kind": "object",
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].battlefieldCardState",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "string": 417397
+      },
+      "kind": "string",
+      "distinct": 1038,
+      "topValues": [
+        [
+          "",
+          385850
+        ],
+        [
+          "without summoning sickness",
+          8393
+        ],
+        [
+          "without a -1/-1 counter on it",
+          1874
+        ],
+        [
+          "as a copy of Radiant Solar",
+          1064
+        ],
+        [
+          "without a +1/+1 counter on it",
+          945
+        ],
+        [
+          "with a +1/+1 counter on it",
+          823
+        ],
+        [
+          "with two or more charge counters on it",
+          776
+        ],
+        [
+          "is level 3",
+          750
+        ],
+        [
+          "attached to another creature you control",
+          510
+        ],
+        [
+          "attached to a creature you control",
+          476
+        ],
+        [
+          "untapped",
+          467
+        ],
+        [
+          "attached to another creature you control ",
+          440
+        ],
+        [
+          "with \"Temur\" chosen",
+          404
+        ],
+        [
+          "attached to Dryad Arbor",
+          390
+        ],
+        [
+          "is at least level 2",
+          364
+        ],
+        [
+          "with Mirror Room locked and Fractured Realm unlocked",
+          360
+        ],
+        [
+          "with two or more loyalty counters on it",
+          341
+        ],
+        [
+          "attached to any other creature you control  ",
+          272
+        ],
+        [
+          "is paired with another creature",
+          257
+        ],
+        [
+          "with \"Ally\" chosen",
+          243
+        ],
+        [
+          "without summoning sickness and without a -1/-1 counter on it",
+          222
+        ],
+        [
+          "attached to Sun Titan",
+          220
+        ],
+        [
+          "with \"Artifact\" chosen",
+          211
+        ],
+        [
+          "attached to Boonweaver Giant",
+          207
+        ],
+        [
+          "with three or more +1/+1 counters on it",
+          169
+        ]
+      ],
+      "samples": [
+        "",
+        "can be transformed",
+        "with \"Temur\" chosen"
+      ],
+      "stringLength": {
+        "avg": 2.2,
+        "max": 144
+      },
+      "emptyStrings": 385850,
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "object": 417397
+      },
+      "kind": "object",
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.faces",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "number": 417397
+      },
+      "kind": "integer",
+      "distinct": 2,
+      "topValues": [
+        [
+          1,
+          407832
+        ],
+        [
+          2,
+          9565
+        ]
+      ],
+      "samples": [
+        1,
+        2
+      ],
+      "numberStats": {
+        "min": 1,
+        "max": 2,
+        "mean": 1.023
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.id",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "number": 417397
+      },
+      "kind": "integer",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "topValues": [
+        [
+          2034,
+          6258
+        ],
+        [
+          4050,
+          5348
+        ],
+        [
+          4871,
+          3151
+        ],
+        [
+          5078,
+          3113
+        ],
+        [
+          5220,
+          2829
+        ],
+        [
+          5231,
+          2674
+        ],
+        [
+          6972,
+          2369
+        ],
+        [
+          5256,
+          2316
+        ],
+        [
+          3490,
+          2174
+        ],
+        [
+          3259,
+          2117
+        ],
+        [
+          5147,
+          1980
+        ],
+        [
+          2292,
+          1928
+        ],
+        [
+          2438,
+          1879
+        ],
+        [
+          4659,
+          1847
+        ],
+        [
+          1170,
+          1822
+        ],
+        [
+          2921,
+          1788
+        ],
+        [
+          5686,
+          1750
+        ],
+        [
+          997,
+          1713
+        ],
+        [
+          3899,
+          1680
+        ],
+        [
+          1479,
+          1679
+        ],
+        [
+          3967,
+          1676
+        ],
+        [
+          2511,
+          1674
+        ],
+        [
+          6798,
+          1637
+        ],
+        [
+          413,
+          1629
+        ],
+        [
+          6797,
+          1612
+        ]
+      ],
+      "topValuesApproximate": true,
+      "samples": [
+        720,
+        1806,
+        2034
+      ],
+      "numberStats": {
+        "min": 1,
+        "max": 8330,
+        "mean": 3651.92
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.imageUriBackArtCrop",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 410076,
+      "types": {
+        "null": 410076,
+        "string": 7321
+      },
+      "kind": "url",
+      "distinct": 134,
+      "samples": [
+        "https://cards.scryfall.io/art/back/0/3/031c5cff-e579-432a-bcee-864b12eb0558.webp?1783924920",
+        "https://cards.scryfall.io/art/back/b/2/b2d9d5ca-7e15-437a-bdfc-5972b42148fe.webp?1783904521",
+        "https://cards.scryfall.io/art/back/c/b/cb7d5bbb-4f68-4e38-8bb0-a95af21b24c8.webp?1783904517"
+      ],
+      "stringLength": {
+        "avg": 91,
+        "max": 91
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.imageUriBackLarge",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 410076,
+      "types": {
+        "null": 410076,
+        "string": 7321
+      },
+      "kind": "url",
+      "distinct": 134,
+      "samples": [
+        "https://cards.scryfall.io/display/back/0/3/031c5cff-e579-432a-bcee-864b12eb0558.webp?1783924920",
+        "https://cards.scryfall.io/display/back/b/2/b2d9d5ca-7e15-437a-bdfc-5972b42148fe.webp?1783904521",
+        "https://cards.scryfall.io/display/back/c/b/cb7d5bbb-4f68-4e38-8bb0-a95af21b24c8.webp?1783904517"
+      ],
+      "stringLength": {
+        "avg": 95,
+        "max": 95
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.imageUriBackNormal",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 410076,
+      "types": {
+        "null": 410076,
+        "string": 7321
+      },
+      "kind": "url",
+      "distinct": 134,
+      "samples": [
+        "https://cards.scryfall.io/grid/back/0/3/031c5cff-e579-432a-bcee-864b12eb0558.webp?1783924920",
+        "https://cards.scryfall.io/grid/back/b/2/b2d9d5ca-7e15-437a-bdfc-5972b42148fe.webp?1783904521",
+        "https://cards.scryfall.io/grid/back/c/b/cb7d5bbb-4f68-4e38-8bb0-a95af21b24c8.webp?1783904517"
+      ],
+      "stringLength": {
+        "avg": 92,
+        "max": 92
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.imageUriBackPng",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 410076,
+      "types": {
+        "null": 410076,
+        "string": 7321
+      },
+      "kind": "url",
+      "distinct": 134,
+      "samples": [
+        "https://cards.scryfall.io/png/back/0/3/031c5cff-e579-432a-bcee-864b12eb0558.png?1783924920",
+        "https://cards.scryfall.io/png/back/b/2/b2d9d5ca-7e15-437a-bdfc-5972b42148fe.png?1783904521",
+        "https://cards.scryfall.io/png/back/c/b/cb7d5bbb-4f68-4e38-8bb0-a95af21b24c8.png?1783904517"
+      ],
+      "stringLength": {
+        "avg": 90,
+        "max": 90
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.imageUriBackSmall",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 410076,
+      "types": {
+        "null": 410076,
+        "string": 7321
+      },
+      "kind": "url",
+      "distinct": 134,
+      "samples": [
+        "https://cards.scryfall.io/thumb/back/0/3/031c5cff-e579-432a-bcee-864b12eb0558.webp?1783924920",
+        "https://cards.scryfall.io/thumb/back/b/2/b2d9d5ca-7e15-437a-bdfc-5972b42148fe.webp?1783904521",
+        "https://cards.scryfall.io/thumb/back/c/b/cb7d5bbb-4f68-4e38-8bb0-a95af21b24c8.webp?1783904517"
+      ],
+      "stringLength": {
+        "avg": 93,
+        "max": 93
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.imageUriFrontArtCrop",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "string": 417397
+      },
+      "kind": "url",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "samples": [
+        "https://cards.scryfall.io/art/front/2/8/28934cf3-c1e0-49c9-93ce-fd60b1881884.webp?1783917920",
+        "https://cards.scryfall.io/art/front/1/3/13ce52f5-6d49-4d44-a3d7-925340de8406.webp?1783937526",
+        "https://cards.scryfall.io/art/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.webp?1783915605"
+      ],
+      "stringLength": {
+        "avg": 92,
+        "max": 92
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.imageUriFrontLarge",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "string": 417397
+      },
+      "kind": "url",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "samples": [
+        "https://cards.scryfall.io/display/front/2/8/28934cf3-c1e0-49c9-93ce-fd60b1881884.webp?1783917920",
+        "https://cards.scryfall.io/display/front/1/3/13ce52f5-6d49-4d44-a3d7-925340de8406.webp?1783937526",
+        "https://cards.scryfall.io/display/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.webp?1783915605"
+      ],
+      "stringLength": {
+        "avg": 96,
+        "max": 96
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.imageUriFrontNormal",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "string": 417397
+      },
+      "kind": "url",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "samples": [
+        "https://cards.scryfall.io/grid/front/2/8/28934cf3-c1e0-49c9-93ce-fd60b1881884.webp?1783917920",
+        "https://cards.scryfall.io/grid/front/1/3/13ce52f5-6d49-4d44-a3d7-925340de8406.webp?1783937526",
+        "https://cards.scryfall.io/grid/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.webp?1783915605"
+      ],
+      "stringLength": {
+        "avg": 93,
+        "max": 93
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.imageUriFrontPng",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "string": 417397
+      },
+      "kind": "url",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "samples": [
+        "https://cards.scryfall.io/png/front/2/8/28934cf3-c1e0-49c9-93ce-fd60b1881884.png?1783917920",
+        "https://cards.scryfall.io/png/front/1/3/13ce52f5-6d49-4d44-a3d7-925340de8406.png?1783937526",
+        "https://cards.scryfall.io/png/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.png?1783915605"
+      ],
+      "stringLength": {
+        "avg": 91,
+        "max": 91
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.imageUriFrontSmall",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "string": 417397
+      },
+      "kind": "url",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "samples": [
+        "https://cards.scryfall.io/thumb/front/2/8/28934cf3-c1e0-49c9-93ce-fd60b1881884.webp?1783917920",
+        "https://cards.scryfall.io/thumb/front/1/3/13ce52f5-6d49-4d44-a3d7-925340de8406.webp?1783937526",
+        "https://cards.scryfall.io/thumb/front/3/c/3c0f7157-a375-499c-92c7-d47d2e95dbad.webp?1783915605"
+      ],
+      "stringLength": {
+        "avg": 94,
+        "max": 94
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.layoutRotationFront",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 416030,
+      "types": {
+        "null": 416030,
+        "string": 1367
+      },
+      "kind": "enum",
+      "distinct": 3,
+      "topValues": [
+        [
+          "clockwise",
+          1178
+        ],
+        [
+          "flip",
+          124
+        ],
+        [
+          "counterclockwise",
+          65
+        ]
+      ],
+      "samples": [
+        "clockwise",
+        "counterclockwise",
+        "flip"
+      ],
+      "stringLength": {
+        "avg": 8.9,
+        "max": 16
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.name",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "string": 417397
+      },
+      "kind": "string",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "topValues": [
+        [
+          "Ashnod's Altar",
+          6258
+        ],
+        [
+          "Phyrexian Altar",
+          5348
+        ],
+        [
+          "Pitiless Plunderer",
+          3151
+        ],
+        [
+          "Sensei's Divining Top",
+          3113
+        ],
+        [
+          "Mortuary",
+          2829
+        ],
+        [
+          "Thermopod",
+          2674
+        ],
+        [
+          "Eirdu, Carrier of Dawn // Isilu, Carrier of Twilight",
+          2369
+        ],
+        [
+          "Altar of Dementia",
+          2316
+        ],
+        [
+          "Animation Module",
+          2174
+        ],
+        [
+          "Breath of Fury",
+          2117
+        ],
+        [
+          "Goblin Bombardment",
+          1980
+        ],
+        [
+          "Viscera Seer",
+          1928
+        ],
+        [
+          "Carrion Feeder",
+          1879
+        ],
+        [
+          "Krark-Clan Ironworks",
+          1847
+        ],
+        [
+          "Displacer Kitten",
+          1822
+        ],
+        [
+          "Bartolomé del Presidio",
+          1788
+        ],
+        [
+          "Shilgengar, Sire of Famine",
+          1750
+        ],
+        [
+          "Woe Strider",
+          1713
+        ],
+        [
+          "Spawning Pit",
+          1680
+        ],
+        [
+          "Kodama of the East Tree",
+          1679
+        ],
+        [
+          "Yahenni, Undying Partisan",
+          1676
+        ],
+        [
+          "Bloodflow Connoisseur",
+          1674
+        ],
+        [
+          "Umbral Collar Zealot",
+          1637
+        ],
+        [
+          "Blasting Station",
+          1629
+        ],
+        [
+          "Phantom Train",
+          1612
+        ]
+      ],
+      "topValuesApproximate": true,
+      "samples": [
+        "Kinzu of the Bleak Coven",
+        "Eternal Scourge",
+        "Ashnod's Altar"
+      ],
+      "stringLength": {
+        "avg": 17.9,
+        "max": 59
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.oracleId",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "string": 417397
+      },
+      "kind": "uuid",
+      "distinct": 5000,
+      "distinctCapped": true,
+      "samples": [
+        "e4f4c41b-2533-497f-96bb-7083ef597268",
+        "c8b0436e-16d2-4d48-a894-454d69a3743b",
+        "4d18bcba-a346-445e-a182-6cc30b7e066d"
+      ],
+      "stringLength": {
+        "avg": 36,
+        "max": 36
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.spoiler",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "boolean": 417397
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          415590
+        ],
+        [
+          true,
+          1807
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].card.typeLine",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "string": 417397
+      },
+      "kind": "string",
+      "distinct": 1827,
+      "topValues": [
+        [
+          "Artifact",
+          46594
+        ],
+        [
+          "Enchantment",
+          45950
+        ],
+        [
+          "Enchantment — Aura",
+          10241
+        ],
+        [
+          "Instant",
+          8614
+        ],
+        [
+          "Sorcery",
+          8598
+        ],
+        [
+          "Artifact Creature — Construct",
+          6852
+        ],
+        [
+          "Legendary Artifact",
+          6655
+        ],
+        [
+          "Land",
+          6296
+        ],
+        [
+          "Creature — Human Wizard",
+          5376
+        ],
+        [
+          "Artifact — Equipment",
+          5282
+        ],
+        [
+          "Creature — Human Cleric",
+          4949
+        ],
+        [
+          "Legendary Creature — Human Wizard",
+          4420
+        ],
+        [
+          "Creature — Zombie",
+          3748
+        ],
+        [
+          "Creature — Human Pirate",
+          3465
+        ],
+        [
+          "Creature — Vampire",
+          3188
+        ],
+        [
+          "Legendary Creature — Elemental",
+          3031
+        ],
+        [
+          "Snow Creature — Slug",
+          2674
+        ],
+        [
+          "Legendary Creature — Human Warrior",
+          2619
+        ],
+        [
+          "Creature — Cat",
+          2509
+        ],
+        [
+          "Creature — Angel",
+          2400
+        ],
+        [
+          "Legendary Creature — Elemental God // Legendary Creature — Elemental God",
+          2369
+        ],
+        [
+          "Legendary Creature — Spirit",
+          2338
+        ],
+        [
+          "Creature — Insect",
+          2305
+        ],
+        [
+          "Creature — Spirit",
+          2302
+        ],
+        [
+          "Creature — Cat Beast",
+          2276
+        ]
+      ],
+      "samples": [
+        "Legendary Creature — Phyrexian Vampire",
+        "Creature — Eldrazi Horror",
+        "Artifact"
+      ],
+      "stringLength": {
+        "avg": 22.4,
+        "max": 89
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].exileCardState",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "string": 417397
+      },
+      "kind": "enum",
+      "distinct": 83,
+      "topValues": [
+        [
+          "",
+          414169
+        ],
+        [
+          "exiled by Agatha's Soul Cauldron",
+          661
+        ],
+        [
+          "exiled by Abdel Adrian",
+          467
+        ],
+        [
+          "exiled by Myr Welder",
+          258
+        ],
+        [
+          "exiled by Phantom Steed",
+          252
+        ],
+        [
+          "exiled by Isochron Scepter",
+          223
+        ],
+        [
+          "with three or fewer time counters on it",
+          147
+        ],
+        [
+          "with a takeover counter on it",
+          137
+        ],
+        [
+          "exiled by Prototype Portal",
+          109
+        ],
+        [
+          "exiled by its paradigm ability",
+          104
+        ],
+        [
+          "exiled by Dino DNA",
+          91
+        ],
+        [
+          "by Agatha's Soul Cauldron",
+          80
+        ],
+        [
+          "exiled by Elite Arcanist",
+          68
+        ],
+        [
+          "exiled by Hazel's Brewmaster",
+          65
+        ],
+        [
+          "exiled by Mimeoplasm",
+          60
+        ],
+        [
+          "exiled by Panoptic Mirror",
+          55
+        ],
+        [
+          "exiled by Agatha's soul cauldron",
+          33
+        ],
+        [
+          "exiled by Steward of the Harvest",
+          30
+        ],
+        [
+          "exiled with Agatha's Soul Cauldron",
+          27
+        ],
+        [
+          "exiled by Spellbinder",
+          26
+        ],
+        [
+          "with a brain counter on it",
+          26
+        ],
+        [
+          "with a kick counter on it",
+          21
+        ],
+        [
+          "exiled by Idris",
+          19
+        ],
+        [
+          "exiled by Mimic Vat",
+          18
+        ],
+        [
+          "exiled by Patchwork Crawler",
+          15
+        ]
+      ],
+      "samples": [
+        "",
+        "exiled by Steward of the Harvest",
+        "exiled with Agatha's Soul Cauldron"
+      ],
+      "stringLength": {
+        "avg": 0.2,
+        "max": 49
+      },
+      "emptyStrings": 414169,
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].graveyardCardState",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "string": 417397
+      },
+      "kind": "enum",
+      "distinct": 4,
+      "topValues": [
+        [
+          "",
+          417365
+        ],
+        [
+          "was discarded this turn",
+          30
+        ],
+        [
+          "At least five additional cards in your graveyard",
+          1
+        ],
+        [
+          "was put into your graveyard this turn",
+          1
+        ]
+      ],
+      "samples": [
+        "",
+        "At least five additional cards in your graveyard",
+        "was discarded this turn"
+      ],
+      "stringLength": {
+        "avg": 0,
+        "max": 48
+      },
+      "emptyStrings": 417365,
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].libraryCardState",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "string": 417397
+      },
+      "kind": "enum",
+      "distinct": 5,
+      "topValues": [
+        [
+          "",
+          416823
+        ],
+        [
+          "on top of your library",
+          532
+        ],
+        [
+          "on top of your library ",
+          39
+        ],
+        [
+          "on top",
+          2
+        ],
+        [
+          "in the top two cards of your library",
+          1
+        ]
+      ],
+      "samples": [
+        "",
+        "on top of your library",
+        "in the top two cards of your library"
+      ],
+      "stringLength": {
+        "avg": 0,
+        "max": 36
+      },
+      "emptyStrings": 416823,
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].mustBeCommander",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "boolean": 417397
+      },
+      "kind": "boolean",
+      "distinct": 2,
+      "topValues": [
+        [
+          false,
+          416101
+        ],
+        [
+          true,
+          1296
+        ]
+      ],
+      "samples": [
+        false,
+        true
+      ],
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].quantity",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "number": 417397
+      },
+      "kind": "integer",
+      "distinct": 2,
+      "topValues": [
+        [
+          1,
+          417396
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "samples": [
+        1,
+        2
+      ],
+      "numberStats": {
+        "min": 1,
+        "max": 2,
+        "mean": 1
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].usedFace",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 412667,
+      "types": {
+        "null": 412667,
+        "number": 4730
+      },
+      "kind": "integer",
+      "distinct": 2,
+      "topValues": [
+        [
+          2,
+          4267
+        ],
+        [
+          1,
+          463
+        ]
+      ],
+      "samples": [
+        1,
+        2
+      ],
+      "numberStats": {
+        "min": 1,
+        "max": 2,
+        "mean": 1.902
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].zoneLocations",
+      "present": 117875,
+      "occurrences": 417397,
+      "nulls": 0,
+      "types": {
+        "array": 417397
+      },
+      "kind": "array",
+      "arrayLengths": {
+        "1": 411940,
+        "2": 5064,
+        "3": 260,
+        "4": 12,
+        "5": 34,
+        "6": 87
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "uses[].zoneLocations[]",
+      "present": 117875,
+      "occurrences": 423588,
+      "nulls": 0,
+      "types": {
+        "string": 423588
+      },
+      "kind": "enum",
+      "distinct": 6,
+      "topValues": [
+        [
+          "B",
+          361227
+        ],
+        [
+          "H",
+          41641
+        ],
+        [
+          "G",
+          12118
+        ],
+        [
+          "E",
+          4870
+        ],
+        [
+          "C",
+          2124
+        ],
+        [
+          "L",
+          1608
+        ]
+      ],
+      "samples": [
+        "B",
+        "H",
+        "C"
+      ],
+      "stringLength": {
+        "avg": 1,
+        "max": 1
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    },
+    {
+      "path": "variantCount",
+      "present": 117875,
+      "occurrences": 117875,
+      "nulls": 0,
+      "types": {
+        "number": 117875
+      },
+      "kind": "integer",
+      "distinct": 231,
+      "topValues": [
+        [
+          1,
+          23433
+        ],
+        [
+          15,
+          2159
+        ],
+        [
+          20,
+          1780
+        ],
+        [
+          14,
+          1514
+        ],
+        [
+          13,
+          1398
+        ],
+        [
+          240,
+          1182
+        ],
+        [
+          12,
+          1176
+        ],
+        [
+          33,
+          1116
+        ],
+        [
+          19,
+          1082
+        ],
+        [
+          11,
+          1078
+        ],
+        [
+          32,
+          1047
+        ],
+        [
+          1045,
+          1045
+        ],
+        [
+          18,
+          1027
+        ],
+        [
+          30,
+          1017
+        ],
+        [
+          96,
+          960
+        ],
+        [
+          16,
+          912
+        ],
+        [
+          877,
+          877
+        ],
+        [
+          865,
+          865
+        ],
+        [
+          29,
+          864
+        ],
+        [
+          10,
+          852
+        ],
+        [
+          850,
+          850
+        ],
+        [
+          60,
+          840
+        ],
+        [
+          6,
+          839
+        ],
+        [
+          414,
+          828
+        ],
+        [
+          825,
+          825
+        ]
+      ],
+      "samples": [
+        30,
+        5,
+        150
+      ],
+      "numberStats": {
+        "min": 1,
+        "max": 1045,
+        "mean": 170.609
+      },
+      "byStatus": {
+        "OK": 117875
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# id: CQ-ID-02
+# title: Printings sharing an illustration
+# question: Which distinct printings show the same illustration (same artwork, different printings)?
+# kind: SPARQL
+# expects: any
+# modules: printings, text-art
+# note: Shared artwork never makes two printings the same resource (AP-03).
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?illustration (COUNT(DISTINCT ?printing) AS ?printings) (SAMPLE(?name) AS ?card) WHERE {
+  ?printing smtg:hasPrintedFace ?pf ; smtg:isPrintingOf/smtg:name ?name .
+  ?pf smtg:showsIllustration ?illustration .
+} GROUP BY ?illustration HAVING (COUNT(DISTINCT ?printing) > 1) ORDER BY DESC(?printings)

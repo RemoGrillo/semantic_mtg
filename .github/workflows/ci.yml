@@ -1,0 +1,14 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      # Fixtures, examples and generated vocab are committed, so CI validates without downloading dumps.
+      - run: npm run validate
+      - run: npm run cq
+      - run: npm run reason

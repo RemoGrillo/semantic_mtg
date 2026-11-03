@@ -1,0 +1,15 @@
+# id: CQ-CB-02
+# title: Combos with templates
+# question: Which variants require a template (any card matching a description) rather than only concrete cards?
+# kind: SPARQL
+# expects: nonempty
+# modules: combos
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?variant ?template ?query WHERE {
+  ?variant smtg:hasTemplateRequirement/smtg:requiresTemplate ?t . ?t rdfs:label ?template . OPTIONAL { ?t smtg:templateQuery ?query }
+}

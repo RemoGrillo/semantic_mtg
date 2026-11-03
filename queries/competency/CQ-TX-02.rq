@@ -1,0 +1,16 @@
+# id: CQ-TX-02
+# title: Flavour names do not change identity
+# question: Which printings carry a flavour name different from the Oracle name?
+# kind: SPARQL
+# expects: nonempty
+# modules: text-art, printings
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?oracleName ?flavorName ?set WHERE {
+  ?printing smtg:isPrintingOf/smtg:name ?oracleName ; smtg:inSet/smtg:setCode ?set ; smtg:hasPrintedFace/smtg:hasPrintedText ?fn .
+  ?fn a smtg:FlavorName ; smtg:textValue ?flavorName .
+}

@@ -1,0 +1,14 @@
+# SYNTHETIC invalid fixture — not source data.
+# why: every claim must be attributed and traceable to a snapshot (per-assertion provenance)
+# expect: A claim must be observed in at least one SourceSnapshot.
+@prefix smtg: <https://w3id.org/smtg/ontology#> .
+@prefix x: <https://w3id.org/smtg/id/synthetic/> .
+@prefix v: <https://w3id.org/smtg/vocab/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+x:t2 a smtg:OracleTag ; <http://www.w3.org/2004/02/skos/core#prefLabel> "removal"@en ;
+  <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/smtg/vocab/tagger-oracle-tags> .
+x:o4 a smtg:OracleCard .
+x:a2 a smtg:OracleTagAssignment ; smtg:assignedTag x:t2 ; smtg:assignmentTarget x:o4 ;
+  smtg:claimedBy <https://w3id.org/smtg/id/agent/tagger-community> ;
+  smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/community-curated> .

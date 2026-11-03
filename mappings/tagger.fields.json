@@ -1,0 +1,162 @@
+[
+  {
+    "path": "object",
+    "scope": "printing",
+    "disposition": "excluded",
+    "terms": [],
+    "note": "JSON object-type discriminator (\"tag\")."
+  },
+  {
+    "path": "id",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:TagConcept",
+      "smtg:hasIdentifier"
+    ]
+  },
+  {
+    "path": "label",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:TagConcept"
+    ],
+    "note": "skos:prefLabel (mutable; not identity)."
+  },
+  {
+    "path": "slug",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:TagConcept",
+      "smtg:taggerSlug"
+    ]
+  },
+  {
+    "path": "type",
+    "scope": "printing",
+    "disposition": "derived",
+    "terms": [],
+    "note": "oracle | illustration → class OracleTag / ArtTag and scheme (annotated as tagger:type=oracle / =illustration)."
+  },
+  {
+    "path": "uri",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:sourceURL"
+    ]
+  },
+  {
+    "path": "description",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:TagConcept"
+    ],
+    "note": "skos:definition (community-written)."
+  },
+  {
+    "path": "parent_ids",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:taggerParent"
+    ]
+  },
+  {
+    "path": "parent_ids[]",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:taggerParent"
+    ],
+    "note": "smtg:taggerParent (see parent_ids)."
+  },
+  {
+    "path": "child_ids",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:taggerParent"
+    ],
+    "note": "Inverse of parent_ids (checked consistent in the profile); not stored separately."
+  },
+  {
+    "path": "child_ids[]",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:taggerParent"
+    ],
+    "note": "See child_ids."
+  },
+  {
+    "path": "aliases",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:TagConcept"
+    ],
+    "note": "skos:altLabel."
+  },
+  {
+    "path": "aliases[]",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:TagConcept"
+    ],
+    "note": "skos:altLabel."
+  },
+  {
+    "path": "taggings",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:TagAssignment"
+    ],
+    "note": "One TagAssignment claim per tagging."
+  },
+  {
+    "path": "taggings[]",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:TagAssignment"
+    ]
+  },
+  {
+    "path": "taggings[].oracle_id",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:OracleTagAssignment"
+    ]
+  },
+  {
+    "path": "taggings[].illustration_id",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:ArtTagAssignment"
+    ]
+  },
+  {
+    "path": "taggings[].weight",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:taggingWeight"
+    ]
+  },
+  {
+    "path": "taggings[].annotation",
+    "scope": "printing",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:taggingAnnotation"
+    ]
+  }
+]
