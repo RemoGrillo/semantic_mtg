@@ -21,8 +21,10 @@
   --bad-bg: #f4dcd7;
   --plum: #6b3f78;
   --plum-bg: #ece0ee;
-  --font-display: "Beleren", "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-  --font-sc: "Beleren SmallCaps", "Beleren", "Iowan Old Style", Palatino, Georgia, serif;
+  /* "Beleren" is only defined in the private build (--private-assets); the default build uses
+     Alegreya ("SMTG Display", SIL OFL 1.1). */
+  --font-display: "Beleren", "SMTG Display", "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-sc: "Beleren SmallCaps", "SMTG Display SC", "Beleren", "SMTG Display", "Iowan Old Style", Palatino, Georgia, serif;
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --measure: none; /* text runs full width (owner's preference); set e.g. 75ch to restore a reading measure */
@@ -475,3 +477,16 @@ svg.chart .bar:focus-visible .ax { fill: var(--accent); font-weight: 600; }
   .diagram-canvas svg { max-width: 100% !important; }
   h2, h3 { break-after: avoid; }
 }
+
+/* ---------- symbol chips (default build: notation as text, no Wizards symbol artwork) ---------- */
+.sym-chip {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 1.5em; height: 1.5em; padding: 0 0.32em;
+  margin: 0 1px; border-radius: 4px; border: 1px solid var(--line-2); background: #e7e0d1; color: var(--ink-2);
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; line-height: 1; vertical-align: middle; white-space: nowrap;
+}
+.sym-chip.sym-w { background: #f7f3e6; }
+.sym-chip.sym-u { background: #d3e2ef; }
+.sym-chip.sym-b { background: #d2cbc5; }
+.sym-chip.sym-r { background: #f0d3c8; }
+.sym-chip.sym-g { background: #d3e5d3; }
+.sym-chip.sym-c { background: #e4e0d8; }

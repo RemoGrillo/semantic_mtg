@@ -5,3 +5,4 @@ site/
 assets/vendor/
 *.log
 .DS_Store
+site-private/

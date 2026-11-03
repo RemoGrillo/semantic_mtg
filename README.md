@@ -18,11 +18,13 @@ attitude.
 ```bash
 npm install
 npm run audit:fetch      # download source snapshots (manifest-driven, checksummed) into data/raw/
-npm run assets           # official mana symbols (Scryfall SVG → PNG) for the docs
 npm run build            # vocab → fixture examples → SHACL validation → competency questions → docs
 npm run reason           # OWL DL check with HermiT (bootstraps a portable JRE + ROBOT in .tools/)
-open site/index.html     # the documentation: a single self-contained file that works offline
+open site/index.html     # the documentation: a single self-contained file that works offline (safe to publish)
 npm run docs:serve       # review mode: per-concept suggestion box, saved under review/suggestions/
+
+# optional, PRIVATE (your own screen only — never publish): Beleren + official mana symbols
+npm run assets && npm run docs:build:private && open site-private/index.html
 ```
 
 ## Repository map
@@ -49,6 +51,12 @@ Semantic Magic: The Gathering is unofficial Fan Content permitted under the Fan 
 approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast.
 ©Wizards of the Coast LLC. Magic: The Gathering, card names, card text, mana symbols, set symbols and
 the Beleren typeface are property of Wizards of the Coast LLC.
+
+The Fan Content Policy lists the mana symbols among the trademarks fan content may not include, and
+Beleren has no public license. So the default, publishable documentation build uses **no Wizards
+symbol artwork and no Wizards fonts**: symbols are shown as their text notation, and headings use
+Alegreya (SIL OFL 1.1). An opt-in private build (`npm run docs:build:private` → `site-private/`,
+gitignored) embeds them for viewing on your own machine only. See ADR-0006.
 
 Card data courtesy of [Scryfall](https://scryfall.com) and the [Tagger](https://tagger.scryfall.com)
 community; combo data from [Commander Spellbook](https://commanderspellbook.com). SMTG is not

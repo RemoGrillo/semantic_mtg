@@ -68,13 +68,26 @@ export function kindBadge(kind) {
 
 // ---------- official symbols (Scryfall SVG rasterised to PNG) ----------
 
+// Text chips used by the default (publishable) build: the brace notation itself, with a plain colour
+// swatch for the five colours — no Wizards symbol artwork (the Fan Content Policy lists the mana
+// symbols among the marks fan content may not include).
+const CHIP_COLOUR = { W: 'w', U: 'u', B: 'b', R: 'r', G: 'g', C: 'c' };
+export function textChip(code) {
+  const inner = String(code).replace(/^\{|\}$/g, '');
+  const parts = inner.split('/');
+  const cls = parts.length === 1 && CHIP_COLOUR[inner] ? ` sym-${CHIP_COLOUR[inner]}` : '';
+  return `<span class="sym-chip${cls}" title="${esc(code)}">${esc(inner)}</span>`;
+}
+
 export class Symbols {
-  constructor(dir, warn = () => {}) {
+  constructor(dir, warn = () => {}, { official = false } = {}) {
     this.dir = dir;
     this.map = {};
     this.used = new Map(); // code -> css class
     this.missing = new Set();
     this.warn = warn;
+    this.official = official;
+    if (!official) return; // publishable build: text chips only
     try {
       const idx = JSON.parse(fs.readFileSync(path.join(dir, 'index.json'), 'utf8'));
       this.map = idx.symbols || {};
@@ -92,6 +105,7 @@ export class Symbols {
   /** One symbol code like "{W}" → pip span (or text fallback). */
   pip(code) {
     const s = this.map[code];
+    if (!this.official) return textChip(code);
     if (!s || !fs.existsSync(path.join(this.dir, 'png', s.png))) {
       if (!this.missing.has(code)) {
         this.missing.add(code);
@@ -107,7 +121,7 @@ export class Symbols {
   pips(str) {
     if (!str) return '';
     const codes = String(str).match(/\{[^{}]+\}/g);
-    if (!codes) return `<code class="sym-text">${esc(str)}</code>`;
+    if (!codes) return this.official ? `<code class="sym-text">${esc(str)}</code>` : textChip(str);
     return `<span class="pips">${codes.map((c) => this.pip(c)).join('')}</span>`;
   }
   /** Escape text and replace known symbol codes inline (e.g. definitions mentioning {T}). */

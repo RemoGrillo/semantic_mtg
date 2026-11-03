@@ -52,8 +52,12 @@ function parseArgs(argv) {
 const args = parseArgs(process.argv.slice(2));
 const INPUT = path.resolve(args.root || ROOT);
 const ONT_DIR = path.resolve(args['ontology-dir'] || path.join(INPUT, 'ontology'));
-const OUT = path.resolve(args.out || p('site'));
+const OUT = path.resolve(args.out || p(args.flags.has('private-assets') || process.env.SMTG_PRIVATE_ASSETS === '1' ? 'site-private' : 'site'));
 const STRICT = args.flags.has('strict');
+// Wizards of the Coast assets (Beleren typeface, official mana/card symbols) are embedded ONLY in an
+// explicit private build (--private-assets, default output site-private/), never in the default
+// build that may be published (GitHub Pages). See docs/adr/0006-licensing-and-wizards-assets.md.
+const PRIVATE_ASSETS = args.flags.has('private-assets') || process.env.SMTG_PRIVATE_ASSETS === '1';
 const QUIET = args.flags.has('quiet');
 
 // ---------- warnings ----------
@@ -285,7 +289,7 @@ async function main() {
     return `<!--MMD:${diagrams.length - 1}-->`;
   };
 
-  const symbols = new Symbols(p('assets', 'vendor', 'symbols'), warn);
+  const symbols = new Symbols(p('assets', 'vendor', 'symbols'), warn, { official: PRIVATE_ASSETS });
   const pipClass = (code) => (symbols.has(code) ? symbols.cssClass(code) : null);
   m.pipClass = pipClass;
   for (const ov of overlays) ov.model.pipClass = pipClass;
@@ -327,7 +331,7 @@ async function main() {
 
   const licAdr = adrs.find((a) => /licen[cs]/i.test(a.title + ' ' + a.src.slice(0, 3000)));
   const ctx = {
-    m, shacl, ex, symbols, prefixes, config: CONFIG, inputs, coverage, mappingByTerm, idHref, diagram, warn, warnings, builtAt, overlays, adrs,
+    m, shacl, ex, symbols, prefixes, config: CONFIG, inputs, coverage, mappingByTerm, idHref, diagram, warn, warnings, builtAt, overlays, adrs, privateAssets: PRIVATE_ASSETS,
     hasPage, readmeIntro, statusMd,
     extraPages: mdDocs.filter((d) => d.extra && d.src).map((d) => ({ slug: d.slug, title: d.title })),
     markdownInline: (text) => md(String(text), 'inline', 'inline.md').html,
@@ -457,16 +461,22 @@ ${d.legend ? `<figcaption class="legend-row">${d.legend}</figcaption>` : ''}
 }
 
 function fontFaces() {
-  const dir = p('node_modules', '@saeris', 'typeface-beleren-bold');
-  const face = (family, file) => {
-    const f = path.join(dir, file);
-    if (!fs.existsSync(f)) {
-      warn(`Beleren font file missing: ${file} — falling back to serif`, 'assets');
+  // Default (publishable): Alegreya / Alegreya SC, SIL Open Font License 1.1 (@fontsource).
+  // Private build only: Beleren (© Wizards of the Coast; no public license) for local viewing.
+  const embed = (family, file, fmt, weight = 700) => {
+    if (!fs.existsSync(file)) {
+      warn(`Font file missing: ${rel(file)} — falling back to system serif`, 'assets');
       return '';
     }
-    return `@font-face{font-family:"${family}";src:url(data:font/woff;base64,${fs.readFileSync(f).toString('base64')}) format("woff");font-weight:700;font-style:normal;font-display:block}\n`;
+    return `@font-face{font-family:"${family}";src:url(data:font/${fmt};base64,${fs.readFileSync(file).toString('base64')}) format("${fmt}");font-weight:${weight};font-style:normal;font-display:block}\n`;
   };
-  return face('Beleren', 'Beleren2016-Bold.woff') + face('Beleren SmallCaps', 'Beleren2016SmallCaps-Bold.woff');
+  const fsrc = (pkg, file) => p('node_modules', '@fontsource', pkg, 'files', file);
+  let css = embed('SMTG Display', fsrc('alegreya', 'alegreya-latin-700-normal.woff2'), 'woff2') + embed('SMTG Display SC', fsrc('alegreya-sc', 'alegreya-sc-latin-700-normal.woff2'), 'woff2');
+  if (PRIVATE_ASSETS) {
+    const dir = p('node_modules', '@saeris', 'typeface-beleren-bold');
+    css += embed('Beleren', path.join(dir, 'Beleren2016-Bold.woff'), 'woff') + embed('Beleren SmallCaps', path.join(dir, 'Beleren2016SmallCaps-Bold.woff'), 'woff');
+  }
+  return css;
 }
 
 function loadMermaid() {

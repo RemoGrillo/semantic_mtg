@@ -424,7 +424,12 @@ export function aboutPage(ctx) {
 
 <h2>Wizards of the Coast Fan Content Policy</h2>
 <blockquote class="legal"><p>Semantic Magic: The Gathering is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</p></blockquote>
-<p>Magic: The Gathering, the mana symbols, card names, card text, set symbols and the Beleren typeface are property and/or trademarks of Wizards of the Coast LLC. See the <a class="ext" href="https://company.wizards.com/en/legal/fancontentpolicy" rel="noopener" target="_blank">Wizards of the Coast Fan Content Policy</a>.</p>
+<p>Magic: The Gathering, card names, card text, the mana and card symbols, set symbols and the Beleren typeface are property and/or trademarks of Wizards of the Coast LLC. See the <a class="ext" href="https://company.wizards.com/en/legal/fancontentpolicy" rel="noopener" target="_blank">Wizards of the Coast Fan Content Policy</a>.</p>
+${
+  ctx.privateAssets
+    ? `<p><strong>Private build.</strong> This copy embeds the Beleren typeface and Scryfall's official symbol images (© Wizards of the Coast) for viewing on the owner's machine only. The Fan Content Policy lists the mana symbols among the marks fan content may not include, and Beleren has no public license, so <strong>do not publish or redistribute this file</strong>; publish the default build instead.</p>`
+    : `<p>To respect the Fan Content Policy, which lists the mana symbols among the trademarks fan content may not include, and because the Beleren typeface has no public license, this site uses <strong>no Wizards symbol artwork and no Wizards fonts</strong>: symbols appear as their text notation (e.g. <span class="sym-chip sym-w">W</span> <span class="sym-chip">2/U</span> <span class="sym-chip">T</span>), and headings are set in Alegreya (Huerta Tipográfica, SIL Open Font License 1.1).</p>`
+}
 
 <h2>Data sources and attribution</h2>
 <ul>
@@ -432,18 +437,19 @@ export function aboutPage(ctx) {
 <li>Community tags from Tagger via Scryfall (<a class="ext" href="https://tagger.scryfall.com" rel="noopener" target="_blank">tagger.scryfall.com</a>).</li>
 <li>Combo data from <a class="ext" href="https://commanderspellbook.com" rel="noopener" target="_blank">Commander Spellbook</a>.</li>
 </ul>
-<p>The project is not affiliated with, endorsed by or sponsored by Scryfall, Tagger or Commander Spellbook. The mana and card symbols shown on this site are Scryfall's official SVG symbols, rasterized to PNG without modification.</p>
+<p>The project is not affiliated with, endorsed by or sponsored by Scryfall, Tagger or Commander Spellbook. Card images are not shown or stored; the ontology only links to Scryfall-hosted images.</p>
 
 <h2>Licensing (proposal)</h2>
 <ul>
 <li>Code: MIT.</li>
 <li>Ontology and documentation: CC BY 4.0.</li>
-<li>Source data and Wizards of the Coast assets are <strong>not</strong> redistributed in the repository; they are fetched at build time.</li>
+<li>Source dumps are <strong>not</strong> redistributed in the repository (only small fixtures, with attribution); Wizards of the Coast fonts and symbol images are neither in the repository nor in the published site.</li>
+<li>Headings: Alegreya / Alegreya SC, SIL Open Font License 1.1.</li>
 </ul>
 <p class="muted">This licensing scheme is a proposal pending review${ctx.adrLink ? ` — see ${ctx.adrLink}` : ' — see the ADRs'}.</p>
 
 <h2>This site</h2>
-<p>Generated from the Turtle sources by <code>tools/docs/build.mjs</code> (built ${esc(ctx.builtAt)}). It is a single self-contained HTML file that works offline. Fonts, symbols and diagrams are embedded; diagrams are rendered with Mermaid.</p>
+<p>Generated from the Turtle sources by <code>tools/docs/build.mjs</code> (built ${esc(ctx.builtAt)}). It is a single self-contained HTML file that works offline. Fonts and diagrams are embedded; diagrams are rendered with Mermaid.${ctx.privateAssets ? ' Private build (Wizards assets embedded — not for publication).' : ''}</p>
 </div>`;
   return section('about', 'About', h);
 }

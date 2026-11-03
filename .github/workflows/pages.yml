@@ -1,8 +1,12 @@
 name: pages
-# Builds the documentation site. Disabled until the licensing question in ADR-0006
-# (embedding Wizards symbols and the Beleren font in a public build) is settled.
-on: { workflow_dispatch: {} }
+# Builds and publishes the documentation site (default build: no Wizards fonts or symbol artwork —
+# see ADR-0006). Runs on every push to main, or manually. Enable it in the repository settings:
+# Settings → Pages → Source: GitHub Actions.
+on:
+  push: { branches: [main] }
+  workflow_dispatch: {}
 permissions: { contents: read, pages: write, id-token: write }
+concurrency: { group: pages, cancel-in-progress: true }
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,15 +15,14 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: npm }
       - run: npm ci
-      - run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
-      - run: npm run audit:fetch -- --only scryfall:api || true
-      - run: npm run assets || true
+      # Never pass --private-assets here: that build embeds Wizards assets and must not be published.
       - run: npm run docs:build
       - uses: actions/upload-pages-artifact@v3
         with: { path: site }
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment: { name: github-pages }
+    environment: { name: github-pages, url: "${{ steps.deployment.outputs.page_url }}" }
     steps:
-      - uses: actions/deploy-pages@v4
+      - id: deployment
+        uses: actions/deploy-pages@v4
