@@ -5,6 +5,9 @@ import fs from 'node:fs';
 import { esc, attr } from './html.mjs';
 
 export const CARD_REF_RE = /\[\[(!?[^[\]\n]+?)\]\]/g;
+// one or more image references in a row (separated only by white space or line breaks): shown
+// together as a row of cards below the text, not interleaved with it
+const IMAGE_RUN_RE = /\[\[![^[\]\n]+?\]\](?:(?:\s|<br>)*\[\[![^[\]\n]+?\]\])*/g;
 
 export function parseCardRef(inner) {
   inner = String(inner).replace(/\\\|/g, '|'); // "\|" inside Markdown table cells
@@ -61,7 +64,14 @@ export function cardRefHtml(inner) {
   return `<a class="cardref" href="${attr(hit.scryfall_uri)}" target="_blank" rel="noopener" title="${attr(title)}" data-card-img="${attr(imgs[0]?.normal ?? '')}"${imgs[1] ? ` data-card-img2="${attr(imgs[1].normal)}"` : ''}>${esc(label)}${set}</a>`;
 }
 
+/** A row of card images, for the inner texts of several image references ("!Name|SET…"). */
+export function cardRowHtml(inners) {
+  return `<span class="card-row">${inners.map((inner) => cardRefHtml(inner)).join('')}</span>`;
+}
+
 /** Replace [[…]] references inside already-escaped HTML text. */
 export function replaceCardRefs(html) {
-  return String(html).replace(CARD_REF_RE, (m, inner) => cardRefHtml(decode(inner)));
+  return String(html)
+    .replace(IMAGE_RUN_RE, (run) => cardRowHtml([...run.matchAll(CARD_REF_RE)].map((m) => decode(m[1]))))
+    .replace(CARD_REF_RE, (m, inner) => cardRefHtml(decode(inner)));
 }

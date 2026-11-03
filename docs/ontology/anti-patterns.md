@@ -28,6 +28,8 @@ strings ("A & B"), tag labels (renamed upstream).
 **Instead:** match on stable source IDs. Names are labels; flavor names and credits are text
 expressions.
 
+[[!Void Beckoner|IKO|373]] [[!Void Beckoner|IKO|104]]
+
 ### AP-05 — Absence as negation (closed-world thinking in OWL)
 Reading a missing triple as "false": no colour triple ⇒ colourless, no mana-cost triple ⇒ no mana
 cost, no tag ⇒ not that role.

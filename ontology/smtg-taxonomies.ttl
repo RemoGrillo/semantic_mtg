@@ -256,7 +256,7 @@ smtg:physicalSides a owl:AnnotationProperty ; rdfs:label "physical sides used"@e
 smtg:faceArrangement a owl:AnnotationProperty ; rdfs:label "face arrangement"@en ;
   skos:definition "Layout-matrix documentation: prose description of how the faces are arranged."@en ; rdfs:isDefinedBy smtgm:taxonomies .
 smtg:separateOracleIdentity a owl:AnnotationProperty ; rdfs:label "separate Oracle identity"@en ;
-  skos:definition "Layout-matrix documentation: whether the related parts are separate Oracle cards (meld results, reversible faces)."@en ; rdfs:isDefinedBy smtgm:taxonomies .
+  skos:definition "Layout-matrix documentation: whether the related parts are separate Oracle cards (e.g. meld halves and the meld result; not reversible printings, which show the same Oracle card on both sides)."@en ; rdfs:isDefinedBy smtgm:taxonomies .
 
 smtg:Side a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
   rdfs:label "Physical side"@en ;

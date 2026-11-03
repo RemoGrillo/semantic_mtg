@@ -60,6 +60,8 @@ draws the line and where a reasoner for **conjectural and doxastic** content (DE
 Reading parents as subsumption between card sets is plausible here, so should Lightning Bolt be
 believed to be *removal* with the same strength as *burn any*?
 
+[[!Lightning Bolt]]
+
 **Case 2: mixed parents (art tags).** The art tag *rashida scalebane* (a character) has five
 parents: species, role, plane and others. Transitive closure would let any ancestor of *plane*
 reach the illustration, a chain of category, part-of and theme links that no single reading

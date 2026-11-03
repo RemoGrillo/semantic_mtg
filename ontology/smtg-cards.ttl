@@ -32,7 +32,7 @@ smtg:OracleCard a owl:Class ;
   rdfs:label "Oracle card"@en ;
   skos:definition "The abstract, game-relevant identity of a Magic card or other game object as maintained in Wizards' Oracle reference: what all printings of \"the same card\" share, independent of edition, language, artwork or physical form."@en ;
   skos:scopeNote """Corresponds to a Scryfall Oracle ID. An Oracle card is never a printing (disjoint with CardPrinting) and printings are not subclasses of it (AP-01). Oracle cards include tokens, emblems, planes, schemes and similar objects; their kind is given by smtg:hasObjectKind rather than by separate top-level classes, so that new kinds of objects do not break the hierarchy. A reversible printing shows the same Oracle card on both sides; Scryfall records its Oracle ID on each face instead of on the card (RQ-ID-1)."""@en ;
-  skos:example "[[Lightning Bolt]] (Oracle ID 4457ed35-…) is one Oracle card with well over a hundred printings, among them [[Lightning Bolt|LEA|161]] and the Italian [[Lightning Bolt|M10|146|it]]."@en ;
+  skos:example "[[Lightning Bolt]] (Oracle ID 4457ed35-…) is one Oracle card with well over a hundred printings, among them [[Lightning Bolt|LEA|161]] and the Italian [[Lightning Bolt|M10|146|it]]. [[!Lightning Bolt|LEA|161]] [[!Lightning Bolt|M10|146|it]]"@en ;
   smtg:sourceField "scryfall:oracle_id" , "scryfall:card_faces[].oracle_id" ;
   smtg:antiPattern "AP-01" , "AP-03" ;
   smtg:reviewQuestion "RQ-ID-1" , "RQ-ID-2" ;
@@ -55,7 +55,7 @@ smtg:ManaCost a owl:Class ;
   skos:scopeNote """Kept as its own resource so that the raw notation ({2}{W}{W}) is preserved verbatim while its symbol occurrences are explicit. A face with NO mana cost (e.g. Ancestral Vision, lands) has no ManaCost resource and states smtg:hasNoManaCost true; a cost of {0} (Ornithopter) is a ManaCost with one {0} symbol. Absence of a ManaCost triple alone means "unknown", not "no cost" (AP-05)."""@en ;
   smtg:sourceField "scryfall:mana_cost" , "scryfall:card_faces[].mana_cost" ;
   smtg:antiPattern "AP-05" ;
-  skos:example "[[Ornithopter]] costs {0} (a ManaCost with one {0} symbol); [[Ancestral Vision]] has no mana cost at all (hasNoManaCost true)."@en ;
+  skos:example "[[Ornithopter]] costs {0} (a ManaCost with one {0} symbol); [[Ancestral Vision]] has no mana cost at all (hasNoManaCost true). [[!Ornithopter]] [[!Ancestral Vision]]"@en ;
   rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
 
 smtg:ManaSymbolOccurrence a owl:Class ;
@@ -124,7 +124,7 @@ smtg:FlipCard a owl:Class ;
 
 smtg:MeldCard a owl:Class ;
   rdfs:label "Meld card"@en ;
-  skos:example "[[Bruna, the Fading Light]] and [[Gisela, the Broken Blade]] meld into [[Brisela, Voice of Nightmares]]. [[!Brisela, Voice of Nightmares]]"@en ;
+  skos:example "[[Bruna, the Fading Light]] and [[Gisela, the Broken Blade]] meld into [[Brisela, Voice of Nightmares]]. [[!Bruna, the Fading Light]] [[!Gisela, the Broken Blade]] [[!Brisela, Voice of Nightmares]]"@en ;
   owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:meld ] ) ] ;
   skos:definition "An Oracle card that takes part in a meld: either one of the two meld halves or the meld result printed across their backs. The pair and the result are three distinct Oracle cards linked by part relationships."@en ;
   smtg:reviewQuestion "RQ-CF-4" ;
@@ -458,7 +458,7 @@ smtg:PermanentCard a owl:Class ;
   rdfs:label "Permanent card"@en ;
   skos:definition "An Oracle card that is a \"permanent card\" in the sense of CR 110.4a (an artifact, battle, creature, enchantment, land or planeswalker card) in zones other than the battlefield and the stack: its primary face is a permanent face, or it is a split card one of whose halves is (the halves' characteristics combine, CR 709.4)."@en ;
   skos:scopeNote "A modal double-faced card such as Agadeem's Awakening // Agadeem, the Undercrypt is not a permanent card in hand (its front face is a sorcery), even though it can be played as a land via its back face."@en ;
-  skos:example "[[Bonecrusher Giant // Stomp]] is a permanent card (its primary face is a creature); [[Agadeem's Awakening // Agadeem, the Undercrypt]] is not; the split card [[Fire // Ice]] is not either (both halves are instants)."@en ;
+  skos:example "[[Bonecrusher Giant // Stomp]] is a permanent card (its primary face is a creature); [[Agadeem's Awakening // Agadeem, the Undercrypt]] is not; the split card [[Fire // Ice]] is not either (both halves are instants). [[!Bonecrusher Giant // Stomp]] [[!Agadeem's Awakening // Agadeem, the Undercrypt]] [[!Fire // Ice]]"@en ;
   rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
 
 smtg:createsToken a owl:ObjectProperty ;

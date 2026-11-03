@@ -23,6 +23,9 @@ one Oracle card on both sides, with two illustrations (e.g. [[Jinnie Fay, Jetmir
 CQ-ID-05). So the printing has two printed faces that manifest the *same* card face. OWL leaves the
 number of Oracle cards per printing open; SHACL requires exactly one, so a printing showing two
 different Oracle cards would be flagged.
+
+[[!Jinnie Fay, Jetmir's Second|SLD|1556]] [[!Ghalta, Primal Hunger|SLD|1124]]
+
 *Alternatives:* (a) a `PackagingRelation` between two printings; (b) treat each side as a separate
 printing resource.
 *Consequence:* (b) breaks the 1:1 mapping between printing resources and Scryfall card IDs.
@@ -99,6 +102,9 @@ Observed in the 2026-11-03 snapshot and absent from the plan: **`prepare`** (Sec
 e.g. [[Abigale, Poet Laureate // Heroic Stanza]]: a creature face plus a spell face; "while prepared you may cast a copy of its spell") and
 **`front_card`** (291 non-game memorabilia front cards, e.g. [[Surprise!]]). Both were absorbed as new vocabulary concepts
 with status *unstable*, without changing any class axiom (ADR-0004).
+
+[[!Abigale, Poet Laureate // Heroic Stanza]] [[!Surprise!]]
+
 *Question:* should the generator fail the build on unknown codes (strict), or warn and continue as
 it does now?
 
@@ -177,6 +183,7 @@ view (`views/smtg-tags-skos-view.ttl`) makes it `skos:broader`, which brings
 *burn planeswalker* and *burn battle*: anything that can burn any target can burn each of them
 (CQ-TG-03). For art tags it mixes kinds of link: a character tag such as *rashida scalebane* has
 five parents (species, role, plane …).
+[[!Lightning Bolt]]
 *Second piece of evidence:* across about 577k checks, Tagger **never** assigns a parent tag to a
 target that already carries the child tag; the export lists only the most specific tag. Tagger
 therefore expects hierarchical inclusion at query time. "Cards tagged X" in Tagger's own sense

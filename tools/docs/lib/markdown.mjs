@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { Marked } from 'marked';
 import { esc, attr, highlight } from './html.mjs';
-import { cardRefHtml } from './cardrefs.mjs';
+import { cardRefHtml, cardRowHtml } from './cardrefs.mjs';
 
 export const ID_RE = /(?<![\w-])(RQ-[A-Z][A-Z0-9]*-\d+[a-z]?|AP-\d{1,3}|ADR-\d{3,4}|CQ-[A-Z][A-Z0-9]*-\d+[a-z]?)(?![\w-])/;
 const ID_RE_G = new RegExp(ID_RE.source, 'g');
@@ -72,11 +72,15 @@ export function renderMarkdown(src, ctx) {
           return i < 0 ? undefined : i;
         },
         tokenizer(s) {
+          // consecutive image references form one row of cards
+          const run = /^\[\[![^[\]\n]+?\]\](?:\s*\[\[![^[\]\n]+?\]\])*/.exec(s);
+          if (run) return { type: 'cardref', raw: run[0], inners: [...run[0].matchAll(/\[\[(![^[\]\n]+?)\]\]/g)].map((m) => m[1]) };
           const m = /^\[\[(!?[^[\]\n]+?)\]\]/.exec(s);
           if (m) return { type: 'cardref', raw: m[0], inner: m[1] };
           return undefined;
         },
         renderer(tok) {
+          if (tok.inners) return inHeading ? tok.inners.map((i) => esc(i.slice(1).split('|')[0])).join(', ') : cardRowHtml(tok.inners);
           return inHeading ? esc(tok.inner.replace(/^!/, '').split('|')[0]) : cardRefHtml(tok.inner);
         },
       },

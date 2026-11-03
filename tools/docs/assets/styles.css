@@ -524,5 +524,14 @@ a.cardref:hover, a.cardref:focus-visible { color: var(--accent); border-bottom-s
 .card-caption-name { color: var(--ink-2); font-weight: 600; }
 .note .card-figure img { width: 170px; }
 td .card-figure img { width: 120px; }
+/* consecutive card images: one row below the text */
+.card-row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0 1.4em; margin: 0.4em 0 0.2em; }
+.card-row .card-figure { margin: 0.3em 0 0.6em; }
+/* layout matrix: thumbnails (names are in the text of the cell; full size on the layout's page) */
+.layout-ex .card-row { gap: 0 0.5em; margin: 0.35em 0 0; }
+.layout-ex .card-figure { margin: 0 0 0.3em; }
+.layout-ex .card-figure-imgs { gap: 4px; }
+.layout-ex .card-figure img { width: 64px; border-radius: 3px; box-shadow: 0 1px 4px rgba(39, 34, 28, 0.2); }
+.layout-ex .card-caption { display: none; }
 @media print { .card-preview { display: none !important; } }
 .matrix td.layout-ex { min-width: 220px; }

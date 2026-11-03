@@ -7,7 +7,8 @@ export const FACE_CONFIGS = {
   'single': { label: 'Single face', def: 'One conceptual face on the front of the card.' },
   'same-side-parts': { label: 'Several parts on one side', def: 'Two or more conceptual faces printed on the same physical side (split, flip, adventure, prepare).' },
   'double-sided': { label: 'Faces on opposite sides', def: 'Two conceptual faces printed on the front and the back of one physical card (transform, modal DFC, double-faced tokens).' },
-  'double-sided-separate-objects': { label: 'Opposite sides, separate Oracle objects', def: 'Front and back of the physical card carry different Oracle identities (reversible printings; meld halves whose backs show parts of the meld result).' },
+  'double-sided-same-card': { label: 'Same card on both sides', def: 'Front and back of one physical card show the same Oracle card, usually with different artwork (reversible printings). A printing convention: the Oracle card itself has a single face.' },
+  'double-sided-separate-objects': { label: 'Opposite sides, separate Oracle objects', def: 'Front and back of the physical card carry different Oracle identities (meld halves, whose backs show parts of the meld result).' },
   'none': { label: 'No game face', def: 'The record has no playable face (e.g. front cards, art cards).' },
 };
 
@@ -50,7 +51,7 @@ export const LAYOUTS = {
   augment: { label: 'Augment', def: 'Un-card augment half (attaches to a host).', fc: 'single', faces: '1', sides: '1', arr: 'one face (half-card)' },
   host: { label: 'Host', def: 'Un-card host creature that augments attach to.', fc: 'single', faces: '1', sides: '1', arr: 'one face' },
   art_series: { label: 'Art series', def: 'Art-series card: artwork on both sides, no game function (Scryfall gives two faces).', fc: 'double-sided', faces: '2', sides: '2', arr: 'art front / art back', ok: 'art-card', printingOnly: true },
-  reversible_card: { label: 'Reversible card', def: 'A printing showing a card on both sides (e.g. alternative-art Secret Lair). Each side carries its own Oracle ID; this is a printing convention, not a game layout.', fc: 'double-sided-separate-objects', faces: '1 per side', sides: '2', arr: 'same or different card on each side', sep: 'yes: Oracle ID on each face', printingOnly: true },
+  reversible_card: { label: 'Reversible card', def: 'A printing showing the same Oracle card on both sides, with different artwork (e.g. alternative-art Secret Lair). Scryfall puts the Oracle ID on each face instead of on the card; in all 83 reversible printings of the 2026-11-03 snapshot the two are the same. A printing convention, not a game layout.', fc: 'double-sided-same-card', faces: '1, printed on each side', sides: '2', arr: 'the same card on each side, different artwork', sep: 'no: the same Oracle ID on both faces', printingOnly: true },
   front_card: { label: 'Front card', def: 'Observed layout for non-game "front cards" in memorabilia sets (e.g. Jumpstart theme fronts).', fc: 'none', faces: '0–1', sides: '1–2', arr: 'non-game card', ok: 'front-card', unstable: true },
 };
 
@@ -140,7 +141,9 @@ export const PERMANENT_TYPES = ['Artifact', 'Battle', 'Creature', 'Enchantment',
 export const INSTANT_SORCERY_TYPES = ['Instant', 'Sorcery'];
 
 // Example cards per layout, written as documentation card references (syntax: tools/docs/lib/cardrefs.mjs).
-export const LAYOUT_EXAMPLES = {
+// Every card named in an example is also shown as its Scryfall image (appended by withImages).
+const withImages = (text) => `${text} ${[...new Set([...text.matchAll(/\[\[([^!\][\n][^\][\n]*?)\]\]/g)].map((m) => m[1]))].map((r) => '[' + '[!' + r + ']]').join(' ')}`; // (not written as a literal reference: the resolver scans this file)
+const LAYOUT_EXAMPLE_TEXT = {
   normal: '[[Lightning Bolt]]',
   split: '[[Fire // Ice]]; aftermath: [[Commit // Memory]]; fuse: [[Alive // Well]]',
   flip: '[[Akki Lavarunner // Tok-Tok, Volcano Born]]',
@@ -165,3 +168,4 @@ export const LAYOUT_EXAMPLES = {
   reversible_card: "[[Jinnie Fay, Jetmir's Second|SLD|1556]]",
   front_card: '[[Surprise!]]',
 };
+export const LAYOUT_EXAMPLES = Object.fromEntries(Object.entries(LAYOUT_EXAMPLE_TEXT).map(([code, text]) => [code, withImages(text)]));

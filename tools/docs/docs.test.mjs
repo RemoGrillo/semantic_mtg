@@ -136,3 +136,20 @@ test('build: produces a self-contained page with valid scripts and resolvable ro
     fs.rmSync(out, { recursive: true, force: true });
   }
 });
+
+test('card references: consecutive images form one row below the text, links stay inline', async () => {
+  const { loadCardRefs } = await import('./lib/cardrefs.mjs');
+  const { mdInline } = await import('./render/common.mjs');
+  loadCardRefs(path.join(HERE, '..', '..', 'docs', 'card-refs.json'));
+  const count = (s, re) => (s.match(re) || []).length;
+  // ontology literals (mdInline): text link, then a row of two images
+  const lit = mdInline('Split: [[Fire // Ice]]. [[!Fire // Ice]] [[!Lightning Bolt]]');
+  assert.equal(count(lit, /class="card-row"/g), 1);
+  assert.equal(count(lit, /class="card-figure"/g), 2);
+  assert.equal(count(lit, /class="cardref"/g), 1);
+  // Markdown pages: the same, also when the images are on their own line
+  const md = renderMarkdown('Text with [[Lightning Bolt]].\n\n[[!Lightning Bolt]] [[!Fire // Ice]]\n\nA single [[!Fire // Ice]] image.', { file: 'docs/x.md' }).html;
+  assert.equal(count(md, /class="card-row"/g), 2);
+  assert.equal(count(md, /class="card-figure"/g), 3);
+  assert.equal(count(md, /class="cardref"/g), 1);
+});

@@ -39,12 +39,17 @@ the property now carries the alternative labels "converted mana cost", "CMC" and
 - Data quirk: [[Sole Performer]] has `produced_mana: ["T"]`. That is not a mana type, so the mapper
   now only accepts real mana symbols and reports the rest.
 
+  [[!Sole Performer]]
+
 **Permanents vs non-permanents.**
 - This belongs to **faces**: 287 Oracle cards have one permanent face and one instant or sorcery
   face. Face counts: 28,743 permanent, 7,975 instant/sorcery, 5,957 neither (planes, schemes, art
   cards…).
 - Three Un-cards are typed both, e.g. [[Lightning Colt]] ("Instant Creature — Horse"), so the face
   classes are deliberately not disjoint.
+
+  [[!Lightning Colt]]
+
 - Whether a *card* is a permanent card (CR 110.4a) depends on which face counts outside the
   battlefield and stack:
   - the front face of a double-faced card (CR 712.8a);
@@ -57,6 +62,8 @@ the property now carries the alternative labels "converted mana cost", "CMC" and
   - `smtg:PermanentCard`.
 - [[Agadeem's Awakening // Agadeem, the Undercrypt]] is correctly *not* a permanent card, while
   [[Bonecrusher Giant // Stomp]] is (CQ-INF-02, CQ-INF-03).
+
+  [[!Agadeem's Awakening // Agadeem, the Undercrypt]] [[!Bonecrusher Giant // Stomp]]
 
 ## Gaps closed
 

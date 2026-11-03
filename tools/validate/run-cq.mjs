@@ -60,7 +60,9 @@ Negative tests (kind \`negative\`) must return **no rows**.
 ${results.map((r) => `| ${r.id} | ${r.question} | ${r.kind} | ${r.expects} | ${r.rowCount} | ${r.pass ? 'pass' : '**FAIL**'} |`).join('\n')}
 `];
 for (const r of results) {
-  md.push(`\n## ${r.id} — ${r.title}\n\n**Question.** ${r.question}\n\n${r.note ? `*Note:* ${r.note}\n\n` : ''}Modules: ${r.modules ?? '—'} · kind: ${r.kind} · expects: ${r.expects} · **${r.pass ? 'pass' : 'FAIL'}** (${r.rowCount} rows)\n\n\`\`\`sparql\n${r.query}\n\`\`\`\n`);
+  // the cards the question is about, shown as Scryfall images (link form [[…]] → image form [[!…]])
+  const cards = [...new Set([...`${r.question ?? ''}`.matchAll(/\[\[([^!\][\n][^\][\n]*?)\]\]/g)].map((m) => m[1]))];
+  md.push(`\n## ${r.id} — ${r.title}\n\n**Question.** ${r.question}\n\n${cards.length ? `${cards.map((c) => `[[!${c}]]`).join(' ')}\n\n` : ''}${r.note ? `*Note:* ${r.note}\n\n` : ''}Modules: ${r.modules ?? '—'} · kind: ${r.kind} · expects: ${r.expects} · **${r.pass ? 'pass' : 'FAIL'}** (${r.rowCount} rows)\n\n\`\`\`sparql\n${r.query}\n\`\`\`\n`);
   if (r.rows.length) {
     const cols = Object.keys(r.rows[0]);
     md.push(`| ${cols.join(' | ')} |\n|${cols.map(() => '---').join('|')}|\n${r.rows.slice(0, 10).map((row) => `| ${cols.map((c) => String(row[c] ?? '').replace(/\|/g, '\\|').replace(/\n/g, ' ').slice(0, 120)).join(' | ')} |`).join('\n')}\n`);

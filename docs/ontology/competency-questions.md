@@ -52,6 +52,8 @@ Negative tests (kind `negative`) must return **no rows**.
 
 **Question.** Which documented Commander Spellbook variants use [[Blood Artist]], and which features are they documented to produce?
 
+[[!Blood Artist]]
+
 Modules: combos, claims · kind: SPARQL · expects: nonempty · **pass** (2 rows)
 
 ```sparql
@@ -99,6 +101,8 @@ SELECT ?variant ?template ?query WHERE {
 ## CQ-CB-03 — Combos that use a specific face
 
 **Question.** Which documented combo variants use a specific face of a multi-faced card (e.g. the flipped side of [[Rune-Tail, Kitsune Ascendant // Rune-Tail's Essence]])?
+
+[[!Rune-Tail, Kitsune Ascendant // Rune-Tail's Essence]]
 
 Modules: combos · kind: SPARQL · expects: nonempty · **pass** (1 rows)
 
@@ -296,6 +300,8 @@ SELECT DISTINCT ?half ?result WHERE {
 
 **Question.** [[Kolaghan's Command]] lets you choose modes — is it (wrongly) classified as a modal double-faced card?
 
+[[!Kolaghan's Command]]
+
 *Note:* 'modal' layout vs 'choose one' ability are different notions (AP-06).
 
 Modules: cards · kind: negative · expects: empty · **pass** (0 rows)
@@ -344,6 +350,8 @@ SELECT DISTINCT ?card ?permanentFace ?spellFace WHERE {
 ## CQ-ID-01 — Localised printings of an Oracle card
 
 **Question.** Which printings of [[Lightning Bolt]] exist in Italian, and what name and rules text are printed on them?
+
+[[!Lightning Bolt]]
 
 *Note:* Oracle card vs printing vs printed face vs text expression — four distinct levels in one join.
 
@@ -530,6 +538,8 @@ SELECT ?card ?primaryFace ?permanentCard WHERE {
 ## CQ-INF-03 — Negative test — an MDFC with a sorcery front face is not a permanent card
 
 **Question.** Is [[Agadeem's Awakening // Agadeem, the Undercrypt]] inferred to be a permanent card?
+
+[[!Agadeem's Awakening // Agadeem, the Undercrypt]]
 
 Modules: cards · kind: negative · expects: empty · **pass** (0 rows)
 
@@ -771,6 +781,8 @@ SELECT ?s ?p WHERE {
 
 **Question.** Which rulings exist for [[Blood Artist]], when were they published, and by whom?
 
+[[!Blood Artist]]
+
 Modules: text-art, claims · kind: SPARQL · expects: nonempty · **pass** (1 rows)
 
 ```sparql
@@ -842,6 +854,8 @@ SELECT ?face ?symbol ?kind WHERE {
 
 **Question.** Which Oracle tags does Tagger assign to [[Blood Artist]], with which weight, attitude and source snapshot?
 
+[[!Blood Artist]]
+
 Modules: tags, claims, provenance · kind: SPARQL · expects: nonempty · **pass** (4 rows)
 
 ```sparql
@@ -901,6 +915,8 @@ SELECT ?tag (COUNT(?parent) AS ?parents) (GROUP_CONCAT(?pl; separator=', ') AS ?
 ## CQ-TG-03 — Hierarchical tag expansion (explicit interpretation)
 
 **Question.** Which ancestor tags are reachable from the tags directly assigned to [[Lightning Bolt]], and through how many parent links?
+
+[[!Lightning Bolt]]
 
 *Note:* this is the opt-in SKOS-view reading made explicit with a property path. The assigned leaf tag and its weight stay visible; ancestors are NOT claimed to be assigned (RQ-TG-1, DEC).
 

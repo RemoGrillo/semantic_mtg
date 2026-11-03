@@ -43,7 +43,7 @@ smtg:OracleText a owl:Class ; rdfs:subClassOf smtg:TextExpression ;
 smtg:PrintedRulesText a owl:Class ; rdfs:subClassOf smtg:TextExpression ;
   rdfs:label "Printed rules text"@en ;
   skos:definition "The rules text as printed on a particular (possibly localised) printing; may differ from current Oracle text in wording and language."@en ;
-  skos:example "The Italian [[Lightning Bolt|M10|146|it]] prints \"Il Fulmine infligge 3 danni a una creatura o a un giocatore bersaglio.\" (a target creature or player), while the current Oracle text reads \"Lightning Bolt deals 3 damage to any target.\": printed text keeps the wording of its time."@en ;
+  skos:example "The Italian [[Lightning Bolt|M10|146|it]] prints \"Il Fulmine infligge 3 danni a una creatura o a un giocatore bersaglio.\" (a target creature or player), while the current Oracle text reads \"Lightning Bolt deals 3 damage to any target.\": printed text keeps the wording of its time. [[!Lightning Bolt|M10|146|it]]"@en ;
   smtg:sourceField "scryfall:printed_text" , "scryfall:card_faces[].printed_text" ;
   rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
 smtg:FlavorText a owl:Class ; rdfs:subClassOf smtg:TextExpression ;
@@ -60,7 +60,7 @@ smtg:PrintedName a owl:Class ; rdfs:subClassOf smtg:TextExpression ;
 smtg:FlavorName a owl:Class ; rdfs:subClassOf smtg:TextExpression ;
   rdfs:label "Flavor name"@en ;
   skos:definition "An alternative in-universe or crossover name printed on a printing in addition to or instead of the Oracle name (e.g. Godzilla series names); it does not change the card's Oracle identity."@en ;
-  skos:example "[[Void Beckoner|IKO|373]] is printed as Spacegodzilla, Death Corona, but it is the same Oracle card as [[Void Beckoner|IKO|104]]. [[!Void Beckoner|IKO|373]]"@en ;
+  skos:example "[[Void Beckoner|IKO|373]] is printed as Spacegodzilla, Death Corona, but it is the same Oracle card as [[Void Beckoner|IKO|104]]. [[!Void Beckoner|IKO|373]] [[!Void Beckoner|IKO|104]]"@en ;
   smtg:sourceField "scryfall:flavor_name" , "scryfall:card_faces[].flavor_name" ;
   smtg:antiPattern "AP-04" ;
   rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .

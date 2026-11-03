@@ -1226,6 +1226,7 @@
       "kind": "printing",
       "ref": "[[Void Beckoner|IKO|104]]",
       "files": [
+        "docs/ontology/anti-patterns.md",
         "ontology/smtg-text-art.ttl"
       ]
     },
