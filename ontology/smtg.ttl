@@ -1,0 +1,22 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# Aggregate ontology: imports every core module and the generated vocabularies.
+# Opt-in interpretation views (ontology/views/) are NOT imported by default.
+
+<https://w3id.org/smtg/ontology> a owl:Ontology ;
+  rdfs:label "Semantic Magic: The Gathering (SMTG) ontology"@en ;
+  dcterms:title "SMTG — an identity-aware, provenance-rich ontology for Magic: The Gathering card data"@en ;
+  dcterms:description """Aggregate of all SMTG modules. SMTG separates Oracle identity, conceptual faces, printings, printed faces, illustrations and digital images; text by role and language; controlled vocabularies as open SKOS schemes; community tags and other weak statements as first-class, attributed claims; documented combos versus inferred hypotheses; and provenance down to the source snapshot. First review draft — namespace is a placeholder."""@en ;
+  owl:versionIRI <https://w3id.org/smtg/ontology/0.1.0-draft> ;
+  owl:versionInfo "0.1.0-draft" ;
+  dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+  vs:term_status "unstable" ;
+  smtg:moduleOrder 0 ;
+  owl:imports smtgm:core , smtgm:cards , smtgm:printings , smtgm:text-art , smtgm:taxonomies ,
+              smtgm:tags , smtgm:claims , smtgm:combos , smtgm:decks , smtgm:provenance , smtgm:strategy ,
+              smtgm:vocab .

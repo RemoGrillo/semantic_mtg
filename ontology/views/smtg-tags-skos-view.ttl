@@ -1,0 +1,24 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# OPT-IN VIEW — not imported by the aggregate ontology.
+# Accepting this view commits you to reading Tagger parent links as SKOS
+# hierarchy. Because skos:broader ⊑ skos:broaderTransitive (transitive), every
+# ancestor of an assigned tag becomes reachable. Use it for "tag X or narrower"
+# search; do NOT use it as evidence that a card has an ancestor tag.
+
+smtgm:view-tags-skos a owl:Ontology ;
+  rdfs:label "View: Tagger parents as SKOS broader (opt-in)"@en ;
+  dcterms:description "Interprets smtg:taggerParent as skos:broader, enabling hierarchical (transitive) tag expansion. Kept out of the default import closure because Tagger hierarchies are community judgements mixing several kinds of links (RQ-TG-1)."@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  vs:term_status "proposal" ;
+  owl:imports smtgm:tags .
+
+smtg:taggerParent rdfs:subPropertyOf skos:broader .
+skos:broaderTransitive a owl:ObjectProperty , owl:TransitiveProperty .
+skos:broader rdfs:subPropertyOf skos:broaderTransitive .

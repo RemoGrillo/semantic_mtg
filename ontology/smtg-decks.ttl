@@ -1,0 +1,95 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix smtgv:   <https://w3id.org/smtg/vocab/> .
+@prefix dz:      <https://w3id.org/smtg/vocab/deck-zone/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# =============================================================================
+#  SMTG Decks — decklists and collections (extension module; no source data
+#  is ingested in v1).
+# =============================================================================
+
+smtgm:decks a owl:Ontology ;
+  rdfs:label "SMTG Decks"@en ;
+  dcterms:title "Decks: decklists, versions, entries and collections"@en ;
+  dcterms:description """A decklist is a documented list of cards by an author for a format at a date; its entries are qualified (count, zone such as commander or sideboard, and whether a specific printing or just the Oracle card is meant). A list is not a card and not a combo; a card appearing in a list is evidence of use, not of synergy. Collections (ownership) are a separate optional extension. No decklists are ingested in v1; the module fixes the shape so that user-provided lists can be reasoned about without closed-world shortcuts."""@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  smtg:moduleOrder 9 ;
+  vs:term_status "proposal" ;
+  owl:imports smtgm:core , smtgm:cards , smtgm:printings , smtgm:taxonomies .
+
+smtg:DeckList a owl:Class ; rdfs:subClassOf prov:Entity ;
+  rdfs:label "Decklist"@en ;
+  skos:definition "A documented deck as a work that may have several versions over time (author, format, source)."@en ;
+  owl:disjointWith smtg:OracleCard , smtg:ComboVariant ;
+  rdfs:isDefinedBy smtgm:decks ; vs:term_status "proposal" .
+
+smtg:DeckListVersion a owl:Class ; rdfs:subClassOf prov:Entity ;
+  rdfs:label "Decklist version"@en ;
+  skos:definition "One dated state of a decklist, with its entries."@en ;
+  skos:scopeNote "Entries are only complete if the version is flagged complete; otherwise missing roles cannot be concluded (open world). Role-coverage gaps are computed with SPARQL/SHACL, not OWL negation (PLAN §8.2 D)."@en ;
+  rdfs:isDefinedBy smtgm:decks ; vs:term_status "proposal" .
+
+smtg:DeckEntry a owl:Class ;
+  rdfs:label "Deck entry"@en ;
+  skos:definition "The qualified membership of a card in a decklist version: count, zone and either an Oracle card or a specific printing."@en ;
+  rdfs:isDefinedBy smtgm:decks ; vs:term_status "proposal" .
+
+smtg:DeckZone a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Deck zone"@en ;
+  skos:definition "A section of a decklist (commander, companion, mainboard, sideboard, maybeboard)."@en ;
+  rdfs:isDefinedBy smtgm:decks ; vs:term_status "proposal" .
+
+smtg:Collection a owl:Class ; rdfs:subClassOf prov:Entity ;
+  rdfs:label "Collection"@en ;
+  skos:definition "A set of owned physical or digital cards (ownership, not deck membership)."@en ;
+  rdfs:isDefinedBy smtgm:decks ; vs:term_status "proposal" .
+
+smtg:versionOf a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "version of"@en ; skos:definition "The decklist of which this is a version."@en ;
+  rdfs:domain smtg:DeckListVersion ; rdfs:range smtg:DeckList ;
+  rdfs:isDefinedBy smtgm:decks ; vs:term_status "proposal" .
+smtg:hasEntry a owl:ObjectProperty ;
+  rdfs:label "has entry"@en ; skos:definition "An entry of a decklist version (or collection)."@en ;
+  rdfs:range smtg:DeckEntry ; smtg:intendedDomain smtg:DeckListVersion , smtg:Collection ;
+  rdfs:isDefinedBy smtgm:decks ; vs:term_status "proposal" .
+smtg:entryCard a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "entry card"@en ; skos:definition "The Oracle card listed by the entry."@en ;
+  rdfs:domain smtg:DeckEntry ; rdfs:range smtg:OracleCard ;
+  rdfs:isDefinedBy smtgm:decks ; vs:term_status "proposal" .
+smtg:entryPrinting a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "entry printing"@en ; skos:definition "The specific printing listed by the entry, if the list specifies one."@en ;
+  rdfs:domain smtg:DeckEntry ; rdfs:range smtg:CardPrinting ;
+  rdfs:isDefinedBy smtgm:decks ; vs:term_status "proposal" .
+smtg:entryCount a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "entry count"@en ; skos:definition "Number of copies."@en ;
+  rdfs:domain smtg:DeckEntry ; rdfs:range xsd:positiveInteger ;
+  rdfs:isDefinedBy smtgm:decks ; vs:term_status "proposal" .
+smtg:inDeckZone a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "in deck zone"@en ; skos:definition "The section of the list the entry belongs to."@en ;
+  rdfs:domain smtg:DeckEntry ; rdfs:range smtg:DeckZone ;
+  rdfs:isDefinedBy smtgm:decks ; vs:term_status "proposal" .
+smtg:deckFormat a owl:ObjectProperty ;
+  rdfs:label "deck format"@en ; skos:definition "The format the list is built for."@en ;
+  rdfs:range smtg:Format ; smtg:intendedDomain smtg:DeckList , smtg:DeckListVersion ;
+  rdfs:isDefinedBy smtgm:decks ; vs:term_status "proposal" .
+smtg:isCompleteList a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "is complete list"@en ;
+  skos:definition "Explicit closure flag: true if the version lists all its cards, which licenses closed-world checks over it in SPARQL/SHACL."@en ;
+  rdfs:domain smtg:DeckListVersion ; rdfs:range xsd:boolean ;
+  rdfs:isDefinedBy smtgm:decks ; vs:term_status "proposal" .
+
+smtgv:deck-zone a skos:ConceptScheme ; rdfs:label "Deck zones"@en ;
+  smtg:conceptClass smtg:DeckZone ; rdfs:isDefinedBy smtgm:decks .
+dz:commander a smtg:DeckZone ; skos:inScheme smtgv:deck-zone ; skos:prefLabel "Commander"@en ; skos:notation "commander" ; rdfs:isDefinedBy smtgm:decks .
+dz:companion a smtg:DeckZone ; skos:inScheme smtgv:deck-zone ; skos:prefLabel "Companion"@en ; skos:notation "companion" ; rdfs:isDefinedBy smtgm:decks .
+dz:mainboard a smtg:DeckZone ; skos:inScheme smtgv:deck-zone ; skos:prefLabel "Mainboard"@en ; skos:notation "mainboard" ; rdfs:isDefinedBy smtgm:decks .
+dz:sideboard a smtg:DeckZone ; skos:inScheme smtgv:deck-zone ; skos:prefLabel "Sideboard"@en ; skos:notation "sideboard" ; rdfs:isDefinedBy smtgm:decks .
+dz:maybeboard a smtg:DeckZone ; skos:inScheme smtgv:deck-zone ; skos:prefLabel "Maybeboard"@en ; skos:notation "maybeboard" ; rdfs:isDefinedBy smtgm:decks .

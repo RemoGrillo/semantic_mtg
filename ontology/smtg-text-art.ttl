@@ -1,0 +1,233 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix smtgv:   <https://w3id.org/smtg/vocab/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# =============================================================================
+#  SMTG Text & Art — text expressions by role and location, illustrations,
+#  artists, depictions, inscriptions inside artworks, and digital images.
+# =============================================================================
+
+smtgm:text-art a owl:Ontology ;
+  rdfs:label "SMTG Text & Art"@en ;
+  dcterms:title "Text and art: text expressions, illustrations, artists, inscriptions and images"@en ;
+  dcterms:description """Card text is not one string. SMTG distinguishes the current English Oracle text of a face (versioned by observation), the rules text actually printed on a localised printing, flavour text, flavour names and printed names and type lines — each with its language and the face or printed face it belongs to. Artwork is equally layered: an illustration is a visual work that can appear on many printings; it is credited to artists through contributions; what it depicts and any words visibly written inside it are separate claims; and an image file is a digital representation, not the artwork itself."""@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  smtg:moduleOrder 4 ;
+  vs:term_status "unstable" ;
+  owl:imports smtgm:core , smtgm:cards , smtgm:claims .
+
+# -----------------------------------------------------------------------------
+#  Text expressions
+# -----------------------------------------------------------------------------
+
+smtg:TextExpression a owl:Class ;
+  rdfs:label "Text expression"@en ;
+  skos:definition "A piece of card text in a specific role (Oracle text, printed rules text, flavour text, printed name, …), language and location, as a resource with its own provenance."@en ;
+  skos:scopeNote "Text is reified so that its role, language, version and source stay attached to it (\"which Oracle text was current in snapshot S?\"). The role is given by the subclass, which are pairwise disjoint."@en ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "unstable" .
+
+smtg:OracleText a owl:Class ; rdfs:subClassOf smtg:TextExpression ;
+  rdfs:label "Oracle text"@en ;
+  skos:definition "The English reference rules text of a conceptual face as maintained in Oracle and reported by the source at a snapshot. It is updated by Wizards over time; earlier versions remain as historical observations."@en ;
+  smtg:sourceField "scryfall:oracle_text" , "scryfall:card_faces[].oracle_text" ;
+  smtg:reviewQuestion "RQ-TX-1" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+smtg:PrintedRulesText a owl:Class ; rdfs:subClassOf smtg:TextExpression ;
+  rdfs:label "Printed rules text"@en ;
+  skos:definition "The rules text as printed on a particular (possibly localised) printing; may differ from current Oracle text in wording and language."@en ;
+  smtg:sourceField "scryfall:printed_text" , "scryfall:card_faces[].printed_text" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+smtg:FlavorText a owl:Class ; rdfs:subClassOf smtg:TextExpression ;
+  rdfs:label "Flavor text"@en ;
+  skos:definition "The italic, non-rules flavour text printed on a printed face. It belongs to the printing, not to the Oracle card."@en ;
+  smtg:sourceField "scryfall:flavor_text" , "scryfall:card_faces[].flavor_text" ;
+  smtg:antiPattern "AP-13" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+smtg:PrintedName a owl:Class ; rdfs:subClassOf smtg:TextExpression ;
+  rdfs:label "Printed name"@en ;
+  skos:definition "The name as printed on a localised printing (e.g. Fulmine for an Italian Lightning Bolt)."@en ;
+  smtg:sourceField "scryfall:printed_name" , "scryfall:card_faces[].printed_name" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+smtg:FlavorName a owl:Class ; rdfs:subClassOf smtg:TextExpression ;
+  rdfs:label "Flavor name"@en ;
+  skos:definition "An alternative in-universe or crossover name printed on a printing in addition to or instead of the Oracle name (e.g. Godzilla series names); it does not change the card's Oracle identity."@en ;
+  smtg:sourceField "scryfall:flavor_name" , "scryfall:card_faces[].flavor_name" ;
+  smtg:antiPattern "AP-04" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+smtg:PrintedTypeLine a owl:Class ; rdfs:subClassOf smtg:TextExpression ;
+  rdfs:label "Printed type line"@en ;
+  skos:definition "The type line as printed on a localised printing."@en ;
+  smtg:sourceField "scryfall:printed_type_line" , "scryfall:card_faces[].printed_type_line" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+
+[] a owl:AllDisjointClasses ;
+  owl:members ( smtg:OracleText smtg:PrintedRulesText smtg:FlavorText smtg:PrintedName smtg:FlavorName smtg:PrintedTypeLine ) .
+
+smtg:textValue a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "text value"@en ;
+  skos:definition "The literal content of a text expression, verbatim (line breaks and symbols such as {T} preserved), as a language-tagged string when the language is known."@en ;
+  rdfs:domain smtg:TextExpression ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+
+smtg:textLanguage a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "text language"@en ;
+  skos:definition "The language of a text expression."@en ;
+  rdfs:domain smtg:TextExpression ; rdfs:range smtg:Language ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+
+smtg:hasOracleText a owl:ObjectProperty ;
+  rdfs:label "has Oracle text"@en ;
+  skos:definition "Relates a conceptual face to an observed version of its Oracle text."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range smtg:OracleText ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+
+smtg:hasPrintedText a owl:ObjectProperty ;
+  rdfs:label "has printed text"@en ;
+  skos:definition "Relates a printed face to a text expression printed on it (printed rules text, flavour text, printed name, flavour name, printed type line)."@en ;
+  rdfs:range smtg:TextExpression ;
+  smtg:intendedDomain smtg:PrintedFace ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+
+# -----------------------------------------------------------------------------
+#  Illustrations, artists, depictions, inscriptions
+# -----------------------------------------------------------------------------
+
+smtg:Illustration a owl:Class ;
+  rdfs:label "Illustration"@en ;
+  skos:definition "A visual artwork created for Magic, identified by Scryfall's illustration ID, which may appear on many printings and faces."@en ;
+  skos:scopeNote "An illustration is neither a printing nor an image file. Printings that share an illustration are not the same printing (AP-03), and a digital image is only a representation of (a crop of) a printed face or illustration (AP-14)."@en ;
+  smtg:sourceField "scryfall:illustration_id" , "scryfall:card_faces[].illustration_id" ;
+  smtg:antiPattern "AP-03" , "AP-14" ;
+  smtg:reviewQuestion "RQ-AR-1" ;
+  owl:disjointWith smtg:TextExpression ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+
+smtg:showsIllustration a owl:ObjectProperty ;
+  rdfs:label "shows illustration"@en ;
+  skos:definition "Relates a printed face to the illustration that appears on it."@en ;
+  rdfs:range smtg:Illustration ;
+  smtg:intendedDomain smtg:PrintedFace ;
+  smtg:sourceField "scryfall:illustration_id" , "scryfall:card_faces[].illustration_id" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+
+smtg:Artist a owl:Class ;
+  rdfs:subClassOf prov:Agent ;
+  rdfs:label "Artist"@en ;
+  skos:definition "A person or studio credited with Magic artwork, as identified by a Scryfall artist ID."@en ;
+  skos:scopeNote "The printed credit string (\"Christopher Moeller & Rebecca Guay\") is not an artist; artists come from artist IDs. Linking to external authorities (Wikidata, ULAN) is an optional, reviewed module — never on name alone (AP-04)."@en ;
+  smtg:sourceField "scryfall:artist_ids" , "scryfall:card_faces[].artist_id" ;
+  smtg:antiPattern "AP-04" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+
+smtg:ArtisticContribution a owl:Class ;
+  rdfs:label "Artistic contribution"@en ;
+  skos:definition "The qualified fact that an artist contributed to an illustration (in a role, credited under a given name)."@en ;
+  skos:scopeNote "Qualified so that multiple artists, roles and the exact credited name can be kept."@en ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "unstable" .
+
+smtg:hasContribution a owl:ObjectProperty ;
+  rdfs:label "has contribution"@en ;
+  skos:definition "Relates an illustration to an artistic contribution to it."@en ;
+  rdfs:domain smtg:Illustration ; rdfs:range smtg:ArtisticContribution ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "unstable" .
+
+smtg:contributor a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "contributor"@en ;
+  skos:definition "The artist of an artistic contribution."@en ;
+  rdfs:domain smtg:ArtisticContribution ; rdfs:range smtg:Artist ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "unstable" .
+
+smtg:creditedAs a owl:DatatypeProperty ;
+  rdfs:label "credited as"@en ;
+  skos:definition "The credit string exactly as the source gives it."@en ;
+  rdfs:range xsd:string ;
+  smtg:intendedDomain smtg:ArtisticContribution , smtg:PrintedFace ;
+  smtg:sourceField "scryfall:artist" , "scryfall:card_faces[].artist" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+
+smtg:ArtworkDepiction a owl:Class ;
+  rdfs:subClassOf smtg:Claim ;
+  rdfs:label "Artwork depiction"@en ;
+  skos:definition "A claim that an illustration depicts a given subject (a character, creature, object, place or motif), with source and evidence."@en ;
+  skos:scopeNote "Distinguishes \"shows a recognisable subject\" from a thematic art tag. Not populated in v1; Tagger art-tag assignments may be mapped to depictions after review (RQ-AR-2)."@en ;
+  smtg:reviewQuestion "RQ-AR-2" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "proposal" .
+
+smtg:depicts a owl:ObjectProperty ;
+  rdfs:label "depicts"@en ;
+  skos:definition "The subject that an artwork depiction claims is shown."@en ;
+  rdfs:domain smtg:ArtworkDepiction ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "proposal" .
+
+smtg:ArtworkInscription a owl:Class ;
+  rdfs:label "Artwork inscription"@en ;
+  skos:definition "Words visibly written inside an illustration (on a banner, a book, a sign…), as transcribed by a source, with language, location in the image and uncertainty."@en ;
+  skos:scopeNote "Not flavour text and not printed rules text: it is part of the picture (AP-13). No OCR in v1; only transcriptions with explicit provenance. Unknown inscriptions are simply absent, never asserted as empty (RQ-AR-3)."@en ;
+  smtg:antiPattern "AP-13" ;
+  smtg:reviewQuestion "RQ-AR-3" ;
+  owl:disjointWith smtg:TextExpression ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "proposal" .
+
+smtg:inscribedIn a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "inscribed in"@en ;
+  skos:definition "The illustration that contains the inscription."@en ;
+  rdfs:domain smtg:ArtworkInscription ; rdfs:range smtg:Illustration ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "proposal" .
+
+smtg:inscriptionText a owl:DatatypeProperty ;
+  rdfs:label "inscription text"@en ;
+  skos:definition "The transcribed words of the inscription."@en ;
+  rdfs:domain smtg:ArtworkInscription ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "proposal" .
+
+smtg:locationInImage a owl:DatatypeProperty ;
+  rdfs:label "location in image"@en ;
+  skos:definition "Free-text or region description of where the inscription appears in the image."@en ;
+  rdfs:domain smtg:ArtworkInscription ; rdfs:range xsd:string ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "proposal" .
+
+# -----------------------------------------------------------------------------
+#  Digital images
+# -----------------------------------------------------------------------------
+
+smtg:DigitalImage a owl:Class ;
+  rdfs:label "Digital image"@en ;
+  skos:definition "An image file published by a source (a scan or rendition of a printed face, or a crop of its artwork), with its URL, variant and rights metadata."@en ;
+  skos:scopeNote "An image URL is not the artwork and not the printing (AP-14). SMTG links to source-hosted images and does not redistribute them."@en ;
+  smtg:sourceField "scryfall:image_uris.*" , "scryfall:card_faces[].image_uris.*" ;
+  smtg:antiPattern "AP-14" ;
+  owl:disjointWith smtg:Illustration ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+
+smtg:hasImage a owl:ObjectProperty ;
+  rdfs:label "has image"@en ;
+  skos:definition "Relates a printed face to a digital image of it."@en ;
+  rdfs:range smtg:DigitalImage ;
+  smtg:intendedDomain smtg:PrintedFace ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+
+smtg:imageVariant a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "image variant"@en ;
+  skos:definition "Which rendition the image is (png, large, normal, small, art_crop, border_crop)."@en ;
+  rdfs:domain smtg:DigitalImage ; rdfs:range smtg:ImageVariant ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+
+smtg:contentURL a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "content URL"@en ;
+  skos:definition "The URL from which the image file can be retrieved."@en ;
+  rdfs:domain smtg:DigitalImage ; rdfs:range xsd:anyURI ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
+
+smtg:depictsArtworkOf a owl:ObjectProperty ;
+  rdfs:label "depicts artwork of"@en ;
+  skos:definition "Relates an art-crop image to the illustration it reproduces."@en ;
+  rdfs:domain smtg:DigitalImage ; rdfs:range smtg:Illustration ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "unstable" .

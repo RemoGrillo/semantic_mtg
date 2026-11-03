@@ -1,0 +1,21 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# OPT-IN VIEW — derives the lossy projection smtg:hasTag from tag assignments
+# by a property chain:  hasTag ⊒ inverse(assignmentTarget) ∘ assignedTag.
+# Every assignment, of ANY weight, yields hasTag. That is exactly the
+# "weak claim becomes plain fact" step that the DEC discussion should decide on;
+# materialized results belong in a projection graph, never in source graphs.
+
+smtgm:view-tags-projection a owl:Ontology ;
+  rdfs:label "View: hasTag projection from tag assignments (opt-in)"@en ;
+  dcterms:description "Property-chain definition of the convenience projection smtg:hasTag. Drops weight, provenance and attitude (AP-11)."@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  vs:term_status "proposal" ;
+  owl:imports smtgm:tags .
+
+smtg:hasTag owl:propertyChainAxiom ( [ owl:inverseOf smtg:assignmentTarget ] smtg:assignedTag ) .

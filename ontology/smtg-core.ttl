@@ -1,0 +1,264 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix smtgv:   <https://w3id.org/smtg/vocab/> .
+@prefix idscheme: <https://w3id.org/smtg/vocab/identifier-scheme/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# =============================================================================
+#  SMTG Core — shared foundations: documentation annotations, identifiers,
+#  controlled-vocabulary base class, and the declarations needed to keep the
+#  ontology inside OWL 2 DL when SKOS / PROV / DC terms are reused.
+# =============================================================================
+
+smtgm:core a owl:Ontology ;
+  rdfs:label "SMTG Core"@en ;
+  dcterms:title "Core: identifiers, vocabulary base classes and documentation conventions"@en ;
+  dcterms:description """Foundational module shared by every other module. It declares the documentation annotation properties used across SMTG (rationale, source fields, review questions), the qualified Identifier pattern (a string identifier is never the thing it identifies), and the base class for controlled-vocabulary concepts. It also declares how reused SKOS, PROV-O and Dublin Core terms are typed so that the whole ontology stays within OWL 2 DL and can be checked by a DL reasoner."""@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  smtg:moduleOrder 1 ;
+  vs:term_status "unstable" .
+
+# -----------------------------------------------------------------------------
+#  Documentation annotation properties (non-logical; drive the generated docs)
+# -----------------------------------------------------------------------------
+
+smtg:sourceField a owl:AnnotationProperty ;
+  rdfs:label "source field"@en ;
+  skos:definition "A source JSON path (prefixed by the source key, e.g. scryfall:card_faces[].oracle_text) whose content is represented by the annotated term."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:reviewQuestion a owl:AnnotationProperty ;
+  rdfs:label "review question"@en ;
+  skos:definition "Identifier of an open design question in docs/ontology/review-questions.md that concerns the annotated term."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:antiPattern a owl:AnnotationProperty ;
+  rdfs:label "anti-pattern"@en ;
+  skos:definition "Identifier of a semantic anti-pattern (docs/ontology/anti-patterns.md) that the annotated term is designed to avoid."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:docExample a owl:AnnotationProperty ;
+  rdfs:label "documentation example"@en ;
+  skos:definition "An instance from the example data that the documentation shows for the annotated term."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:intendedDomain a owl:AnnotationProperty ;
+  rdfs:label "intended domain"@en ;
+  skos:definition "Non-logical indication of the class whose members are expected as subjects of the annotated property. Used instead of rdfs:domain where a global domain axiom would cause unwanted inferences (e.g. a property shared by card faces and printed faces)."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:intendedRange a owl:AnnotationProperty ;
+  rdfs:label "intended range"@en ;
+  skos:definition "Non-logical indication of the expected class or datatype of the values of the annotated property; enforced, if at all, by SHACL rather than by OWL."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:moduleOrder a owl:AnnotationProperty ;
+  rdfs:label "module order"@en ;
+  skos:definition "Display order of an ontology module in the documentation."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:conceptClass a owl:AnnotationProperty ;
+  rdfs:label "concept class"@en ;
+  skos:definition "Links a concept scheme to the OWL class whose instances are the concepts of that scheme."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:sourceValueOf a owl:AnnotationProperty ;
+  rdfs:label "source value of"@en ;
+  skos:definition "Names the source field whose literal code value (given by skos:notation) this vocabulary concept represents."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:symbol a owl:AnnotationProperty ;
+  rdfs:label "symbol"@en ;
+  skos:definition "Scryfall/Wizards symbol notation (e.g. {W}{U}) used by the documentation to render the official symbol images next to a concept."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:proposalOf a owl:AnnotationProperty ;
+  rdfs:label "proposal of"@en ;
+  skos:definition "On a proposal module: the core module that the proposal would replace, extend or offer an alternative to."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:proposalKind a owl:AnnotationProperty ;
+  rdfs:label "proposal kind"@en ;
+  skos:definition "On a proposal module: one of replace, extend, alternative."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:replacesTerm a owl:AnnotationProperty ;
+  rdfs:label "replaces term"@en ;
+  skos:definition "On a term in a proposal module: a core term that this proposed term would replace."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:projectionOf a owl:AnnotationProperty ;
+  rdfs:label "projection of"@en ;
+  skos:definition "Marks a convenience property as a lossy projection of a qualified (reified) pattern; values of the projection are generated into a separate named graph and never asserted as source facts."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+# Reused annotation vocabularies, declared so the ontology stays in OWL 2 DL.
+vs:term_status a owl:AnnotationProperty .
+skos:definition a owl:AnnotationProperty .
+skos:scopeNote a owl:AnnotationProperty .
+skos:example a owl:AnnotationProperty .
+skos:prefLabel a owl:AnnotationProperty .
+skos:altLabel a owl:AnnotationProperty .
+skos:hiddenLabel a owl:AnnotationProperty .
+skos:notation a owl:AnnotationProperty .
+skos:editorialNote a owl:AnnotationProperty .
+skos:historyNote a owl:AnnotationProperty .
+dcterms:title a owl:AnnotationProperty .
+dcterms:description a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+dcterms:rights a owl:AnnotationProperty .
+dcterms:source a owl:AnnotationProperty .
+dcterms:modified a owl:AnnotationProperty .
+
+# Reused SKOS structure (object properties between concepts / schemes).
+skos:Concept a owl:Class .
+skos:ConceptScheme a owl:Class .
+skos:inScheme a owl:ObjectProperty .
+skos:hasTopConcept a owl:ObjectProperty .
+skos:topConceptOf a owl:ObjectProperty .
+skos:broader a owl:ObjectProperty .
+skos:narrower a owl:ObjectProperty .
+skos:related a owl:ObjectProperty .
+skos:exactMatch a owl:ObjectProperty .
+skos:closeMatch a owl:ObjectProperty .
+skos:broadMatch a owl:ObjectProperty .
+skos:narrowMatch a owl:ObjectProperty .
+
+# Reused PROV-O terms (only those SMTG relies on).
+prov:Entity a owl:Class .
+prov:Activity a owl:Class .
+prov:Agent a owl:Class .
+prov:Organization a owl:Class ; rdfs:subClassOf prov:Agent .
+prov:Person a owl:Class ; rdfs:subClassOf prov:Agent .
+prov:SoftwareAgent a owl:Class ; rdfs:subClassOf prov:Agent .
+prov:wasDerivedFrom a owl:ObjectProperty .
+prov:wasGeneratedBy a owl:ObjectProperty .
+prov:wasAttributedTo a owl:ObjectProperty .
+prov:used a owl:ObjectProperty .
+prov:wasAssociatedWith a owl:ObjectProperty .
+prov:wasInvalidatedBy a owl:ObjectProperty .
+prov:generatedAtTime a owl:DatatypeProperty .
+prov:invalidatedAtTime a owl:DatatypeProperty .
+prov:startedAtTime a owl:DatatypeProperty .
+prov:endedAtTime a owl:DatatypeProperty .
+
+# -----------------------------------------------------------------------------
+#  Controlled-vocabulary base class
+# -----------------------------------------------------------------------------
+
+smtg:VocabularyConcept a owl:Class ;
+  rdfs:subClassOf skos:Concept ;
+  rdfs:label "Vocabulary concept"@en ;
+  skos:definition "A concept of one of SMTG's controlled vocabularies (layouts, card types, colours, formats, rarities, finishes, …). Each concept carries the exact source code value as skos:notation."@en ;
+  skos:scopeNote """Controlled vocabularies are modelled as SKOS concept schemes whose concepts are OWL individuals, not as OWL subclasses. This keeps the vocabularies open: a new Scryfall layout or a new card type is a new concept, not a breaking change to the class hierarchy. Where a vocabulary value needs to drive classification, a defined class uses owl:hasValue (see smtg:ModalDoubleFacedCard)."""@en ;
+  smtg:antiPattern "AP-07" ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+# -----------------------------------------------------------------------------
+#  Identifiers (qualified: value + scheme)
+# -----------------------------------------------------------------------------
+
+smtg:Identifier a owl:Class ;
+  rdfs:label "Identifier"@en ;
+  skos:definition "An identifier assigned to an entity by an identifier scheme (an authority such as Scryfall, Wizards' Gatherer or MTGO). The identifier is a resource of its own: its value is a string, its scheme says who issued it and what it identifies."@en ;
+  skos:scopeNote """A string identifier is not the card it identifies (AP-02). Internal IRIs are minted from stable opaque source identifiers (e.g. the Scryfall Oracle UUID), but IRIs are opaque: queries must use smtg:Identifier nodes, never parse IRIs. The same value can be issued by different schemes, so the pair (scheme, value) is the key."""@en ;
+  skos:example "The Oracle card Lightning Bolt has an Identifier with scheme scryfall-oracle-id and value 4457ed35-7c10-48c8-9776-456485fdf070."@en ;
+  smtg:antiPattern "AP-02" ;
+  smtg:reviewQuestion "RQ-ID-3" ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:IdentifierScheme a owl:Class ;
+  rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Identifier scheme"@en ;
+  skos:definition "An authority-specific system of identifiers, together with the kind of entity its identifiers denote (e.g. Scryfall card IDs denote printings, Scryfall Oracle IDs denote Oracle cards)."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:hasIdentifier a owl:ObjectProperty ;
+  rdfs:label "has identifier"@en ;
+  skos:definition "Relates an entity to an Identifier assigned to it."@en ;
+  rdfs:range smtg:Identifier ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:identifierValue a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "identifier value"@en ;
+  skos:definition "The literal value of an identifier exactly as issued by its scheme (case and formatting preserved)."@en ;
+  rdfs:domain smtg:Identifier ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:identifierScheme a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "identifier scheme"@en ;
+  skos:definition "The scheme (issuing authority and identifier kind) of an identifier."@en ;
+  rdfs:domain smtg:Identifier ;
+  rdfs:range smtg:IdentifierScheme ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtg:sourceURL a owl:DatatypeProperty ;
+  rdfs:label "source URL"@en ;
+  skos:definition "A URL at which a source publishes a human- or machine-readable description of the entity (e.g. the Scryfall card page or API URI). A URL is a pointer to a description, not an identity criterion."@en ;
+  rdfs:range xsd:anyURI ;
+  smtg:sourceField "scryfall:uri" , "scryfall:scryfall_uri" , "scryfall:rulings_uri" , "scryfall:prints_search_uri" , "tagger:uri" ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
+smtgv:identifier-scheme a skos:ConceptScheme ;
+  rdfs:label "Identifier schemes"@en ;
+  skos:definition "The identifier systems whose identifiers SMTG records."@en ;
+  smtg:conceptClass smtg:IdentifierScheme ;
+  rdfs:isDefinedBy smtgm:core .
+
+idscheme:scryfall-oracle-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Scryfall Oracle ID"@en ; skos:notation "oracle_id" ;
+  skos:definition "Scryfall UUID shared by all printings of the same Oracle card. For reversible cards it appears on each face instead of the root object."@en ;
+  smtg:sourceValueOf "scryfall:oracle_id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:scryfall-card-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Scryfall card ID"@en ; skos:notation "id" ;
+  skos:definition "Scryfall UUID of a card object, i.e. of one printing in one language."@en ;
+  smtg:sourceValueOf "scryfall:id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:scryfall-illustration-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Scryfall illustration ID"@en ; skos:notation "illustration_id" ;
+  skos:definition "Scryfall UUID of an illustration (artwork) that may appear on many printings."@en ;
+  smtg:sourceValueOf "scryfall:illustration_id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:scryfall-set-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Scryfall set ID"@en ; skos:notation "set_id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:scryfall-artist-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Scryfall artist ID"@en ; skos:notation "artist_ids" ; rdfs:isDefinedBy smtgm:core .
+idscheme:scryfall-card-back-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Scryfall card back ID"@en ; skos:notation "card_back_id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:set-code a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Set code"@en ; skos:notation "set" ;
+  skos:definition "Short code of a set as used by Scryfall (usually Wizards' official code, lower-cased)."@en ; rdfs:isDefinedBy smtgm:core .
+idscheme:multiverse-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Gatherer multiverse ID"@en ; skos:notation "multiverse_ids" ; rdfs:isDefinedBy smtgm:core .
+idscheme:mtgo-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "MTGO catalog ID"@en ; skos:notation "mtgo_id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:mtgo-foil-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "MTGO foil catalog ID"@en ; skos:notation "mtgo_foil_id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:arena-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "MTG Arena ID"@en ; skos:notation "arena_id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:tcgplayer-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "TCGplayer product ID"@en ; skos:notation "tcgplayer_id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:tcgplayer-etched-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "TCGplayer etched product ID"@en ; skos:notation "tcgplayer_etched_id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:cardmarket-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Cardmarket product ID"@en ; skos:notation "cardmarket_id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:tagger-tag-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Tagger tag ID"@en ; skos:notation "id" ;
+  skos:definition "UUID of a Tagger tag. The tag slug and label may change; the ID is the identity key."@en ; rdfs:isDefinedBy smtgm:core .
+idscheme:spellbook-card-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Commander Spellbook card ID"@en ; skos:notation "uses[].card.id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:spellbook-variant-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Commander Spellbook variant ID"@en ; skos:notation "variants[].id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:spellbook-combo-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Commander Spellbook combo ID"@en ; skos:notation "of[].id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:spellbook-feature-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Commander Spellbook feature ID"@en ; skos:notation "produces[].feature.id" ; rdfs:isDefinedBy smtgm:core .
+idscheme:spellbook-template-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "Commander Spellbook template ID"@en ; skos:notation "requires[].template.id" ; rdfs:isDefinedBy smtgm:core .

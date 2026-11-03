@@ -1,0 +1,332 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix smtgv:   <https://w3id.org/smtg/vocab/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# =============================================================================
+#  SMTG Printings — the published, physical/digital level: printings, printed
+#  faces, sets, and time-scoped observations (legality, prices, ranks).
+# =============================================================================
+
+smtgm:printings a owl:Ontology ;
+  rdfs:label "SMTG Printings"@en ;
+  dcterms:title "Printings: published card objects, printed faces, sets and observations"@en ;
+  dcterms:description """The manifestation level. A printing is one published card object — one set, collector number and language, as identified by a Scryfall card ID — and it manifests one Oracle card (two for reversible printings). Each printing has printed faces that carry the localised name and text, flavour text, artwork and images, and the physical side and orientation of each face. Volatile facts that the sources report about cards — legality in a format, prices, popularity ranks — are time-scoped observations, not timeless properties."""@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  smtg:moduleOrder 3 ;
+  vs:term_status "unstable" ;
+  owl:imports smtgm:core , smtgm:cards , smtgm:taxonomies , smtgm:claims .
+
+# -----------------------------------------------------------------------------
+#  Classes
+# -----------------------------------------------------------------------------
+
+smtg:CardPrinting a owl:Class ;
+  rdfs:label "Card printing"@en ;
+  skos:definition "A published card object: a specific edition of one or more Oracle cards in one set, with one collector number and one language, in one physical/digital form (identified by a Scryfall card ID)."@en ;
+  skos:scopeNote """A printing manifests an Oracle card but is not one (disjoint; never subClassOf; never owl:sameAs — AP-01). Two printings that share an illustration are still two printings (AP-03). Attributes that vary between editions — set, rarity, frame, border, finishes, promo types, language, flavour text, artwork — are printing-level or printed-face-level, never Oracle-level."""@en ;
+  skos:example "The Italian Lightning Bolt of the Fourth Edition (Fulmine) and the English Magic 2010 Lightning Bolt are two printings of one Oracle card."@en ;
+  smtg:sourceField "scryfall:id" ;
+  smtg:antiPattern "AP-01" , "AP-03" ;
+  rdfs:subClassOf [ a owl:Restriction ; owl:onProperty smtg:isPrintingOf ; owl:someValuesFrom smtg:OracleCard ] ;
+  owl:disjointWith smtg:OracleCard , smtg:CardFace ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:PrintedFace a owl:Class ;
+  rdfs:label "Printed face"@en ;
+  skos:definition "A face as manifested on a particular printing: the conceptual face it shows, the physical side and orientation where it appears, and its printed (possibly localised) name, type line, text, flavour text, artwork and images."@en ;
+  skos:scopeNote "Every printing has at least one printed face, mirroring the card-face convention. A reversible printing has two printed faces that manifest faces of two different Oracle cards."@en ;
+  smtg:sourceField "scryfall:card_faces[]" ;
+  rdfs:subClassOf [ a owl:Restriction ; owl:onProperty smtg:manifestsFace ; owl:someValuesFrom smtg:CardFace ] ;
+  owl:disjointWith smtg:CardFace , smtg:CardPrinting , smtg:OracleCard ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:MtgSet a owl:Class ;
+  rdfs:label "Set"@en ;
+  skos:definition "A Magic set or product grouping as catalogued by Scryfall (an expansion, core set, Commander deck series, promo set, token set, digital set, …), in which printings are published."@en ;
+  skos:scopeNote "Named MtgSet to avoid confusion with mathematical sets and rdf collections."@en ;
+  smtg:sourceField "scryfall:set" , "scryfall:set_id" , "scryfall-sets:*" ;
+  owl:disjointWith smtg:CardPrinting , smtg:OracleCard ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:LegalityAssertion a owl:Class ;
+  rdfs:subClassOf smtg:Observation ;
+  rdfs:label "Legality assertion"@en ;
+  skos:definition "A source's report, at a given snapshot, that an Oracle card has a given legality status in a given format."@en ;
+  skos:scopeNote "Legality changes (bans, rotations, new formats). It is therefore an observation scoped by a snapshot, not a timeless card property; the current view shows the latest observation (AP-10)."@en ;
+  smtg:sourceField "scryfall:legalities.*" ;
+  smtg:antiPattern "AP-10" ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:PriceObservation a owl:Class ;
+  rdfs:subClassOf smtg:Observation ;
+  rdfs:label "Price observation"@en ;
+  skos:definition "A source's report of a market price for a printing in a given finish and currency at a given snapshot."@en ;
+  skos:scopeNote "Commercial and highly volatile; kept apart from card identity and optional for public release (RQ-PR-2)."@en ;
+  smtg:sourceField "scryfall:prices.*" ;
+  smtg:reviewQuestion "RQ-PR-2" ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+
+smtg:RankObservation a owl:Class ;
+  rdfs:subClassOf smtg:Observation ;
+  rdfs:label "Rank observation"@en ;
+  skos:definition "A source's report of a card's popularity rank in a ranking system (EDHREC rank, Penny Dreadful rank) at a given snapshot."@en ;
+  smtg:sourceField "scryfall:edhrec_rank" , "scryfall:penny_rank" ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+
+# -----------------------------------------------------------------------------
+#  Printing ↔ card ↔ face
+# -----------------------------------------------------------------------------
+
+smtg:isPrintingOf a owl:ObjectProperty ;
+  rdfs:label "is printing of"@en ;
+  skos:definition "Relates a printing to the Oracle card(s) it manifests. Exactly one for ordinary printings, two for reversible printings."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:OracleCard ;
+  owl:inverseOf smtg:hasPrinting ;
+  smtg:sourceField "scryfall:oracle_id" , "scryfall:card_faces[].oracle_id" ;
+  smtg:reviewQuestion "RQ-ID-1" ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:hasPrinting a owl:ObjectProperty ;
+  rdfs:label "has printing"@en ;
+  skos:definition "Relates an Oracle card to one of its printings."@en ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:hasPrintedFace a owl:ObjectProperty ;
+  rdfs:label "has printed face"@en ;
+  skos:definition "Relates a printing to one of its printed faces."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:PrintedFace ;
+  owl:inverseOf smtg:printedFaceOf ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:printedFaceOf a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "printed face of"@en ;
+  skos:definition "Relates a printed face to the single printing it belongs to."@en ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:manifestsFace a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "manifests face"@en ;
+  skos:definition "Relates a printed face to the conceptual Oracle face it shows."@en ;
+  rdfs:domain smtg:PrintedFace ; rdfs:range smtg:CardFace ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:onSide a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "on side"@en ;
+  skos:definition "The physical side (front or back) on which a printed face appears."@en ;
+  rdfs:domain smtg:PrintedFace ; rdfs:range smtg:Side ;
+  smtg:reviewQuestion "RQ-CF-1" ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:hasOrientation a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has orientation"@en ;
+  skos:definition "The orientation of a printed face on its side (upright, rotated, inverted)."@en ;
+  rdfs:domain smtg:PrintedFace ; rdfs:range smtg:Orientation ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+
+smtg:printingLayout a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "printing layout"@en ;
+  skos:definition "The layout code of the printing as published (e.g. reversible_card, art_series), which can differ from the Oracle card's game layout."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:Layout ;
+  smtg:sourceField "scryfall:layout" ;
+  smtg:reviewQuestion "RQ-LY-2" ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+
+smtg:variationOf a owl:ObjectProperty ;
+  rdfs:label "variation of"@en ;
+  skos:definition "Relates a printing to the printing of which it is a variation (same set, e.g. alternative art or misprint)."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:CardPrinting ;
+  smtg:sourceField "scryfall:variation_of" ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+# -----------------------------------------------------------------------------
+#  Printing attributes
+# -----------------------------------------------------------------------------
+
+smtg:inSet a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "in set"@en ;
+  skos:definition "The set in which the printing was published."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:MtgSet ;
+  smtg:sourceField "scryfall:set" , "scryfall:set_id" , "scryfall:set_name" , "scryfall:set_type" , "scryfall:set_uri" , "scryfall:set_search_uri" , "scryfall:scryfall_set_uri" ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:collectorNumber a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "collector number"@en ;
+  skos:definition "The collector number of the printing within its set, as a string (it may contain letters and symbols such as ★)."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range xsd:string ;
+  smtg:sourceField "scryfall:collector_number" ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:inLanguage a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "in language"@en ;
+  skos:definition "The print language of a printing."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:Language ;
+  smtg:sourceField "scryfall:lang" ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:releasedOn a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "released on"@en ;
+  skos:definition "Release date of a printing or set as reported by the source."@en ;
+  rdfs:range xsd:date ;
+  smtg:intendedDomain smtg:CardPrinting , smtg:MtgSet ;
+  smtg:sourceField "scryfall:released_at" , "scryfall-sets:released_at" ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:hasRarity a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has rarity"@en ; skos:definition "Rarity of the printing."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:Rarity ;
+  smtg:sourceField "scryfall:rarity" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:hasBorderColor a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has border color"@en ; skos:definition "Border colour of the printing."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:BorderColor ;
+  smtg:sourceField "scryfall:border_color" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:hasFrameVersion a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has frame version"@en ; skos:definition "Frame generation of the printing."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:FrameVersion ;
+  smtg:sourceField "scryfall:frame" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:hasFrameEffect a owl:ObjectProperty ;
+  rdfs:label "has frame effect"@en ; skos:definition "A frame treatment of the printing."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:FrameEffect ;
+  smtg:sourceField "scryfall:frame_effects" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:hasSecurityStamp a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has security stamp"@en ; skos:definition "Security stamp shape of the printing."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:SecurityStamp ;
+  smtg:sourceField "scryfall:security_stamp" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:availableInFinish a owl:ObjectProperty ;
+  rdfs:label "available in finish"@en ; skos:definition "A finish in which the printing is available."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:Finish ;
+  smtg:sourceField "scryfall:finishes" , "scryfall:foil" , "scryfall:nonfoil" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:availableInGame a owl:ObjectProperty ;
+  rdfs:label "available in game"@en ; skos:definition "A medium (paper, Arena, MTGO) in which the printing is available."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:Game ;
+  smtg:sourceField "scryfall:games" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:hasPromoType a owl:ObjectProperty ;
+  rdfs:label "has promo type"@en ; skos:definition "A promotional category of the printing."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:PromoType ;
+  smtg:sourceField "scryfall:promo_types" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+
+smtg:hasWatermark a owl:ObjectProperty ;
+  rdfs:label "has watermark"@en ; skos:definition "A watermark printed on a printed face (or on the printing when the source gives it at card level)."@en ;
+  rdfs:range smtg:Watermark ; smtg:intendedDomain smtg:PrintedFace , smtg:CardPrinting ;
+  smtg:sourceField "scryfall:watermark" , "scryfall:card_faces[].watermark" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:hasImageStatus a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has image status"@en ; skos:definition "Quality status of the printing's images at the source."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:ImageStatus ;
+  smtg:sourceField "scryfall:image_status" , "scryfall:highres_image" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+
+smtg:printingFlag a owl:DatatypeProperty ;
+  rdfs:label "printing flag"@en ;
+  skos:definition "Abstract parent of the boolean printing flags reported by Scryfall. Use the specific sub-properties."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range xsd:boolean ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+
+smtg:isPromo a owl:DatatypeProperty ; rdfs:subPropertyOf smtg:printingFlag ; rdfs:label "is promo"@en ;
+  skos:definition "Whether the printing is a promotional printing."@en ; smtg:sourceField "scryfall:promo" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:isReprint a owl:DatatypeProperty ; rdfs:subPropertyOf smtg:printingFlag ; rdfs:label "is reprint"@en ;
+  skos:definition "Whether the printing reprints an Oracle card printed before."@en ; smtg:sourceField "scryfall:reprint" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:isVariation a owl:DatatypeProperty ; rdfs:subPropertyOf smtg:printingFlag ; rdfs:label "is variation"@en ;
+  skos:definition "Whether the printing is a variation of another printing in the same set."@en ; smtg:sourceField "scryfall:variation" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:isOversized a owl:DatatypeProperty ; rdfs:subPropertyOf smtg:printingFlag ; rdfs:label "is oversized"@en ;
+  skos:definition "Whether the printing is an oversized card."@en ; smtg:sourceField "scryfall:oversized" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:isFullArt a owl:DatatypeProperty ; rdfs:subPropertyOf smtg:printingFlag ; rdfs:label "is full art"@en ;
+  skos:definition "Whether the artwork covers most of the card."@en ; smtg:sourceField "scryfall:full_art" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:isTextless a owl:DatatypeProperty ; rdfs:subPropertyOf smtg:printingFlag ; rdfs:label "is textless"@en ;
+  skos:definition "Whether the printing omits its rules text."@en ; smtg:sourceField "scryfall:textless" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:inBooster a owl:DatatypeProperty ; rdfs:subPropertyOf smtg:printingFlag ; rdfs:label "in booster"@en ;
+  skos:definition "Whether the printing can be found in booster packs."@en ; smtg:sourceField "scryfall:booster" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:isStorySpotlight a owl:DatatypeProperty ; rdfs:subPropertyOf smtg:printingFlag ; rdfs:label "is story spotlight"@en ;
+  skos:definition "Whether the printing is a story spotlight card."@en ; smtg:sourceField "scryfall:story_spotlight" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:isDigitalOnly a owl:DatatypeProperty ; rdfs:subPropertyOf smtg:printingFlag ; rdfs:label "is digital only"@en ;
+  skos:definition "Whether the printing exists only digitally."@en ; smtg:sourceField "scryfall:digital" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:hasContentWarning a owl:DatatypeProperty ; rdfs:subPropertyOf smtg:printingFlag ; rdfs:label "has content warning"@en ;
+  skos:definition "Whether the source flags the printing's imagery or text as potentially offensive (e.g. cards removed for racist depictions)."@en ; smtg:sourceField "scryfall:content_warning" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:isGameChanger a owl:DatatypeProperty , owl:FunctionalProperty ; rdfs:label "is game changer"@en ;
+  skos:definition "Whether the Oracle card is on the Commander 'Game Changers' list as reported by the source. Volatile; candidate for an observation."@en ;
+  smtg:intendedDomain smtg:OracleCard ; rdfs:range xsd:boolean ;
+  smtg:sourceField "scryfall:game_changer" ; smtg:reviewQuestion "RQ-PR-3" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+
+# -----------------------------------------------------------------------------
+#  Sets
+# -----------------------------------------------------------------------------
+
+smtg:setCode a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "set code"@en ; skos:definition "The set's code (e.g. lea, m10)."@en ;
+  rdfs:domain smtg:MtgSet ; rdfs:range xsd:string ;
+  smtg:sourceField "scryfall-sets:code" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:hasSetType a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has set type"@en ; skos:definition "The category of the set."@en ;
+  rdfs:domain smtg:MtgSet ; rdfs:range smtg:SetType ;
+  smtg:sourceField "scryfall-sets:set_type" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:parentSet a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "parent set"@en ; skos:definition "The set of which this set is a child (e.g. a token or promo set of an expansion)."@en ;
+  rdfs:domain smtg:MtgSet ; rdfs:range smtg:MtgSet ;
+  smtg:sourceField "scryfall-sets:parent_set_code" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:blockCode a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "block code"@en ; skos:definition "Code of the block the set belongs to, if any."@en ;
+  rdfs:domain smtg:MtgSet ; rdfs:range xsd:string ;
+  smtg:sourceField "scryfall-sets:block_code" , "scryfall-sets:block" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+smtg:declaredCardCount a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "declared card count"@en ; skos:definition "Number of cards in the set as reported by the source."@en ;
+  rdfs:domain smtg:MtgSet ; rdfs:range xsd:nonNegativeInteger ;
+  smtg:sourceField "scryfall-sets:card_count" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+
+# -----------------------------------------------------------------------------
+#  Observation properties
+# -----------------------------------------------------------------------------
+
+smtg:legalityOf a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "legality of"@en ; skos:definition "The Oracle card (or combo variant) whose legality is reported."@en ;
+  rdfs:domain smtg:LegalityAssertion ; rdfs:subPropertyOf smtg:aboutEntity ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:inFormat a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "in format"@en ; skos:definition "The format of a legality assertion."@en ;
+  rdfs:domain smtg:LegalityAssertion ; rdfs:range smtg:Format ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+smtg:hasLegalityStatus a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has legality status"@en ; skos:definition "The status reported (legal, not_legal, restricted, banned)."@en ;
+  rdfs:domain smtg:LegalityAssertion ; rdfs:range smtg:LegalityStatus ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:priceOf a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "price of"@en ; skos:definition "The printing whose price is observed."@en ;
+  rdfs:domain smtg:PriceObservation ; rdfs:range smtg:CardPrinting ; rdfs:subPropertyOf smtg:aboutEntity ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+smtg:priceAmount a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "price amount"@en ; skos:definition "The observed price."@en ;
+  rdfs:domain smtg:PriceObservation ; rdfs:range xsd:decimal ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+smtg:priceCurrency a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "price currency"@en ; skos:definition "Currency or unit of the observed price."@en ;
+  rdfs:domain smtg:PriceObservation ; rdfs:range smtg:Currency ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+smtg:priceFinish a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "price finish"@en ; skos:definition "Finish the price refers to (nonfoil, foil, etched)."@en ;
+  rdfs:domain smtg:PriceObservation ; rdfs:range smtg:Finish ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+
+smtg:rankOf a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "rank of"@en ; skos:definition "The Oracle card whose rank is observed."@en ;
+  rdfs:domain smtg:RankObservation ; rdfs:range smtg:OracleCard ; rdfs:subPropertyOf smtg:aboutEntity ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+smtg:rankingSystem a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "ranking system"@en ; skos:definition "The ranking system of a rank observation."@en ;
+  rdfs:domain smtg:RankObservation ; rdfs:range smtg:RankingSystem ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+smtg:rankValue a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "rank value"@en ; skos:definition "The observed rank (1 = most popular)."@en ;
+  rdfs:domain smtg:RankObservation ; rdfs:range xsd:positiveInteger ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .

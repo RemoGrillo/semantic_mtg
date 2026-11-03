@@ -1,0 +1,416 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix smtgv:   <https://w3id.org/smtg/vocab/> .
+@prefix layout:  <https://w3id.org/smtg/vocab/layout/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# =============================================================================
+#  SMTG Cards — the abstract (Oracle) level: card identity, conceptual faces,
+#  layouts, and game characteristics. Nothing here is about a physical printing.
+# =============================================================================
+
+smtgm:cards a owl:Ontology ;
+  rdfs:label "SMTG Cards"@en ;
+  dcterms:title "Cards: Oracle identity, conceptual faces, layouts and characteristics"@en ;
+  dcterms:description """The abstract level of the model. An Oracle card is the game-relevant identity shared by all its printings; it always has at least one conceptual face, and characteristics such as mana cost, type line, power or Oracle text belong to faces. The module separates three things that Scryfall flattens into one `layout` string: the face configuration (how many faces, on which physical sides), the layout convention, and — deliberately not modelled in v1 — modal spell semantics ("choose one")."""@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  smtg:moduleOrder 2 ;
+  vs:term_status "unstable" ;
+  owl:imports smtgm:core , smtgm:taxonomies .
+
+# -----------------------------------------------------------------------------
+#  Classes
+# -----------------------------------------------------------------------------
+
+smtg:OracleCard a owl:Class ;
+  rdfs:label "Oracle card"@en ;
+  skos:definition "The abstract, game-relevant identity of a Magic card or other game object as maintained in Wizards' Oracle reference: what all printings of \"the same card\" share, independent of edition, language, artwork or physical form."@en ;
+  skos:scopeNote """Corresponds to a Scryfall Oracle ID. An Oracle card is never a printing (disjoint with CardPrinting) and printings are not subclasses of it (AP-01). Oracle cards include tokens, emblems, planes, schemes and similar objects; their kind is given by smtg:hasObjectKind rather than by separate top-level classes, so that new kinds of objects do not break the hierarchy. Reversible printings carry two Oracle identities (one per face); see RQ-ID-1."""@en ;
+  skos:example "Lightning Bolt (Oracle ID 4457ed35-…) is one Oracle card with well over a hundred printings."@en ;
+  smtg:sourceField "scryfall:oracle_id" , "scryfall:card_faces[].oracle_id" ;
+  smtg:antiPattern "AP-01" , "AP-03" ;
+  smtg:reviewQuestion "RQ-ID-1" , "RQ-ID-2" ;
+  rdfs:subClassOf [ a owl:Restriction ; owl:onProperty smtg:hasFace ; owl:someValuesFrom smtg:CardFace ] ;
+  owl:disjointWith smtg:CardFace ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:CardFace a owl:Class ;
+  rdfs:label "Card face"@en ;
+  skos:definition "A conceptual face (or part) of an Oracle card: the unit that carries a name, mana cost, type line, Oracle text and combat/loyalty values. A single-faced card has exactly one face; a split, adventure, prepare, flip, transforming or modal double-faced card has two or more."@en ;
+  skos:scopeNote """Every Oracle card has at least one face, including ordinary single-faced cards (RQ-CF-1). This uniform convention means that "cards with a creature face" is one query, whatever the layout. A face is conceptual: whether it sits on the front, the back or the same side as another face is a property of the printed face (smtg:PrintedFace), since that is a fact about the physical object."""@en ;
+  skos:example "Bonecrusher Giant // Stomp has two faces: the creature Bonecrusher Giant (face 0) and the Adventure instant Stomp (face 1); both are printed on the same physical side."@en ;
+  smtg:sourceField "scryfall:card_faces[]" ;
+  smtg:reviewQuestion "RQ-CF-1" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:ManaCost a owl:Class ;
+  rdfs:label "Mana cost"@en ;
+  skos:definition "The mana cost printed in the upper right of a face, as a sequence of mana symbols; distinct from the mana value, which is a number derived from it under the game rules."@en ;
+  skos:scopeNote """Kept as its own resource so that the raw notation ({2}{W}{W}) is preserved verbatim while its symbol occurrences are explicit. A face with NO mana cost (e.g. Ancestral Vision, lands) has no ManaCost resource and states smtg:hasNoManaCost true; a cost of {0} (Ornithopter) is a ManaCost with one {0} symbol. Absence of a ManaCost triple alone means "unknown", not "no cost" (AP-05)."""@en ;
+  smtg:sourceField "scryfall:mana_cost" , "scryfall:card_faces[].mana_cost" ;
+  smtg:antiPattern "AP-05" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:ManaSymbolOccurrence a owl:Class ;
+  rdfs:label "Mana symbol occurrence"@en ;
+  skos:definition "The occurrence of one kind of mana symbol in a mana cost, with how many times it occurs (e.g. {W} ×2 in {2}{W}{W})."@en ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:PartRelationship a owl:Class ;
+  rdfs:label "Part relationship"@en ;
+  skos:definition "A qualified, source-asserted relationship between a card and a related game object: a token it can create, the other half of a meld pair, the meld result, or another component."@en ;
+  skos:scopeNote """Scryfall's all_parts array links printings, and its component values (token, meld_part, meld_result, combo_piece) are loose. The relationship is kept qualified (role + related object + source) so that its meaning can be refined without losing the original statement. combo_piece in particular is NOT a documented combo (see the combos module)."""@en ;
+  smtg:sourceField "scryfall:all_parts[]" , "scryfall:all_parts[].component" , "scryfall:all_parts[].id" ;
+  smtg:reviewQuestion "RQ-CF-4" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+# --- Layout-defined classes (classification by authoritative layout value) ---
+
+smtg:ModalDoubleFacedCard a owl:Class ;
+  rdfs:label "Modal double-faced card"@en ;
+  owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:modal_dfc ] ) ] ;
+  skos:definition "An Oracle card whose layout is modal double-faced: two faces on opposite physical sides, either of which may be cast or played (the player chooses which face)."@en ;
+  skos:scopeNote """"Modal" here names a published layout. It must not be confused with a modal SPELL whose text says "choose one" (e.g. Kolaghan's Command, a normal single-faced card). v1 classifies the former by layout and does not interpret the latter (AP-06). Membership is entailed from smtg:hasLayout; because hasLayout is functional and layout concepts are pairwise different, this class is provably disjoint from every other layout-defined class."""@en ;
+  smtg:antiPattern "AP-06" ;
+  smtg:reviewQuestion "RQ-LY-1" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:TransformingDoubleFacedCard a owl:Class ;
+  rdfs:label "Transforming double-faced card"@en ;
+  owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:transform ] ) ] ;
+  skos:definition "An Oracle card whose layout is transform: a front face that is cast or played and a back face that the permanent can transform into."@en ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:AdventurerCard a owl:Class ;
+  rdfs:label "Adventurer card"@en ;
+  owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:adventure ] ) ] ;
+  skos:definition "An Oracle card with an Adventure: a single physical side carrying a permanent face and an inset Adventure spell face."@en ;
+  skos:scopeNote "An adventurer card has two faces but one physical side; it is NOT a double-faced card (negative test NT-01)."@en ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:PrepareCard a owl:Class ;
+  rdfs:label "Prepare card"@en ;
+  owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:prepare ] ) ] ;
+  skos:definition "An Oracle card with Scryfall layout prepare (observed from 2026): a creature face and a spell face on the same side; while the permanent is prepared, a copy of the spell may be cast."@en ;
+  skos:scopeNote "Included as a live example of a layout that appeared after the plan was written: it was absorbed as a new vocabulary concept without changing any class axiom (ADR-0004). Definition taken from the reminder text on the observed cards; to be confirmed by reviewers."@en ;
+  smtg:reviewQuestion "RQ-LY-3" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:SplitCard a owl:Class ;
+  rdfs:label "Split card"@en ;
+  owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:split ] ) ] ;
+  skos:definition "An Oracle card with two or more half-faces printed side by side on one physical side (including fuse and aftermath variants, which Scryfall also labels split)."@en ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:FlipCard a owl:Class ;
+  rdfs:label "Flip card"@en ;
+  owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:flip ] ) ] ;
+  skos:definition "An Oracle card with two faces on the same physical side, one printed upside down, which the permanent can flip to."@en ;
+  skos:scopeNote "A flip card is not a transforming double-faced card: both faces are on one side (negative test NT-02)."@en ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:MeldCard a owl:Class ;
+  rdfs:label "Meld card"@en ;
+  owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:meld ] ) ] ;
+  skos:definition "An Oracle card that takes part in a meld: either one of the two meld halves or the meld result printed across their backs. The pair and the result are three distinct Oracle cards linked by part relationships."@en ;
+  smtg:reviewQuestion "RQ-CF-4" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+# -----------------------------------------------------------------------------
+#  Structure properties
+# -----------------------------------------------------------------------------
+
+smtg:hasFace a owl:ObjectProperty ;
+  rdfs:label "has face"@en ;
+  skos:definition "Relates an Oracle card to one of its conceptual faces."@en ;
+  rdfs:domain smtg:OracleCard ;
+  rdfs:range smtg:CardFace ;
+  owl:inverseOf smtg:faceOf ;
+  smtg:sourceField "scryfall:card_faces[]" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:faceOf a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "face of"@en ;
+  skos:definition "Relates a conceptual face to the single Oracle card it belongs to."@en ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:faceIndex a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "face index"@en ;
+  skos:definition "Zero-based position of a face in the source's face order (0 = the face Scryfall lists first). Order, not physical side."@en ;
+  rdfs:domain smtg:CardFace ;
+  rdfs:range xsd:nonNegativeInteger ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:hasLayout a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has layout"@en ;
+  skos:definition "The authoritative layout convention of an Oracle card (normal, split, flip, transform, modal_dfc, meld, adventure, prepare, saga, class, …)."@en ;
+  skos:scopeNote """Functional: an Oracle card has one layout. Printing-only conventions (reversible_card, art_series) are recorded on the printing with smtg:printingLayout, because a reversible printing presents an ordinarily single-faced Oracle card twice (RQ-LY-2). Layout values are open SKOS concepts, so new layouts are additions to the vocabulary, not schema changes."""@en ;
+  rdfs:domain smtg:OracleCard ;
+  rdfs:range smtg:Layout ;
+  smtg:sourceField "scryfall:layout" ;
+  smtg:reviewQuestion "RQ-LY-2" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:hasFaceConfiguration a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has face configuration"@en ;
+  skos:definition "How the faces of an Oracle card are physically arranged: a single face, several parts on one side, or faces on opposite sides (with or without a separate meld object)."@en ;
+  skos:scopeNote "Derived from the layout by a documented mapping (each Layout concept states smtg:impliesFaceConfiguration). Kept separate from layout so that queries about physical structure do not depend on memorising layout codes."@en ;
+  rdfs:domain smtg:OracleCard ;
+  rdfs:range smtg:FaceConfiguration ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:hasObjectKind a owl:ObjectProperty ;
+  rdfs:label "has object kind"@en ;
+  skos:definition "The kind of game object an Oracle card is: a traditional card, token, emblem, plane or phenomenon, scheme, vanguard, art card, front card, etc."@en ;
+  skos:scopeNote "Scryfall partly encodes this in layout (token, emblem, planar, scheme, vanguard, art_series, front_card) and partly in the type line and set type. SMTG states it explicitly so collections can include or exclude non-traditional objects without string matching."@en ;
+  rdfs:domain smtg:OracleCard ;
+  rdfs:range smtg:GameObjectKind ;
+  smtg:reviewQuestion "RQ-CF-3" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:hasPartRelationship a owl:ObjectProperty ;
+  rdfs:label "has part relationship"@en ;
+  skos:definition "Relates an Oracle card to a qualified relationship with another game object (token created, meld partner, meld result, component)."@en ;
+  rdfs:range smtg:PartRelationship ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:relatedObject a owl:ObjectProperty ;
+  rdfs:label "related object"@en ;
+  skos:definition "The Oracle card at the other end of a part relationship."@en ;
+  rdfs:domain smtg:PartRelationship ;
+  rdfs:range smtg:OracleCard ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:partRole a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "part role"@en ;
+  skos:definition "The role of the related object in a part relationship (token, meld_part, meld_result, combo_piece)."@en ;
+  rdfs:domain smtg:PartRelationship ;
+  rdfs:range smtg:PartComponent ;
+  smtg:sourceField "scryfall:all_parts[].component" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:meldsInto a owl:ObjectProperty ;
+  rdfs:label "melds into"@en ;
+  skos:definition "Projection: an Oracle meld half is one of the two cards that meld into the given meld result."@en ;
+  smtg:projectionOf smtg:PartRelationship ;
+  smtg:intendedDomain smtg:MeldCard ; smtg:intendedRange smtg:MeldCard ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+# -----------------------------------------------------------------------------
+#  Characteristics (on faces unless stated)
+# -----------------------------------------------------------------------------
+
+smtg:name a owl:DatatypeProperty ;
+  rdfs:label "name"@en ;
+  skos:definition "The English Oracle name of a face, or the combined name of an Oracle card (faces joined by \" // \"). Names are labels, not identities (AP-04)."@en ;
+  rdfs:range xsd:string ;
+  smtg:intendedDomain smtg:CardFace , smtg:OracleCard ;
+  smtg:sourceField "scryfall:name" , "scryfall:card_faces[].name" ;
+  smtg:antiPattern "AP-04" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:hasManaCost a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has mana cost"@en ;
+  skos:definition "Relates a face to its printed mana cost."@en ;
+  rdfs:domain smtg:CardFace ;
+  rdfs:range smtg:ManaCost ;
+  smtg:sourceField "scryfall:mana_cost" , "scryfall:card_faces[].mana_cost" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:hasNoManaCost a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "has no mana cost"@en ;
+  skos:definition "True when the source states that the face has no mana cost at all (an empty cost, as on lands or suspend-only cards), as opposed to a cost of {0}."@en ;
+  skos:scopeNote "Asserted only from an explicit empty value in the source, never inferred from a missing triple (open-world; AP-05)."@en ;
+  rdfs:domain smtg:CardFace ;
+  rdfs:range xsd:boolean ;
+  smtg:antiPattern "AP-05" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:manaCostNotation a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "mana cost notation"@en ;
+  skos:definition "The mana cost exactly as given by the source in brace notation, e.g. {2}{W}{W} or {X}{R}."@en ;
+  rdfs:domain smtg:ManaCost ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:hasSymbolOccurrence a owl:ObjectProperty ;
+  rdfs:label "has symbol occurrence"@en ;
+  skos:definition "Relates a mana cost to the occurrences of each mana symbol in it."@en ;
+  rdfs:domain smtg:ManaCost ;
+  rdfs:range smtg:ManaSymbolOccurrence ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:occurrenceOf a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "occurrence of"@en ;
+  skos:definition "The mana symbol that occurs."@en ;
+  rdfs:domain smtg:ManaSymbolOccurrence ;
+  rdfs:range smtg:ManaSymbol ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:occurrenceCount a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "occurrence count"@en ;
+  skos:definition "How many times the symbol occurs in the cost."@en ;
+  rdfs:domain smtg:ManaSymbolOccurrence ;
+  rdfs:range xsd:positiveInteger ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:manaValue a owl:DatatypeProperty ;
+  rdfs:label "mana value"@en ;
+  skos:definition "The mana value (formerly \"converted mana cost\") as reported by the source. Decimal, because some Un-cards have fractional values."@en ;
+  skos:scopeNote "Taken from the source, not recomputed from the cost: for split cards and other layouts the card-level value follows special rules."@en ;
+  rdfs:range xsd:decimal ;
+  smtg:intendedDomain smtg:OracleCard , smtg:CardFace ;
+  smtg:sourceField "scryfall:cmc" , "scryfall:card_faces[].cmc" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:typeLine a owl:DatatypeProperty ;
+  rdfs:label "type line"@en ;
+  skos:definition "The English Oracle type line of a face (or combined card), verbatim, e.g. \"Legendary Creature — Phyrexian Vampire\"."@en ;
+  skos:scopeNote "Preserved verbatim AND decomposed into hasSupertype / hasCardType / hasSubtype relations to scheme-specific concepts, with the parse recorded as a normalization activity (AP-08)."@en ;
+  rdfs:range xsd:string ;
+  smtg:intendedDomain smtg:CardFace , smtg:OracleCard ;
+  smtg:sourceField "scryfall:type_line" , "scryfall:card_faces[].type_line" ;
+  smtg:antiPattern "AP-08" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:hasSupertype a owl:ObjectProperty ;
+  rdfs:label "has supertype"@en ;
+  skos:definition "A supertype in the face's type line (Legendary, Basic, Snow, World, Ongoing, Host, Elite…)."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range smtg:Supertype ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:hasCardType a owl:ObjectProperty ;
+  rdfs:label "has card type"@en ;
+  skos:definition "A card type in the face's type line (Creature, Instant, Sorcery, Artifact, Enchantment, Land, Planeswalker, Battle, Kindred, …)."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range smtg:CardType ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:hasSubtype a owl:ObjectProperty ;
+  rdfs:label "has subtype"@en ;
+  skos:definition "A subtype in the face's type line, always a concept of a type-qualified scheme (creature types, land types, spell types, …), never a bare word."@en ;
+  skos:scopeNote "The same English word can be a subtype in more than one scheme or a word in another vocabulary; scheme-specific IRIs disambiguate (RQ-TY-1)."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range smtg:Subtype ;
+  smtg:reviewQuestion "RQ-TY-1" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:hasColors a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has colors"@en ;
+  skos:definition "The colour combination of a face (or a card, when the source gives colours only at card level). Colourless is the explicit combination C, never the absence of a value."@en ;
+  skos:scopeNote "Colours are expressed as one of 32 colour-combination concepts rather than several hasColor triples: this makes \"exactly white and blue\" and \"colourless\" positive, queryable facts under the open-world assumption (AP-05)."@en ;
+  rdfs:range smtg:ColorCombination ;
+  smtg:intendedDomain smtg:CardFace , smtg:OracleCard ;
+  smtg:sourceField "scryfall:colors" , "scryfall:card_faces[].colors" ;
+  smtg:antiPattern "AP-05" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:hasColorIndicator a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has color indicator"@en ;
+  skos:definition "The colour combination shown by a face's colour indicator dot, when it has one."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range smtg:ColorCombination ;
+  smtg:sourceField "scryfall:color_indicator" , "scryfall:card_faces[].color_indicator" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:hasColorIdentity a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has color identity"@en ;
+  skos:definition "The colour identity of an Oracle card (used by Commander deck construction), as reported by the source."@en ;
+  skos:scopeNote "Taken from the source, not recomputed from the mana cost: colour identity also depends on rules text and colour indicators."@en ;
+  rdfs:domain smtg:OracleCard ; rdfs:range smtg:ColorCombination ;
+  smtg:sourceField "scryfall:color_identity" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:producesManaSymbol a owl:ObjectProperty ;
+  rdfs:label "produces mana symbol"@en ;
+  skos:definition "A kind of mana the card's abilities can produce, as listed by the source (W, U, B, R, G, C)."@en ;
+  skos:scopeNote "Source-derived convenience data; not a formal interpretation of mana abilities."@en ;
+  rdfs:domain smtg:OracleCard ; rdfs:range smtg:ManaSymbol ;
+  smtg:sourceField "scryfall:produced_mana" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:hasKeyword a owl:ObjectProperty ;
+  rdfs:label "has keyword"@en ;
+  skos:definition "A keyword ability, keyword action or ability word that the source lists for the card."@en ;
+  rdfs:domain smtg:OracleCard ; rdfs:range smtg:Keyword ;
+  smtg:sourceField "scryfall:keywords" ;
+  smtg:reviewQuestion "RQ-TY-3" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:onReservedList a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "on reserved list"@en ;
+  skos:definition "Whether the Oracle card is on Wizards' Reserved List (will not be reprinted)."@en ;
+  rdfs:domain smtg:OracleCard ; rdfs:range xsd:boolean ;
+  smtg:sourceField "scryfall:reserved" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:powerText a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "power (as printed)"@en ;
+  skos:definition "The power of a face exactly as given: a number or an expression such as *, 1+*, X or ∞."@en ;
+  skos:scopeNote "Lexical value always kept; smtg:powerValue only when it is a plain number. \"*\" is not a malformed integer."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range xsd:string ;
+  smtg:sourceField "scryfall:power" , "scryfall:card_faces[].power" ;
+  smtg:reviewQuestion "RQ-CF-2" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:powerValue a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "power (numeric)"@en ;
+  skos:definition "Numeric power, present only when the printed power is a plain number."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range xsd:decimal ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:toughnessText a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "toughness (as printed)"@en ;
+  skos:definition "The toughness of a face exactly as given (number or expression)."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range xsd:string ;
+  smtg:sourceField "scryfall:toughness" , "scryfall:card_faces[].toughness" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:toughnessValue a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "toughness (numeric)"@en ;
+  skos:definition "Numeric toughness, present only when the printed toughness is a plain number."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range xsd:decimal ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:loyaltyText a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "loyalty (as printed)"@en ;
+  skos:definition "Starting loyalty of a planeswalker face exactly as given (number or X)."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range xsd:string ;
+  smtg:sourceField "scryfall:loyalty" , "scryfall:card_faces[].loyalty" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:loyaltyValue a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "loyalty (numeric)"@en ;
+  skos:definition "Numeric starting loyalty, when it is a plain number."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range xsd:decimal ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:defenseText a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "defense (as printed)"@en ;
+  skos:definition "Starting defense of a battle face exactly as given."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range xsd:string ;
+  smtg:sourceField "scryfall:defense" , "scryfall:card_faces[].defense" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:defenseValue a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "defense (numeric)"@en ;
+  skos:definition "Numeric starting defense, when it is a plain number."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range xsd:decimal ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
+
+smtg:handModifierText a owl:DatatypeProperty ;
+  rdfs:label "hand modifier"@en ;
+  skos:definition "Vanguard hand-size modifier as printed (e.g. +1)."@en ;
+  smtg:intendedDomain smtg:CardFace ; rdfs:range xsd:string ;
+  smtg:sourceField "scryfall:hand_modifier" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:lifeModifierText a owl:DatatypeProperty ;
+  rdfs:label "life modifier"@en ;
+  skos:definition "Vanguard starting-life modifier as printed (e.g. -3)."@en ;
+  smtg:intendedDomain smtg:CardFace ; rdfs:range xsd:string ;
+  smtg:sourceField "scryfall:life_modifier" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .

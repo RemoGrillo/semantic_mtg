@@ -1,0 +1,35 @@
+{
+  "name": "semantic-mtg",
+  "version": "0.1.0",
+  "description": "Semantic Magic: The Gathering (SMTG) — an identity-aware, provenance-rich ontology and knowledge graph for Magic: The Gathering card data. Unofficial fan/research project.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "audit:fetch": "node tools/audit/fetch-sources.mjs",
+    "audit:census": "node tools/audit/census-scryfall.mjs && node tools/audit/profile-tagger.mjs && node tools/audit/profile-spellbook.mjs",
+    "fixtures": "node tools/audit/extract-fixtures.mjs",
+    "assets": "node tools/docs/fetch-assets.mjs",
+    "vocab": "node tools/vocab/generate-vocab.mjs",
+    "map:fixtures": "node tools/map/map-fixtures.mjs",
+    "validate": "node tools/validate/validate.mjs",
+    "cq": "node tools/validate/run-cq.mjs",
+    "reason": "node tools/reason/reason.mjs",
+    "docs:build": "node tools/docs/build.mjs",
+    "docs:serve": "node tools/docs/serve.mjs",
+    "build": "npm run vocab && npm run map:fixtures && npm run validate && npm run cq && npm run docs:build",
+    "test": "node --test tools/"
+  },
+  "dependencies": {
+    "@saeris/typeface-beleren-bold": "1.0.1",
+    "marked": "16.4.2",
+    "mermaid": "12.2.0",
+    "n3": "2.13.12",
+    "oxigraph": "0.5.13",
+    "rdf-validate-shacl": "0.6.5",
+    "stream-json": "3.8.0"
+  }
+}

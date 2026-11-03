@@ -1,0 +1,140 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix smtgv:   <https://w3id.org/smtg/vocab/> .
+@prefix agent:   <https://w3id.org/smtg/id/agent/> .
+@prefix dataset: <https://w3id.org/smtg/id/dataset/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# =============================================================================
+#  SMTG Provenance — source datasets, immutable snapshots, source records,
+#  processing activities and the agents behind them (PROV-O based).
+# =============================================================================
+
+smtgm:provenance a owl:Ontology ;
+  rdfs:label "SMTG Provenance"@en ;
+  dcterms:title "Provenance: sources, snapshots, records and processing activities"@en ;
+  dcterms:description """Every fact in SMTG is traceable to a source dataset, an immutable snapshot of it (with its upstream update time, retrieval time and SHA-256), the source record it came from, and the activity (ETL, normalisation, AI classification, inference, review) that produced it, with ontology and mapping versions. Built on PROV-O. Named graphs separate asserted data per source, inferred data per ruleset, projections, provenance and schema; see the graph plan in PLAN §7.3."""@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  smtg:moduleOrder 10 ;
+  vs:term_status "unstable" ;
+  owl:imports smtgm:core .
+
+dcat:Dataset a owl:Class .
+
+smtg:SourceDataset a owl:Class ;
+  rdfs:subClassOf prov:Entity , dcat:Dataset ;
+  rdfs:label "Source dataset"@en ;
+  skos:definition "A published, periodically refreshed dataset from which SMTG ingests data (e.g. Scryfall all_cards, Scryfall oracle_tags, Commander Spellbook variants)."@en ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "stable-draft" .
+
+smtg:SourceSnapshot a owl:Class ;
+  rdfs:subClassOf prov:Entity ;
+  rdfs:label "Source snapshot"@en ;
+  skos:definition "One immutable, checksummed download of a source dataset, with the upstream update time it declares and the time SMTG retrieved it."@en ;
+  skos:scopeNote "Snapshots are the unit of observation: claims are \"observed in\" snapshots, and the local diff between two snapshots drives updates (no upstream delta feed is assumed)."@en ;
+  smtg:sourceField "manifest:sha256" , "manifest:retrievedAt" , "manifest:sourceUpdatedAt" ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "stable-draft" .
+
+smtg:SourceRecord a owl:Class ;
+  rdfs:subClassOf prov:Entity ;
+  rdfs:label "Source record"@en ;
+  skos:definition "One record of a snapshot (a Scryfall card object, a Tagger tag, a Spellbook variant), identified by its source key and canonical content hash."@en ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "unstable" .
+
+smtg:ETLActivity a owl:Class ; rdfs:subClassOf prov:Activity ;
+  rdfs:label "ETL activity"@en ;
+  skos:definition "A run of the SMTG pipeline that transforms snapshot records into RDF."@en ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "unstable" .
+smtg:NormalizationActivity a owl:Class ; rdfs:subClassOf prov:Activity ;
+  rdfs:label "Normalization activity"@en ;
+  skos:definition "A documented transformation that derives normalized structure from source strings (e.g. parsing a type line into types and subtypes)."@en ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "unstable" .
+smtg:AIClassificationActivity a owl:Class ; rdfs:subClassOf prov:Activity ;
+  rdfs:label "AI classification activity"@en ;
+  skos:definition "A run of an AI or ML method producing annotation proposals, with model, version and prompt recorded."@en ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "proposal" .
+smtg:InferenceActivity a owl:Class ; rdfs:subClassOf prov:Activity ;
+  rdfs:label "Inference activity"@en ;
+  skos:definition "A run of a reasoner or rule engine that materializes inferred triples into an inferred graph, with reasoner/ruleset version recorded."@en ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "unstable" .
+smtg:ReviewActivity a owl:Class ; rdfs:subClassOf prov:Activity ;
+  rdfs:label "Review activity"@en ;
+  skos:definition "A human review that accepts, rejects or revises mappings, claims or ontology terms."@en ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "unstable" .
+
+smtg:snapshotOf a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "snapshot of"@en ; skos:definition "The dataset of which this is a snapshot."@en ;
+  rdfs:domain smtg:SourceSnapshot ; rdfs:range smtg:SourceDataset ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "stable-draft" .
+smtg:sourceUpdatedAt a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "source updated at"@en ; skos:definition "The update time the source declares for the snapshot (e.g. Scryfall bulk updated_at)."@en ;
+  rdfs:domain smtg:SourceSnapshot ; rdfs:range xsd:dateTime ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "stable-draft" .
+smtg:retrievedAt a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "retrieved at"@en ; skos:definition "When SMTG downloaded the snapshot."@en ;
+  rdfs:domain smtg:SourceSnapshot ; rdfs:range xsd:dateTime ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "stable-draft" .
+smtg:sha256 a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "SHA-256"@en ; skos:definition "SHA-256 of the downloaded bytes, hex encoded."@en ;
+  rdfs:domain smtg:SourceSnapshot ; rdfs:range xsd:string ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "stable-draft" .
+smtg:downloadURL a owl:DatatypeProperty ;
+  rdfs:label "download URL"@en ; skos:definition "URL the snapshot was downloaded from."@en ;
+  rdfs:domain smtg:SourceSnapshot ; rdfs:range xsd:anyURI ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "stable-draft" .
+smtg:recordCount a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "record count"@en ; skos:definition "Number of records in the snapshot."@en ;
+  rdfs:domain smtg:SourceSnapshot ; rdfs:range xsd:nonNegativeInteger ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "stable-draft" .
+smtg:inSnapshot a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "in snapshot"@en ; skos:definition "The snapshot a source record belongs to."@en ;
+  rdfs:domain smtg:SourceRecord ; rdfs:range smtg:SourceSnapshot ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "unstable" .
+smtg:recordKey a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "record key"@en ; skos:definition "The source's stable key of the record (e.g. Scryfall card id)."@en ;
+  rdfs:domain smtg:SourceRecord ; rdfs:range xsd:string ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "unstable" .
+smtg:recordHash a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "record hash"@en ; skos:definition "Hash of the canonicalised record content, used for change detection."@en ;
+  rdfs:domain smtg:SourceRecord ; rdfs:range xsd:string ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "unstable" .
+smtg:ontologyVersionUsed a owl:DatatypeProperty ;
+  rdfs:label "ontology version used"@en ; skos:definition "SMTG ontology version used by an activity."@en ;
+  rdfs:domain prov:Activity ; rdfs:range xsd:string ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "unstable" .
+smtg:mappingVersionUsed a owl:DatatypeProperty ;
+  rdfs:label "mapping version used"@en ; skos:definition "Mapping specification version used by an activity."@en ;
+  rdfs:domain prov:Activity ; rdfs:range xsd:string ;
+  rdfs:isDefinedBy smtgm:provenance ; vs:term_status "unstable" .
+
+# --- Reference agents and datasets -------------------------------------------
+
+agent:wizards a prov:Organization ; rdfs:label "Wizards of the Coast"@en ;
+  skos:definition "Publisher of Magic: The Gathering and maintainer of the Oracle reference text and the Comprehensive Rules."@en ; rdfs:isDefinedBy smtgm:provenance .
+agent:scryfall a prov:Organization ; rdfs:label "Scryfall"@en ;
+  skos:definition "Card database and API publishing the card, set, symbol and Tagger bulk data used by SMTG."@en ; rdfs:isDefinedBy smtgm:provenance .
+agent:tagger-community a prov:Organization ; rdfs:label "Scryfall Tagger community"@en ;
+  skos:definition "The community of contributors who create and assign Tagger tags."@en ; rdfs:isDefinedBy smtgm:provenance .
+agent:commander-spellbook a prov:Organization ; rdfs:label "Commander Spellbook"@en ;
+  skos:definition "Community database of documented Commander combos."@en ; rdfs:isDefinedBy smtgm:provenance .
+agent:smtg-pipeline a prov:SoftwareAgent ; rdfs:label "SMTG pipeline"@en ;
+  skos:definition "The SMTG tooling that transforms, validates and infers."@en ; rdfs:isDefinedBy smtgm:provenance .
+
+dataset:scryfall-all-cards a smtg:SourceDataset ; rdfs:label "Scryfall bulk: all_cards"@en ;
+  prov:wasAttributedTo agent:scryfall ; rdfs:isDefinedBy smtgm:provenance .
+dataset:scryfall-oracle-cards a smtg:SourceDataset ; rdfs:label "Scryfall bulk: oracle_cards"@en ;
+  prov:wasAttributedTo agent:scryfall ; rdfs:isDefinedBy smtgm:provenance .
+dataset:scryfall-oracle-tags a smtg:SourceDataset ; rdfs:label "Scryfall bulk: oracle_tags (Tagger)"@en ;
+  prov:wasAttributedTo agent:scryfall ; rdfs:isDefinedBy smtgm:provenance .
+dataset:scryfall-art-tags a smtg:SourceDataset ; rdfs:label "Scryfall bulk: art_tags (Tagger)"@en ;
+  prov:wasAttributedTo agent:scryfall ; rdfs:isDefinedBy smtgm:provenance .
+dataset:spellbook-variants a smtg:SourceDataset ; rdfs:label "Commander Spellbook bulk: variants"@en ;
+  prov:wasAttributedTo agent:commander-spellbook ; rdfs:isDefinedBy smtgm:provenance .

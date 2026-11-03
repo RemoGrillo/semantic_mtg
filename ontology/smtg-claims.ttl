@@ -1,0 +1,223 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix smtgv:   <https://w3id.org/smtg/vocab/> .
+@prefix epi:     <https://w3id.org/smtg/vocab/epistemic-status/> .
+@prefix att:     <https://w3id.org/smtg/vocab/attitude/> .
+@prefix life:    <https://w3id.org/smtg/vocab/claim-lifecycle/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# =============================================================================
+#  SMTG Claims — the epistemic layer. Everything that is a statement BY someone
+#  (a source, a community, a model, a rule, a reviewer) rather than a fact about
+#  the published card is a first-class Claim with attribution, provenance,
+#  strength and attitude. This is the designated extension point for DEC.
+# =============================================================================
+
+smtgm:claims a owl:Ontology ;
+  rdfs:label "SMTG Claims"@en ;
+  dcterms:title "Claims: attributed, qualified statements and their epistemic status"@en ;
+  dcterms:description """The epistemic layer. A Claim is a reified statement made by an agent or source at a given time: a Tagger tag assignment, a reported legality, a price, a documented combo, an AI proposal, an inferred synergy hypothesis. Claims keep who said it, when, from which snapshot, how strongly, and with what propositional attitude (knowledge claim, belief, conjecture, hypothesis). The claimed content is never also asserted as a plain triple in the source graphs, so weak or contested statements cannot silently feed OWL entailments. This module is deliberately small and is the intended plug-in point for DEC (a reasoner for conjectural and doxastic attitudes): a DEC-based module can replace or extend it (see docs/ontology/epistemic-layer-dec.md and proposals/)."""@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  smtg:moduleOrder 7 ;
+  vs:term_status "proposal" ;
+  owl:imports smtgm:core .
+
+# -----------------------------------------------------------------------------
+#  Classes
+# -----------------------------------------------------------------------------
+
+smtg:Claim a owl:Class ;
+  rdfs:subClassOf prov:Entity ;
+  rdfs:label "Claim"@en ;
+  skos:definition "A statement attributed to an agent or source, recorded as a resource of its own together with its subject, provenance (source, snapshot, generating activity), strength or confidence, epistemic status and the propositional attitude with which it is held."@en ;
+  skos:scopeNote """Qualified-relation pattern: the content of a claim is expressed by the properties of its specific subclass (e.g. a TagAssignment's assignedTag and assignmentTarget), not by an rdf:Statement. Two sources making the same statement give two claims, so the difference in their evidence is never erased (AP-11). Convenience projections (e.g. smtg:hasTag) may be generated into separate named graphs, but the claim remains the authoritative record. Alternatives under discussion: RDF 1.2 triple terms, nanopublication-style named graphs, or a DEC-native representation (RQ-CL-2)."""@en ;
+  smtg:antiPattern "AP-11" , "AP-12" ;
+  smtg:reviewQuestion "RQ-CL-1" , "RQ-CL-2" , "RQ-CL-3" ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "proposal" .
+
+smtg:Observation a owl:Class ;
+  rdfs:subClassOf smtg:Claim ;
+  rdfs:label "Observation"@en ;
+  skos:definition "A claim that reports the value of a time-varying attribute (legality, price, rank, current Oracle wording) as recorded by a source at a given snapshot."@en ;
+  skos:scopeNote "Observations make time-sensitivity explicit: the graph states what a source reported at a time, not an eternal truth (AP-10)."@en ;
+  smtg:antiPattern "AP-10" ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "unstable" .
+
+smtg:EpistemicStatus a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Epistemic status"@en ;
+  skos:definition "The kind of authority behind a claim: an authoritative source report, a community-curated annotation, a machine proposal, a rule-derived hypothesis, a reviewer's conjecture."@en ;
+  skos:scopeNote "A label for the provenance class of a claim, not a probability. Formal semantics (how status constrains reasoning) are intentionally left open for the DEC alignment (RQ-CL-1)."@en ;
+  smtg:reviewQuestion "RQ-CL-1" ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "proposal" .
+
+smtg:PropositionalAttitude a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Propositional attitude"@en ;
+  skos:definition "The attitude with which a claim's content is held: put forward as knowledge (an epistemic claim), held as a belief (a doxastic claim), proposed as a conjecture, or entertained as a hypothesis to be tested."@en ;
+  skos:scopeNote """Distinguishes epistemic from doxastic and conjectural content, as requested for the DEC collaboration. Example defaults (to be reviewed): Oracle text and legality reported by Scryfall → knowledge-claim; Tagger tag assignments → belief (community judgement, weighted); SMTG SynergyHypothesis → hypothesis; a reviewer's proposed reinterpretation of a tag → conjecture."""@en ;
+  smtg:reviewQuestion "RQ-CL-1" , "RQ-CL-4" ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "proposal" .
+
+smtg:StrengthLevel a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Strength level"@en ;
+  skos:definition "A level on an ordinal scale of how strongly a source supports a claim (e.g. Tagger's weak / median / strong / very_strong)."@en ;
+  skos:scopeNote "Ordinal, source-specific and not a probability; scales from different sources are not comparable without an explicit, reviewed alignment (RQ-CL-4)."@en ;
+  smtg:reviewQuestion "RQ-CL-4" ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "proposal" .
+
+smtg:ClaimLifecycleStatus a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Claim lifecycle status"@en ;
+  skos:definition "Whether a claim is current, retracted upstream, or superseded by a newer claim."@en ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "unstable" .
+
+# -----------------------------------------------------------------------------
+#  Properties
+# -----------------------------------------------------------------------------
+
+smtg:aboutEntity a owl:ObjectProperty ;
+  rdfs:label "about entity"@en ;
+  skos:definition "The entity a claim is about (its subject). Specialised by sub-properties such as assignmentTarget, legalityOf, priceOf."@en ;
+  rdfs:domain smtg:Claim ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "proposal" .
+
+smtg:claimedBy a owl:ObjectProperty ;
+  rdfs:subPropertyOf prov:wasAttributedTo ;
+  rdfs:label "claimed by"@en ;
+  skos:definition "The agent (organisation, community, person or software) to which the claim is attributed."@en ;
+  rdfs:domain smtg:Claim ; rdfs:range prov:Agent ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "proposal" .
+
+smtg:observedIn a owl:ObjectProperty ;
+  rdfs:subPropertyOf prov:wasDerivedFrom ;
+  rdfs:label "observed in"@en ;
+  skos:definition "The source snapshot in which the claim was observed. A claim seen in several snapshots may list each, or the first and last (policy RQ-PV-2)."@en ;
+  rdfs:domain smtg:Claim ;
+  smtg:intendedRange smtg:SourceSnapshot ;
+  smtg:reviewQuestion "RQ-PV-2" ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "proposal" .
+
+smtg:hasEpistemicStatus a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has epistemic status"@en ;
+  skos:definition "The epistemic status (kind of authority) of a claim."@en ;
+  rdfs:domain smtg:Claim ; rdfs:range smtg:EpistemicStatus ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "proposal" .
+
+smtg:hasAttitude a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has attitude"@en ;
+  skos:definition "The propositional attitude with which the claim's content is held."@en ;
+  rdfs:domain smtg:Claim ; rdfs:range smtg:PropositionalAttitude ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "proposal" .
+
+smtg:hasStrength a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has strength"@en ;
+  skos:definition "The source's ordinal strength level for the claim (e.g. Tagger weight)."@en ;
+  rdfs:domain smtg:Claim ; rdfs:range smtg:StrengthLevel ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "proposal" .
+
+smtg:confidence a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "confidence"@en ;
+  skos:definition "A numeric confidence in [0,1] produced by a machine-learning or AI method for its own proposal. Not used for source or OWL-entailed claims."@en ;
+  skos:scopeNote "OWL entailments are not assigned pseudo-probabilities; their premises carry their own status (AP-12)."@en ;
+  rdfs:domain smtg:Claim ; rdfs:range xsd:decimal ;
+  smtg:antiPattern "AP-12" ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "proposal" .
+
+smtg:hasLifecycleStatus a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has lifecycle status"@en ;
+  skos:definition "Whether the claim is current, retracted upstream or superseded."@en ;
+  rdfs:domain smtg:Claim ; rdfs:range smtg:ClaimLifecycleStatus ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "unstable" .
+
+smtg:supersedes a owl:ObjectProperty ;
+  rdfs:label "supersedes"@en ;
+  skos:definition "A newer claim that replaces an older claim by the same source about the same subject."@en ;
+  rdfs:domain smtg:Claim ; rdfs:range smtg:Claim ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "unstable" .
+
+smtg:supportedBy a owl:ObjectProperty ;
+  rdfs:label "supported by"@en ;
+  skos:definition "Another claim offered as evidence for this claim (e.g. the tag assignments supporting a synergy hypothesis)."@en ;
+  rdfs:domain smtg:Claim ; rdfs:range smtg:Claim ;
+  skos:scopeNote "Not transitive: evidence for evidence is not automatically evidence (AP-09)."@en ;
+  smtg:antiPattern "AP-09" ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "proposal" .
+
+smtg:conflictsWithClaim a owl:ObjectProperty , owl:SymmetricProperty ;
+  rdfs:label "conflicts with claim"@en ;
+  skos:definition "Records that two claims are, by a documented criterion, mutually incompatible (e.g. two sources disagree). Conflicting claims coexist; the conflict is data, not an OWL inconsistency."@en ;
+  rdfs:domain smtg:Claim ; rdfs:range smtg:Claim ;
+  smtg:reviewQuestion "RQ-CL-3" ;
+  rdfs:isDefinedBy smtgm:claims ; vs:term_status "proposal" .
+
+# -----------------------------------------------------------------------------
+#  Vocabularies (curated here; small and conceptual)
+# -----------------------------------------------------------------------------
+
+smtgv:epistemic-status a skos:ConceptScheme ;
+  rdfs:label "Epistemic statuses"@en ;
+  skos:definition "Kinds of authority behind claims."@en ;
+  smtg:conceptClass smtg:EpistemicStatus ; rdfs:isDefinedBy smtgm:claims .
+
+epi:authoritative-report a smtg:EpistemicStatus ; skos:inScheme smtgv:epistemic-status ;
+  skos:prefLabel "Authoritative source report"@en ; skos:notation "authoritative-report" ;
+  skos:definition "Reported by a source that mirrors the authority for the fact (e.g. Scryfall reporting Wizards' Oracle text or format legality)."@en ;
+  rdfs:isDefinedBy smtgm:claims .
+epi:community-curated a smtg:EpistemicStatus ; skos:inScheme smtgv:epistemic-status ;
+  skos:prefLabel "Community-curated"@en ; skos:notation "community-curated" ;
+  skos:definition "Produced by a community curation process with its own editorial rules (Tagger tags, Commander Spellbook combos)."@en ;
+  rdfs:isDefinedBy smtgm:claims .
+epi:machine-proposed a smtg:EpistemicStatus ; skos:inScheme smtgv:epistemic-status ;
+  skos:prefLabel "Machine-proposed"@en ; skos:notation "machine-proposed" ;
+  skos:definition "Proposed by an AI or machine-learning method, with model, prompt and confidence recorded; never promoted to a curated fact without an acceptance policy."@en ;
+  rdfs:isDefinedBy smtgm:claims .
+epi:rule-derived a smtg:EpistemicStatus ; skos:inScheme smtgv:epistemic-status ;
+  skos:prefLabel "Rule-derived"@en ; skos:notation "rule-derived" ;
+  skos:definition "Derived by an SMTG inference rule or OWL module from other claims; as reliable as its premises and rule."@en ;
+  rdfs:isDefinedBy smtgm:claims .
+epi:statistical-observation a smtg:EpistemicStatus ; skos:inScheme smtgv:epistemic-status ;
+  skos:prefLabel "Statistical observation"@en ; skos:notation "statistical-observation" ;
+  skos:definition "Derived from frequency or co-occurrence statistics over a corpus; correlation, not causation."@en ;
+  rdfs:isDefinedBy smtgm:claims .
+epi:reviewer-judgement a smtg:EpistemicStatus ; skos:inScheme smtgv:epistemic-status ;
+  skos:prefLabel "Reviewer judgement"@en ; skos:notation "reviewer-judgement" ;
+  skos:definition "Stated by a named human reviewer of SMTG (e.g. an accepted tag-to-role mapping)."@en ;
+  rdfs:isDefinedBy smtgm:claims .
+
+smtgv:attitude a skos:ConceptScheme ;
+  rdfs:label "Propositional attitudes"@en ;
+  skos:definition "Attitudes with which the content of a claim is held."@en ;
+  smtg:conceptClass smtg:PropositionalAttitude ; rdfs:isDefinedBy smtgm:claims .
+
+att:knowledge-claim a smtg:PropositionalAttitude ; skos:inScheme smtgv:attitude ;
+  skos:prefLabel "Knowledge claim (epistemic)"@en ; skos:notation "knowledge-claim" ;
+  skos:definition "The content is put forward as known, on the authority of the source."@en ; rdfs:isDefinedBy smtgm:claims .
+att:belief a smtg:PropositionalAttitude ; skos:inScheme smtgv:attitude ;
+  skos:prefLabel "Belief (doxastic)"@en ; skos:notation "belief" ;
+  skos:definition "The content is held true by the source with some strength, without a claim to knowledge (e.g. a community tag judgement)."@en ; rdfs:isDefinedBy smtgm:claims .
+att:conjecture a smtg:PropositionalAttitude ; skos:inScheme smtgv:attitude ;
+  skos:prefLabel "Conjecture"@en ; skos:notation "conjecture" ;
+  skos:definition "The content is proposed as plausible but neither believed nor established; open to refutation."@en ; rdfs:isDefinedBy smtgm:claims .
+att:hypothesis a smtg:PropositionalAttitude ; skos:inScheme smtgv:attitude ;
+  skos:prefLabel "Hypothesis"@en ; skos:notation "hypothesis" ;
+  skos:definition "The content is entertained in order to be tested (e.g. an inferred potential synergy evaluated against expert judgement)."@en ; rdfs:isDefinedBy smtgm:claims .
+
+smtgv:claim-lifecycle a skos:ConceptScheme ;
+  rdfs:label "Claim lifecycle statuses"@en ;
+  smtg:conceptClass smtg:ClaimLifecycleStatus ; rdfs:isDefinedBy smtgm:claims .
+life:current a smtg:ClaimLifecycleStatus ; skos:inScheme smtgv:claim-lifecycle ;
+  skos:prefLabel "Current"@en ; skos:notation "current" ;
+  skos:definition "Present in the latest observed source snapshot."@en ; rdfs:isDefinedBy smtgm:claims .
+life:retracted a smtg:ClaimLifecycleStatus ; skos:inScheme smtgv:claim-lifecycle ;
+  skos:prefLabel "Retracted upstream"@en ; skos:notation "retracted" ;
+  skos:definition "No longer present in the source; kept only in history graphs, never in the current view."@en ; rdfs:isDefinedBy smtgm:claims .
+life:superseded a smtg:ClaimLifecycleStatus ; skos:inScheme smtgv:claim-lifecycle ;
+  skos:prefLabel "Superseded"@en ; skos:notation "superseded" ;
+  skos:definition "Replaced by a newer claim from the same source about the same subject (e.g. a changed weight)."@en ; rdfs:isDefinedBy smtgm:claims .
+
+[] a owl:AllDifferent ; owl:distinctMembers ( att:knowledge-claim att:belief att:conjecture att:hypothesis ) .

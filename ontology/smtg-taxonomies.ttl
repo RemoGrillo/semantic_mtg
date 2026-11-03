@@ -1,0 +1,305 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix smtgv:   <https://w3id.org/smtg/vocab/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# =============================================================================
+#  SMTG Taxonomies — the classes of controlled-vocabulary concepts.
+#  The concepts themselves (individuals) are GENERATED into ontology/vocab/
+#  from Scryfall catalogs and the field census (tools/vocab/generate-vocab.mjs).
+# =============================================================================
+
+smtgm:taxonomies a owl:Ontology ;
+  rdfs:label "SMTG Taxonomies"@en ;
+  dcterms:title "Taxonomies: controlled vocabularies for card characteristics and printing attributes"@en ;
+  dcterms:description """Classes for every controlled vocabulary SMTG uses: card types, supertypes and type-qualified subtype schemes, colours and the 32 colour combinations, mana symbols, keywords, layouts, face configurations, object kinds, formats and legality statuses, rarities, finishes, frames, border colours, promo types, games, languages and more. All are SKOS concepts (open, extensible) typed with an OWL class so that properties can have precise ranges. The individual concepts are generated from the sources into ontology/vocab/ and enriched with curated definitions."""@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  smtg:moduleOrder 5 ;
+  vs:term_status "unstable" ;
+  owl:imports smtgm:core .
+
+# -----------------------------------------------------------------------------
+#  Type system
+# -----------------------------------------------------------------------------
+
+smtg:Supertype a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Supertype"@en ;
+  skos:definition "A supertype of the Magic type system (Legendary, Basic, Snow, World, Ongoing, Host, Elite, …)."@en ;
+  smtg:sourceField "scryfall-catalog:supertypes" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:CardType a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Card type"@en ;
+  skos:definition "A card type of the Magic type system (Artifact, Battle, Creature, Enchantment, Instant, Kindred, Land, Planeswalker, Sorcery, and non-traditional types such as Plane, Scheme, Conspiracy, Dungeon, Vanguard)."@en ;
+  smtg:sourceField "scryfall-catalog:card-types" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:Subtype a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Subtype"@en ;
+  skos:definition "A subtype of the Magic type system. Every subtype belongs to a type-qualified scheme (creature types, land types, …) and is identified by a scheme-specific IRI."@en ;
+  skos:scopeNote """Subtypes are only meaningful together with the card types they can accompany (Rule 205.3). A scheme states its applicability with smtg:applicableToCardType; creature types, for instance, apply to Creature and Kindred. The specialised subtype classes are pairwise disjoint: an artifact type and a creature type are different concepts even when spelled alike."""@en ;
+  smtg:reviewQuestion "RQ-TY-1" , "RQ-TY-2" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:CreatureType a owl:Class ; rdfs:subClassOf smtg:Subtype ; rdfs:label "Creature type"@en ;
+  skos:definition "A subtype that can appear on creatures and Kindred cards (e.g. Elf, Vampire, Phyrexian)."@en ;
+  smtg:sourceField "scryfall-catalog:creature-types" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:ArtifactType a owl:Class ; rdfs:subClassOf smtg:Subtype ; rdfs:label "Artifact type"@en ;
+  skos:definition "A subtype that can appear on artifacts (e.g. Equipment, Vehicle, Treasure)."@en ;
+  smtg:sourceField "scryfall-catalog:artifact-types" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:EnchantmentType a owl:Class ; rdfs:subClassOf smtg:Subtype ; rdfs:label "Enchantment type"@en ;
+  skos:definition "A subtype that can appear on enchantments (e.g. Aura, Saga, Class, Case, Room)."@en ;
+  smtg:sourceField "scryfall-catalog:enchantment-types" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:LandType a owl:Class ; rdfs:subClassOf smtg:Subtype ; rdfs:label "Land type"@en ;
+  skos:definition "A subtype that can appear on lands (e.g. Forest, Gate, Desert)."@en ;
+  smtg:sourceField "scryfall-catalog:land-types" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:PlaneswalkerType a owl:Class ; rdfs:subClassOf smtg:Subtype ; rdfs:label "Planeswalker type"@en ;
+  skos:definition "A subtype that can appear on planeswalkers (e.g. Jace, Chandra)."@en ;
+  smtg:sourceField "scryfall-catalog:planeswalker-types" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:SpellType a owl:Class ; rdfs:subClassOf smtg:Subtype ; rdfs:label "Spell type"@en ;
+  skos:definition "A subtype that can appear on instants and sorceries (e.g. Arcane, Trap, Lesson, Adventure)."@en ;
+  smtg:sourceField "scryfall-catalog:spell-types" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:BattleType a owl:Class ; rdfs:subClassOf smtg:Subtype ; rdfs:label "Battle type"@en ;
+  skos:definition "A subtype that can appear on battles (e.g. Siege)."@en ;
+  smtg:sourceField "scryfall-catalog:battle-types" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:OtherSubtype a owl:Class ; rdfs:subClassOf smtg:Subtype ; rdfs:label "Other subtype"@en ;
+  skos:definition "A subtype observed in type lines that belongs to none of the Scryfall subtype catalogs (e.g. planar types, dungeon or non-traditional subtypes); kept rather than dropped, pending curation."@en ;
+  smtg:reviewQuestion "RQ-TY-2" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+
+[] a owl:AllDisjointClasses ;
+  owl:members ( smtg:CreatureType smtg:ArtifactType smtg:EnchantmentType smtg:LandType smtg:PlaneswalkerType smtg:SpellType smtg:BattleType smtg:OtherSubtype ) .
+
+[] a owl:AllDisjointClasses ;
+  owl:members ( smtg:Supertype smtg:CardType smtg:Subtype ) .
+
+smtg:applicableToCardType a owl:ObjectProperty ;
+  rdfs:label "applicable to card type"@en ;
+  skos:definition "States that the subtypes of a subtype scheme may accompany the given card type (e.g. the creature-type scheme is applicable to Creature and Kindred)."@en ;
+  smtg:intendedDomain skos:ConceptScheme ; rdfs:range smtg:CardType ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+
+# -----------------------------------------------------------------------------
+#  Colour and mana
+# -----------------------------------------------------------------------------
+
+smtg:Color a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Color"@en ;
+  skos:definition "One of the five colours of Magic: white, blue, black, red, green. Colourless is not a colour (Rule 105.2c)."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:ColorCombination a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Color combination"@en ;
+  skos:definition "A set of colours, from the empty set (colourless, code C) to all five (WUBRG): 32 concepts in total, each listing exactly the colours it includes, with community names (Azorius, Esper, Abzan, …) as alternative labels."@en ;
+  skos:scopeNote """Colours, colour indicators and colour identities point to ONE combination concept. Under the open-world assumption, five separate hasColor triples could never establish "exactly these colours" or "colourless"; a combination concept does. smtg:subCombinationOf is a genuine partial order (subset inclusion) and is declared transitive — contrast this with Tagger's parent links, where transitivity is NOT assumed (see the tags module and AP-09)."""@en ;
+  smtg:antiPattern "AP-05" , "AP-09" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:includesColor a owl:ObjectProperty ;
+  rdfs:label "includes color"@en ;
+  skos:definition "A colour that belongs to a colour combination."@en ;
+  rdfs:domain smtg:ColorCombination ; rdfs:range smtg:Color ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:colorCount a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "color count"@en ;
+  skos:definition "Number of colours in a combination (0 for colourless)."@en ;
+  rdfs:domain smtg:ColorCombination ; rdfs:range xsd:nonNegativeInteger ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:subCombinationOf a owl:ObjectProperty , owl:TransitiveProperty ;
+  rdfs:label "sub-combination of"@en ;
+  skos:definition "Colour-set inclusion: every colour of the first combination is in the second (including equality). E.g. WU is a sub-combination of WUB; C is a sub-combination of every combination."@en ;
+  skos:scopeNote "Materialised completely in the vocabulary (including reflexive pairs), so it can be used by plain SPARQL, e.g. to find cards whose colour identity fits a commander's."@en ;
+  rdfs:domain smtg:ColorCombination ; rdfs:range smtg:ColorCombination ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:ManaSymbol a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Mana and card symbol"@en ;
+  skos:definition "A symbol of Magic's brace notation as catalogued by Scryfall: mana symbols ({W}, {2/U}, {G/P}, {X}, {C}, {S}…) and other card symbols ({T}, {Q}, {E}…)."@en ;
+  smtg:sourceField "scryfall-symbology:symbol" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:symbolColor a owl:ObjectProperty ;
+  rdfs:label "symbol color"@en ;
+  skos:definition "A colour associated with a mana symbol (a hybrid symbol has two)."@en ;
+  rdfs:domain smtg:ManaSymbol ; rdfs:range smtg:Color ;
+  smtg:sourceField "scryfall-symbology:colors" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:symbolManaValue a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "symbol mana value"@en ;
+  skos:definition "The contribution of one occurrence of the symbol to mana value."@en ;
+  rdfs:domain smtg:ManaSymbol ; rdfs:range xsd:decimal ;
+  smtg:sourceField "scryfall-symbology:mana_value" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:representsMana a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "represents mana"@en ;
+  skos:definition "Whether the symbol represents mana (true for {W}, false for {T})."@en ;
+  rdfs:domain smtg:ManaSymbol ; rdfs:range xsd:boolean ;
+  smtg:sourceField "scryfall-symbology:represents_mana" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:Keyword a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Keyword"@en ;
+  skos:definition "A keyword ability, keyword action, ability word or flavor word recognised by the Magic rules or by Scryfall's catalogs."@en ;
+  smtg:reviewQuestion "RQ-TY-3" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:KeywordAbility a owl:Class ; rdfs:subClassOf smtg:Keyword ; rdfs:label "Keyword ability"@en ;
+  skos:definition "A keyword that stands for an ability (Flying, Trample, Ward…)."@en ;
+  smtg:sourceField "scryfall-catalog:keyword-abilities" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:KeywordAction a owl:Class ; rdfs:subClassOf smtg:Keyword ; rdfs:label "Keyword action"@en ;
+  skos:definition "A keyword that stands for an action (Scry, Mill, Investigate…)."@en ;
+  smtg:sourceField "scryfall-catalog:keyword-actions" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:AbilityWord a owl:Class ; rdfs:subClassOf smtg:Keyword ; rdfs:label "Ability word"@en ;
+  skos:definition "An italicised word that groups abilities but has no rules meaning (Landfall, Morbid…)."@en ;
+  smtg:sourceField "scryfall-catalog:ability-words" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:FlavorWord a owl:Class ; rdfs:subClassOf smtg:Keyword ; rdfs:label "Flavor word"@en ;
+  skos:definition "An italicised flavor word preceding an ability, with no rules meaning."@en ;
+  smtg:sourceField "scryfall-catalog:flavor-words" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+
+# -----------------------------------------------------------------------------
+#  Layout, face configuration, object kinds, sides
+# -----------------------------------------------------------------------------
+
+smtg:Layout a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Layout"@en ;
+  skos:definition "A layout convention as identified by Scryfall's layout code (normal, split, flip, transform, modal_dfc, meld, adventure, prepare, leveler, class, case, saga, mutate, prototype, token, emblem, reversible_card, …)."@en ;
+  skos:scopeNote """Faithful to the source code list, which mixes three things: face configurations (split, transform…), frame conventions (saga, leveler, class…) and object kinds (token, emblem, planar…). SMTG keeps the code as-is and adds explicit mappings: smtg:impliesFaceConfiguration and smtg:impliesObjectKind. New codes from the source become new concepts with status unstable until curated (ADR-0004)."""@en ;
+  smtg:sourceField "scryfall:layout" ;
+  smtg:reviewQuestion "RQ-LY-1" , "RQ-LY-2" , "RQ-LY-3" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:FaceConfiguration a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Face configuration"@en ;
+  skos:definition "The physical arrangement of a card's faces: single face; several parts on one side; two faces on opposite sides; or opposite sides whose back belongs to a separate (meld) object."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+
+smtg:GameObjectKind a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Game object kind"@en ;
+  skos:definition "What sort of object a card record describes: a traditional card, a token, an emblem, a plane or phenomenon, a scheme, a vanguard, an art-series card, a front card, a dungeon, etc."@en ;
+  smtg:reviewQuestion "RQ-CF-3" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+
+smtg:impliesFaceConfiguration a owl:ObjectProperty ;
+  rdfs:label "implies face configuration"@en ;
+  skos:definition "Documented mapping from a layout to the face configuration it implies."@en ;
+  rdfs:domain smtg:Layout ; rdfs:range smtg:FaceConfiguration ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+
+smtg:impliesObjectKind a owl:ObjectProperty ;
+  rdfs:label "implies object kind"@en ;
+  skos:definition "Documented mapping from a layout to the kind of game object it implies (only for layouts that encode an object kind)."@en ;
+  rdfs:domain smtg:Layout ; rdfs:range smtg:GameObjectKind ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+
+smtg:definedClass a owl:AnnotationProperty ;
+  rdfs:label "defined class"@en ;
+  skos:definition "On a layout concept: the OWL class whose membership is defined by that layout value."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:faceCount a owl:AnnotationProperty ; rdfs:label "typical face count"@en ;
+  skos:definition "Layout-matrix documentation: typical number of conceptual faces."@en ; rdfs:isDefinedBy smtgm:taxonomies .
+smtg:physicalSides a owl:AnnotationProperty ; rdfs:label "physical sides used"@en ;
+  skos:definition "Layout-matrix documentation: how many physical sides carry faces."@en ; rdfs:isDefinedBy smtgm:taxonomies .
+smtg:faceArrangement a owl:AnnotationProperty ; rdfs:label "face arrangement"@en ;
+  skos:definition "Layout-matrix documentation: prose description of how the faces are arranged."@en ; rdfs:isDefinedBy smtgm:taxonomies .
+smtg:separateOracleIdentity a owl:AnnotationProperty ; rdfs:label "separate Oracle identity"@en ;
+  skos:definition "Layout-matrix documentation: whether the related parts are separate Oracle cards (meld results, reversible faces)."@en ; rdfs:isDefinedBy smtgm:taxonomies .
+
+smtg:Side a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Physical side"@en ;
+  skos:definition "Front or back of a physical card."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:Orientation a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Face orientation"@en ;
+  skos:definition "Orientation of a printed face relative to the card's upright reading direction: upright, rotated 90° (split/aftermath halves, battles), or inverted (flip cards)."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+
+smtg:PartComponent a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Part component role"@en ;
+  skos:definition "Role of a related object in a Scryfall all_parts relation: token, meld_part, meld_result, combo_piece."@en ;
+  smtg:sourceField "scryfall:all_parts[].component" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+
+# -----------------------------------------------------------------------------
+#  Formats and legality
+# -----------------------------------------------------------------------------
+
+smtg:Format a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Format"@en ;
+  skos:definition "A play format for which legality is tracked (standard, pioneer, modern, legacy, vintage, commander, pauper, brawl, …). Format definitions change over time; the concept denotes the format, not a fixed card pool."@en ;
+  smtg:sourceField "scryfall:legalities.*" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:LegalityStatus a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Legality status"@en ;
+  skos:definition "The status of a card in a format: legal, not_legal, restricted or banned."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+# -----------------------------------------------------------------------------
+#  Printing attributes
+# -----------------------------------------------------------------------------
+
+smtg:Rarity a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Rarity"@en ;
+  skos:definition "Rarity of a printing (common, uncommon, rare, special, mythic, bonus)."@en ;
+  smtg:sourceField "scryfall:rarity" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:Finish a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Finish"@en ;
+  skos:definition "A physical finish in which a printing is available (nonfoil, foil, etched, …)."@en ;
+  smtg:sourceField "scryfall:finishes" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:BorderColor a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Border color"@en ;
+  skos:definition "Border colour of a printing (black, white, borderless, silver, gold, yellow)."@en ;
+  smtg:sourceField "scryfall:border_color" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:FrameVersion a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Frame version"@en ;
+  skos:definition "The card frame generation used by a printing (1993, 1997, 2003, 2015, future)."@en ;
+  smtg:sourceField "scryfall:frame" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:FrameEffect a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Frame effect"@en ;
+  skos:definition "A frame treatment applied to a printing (showcase, extendedart, legendary, etched, inverted, …)."@en ;
+  smtg:sourceField "scryfall:frame_effects" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:PromoType a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Promo type"@en ;
+  skos:definition "A promotional or special-treatment category of a printing (prerelease, buyabox, serialized, surgefoil, …)."@en ;
+  smtg:sourceField "scryfall:promo_types" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+smtg:SecurityStamp a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Security stamp"@en ;
+  skos:definition "The holofoil security stamp shape on a printing (oval, triangle, acorn, arena, circle, heart)."@en ;
+  smtg:sourceField "scryfall:security_stamp" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:Game a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Game"@en ;
+  skos:definition "A medium in which a printing is available: paper, Magic Arena, Magic Online, and historical digital games."@en ;
+  smtg:sourceField "scryfall:games" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:Language a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Language"@en ;
+  skos:definition "A print language as coded by Scryfall (en, it, ja, ph = Phyrexian, …), mapped to a BCP 47 tag where one exists."@en ;
+  smtg:sourceField "scryfall:lang" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:bcp47 a owl:AnnotationProperty ; rdfs:label "BCP 47 tag"@en ;
+  skos:definition "BCP 47 language tag corresponding to a Language concept."@en ; rdfs:isDefinedBy smtgm:taxonomies .
+smtg:ImageStatus a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Image status"@en ;
+  skos:definition "Quality status of a printing's images at the source (highres_scan, lowres, placeholder, missing)."@en ;
+  smtg:sourceField "scryfall:image_status" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:ImageVariant a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Image variant"@en ;
+  skos:definition "A rendition of a card image offered by the source (png, large, normal, small, art_crop, border_crop)."@en ;
+  smtg:sourceField "scryfall:image_uris.*" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:SetType a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Set type"@en ;
+  skos:definition "A category of set (core, expansion, masters, commander, token, memorabilia, alchemy, funny, …)."@en ;
+  smtg:sourceField "scryfall:set_type" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:Watermark a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Watermark"@en ;
+  skos:definition "A watermark printed in a text box (guild and clan symbols, set symbols, organisation logos, …)."@en ;
+  smtg:sourceField "scryfall:watermark" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:Currency a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Currency"@en ;
+  skos:definition "A currency or price unit of a price observation (usd, eur, tix)."@en ;
+  smtg:sourceField "scryfall:prices.*" ; rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+smtg:RankingSystem a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Ranking system"@en ;
+  skos:definition "A popularity or usage ranking reported for cards (EDHREC rank, Penny Dreadful rank)."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+smtg:Zone a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ; rdfs:label "Game zone"@en ;
+  skos:definition "A game zone (battlefield, hand, graveyard, exile, library, command zone), used e.g. for the starting locations of combo pieces."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+
+smtg:ordinalRank a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "ordinal rank"@en ;
+  skos:definition "Position of a concept in an ordered scale (higher = more). Used for rarities and tagging weights. Ordinal only: differences are not meaningful."@en ;
+  rdfs:range xsd:integer ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .

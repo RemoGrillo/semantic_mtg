@@ -1,0 +1,203 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix smtgv:   <https://w3id.org/smtg/vocab/> .
+@prefix weight:  <https://w3id.org/smtg/vocab/tagging-weight/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# =============================================================================
+#  SMTG Tags — Scryfall Tagger vocabularies (Oracle tags, art tags) and tag
+#  assignments as first-class, weighted, attributed claims.
+# =============================================================================
+
+smtgm:tags a owl:Ontology ;
+  rdfs:label "SMTG Tags"@en ;
+  dcterms:title "Tags: Tagger vocabularies and weighted tag assignments"@en ;
+  dcterms:description """Scryfall Tagger publishes two community vocabularies: Oracle (functional) tags assigned to Oracle cards, and art tags assigned to illustrations. Each tag has a stable ID, a mutable slug and label, a description, aliases and any number of parents. Each tagging has a weight (observed values in November 2026: weak, median, strong, very_strong). SMTG imports the tags as SKOS concepts in two separate schemes and every tagging as a TagAssignment claim with its weight and snapshot. Tagger parent links are imported as smtg:taggerParent and are NOT treated as skos:broader or rdfs:subClassOf by default: art-tag hierarchies in particular mix instance-of, part-of and thematic links, and propagating weak, community claims through a transitive hierarchy is exactly the kind of inference the DEC collaboration should decide on. Interpretations are provided as opt-in view modules (ontology/views/)."""@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  smtg:moduleOrder 6 ;
+  vs:term_status "unstable" ;
+  owl:imports smtgm:core , smtgm:claims , smtgm:cards , smtgm:text-art .
+
+# -----------------------------------------------------------------------------
+#  Tag concepts
+# -----------------------------------------------------------------------------
+
+smtg:TagConcept a owl:Class ;
+  rdfs:subClassOf skos:Concept ;
+  rdfs:label "Tag concept"@en ;
+  skos:definition "A tag of a community tagging vocabulary, identified by its source ID (not by its label or slug), with its labels, description and aliases."@en ;
+  skos:scopeNote "Tags are concepts, not classes: a card tagged removal is not thereby an instance of a class Removal (AP-07). Labels and slugs can be renamed upstream, so IRIs are minted from the tag UUID."@en ;
+  smtg:sourceField "tagger:id" , "tagger:label" , "tagger:slug" , "tagger:description" , "tagger:aliases" ;
+  smtg:antiPattern "AP-07" ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "stable-draft" .
+
+smtg:OracleTag a owl:Class ;
+  rdfs:subClassOf smtg:TagConcept ;
+  rdfs:label "Oracle tag"@en ;
+  skos:definition "A Tagger tag describing what an Oracle card does or is (functional, mechanical or design-related), assigned to Oracle cards."@en ;
+  skos:example "removal-creature, tutor-battle, cycle-cmr-artifact-partner, grave pact."@en ;
+  smtg:sourceField "tagger:type=oracle" ;
+  owl:disjointWith smtg:ArtTag ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "stable-draft" .
+
+smtg:ArtTag a owl:Class ;
+  rdfs:subClassOf smtg:TagConcept ;
+  rdfs:label "Art tag"@en ;
+  skos:definition "A Tagger tag describing what an illustration shows or evokes (subjects, characters, places, motifs, styles), assigned to illustrations."@en ;
+  skos:scopeNote "Art tags and Oracle tags are separate vocabularies even when labels coincide (e.g. an art tag dragon vs an Oracle tag about Dragons)."@en ;
+  smtg:sourceField "tagger:type=illustration" ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "stable-draft" .
+
+smtg:taggerParent a owl:ObjectProperty ;
+  rdfs:label "Tagger parent"@en ;
+  skos:definition "A parent link exactly as published by Tagger (parent_ids). A tag may have several parents."@en ;
+  skos:scopeNote """Deliberately NOT a sub-property of skos:broader and NOT transitive. In SKOS, broader is a sub-property of the transitive broaderTransitive, so asserting broader would make every ancestor chain an entailment. Tagger parents mix kinds of links (the art tag for a character has parents for its species, its role, its plane…) and are community judgements. The opt-in module views/smtg-tags-skos-view.ttl maps taggerParent to skos:broader for users who accept that interpretation; DEC may instead treat inherited tags as weakened beliefs (RQ-TG-1)."""@en ;
+  rdfs:domain smtg:TagConcept ; rdfs:range smtg:TagConcept ;
+  smtg:sourceField "tagger:parent_ids" , "tagger:child_ids" ;
+  smtg:antiPattern "AP-09" ;
+  smtg:reviewQuestion "RQ-TG-1" , "RQ-TG-2" ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "stable-draft" .
+
+smtg:taggerSlug a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "Tagger slug"@en ;
+  skos:definition "The tag's current URL slug at Tagger. Mutable; not an identity key."@en ;
+  rdfs:domain smtg:TagConcept ; rdfs:range xsd:string ;
+  smtg:sourceField "tagger:slug" ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "stable-draft" .
+
+# -----------------------------------------------------------------------------
+#  Tag assignments (claims)
+# -----------------------------------------------------------------------------
+
+smtg:TagAssignment a owl:Class ;
+  rdfs:subClassOf smtg:Claim ;
+  rdfs:label "Tag assignment"@en ;
+  skos:definition "A claim, by a tagging community or method, that a tag applies to a target (an Oracle card for Oracle tags, an illustration for art tags), with the weight given by the source and the snapshot in which it was observed."@en ;
+  skos:scopeNote """First-class so that weight, provenance and retraction are never lost (AP-11). Default attitude: belief (community judgement); default epistemic status: community-curated. The absence of an assignment is NOT a negative label: Tagger coverage is incomplete (AP-05)."""@en ;
+  skos:example "Tagger assigns the art tag rashida scalebane to illustration baa61cf8-… with weight very_strong."@en ;
+  smtg:sourceField "tagger:taggings[]" ;
+  smtg:antiPattern "AP-05" , "AP-11" ;
+  smtg:reviewQuestion "RQ-TG-3" , "RQ-CL-4" ;
+  rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty smtg:assignedTag ; owl:someValuesFrom smtg:TagConcept ] ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "stable-draft" .
+
+smtg:OracleTagAssignment a owl:Class ;
+  rdfs:subClassOf smtg:TagAssignment ,
+    [ a owl:Restriction ; owl:onProperty smtg:assignedTag ; owl:allValuesFrom smtg:OracleTag ] ,
+    [ a owl:Restriction ; owl:onProperty smtg:assignmentTarget ; owl:allValuesFrom smtg:OracleCard ] ;
+  rdfs:label "Oracle tag assignment"@en ;
+  skos:definition "A tag assignment of an Oracle tag to an Oracle card."@en ;
+  smtg:sourceField "tagger:taggings[].oracle_id" ;
+  owl:disjointWith smtg:ArtTagAssignment ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "stable-draft" .
+
+smtg:ArtTagAssignment a owl:Class ;
+  rdfs:subClassOf smtg:TagAssignment ,
+    [ a owl:Restriction ; owl:onProperty smtg:assignedTag ; owl:allValuesFrom smtg:ArtTag ] ,
+    [ a owl:Restriction ; owl:onProperty smtg:assignmentTarget ; owl:allValuesFrom smtg:Illustration ] ;
+  rdfs:label "Art tag assignment"@en ;
+  skos:definition "A tag assignment of an art tag to an illustration."@en ;
+  skos:scopeNote "Classifies what an illustration shows or evokes; it is not by itself a claim that a real-world person or object is depicted (see smtg:ArtworkDepiction)."@en ;
+  smtg:sourceField "tagger:taggings[].illustration_id" ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "stable-draft" .
+
+smtg:AIAnnotationProposal a owl:Class ;
+  rdfs:subClassOf smtg:TagAssignment ;
+  rdfs:label "AI annotation proposal"@en ;
+  skos:definition "A tag assignment proposed by an AI or machine-learning method (model, prompt version, confidence and supporting text recorded), kept distinct from community assignments."@en ;
+  skos:scopeNote "Epistemic status machine-proposed. Stored in its own named graph; promoted to the normalized layer only under an explicit acceptance policy. Never overwrites a Tagger assignment."@en ;
+  smtg:reviewQuestion "RQ-TG-4" ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "proposal" .
+
+smtg:assignedTag a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "assigned tag"@en ;
+  skos:definition "The tag that a tag assignment applies."@en ;
+  rdfs:domain smtg:TagAssignment ; rdfs:range smtg:TagConcept ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "stable-draft" .
+
+smtg:assignmentTarget a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:subPropertyOf smtg:aboutEntity ;
+  rdfs:label "assignment target"@en ;
+  skos:definition "The entity that a tag assignment tags: an Oracle card (Oracle tags) or an illustration (art tags)."@en ;
+  rdfs:domain smtg:TagAssignment ;
+  rdfs:range [ a owl:Class ; owl:unionOf ( smtg:OracleCard smtg:Illustration ) ] ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "stable-draft" .
+
+smtg:taggingWeight a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:subPropertyOf smtg:hasStrength ;
+  rdfs:label "tagging weight"@en ;
+  skos:definition "The weight Tagger gives to a tagging."@en ;
+  rdfs:domain smtg:TagAssignment ; rdfs:range smtg:TaggingWeight ;
+  smtg:sourceField "tagger:taggings[].weight" ;
+  smtg:reviewQuestion "RQ-CL-4" ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "stable-draft" .
+
+smtg:taggingAnnotation a owl:DatatypeProperty ;
+  rdfs:label "tagging annotation"@en ;
+  skos:definition "Free-text note attached by Tagger to a specific tagging (e.g. which part of the card or art the tag refers to)."@en ;
+  rdfs:domain smtg:TagAssignment ; rdfs:range xsd:string ;
+  smtg:sourceField "tagger:taggings[].annotation" ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "unstable" .
+
+smtg:hasTag a owl:ObjectProperty ;
+  rdfs:label "has tag (projection)"@en ;
+  skos:definition "Convenience projection: the Oracle card or illustration has at least one current assignment of the tag, of any weight."@en ;
+  skos:scopeNote "Lossy (drops weight, provenance and attitude). Generated only into a projection graph by views/smtg-tags-projection-view.ttl or by the ETL; never asserted in source graphs, never used as evidence."@en ;
+  smtg:projectionOf smtg:TagAssignment ;
+  smtg:intendedDomain smtg:OracleCard , smtg:Illustration ; smtg:intendedRange smtg:TagConcept ;
+  smtg:antiPattern "AP-11" ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "unstable" .
+
+# -----------------------------------------------------------------------------
+#  Tagging weights
+# -----------------------------------------------------------------------------
+
+smtg:TaggingWeight a owl:Class ;
+  rdfs:subClassOf smtg:StrengthLevel ;
+  rdfs:label "Tagging weight"@en ;
+  skos:definition "A level of Tagger's ordinal tagging-weight scale."@en ;
+  skos:scopeNote """Observed distribution (snapshot 2026-11-03): Oracle taggings — median 239,296, very_strong 629, strong 1; art taggings — median 491,612, strong 6,072, weak 4,718, very_strong 2,723. "median" is effectively the default, so weight carries information mostly at the extremes. Whether and how weight should modulate reasoning (thresholds, degrees of belief) is open (RQ-CL-4)."""@en ;
+  smtg:reviewQuestion "RQ-CL-4" ;
+  rdfs:isDefinedBy smtgm:tags ; vs:term_status "unstable" .
+
+smtgv:tagging-weight a skos:ConceptScheme ;
+  rdfs:label "Tagger tagging weights"@en ;
+  skos:definition "Ordinal weights of Tagger taggings, as published in the oracle_tags and art_tags bulk files."@en ;
+  smtg:conceptClass smtg:TaggingWeight ; rdfs:isDefinedBy smtgm:tags .
+
+weight:weak a smtg:TaggingWeight ; skos:inScheme smtgv:tagging-weight ;
+  skos:prefLabel "weak"@en ; skos:notation "weak" ; smtg:ordinalRank 1 ;
+  skos:definition "Tagger weight weak: the tag applies only marginally or partially."@en ;
+  smtg:sourceValueOf "tagger:taggings[].weight" ; rdfs:isDefinedBy smtgm:tags .
+weight:median a smtg:TaggingWeight ; skos:inScheme smtgv:tagging-weight ;
+  skos:prefLabel "median"@en ; skos:notation "median" ; smtg:ordinalRank 2 ;
+  skos:definition "Tagger weight median: the default weight of a tagging."@en ;
+  smtg:sourceValueOf "tagger:taggings[].weight" ; rdfs:isDefinedBy smtgm:tags .
+weight:strong a smtg:TaggingWeight ; skos:inScheme smtgv:tagging-weight ;
+  skos:prefLabel "strong"@en ; skos:notation "strong" ; smtg:ordinalRank 3 ;
+  skos:definition "Tagger weight strong: the tag applies prominently."@en ;
+  smtg:sourceValueOf "tagger:taggings[].weight" ; rdfs:isDefinedBy smtgm:tags .
+weight:very_strong a smtg:TaggingWeight ; skos:inScheme smtgv:tagging-weight ;
+  skos:prefLabel "very strong"@en ; skos:notation "very_strong" ; smtg:ordinalRank 4 ;
+  skos:definition "Tagger weight very_strong: the tag is a defining characteristic (e.g. the main character shown in an artwork)."@en ;
+  smtg:sourceValueOf "tagger:taggings[].weight" ; rdfs:isDefinedBy smtgm:tags .
+
+[] a owl:AllDifferent ; owl:distinctMembers ( weight:weak weight:median weight:strong weight:very_strong ) .
+
+# Concept schemes for the two Tagger vocabularies (the tag concepts themselves are instance data).
+smtgv:tagger-oracle-tags a skos:ConceptScheme ;
+  rdfs:label "Tagger Oracle tags"@en ;
+  skos:definition "Scheme of all Tagger Oracle (functional) tags."@en ;
+  smtg:conceptClass smtg:OracleTag ; rdfs:isDefinedBy smtgm:tags .
+smtgv:tagger-art-tags a skos:ConceptScheme ;
+  rdfs:label "Tagger art tags"@en ;
+  skos:definition "Scheme of all Tagger art (illustration) tags."@en ;
+  smtg:conceptClass smtg:ArtTag ; rdfs:isDefinedBy smtgm:tags .

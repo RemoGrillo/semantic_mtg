@@ -1,0 +1,31 @@
+{
+  "project": "Semantic Magic: The Gathering",
+  "shortName": "SMTG",
+  "ontologyVersion": "0.1.0-draft",
+  "namespaces": {
+    "base": "https://w3id.org/smtg/",
+    "ontology": "https://w3id.org/smtg/ontology#",
+    "vocab": "https://w3id.org/smtg/vocab/",
+    "id": "https://w3id.org/smtg/id/"
+  },
+  "namespaceStatus": "placeholder — see ADR-0003 and RQ-NS-1",
+  "repo": {
+    "url": "",
+    "note": "Set to the GitHub repository URL once pushed; the docs then link 'Suggest a change' to prefilled issues."
+  },
+  "userAgent": "SMTG-audit/0.1 (+research; contact via repository)",
+  "sources": {
+    "scryfallBulkManifest": "https://api.scryfall.com/bulk-data",
+    "scryfallBulkTypes": ["all_cards", "oracle_cards", "oracle_tags", "art_tags"],
+    "scryfallApi": "https://api.scryfall.com",
+    "spellbookVariants": "https://json.commanderspellbook.com/variants.json.gz"
+  },
+  "reasoners": {
+    "default": "hermit",
+    "available": {
+      "hermit": { "kind": "robot", "arg": "hermit" },
+      "elk": { "kind": "robot", "arg": "ELK" },
+      "dec": { "kind": "external", "command": "", "note": "Placeholder for the DEC doxastic/conjectural OWL reasoner; fill in its CLI when available." }
+    }
+  }
+}

@@ -1,0 +1,260 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix smtgv:   <https://w3id.org/smtg/vocab/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# =============================================================================
+#  SMTG Combos — Commander Spellbook's documented combos (recipes and
+#  generated variants), and SMTG's own synergy hypotheses and statistical
+#  associations, kept epistemically distinct.
+# =============================================================================
+
+smtgm:combos a owl:Ontology ;
+  rdfs:label "SMTG Combos"@en ;
+  dcterms:title "Combos: documented combo variants, recipes, features, and synergy hypotheses"@en ;
+  dcterms:description """Commander Spellbook distinguishes editor-authored combos (recipes) from generated variants: concrete multisets of cards (plus template placeholders) with prerequisites, steps and the features they produce. Its bulk export contains variants; recipes appear only as IDs (of / includes). SMTG models a variant as a community-curated claim, its card uses, template requirements and feature productions as qualified nodes, and keeps step descriptions as text — it never simulates the combo. Synergy hypotheses inferred by SMTG and statistical co-occurrence associations are separate claim types, so "documented combo", "observed together" and "potentially supports" stay distinguishable in SPARQL."""@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  smtg:moduleOrder 8 ;
+  vs:term_status "unstable" ;
+  owl:imports smtgm:core , smtgm:cards , smtgm:claims , smtgm:taxonomies .
+
+smtg:ComboRecipe a owl:Class ;
+  rdfs:label "Combo recipe"@en ;
+  skos:definition "An editor-authored combo in Commander Spellbook: the curated description of an interaction from which concrete variants are generated."@en ;
+  skos:scopeNote "Only the ID is available in the bulk variants export (of[].id, includes[].id); details require the API and are marked unavailable, not nonexistent (RQ-CB-1)."@en ;
+  smtg:sourceField "spellbook:variants[].of[].id" , "spellbook:variants[].includes[].id" ;
+  smtg:reviewQuestion "RQ-CB-1" ;
+  owl:disjointWith smtg:ComboVariant ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:ComboVariant a owl:Class ;
+  rdfs:subClassOf smtg:Claim ;
+  rdfs:label "Combo variant"@en ;
+  skos:definition "A concrete, documented combination in Commander Spellbook: a multiset of specific cards (and possibly template requirements) with prerequisites, steps and the features it is documented to produce."@en ;
+  skos:scopeNote """A variant is a community-curated claim that the combination works as described, not a verified logical consequence of the rules (AP-15). It is not identical to the recipe it was generated from (AP-16). A player's decklist containing all the cards is a different fact again."""@en ;
+  skos:example "Variant 483-720-1806-2034: Kinzu of the Bleak Coven + Eternal Scourge + Ashnod's Altar + Cruel Celebrant, documented to produce infinite colourless mana, infinite death triggers, infinite lifeloss, …"@en ;
+  smtg:sourceField "spellbook:variants[]" , "spellbook:variants[].id" , "spellbook:variants[].status" ;
+  smtg:antiPattern "AP-15" , "AP-16" ;
+  rdfs:subClassOf [ a owl:Restriction ; owl:onProperty smtg:hasCardUse ; owl:someValuesFrom smtg:ComboCardUse ] ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "stable-draft" .
+
+smtg:ComboCardUse a owl:Class ;
+  rdfs:label "Combo card use"@en ;
+  skos:definition "The qualified participation of one Oracle card in a combo variant: how many copies, where it must start (zones), its required state, and whether it must be the commander."@en ;
+  smtg:sourceField "spellbook:variants[].uses[]" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "stable-draft" .
+
+smtg:ComboTemplate a owl:Class ;
+  rdfs:label "Combo template"@en ;
+  skos:definition "A placeholder in a combo for any card meeting a description (often given as a Scryfall query), such as \"a sacrifice outlet\"."@en ;
+  skos:scopeNote "A template is not a card and must never be resolved to one implicitly."@en ;
+  smtg:sourceField "spellbook:variants[].requires[].template" ;
+  owl:disjointWith smtg:OracleCard ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:TemplateRequirement a owl:Class ;
+  rdfs:label "Template requirement"@en ;
+  skos:definition "The qualified requirement of a combo variant for cards matching a template (quantity, zones, state)."@en ;
+  smtg:sourceField "spellbook:variants[].requires[]" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:ComboFeature a owl:Class ;
+  rdfs:label "Combo feature"@en ;
+  skos:definition "A curated label for a result a combo produces or a capability it requires (\"Infinite colorless mana\", \"Infinite death triggers\"), with Spellbook's own status and uncountable flag."@en ;
+  skos:scopeNote "Feature labels are curated descriptions, stored as concepts; SMTG does not interpret their game effect. Mapping features to strategic affordances is a reviewed, later step."@en ;
+  smtg:sourceField "spellbook:variants[].produces[].feature" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:FeatureProduction a owl:Class ;
+  rdfs:label "Feature production"@en ;
+  skos:definition "The qualified statement that a combo variant produces a feature (with quantity)."@en ;
+  smtg:sourceField "spellbook:variants[].produces[]" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:SynergyHypothesis a owl:Class ;
+  rdfs:subClassOf smtg:Claim ;
+  rdfs:label "Synergy hypothesis"@en ;
+  skos:definition "An SMTG-inferred, qualified hypothesis that two or more cards may support each other strategically, with the rule that derived it, the supporting claims, its scope and known limitations."@en ;
+  skos:scopeNote "Attitude hypothesis, epistemic status rule-derived. Never expressed with owl:sameAs, subClassOf or an unqualified symmetric synergizesWith; never transitive by default (AP-09, AP-15). Not populated in v1."@en ;
+  smtg:antiPattern "AP-09" , "AP-15" ;
+  smtg:reviewQuestion "RQ-CB-2" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "proposal" .
+
+smtg:ObservedAssociation a owl:Class ;
+  rdfs:subClassOf smtg:Claim ;
+  rdfs:label "Observed association"@en ;
+  skos:definition "A statistical claim that cards co-occur in a corpus of decklists more (or less) than expected, with corpus, measure (e.g. lift) and value."@en ;
+  skos:scopeNote "Co-occurrence is not a causal or rules-based synergy. Not populated in v1."@en ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "proposal" .
+
+[] a owl:AllDisjointClasses ;
+  owl:members ( smtg:ComboVariant smtg:SynergyHypothesis smtg:ObservedAssociation ) .
+
+# --- Properties ---------------------------------------------------------------
+
+smtg:generatedFromRecipe a owl:ObjectProperty ;
+  rdfs:label "generated from recipe"@en ;
+  skos:definition "A recipe from which the variant was generated (Spellbook \"of\")."@en ;
+  rdfs:domain smtg:ComboVariant ; rdfs:range smtg:ComboRecipe ;
+  smtg:sourceField "spellbook:variants[].of[].id" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:includesRecipe a owl:ObjectProperty ;
+  rdfs:label "includes recipe"@en ;
+  skos:definition "A recipe whose interaction the variant includes (Spellbook \"includes\")."@en ;
+  rdfs:domain smtg:ComboVariant ; rdfs:range smtg:ComboRecipe ;
+  smtg:sourceField "spellbook:variants[].includes[].id" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:spellbookStatus a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "Spellbook status"@en ;
+  skos:definition "The variant's publication status code at Commander Spellbook (e.g. OK)."@en ;
+  rdfs:domain smtg:ComboVariant ; rdfs:range xsd:string ;
+  smtg:sourceField "spellbook:variants[].status" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:hasCardUse a owl:ObjectProperty ;
+  rdfs:label "has card use"@en ;
+  skos:definition "Relates a combo variant to the qualified use of one of its cards."@en ;
+  rdfs:domain smtg:ComboVariant ; rdfs:range smtg:ComboCardUse ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "stable-draft" .
+
+smtg:usesCard a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "uses card"@en ;
+  skos:definition "The Oracle card used (resolved through its Oracle ID)."@en ;
+  rdfs:domain smtg:ComboCardUse ; rdfs:range smtg:OracleCard ;
+  smtg:sourceField "spellbook:variants[].uses[].card.oracleId" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "stable-draft" .
+
+smtg:quantity a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "quantity"@en ;
+  skos:definition "How many copies or instances are required or produced."@en ;
+  rdfs:range xsd:positiveInteger ;
+  smtg:intendedDomain smtg:ComboCardUse , smtg:TemplateRequirement , smtg:FeatureProduction ;
+  smtg:sourceField "spellbook:variants[].uses[].quantity" , "spellbook:variants[].requires[].quantity" , "spellbook:variants[].produces[].quantity" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "stable-draft" .
+
+smtg:startsInZone a owl:ObjectProperty ;
+  rdfs:label "starts in zone"@en ;
+  skos:definition "A zone in which the card (or template card) may start for the combo."@en ;
+  rdfs:range smtg:Zone ;
+  smtg:intendedDomain smtg:ComboCardUse , smtg:TemplateRequirement ;
+  smtg:sourceField "spellbook:variants[].uses[].zoneLocations" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:requiredCardState a owl:DatatypeProperty ;
+  rdfs:label "required card state"@en ;
+  skos:definition "Free-text description of the state the card must be in (e.g. on the battlefield with a counter), as given by Spellbook per zone."@en ;
+  rdfs:range xsd:string ;
+  smtg:intendedDomain smtg:ComboCardUse , smtg:TemplateRequirement ;
+  smtg:sourceField "spellbook:variants[].uses[].battlefieldCardState" , "spellbook:variants[].uses[].graveyardCardState" , "spellbook:variants[].uses[].exileCardState" , "spellbook:variants[].uses[].libraryCardState" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:mustBeCommander a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "must be commander"@en ;
+  skos:definition "Whether the card must be the commander for the combo."@en ;
+  rdfs:range xsd:boolean ;
+  smtg:intendedDomain smtg:ComboCardUse , smtg:TemplateRequirement ;
+  smtg:sourceField "spellbook:variants[].uses[].mustBeCommander" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "stable-draft" .
+
+smtg:hasTemplateRequirement a owl:ObjectProperty ;
+  rdfs:label "has template requirement"@en ;
+  skos:definition "Relates a variant to a template requirement."@en ;
+  rdfs:domain smtg:ComboVariant ; rdfs:range smtg:TemplateRequirement ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:requiresTemplate a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "requires template"@en ;
+  skos:definition "The template that a template requirement refers to."@en ;
+  rdfs:domain smtg:TemplateRequirement ; rdfs:range smtg:ComboTemplate ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:templateQuery a owl:DatatypeProperty ;
+  rdfs:label "template query"@en ;
+  skos:definition "The Scryfall search query by which Spellbook describes the cards matching a template, verbatim."@en ;
+  rdfs:domain smtg:ComboTemplate ; rdfs:range xsd:string ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:hasFeatureProduction a owl:ObjectProperty ;
+  rdfs:label "has feature production"@en ;
+  skos:definition "Relates a variant to a qualified statement of a feature it produces."@en ;
+  rdfs:domain smtg:ComboVariant ; rdfs:range smtg:FeatureProduction ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:producesFeature a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "produces feature"@en ;
+  skos:definition "The feature that a feature production states is produced."@en ;
+  rdfs:domain smtg:FeatureProduction ; rdfs:range smtg:ComboFeature ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:featureUncountable a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "feature uncountable"@en ;
+  skos:definition "Spellbook's flag that the feature is uncountable (e.g. infinite)."@en ;
+  rdfs:domain smtg:ComboFeature ; rdfs:range xsd:boolean ;
+  smtg:sourceField "spellbook:variants[].produces[].feature.uncountable" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:featureStatusCode a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "feature status code"@en ;
+  skos:definition "Spellbook's status code of the feature, verbatim (meaning to be confirmed against Spellbook's domain model)."@en ;
+  rdfs:domain smtg:ComboFeature ; rdfs:range xsd:string ;
+  smtg:sourceField "spellbook:variants[].produces[].feature.status" ;
+  smtg:reviewQuestion "RQ-CB-3" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:stepsDescription a owl:DatatypeProperty ;
+  rdfs:label "steps description"@en ;
+  skos:definition "The curated, step-by-step text describing how the combo is performed. Stored as text, never interpreted as instructions."@en ;
+  rdfs:domain smtg:ComboVariant ; rdfs:range xsd:string ;
+  smtg:sourceField "spellbook:variants[].description" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "stable-draft" .
+
+smtg:easyPrerequisites a owl:DatatypeProperty ;
+  rdfs:label "easy prerequisites"@en ;
+  skos:definition "Spellbook's text of prerequisites that are easy to meet."@en ;
+  rdfs:domain smtg:ComboVariant ; rdfs:range xsd:string ;
+  smtg:sourceField "spellbook:variants[].easyPrerequisites" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:notablePrerequisites a owl:DatatypeProperty ;
+  rdfs:label "notable prerequisites"@en ;
+  skos:definition "Spellbook's text of notable prerequisites."@en ;
+  rdfs:domain smtg:ComboVariant ; rdfs:range xsd:string ;
+  smtg:sourceField "spellbook:variants[].notablePrerequisites" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:manaNeeded a owl:DatatypeProperty ;
+  rdfs:label "mana needed"@en ;
+  skos:definition "The mana needed to perform the combo, in brace notation as given by Spellbook."@en ;
+  rdfs:domain smtg:ComboVariant ; rdfs:range xsd:string ;
+  smtg:sourceField "spellbook:variants[].manaNeeded" , "spellbook:variants[].manaValueNeeded" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
+smtg:comboColorIdentity a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "combo color identity"@en ;
+  skos:definition "The colour identity of the variant as reported by Spellbook."@en ;
+  rdfs:domain smtg:ComboVariant ; rdfs:range smtg:ColorCombination ;
+  smtg:sourceField "spellbook:variants[].identity" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "stable-draft" .
+
+smtg:hypothesisAbout a owl:ObjectProperty ;
+  rdfs:subPropertyOf smtg:aboutEntity ;
+  rdfs:label "hypothesis about"@en ;
+  skos:definition "A card that a synergy hypothesis or observed association concerns (two or more per claim)."@en ;
+  rdfs:range smtg:OracleCard ;
+  smtg:intendedDomain smtg:SynergyHypothesis , smtg:ObservedAssociation ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "proposal" .
+
+smtg:derivedByRule a owl:ObjectProperty ;
+  rdfs:label "derived by rule"@en ;
+  skos:definition "The documented inference rule (see the inference rule catalogue) that produced a hypothesis."@en ;
+  smtg:intendedDomain smtg:SynergyHypothesis ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "proposal" .

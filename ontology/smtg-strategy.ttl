@@ -1,0 +1,97 @@
+@prefix smtg:    <https://w3id.org/smtg/ontology#> .
+@prefix smtgm:   <https://w3id.org/smtg/ontology/> .
+@prefix smtgv:   <https://w3id.org/smtg/vocab/> .
+@prefix scope:   <https://w3id.org/smtg/vocab/affordance-scope/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+# =============================================================================
+#  SMTG Strategy — SKETCH for discussion. A small curated vocabulary of
+#  strategic roles and affordances, separate from Tagger's descriptive tags.
+#  Nothing here is populated; everything is status "proposal".
+# =============================================================================
+
+smtgm:strategy a owl:Ontology ;
+  rdfs:label "SMTG Strategy (sketch)"@en ;
+  dcterms:title "Strategy: roles, affordances, resources and patterns (proposal)"@en ;
+  dcterms:description """A deliberately small, curated module for later research on explainable strategic inference. Cards may OFFER, REQUIRE, BENEFIT FROM or SUPPRESS abstract affordances (e.g. "sacrifice outlet", "death trigger payoff") with an explicit scope (self, opponents, all players) and resource type. These are qualified, reviewed interpretations — introduced only where a Tagger tag or Spellbook feature has been mapped after review (skos:closeMatch / exactMatch), never assumed from every tag. Any derived "potentially supports" relation is a hypothesis (SynergyHypothesis), written to an inferred graph, never transitive by default. The inference rules live in an opt-in view (ontology/views/)."""@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  smtg:moduleOrder 11 ;
+  vs:term_status "proposal" ;
+  owl:imports smtgm:core , smtgm:cards , smtgm:claims .
+
+smtg:StrategicRole a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Strategic role"@en ;
+  skos:definition "A role a card can play in a strategy (ramp, removal, card advantage, wincon, …), as a curated concept."@en ;
+  skos:scopeNote "A role assignment is context-dependent: a card does not have one immutable role (PLAN §5.1 G)."@en ;
+  rdfs:isDefinedBy smtgm:strategy ; vs:term_status "proposal" .
+
+smtg:Affordance a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Affordance"@en ;
+  skos:definition "An abstract, game-agnostic capability a card can provide or need (sacrifice outlet, token producer, death-trigger payoff, untap effect), defined in prose and mapped to source tags/features after review."@en ;
+  smtg:reviewQuestion "RQ-ST-1" ;
+  rdfs:isDefinedBy smtgm:strategy ; vs:term_status "proposal" .
+
+smtg:Resource a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Resource"@en ;
+  skos:definition "A game resource that affordances act on (cards in hand, life, mana, creatures, graveyard, counters)."@en ;
+  rdfs:isDefinedBy smtgm:strategy ; vs:term_status "proposal" .
+
+smtg:AffordanceScope a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Affordance scope"@en ;
+  skos:definition "Whose objects an affordance concerns: the controller's, opponents', or all players'."@en ;
+  rdfs:isDefinedBy smtgm:strategy ; vs:term_status "proposal" .
+
+smtg:AffordanceStatement a owl:Class ; rdfs:subClassOf smtg:Claim ;
+  rdfs:label "Affordance statement"@en ;
+  skos:definition "A qualified, reviewed claim that a card offers, requires, benefits from or suppresses an affordance, with scope, resource and the mapping it was derived from."@en ;
+  skos:scopeNote "Specialised by PotentialRequirement and PotentialSuppression; the plain \"offers\" case is the direct class. Derived only from reviewed mappings (RQ-ST-1)."@en ;
+  rdfs:isDefinedBy smtgm:strategy ; vs:term_status "proposal" .
+
+smtg:PotentialRequirement a owl:Class ; rdfs:subClassOf smtg:AffordanceStatement ;
+  rdfs:label "Potential requirement"@en ;
+  skos:definition "An affordance statement that a card needs (or benefits from) an affordance to function well."@en ;
+  rdfs:isDefinedBy smtgm:strategy ; vs:term_status "proposal" .
+
+smtg:PotentialSuppression a owl:Class ; rdfs:subClassOf smtg:AffordanceStatement ;
+  rdfs:label "Potential suppression"@en ;
+  skos:definition "An affordance statement that a card restricts or prevents an affordance (within a scope), a possible source of conflict."@en ;
+  rdfs:isDefinedBy smtgm:strategy ; vs:term_status "proposal" .
+
+smtg:StrategicPattern a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
+  rdfs:label "Strategic pattern"@en ;
+  skos:definition "A named deck strategy or archetype (aristocrats, voltron, spellslinger) as a vocabulary of patterns, defined by the affordances it combines."@en ;
+  rdfs:isDefinedBy smtgm:strategy ; vs:term_status "proposal" .
+
+smtg:statementCard a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:subPropertyOf smtg:aboutEntity ;
+  rdfs:label "statement card"@en ; skos:definition "The card an affordance statement is about."@en ;
+  rdfs:domain smtg:AffordanceStatement ; rdfs:range smtg:OracleCard ;
+  rdfs:isDefinedBy smtgm:strategy ; vs:term_status "proposal" .
+smtg:statementAffordance a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "statement affordance"@en ; skos:definition "The affordance an affordance statement concerns."@en ;
+  rdfs:domain smtg:AffordanceStatement ; rdfs:range smtg:Affordance ;
+  rdfs:isDefinedBy smtgm:strategy ; vs:term_status "proposal" .
+smtg:statementScope a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "statement scope"@en ; skos:definition "Scope of an affordance statement."@en ;
+  rdfs:domain smtg:AffordanceStatement ; rdfs:range smtg:AffordanceScope ;
+  rdfs:isDefinedBy smtgm:strategy ; vs:term_status "proposal" .
+smtg:actsOnResource a owl:ObjectProperty ;
+  rdfs:label "acts on resource"@en ; skos:definition "A resource an affordance or statement acts on."@en ;
+  rdfs:range smtg:Resource ; smtg:intendedDomain smtg:Affordance , smtg:AffordanceStatement ;
+  rdfs:isDefinedBy smtgm:strategy ; vs:term_status "proposal" .
+smtg:patternCombines a owl:ObjectProperty ;
+  rdfs:label "pattern combines"@en ; skos:definition "An affordance that characterises a strategic pattern."@en ;
+  rdfs:domain smtg:StrategicPattern ; rdfs:range smtg:Affordance ;
+  rdfs:isDefinedBy smtgm:strategy ; vs:term_status "proposal" .
+
+smtgv:affordance-scope a skos:ConceptScheme ; rdfs:label "Affordance scopes"@en ;
+  smtg:conceptClass smtg:AffordanceScope ; rdfs:isDefinedBy smtgm:strategy .
+scope:self a smtg:AffordanceScope ; skos:inScheme smtgv:affordance-scope ; skos:prefLabel "Self (controller)"@en ; skos:notation "self" ; rdfs:isDefinedBy smtgm:strategy .
+scope:opponents a smtg:AffordanceScope ; skos:inScheme smtgv:affordance-scope ; skos:prefLabel "Opponents"@en ; skos:notation "opponents" ; rdfs:isDefinedBy smtgm:strategy .
+scope:all a smtg:AffordanceScope ; skos:inScheme smtgv:affordance-scope ; skos:prefLabel "All players"@en ; skos:notation "all" ; rdfs:isDefinedBy smtgm:strategy .
