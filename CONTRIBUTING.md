@@ -18,11 +18,12 @@ the checks.
    ```bash
    npm run build      # regenerates vocab and examples, validates, runs the CQs, rebuilds the docs
    npm run reason     # HermiT: consistency, unsatisfiable classes, negative OWL tests
-   npm run check      # before pushing: what CI and the Pages workflow run, plus a headless-Firefox
-                      # test of the built site (routes, reloads, every diagram); fails if a committed
-                      # generated file (docs/status/, inferred/) is out of date
+   npm run check      # what CI and the Pages workflow run, plus an offline headless-Firefox test of
+                      # the built site (routes, reloads, every diagram); fails if a committed
+                      # generated file (docs/status/, inferred/) is out of date. `-- --fast` skips
+                      # the reasoner and the diagrams (~25 s instead of ~85 s)
    ```
-   `npm run hooks:install` makes git run `npm run check` before every push (skip once with
+   `npm run hooks:install` makes git run the fast check before every push (skip once with
    `git push --no-verify`).
    If you add an OWL axiom whose consequences should be queryable, add a rule in `rules/` that
    names it (`# implements:`); `npm run infer` materialises it into the inferred graph.

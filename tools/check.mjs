@@ -7,7 +7,8 @@
 // Generated files whose only change is a timestamp are restored, so a passing check leaves the
 // working tree as it found it. Files you had already modified before the check are never touched.
 //
-// Usage: node tools/check.mjs [--no-reason] [--quick]      (npm run check)
+// Usage: node tools/check.mjs [--fast] [--no-reason] [--quick]      (npm run check)
+//   --fast       = --no-reason --quick: about 25 s; what the pre-push hook runs (CI runs the rest)
 //   --no-reason  skip the OWL reasoner (needs Java; downloaded into .tools/ on first use)
 //   --quick      skip rendering every diagram in the browser smoke test
 // Used by the pre-push hook in .githooks/ (enable with: npm run hooks:install).
@@ -17,6 +18,7 @@ import { spawnSync, execFileSync } from 'node:child_process';
 import { ROOT, log } from './lib/common.mjs';
 
 const args = new Set(process.argv.slice(2));
+if (args.has('--fast')) args.add('--no-reason').add('--quick');
 const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 const git = (...a) => execFileSync('git', a, { cwd: ROOT, encoding: 'utf8' });
 
@@ -69,7 +71,7 @@ if (stale.length) {
   process.exit(1);
 }
 const dirtyNow = changedTracked();
-log(`CHECK PASSED (${secs} s): everything CI and the Pages workflow run.`);
+log(`CHECK PASSED (${secs} s)${args.has('--fast') ? ' (fast: no OWL reasoning, diagrams not rendered; CI runs those)' : ': everything CI and the Pages workflow run.'}`);
 if (dirtyNow.length) log(`note: ${dirtyNow.length} tracked file(s) have uncommitted changes; the check ran on the working tree, a push sends only commits.`);
 
 function changedTracked() {

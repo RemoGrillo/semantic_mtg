@@ -69,6 +69,42 @@ const BASE = `http://127.0.0.1:${server.address().port}${PREFIX}`;
 // Connect to the address Firefox itself announces on stderr ("WebDriver BiDi listening on ws://…"):
 // depending on the system, "localhost" may be 127.0.0.1 or ::1.
 const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'smtg-smoke-'));
+// The test is fully offline, so it is deterministic and never waits on the network: no images
+// (the card images come from Scryfall; an interrupted download logs "Image corrupt or truncated"
+// as a page error, which made the test fail at random), every non-local request routed to a
+// closed port, and Firefox's own background traffic switched off.
+fs.writeFileSync(
+  path.join(profile, 'user.js'),
+  Object.entries({
+    'permissions.default.image': 2,
+    'network.proxy.type': 1,
+    'network.proxy.http': '127.0.0.1',
+    'network.proxy.http_port': 1,
+    'network.proxy.ssl': '127.0.0.1',
+    'network.proxy.ssl_port': 1,
+    'network.proxy.no_proxies_on': '127.0.0.1, localhost',
+    'network.proxy.allow_hijacking_localhost': false,
+    'network.captive-portal-service.enabled': false,
+    'network.connectivity-service.enabled': false,
+    'app.update.enabled': false,
+    'app.normandy.enabled': false,
+    'browser.safebrowsing.malware.enabled': false,
+    'browser.safebrowsing.phishing.enabled': false,
+    'browser.safebrowsing.downloads.remote.enabled': false,
+    'datareporting.policy.dataSubmissionEnabled': false,
+    'datareporting.healthreport.uploadEnabled': false,
+    'toolkit.telemetry.enabled': false,
+    'toolkit.telemetry.unified': false,
+    'extensions.update.enabled': false,
+    'extensions.getAddons.cache.enabled': false,
+    'browser.aboutHomeSnippets.updateUrl': '',
+    'browser.startup.homepage_override.mstone': 'ignore',
+    'browser.shell.checkDefaultBrowser': false,
+    'dom.ipc.processPrelaunch.enabled': false,
+  })
+    .map(([k, v]) => `user_pref(${JSON.stringify(k)}, ${JSON.stringify(v)});`)
+    .join('\n') + '\n',
+);
 const port = 9300 + Math.floor(Math.random() * 600);
 const ff = spawn(firefox, ['--headless', '--no-remote', '--profile', profile, '--remote-debugging-port', String(port), '--window-size=1400,1000', 'about:blank'], { stdio: ['ignore', 'pipe', 'pipe'] });
 const ffOutput = [];
@@ -162,6 +198,7 @@ try {
       pending.delete(m.id);
       m.type === 'error' ? rej(new Error(`${m.error}: ${m.message}`)) : res(m.result);
     } else if (m.method === 'log.entryAdded' && m.params.level === 'error') {
+      if (process.env.SMOKE_DEBUG) console.error('LOG ENTRY', JSON.stringify(m.params).slice(0, 600));
       consoleErrors.push(m.params.text);
     }
   };

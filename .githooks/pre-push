@@ -1,7 +1,9 @@
 #!/bin/sh
 # Runs before every `git push` once enabled with `npm run hooks:install` (git config core.hooksPath .githooks).
-# Runs what CI and the GitHub Pages workflow run (see tools/check.mjs); a failure blocks the push.
-# Skip once with `git push --no-verify`; disable with `git config --unset core.hooksPath`.
+# Runs the fast part of what CI runs (about 25 s: validate, infer, cq, unit tests, docs build,
+# offline browser smoke test — see tools/check.mjs); a failure blocks the push. CI then runs the
+# OWL reasoner and renders every diagram. Skip once with `git push --no-verify`; disable with
+# `git config --unset core.hooksPath`.
 cd "$(git rev-parse --show-toplevel)" || exit 1
-echo "pre-push: npm run check (skip once with git push --no-verify)"
-exec npm run -s check
+echo "pre-push: npm run check -- --fast (skip once with git push --no-verify)"
+exec npm run -s check -- --fast
