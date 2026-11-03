@@ -708,6 +708,12 @@
       .then(function (j) {
         list.hidden = false;
         renderSuggestionList(list, j.items || [], false);
+        var count = $('[data-suggest-count]', panel);
+        var n = (j.items || []).length;
+        if (count) {
+          count.hidden = !n;
+          count.textContent = n ? n + ' existing' : '';
+        }
       })
       .catch(function () {});
   }

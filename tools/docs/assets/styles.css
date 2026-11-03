@@ -411,7 +411,20 @@ svg.chart .bar:focus-visible .ax { fill: var(--accent); font-weight: 600; }
 .sym-text { font-size: 0.82em; }
 
 /* ---------- suggestions ---------- */
-.suggest { margin-top: 3em; border-top: 1px solid var(--line-2); padding-top: 0.2em; }
+.suggest { margin-top: 3em; border-top: 1px solid var(--line); padding-top: 0.2em; }
+.suggest > summary.suggest-summary {
+  list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; padding: 10px 2px 6px;
+  font-family: var(--font-body); font-size: 0.86rem; font-weight: 500; color: var(--muted);
+}
+.suggest > summary.suggest-summary::-webkit-details-marker { display: none; }
+.suggest > summary.suggest-summary::before {
+  content: ""; width: 6px; height: 6px; flex: none; border-right: 1.5px solid var(--faint); border-bottom: 1.5px solid var(--faint);
+  transform: rotate(-45deg); transition: transform 0.15s; margin-right: 2px;
+}
+.suggest[open] > summary.suggest-summary::before { transform: rotate(45deg); margin-top: -3px; }
+.suggest > summary.suggest-summary:hover { color: var(--ink-2); }
+.suggest-count { font-size: 0.72rem; color: var(--faint); border: 1px solid var(--line); border-radius: 999px; padding: 0 7px; }
+.suggest[open] > summary.suggest-summary { color: var(--ink-2); }
 .suggest-form { display: grid; gap: 12px; margin-top: 10px; }
 .suggest-form label { display: grid; gap: 4px; font-size: 0.8rem; color: var(--muted); }
 .form-row { display: flex; flex-wrap: wrap; gap: 12px; }

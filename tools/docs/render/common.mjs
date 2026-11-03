@@ -222,8 +222,8 @@ export function dispositionChip(d) {
 
 /** "Suggest a change" panel; behaviour (review vs static mode) is wired by client.js. */
 export function suggestPanel(t) {
-  return `<section class="block suggest" data-suggest data-term-iri="${attr(t.iri)}" data-term-label="${attr(t.label)}">
-<h2>Suggest a change</h2>
+  return `<details class="block suggest" data-suggest data-term-iri="${attr(t.iri)}" data-term-label="${attr(t.label)}">
+<summary class="suggest-summary"><span class="suggest-title">Suggest a change</span><span class="suggest-count" data-suggest-count hidden></span></summary>
 <p class="muted suggest-mode" data-suggest-mode>Comments on <strong>${esc(t.label)}</strong> are welcome — tweaks, radical alternatives, questions or new proposals.</p>
 <form class="suggest-form" novalidate>
   <div class="form-row">
@@ -244,7 +244,7 @@ export function suggestPanel(t) {
   </div>
 </form>
 <div class="suggest-list" data-suggest-list hidden></div>
-</section>`;
+</details>`;
 }
 
 /** Generic table for an array of plain objects. */

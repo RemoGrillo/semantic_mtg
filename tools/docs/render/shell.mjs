@@ -71,8 +71,8 @@ export function sidebar(ctx) {
 ${section('Introduction', list(navLink('overview', 'Overview'), page('conceptual-model', 'Conceptual model')))}
 ${section(
   'Ontology',
-  group('Modules', moduleLinks + (views.length ? `<li class="nav-sub" aria-hidden="true">Opt-in views</li>${views.map((v) => navLink(`view/${v.id}`, v.label.replace(/^View:\s*/, '').replace(/\s*\(opt-in\)$/, ''), { search: v.label })).join('')}` : ''), { open: true, count: mods.length, route: 'modules' }) +
-    group('Classes', grouped(m, classes, (t) => `class/${t.key}`), { open: true, count: classes.length, route: 'classes' }) +
+  group('Modules', moduleLinks + (views.length ? `<li class="nav-sub" aria-hidden="true">Opt-in views</li>${views.map((v) => navLink(`view/${v.id}`, v.label.replace(/^View:\s*/, '').replace(/\s*\(opt-in\)$/, ''), { search: v.label })).join('')}` : ''), { count: mods.length, route: 'modules' }) +
+    group('Classes', grouped(m, classes, (t) => `class/${t.key}`), { count: classes.length, route: 'classes' }) +
     group('Properties', grouped(m, properties, (t) => `property/${t.key}`), { count: properties.length, route: 'properties' }) +
     (individuals.length ? group('Individuals', grouped(m, individuals, (t) => `individual/${t.key}`), { count: individuals.length }) : '') +
     group('Vocabularies', schemes.map((s) => navLink(`vocab/${s.key}`, s.label, { search: `${s.curie} ${s.concepts.length}` })).join(''), { count: schemes.length, route: 'vocabularies' }) +
