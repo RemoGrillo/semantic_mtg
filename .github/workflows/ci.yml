@@ -13,6 +13,9 @@ jobs:
       - run: npm run infer
       - run: npm run cq
       - run: npm test
+      # The documentation site, built and checked in headless Firefox (see tools/docs/smoke.mjs).
+      - run: npm run docs:build
+      - run: npm run docs:smoke -- --require
       # Portable JRE + ROBOT are downloaded by `npm run reason`; cache them between runs.
       - uses: actions/cache@v4
         with:

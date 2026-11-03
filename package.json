@@ -24,7 +24,10 @@
     "map:coverage": "node tools/map/build-mapping.mjs",
     "build:docs-only": "npm run map:coverage && npm run validate && npm run infer && npm run cq && npm run docs:build",
     "infer": "node tools/reason/materialize.mjs",
-    "cards:resolve": "node tools/docs/resolve-cards.mjs"
+    "cards:resolve": "node tools/docs/resolve-cards.mjs",
+    "docs:smoke": "node tools/docs/smoke.mjs",
+    "check": "node tools/check.mjs",
+    "hooks:install": "git config core.hooksPath .githooks"
   },
   "dependencies": {
     "@fontsource/alegreya": "5.3.0",

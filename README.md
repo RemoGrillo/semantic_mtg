@@ -29,6 +29,8 @@ npm run build            # vocab → fixture examples → SHACL → inferred gra
 npm run reason           # OWL DL check with HermiT (bootstraps a portable JRE + ROBOT in .tools/)
 open site/index.html     # the documentation: a single self-contained file that works offline
 npm run docs:serve       # review mode: per-concept suggestion box, saved under review/suggestions/
+npm run check            # before pushing: everything CI and the Pages workflow run, incl. a browser test
+npm run hooks:install    # optional: run `npm run check` automatically before every git push
 ```
 
 You only need `npm run audit:fetch` to regenerate vocabularies and examples from fresh source data.

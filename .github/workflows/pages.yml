@@ -2,11 +2,16 @@ name: pages
 # Builds and publishes the documentation site (see ADR-0006 and DISCLAIMER.md).
 # Runs on every push to main, or manually. Enable once in the repository settings:
 # Settings → Pages → Source: GitHub Actions.
+# The site is deployed only if the browser smoke test passes (tools/docs/smoke.mjs).
+# If the deploy job fails with "Timeout reached" (a GitHub-side stall; the build job is fine),
+# use "Re-run failed jobs" on the run, or run the workflow again from the Actions tab.
 on:
   push: { branches: [main] }
   workflow_dispatch: {}
 permissions: { contents: read, pages: write, id-token: write }
-concurrency: { group: pages, cancel-in-progress: true }
+# Let a deployment in progress finish (as GitHub's starter workflow does); a newer push waits for
+# it, then deploys.
+concurrency: { group: pages, cancel-in-progress: false }
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,6 +21,9 @@ jobs:
         with: { node-version: 22, cache: npm }
       - run: npm ci
       - run: npm run docs:build
+      # Headless Firefox (preinstalled on GitHub's Ubuntu runners): routing, reloads, anchors,
+      # every diagram, no JavaScript errors. --require: fail rather than skip if Firefox is missing.
+      - run: npm run docs:smoke -- --require
       - uses: actions/upload-pages-artifact@v3
         with: { path: site }
   deploy:
@@ -25,3 +33,5 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        # default 10 minutes; give a slow Pages backend more room before giving up
+        with: { timeout: 1200000 }
