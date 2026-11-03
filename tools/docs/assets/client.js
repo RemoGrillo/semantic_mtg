@@ -318,7 +318,10 @@
     var changed = current !== r.route;
     if (changed) {
       closeOverlay();
-      if (current && sections[current]) sections[current].hidden = true;
+      // Hide every other page, not only the one we think is current: the overview ships visible
+      // (for readers without JavaScript), so on a fresh load of a deep link (#/class/…) it would
+      // otherwise stay on screen above the requested page.
+      for (var key in sections) if (key !== r.route && !sections[key].hidden) sections[key].hidden = true;
       section.hidden = false;
       current = r.route;
       var t = section.getAttribute('data-title');
