@@ -32,7 +32,7 @@ smtg:CardPrinting a owl:Class ;
   rdfs:label "Card printing"@en ;
   skos:definition "A published card object: a specific edition of one or more Oracle cards in one set, with one collector number and one language, in one physical/digital form (identified by a Scryfall card ID)."@en ;
   skos:scopeNote """A printing manifests an Oracle card but is not one (disjoint; never subClassOf; never owl:sameAs — AP-01). Two printings that share an illustration are still two printings (AP-03). Attributes that vary between editions — set, rarity, frame, border, finishes, promo types, language, flavour text, artwork — are printing-level or printed-face-level, never Oracle-level."""@en ;
-  skos:example "The Italian Lightning Bolt of the Fourth Edition (Fulmine) and the English Magic 2010 Lightning Bolt are two printings of one Oracle card."@en ;
+  skos:example "The Italian [[Lightning Bolt|M10|146|it]] (printed name Fulmine) and the original [[Lightning Bolt|LEA|161]] are two printings of one Oracle card. [[!Lightning Bolt|M10|146|it]] [[!Lightning Bolt|LEA|161]]"@en ;
   smtg:sourceField "scryfall:id" ;
   smtg:antiPattern "AP-01" , "AP-03" ;
   rdfs:subClassOf [ a owl:Restriction ; owl:onProperty smtg:isPrintingOf ; owl:someValuesFrom smtg:OracleCard ] ;

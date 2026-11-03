@@ -229,6 +229,7 @@ smtg:observedCount
   smtg:faceArrangement "main face + inset spell"@en ;
   smtg:separateOracleIdentity "no" ;
   smtg:definedClass smtg:AdventurerCard ;
+  skos:example "[[Bonecrusher Giant // Stomp]]"@en ;
   smtg:primaryFacePolicy "face 0: normal characteristics, not the Adventure (CR 715.4)"@en .
 
 <https://w3id.org/smtg/vocab/layout/art_series>
@@ -247,6 +248,7 @@ smtg:observedCount
   smtg:physicalSides "2" ;
   smtg:faceArrangement "art front / art back"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[Fell Beast's Shriek // Fell Beast's Shriek]]"@en ;
   smtg:primaryFacePolicy "none: not a game card"@en ;
   skos:scopeNote "Printing convention: recorded with smtg:printingLayout on the printing; the Oracle card keeps its game layout."@en .
 
@@ -284,6 +286,7 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[Case of the Uneaten Feast]]"@en ;
   smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/class>
@@ -302,6 +305,7 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face, level bands"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[Druid Class]]"@en ;
   smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/double_faced_token>
@@ -320,6 +324,7 @@ smtg:observedCount
   smtg:physicalSides "2" ;
   smtg:faceArrangement "front / back"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[Punchcard // Punchcard]]"@en ;
   smtg:primaryFacePolicy "face 0: front face (CR 712.8a)"@en .
 
 <https://w3id.org/smtg/vocab/layout/emblem>
@@ -338,6 +343,7 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[Elspeth, Knight-Errant Emblem]]"@en ;
   smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/flip>
@@ -357,6 +363,7 @@ smtg:observedCount
   smtg:faceArrangement "second face inverted"@en ;
   smtg:separateOracleIdentity "no" ;
   smtg:definedClass smtg:FlipCard ;
+  skos:example "[[Akki Lavarunner // Tok-Tok, Volcano Born]]"@en ;
   smtg:primaryFacePolicy "face 0: normal (right-side-up) characteristics (CR 710.1)"@en .
 
 <https://w3id.org/smtg/vocab/layout/front_card>
@@ -376,6 +383,7 @@ smtg:observedCount
   smtg:physicalSides "1–2" ;
   smtg:faceArrangement "non-game card"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[Surprise!]]"@en ;
   smtg:primaryFacePolicy "none: not a game card"@en .
 
 <https://w3id.org/smtg/vocab/layout/host>
@@ -412,6 +420,7 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face, level bands"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[Student of Warfare]]"@en ;
   smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/meld>
@@ -431,6 +440,7 @@ smtg:observedCount
   smtg:faceArrangement "two fronts; back halves form the result"@en ;
   smtg:separateOracleIdentity "yes: halves and result are three Oracle cards" ;
   smtg:definedClass smtg:MeldCard ;
+  skos:example "[[Bruna, the Fading Light]] + [[Gisela, the Broken Blade]] → [[Brisela, Voice of Nightmares]]"@en ;
   smtg:primaryFacePolicy "face 0: front face (CR 712.8b)"@en .
 
 <https://w3id.org/smtg/vocab/layout/modal_dfc>
@@ -450,6 +460,7 @@ smtg:observedCount
   smtg:faceArrangement "front / back, either playable"@en ;
   smtg:separateOracleIdentity "no" ;
   smtg:definedClass smtg:ModalDoubleFacedCard ;
+  skos:example "[[Agadeem's Awakening // Agadeem, the Undercrypt]]"@en ;
   smtg:primaryFacePolicy "face 0: front face (CR 712.8a)"@en .
 
 <https://w3id.org/smtg/vocab/layout/mutate>
@@ -468,6 +479,7 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[Gemrazer]]"@en ;
   smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/normal>
@@ -486,6 +498,7 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face, front"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[Lightning Bolt]]"@en ;
   smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/planar>
@@ -504,6 +517,7 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face, landscape"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[Llanowar]]"@en ;
   smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/prepare>
@@ -524,6 +538,7 @@ smtg:observedCount
   smtg:faceArrangement "creature face + spell face"@en ;
   smtg:separateOracleIdentity "no" ;
   smtg:definedClass smtg:PrepareCard ;
+  skos:example "[[Abigale, Poet Laureate // Heroic Stanza]]"@en ;
   smtg:primaryFacePolicy "face 0: normal characteristics, not the prepare spell (CR 722.2)"@en .
 
 <https://w3id.org/smtg/vocab/layout/prototype>
@@ -542,6 +557,7 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face with prototype inset"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[Arcane Proxy]]"@en ;
   smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/reversible_card>
@@ -560,6 +576,7 @@ smtg:observedCount
   smtg:physicalSides "2" ;
   smtg:faceArrangement "same or different card on each side"@en ;
   smtg:separateOracleIdentity "yes: Oracle ID on each face" ;
+  skos:example "[[Jinnie Fay, Jetmir's Second|SLD|1556]]"@en ;
   smtg:primaryFacePolicy "printing layout: each side is its own Oracle card"@en ;
   skos:scopeNote "Printing convention: recorded with smtg:printingLayout on the printing; the Oracle card keeps its game layout."@en .
 
@@ -579,6 +596,7 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face, vertical text"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[History of Benalia]]"@en ;
   smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/scheme>
@@ -597,6 +615,7 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[My Champion Stands Supreme]]"@en ;
   smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/split>
@@ -616,6 +635,7 @@ smtg:observedCount
   smtg:faceArrangement "halves side by side (aftermath: rotated)"@en ;
   smtg:separateOracleIdentity "no" ;
   smtg:definedClass smtg:SplitCard ;
+  skos:example "[[Fire // Ice]]; aftermath: [[Commit // Memory]]; fuse: [[Alive // Well]]"@en ;
   smtg:primaryFacePolicy "none: both halves combined (CR 709.4)"@en .
 
 <https://w3id.org/smtg/vocab/layout/token>
@@ -634,6 +654,7 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[Eldrazi Scion]]"@en ;
   smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/transform>
@@ -653,6 +674,7 @@ smtg:observedCount
   smtg:faceArrangement "front / back"@en ;
   smtg:separateOracleIdentity "no" ;
   smtg:definedClass smtg:TransformingDoubleFacedCard ;
+  skos:example "[[Delver of Secrets // Insectile Aberration]]"@en ;
   smtg:primaryFacePolicy "face 0: front face (CR 712.8a)"@en .
 
 <https://w3id.org/smtg/vocab/layout/vanguard>
@@ -671,6 +693,7 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face"@en ;
   smtg:separateOracleIdentity "no" ;
+  skos:example "[[Sisters of Stone Death Avatar]]"@en ;
   smtg:primaryFacePolicy "face 0: the only face"@en .
 
 [] a owl:AllDifferent ; owl:distinctMembers ( <https://w3id.org/smtg/vocab/layout/adventure> <https://w3id.org/smtg/vocab/layout/art_series> <https://w3id.org/smtg/vocab/layout/augment> <https://w3id.org/smtg/vocab/layout/case> <https://w3id.org/smtg/vocab/layout/class> <https://w3id.org/smtg/vocab/layout/double_faced_token> <https://w3id.org/smtg/vocab/layout/emblem> <https://w3id.org/smtg/vocab/layout/flip> <https://w3id.org/smtg/vocab/layout/front_card> <https://w3id.org/smtg/vocab/layout/host> <https://w3id.org/smtg/vocab/layout/leveler> <https://w3id.org/smtg/vocab/layout/meld> <https://w3id.org/smtg/vocab/layout/modal_dfc> <https://w3id.org/smtg/vocab/layout/mutate> <https://w3id.org/smtg/vocab/layout/normal> <https://w3id.org/smtg/vocab/layout/planar> <https://w3id.org/smtg/vocab/layout/prepare> <https://w3id.org/smtg/vocab/layout/prototype> <https://w3id.org/smtg/vocab/layout/reversible_card> <https://w3id.org/smtg/vocab/layout/saga> <https://w3id.org/smtg/vocab/layout/scheme> <https://w3id.org/smtg/vocab/layout/split> <https://w3id.org/smtg/vocab/layout/token> <https://w3id.org/smtg/vocab/layout/transform> <https://w3id.org/smtg/vocab/layout/vanguard> ) .

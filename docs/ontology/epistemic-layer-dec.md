@@ -54,7 +54,7 @@ draws the line and where a reasoner for **conjectural and doxastic** content (DE
 
 ## Where weak tags meet reasoning: three concrete cases from the data
 
-**Case 1: implication-like parents (Oracle tags).** Lightning Bolt is tagged *burn any*
+**Case 1: implication-like parents (Oracle tags).** [[Lightning Bolt]] is tagged *burn any*
 (weight very_strong). In Tagger, *burn any* has the parents *burn creature*, *burn player*,
 *burn planeswalker* and *burn battle*, and further up *removal-creature* and *removal* (CQ-TG-03).
 Reading parents as subsumption between card sets is plausible here, so should Lightning Bolt be

@@ -2,6 +2,7 @@
 // annotation blocks, the "Suggest a change" panel and generic JSON tables.
 import { esc, attr, statusBadge, kindBadge } from '../lib/html.mjs';
 import { NS, localName } from '../lib/rdf.mjs';
+import { replaceCardRefs } from '../lib/cardrefs.mjs';
 
 /** Route (hash) for an IRI known to the model, or null. */
 export function routeFor(m, v) {
@@ -152,13 +153,18 @@ export function annotationsBlock(ctx, t) {
 
 /** Tiny inline markdown for annotation text: `code`, **bold**, *em*, URLs. Input must be escaped HTML. */
 export function mdInline(html) {
-  return String(html)
+  const out = String(html)
     .replace(/`([^`]+)`/g, '<code>$1</code>')
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
     .replace(/(^|[\s(])\*([^*\s][^*]*)\*(?=[\s).,;:!?]|$)/g, '$1<em>$2</em>')
     .replace(/(^|[\s(])(https?:\/\/[^\s<)]+[^\s<).,;:])/g, '$1<a href="$2" class="ext" rel="noopener" target="_blank">$2</a>')
     .replace(/\n{2,}/g, '</p><p>')
     .replace(/\n/g, '<br>');
+  // card references [[…]], outside <code> (so syntax examples stay literal)
+  return out
+    .split(/(<code>[\s\S]*?<\/code>)/)
+    .map((part, i) => (i % 2 ? part : replaceCardRefs(part)))
+    .join('');
 }
 
 export function refsBlock(ctx, t) {

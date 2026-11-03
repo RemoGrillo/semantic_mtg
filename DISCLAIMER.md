@@ -48,7 +48,9 @@ Tipográfica, SIL Open Font License 1.1).
   Coast) are used only as a reference to cross-check keyword and ability-word lists. Rule numbers are
   cited; the rules text is not redistributed.
 - **Card images are not stored, copied or hosted here.** The data only *links* to images hosted by
-  Scryfall. Only small source excerpts (fixtures) are kept in the repository, with their origin and
+  Scryfall. The documentation shows some card images to illustrate examples (`[[Card Name]]`
+  references). They are loaded from Scryfall's image servers when a page is viewed, shown whole and
+  unmodified (artist credit and copyright line intact), following Scryfall's image guidelines. Only small source excerpts (fixtures) are kept in the repository, with their origin and
   checksum. Full source dumps are never committed.
 
 ## Free and non-commercial

@@ -4,7 +4,7 @@
 # kind: SPARQL
 # expects: nonempty
 # modules: cards
-# note: absence of a cost triple would mean 'unknown'; both cases are explicit (AP-05).
+# note: absence of a cost triple would mean 'unknown'; both cases are explicit (AP-05): [[Ancestral Vision]] has no mana cost, [[Ornithopter]] costs {0}.
 PREFIX smtg: <https://w3id.org/smtg/ontology#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

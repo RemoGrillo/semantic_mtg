@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { Marked } from 'marked';
 import { esc, attr, highlight } from './html.mjs';
+import { cardRefHtml } from './cardrefs.mjs';
 
 export const ID_RE = /(?<![\w-])(RQ-[A-Z][A-Z0-9]*-\d+[a-z]?|AP-\d{1,3}|ADR-\d{3,4}|CQ-[A-Z][A-Z0-9]*-\d+[a-z]?)(?![\w-])/;
 const ID_RE_G = new RegExp(ID_RE.source, 'g');
@@ -35,7 +36,7 @@ export function splitFrontMatter(src) {
 
 function plain(tokens) {
   return (tokens || [])
-    .map((t) => (t.tokens ? plain(t.tokens) : t.type === 'smtgref' ? t.id : t.text ?? t.raw ?? ''))
+    .map((t) => (t.tokens ? plain(t.tokens) : t.type === 'smtgref' ? t.id : t.type === 'cardref' ? t.inner.replace(/^!/, '').split('|')[0] : t.text ?? t.raw ?? ''))
     .join('');
 }
 
@@ -62,6 +63,23 @@ export function renderMarkdown(src, ctx) {
   const md = new Marked({ gfm: true, breaks: false });
   md.use({
     extensions: [
+      {
+        // [[Card Name]], [[Card Name|SET|CN|lang]], [[!…]] — see tools/docs/lib/cardrefs.mjs
+        name: 'cardref',
+        level: 'inline',
+        start(s) {
+          const i = s.indexOf('[[');
+          return i < 0 ? undefined : i;
+        },
+        tokenizer(s) {
+          const m = /^\[\[(!?[^[\]\n]+?)\]\]/.exec(s);
+          if (m) return { type: 'cardref', raw: m[0], inner: m[1] };
+          return undefined;
+        },
+        renderer(tok) {
+          return inHeading ? esc(tok.inner.replace(/^!/, '').split('|')[0]) : cardRefHtml(tok.inner);
+        },
+      },
       {
         name: 'smtgref',
         level: 'inline',

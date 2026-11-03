@@ -1,6 +1,6 @@
 # id: CQ-INF-03
 # title: Negative test — an MDFC with a sorcery front face is not a permanent card
-# question: Is Agadeem's Awakening // Agadeem, the Undercrypt inferred to be a permanent card?
+# question: Is [[Agadeem's Awakening // Agadeem, the Undercrypt]] inferred to be a permanent card?
 # kind: negative
 # expects: empty
 # modules: cards

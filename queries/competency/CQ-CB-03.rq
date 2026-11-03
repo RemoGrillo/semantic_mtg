@@ -1,6 +1,6 @@
 # id: CQ-CB-03
 # title: Combos that use a specific face
-# question: Which documented combo variants use a specific face of a multi-faced card?
+# question: Which documented combo variants use a specific face of a multi-faced card (e.g. the flipped side of [[Rune-Tail, Kitsune Ascendant // Rune-Tail's Essence]])?
 # kind: SPARQL
 # expects: nonempty
 # modules: combos

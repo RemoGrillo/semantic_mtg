@@ -1,6 +1,6 @@
 # id: CQ-RU-01
 # title: Dated, attributed rulings
-# question: Which rulings exist for Blood Artist, when were they published, and by whom?
+# question: Which rulings exist for [[Blood Artist]], when were they published, and by whom?
 # kind: SPARQL
 # expects: nonempty
 # modules: text-art, claims

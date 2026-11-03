@@ -179,7 +179,7 @@ export function cqPage(ctx) {
     const rows = Array.isArray(r?.rows) ? r.rows : [];
     h += `<section class="cq block" data-anchor="${attr(it.id)}" data-anchor-id="${attr(it.id)}">
 <h2><code class="cq-id">${esc(it.id)}</code> ${esc(title)} ${passBadge(r ? r.pass : undefined)}</h2>
-${question ? `<p class="cq-q">${esc(question)}</p>` : ''}
+${question ? `<p class="cq-q">${mdInline(esc(question))}</p>` : ''}${meta.note ? `<p class="cq-note muted small">${mdInline(esc(meta.note))}</p>` : ''}
 <p class="cq-meta">${kind ? `<span class="meta-item"><span class="lbl">kind</span> ${esc(kind)}</span>` : ''}${
       expects ? ` <span class="meta-item"><span class="lbl">expects</span> <code>${esc(typeof expects === 'string' ? expects : JSON.stringify(expects))}</code></span>` : ''
     }${meta.modules ? ` <span class="meta-item"><span class="lbl">modules</span> ${meta.modules
@@ -448,7 +448,7 @@ export function aboutPage(ctx) {
 <li>Community tags from Tagger via Scryfall (<a class="ext" href="https://tagger.scryfall.com" rel="noopener" target="_blank">tagger.scryfall.com</a>).</li>
 <li>Combo data from <a class="ext" href="https://commanderspellbook.com" rel="noopener" target="_blank">Commander Spellbook</a>.</li>
 </ul>
-<p>Card images are not shown or stored; the ontology only links to Scryfall-hosted images.</p>
+<p>Card images are never stored. Example cards in this documentation (links with a preview, and inline images) are loaded from Scryfall's image servers when a page is viewed, unmodified, with artist credit and copyright line intact.</p>
 
 <h2>Licensing (proposal)</h2>
 <ul>

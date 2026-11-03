@@ -127,3 +127,23 @@ list which core terms the proposal adds, redefines or removes (`smtg:replacesTer
 PREFIX smtg: <https://w3id.org/smtg/ontology#>
 SELECT …
 ```
+
+## Card references in documentation text
+
+Write card names in documentation text (Markdown pages, and `skos:definition`, `skos:scopeNote`,
+`skos:example` and other annotation literals) with the convention of the Scryfall and
+MTGCardFetcher bots:
+
+| You write | The docs show |
+|---|---|
+| `[[Lightning Bolt]]` | a link to the card on Scryfall, with an image preview on hover or focus |
+| `[[Lightning Bolt\|LEA]]` | a printing in that set (lowest collector number) |
+| `[[Lightning Bolt\|LEA\|161]]` | a specific printing (set and collector number) |
+| `[[Lightning Bolt\|M10\|146\|it]]` | a specific printing in a given language (default `en`) |
+| `[[!Bonecrusher Giant // Stomp]]` | the card image itself (all faces for double-faced cards) |
+
+Names are exact Oracle names (a face name such as `[[Stomp]]` also works). `npm run cards:resolve`
+resolves every reference against the local Scryfall snapshots into `docs/card-refs.json`, which is
+committed so the docs build without data or network. Unresolved references are listed and render as
+plain text. Images are loaded from Scryfall's image servers when the page is viewed, unmodified, and
+are never stored in the repository. Inside code (`` `…` ``) a reference stays literal.

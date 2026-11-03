@@ -801,6 +801,69 @@
       .catch(function () {});
   }
 
+  // ---------------------------------------------------------------- card previews ([[Card Name]] links)
+  // Images come from Scryfall's image servers at view time; offline, the preview simply stays hidden.
+  var cardTip = null;
+  function cardPreview() {
+    if (cardTip) return cardTip;
+    cardTip = document.createElement('div');
+    cardTip.className = 'card-preview';
+    cardTip.setAttribute('aria-hidden', 'true');
+    cardTip.hidden = true;
+    document.body.appendChild(cardTip);
+    return cardTip;
+  }
+  function showCard(a) {
+    var srcs = [a.getAttribute('data-card-img'), a.getAttribute('data-card-img2')].filter(Boolean);
+    if (!srcs.length) return;
+    var tip = cardPreview();
+    tip.innerHTML = '';
+    var pending = srcs.length;
+    srcs.forEach(function (src) {
+      var img = new Image();
+      img.alt = '';
+      img.referrerPolicy = 'no-referrer';
+      img.onerror = function () {
+        img.remove();
+        if (!tip.querySelector('img')) tip.hidden = true;
+      };
+      img.onload = function () {
+        if (--pending <= 0) placeCard(a);
+      };
+      img.src = src;
+      tip.appendChild(img);
+    });
+    tip.hidden = false;
+    placeCard(a);
+  }
+  function placeCard(a) {
+    if (!cardTip || cardTip.hidden) return;
+    var r = a.getBoundingClientRect();
+    var w = cardTip.offsetWidth || 260;
+    var h = cardTip.offsetHeight || 350;
+    var left = Math.min(window.innerWidth - w - 12, Math.max(12, r.left));
+    var top = r.bottom + 8 + h > window.innerHeight ? Math.max(12, r.top - h - 8) : r.bottom + 8;
+    cardTip.style.left = left + 'px';
+    cardTip.style.top = top + 'px';
+  }
+  function hideCard() {
+    if (cardTip) cardTip.hidden = true;
+  }
+  document.addEventListener('mouseover', function (e) {
+    var a = e.target.closest && e.target.closest('a.cardref[data-card-img]');
+    if (a) showCard(a);
+  });
+  document.addEventListener('mouseout', function (e) {
+    var a = e.target.closest && e.target.closest('a.cardref[data-card-img]');
+    if (a && !(e.relatedTarget && a.contains(e.relatedTarget))) hideCard();
+  });
+  document.addEventListener('focusin', function (e) {
+    var a = e.target.closest && e.target.closest('a.cardref[data-card-img]');
+    if (a) showCard(a);
+  });
+  document.addEventListener('focusout', hideCard);
+  window.addEventListener('scroll', hideCard, { passive: true });
+
   // ---------------------------------------------------------------- self-test hook (used by tooling)
   api.show = function (route) {
     show(route);

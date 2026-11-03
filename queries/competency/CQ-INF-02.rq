@@ -4,7 +4,7 @@
 # kind: SPARQL
 # expects: nonempty
 # modules: cards
-# note: Bonecrusher Giant is (its primary face is a creature); Agadeem's Awakening is not (its front face is a sorcery), though its back face is a land.
+# note: [[Bonecrusher Giant // Stomp]] is (its primary face is a creature); [[Agadeem's Awakening // Agadeem, the Undercrypt]] is not (its front face is a sorcery), though its back face is a land.
 PREFIX smtg: <https://w3id.org/smtg/ontology#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

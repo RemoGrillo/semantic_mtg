@@ -4,7 +4,7 @@
 # kind: SPARQL
 # expects: nonempty
 # modules: cards
-# note: producesManaViaToken is the property chain createsToken ∘ producesManaSymbol, materialised by rule R-MANA-VIA-TOKEN into the inferred graph.
+# note: producesManaViaToken is the property chain createsToken ∘ producesManaSymbol, materialised by rule R-MANA-VIA-TOKEN into the inferred graph. Expected: [[Eldrazi Confluence]] → [[Eldrazi Scion]] → {C}.
 PREFIX smtg: <https://w3id.org/smtg/ontology#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

@@ -27,6 +27,11 @@ the checks.
    not replace the core until reviewers accept it; meanwhile the docs render it next to the core
    with a *proposal* badge and a diff. See `proposals/README.md`.
 
+## Card names in documentation
+Write cards as `[[Lightning Bolt]]`, a printing as `[[Lightning Bolt|LEA|161]]`, an inline image as
+`[[!Lightning Bolt]]` (see *Card references* in `docs/ontology/authoring-conventions.md`), then run
+`npm run cards:resolve` and commit `docs/card-refs.json`.
+
 ## Rules of thumb (see `docs/ontology/anti-patterns.md`)
 - Don't add `rdfs:domain`/`rdfs:range` or disjointness unless it is true for **every** use.
   Otherwise use `smtg:intendedDomain` / `smtg:intendedRange` (documentation only) and SHACL.

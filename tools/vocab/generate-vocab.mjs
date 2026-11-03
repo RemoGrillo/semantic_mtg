@@ -181,6 +181,7 @@ for (const code of Object.keys(layoutObs).sort()) {
       ['smtg:faceArrangement', en(cur.arr)],
       ['smtg:separateOracleIdentity', lit(cur.sep ?? 'no')],
       ['smtg:definedClass', cur.cls ? `smtg:${cur.cls}` : undefined],
+      ['skos:example', C.LAYOUT_EXAMPLES[code] ? en(C.LAYOUT_EXAMPLES[code]) : undefined],
       ['smtg:primaryFacePolicy', en(C.PRIMARY_FACE[code] ? (C.PRIMARY_FACE[code][0] === null ? C.PRIMARY_FACE[code][1] : `face ${C.PRIMARY_FACE[code][0]}: ${C.PRIMARY_FACE[code][1]}`) : 'face 0: the only face')],
       ['skos:scopeNote', cur.printingOnly ? en('Printing convention: recorded with smtg:printingLayout on the printing; the Oracle card keeps its game layout.') : undefined],
     ] : [],

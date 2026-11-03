@@ -33,6 +33,7 @@ import {
   overviewPage, markdownPage, adrIndexPage, adrMeta, parseRq, cqPage, statusPage, overlayPage, proposalsIndex, aboutPage, suggestionsPage, notFoundPage,
 } from './render/pages.mjs';
 import { shell } from './render/shell.mjs';
+import { loadCardRefs } from './lib/cardrefs.mjs';
 
 const HERE = path.dirname(new URL(import.meta.url).pathname);
 
@@ -288,6 +289,7 @@ async function main() {
   };
 
   const symbols = new Symbols(p('node_modules', 'mana-font'), warn);
+  loadCardRefs(path.join(INPUT, 'docs', 'card-refs.json'), warn);
   const pipClass = (code) => symbols.classFor(code);
   m.pipClass = pipClass;
   for (const ov of overlays) ov.model.pipClass = pipClass;

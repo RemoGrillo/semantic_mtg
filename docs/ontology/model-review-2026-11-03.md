@@ -31,17 +31,20 @@ the property now carries the alternative labels "converted mana cost", "CMC" and
   - `smtg:createsToken` is a projection of the source's token relations (rule R-TOKEN);
   - `smtg:producesManaViaToken` is defined by the property chain `createsToken ∘
     producesManaSymbol` (rule R-MANA-VIA-TOKEN);
-  - results are materialised into the inferred graph only. Example: Eldrazi Confluence → Eldrazi
-    Scion → {C} (CQ-INF-01).
-- Data quirk: *Sole Performer* has `produced_mana: ["T"]`. That is not a mana type, so the mapper
+  - results are materialised into the inferred graph only. Example: [[Eldrazi Confluence]] →
+    [[Eldrazi Scion]] → {C} (CQ-INF-01).
+
+  [[!Eldrazi Confluence]] [[!Eldrazi Scion]]
+
+- Data quirk: [[Sole Performer]] has `produced_mana: ["T"]`. That is not a mana type, so the mapper
   now only accepts real mana symbols and reports the rest.
 
 **Permanents vs non-permanents.**
 - This belongs to **faces**: 287 Oracle cards have one permanent face and one instant or sorcery
   face. Face counts: 28,743 permanent, 7,975 instant/sorcery, 5,957 neither (planes, schemes, art
   cards…).
-- Three Un-cards are typed both, e.g. "Instant Creature", so the face classes are deliberately not
-  disjoint.
+- Three Un-cards are typed both, e.g. [[Lightning Colt]] ("Instant Creature — Horse"), so the face
+  classes are deliberately not disjoint.
 - Whether a *card* is a permanent card (CR 110.4a) depends on which face counts outside the
   battlefield and stack:
   - the front face of a double-faced card (CR 712.8a);
@@ -52,8 +55,8 @@ the property now carries the alternative labels "converted mana cost", "CMC" and
   - `smtg:PermanentFace` / `smtg:InstantOrSorceryFace`;
   - `smtg:primaryFace` (per-layout policy, with the rule reference, on each layout concept);
   - `smtg:PermanentCard`.
-- Agadeem's Awakening is correctly *not* a permanent card, while Bonecrusher Giant is (CQ-INF-02,
-  CQ-INF-03).
+- [[Agadeem's Awakening // Agadeem, the Undercrypt]] is correctly *not* a permanent card, while
+  [[Bonecrusher Giant // Stomp]] is (CQ-INF-02, CQ-INF-03).
 
 ## Gaps closed
 

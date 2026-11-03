@@ -138,3 +138,30 @@ export const TYPE_GROUPS = {
 // Permanent and instant/sorcery card types (CR 110.4).
 export const PERMANENT_TYPES = ['Artifact', 'Battle', 'Creature', 'Enchantment', 'Land', 'Planeswalker'];
 export const INSTANT_SORCERY_TYPES = ['Instant', 'Sorcery'];
+
+// Example cards per layout, written as documentation card references (syntax: tools/docs/lib/cardrefs.mjs).
+export const LAYOUT_EXAMPLES = {
+  normal: '[[Lightning Bolt]]',
+  split: '[[Fire // Ice]]; aftermath: [[Commit // Memory]]; fuse: [[Alive // Well]]',
+  flip: '[[Akki Lavarunner // Tok-Tok, Volcano Born]]',
+  transform: '[[Delver of Secrets // Insectile Aberration]]',
+  modal_dfc: "[[Agadeem's Awakening // Agadeem, the Undercrypt]]",
+  meld: '[[Bruna, the Fading Light]] + [[Gisela, the Broken Blade]] → [[Brisela, Voice of Nightmares]]',
+  leveler: '[[Student of Warfare]]',
+  class: '[[Druid Class]]',
+  case: '[[Case of the Uneaten Feast]]',
+  saga: '[[History of Benalia]]',
+  adventure: '[[Bonecrusher Giant // Stomp]]',
+  prepare: '[[Abigale, Poet Laureate // Heroic Stanza]]',
+  mutate: '[[Gemrazer]]',
+  prototype: '[[Arcane Proxy]]',
+  planar: '[[Llanowar]]',
+  scheme: '[[My Champion Stands Supreme]]',
+  vanguard: '[[Sisters of Stone Death Avatar]]',
+  token: '[[Eldrazi Scion]]',
+  double_faced_token: '[[Punchcard // Punchcard]]',
+  emblem: '[[Elspeth, Knight-Errant Emblem]]',
+  art_series: "[[Fell Beast's Shriek // Fell Beast's Shriek]]",
+  reversible_card: "[[Jinnie Fay, Jetmir's Second|SLD|1556]]",
+  front_card: '[[Surprise!]]',
+};

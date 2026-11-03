@@ -71,7 +71,8 @@ Scryfall or Commander Spellbook.
 - Card data comes courtesy of [Scryfall](https://scryfall.com) and the
   [Tagger](https://tagger.scryfall.com) community; combo data comes from
   [Commander Spellbook](https://commanderspellbook.com).
-- Source dumps and card images are not redistributed.
+- Source dumps and card images are not redistributed. Example card images in the docs are loaded
+  from Scryfall's image servers at view time.
 
 Read the full statement, the takedown contact and all third-party licences in
 **[DISCLAIMER.md](DISCLAIMER.md)**.

@@ -1,6 +1,6 @@
 # id: CQ-CB-01
 # title: Documented combos using a card
-# question: Which documented Commander Spellbook variants use Blood Artist, and which features are they documented to produce?
+# question: Which documented Commander Spellbook variants use [[Blood Artist]], and which features are they documented to produce?
 # kind: SPARQL
 # expects: nonempty
 # modules: combos, claims

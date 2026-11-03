@@ -44,15 +44,23 @@ flowchart TB
 
 | Level | Class | Example (from the fixtures) |
 |---|---|---|
-| Abstract identity | `OracleCard` | *Bonecrusher Giant // Stomp* (one Oracle ID) |
+| Abstract identity | `OracleCard` | [[Bonecrusher Giant // Stomp]] (one Oracle ID) |
 | Conceptual face | `CardFace` | face 0 *Bonecrusher Giant* (Creature — Giant), face 1 *Stomp* (Instant — Adventure) |
 | Printing | `CardPrinting` | one Scryfall card ID: set, collector number, language |
 | Printed face | `PrintedFace` | face as printed: side, orientation, printed name, flavor text, artwork, images |
-| Text expression | `OracleText`, `PrintedRulesText`, `FlavorText`, `PrintedName`, `FlavorName` … | the Italian *Fulmine* printed name of a Lightning Bolt printing |
+| Text expression | `OracleText`, `PrintedRulesText`, `FlavorText`, `PrintedName`, `FlavorName` … | the Italian *Fulmine* printed name of [[Lightning Bolt\|M10\|146\|it]] |
 | Visual work | `Illustration` | one `illustration_id`, shared by several printings |
 | Representation | `DigitalImage` | the `art_crop` URL of a printed face |
-| Claim | `TagAssignment`, `LegalityAssertion`, `PriceObservation`, `ComboVariant`, `SynergyHypothesis` … | Tagger: *burn any* applies to Lightning Bolt (very_strong), observed 2026-11-03 |
+| Claim | `TagAssignment`, `LegalityAssertion`, `PriceObservation`, `ComboVariant`, `SynergyHypothesis` … | Tagger: *burn any* applies to [[Lightning Bolt]] (very_strong), observed 2026-11-03 |
 | Provenance | `SourceSnapshot`, activities, agents | Scryfall `oracle_tags` snapshot, SHA-256 23d94bab… |
+
+## One card, many levels
+
+[[!Lightning Bolt|LEA|161]] [[!Lightning Bolt|M10|146|it]]
+
+Both images are printings of the same Oracle card, [[Lightning Bolt]]: different sets, languages,
+illustrations and printed text (*Il Fulmine infligge 3 danni a una creatura o a un giocatore
+bersaglio.* versus today's Oracle wording *deals 3 damage to any target*).
 
 ## Three separations Scryfall's `layout` flattens
 
@@ -63,7 +71,11 @@ flowchart TB
 3. **Modal semantics**: "modal double-faced card" is a layout; "choose one —" is an ability. v1
    classifies only the former.
 
-Each layout concept states its face configuration and object kind. The *Layout matrix* page in the
+[[!Bonecrusher Giant // Stomp]] [[!Agadeem's Awakening // Agadeem, the Undercrypt]] [[!Akki Lavarunner // Tok-Tok, Volcano Born]]
+
+Two faces on one side (an adventure), two faces on two sides (a modal double-faced card), and two
+faces on one side with one printed upside down (a flip card): three different configurations that a
+single "two faces" count would hide. Each layout concept states its face configuration and object kind. The *Layout matrix* page in the
 documentation shows them side by side, with the OWL class that the layout defines.
 
 ## OWL, SKOS and SHACL each do one job

@@ -1,6 +1,6 @@
 # id: CQ-TG-01
 # title: Weighted, attributed Oracle tags of a card
-# question: Which Oracle tags does Tagger assign to Blood Artist, with which weight, attitude and source snapshot?
+# question: Which Oracle tags does Tagger assign to [[Blood Artist]], with which weight, attitude and source snapshot?
 # kind: SPARQL
 # expects: nonempty
 # modules: tags, claims, provenance

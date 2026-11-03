@@ -1,6 +1,6 @@
 # id: CQ-ID-01
 # title: Localised printings of an Oracle card
-# question: Which printings of Lightning Bolt exist in Italian, and what name and rules text are printed on them?
+# question: Which printings of [[Lightning Bolt]] exist in Italian, and what name and rules text are printed on them?
 # kind: SPARQL
 # expects: nonempty
 # modules: cards, printings, text-art

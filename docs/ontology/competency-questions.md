@@ -6,25 +6,25 @@ Negative tests (kind `negative`) must return **no rows**.
 
 | ID | Question | Kind | Expected | Rows | Result |
 |---|---|---|---|---|---|
-| CQ-CB-01 | Which documented Commander Spellbook variants use Blood Artist, and which features are they documented to produce? | SPARQL | nonempty | 2 | pass |
+| CQ-CB-01 | Which documented Commander Spellbook variants use [[Blood Artist]], and which features are they documented to produce? | SPARQL | nonempty | 2 | pass |
 | CQ-CB-02 | Which variants require a template (any card matching a description) rather than only concrete cards? | SPARQL | nonempty | 1 | pass |
-| CQ-CB-03 | Which documented combo variants use a specific face of a multi-faced card? | SPARQL | nonempty | 1 | pass |
+| CQ-CB-03 | Which documented combo variants use a specific face of a multi-faced card (e.g. the flipped side of [[Rune-Tail, Kitsune Ascendant // Rune-Tail's Essence]])? | SPARQL | nonempty | 1 | pass |
 | CQ-CL-01 | Which Oracle cards have a colour identity that fits inside an Esper (WUB) commander's identity? | SPARQL | nonempty | 21 | pass |
 | CQ-FL-01 | Which Oracle cards are modal double-faced cards, and what are their faces (in order)? | SPARQL | nonempty | 4 | pass |
 | CQ-FL-02 | Is any Oracle card both an adventurer card and a modal double-faced card? | negative | empty | 0 | pass |
 | CQ-FL-03 | Which Oracle cards have two or more faces printed on the same physical side, and by which layout? | SPARQL | nonempty | 7 | pass |
 | CQ-FL-04 | Which printed faces appear on the back of a card, which Oracle face do they manifest, and what type does it have? | SPARQL | nonempty | 8 | pass |
 | CQ-FL-05 | Which cards meld into which meld result? | SPARQL | nonempty | 2 | pass |
-| CQ-FL-06 | Kolaghan's Command lets you choose modes — is it (wrongly) classified as a modal double-faced card? | negative | empty | 0 | pass |
+| CQ-FL-06 | [[Kolaghan's Command]] lets you choose modes — is it (wrongly) classified as a modal double-faced card? | negative | empty | 0 | pass |
 | CQ-FL-07 | Which Oracle cards have one face with a permanent card type and another face that is an instant or sorcery? | SPARQL | nonempty | 4 | pass |
-| CQ-ID-01 | Which printings of Lightning Bolt exist in Italian, and what name and rules text are printed on them? | SPARQL | nonempty | 1 | pass |
+| CQ-ID-01 | Which printings of [[Lightning Bolt]] exist in Italian, and what name and rules text are printed on them? | SPARQL | nonempty | 1 | pass |
 | CQ-ID-02 | Which distinct printings show the same illustration (same artwork, different printings)? | SPARQL | any | 12 | pass |
 | CQ-ID-03 | Is any resource typed both as Oracle card and as printing? | negative | empty | 0 | pass |
 | CQ-ID-04 | Does the instance data use owl:sameAs anywhere? | negative | empty | 0 | pass |
 | CQ-ID-05 | Which Oracle cards have both an ordinary printing and a reversible-card printing, and how many printed faces does each printing have? | SPARQL | nonempty | 4 | pass |
 | CQ-INF-01 | Which cards can create a token that can produce mana, which token, and which mana? | SPARQL | nonempty | 1 | pass |
 | CQ-INF-02 | For each multi-faced Oracle card, is it a permanent card in hand (CR 110.4a), and what is its primary face? | SPARQL | nonempty | 13 | pass |
-| CQ-INF-03 | Is Agadeem's Awakening // Agadeem, the Undercrypt inferred to be a permanent card? | negative | empty | 0 | pass |
+| CQ-INF-03 | Is [[Agadeem's Awakening // Agadeem, the Undercrypt]] inferred to be a permanent card? | negative | empty | 0 | pass |
 | CQ-KW-01 | On multi-faced cards, which face does each keyword belong to? | SPARQL | nonempty | 9 | pass |
 | CQ-MC-01 | Which faces have no mana cost at all, and which have a cost of exactly {0}? | SPARQL | nonempty | 18 | pass |
 | CQ-MV-01 | Which property should someone use when looking for "converted mana cost" (Scryfall: cmc)? | SPARQL | nonempty | 1 | pass |
@@ -33,12 +33,12 @@ Negative tests (kind `negative`) must return **no rows**.
 | CQ-PV-02 | What legality status did Scryfall report for Lightning Bolt in each of modern, legacy and standard, and in which snapshot? | SPARQL | nonempty | 3 | pass |
 | CQ-PV-03 | Which activity generated the inferred graph, with which rules? | SPARQL | nonempty | 7 | pass |
 | CQ-PV-04 | Does any inferred-only property (producesManaViaToken, createsToken) or inferred class appear in the asserted (default) graph? | negative | empty | 0 | pass |
-| CQ-RU-01 | Which rulings exist for Blood Artist, when were they published, and by whom? | SPARQL | nonempty | 1 | pass |
+| CQ-RU-01 | Which rulings exist for [[Blood Artist]], when were they published, and by whom? | SPARQL | nonempty | 1 | pass |
 | CQ-ST-01 | For the sets of Lightning Bolt's printings, what is the printed size, the number of cards and the parent set? | SPARQL | nonempty | 4 | pass |
 | CQ-SY-01 | Which faces in the examples have a hybrid or Phyrexian mana symbol in their cost? | SPARQL | any | 3 | pass |
-| CQ-TG-01 | Which Oracle tags does Tagger assign to Blood Artist, with which weight, attitude and source snapshot? | SPARQL | nonempty | 4 | pass |
+| CQ-TG-01 | Which Oracle tags does Tagger assign to [[Blood Artist]], with which weight, attitude and source snapshot? | SPARQL | nonempty | 4 | pass |
 | CQ-TG-02 | Which tags have more than one Tagger parent? | SPARQL | nonempty | 60 | pass |
-| CQ-TG-03 | Which ancestor tags are reachable from the tags directly assigned to Lightning Bolt, and through how many parent links? | SPARQL | nonempty | 11 | pass |
+| CQ-TG-03 | Which ancestor tags are reachable from the tags directly assigned to [[Lightning Bolt]], and through how many parent links? | SPARQL | nonempty | 11 | pass |
 | CQ-TG-04 | Which art tag assignments have weight weak or a free-text annotation, and on which illustration? | SPARQL | nonempty | 12 | pass |
 | CQ-TG-05 | Is any art tag assigned to something other than an illustration? | negative | empty | 0 | pass |
 | CQ-TX-01 | Which different flavour texts appear on printings of the same Oracle card? | SPARQL | nonempty | 29 | pass |
@@ -50,7 +50,7 @@ Negative tests (kind `negative`) must return **no rows**.
 
 ## CQ-CB-01 — Documented combos using a card
 
-**Question.** Which documented Commander Spellbook variants use Blood Artist, and which features are they documented to produce?
+**Question.** Which documented Commander Spellbook variants use [[Blood Artist]], and which features are they documented to produce?
 
 Modules: combos, claims · kind: SPARQL · expects: nonempty · **pass** (2 rows)
 
@@ -98,7 +98,7 @@ SELECT ?variant ?template ?query WHERE {
 
 ## CQ-CB-03 — Combos that use a specific face
 
-**Question.** Which documented combo variants use a specific face of a multi-faced card?
+**Question.** Which documented combo variants use a specific face of a multi-faced card (e.g. the flipped side of [[Rune-Tail, Kitsune Ascendant // Rune-Tail's Essence]])?
 
 Modules: combos · kind: SPARQL · expects: nonempty · **pass** (1 rows)
 
@@ -294,7 +294,7 @@ SELECT DISTINCT ?half ?result WHERE {
 
 ## CQ-FL-06 — Modal spell is not a modal double-faced card
 
-**Question.** Kolaghan's Command lets you choose modes — is it (wrongly) classified as a modal double-faced card?
+**Question.** [[Kolaghan's Command]] lets you choose modes — is it (wrongly) classified as a modal double-faced card?
 
 *Note:* 'modal' layout vs 'choose one' ability are different notions (AP-06).
 
@@ -343,7 +343,7 @@ SELECT DISTINCT ?card ?permanentFace ?spellFace WHERE {
 
 ## CQ-ID-01 — Localised printings of an Oracle card
 
-**Question.** Which printings of Lightning Bolt exist in Italian, and what name and rules text are printed on them?
+**Question.** Which printings of [[Lightning Bolt]] exist in Italian, and what name and rules text are printed on them?
 
 *Note:* Oracle card vs printing vs printed face vs text expression — four distinct levels in one join.
 
@@ -473,7 +473,7 @@ SELECT ?name ?printingLayout (COUNT(DISTINCT ?pf) AS ?printedFaces) ?printing WH
 
 **Question.** Which cards can create a token that can produce mana, which token, and which mana?
 
-*Note:* producesManaViaToken is the property chain createsToken ∘ producesManaSymbol, materialised by rule R-MANA-VIA-TOKEN into the inferred graph.
+*Note:* producesManaViaToken is the property chain createsToken ∘ producesManaSymbol, materialised by rule R-MANA-VIA-TOKEN into the inferred graph. Expected: [[Eldrazi Confluence]] → [[Eldrazi Scion]] → {C}.
 
 Modules: cards · kind: SPARQL · expects: nonempty · **pass** (1 rows)
 
@@ -497,7 +497,7 @@ SELECT ?card ?token ?mana WHERE {
 
 **Question.** For each multi-faced Oracle card, is it a permanent card in hand (CR 110.4a), and what is its primary face?
 
-*Note:* Bonecrusher Giant is (its primary face is a creature); Agadeem's Awakening is not (its front face is a sorcery), though its back face is a land.
+*Note:* [[Bonecrusher Giant // Stomp]] is (its primary face is a creature); [[Agadeem's Awakening // Agadeem, the Undercrypt]] is not (its front face is a sorcery), though its back face is a land.
 
 Modules: cards · kind: SPARQL · expects: nonempty · **pass** (13 rows)
 
@@ -529,7 +529,7 @@ SELECT ?card ?primaryFace ?permanentCard WHERE {
 
 ## CQ-INF-03 — Negative test — an MDFC with a sorcery front face is not a permanent card
 
-**Question.** Is Agadeem's Awakening // Agadeem, the Undercrypt inferred to be a permanent card?
+**Question.** Is [[Agadeem's Awakening // Agadeem, the Undercrypt]] inferred to be a permanent card?
 
 Modules: cards · kind: negative · expects: empty · **pass** (0 rows)
 
@@ -581,7 +581,7 @@ SELECT ?card ?face ?keyword WHERE {
 
 **Question.** Which faces have no mana cost at all, and which have a cost of exactly {0}?
 
-*Note:* absence of a cost triple would mean 'unknown'; both cases are explicit (AP-05).
+*Note:* absence of a cost triple would mean 'unknown'; both cases are explicit (AP-05): [[Ancestral Vision]] has no mana cost, [[Ornithopter]] costs {0}.
 
 Modules: cards · kind: SPARQL · expects: nonempty · **pass** (18 rows)
 
@@ -769,7 +769,7 @@ SELECT ?s ?p WHERE {
 
 ## CQ-RU-01 — Dated, attributed rulings
 
-**Question.** Which rulings exist for Blood Artist, when were they published, and by whom?
+**Question.** Which rulings exist for [[Blood Artist]], when were they published, and by whom?
 
 Modules: text-art, claims · kind: SPARQL · expects: nonempty · **pass** (1 rows)
 
@@ -840,7 +840,7 @@ SELECT ?face ?symbol ?kind WHERE {
 
 ## CQ-TG-01 — Weighted, attributed Oracle tags of a card
 
-**Question.** Which Oracle tags does Tagger assign to Blood Artist, with which weight, attitude and source snapshot?
+**Question.** Which Oracle tags does Tagger assign to [[Blood Artist]], with which weight, attitude and source snapshot?
 
 Modules: tags, claims, provenance · kind: SPARQL · expects: nonempty · **pass** (4 rows)
 
@@ -900,7 +900,7 @@ SELECT ?tag (COUNT(?parent) AS ?parents) (GROUP_CONCAT(?pl; separator=', ') AS ?
 
 ## CQ-TG-03 — Hierarchical tag expansion (explicit interpretation)
 
-**Question.** Which ancestor tags are reachable from the tags directly assigned to Lightning Bolt, and through how many parent links?
+**Question.** Which ancestor tags are reachable from the tags directly assigned to [[Lightning Bolt]], and through how many parent links?
 
 *Note:* this is the opt-in SKOS-view reading made explicit with a property path. The assigned leaf tag and its weight stay visible; ancestors are NOT claimed to be assigned (RQ-TG-1, DEC).
 

@@ -32,7 +32,7 @@ smtg:OracleCard a owl:Class ;
   rdfs:label "Oracle card"@en ;
   skos:definition "The abstract, game-relevant identity of a Magic card or other game object as maintained in Wizards' Oracle reference: what all printings of \"the same card\" share, independent of edition, language, artwork or physical form."@en ;
   skos:scopeNote """Corresponds to a Scryfall Oracle ID. An Oracle card is never a printing (disjoint with CardPrinting) and printings are not subclasses of it (AP-01). Oracle cards include tokens, emblems, planes, schemes and similar objects; their kind is given by smtg:hasObjectKind rather than by separate top-level classes, so that new kinds of objects do not break the hierarchy. Reversible printings carry two Oracle identities (one per face); see RQ-ID-1."""@en ;
-  skos:example "Lightning Bolt (Oracle ID 4457ed35-…) is one Oracle card with well over a hundred printings."@en ;
+  skos:example "[[Lightning Bolt]] (Oracle ID 4457ed35-…) is one Oracle card with well over a hundred printings, among them [[Lightning Bolt|LEA|161]] and the Italian [[Lightning Bolt|M10|146|it]]."@en ;
   smtg:sourceField "scryfall:oracle_id" , "scryfall:card_faces[].oracle_id" ;
   smtg:antiPattern "AP-01" , "AP-03" ;
   smtg:reviewQuestion "RQ-ID-1" , "RQ-ID-2" ;
@@ -44,7 +44,7 @@ smtg:CardFace a owl:Class ;
   rdfs:label "Card face"@en ;
   skos:definition "A conceptual face (or part) of an Oracle card: the unit that carries a name, mana cost, type line, Oracle text and combat/loyalty values. A single-faced card has exactly one face; a split, adventure, prepare, flip, transforming or modal double-faced card has two or more."@en ;
   skos:scopeNote """Every Oracle card has at least one face, including ordinary single-faced cards (RQ-CF-1). This uniform convention means that "cards with a creature face" is one query, whatever the layout. A face is conceptual: whether it sits on the front, the back or the same side as another face is a property of the printed face (smtg:PrintedFace), since that is a fact about the physical object."""@en ;
-  skos:example "Bonecrusher Giant // Stomp has two faces: the creature Bonecrusher Giant (face 0) and the Adventure instant Stomp (face 1); both are printed on the same physical side."@en ;
+  skos:example "[[Bonecrusher Giant // Stomp]] has two faces: the creature Bonecrusher Giant (face 0) and the Adventure instant Stomp (face 1); both are printed on the same physical side. [[!Bonecrusher Giant // Stomp]]"@en ;
   smtg:sourceField "scryfall:card_faces[]" ;
   smtg:reviewQuestion "RQ-CF-1" ;
   rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
@@ -55,6 +55,7 @@ smtg:ManaCost a owl:Class ;
   skos:scopeNote """Kept as its own resource so that the raw notation ({2}{W}{W}) is preserved verbatim while its symbol occurrences are explicit. A face with NO mana cost (e.g. Ancestral Vision, lands) has no ManaCost resource and states smtg:hasNoManaCost true; a cost of {0} (Ornithopter) is a ManaCost with one {0} symbol. Absence of a ManaCost triple alone means "unknown", not "no cost" (AP-05)."""@en ;
   smtg:sourceField "scryfall:mana_cost" , "scryfall:card_faces[].mana_cost" ;
   smtg:antiPattern "AP-05" ;
+  skos:example "[[Ornithopter]] costs {0} (a ManaCost with one {0} symbol); [[Ancestral Vision]] has no mana cost at all (hasNoManaCost true)."@en ;
   rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
 
 smtg:ManaSymbolOccurrence a owl:Class ;
@@ -74,6 +75,7 @@ smtg:PartRelationship a owl:Class ;
 
 smtg:ModalDoubleFacedCard a owl:Class ;
   rdfs:label "Modal double-faced card"@en ;
+  skos:example "[[!Agadeem's Awakening // Agadeem, the Undercrypt]]"@en ;
   owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:modal_dfc ] ) ] ;
   skos:definition "An Oracle card whose layout is modal double-faced: two faces on opposite physical sides, either of which may be cast or played (the player chooses which face)."@en ;
   skos:scopeNote """"Modal" here names a published layout. It must not be confused with a modal SPELL whose text says "choose one" (e.g. Kolaghan's Command, a normal single-faced card). v1 classifies the former by layout and does not interpret the latter (AP-06). Membership is entailed from smtg:hasLayout; because hasLayout is functional and layout concepts are pairwise different, this class is provably disjoint from every other layout-defined class."""@en ;
@@ -83,12 +85,14 @@ smtg:ModalDoubleFacedCard a owl:Class ;
 
 smtg:TransformingDoubleFacedCard a owl:Class ;
   rdfs:label "Transforming double-faced card"@en ;
+  skos:example "[[!Delver of Secrets // Insectile Aberration]]"@en ;
   owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:transform ] ) ] ;
   skos:definition "An Oracle card whose layout is transform: a front face that is cast or played and a back face that the permanent can transform into."@en ;
   rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
 
 smtg:AdventurerCard a owl:Class ;
   rdfs:label "Adventurer card"@en ;
+  skos:example "[[!Bonecrusher Giant // Stomp]]"@en ;
   owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:adventure ] ) ] ;
   skos:definition "An Oracle card with an Adventure: a single physical side carrying a permanent face and an inset Adventure spell face."@en ;
   skos:scopeNote "An adventurer card has two faces but one physical side; it is NOT a double-faced card (negative test NT-01)."@en ;
@@ -96,6 +100,7 @@ smtg:AdventurerCard a owl:Class ;
 
 smtg:PrepareCard a owl:Class ;
   rdfs:label "Prepare card"@en ;
+  skos:example "[[!Abigale, Poet Laureate // Heroic Stanza]]"@en ;
   owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:prepare ] ) ] ;
   skos:definition "An Oracle card with Scryfall layout prepare: a preparation card (CR 722) whose inset frame, the prepare spell, defines alternative characteristics; while the permanent is prepared, a copy with those characteristics may be cast."@en ;
   skos:scopeNote "A live example of a layout that appeared after the plan was written: absorbed as a new vocabulary concept without changing any class axiom (ADR-0004)."@en ;
@@ -104,12 +109,14 @@ smtg:PrepareCard a owl:Class ;
 
 smtg:SplitCard a owl:Class ;
   rdfs:label "Split card"@en ;
+  skos:example "[[!Fire // Ice]]"@en ;
   owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:split ] ) ] ;
   skos:definition "An Oracle card with two or more half-faces printed side by side on one physical side (including fuse and aftermath variants, which Scryfall also labels split)."@en ;
   rdfs:isDefinedBy smtgm:cards ; vs:term_status "stable-draft" .
 
 smtg:FlipCard a owl:Class ;
   rdfs:label "Flip card"@en ;
+  skos:example "[[!Akki Lavarunner // Tok-Tok, Volcano Born]]"@en ;
   owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:flip ] ) ] ;
   skos:definition "An Oracle card with two faces on the same physical side, one printed upside down, which the permanent can flip to."@en ;
   skos:scopeNote "A flip card is not a transforming double-faced card: both faces are on one side (negative test NT-02)."@en ;
@@ -117,6 +124,7 @@ smtg:FlipCard a owl:Class ;
 
 smtg:MeldCard a owl:Class ;
   rdfs:label "Meld card"@en ;
+  skos:example "[[Bruna, the Fading Light]] and [[Gisela, the Broken Blade]] meld into [[Brisela, Voice of Nightmares]]. [[!Brisela, Voice of Nightmares]]"@en ;
   owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:meld ] ) ] ;
   skos:definition "An Oracle card that takes part in a meld: either one of the two meld halves or the meld result printed across their backs. The pair and the result are three distinct Oracle cards linked by part relationships."@en ;
   smtg:reviewQuestion "RQ-CF-4" ;
@@ -450,6 +458,7 @@ smtg:PermanentCard a owl:Class ;
   rdfs:label "Permanent card"@en ;
   skos:definition "An Oracle card that is a \"permanent card\" in the sense of CR 110.4a (an artifact, battle, creature, enchantment, land or planeswalker card) in zones other than the battlefield and the stack: its primary face is a permanent face, or it is a split card one of whose halves is (the halves' characteristics combine, CR 709.4)."@en ;
   skos:scopeNote "A modal double-faced card such as Agadeem's Awakening // Agadeem, the Undercrypt is not a permanent card in hand (its front face is a sorcery), even though it can be played as a land via its back face."@en ;
+  skos:example "[[Bonecrusher Giant // Stomp]] is a permanent card (its primary face is a creature); [[Agadeem's Awakening // Agadeem, the Undercrypt]] is not; the split card [[Fire // Ice]] is not either (both halves are instants)."@en ;
   rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
 
 smtg:createsToken a owl:ObjectProperty ;
@@ -468,6 +477,7 @@ smtg:producesManaViaToken a owl:ObjectProperty ;
   skos:definition "Inferred: the card can create a token that can produce this kind of mana (e.g. Eldrazi Confluence → Eldrazi Scion → {C})."@en ;
   skos:scopeNote "Defined by the property chain createsToken ∘ producesManaSymbol and materialised by rule R-MANA-VIA-TOKEN into the inferred graph, never into source graphs. Conditional (the token must be created) and only as complete as Scryfall's token links and produced_mana."@en ;
   smtg:inferenceRule "R-MANA-VIA-TOKEN" ;
+  skos:example "[[Eldrazi Confluence]] can create [[Eldrazi Scion]] tokens, which can sacrifice themselves for {C}: so Eldrazi Confluence producesManaViaToken {C}. [[!Eldrazi Confluence]] [[!Eldrazi Scion]]"@en ;
   rdfs:domain smtg:OracleCard ; rdfs:range smtg:ManaSymbol ;
   rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
 

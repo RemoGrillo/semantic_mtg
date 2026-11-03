@@ -17,8 +17,8 @@ integrity · **R3** claims, provenance & extensibility.
 
 ### RQ-ID-1 — What is a "card" for reversible printings?
 *Draft:* A reversible printing (`printingLayout reversible_card`) `isPrintingOf` the Oracle card(s)
-named by the face-level `oracle_id`s, so one or two Oracle cards. In the fixtures both sides of Jinnie
-Fay and Ghalta carry the *same* Oracle ID, so the printing manifests one Oracle card twice (see
+named by the face-level `oracle_id`s, so one or two Oracle cards. In the fixtures both sides of
+[[Jinnie Fay, Jetmir's Second|SLD|1556]] and [[Ghalta, Primal Hunger|SLD|1124]] carry the *same* Oracle ID, so the printing manifests one Oracle card twice (see
 CQ-ID-05).
 *Alternatives:* (a) a `PackagingRelation` between two printings; (b) treat each side as a separate
 printing resource.
@@ -92,9 +92,9 @@ printings of the same Oracle card?
 published). They differ for `reversible_card` and possibly `art_series`.
 
 ### RQ-LY-3 — New layouts arriving without notice
-Observed in the 2026-11-03 snapshot and absent from the plan: **`prepare`** (Secrets of Strixhaven:
-a creature face plus a spell face; "while prepared you may cast a copy of its spell") and
-**`front_card`** (291 non-game memorabilia front cards). Both were absorbed as new vocabulary concepts
+Observed in the 2026-11-03 snapshot and absent from the plan: **`prepare`** (Secrets of Strixhaven,
+e.g. [[Abigale, Poet Laureate // Heroic Stanza]]: a creature face plus a spell face; "while prepared you may cast a copy of its spell") and
+**`front_card`** (291 non-game memorabilia front cards, e.g. [[Surprise!]]). Both were absorbed as new vocabulary concepts
 with status *unstable*, without changing any class axiom (ADR-0004).
 *Question:* should the generator fail the build on unknown codes (strict), or warn and continue as
 it does now?
@@ -170,7 +170,7 @@ example character tags such as *rashida scalebane*) can be mapped to depictions?
 view (`views/smtg-tags-skos-view.ttl`) makes it `skos:broader`, which brings
 `broaderTransitive` with it.
 *Evidence from the data:* for Oracle tags the link behaves like **implication between card sets**.
-Lightning Bolt's tag *burn any* has the parents *burn creature*, *burn player*,
+[[Lightning Bolt]]'s tag *burn any* has the parents *burn creature*, *burn player*,
 *burn planeswalker* and *burn battle*: anything that can burn any target can burn each of them
 (CQ-TG-03). For art tags it mixes kinds of link: a character tag such as *rashida scalebane* has
 five parents (species, role, plane …).

@@ -22,7 +22,8 @@ illustration is the image file.
 **Guarded by:** CQ-ID-02, SHACL `NoSameAs`.
 
 ### AP-04 — Same name ⇒ same card
-Matching entities by display name: card names, flavor names (Godzilla series), artist credit
+Matching entities by display name: card names, flavor names (the Godzilla series printing
+[[Void Beckoner|IKO|373]] reads *Spacegodzilla, Death Corona*), artist credit
 strings ("A & B"), tag labels (renamed upstream).
 **Instead:** match on stable source IDs. Names are labels; flavor names and credits are text
 expressions.
@@ -38,7 +39,9 @@ labelled as such.
 ### AP-06 — "Modal" means one thing
 Conflating a modal double-faced card (a layout) with a modal spell ("choose one —").
 **Instead:** `ModalDoubleFacedCard` is defined only by layout; modal abilities are not interpreted in v1.
-**Guarded by:** CQ-FL-06 (Kolaghan's Command is not an MDFC).
+**Guarded by:** CQ-FL-06 ([[Kolaghan's Command]] is not an MDFC).
+
+[[!Kolaghan's Command]] [[!Agadeem's Awakening // Agadeem, the Undercrypt]]
 
 ### AP-07 — Tags and vocabulary values as OWL classes
 Turning every tag or vocabulary code into an `owl:Class` ("Removal", "Mythic", "Foil"), which closes

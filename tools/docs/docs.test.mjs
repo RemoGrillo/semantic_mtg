@@ -127,7 +127,11 @@ test('build: produces a self-contained page with valid scripts and resolvable ro
     assert.ok(navs.length > 10);
     for (const n of navs) assert.ok(routes.has(n), `sidebar link #/${n} has a page`);
     assert.ok(html.includes('unofficial Fan Content permitted under the Fan Content Policy'));
-    assert.ok(!/src="https?:/.test(html.replace(/<pre[\s\S]*?<\/pre>/g, '')), 'no external resources');
+    // self-contained: no external scripts/styles/frames; the only external resources allowed are
+    // card images loaded from Scryfall's image servers ([[!Card Name]] references)
+    const external = [...html.replace(/<pre[\s\S]*?<\/pre>/g, '').matchAll(/<(\w+)[^>]*\ssrc="(https?:[^"]+)"/g)];
+    for (const [, tag, url] of external) assert.ok(tag === 'img' && /^https:\/\/cards\.scryfall\.io\//.test(url), `unexpected external resource <${tag} src="${url}">`);
+    assert.ok(!/<link[^>]+href="https?:/.test(html) && !/<script[^>]+src="https?:/.test(html), 'no external scripts or stylesheets');
   } finally {
     fs.rmSync(out, { recursive: true, force: true });
   }

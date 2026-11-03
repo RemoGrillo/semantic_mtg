@@ -1,6 +1,6 @@
 # id: CQ-TG-03
 # title: Hierarchical tag expansion (explicit interpretation)
-# question: Which ancestor tags are reachable from the tags directly assigned to Lightning Bolt, and through how many parent links?
+# question: Which ancestor tags are reachable from the tags directly assigned to [[Lightning Bolt]], and through how many parent links?
 # kind: SPARQL
 # expects: nonempty
 # modules: tags

@@ -1,6 +1,6 @@
 # id: CQ-FL-06
 # title: Modal spell is not a modal double-faced card
-# question: Kolaghan's Command lets you choose modes — is it (wrongly) classified as a modal double-faced card?
+# question: [[Kolaghan's Command]] lets you choose modes — is it (wrongly) classified as a modal double-faced card?
 # kind: negative
 # expects: empty
 # modules: cards
