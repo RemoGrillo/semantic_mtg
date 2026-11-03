@@ -163,14 +163,16 @@ only for transform, MDFC, art series and reversible printings; both root and fac
 adventure, prepare and flip. 558 normal printings have no illustration ID at all. CQ-ID-02 lists
 illustrations shared by several printings in the fixtures.
 
-### RQ-AR-2 — Art tags vs depictions
-*Draft:* art-tag assignments are thematic classification (belief, community-curated);
-`ArtworkDepiction` is reserved for claims that a *specific subject* is shown. Which art tags (for
-example character tags such as *rashida scalebane*) can be mapped to depictions?
-
-### RQ-AR-3 — Unknown inscriptions
-*Draft:* inscriptions are only recorded when transcribed by an identified source; absence means
-"not transcribed". Do we need an explicit `NoInscriptionObserved` claim for reviewed artworks?
+### RQ-AR-2 — Art attribution per face
+*Draft:* art is attributed on the **printed area** (one per face per printing), never on the
+illustration: 2,670 illustrations are reused by printings of other Oracle cards (RQ-AR-1). For
+split, flip, adventure and prepare cards the source identifies one illustration for the whole front
+and places it on the first face, but credits each half to its own artist in 88 printings
+([[Fire // Ice|APC|128]]: David Martin / Franz Vohwinkel), so the area carries `creditedArtist`
+and the illustration the contributions of both. A dedicated depiction claim (`ArtworkDepiction`)
+and transcribed inscriptions were removed: no source provides them; art tags remain the only
+statement about what an illustration shows. *Question:* should the one source illustration of a
+split card be shown on both areas rather than on the first only?
 
 ## R3 — Claims, provenance and extensibility (DEC discussion)
 

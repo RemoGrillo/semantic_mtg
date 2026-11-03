@@ -6,27 +6,31 @@ Negative tests (kind `negative`) must return **no rows**.
 
 | ID | Question | Kind | Expected | Rows | Result |
 |---|---|---|---|---|---|
+| CQ-AR-01 | On the Apocalypse printing of [[Fire // Ice]], which artist is credited for each half, and what does the source identify as its illustration? | SPARQL | count=2 | 2 | pass |
+| CQ-AR-02 | Which printings print the same card face on two sides, and with which illustrations? | SPARQL | nonempty | 2 | pass |
+| CQ-AR-03 | Which printed sides carry two printed areas (two card faces on the same side), and which faces are they? | SPARQL | nonempty | 11 | pass |
+| CQ-AR-04 | Which printed sides have a watermark in one printed area and none in the other? | SPARQL | nonempty | 1 | pass |
 | CQ-CB-01 | Which documented Commander Spellbook variants use [[Blood Artist]], and which features are they documented to produce? | SPARQL | nonempty | 2 | pass |
 | CQ-CB-02 | Which variants require a template (any card matching a description) rather than only concrete cards? | SPARQL | nonempty | 1 | pass |
 | CQ-CB-03 | Which documented combo variants use a specific face of a multi-faced card (e.g. the flipped side of [[Rune-Tail, Kitsune Ascendant // Rune-Tail's Essence]])? | SPARQL | nonempty | 1 | pass |
-| CQ-CL-01 | Which Oracle cards have a colour identity that fits inside an Esper (WUB) commander's identity? | SPARQL | nonempty | 21 | pass |
+| CQ-CL-01 | Which Oracle cards have a colour identity that fits inside an Esper (WUB) commander's identity? | SPARQL | nonempty | 25 | pass |
 | CQ-FL-01 | Which Oracle cards are modal double-faced cards, and what are their faces (in order)? | SPARQL | nonempty | 4 | pass |
 | CQ-FL-02 | Is any Oracle card both an adventurer card and a modal double-faced card? | negative | empty | 0 | pass |
-| CQ-FL-03 | Which Oracle cards have two or more faces printed on the same physical side, and by which layout? | SPARQL | nonempty | 7 | pass |
-| CQ-FL-04 | Which printed faces appear on the back of a card, which Oracle face do they manifest, and what type does it have? | SPARQL | nonempty | 8 | pass |
+| CQ-FL-03 | Which Oracle cards have two or more faces printed on the same physical side, and by which layout? | SPARQL | nonempty | 8 | pass |
+| CQ-FL-04 | Which card faces are printed on the back side of a card, and what type do they have? | SPARQL | nonempty | 8 | pass |
 | CQ-FL-05 | Which cards meld into which meld result? | SPARQL | nonempty | 2 | pass |
 | CQ-FL-06 | [[Kolaghan's Command]] lets you choose modes — is it (wrongly) classified as a modal double-faced card? | negative | empty | 0 | pass |
-| CQ-FL-07 | Which Oracle cards have one face with a permanent card type and another face that is an instant or sorcery? | SPARQL | nonempty | 4 | pass |
+| CQ-FL-07 | Which Oracle cards have one face with a permanent card type and another face that is an instant or sorcery? | SPARQL | nonempty | 5 | pass |
 | CQ-ID-01 | Which printings of [[Lightning Bolt]] exist in Italian, and what name and rules text are printed on them? | SPARQL | nonempty | 1 | pass |
 | CQ-ID-02 | Which distinct printings show the same illustration (same artwork, different printings)? | SPARQL | any | 12 | pass |
 | CQ-ID-03 | Is any resource typed both as Oracle card and as printing? | negative | empty | 0 | pass |
 | CQ-ID-04 | Does the instance data use owl:sameAs anywhere? | negative | empty | 0 | pass |
-| CQ-ID-05 | Which Oracle cards have both an ordinary printing and a reversible-card printing, and how many printed faces does each printing have? | SPARQL | nonempty | 4 | pass |
+| CQ-ID-05 | Which Oracle cards have both an ordinary printing and a reversible-card printing, and how many printed sides does each printing have? | SPARQL | nonempty | 4 | pass |
 | CQ-INF-01 | Which cards can create a token that can produce mana, which token, and which mana? | SPARQL | nonempty | 1 | pass |
-| CQ-INF-02 | For each multi-faced Oracle card, is it a permanent card in hand (CR 110.4a), and what is its primary face? | SPARQL | nonempty | 13 | pass |
+| CQ-INF-02 | For each multi-faced Oracle card, is it a permanent card in hand (CR 110.4a), and what is its primary face? | SPARQL | nonempty | 14 | pass |
 | CQ-INF-03 | Is [[Agadeem's Awakening // Agadeem, the Undercrypt]] inferred to be a permanent card? | negative | empty | 0 | pass |
 | CQ-KW-01 | On multi-faced cards, which face does each keyword belong to? | SPARQL | nonempty | 9 | pass |
-| CQ-MC-01 | Which faces have no mana cost at all, and which have a cost of exactly {0}? | SPARQL | nonempty | 18 | pass |
+| CQ-MC-01 | Which faces have no mana cost at all, and which have a cost of exactly {0}? | SPARQL | nonempty | 19 | pass |
 | CQ-MV-01 | Which property should someone use when looking for "converted mana cost" (Scryfall: cmc)? | SPARQL | nonempty | 1 | pass |
 | CQ-PT-01 | Which faces have a power or toughness that is not a plain number (e.g. * or 1+*)? | SPARQL | nonempty | 1 | pass |
 | CQ-PV-01 | How many claims of each kind exist, with which epistemic status, from which source dataset? | SPARQL | nonempty | 10 | pass |
@@ -35,17 +39,141 @@ Negative tests (kind `negative`) must return **no rows**.
 | CQ-PV-04 | Does any inferred-only property (producesManaViaToken, createsToken) or inferred class appear in the asserted (default) graph? | negative | empty | 0 | pass |
 | CQ-RU-01 | Which rulings exist for [[Blood Artist]], when were they published, and by whom? | SPARQL | nonempty | 1 | pass |
 | CQ-ST-01 | For the sets of Lightning Bolt's printings, what is the printed size, the number of cards and the parent set? | SPARQL | nonempty | 4 | pass |
-| CQ-SY-01 | Which faces in the examples have a hybrid or Phyrexian mana symbol in their cost? | SPARQL | any | 3 | pass |
+| CQ-SY-01 | Which faces in the examples have a hybrid or Phyrexian mana symbol in their cost? | SPARQL | any | 4 | pass |
 | CQ-TG-01 | Which Oracle tags does Tagger assign to [[Blood Artist]], with which weight, attitude and source snapshot? | SPARQL | nonempty | 4 | pass |
 | CQ-TG-02 | Which tags have more than one Tagger parent? | SPARQL | nonempty | 60 | pass |
 | CQ-TG-03 | Which ancestor tags are reachable from the tags directly assigned to [[Lightning Bolt]], and through how many parent links? | SPARQL | nonempty | 11 | pass |
 | CQ-TG-04 | Which art tag assignments have weight weak or a free-text annotation, and on which illustration? | SPARQL | nonempty | 12 | pass |
 | CQ-TG-05 | Is any art tag assigned to something other than an illustration? | negative | empty | 0 | pass |
-| CQ-TX-01 | Which different flavour texts appear on printings of the same Oracle card? | SPARQL | nonempty | 29 | pass |
+| CQ-TX-01 | Which different flavour texts appear on printings of the same Oracle card? | SPARQL | nonempty | 30 | pass |
 | CQ-TX-02 | Which printings carry a flavour name different from the Oracle name? | SPARQL | nonempty | 1 | pass |
-| CQ-TY-01 | For every creature face, which subtypes does it have and from which type-qualified scheme? | SPARQL | nonempty | 43 | pass |
+| CQ-TY-01 | For every creature face, which subtypes does it have and from which type-qualified scheme? | SPARQL | nonempty | 49 | pass |
 | CQ-TY-02 | Which subtype words occur in more than one type-qualified scheme (same label, different concepts)? | SPARQL | any | 0 | pass |
-| CQ-TY-03 | Which faces are historic (legendary, artifact or Saga), and through which member of the group? | SPARQL | nonempty | 17 | pass |
+| CQ-TY-03 | Which faces are historic (legendary, artifact or Saga), and through which member of the group? | SPARQL | nonempty | 18 | pass |
+
+
+## CQ-AR-01 — Which artist painted which half
+
+**Question.** On the Apocalypse printing of [[Fire // Ice]], which artist is credited for each half, and what does the source identify as its illustration?
+
+[[!Fire // Ice]]
+
+*Note:* The source identifies one illustration for the whole front (on the first face) but credits each half to its own artist: the credit is a fact of the printed area, the contributions a fact of the illustration (RQ-AR-1).
+
+Modules: printings, text-art · kind: SPARQL · expects: count=2 · **pass** (2 rows)
+
+```sparql
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?half ?artist ?illustration (GROUP_CONCAT(DISTINCT ?contributor; separator=" & ") AS ?illustrationContributors) WHERE {
+  ?printing smtg:isPrintingOf/smtg:name "Fire // Ice" ; smtg:inSet/smtg:setCode "apc" ; smtg:hasSide ?side .
+  ?side smtg:hasPrintedArea ?area .
+  ?area smtg:printsFace/smtg:name ?half ; smtg:creditedArtist/rdfs:label ?artist .
+  OPTIONAL { ?area smtg:showsIllustration ?illustration . ?illustration smtg:hasContribution/smtg:contributor/rdfs:label ?contributor }
+} GROUP BY ?half ?artist ?illustration ORDER BY ?half
+```
+
+| half | artist | illustration | illustrationContributors |
+|---|---|---|---|
+| Fire | David Martin | smtgid:illustration/c890cb20-7e04-4ad0-96a6-8854cd409c14 | David Martin & Franz Vohwinkel |
+| Ice | Franz Vohwinkel |  |  |
+
+
+## CQ-AR-02 — Same face printed on both sides with different art
+
+**Question.** Which printings print the same card face on two sides, and with which illustrations?
+
+*Note:* Reversible printings ([[Ghalta, Primal Hunger|SLD|1124]]): one Oracle card, one card face, two printed sides, two illustrations (RQ-ID-1).
+
+Modules: printings, text-art · kind: SPARQL · expects: nonempty · **pass** (2 rows)
+
+```sparql
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?printing ?faceName ?side1 ?illustration1 ?side2 ?illustration2 WHERE {
+  ?printing smtg:hasSide ?side1 , ?side2 . FILTER (STR(?side1) < STR(?side2))
+  ?side1 smtg:hasPrintedArea ?a1 . ?a1 smtg:printsFace ?face ; smtg:showsIllustration ?illustration1 .
+  ?side2 smtg:hasPrintedArea ?a2 . ?a2 smtg:printsFace ?face ; smtg:showsIllustration ?illustration2 .
+  ?face smtg:name ?faceName .
+} ORDER BY ?printing
+```
+
+| printing | faceName | side1 | illustration1 | side2 | illustration2 |
+|---|---|---|---|---|---|
+| smtgid:printing/018830b2-dff9-45f3-9cc2-dc5b2eec0e54 | Jinnie Fay, Jetmir's Second | smtgid:printing/018830b2-dff9-45f3-9cc2-dc5b2eec0e54/side/0 | smtgid:illustration/6b8fb6bb-c0d1-4715-a4df-e4f4695c6130 | smtgid:printing/018830b2-dff9-45f3-9cc2-dc5b2eec0e54/side/1 | smtgid:illustration/faebc2ac-9b6e-477d-869e-cee314d26cc0 |
+| smtgid:printing/0489be0d-2117-46a8-97ab-31fe480685e2 | Ghalta, Primal Hunger | smtgid:printing/0489be0d-2117-46a8-97ab-31fe480685e2/side/0 | smtgid:illustration/b486d3c5-41ba-4236-a726-4b9c81de3b00 | smtgid:printing/0489be0d-2117-46a8-97ab-31fe480685e2/side/1 | smtgid:illustration/8642d280-5c69-4a32-9ea8-4980d002d63c |
+
+
+## CQ-AR-03 — Two faces on one side
+
+**Question.** Which printed sides carry two printed areas (two card faces on the same side), and which faces are they?
+
+*Note:* Split, flip, adventure and prepare cards; the side has one image, each area its own printed text and artist credit.
+
+Modules: printings, cards · kind: SPARQL · expects: nonempty · **pass** (11 rows)
+
+```sparql
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?printing ?layout (GROUP_CONCAT(?faceName; separator=" / ") AS ?facesOnSide) WHERE {
+  { SELECT ?printing ?layout ?side ?faceName WHERE {
+      ?printing smtg:printingLayout ?layout ; smtg:hasSide ?side .
+      ?side smtg:hasPrintedArea ?area . ?area smtg:printsFace ?face . ?face smtg:name ?faceName ; smtg:faceIndex ?i .
+    } ORDER BY ?printing ?i }
+} GROUP BY ?printing ?layout ?side HAVING (COUNT(?faceName) > 1) ORDER BY ?layout ?printing
+```
+
+| printing | layout | facesOnSide |
+|---|---|---|
+| smtgid:printing/09fd2d9c-1793-4beb-a3fb-7a869f660cd4 | smtgv:layout/adventure | Bonecrusher Giant / Stomp |
+| smtgid:printing/b5b71cd2-de35-451f-b16e-2e3936169407 | smtgv:layout/adventure | Bonecrusher Giant / Stomp |
+| smtgid:printing/42ba0e13-d20f-47f9-9c86-2b0b13c39ada | smtgv:layout/flip | Rune-Tail, Kitsune Ascendant / Rune-Tail's Essence |
+| smtgid:printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8 | smtgv:layout/flip | Akki Lavarunner / Tok-Tok, Volcano Born |
+| smtgid:printing/77285d12-e658-4eb3-ba13-ff202afab9c8 | smtgv:layout/prepare | Abigale, Poet Laureate / Heroic Stanza |
+| smtgid:printing/00320106-ce51-46a9-b0f9-79b3baf4e505 | smtgv:layout/split | Consecrate / Consume |
+| smtgid:printing/06c9e2e8-2b4c-4087-9141-6aa25a506626 | smtgv:layout/split | Commit / Memory |
+| smtgid:printing/18303862-4726-4136-814f-157aa7006579 | smtgv:layout/split | Fire / Ice |
+| smtgid:printing/855af9a8-31fc-4290-8204-04ee026f8853 | smtgv:layout/split | Commit / Memory |
+| smtgid:printing/db84415e-048a-4cfc-9121-5ae17a412198 | smtgv:layout/split | Alive / Well |
+
+
+## CQ-AR-04 — Watermark on one half only
+
+**Question.** Which printed sides have a watermark in one printed area and none in the other?
+
+*Note:* 240 such printings in the 2026-11-03 snapshot (guild-kit split cards, for instance): a watermark is a fact of the printed area, not of the printing.
+
+Modules: printings · kind: SPARQL · expects: nonempty · **pass** (1 rows)
+
+```sparql
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?printing ?watermarked ?watermark ?plain WHERE {
+  ?printing smtg:hasSide ?side . ?side smtg:hasPrintedArea ?a1 , ?a2 . FILTER (?a1 != ?a2)
+  ?a1 smtg:hasWatermark ?watermark ; smtg:printsFace/smtg:name ?watermarked .
+  ?a2 smtg:printsFace/smtg:name ?plain . FILTER NOT EXISTS { ?a2 smtg:hasWatermark ?w }
+} ORDER BY ?printing
+```
+
+| printing | watermarked | watermark | plain |
+|---|---|---|---|
+| smtgid:printing/00320106-ce51-46a9-b0f9-79b3baf4e505 | Consecrate | smtgv:watermark/orzhov | Consume |
 
 
 ## CQ-CB-01 — Documented combos using a card
@@ -128,7 +256,7 @@ SELECT ?variant ?card ?face WHERE {
 
 *Note:* subCombinationOf is a true partial order, safe to traverse (contrast with Tagger parents).
 
-Modules: cards, taxonomies · kind: SPARQL · expects: nonempty · **pass** (21 rows)
+Modules: cards, taxonomies · kind: SPARQL · expects: nonempty · **pass** (25 rows)
 
 ```sparql
 PREFIX smtg: <https://w3id.org/smtg/ontology#>
@@ -214,7 +342,7 @@ SELECT ?card WHERE {
 
 *Note:* uses the layout → face-configuration mapping instead of memorising layout codes.
 
-Modules: cards, taxonomies · kind: SPARQL · expects: nonempty · **pass** (7 rows)
+Modules: cards, taxonomies · kind: SPARQL · expects: nonempty · **pass** (8 rows)
 
 ```sparql
 PREFIX smtg: <https://w3id.org/smtg/ontology#>
@@ -237,12 +365,13 @@ SELECT ?name ?layoutLabel (COUNT(?f) AS ?faces) WHERE {
 | Abigale, Poet Laureate // Heroic Stanza | Prepare | 2 |
 | Alive // Well | Split | 2 |
 | Commit // Memory | Split | 2 |
+| Consecrate // Consume | Split | 2 |
 | Fire // Ice | Split | 2 |
 
 
 ## CQ-FL-04 — Back faces
 
-**Question.** Which printed faces appear on the back of a card, which Oracle face do they manifest, and what type does it have?
+**Question.** Which card faces are printed on the back side of a card, and what type do they have?
 
 Modules: printings, cards · kind: SPARQL · expects: nonempty · **pass** (8 rows)
 
@@ -254,8 +383,8 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX v: <https://w3id.org/smtg/vocab/>
 SELECT DISTINCT ?printingLayout ?faceName ?typeLine WHERE {
-  ?printing smtg:printingLayout ?printingLayout ; smtg:hasPrintedFace ?pf .
-  ?pf smtg:onSide <https://w3id.org/smtg/vocab/side/back> ; smtg:manifestsFace ?f .
+  ?printing smtg:printingLayout ?printingLayout ; smtg:hasSide ?side .
+  ?side smtg:sidePosition <https://w3id.org/smtg/vocab/side/back> ; smtg:hasPrintedArea/smtg:printsFace ?f .
   ?f smtg:name ?faceName . OPTIONAL { ?f smtg:typeLine ?typeLine }
 } ORDER BY ?printingLayout ?faceName
 ```
@@ -325,7 +454,7 @@ SELECT ?card WHERE {
 
 *Note:* why permanence is modelled per face (287 such Oracle cards in the 2026-11-03 data).
 
-Modules: cards, taxonomies · kind: SPARQL · expects: nonempty · **pass** (4 rows)
+Modules: cards, taxonomies · kind: SPARQL · expects: nonempty · **pass** (5 rows)
 
 ```sparql
 PREFIX smtg: <https://w3id.org/smtg/ontology#>
@@ -345,6 +474,7 @@ SELECT DISTINCT ?card ?permanentFace ?spellFace WHERE {
 | Agadeem's Awakening // Agadeem, the Undercrypt | Agadeem, the Undercrypt | Agadeem's Awakening |
 | Bonecrusher Giant // Stomp | Bonecrusher Giant | Stomp |
 | Invasion of Alara // Awaken the Maelstrom | Invasion of Alara | Awaken the Maelstrom |
+| Lightning Colt | Lightning Colt | Lightning Colt |
 
 
 ## CQ-ID-01 — Localised printings of an Oracle card
@@ -367,9 +497,9 @@ PREFIX v: <https://w3id.org/smtg/vocab/>
 SELECT ?printing ?set ?printedName ?printedText WHERE {
   ?card a smtg:OracleCard ; smtg:name "Lightning Bolt" .
   ?printing smtg:isPrintingOf ?card ; smtg:inLanguage <https://w3id.org/smtg/vocab/language/it> ;
-            smtg:inSet/smtg:setCode ?set ; smtg:hasPrintedFace ?pf .
-  ?pf smtg:hasPrintedText ?n . ?n a smtg:PrintedName ; smtg:textValue ?printedName .
-  OPTIONAL { ?pf smtg:hasPrintedText ?t . ?t a smtg:PrintedRulesText ; smtg:textValue ?printedText . }
+            smtg:inSet/smtg:setCode ?set ; smtg:hasSide/smtg:hasPrintedArea ?area .
+  ?area smtg:hasPrintedText ?n . ?n a smtg:PrintedName ; smtg:textValue ?printedName .
+  OPTIONAL { ?area smtg:hasPrintedText ?t . ?t a smtg:PrintedRulesText ; smtg:textValue ?printedText . }
 }
 ```
 
@@ -394,8 +524,8 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX v: <https://w3id.org/smtg/vocab/>
 SELECT ?illustration (COUNT(DISTINCT ?printing) AS ?printings) (SAMPLE(?name) AS ?card) WHERE {
-  ?printing smtg:hasPrintedFace ?pf ; smtg:isPrintingOf/smtg:name ?name .
-  ?pf smtg:showsIllustration ?illustration .
+  ?printing smtg:hasSide/smtg:hasPrintedArea ?area ; smtg:isPrintingOf/smtg:name ?name .
+  ?area smtg:showsIllustration ?illustration .
 } GROUP BY ?illustration HAVING (COUNT(DISTINCT ?printing) > 1) ORDER BY DESC(?printings)
 ```
 
@@ -449,7 +579,7 @@ SELECT ?a ?b WHERE { ?a owl:sameAs ?b . }
 
 ## CQ-ID-05 — One Oracle card, normal and reversible printings
 
-**Question.** Which Oracle cards have both an ordinary printing and a reversible-card printing, and how many printed faces does each printing have?
+**Question.** Which Oracle cards have both an ordinary printing and a reversible-card printing, and how many printed sides does each printing have?
 
 *Note:* reversible_card is a printing layout; the Oracle card keeps its game layout (RQ-LY-2).
 
@@ -462,14 +592,14 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX v: <https://w3id.org/smtg/vocab/>
-SELECT ?name ?printingLayout (COUNT(DISTINCT ?pf) AS ?printedFaces) ?printing WHERE {
+SELECT ?name ?printingLayout (COUNT(DISTINCT ?side) AS ?printedSides) ?printing WHERE {
   ?card smtg:name ?name ; smtg:hasPrinting|^smtg:isPrintingOf ?printing .
-  ?printing smtg:printingLayout ?printingLayout ; smtg:hasPrintedFace ?pf .
+  ?printing smtg:printingLayout ?printingLayout ; smtg:hasSide ?side .
   FILTER EXISTS { ?card ^smtg:isPrintingOf/smtg:printingLayout <https://w3id.org/smtg/vocab/layout/reversible_card> }
 } GROUP BY ?name ?printingLayout ?printing ORDER BY ?name ?printingLayout
 ```
 
-| name | printingLayout | printedFaces | printing |
+| name | printingLayout | printedSides | printing |
 |---|---|---|---|
 | Ghalta, Primal Hunger | smtgv:layout/normal | 1 | smtgid:printing/6a9c39e4-a8cf-42dd-8d0e-45634b335546 |
 | Ghalta, Primal Hunger | smtgv:layout/reversible_card | 2 | smtgid:printing/0489be0d-2117-46a8-97ab-31fe480685e2 |
@@ -507,7 +637,7 @@ SELECT ?card ?token ?mana WHERE {
 
 *Note:* [[Bonecrusher Giant // Stomp]] is (its primary face is a creature); [[Agadeem's Awakening // Agadeem, the Undercrypt]] is not (its front face is a sorcery), though its back face is a land.
 
-Modules: cards · kind: SPARQL · expects: nonempty · **pass** (13 rows)
+Modules: cards · kind: SPARQL · expects: nonempty · **pass** (14 rows)
 
 ```sparql
 PREFIX smtg: <https://w3id.org/smtg/ontology#>
@@ -529,10 +659,10 @@ SELECT ?card ?primaryFace ?permanentCard WHERE {
 | Alive // Well |  | false |
 | Bonecrusher Giant // Stomp | Bonecrusher Giant | true |
 | Commit // Memory |  | false |
+| Consecrate // Consume |  | false |
 | Delver of Secrets // Insectile Aberration | Delver of Secrets | true |
 | Fell Beast's Shriek // Fell Beast's Shriek |  | false |
 | Fire // Ice |  | false |
-| Invasion of Alara // Awaken the Maelstrom | Invasion of Alara | true |
 
 
 ## CQ-INF-03 — Negative test — an MDFC with a sorcery front face is not a permanent card
@@ -593,7 +723,7 @@ SELECT ?card ?face ?keyword WHERE {
 
 *Note:* absence of a cost triple would mean 'unknown'; both cases are explicit (AP-05): [[Ancestral Vision]] has no mana cost, [[Ornithopter]] costs {0}.
 
-Modules: cards · kind: SPARQL · expects: nonempty · **pass** (18 rows)
+Modules: cards · kind: SPARQL · expects: nonempty · **pass** (19 rows)
 
 ```sparql
 PREFIX smtg: <https://w3id.org/smtg/ontology#>
@@ -692,16 +822,16 @@ SELECT ?claimClass ?status ?dataset (COUNT(?c) AS ?n) WHERE {
 
 | claimClass | status | dataset | n |
 |---|---|---|---|
-| Legality assertion | authoritative-report | Scryfall bulk: oracle_cards | 759 |
+| Legality assertion | authoritative-report | Scryfall bulk: oracle_cards | 736 |
+| Legality assertion | authoritative-report | Scryfall bulk: all_cards | 460 |
 | Art tag assignment | community-curated | Scryfall bulk: art_tags (Tagger) | 322 |
-| Legality assertion | authoritative-report | Scryfall bulk: all_cards | 230 |
-| Ruling | authoritative-report | Scryfall bulk: rulings | 193 |
-| Oracle tag assignment | community-curated | Scryfall bulk: oracle_tags (Tagger) | 157 |
-| Price observation | statistical-observation | Scryfall bulk: oracle_cards | 156 |
-| Price observation | statistical-observation | Scryfall bulk: all_cards | 136 |
-| Rank observation | statistical-observation | Scryfall bulk: oracle_cards | 32 |
+| Ruling | authoritative-report | Scryfall bulk: rulings | 245 |
+| Price observation | statistical-observation | Scryfall bulk: oracle_cards | 193 |
+| Price observation | statistical-observation | Scryfall bulk: all_cards | 178 |
+| Oracle tag assignment | community-curated | Scryfall bulk: oracle_tags (Tagger) | 159 |
+| Rank observation | statistical-observation | Scryfall bulk: oracle_cards | 31 |
+| Rank observation | statistical-observation | Scryfall bulk: all_cards | 12 |
 | Combo variant | community-curated | Commander Spellbook bulk: variants | 6 |
-| Rank observation | statistical-observation | Scryfall bulk: all_cards | 4 |
 
 
 ## CQ-PV-02 — Time-scoped legality
@@ -749,13 +879,13 @@ SELECT ?activity ?rule WHERE {
 
 | activity | rule |
 |---|---|
-| Rule materialisation (7 rules, 144 triples) | Faces with a permanent card type |
-| Rule materialisation (7 rules, 144 triples) | Faces with the instant or sorcery card type |
-| Rule materialisation (7 rules, 144 triples) | Hybrid and Phyrexian mana symbols |
-| Rule materialisation (7 rules, 144 triples) | Layout-defined classes (ModalDoubleFacedCard, AdventurerCard, …) |
-| Rule materialisation (7 rules, 144 triples) | Mana a card can produce through a token it creates |
-| Rule materialisation (7 rules, 144 triples) | Permanent cards (CR 110.4a): primary face is a permanent face, or a split card with a permanent half |
-| Rule materialisation (7 rules, 144 triples) | Tokens a card can create (projection of all_parts) |
+| Rule materialisation (7 rules, 162 triples) | Faces with a permanent card type |
+| Rule materialisation (7 rules, 162 triples) | Faces with the instant or sorcery card type |
+| Rule materialisation (7 rules, 162 triples) | Hybrid and Phyrexian mana symbols |
+| Rule materialisation (7 rules, 162 triples) | Layout-defined classes (ModalDoubleFacedCard, AdventurerCard, …) |
+| Rule materialisation (7 rules, 162 triples) | Mana a card can produce through a token it creates |
+| Rule materialisation (7 rules, 162 triples) | Permanent cards (CR 110.4a): primary face is a permanent face, or a split card with a permanent half |
+| Rule materialisation (7 rules, 162 triples) | Tokens a card can create (projection of all_parts) |
 
 
 ## CQ-PV-04 — Negative test — inferred triples stay out of the asserted graph
@@ -830,7 +960,7 @@ SELECT DISTINCT ?set ?code ?printedSize ?cards ?parent WHERE {
 
 **Question.** Which faces in the examples have a hybrid or Phyrexian mana symbol in their cost?
 
-Modules: cards, taxonomies · kind: SPARQL · expects: any · **pass** (3 rows)
+Modules: cards, taxonomies · kind: SPARQL · expects: any · **pass** (4 rows)
 
 ```sparql
 PREFIX smtg: <https://w3id.org/smtg/ontology#>
@@ -847,6 +977,7 @@ SELECT ?face ?symbol ?kind WHERE {
 |---|---|---|
 | Jinnie Fay, Jetmir's Second | {G/W} | hybrid |
 | Jinnie Fay, Jetmir's Second | {R/G} | hybrid |
+| Consecrate | {W/B} | hybrid |
 | Heroic Stanza | {W/B} | hybrid |
 
 
@@ -1007,7 +1138,7 @@ SELECT ?a ?target WHERE {
 
 **Question.** Which different flavour texts appear on printings of the same Oracle card?
 
-Modules: text-art, printings · kind: SPARQL · expects: nonempty · **pass** (29 rows)
+Modules: text-art, printings · kind: SPARQL · expects: nonempty · **pass** (30 rows)
 
 ```sparql
 PREFIX smtg: <https://w3id.org/smtg/ontology#>
@@ -1017,7 +1148,7 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX v: <https://w3id.org/smtg/vocab/>
 SELECT ?name ?set ?flavor WHERE {
-  ?printing smtg:isPrintingOf/smtg:name ?name ; smtg:inSet/smtg:setCode ?set ; smtg:hasPrintedFace/smtg:hasPrintedText ?ft .
+  ?printing smtg:isPrintingOf/smtg:name ?name ; smtg:inSet/smtg:setCode ?set ; smtg:hasSide/smtg:hasPrintedArea/smtg:hasPrintedText ?ft .
   ?ft a smtg:FlavorText ; smtg:textValue ?flavor .
 } ORDER BY ?name ?set
 ```
@@ -1050,7 +1181,7 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX v: <https://w3id.org/smtg/vocab/>
 SELECT ?oracleName ?flavorName ?set WHERE {
-  ?printing smtg:isPrintingOf/smtg:name ?oracleName ; smtg:inSet/smtg:setCode ?set ; smtg:hasPrintedFace/smtg:hasPrintedText ?fn .
+  ?printing smtg:isPrintingOf/smtg:name ?oracleName ; smtg:inSet/smtg:setCode ?set ; smtg:hasSide/smtg:hasPrintedArea/smtg:hasPrintedText ?fn .
   ?fn a smtg:FlavorName ; smtg:textValue ?flavorName .
 }
 ```
@@ -1064,7 +1195,7 @@ SELECT ?oracleName ?flavorName ?set WHERE {
 
 **Question.** For every creature face, which subtypes does it have and from which type-qualified scheme?
 
-Modules: cards, taxonomies · kind: SPARQL · expects: nonempty · **pass** (43 rows)
+Modules: cards, taxonomies · kind: SPARQL · expects: nonempty · **pass** (49 rows)
 
 ```sparql
 PREFIX smtg: <https://w3id.org/smtg/ontology#>
@@ -1116,7 +1247,7 @@ SELECT ?word (GROUP_CONCAT(DISTINCT ?schemeLabel; separator=' | ') AS ?schemes) 
 
 **Question.** Which faces are historic (legendary, artifact or Saga), and through which member of the group?
 
-Modules: taxonomies · kind: SPARQL · expects: nonempty · **pass** (17 rows)
+Modules: taxonomies · kind: SPARQL · expects: nonempty · **pass** (18 rows)
 
 ```sparql
 PREFIX smtg: <https://w3id.org/smtg/ontology#>
@@ -1140,5 +1271,5 @@ SELECT DISTINCT ?face ?via WHERE {
 | Bruna, the Fading Light | Legendary |
 | Ghalta, Primal Hunger | Legendary |
 | Gisela, the Broken Blade | Legendary |
+| History of Benalia | Saga |
 | Jinnie Fay, Jetmir's Second | Legendary |
-| Nissa, Steward of Elements | Legendary |

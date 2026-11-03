@@ -16,7 +16,7 @@ import { loadTypeSystem, resolveTypeLine } from '../lib/typeline.mjs';
 import * as CUR from '../vocab/curated.mjs';
 import { readJSON } from '../lib/common.mjs';
 
-const MAX_RECORDS = 200;
+const MAX_RECORDS = 500;
 const { namedNode: nn, literal: lit, quad } = N3.DataFactory;
 const S = PREFIXES.smtg, RDF = PREFIXES.rdf, RDFS = PREFIXES.rdfs, SKOS = PREFIXES.skos, XSD = PREFIXES.xsd, PROV = PREFIXES.prov;
 const a = nn(RDF + 'type');
@@ -278,55 +278,80 @@ function mapCardObject(g, c, sourceKey) {
   for (const [prop, key] of [['isPromo', 'promo'], ['isReprint', 'reprint'], ['isVariation', 'variation'], ['isOversized', 'oversized'], ['isFullArt', 'full_art'], ['isTextless', 'textless'], ['inBooster', 'booster'], ['isStorySpotlight', 'story_spotlight'], ['isDigitalOnly', 'digital'], ['hasContentWarning', 'content_warning']])
     if (c[key] !== undefined) g.add(pr, sm(prop), bool(c[key]));
   if (c.variation_of) g.add(pr, sm('variationOf'), id('printing', c.variation_of));
-  // Printed faces
-  faces.forEach((f, i) => {
-    const pf = id('printing', c.id, 'face', i);
-    g.type(pf, 'PrintedFace');
-    g.label(pf, `${f.printed_name ?? f.name} — printed face ${i} of ${c.set?.toUpperCase()} #${c.collector_number} (${c.lang})`);
-    g.add(pr, sm('hasPrintedFace'), pf);
-    g.add(pf, sm('printedFaceOf'), pr);
-    const [o, fi] = oracleOfFace[i] ?? oracleOfFace[0] ?? [];
-    if (o) g.add(pf, sm('manifestsFace'), id('oracle-card', o, 'face', fi));
-    g.add(pf, sm('onSide'), vc('side', DOUBLE_SIDED.has(c.layout) && i === 1 ? 'back' : 'front'));
-    if (c.layout === 'flip') g.add(pf, sm('hasOrientation'), vc('orientation', i === 1 ? 'inverted' : 'upright'));
-    const lang = c.lang;
-    textExpr(g, pf, 'hasPrintedText', 'PrintedName', 'printed-name', f.printed_name, lang);
-    textExpr(g, pf, 'hasPrintedText', 'PrintedTypeLine', 'printed-type-line', f.printed_type_line, lang);
-    textExpr(g, pf, 'hasPrintedText', 'PrintedRulesText', 'printed-text', f.printed_text, lang);
-    textExpr(g, pf, 'hasPrintedText', 'FlavorText', 'flavor-text', f.flavor_text ?? (faces.length === 1 ? c.flavor_text : undefined), lang);
-    textExpr(g, pf, 'hasPrintedText', 'FlavorName', 'flavor-name', f.flavor_name ?? (faces.length === 1 ? c.flavor_name : undefined), lang);
-    const artist = f.artist ?? c.artist;
-    if (artist) g.add(pf, sm('creditedAs'), lit(artist));
-    const wm = f.watermark ?? (faces.length === 1 ? c.watermark : undefined);
-    if (wm) g.add(pf, sm('hasWatermark'), vc('watermark', slug(wm) === wm ? wm : slug(wm)));
-    const ill = f.illustration_id ?? (faces.length === 1 || i === 0 ? c.illustration_id : undefined);
-    if (ill) {
-      const il = id('illustration', ill);
-      g.type(il, 'Illustration');
-      g.label(il, `Illustration of ${f.name}${artist ? ` by ${artist}` : ''}`);
-      identifier(g, il, 'scryfall-illustration-id', ill);
-      g.add(pf, sm('showsIllustration'), il);
-      const artistIds = f.artist_id ? [f.artist_id] : (c.artist_ids ?? []);
-      artistIds.forEach((aid, k) => {
-        const ar = id('artist', aid);
-        g.add(ar, a, sm('Artist'));
-        identifier(g, ar, 'scryfall-artist-id', aid);
-        const contrib = id('illustration', ill, 'contribution', aid);
-        g.type(contrib, 'ArtisticContribution');
-        g.add(il, sm('hasContribution'), contrib);
-        g.add(contrib, sm('contributor'), ar);
-        if (artist) g.add(contrib, sm('creditedAs'), lit(artist));
-        if (artistIds.length === 1 && artist) g.label(ar, artist);
-      });
+  // Printed sides and areas. The source's images are per side: double-sided layouts give one
+  // image set per face (= per side), single-sided layouts one image set for the whole front, on
+  // which all faces sit. Per-face data (printed text, artist, illustration, watermark) goes on the
+  // printed area of that face.
+  const twoSided = DOUBLE_SIDED.has(c.layout) && faces.length === 2;
+  const sides = twoSided
+    ? faces.map((f, i) => ({ position: i === 0 ? 'front' : 'back', faces: [[f, i]], images: f.image_uris }))
+    : [{ position: 'front', faces: faces.map((f, i) => [f, i]), images: c.image_uris }];
+  const artistNode = (aid, name) => {
+    const ar = id('artist', aid);
+    g.add(ar, a, sm('Artist'));
+    identifier(g, ar, 'scryfall-artist-id', aid);
+    if (name) g.label(ar, name);
+    return ar;
+  };
+  sides.forEach((side, n) => {
+    const ps = id('printing', c.id, 'side', n);
+    g.type(ps, 'PrintedSide');
+    g.label(ps, `${side.position} of ${c.name} (${c.set?.toUpperCase()} #${c.collector_number}, ${c.lang})`);
+    g.add(pr, sm('hasSide'), ps);
+    g.add(ps, sm('sideOf'), pr);
+    g.add(ps, sm('sidePosition'), vc('side', side.position));
+    const illustrationsOnSide = new Set();
+    for (const [f, i] of side.faces) {
+      const pa = id('printing', c.id, 'side', n, 'area', i);
+      g.type(pa, 'PrintedArea');
+      g.label(pa, `${f.printed_name ?? f.name} — printed area ${i} of ${c.set?.toUpperCase()} #${c.collector_number} (${c.lang})`);
+      g.add(ps, sm('hasPrintedArea'), pa);
+      g.add(pa, sm('areaOf'), ps);
+      const [o, fi] = oracleOfFace[i] ?? oracleOfFace[0] ?? [];
+      if (o) g.add(pa, sm('printsFace'), id('oracle-card', o, 'face', fi));
+      const lang = c.lang;
+      textExpr(g, pa, 'hasPrintedText', 'PrintedName', 'printed-name', f.printed_name, lang);
+      textExpr(g, pa, 'hasPrintedText', 'PrintedTypeLine', 'printed-type-line', f.printed_type_line, lang);
+      textExpr(g, pa, 'hasPrintedText', 'PrintedRulesText', 'printed-text', f.printed_text, lang);
+      textExpr(g, pa, 'hasPrintedText', 'FlavorText', 'flavor-text', f.flavor_text ?? (faces.length === 1 ? c.flavor_text : undefined), lang);
+      textExpr(g, pa, 'hasPrintedText', 'FlavorName', 'flavor-name', f.flavor_name ?? (faces.length === 1 ? c.flavor_name : undefined), lang);
+      // artist credit of this area (per face in the source, even when the side has one illustration)
+      const artist = f.artist ?? c.artist;
+      if (artist) g.add(pa, sm('creditedAs'), lit(artist));
+      const areaArtists = f.artist_id ? [f.artist_id] : faces.length === 1 ? (c.artist_ids ?? []) : [];
+      for (const aid of areaArtists) g.add(pa, sm('creditedArtist'), artistNode(aid, areaArtists.length === 1 ? artist : null));
+      const wm = f.watermark ?? (faces.length === 1 ? c.watermark : undefined);
+      if (wm) g.add(pa, sm('hasWatermark'), vc('watermark', slug(wm) === wm ? wm : slug(wm)));
+      // illustration: per face when the source gives it there; single-faced cards take the root one
+      const ill = f.illustration_id ?? (faces.length === 1 ? c.illustration_id : undefined);
+      if (ill) {
+        const il = id('illustration', ill);
+        g.type(il, 'Illustration');
+        g.label(il, `Illustration of ${faces.length > 1 && !twoSided ? c.name : f.name}`);
+        identifier(g, il, 'scryfall-illustration-id', ill);
+        g.add(pa, sm('showsIllustration'), il);
+        illustrationsOnSide.add(ill);
+        // contributions to the illustration: its artists as the source credits them for the printing
+        // (root artist_ids for a single-sided card, the face's artist for a double-sided one)
+        const contributors = twoSided && f.artist_id ? [f.artist_id] : (c.artist_ids ?? (f.artist_id ? [f.artist_id] : []));
+        const credit = twoSided ? artist : (c.artist ?? artist);
+        for (const aid of contributors) {
+          const contrib = id('illustration', ill, 'contribution', aid);
+          g.type(contrib, 'ArtisticContribution');
+          g.add(il, sm('hasContribution'), contrib);
+          g.add(contrib, sm('contributor'), artistNode(aid, contributors.length === 1 ? credit : null));
+          if (credit) g.add(contrib, sm('creditedAs'), lit(credit));
+        }
+      }
     }
-    const imgs = f.image_uris ?? (faces.length === 1 ? c.image_uris : undefined);
-    for (const [variant, url] of Object.entries(imgs ?? {})) {
-      const img = id('printing', c.id, 'face', i, 'image', variant);
+    for (const [variant, url] of Object.entries(side.images ?? {})) {
+      const img = id('printing', c.id, 'side', n, 'image', variant);
       g.type(img, 'DigitalImage');
-      g.add(pf, sm('hasImage'), img);
+      g.add(ps, sm('hasImage'), img);
       g.add(img, sm('imageVariant'), vc('image-variant', variant));
       g.add(img, sm('contentURL'), typed(url, 'anyURI'));
-      if (variant === 'art_crop' && ill) g.add(img, sm('depictsArtworkOf'), id('illustration', ill));
+      // the art crop is a crop of the side's illustration, when there is exactly one
+      if (variant === 'art_crop' && illustrationsOnSide.size === 1) g.add(img, sm('depictsArtworkOf'), id('illustration', [...illustrationsOnSide][0]));
     }
   });
   // Price observations (volatile, optional)

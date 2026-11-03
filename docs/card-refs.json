@@ -282,6 +282,32 @@
         "tools/vocab/curated.mjs"
       ]
     },
+    "bonecrusher giant // stomp|eld|115|": {
+      "name": "Bonecrusher Giant // Stomp",
+      "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+      "printing_id": "09fd2d9c-1793-4beb-a3fb-7a869f660cd4",
+      "set": "eld",
+      "set_name": "Throne of Eldraine",
+      "collector_number": "115",
+      "lang": "en",
+      "layout": "adventure",
+      "type_line": "Creature — Giant // Instant — Adventure",
+      "artist": "Victor Adame Minguez",
+      "scryfall_uri": "https://scryfall.com/card/eld/115/bonecrusher-giant-stomp",
+      "images": [
+        {
+          "face": "Bonecrusher Giant // Stomp",
+          "normal": "https://cards.scryfall.io/normal/front/0/9/09fd2d9c-1793-4beb-a3fb-7a869f660cd4.jpg?1783932628",
+          "small": "https://cards.scryfall.io/small/front/0/9/09fd2d9c-1793-4beb-a3fb-7a869f660cd4.jpg?1783932628",
+          "large": "https://cards.scryfall.io/large/front/0/9/09fd2d9c-1793-4beb-a3fb-7a869f660cd4.jpg?1783932628"
+        }
+      ],
+      "kind": "printing",
+      "ref": "[[Bonecrusher Giant // Stomp|ELD|115]]",
+      "files": [
+        "ontology/smtg-printings.ttl"
+      ]
+    },
     "brisela, voice of nightmares|||": {
       "name": "Brisela, Voice of Nightmares",
       "oracle_id": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c",
@@ -390,6 +416,32 @@
       "files": [
         "ontology/vocab/smtg-vocab.ttl",
         "tools/vocab/curated.mjs"
+      ]
+    },
+    "consecrate // consume|rna|224|": {
+      "name": "Consecrate // Consume",
+      "oracle_id": "20e7a93f-77ce-466b-8586-35d390689d0c",
+      "printing_id": "00320106-ce51-46a9-b0f9-79b3baf4e505",
+      "set": "rna",
+      "set_name": "Ravnica Allegiance",
+      "collector_number": "224",
+      "lang": "en",
+      "layout": "split",
+      "type_line": "Instant // Sorcery",
+      "artist": "Igor Kieryluk",
+      "scryfall_uri": "https://scryfall.com/card/rna/224/consecrate-consume",
+      "images": [
+        {
+          "face": "Consecrate // Consume",
+          "normal": "https://cards.scryfall.io/normal/front/0/0/00320106-ce51-46a9-b0f9-79b3baf4e505.jpg?1783933627",
+          "small": "https://cards.scryfall.io/small/front/0/0/00320106-ce51-46a9-b0f9-79b3baf4e505.jpg?1783933627",
+          "large": "https://cards.scryfall.io/large/front/0/0/00320106-ce51-46a9-b0f9-79b3baf4e505.jpg?1783933627"
+        }
+      ],
+      "kind": "printing",
+      "ref": "[[Consecrate // Consume|RNA|224]]",
+      "files": [
+        "ontology/smtg-printings.ttl"
       ]
     },
     "delver of secrets // insectile aberration|||": {
@@ -628,8 +680,10 @@
       "kind": "card",
       "ref": "[[!Fire // Ice]]",
       "files": [
+        "docs/ontology/competency-questions.md",
         "ontology/smtg-cards.ttl",
         "ontology/vocab/smtg-vocab.ttl",
+        "queries/competency/CQ-AR-01.rq",
         "tools/vocab/curated.mjs"
       ]
     },
@@ -656,7 +710,9 @@
       "kind": "printing",
       "ref": "[[Fire // Ice|APC|128]]",
       "files": [
-        "ontology/smtg-printings.ttl"
+        "docs/ontology/review-questions.md",
+        "ontology/smtg-printings.ttl",
+        "ontology/smtg-text-art.ttl"
       ]
     },
     "gemrazer|||": {
@@ -715,8 +771,10 @@
       "kind": "printing",
       "ref": "[[Ghalta, Primal Hunger|SLD|1124]]",
       "files": [
+        "docs/ontology/competency-questions.md",
         "docs/ontology/review-questions.md",
-        "ontology/smtg-printings.ttl"
+        "ontology/smtg-printings.ttl",
+        "queries/competency/CQ-AR-02.rq"
       ]
     },
     "gisela, the broken blade|||": {

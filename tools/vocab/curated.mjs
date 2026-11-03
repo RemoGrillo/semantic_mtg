@@ -83,11 +83,6 @@ export const LEGALITY = {
 };
 
 export const SIDES = { front: 'Front of the physical card.', back: 'Back of the physical card.' };
-export const ORIENTATIONS = {
-  upright: 'Read in the card’s normal orientation.',
-  rotated: 'Rotated 90° relative to the card (aftermath halves, battles, split halves).',
-  inverted: 'Upside down relative to the other face (flip cards).',
-};
 export const IMAGE_VARIANTS = {
   png: 'Full card, PNG with transparent rounded corners (745×1040).',
   large: 'Large full-card JPEG/WebP.', normal: 'Normal-size full-card image.', small: 'Small thumbnail.',

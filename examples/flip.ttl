@@ -381,39 +381,91 @@
     smtg:inBooster true;
     smtg:isStorySpotlight false;
     smtg:isDigitalOnly false.
-<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/face/0> a smtg:PrintedFace;
-    rdfs:label "Akki Lavarunner — printed face 0 of CHK #153 (en)".
-<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8> smtg:hasPrintedFace <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/face/0>.
-<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/face/0> smtg:printedFaceOf <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8>;
-    smtg:manifestsFace <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e/face/0>;
-    smtg:onSide <https://w3id.org/smtg/vocab/side/front>;
-    smtg:hasOrientation <https://w3id.org/smtg/vocab/orientation/upright>;
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> a smtg:PrintedSide;
+    rdfs:label "front of Akki Lavarunner // Tok-Tok, Volcano Born (CHK #153, en)".
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8> smtg:hasSide <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:sideOf <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8>;
+    smtg:sidePosition <https://w3id.org/smtg/vocab/side/front>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/area/0> a smtg:PrintedArea;
+    rdfs:label "Akki Lavarunner — printed area 0 of CHK #153 (en)".
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasPrintedArea <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/area/0>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/area/0> smtg:areaOf <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0>;
+    smtg:printsFace <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e/face/0>;
     smtg:creditedAs "Matt Cavotta".
-<https://w3id.org/smtg/id/illustration/54705304-6aeb-4722-9a17-9006db12b939> a smtg:Illustration;
-    rdfs:label "Illustration of Akki Lavarunner by Matt Cavotta".
-<https://w3id.org/smtg/id/identifier/scryfall-illustration-id/54705304-6aeb-4722-9a17-9006db12b939> a smtg:Identifier;
-    smtg:identifierValue "54705304-6aeb-4722-9a17-9006db12b939";
-    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-illustration-id>.
-<https://w3id.org/smtg/id/illustration/54705304-6aeb-4722-9a17-9006db12b939> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-illustration-id/54705304-6aeb-4722-9a17-9006db12b939>.
-<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/face/0> smtg:showsIllustration <https://w3id.org/smtg/id/illustration/54705304-6aeb-4722-9a17-9006db12b939>.
 <https://w3id.org/smtg/id/artist/2e6a0611-9411-4ba4-98e3-c0e18cbf9f83> a smtg:Artist.
 <https://w3id.org/smtg/id/identifier/scryfall-artist-id/2e6a0611-9411-4ba4-98e3-c0e18cbf9f83> a smtg:Identifier;
     smtg:identifierValue "2e6a0611-9411-4ba4-98e3-c0e18cbf9f83";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-artist-id>.
-<https://w3id.org/smtg/id/artist/2e6a0611-9411-4ba4-98e3-c0e18cbf9f83> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-artist-id/2e6a0611-9411-4ba4-98e3-c0e18cbf9f83>.
+<https://w3id.org/smtg/id/artist/2e6a0611-9411-4ba4-98e3-c0e18cbf9f83> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-artist-id/2e6a0611-9411-4ba4-98e3-c0e18cbf9f83>;
+    rdfs:label "Matt Cavotta".
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/area/0> smtg:creditedArtist <https://w3id.org/smtg/id/artist/2e6a0611-9411-4ba4-98e3-c0e18cbf9f83>.
+<https://w3id.org/smtg/id/illustration/54705304-6aeb-4722-9a17-9006db12b939> a smtg:Illustration;
+    rdfs:label "Illustration of Akki Lavarunner // Tok-Tok, Volcano Born".
+<https://w3id.org/smtg/id/identifier/scryfall-illustration-id/54705304-6aeb-4722-9a17-9006db12b939> a smtg:Identifier;
+    smtg:identifierValue "54705304-6aeb-4722-9a17-9006db12b939";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-illustration-id>.
+<https://w3id.org/smtg/id/illustration/54705304-6aeb-4722-9a17-9006db12b939> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-illustration-id/54705304-6aeb-4722-9a17-9006db12b939>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/area/0> smtg:showsIllustration <https://w3id.org/smtg/id/illustration/54705304-6aeb-4722-9a17-9006db12b939>.
 <https://w3id.org/smtg/id/illustration/54705304-6aeb-4722-9a17-9006db12b939/contribution/2e6a0611-9411-4ba4-98e3-c0e18cbf9f83> a smtg:ArtisticContribution.
 <https://w3id.org/smtg/id/illustration/54705304-6aeb-4722-9a17-9006db12b939> smtg:hasContribution <https://w3id.org/smtg/id/illustration/54705304-6aeb-4722-9a17-9006db12b939/contribution/2e6a0611-9411-4ba4-98e3-c0e18cbf9f83>.
 <https://w3id.org/smtg/id/illustration/54705304-6aeb-4722-9a17-9006db12b939/contribution/2e6a0611-9411-4ba4-98e3-c0e18cbf9f83> smtg:contributor <https://w3id.org/smtg/id/artist/2e6a0611-9411-4ba4-98e3-c0e18cbf9f83>;
     smtg:creditedAs "Matt Cavotta".
-<https://w3id.org/smtg/id/artist/2e6a0611-9411-4ba4-98e3-c0e18cbf9f83> rdfs:label "Matt Cavotta".
-<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/face/1> a smtg:PrintedFace;
-    rdfs:label "Tok-Tok, Volcano Born — printed face 1 of CHK #153 (en)".
-<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8> smtg:hasPrintedFace <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/face/1>.
-<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/face/1> smtg:printedFaceOf <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8>;
-    smtg:manifestsFace <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e/face/1>;
-    smtg:onSide <https://w3id.org/smtg/vocab/side/front>;
-    smtg:hasOrientation <https://w3id.org/smtg/vocab/orientation/inverted>;
-    smtg:creditedAs "Matt Cavotta".
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/area/1> a smtg:PrintedArea;
+    rdfs:label "Tok-Tok, Volcano Born — printed area 1 of CHK #153 (en)".
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasPrintedArea <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/area/1>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/area/1> smtg:areaOf <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0>;
+    smtg:printsFace <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e/face/1>;
+    smtg:creditedAs "Matt Cavotta";
+    smtg:creditedArtist <https://w3id.org/smtg/id/artist/2e6a0611-9411-4ba4-98e3-c0e18cbf9f83>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/small> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/small>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/small> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/small>;
+    smtg:contentURL "https://cards.scryfall.io/small/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.jpg?1783944304"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/normal> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/normal>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/normal> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/normal>;
+    smtg:contentURL "https://cards.scryfall.io/normal/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.jpg?1783944304"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/large> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/large>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/large> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/large>;
+    smtg:contentURL "https://cards.scryfall.io/large/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.jpg?1783944304"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/png> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/png>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/png> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/png>;
+    smtg:contentURL "https://cards.scryfall.io/png/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.png?1783944304"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/art_crop> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/art_crop>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/art_crop> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/art_crop>;
+    smtg:contentURL "https://cards.scryfall.io/art_crop/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.jpg?1783944304"^^xsd:anyURI;
+    smtg:depictsArtworkOf <https://w3id.org/smtg/id/illustration/54705304-6aeb-4722-9a17-9006db12b939>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/border_crop> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/border_crop>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/border_crop> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/border_crop>;
+    smtg:contentURL "https://cards.scryfall.io/border_crop/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.jpg?1783944304"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/thumb> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/thumb>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/thumb> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/thumb>;
+    smtg:contentURL "https://cards.scryfall.io/thumb/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.webp?1783944304"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/grid> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/grid>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/grid> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/grid>;
+    smtg:contentURL "https://cards.scryfall.io/grid/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.webp?1783944304"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/display> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/display>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/display> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/display>;
+    smtg:contentURL "https://cards.scryfall.io/display/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.webp?1783944304"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/art> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/art>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/art> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/art>;
+    smtg:contentURL "https://cards.scryfall.io/art/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.webp?1783944304"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/crop> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/crop>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/crop> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/crop>;
+    smtg:contentURL "https://cards.scryfall.io/crop/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.webp?1783944304"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/jpeg> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/jpeg>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/side/0/image/jpeg> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/jpeg>;
+    smtg:contentURL "https://cards.scryfall.io/normal/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.jpg?1783944304"^^xsd:anyURI.
 <https://w3id.org/smtg/id/claim/price/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8/usd/2afc8d49e9d9> a smtg:PriceObservation;
     smtg:priceOf <https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8>;
     smtg:priceCurrency <https://w3id.org/smtg/vocab/currency/usd>;

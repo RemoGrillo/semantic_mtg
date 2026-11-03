@@ -1,6 +1,6 @@
 # id: CQ-FL-04
 # title: Back faces
-# question: Which printed faces appear on the back of a card, which Oracle face do they manifest, and what type does it have?
+# question: Which card faces are printed on the back side of a card, and what type do they have?
 # kind: SPARQL
 # expects: nonempty
 # modules: printings, cards
@@ -11,7 +11,7 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX v: <https://w3id.org/smtg/vocab/>
 SELECT DISTINCT ?printingLayout ?faceName ?typeLine WHERE {
-  ?printing smtg:printingLayout ?printingLayout ; smtg:hasPrintedFace ?pf .
-  ?pf smtg:onSide <https://w3id.org/smtg/vocab/side/back> ; smtg:manifestsFace ?f .
+  ?printing smtg:printingLayout ?printingLayout ; smtg:hasSide ?side .
+  ?side smtg:sidePosition <https://w3id.org/smtg/vocab/side/back> ; smtg:hasPrintedArea/smtg:printsFace ?f .
   ?f smtg:name ?faceName . OPTIONAL { ?f smtg:typeLine ?typeLine }
 } ORDER BY ?printingLayout ?faceName

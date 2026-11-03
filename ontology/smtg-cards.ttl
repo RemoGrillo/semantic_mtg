@@ -43,7 +43,7 @@ smtg:OracleCard a owl:Class ;
 smtg:CardFace a owl:Class ;
   rdfs:label "Card face"@en ;
   skos:definition "A conceptual face (or part) of an Oracle card: the unit that carries a name, mana cost, type line, Oracle text and combat/loyalty values. A single-faced card has exactly one face; a split, adventure, prepare, flip, transforming or modal double-faced card has two or more."@en ;
-  skos:scopeNote """Every Oracle card has at least one face, including ordinary single-faced cards (RQ-CF-1). This uniform convention means that "cards with a creature face" is one query, whatever the layout. A face is conceptual: whether it sits on the front, the back or the same side as another face is a property of the printed face (smtg:PrintedFace), since that is a fact about the physical object."""@en ;
+  skos:scopeNote """Every Oracle card has at least one face, including ordinary single-faced cards (RQ-CF-1). This uniform convention means that "cards with a creature face" is one query, whatever the layout. A face is conceptual: whether it sits on the front, the back or the same side as another face is recorded on the printing — its printed sides (smtg:PrintedSide) and their printed areas (smtg:PrintedArea) — since that is a fact about the physical object."""@en ;
   skos:example "[[Bonecrusher Giant // Stomp]] has two faces: the creature Bonecrusher Giant (face 0) and the Adventure instant Stomp (face 1); both are printed on the same physical side. [[!Bonecrusher Giant // Stomp]]"@en ;
   smtg:sourceField "scryfall:card_faces[]" ;
   smtg:reviewQuestion "RQ-CF-1" ;

@@ -58,6 +58,18 @@ const CARD_FIXTURES = [
   { slug: 'mana-token-maker', purpose: 'A card that creates a token which can itself produce mana (Eldrazi Scion), with the exact token printings its all_parts point to: input for the producesManaViaToken inference.', oracles: ['Eldrazi Confluence'], withTokens: true },
 ];
 
+// Printings referenced by the documentation (npm run cards:resolve writes docs/card-refs.json).
+const DOC_EXAMPLE_IDS = new Set(
+  (() => {
+    try {
+      return Object.values(JSON.parse(fs.readFileSync(p('docs', 'card-refs.json'), 'utf8')).refs).map((r) => r.printing_id).filter(Boolean);
+    } catch {
+      log('  WARNING docs/card-refs.json not found: the doc-examples fixture will be empty');
+      return [];
+    }
+  })(),
+);
+
 // Printing-level / layout-level fixtures selected while streaming all_cards.
 const PRINT_FIXTURES = [
   { slug: 'reversible-card', purpose: 'reversible_card (PLAN §4.2 #9): oracle_id only on card_faces[], not at root; includes oracle_cards records of the face oracle ids.', n: 2, describe: "all_cards: layout == 'reversible_card'; first 2 by id (any language)", pick: (c) => c.layout === 'reversible_card', faceOracles: true },
@@ -69,6 +81,8 @@ const PRINT_FIXTURES = [
   { slug: 'scheme', purpose: 'Archenemy scheme (PLAN §4.2 #14).', n: 1, describe: "all_cards: layout == 'scheme' and lang == 'en'; first by id", pick: (c) => c.layout === 'scheme' && c.lang === 'en' },
   { slug: 'vanguard', purpose: 'Vanguard card with hand/life modifiers (PLAN §4.2 #14).', n: 1, describe: "all_cards: layout == 'vanguard' and lang == 'en'; first by id", pick: (c) => c.layout === 'vanguard' && c.lang === 'en' },
   { slug: 'multi-artist', purpose: 'Printing credited to ≥2 artists (PLAN §4.2 #11).', n: 1, describe: "all_cards: layout == 'normal' and lang == 'en' and artist_ids.length >= 2; first by id", pick: (c) => c.layout === 'normal' && c.lang === 'en' && (c.artist_ids?.length ?? 0) >= 2, withOracle: true },
+  { slug: 'watermark-per-half', purpose: 'Two faces on one side with different watermarks (one half watermarked, the other not): a watermark is a printed-area fact.', n: 1, describe: "all_cards: layout in split/adventure/flip/prepare and lang == 'en' and card_faces[0].watermark != card_faces[1].watermark; first by id", pick: (c) => ['split', 'adventure', 'flip', 'prepare'].includes(c.layout) && c.lang === 'en' && c.card_faces?.length === 2 && (c.card_faces[0].watermark ?? null) !== (c.card_faces[1].watermark ?? null), withOracle: true },
+  { slug: 'doc-examples', purpose: 'Every printing shown as a card example in the documentation (resolved in docs/card-refs.json) that no other fixture covers, so that each example has an instance in examples/ (graph and Turtle next to its image).', n: Infinity, describe: 'all_cards: id in docs/card-refs.json refs[].printing_id, excluding printings already in another fixture; sorted by id', pick: (c) => DOC_EXAMPLE_IDS.has(c.id), withOracle: true, excludeCovered: true },
   { slug: 'flavor-name', purpose: 'Printing with a special flavor_name (PLAN §4.2 #12) and the oracle record of its normal-named card.', n: 1, describe: "all_cards: lang == 'en' and flavor_name present, preferring promo_types contains 'godzillaseries'; first by id", pick: (c) => c.lang === 'en' && c.flavor_name != null, prefer: (c) => c.promo_types?.includes('godzillaseries'), withOracle: true, counterpart: (c) => c.flavor_name == null },
 ];
 
@@ -135,6 +149,7 @@ const picks = new Map(PRINT_FIXTURES.map((f) => [f.slug, []]));
 const preferredPicks = new Map(PRINT_FIXTURES.map((f) => [f.slug, []]));
 let n = 0;
 const keepSmallest = (arr, c, k) => {
+  if (!Number.isFinite(k)) return void arr.push(c);
   if (arr.length < k || c.id < arr[arr.length - 1].id) {
     arr.push(c);
     arr.sort((a, b) => byKey(a.id, b.id));
@@ -257,8 +272,17 @@ if (deferredWithTokens.length) {
 }
 
 for (const f of PRINT_FIXTURES) {
-  const recs = printSel.get(f.slug);
+  let recs = printSel.get(f.slug);
   if (!recs) continue;
+  if (f.excludeCovered) {
+    // printings already in a fixture written so far (the doc-examples fixture is last)
+    const covered = new Set(written.flatMap((w) => w.ids));
+    recs = recs.filter((r) => !covered.has(r.id)).sort((a, b) => byKey(a.id, b.id));
+    if (!recs.length) {
+      log(`  ${f.slug}: every documented example is already covered by another fixture`);
+      continue;
+    }
+  }
   const items = recs.map((r) => ({ record: r, sourceKey: ALL, role: 'printing' }));
   let sel = f.describe;
   if (f.withOracle || f.faceOracles) {

@@ -80,11 +80,10 @@ Attaching a confidence to an OWL entailment, or averaging community weights into
 **Instead:** entailments are certain given their premises; the premises carry their own status.
 `smtg:confidence` is only for machine proposals. Weights stay ordinal.
 
-### AP-13 — Text in the picture as card text
-Treating words visible inside an artwork as flavor text or rules text, or treating flavor text as
-Oracle text.
-**Instead:** `ArtworkInscription` (part of the illustration, transcribed with provenance) is
-disjoint from `TextExpression`; `FlavorText` and `OracleText` are disjoint.
+### AP-13 — Flavor text as Oracle text
+Treating flavor text as rules text, or words visible inside an artwork as any kind of card text.
+**Instead:** `FlavorText` and `OracleText` are disjoint. Words inside the picture are not modelled
+at all: no source transcribes them, and nothing is asserted without a source.
 **Guarded by:** SHACL `FlavorNotOracle`.
 
 ### AP-14 — URL as artwork

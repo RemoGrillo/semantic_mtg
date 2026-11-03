@@ -100,9 +100,30 @@
     "eecf6742-8c6f-4034-bf79-9e2f90193baa",
     "176eeafd-0482-4fa4-9174-10f8b9494d9b",
     "0c316059-8ba5-4274-893d-283d1392ba35",
+    "20e7a93f-77ce-466b-8586-35d390689d0c",
+    "a0cc2a18-34cd-4044-ae73-bef0cf498317",
+    "3dfb0c0a-b68f-43b9-8475-28d0192fc4ed",
+    "dcbcbf42-4654-487a-acad-21f2606d229b",
+    "93bc4e17-bd0e-4516-af6f-09a25712a323",
     "7185e345-d8a1-4dd3-a071-f90f265634b4",
+    "00dc52aa-22b3-4906-9da9-18586ef683d5",
+    "710f1f8a-e5f7-4889-9f12-2611f42d5c73",
+    "0bc2875b-3a5a-4885-86b9-16ab7330ac10",
+    "0d8730b5-f7ba-48b0-928d-d8b7685347d3",
+    "c15bb7eb-aaaa-4468-9641-8f706d6137e8",
+    "fa5e1347-9bee-4103-8b74-5d0df35dd8ff",
+    "85193f7d-c7eb-4dd7-8944-26b201b0d08d",
+    "00e3f921-1d98-4249-81ef-cc42153154cb",
+    "cffc9af0-83e8-411d-8002-26fe034ce261",
     "7325f854-e119-439d-9c00-9eb76c502c44",
-    "8ce30f1b-0be8-4b71-838b-6130089f3135"
+    "cc4c2f4b-2103-455d-bd88-6340309fdf86",
+    "3f685343-d4ba-49ba-a3f1-7fc634be5992",
+    "5cd85ffc-47df-44d1-861e-1c98300d695f",
+    "e7a70035-a36c-4c3f-a4d5-c1fea259ecac",
+    "8ce30f1b-0be8-4b71-838b-6130089f3135",
+    "da28ac9e-bc74-4358-93bd-98388b108073",
+    "f743a27d-ec25-4341-aa24-6ed952b4be35",
+    "79976016-611e-40f0-8500-2fd3a328ffce"
   ],
   "recordIndex": [
     {
@@ -214,6 +235,10 @@
         },
         {
           "oracle_id": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "weight": "median"
+        },
+        {
+          "oracle_id": "93bc4e17-bd0e-4516-af6f-09a25712a323",
           "weight": "median"
         },
         {
@@ -390,6 +415,10 @@
         "creature removal"
       ],
       "taggings": [
+        {
+          "oracle_id": "20e7a93f-77ce-466b-8586-35d390689d0c",
+          "weight": "median"
+        },
         {
           "oracle_id": "51042581-4add-4487-a1b6-85446539b975",
           "weight": "median"

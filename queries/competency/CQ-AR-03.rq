@@ -1,0 +1,19 @@
+# id: CQ-AR-03
+# title: Two faces on one side
+# question: Which printed sides carry two printed areas (two card faces on the same side), and which faces are they?
+# kind: SPARQL
+# expects: nonempty
+# modules: printings, cards
+# note: Split, flip, adventure and prepare cards; the side has one image, each area its own printed text and artist credit.
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?printing ?layout (GROUP_CONCAT(?faceName; separator=" / ") AS ?facesOnSide) WHERE {
+  { SELECT ?printing ?layout ?side ?faceName WHERE {
+      ?printing smtg:printingLayout ?layout ; smtg:hasSide ?side .
+      ?side smtg:hasPrintedArea ?area . ?area smtg:printsFace ?face . ?face smtg:name ?faceName ; smtg:faceIndex ?i .
+    } ORDER BY ?printing ?i }
+} GROUP BY ?printing ?layout ?side HAVING (COUNT(?faceName) > 1) ORDER BY ?layout ?printing

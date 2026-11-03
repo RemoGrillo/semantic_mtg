@@ -527,6 +527,11 @@ td .card-figure img { width: 120px; }
 /* consecutive card images: one row below the text */
 .card-row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0 1.4em; margin: 0.4em 0 0.2em; }
 .card-row .card-figure { margin: 0.3em 0 0.6em; }
+/* example instance (graph + Turtle) under a card image */
+details.card-instance { margin: -0.2em 0 1em; }
+details.card-instance > summary { cursor: pointer; color: var(--ink-2); font-size: 0.86rem; padding: 3px 0; }
+details.card-instance > summary:hover { color: var(--accent); }
+details.card-instance[open] > summary { margin-bottom: 0.3em; }
 /* layout matrix: thumbnails (names are in the text of the cell; full size on the layout's page) */
 .layout-ex .card-row { gap: 0 0.5em; margin: 0.35em 0 0; }
 .layout-ex .card-figure { margin: 0 0 0.3em; }

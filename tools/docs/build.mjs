@@ -19,11 +19,12 @@ import { ROOT, CONFIG, p, readJSON, log } from '../lib/common.mjs';
 import { parseFile, Prefixes, Graph, NS } from './lib/rdf.mjs';
 import { buildModel } from './lib/model.mjs';
 import { extractShapes } from './lib/shacl.mjs';
-import { loadExamples } from './lib/instances.mjs';
-import { Symbols, esc, attr, slugify } from './lib/html.mjs';
+import N3 from 'n3';
+import { loadExamples, cardInstance, toTurtle } from './lib/instances.mjs';
+import { Symbols, esc, attr, slugify, codeBlock } from './lib/html.mjs';
 import { renderMarkdown, idsIn, splitFrontMatter } from './lib/markdown.mjs';
 import { mermaidChecker } from './lib/mermaid-check.mjs';
-import { PALETTE } from './lib/diagrams.mjs';
+import { PALETTE, instanceDiagram } from './lib/diagrams.mjs';
 import { link } from './render/common.mjs';
 import {
   classPage, propertyPage, individualPage, vocabPage, modulePage, layoutMatrix, classesIndex, propertiesIndex, modulesIndex, vocabIndex,
@@ -33,7 +34,7 @@ import {
   overviewPage, markdownPage, adrIndexPage, adrMeta, parseRq, cqPage, statusPage, overlayPage, proposalsIndex, aboutPage, suggestionsPage, notFoundPage,
 } from './render/pages.mjs';
 import { shell } from './render/shell.mjs';
-import { loadCardRefs } from './lib/cardrefs.mjs';
+import { loadCardRefs, setInstanceHook } from './lib/cardrefs.mjs';
 
 const HERE = path.dirname(new URL(import.meta.url).pathname);
 
@@ -339,6 +340,32 @@ async function main() {
     adrLink: licAdr ? `<a href="#/adr/${attr(licAdr.num)}">${esc(licAdr.id)}</a>` : null,
   };
   ctx.legend = null;
+  // every card image in the docs is followed by its example instance (graph + Turtle)
+  const missingInstance = new Set();
+  setInstanceHook((hit, ref) => {
+    const term = N3.DataFactory.namedNode(`${NS.smtgid}printing/${hit.printing_id}`);
+    if (!ex.graph.quads(term, null, null).length) {
+      if (!missingInstance.has(hit.printing_id)) {
+        missingInstance.add(hit.printing_id);
+        warn(`${ref.raw} (${hit.name}, ${hit.set.toUpperCase()} #${hit.collector_number}) has no example instance: run npm run cards:resolve, npm run fixtures (needs the dumps) and npm run map:fixtures`, 'examples');
+      }
+      return '';
+    }
+    try {
+      const hood = cardInstance(ex, term);
+      const d = instanceDiagram(m, ex, hood, term);
+      const ttl = toTurtle(hood.quads, prefixes, { focus: term });
+      const file = ex.fileOf.get(term.value);
+      const where = `${hit.set_name} (${hit.set.toUpperCase()}) #${hit.collector_number}${hit.lang && hit.lang !== 'en' ? `, ${hit.lang}` : ''}`;
+      return `<details class="card-instance"><summary>Example instance: <b>${esc(hit.name)}</b>, ${esc(where)} — graph and Turtle</summary>
+<p class="muted small">The printing, its printed sides and areas, and what they carry: card faces, printed texts, illustration and artists, two images per side${file ? ` (from <a href="ontology/${attr(file)}" download>${esc(file)}</a>)` : ''}.</p>
+${diagram(d.src, { title: `Example instance: ${hit.name} (${hit.set.toUpperCase()} #${hit.collector_number})` })}
+${codeBlock(ttl, { lang: 'turtle', label: 'Turtle (excerpt)' })}</details>`;
+    } catch (e) {
+      warn(`example instance for ${ref.raw}: ${e.message}`, 'examples');
+      return '';
+    }
+  });
 
   // 4. Render sections (each in isolation: one failing page must not break the build)
   const sections = [];
@@ -448,7 +475,7 @@ async function main() {
   );
   if (warnings.length) {
     log(`${warnings.length} warning(s): ${Object.entries(byCat).map(([k, v]) => `${k} ${v}`).join(', ')} — listed on the Status page`);
-    if (!QUIET) for (const w of warnings.filter((x) => ['parse', 'render', 'diagram', 'inputs'].includes(x.cat)).slice(0, 25)) console.warn(`  [${w.cat}] ${w.msg}`);
+    if (!QUIET) for (const w of warnings.filter((x) => ['parse', 'render', 'diagram', 'inputs', 'examples'].includes(x.cat)).slice(0, 25)) console.warn(`  [${w.cat}] ${w.msg}`);
   }
   if (STRICT && (byCat.parse || invalid || byCat.render)) process.exitCode = 1;
 }

@@ -1,7 +1,158 @@
 {
-  "generatedAt": "2026-11-03T19:58:00.184Z",
-  "triples": 61249,
+  "generatedAt": "2026-11-03T20:51:18.911Z",
+  "triples": 67265,
   "results": [
+    {
+      "id": "CQ-AR-01",
+      "file": "queries/competency/CQ-AR-01.rq",
+      "title": "Which artist painted which half",
+      "question": "On the Apocalypse printing of [[Fire // Ice]], which artist is credited for each half, and what does the source identify as its illustration?",
+      "kind": "SPARQL",
+      "expects": "count=2",
+      "modules": "printings, text-art",
+      "note": "The source identifies one illustration for the whole front (on the first face) but credits each half to its own artist: the credit is a fact of the printed area, the contributions a fact of the illustration (RQ-AR-1).",
+      "rowCount": 2,
+      "rows": [
+        {
+          "half": "Fire",
+          "artist": "David Martin",
+          "illustration": "smtgid:illustration/c890cb20-7e04-4ad0-96a6-8854cd409c14",
+          "illustrationContributors": "David Martin & Franz Vohwinkel"
+        },
+        {
+          "half": "Ice",
+          "artist": "Franz Vohwinkel"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?half ?artist ?illustration (GROUP_CONCAT(DISTINCT ?contributor; separator=\" & \") AS ?illustrationContributors) WHERE {\n  ?printing smtg:isPrintingOf/smtg:name \"Fire // Ice\" ; smtg:inSet/smtg:setCode \"apc\" ; smtg:hasSide ?side .\n  ?side smtg:hasPrintedArea ?area .\n  ?area smtg:printsFace/smtg:name ?half ; smtg:creditedArtist/rdfs:label ?artist .\n  OPTIONAL { ?area smtg:showsIllustration ?illustration . ?illustration smtg:hasContribution/smtg:contributor/rdfs:label ?contributor }\n} GROUP BY ?half ?artist ?illustration ORDER BY ?half"
+    },
+    {
+      "id": "CQ-AR-02",
+      "file": "queries/competency/CQ-AR-02.rq",
+      "title": "Same face printed on both sides with different art",
+      "question": "Which printings print the same card face on two sides, and with which illustrations?",
+      "kind": "SPARQL",
+      "expects": "nonempty",
+      "modules": "printings, text-art",
+      "note": "Reversible printings ([[Ghalta, Primal Hunger|SLD|1124]]): one Oracle card, one card face, two printed sides, two illustrations (RQ-ID-1).",
+      "rowCount": 2,
+      "rows": [
+        {
+          "printing": "smtgid:printing/018830b2-dff9-45f3-9cc2-dc5b2eec0e54",
+          "faceName": "Jinnie Fay, Jetmir's Second",
+          "side1": "smtgid:printing/018830b2-dff9-45f3-9cc2-dc5b2eec0e54/side/0",
+          "illustration1": "smtgid:illustration/6b8fb6bb-c0d1-4715-a4df-e4f4695c6130",
+          "side2": "smtgid:printing/018830b2-dff9-45f3-9cc2-dc5b2eec0e54/side/1",
+          "illustration2": "smtgid:illustration/faebc2ac-9b6e-477d-869e-cee314d26cc0"
+        },
+        {
+          "printing": "smtgid:printing/0489be0d-2117-46a8-97ab-31fe480685e2",
+          "faceName": "Ghalta, Primal Hunger",
+          "side1": "smtgid:printing/0489be0d-2117-46a8-97ab-31fe480685e2/side/0",
+          "illustration1": "smtgid:illustration/b486d3c5-41ba-4236-a726-4b9c81de3b00",
+          "side2": "smtgid:printing/0489be0d-2117-46a8-97ab-31fe480685e2/side/1",
+          "illustration2": "smtgid:illustration/8642d280-5c69-4a32-9ea8-4980d002d63c"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?printing ?faceName ?side1 ?illustration1 ?side2 ?illustration2 WHERE {\n  ?printing smtg:hasSide ?side1 , ?side2 . FILTER (STR(?side1) < STR(?side2))\n  ?side1 smtg:hasPrintedArea ?a1 . ?a1 smtg:printsFace ?face ; smtg:showsIllustration ?illustration1 .\n  ?side2 smtg:hasPrintedArea ?a2 . ?a2 smtg:printsFace ?face ; smtg:showsIllustration ?illustration2 .\n  ?face smtg:name ?faceName .\n} ORDER BY ?printing"
+    },
+    {
+      "id": "CQ-AR-03",
+      "file": "queries/competency/CQ-AR-03.rq",
+      "title": "Two faces on one side",
+      "question": "Which printed sides carry two printed areas (two card faces on the same side), and which faces are they?",
+      "kind": "SPARQL",
+      "expects": "nonempty",
+      "modules": "printings, cards",
+      "note": "Split, flip, adventure and prepare cards; the side has one image, each area its own printed text and artist credit.",
+      "rowCount": 11,
+      "rows": [
+        {
+          "printing": "smtgid:printing/09fd2d9c-1793-4beb-a3fb-7a869f660cd4",
+          "layout": "smtgv:layout/adventure",
+          "facesOnSide": "Bonecrusher Giant / Stomp"
+        },
+        {
+          "printing": "smtgid:printing/b5b71cd2-de35-451f-b16e-2e3936169407",
+          "layout": "smtgv:layout/adventure",
+          "facesOnSide": "Bonecrusher Giant / Stomp"
+        },
+        {
+          "printing": "smtgid:printing/42ba0e13-d20f-47f9-9c86-2b0b13c39ada",
+          "layout": "smtgv:layout/flip",
+          "facesOnSide": "Rune-Tail, Kitsune Ascendant / Rune-Tail's Essence"
+        },
+        {
+          "printing": "smtgid:printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8",
+          "layout": "smtgv:layout/flip",
+          "facesOnSide": "Akki Lavarunner / Tok-Tok, Volcano Born"
+        },
+        {
+          "printing": "smtgid:printing/77285d12-e658-4eb3-ba13-ff202afab9c8",
+          "layout": "smtgv:layout/prepare",
+          "facesOnSide": "Abigale, Poet Laureate / Heroic Stanza"
+        },
+        {
+          "printing": "smtgid:printing/00320106-ce51-46a9-b0f9-79b3baf4e505",
+          "layout": "smtgv:layout/split",
+          "facesOnSide": "Consecrate / Consume"
+        },
+        {
+          "printing": "smtgid:printing/06c9e2e8-2b4c-4087-9141-6aa25a506626",
+          "layout": "smtgv:layout/split",
+          "facesOnSide": "Commit / Memory"
+        },
+        {
+          "printing": "smtgid:printing/18303862-4726-4136-814f-157aa7006579",
+          "layout": "smtgv:layout/split",
+          "facesOnSide": "Fire / Ice"
+        },
+        {
+          "printing": "smtgid:printing/855af9a8-31fc-4290-8204-04ee026f8853",
+          "layout": "smtgv:layout/split",
+          "facesOnSide": "Commit / Memory"
+        },
+        {
+          "printing": "smtgid:printing/db84415e-048a-4cfc-9121-5ae17a412198",
+          "layout": "smtgv:layout/split",
+          "facesOnSide": "Alive / Well"
+        },
+        {
+          "printing": "smtgid:printing/f98f4538-5b5b-475d-b98f-49d01dae6f04",
+          "layout": "smtgv:layout/split",
+          "facesOnSide": "Fire / Ice"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?printing ?layout (GROUP_CONCAT(?faceName; separator=\" / \") AS ?facesOnSide) WHERE {\n  { SELECT ?printing ?layout ?side ?faceName WHERE {\n      ?printing smtg:printingLayout ?layout ; smtg:hasSide ?side .\n      ?side smtg:hasPrintedArea ?area . ?area smtg:printsFace ?face . ?face smtg:name ?faceName ; smtg:faceIndex ?i .\n    } ORDER BY ?printing ?i }\n} GROUP BY ?printing ?layout ?side HAVING (COUNT(?faceName) > 1) ORDER BY ?layout ?printing"
+    },
+    {
+      "id": "CQ-AR-04",
+      "file": "queries/competency/CQ-AR-04.rq",
+      "title": "Watermark on one half only",
+      "question": "Which printed sides have a watermark in one printed area and none in the other?",
+      "kind": "SPARQL",
+      "expects": "nonempty",
+      "modules": "printings",
+      "note": "240 such printings in the 2026-11-03 snapshot (guild-kit split cards, for instance): a watermark is a fact of the printed area, not of the printing.",
+      "rowCount": 1,
+      "rows": [
+        {
+          "printing": "smtgid:printing/00320106-ce51-46a9-b0f9-79b3baf4e505",
+          "watermarked": "Consecrate",
+          "watermark": "smtgv:watermark/orzhov",
+          "plain": "Consume"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?printing ?watermarked ?watermark ?plain WHERE {\n  ?printing smtg:hasSide ?side . ?side smtg:hasPrintedArea ?a1 , ?a2 . FILTER (?a1 != ?a2)\n  ?a1 smtg:hasWatermark ?watermark ; smtg:printsFace/smtg:name ?watermarked .\n  ?a2 smtg:printsFace/smtg:name ?plain . FILTER NOT EXISTS { ?a2 smtg:hasWatermark ?w }\n} ORDER BY ?printing"
+    },
     {
       "id": "CQ-CB-01",
       "file": "queries/competency/CQ-CB-01.rq",
@@ -74,7 +225,7 @@
       "expects": "nonempty",
       "modules": "cards, taxonomies",
       "note": "subCombinationOf is a true partial order, safe to traverse (contrast with Tagger parents).",
-      "rowCount": 21,
+      "rowCount": 25,
       "rows": [
         {
           "name": "Agadeem's Awakening // Agadeem, the Undercrypt",
@@ -141,7 +292,15 @@
           "identity": "W (Mono-white)"
         },
         {
+          "name": "Case of the Uneaten Feast",
+          "identity": "W (Mono-white)"
+        },
+        {
           "name": "Gisela, the Broken Blade",
+          "identity": "W (Mono-white)"
+        },
+        {
+          "name": "History of Benalia",
           "identity": "W (Mono-white)"
         },
         {
@@ -153,11 +312,19 @@
           "identity": "W (Mono-white)"
         },
         {
+          "name": "Student of Warfare",
+          "identity": "W (Mono-white)"
+        },
+        {
           "name": "Tormented Angel",
           "identity": "W (Mono-white)"
         },
         {
           "name": "Abigale, Poet Laureate // Heroic Stanza",
+          "identity": "WB (Orzhov)"
+        },
+        {
+          "name": "Consecrate // Consume",
           "identity": "WB (Orzhov)"
         }
       ],
@@ -229,7 +396,7 @@
       "expects": "nonempty",
       "modules": "cards, taxonomies",
       "note": "uses the layout → face-configuration mapping instead of memorising layout codes.",
-      "rowCount": 7,
+      "rowCount": 8,
       "rows": [
         {
           "name": "Bonecrusher Giant // Stomp",
@@ -262,6 +429,11 @@
           "faces": "2"
         },
         {
+          "name": "Consecrate // Consume",
+          "layoutLabel": "Split",
+          "faces": "2"
+        },
+        {
           "name": "Fire // Ice",
           "layoutLabel": "Split",
           "faces": "2"
@@ -275,7 +447,7 @@
       "id": "CQ-FL-04",
       "file": "queries/competency/CQ-FL-04.rq",
       "title": "Back faces",
-      "question": "Which printed faces appear on the back of a card, which Oracle face do they manifest, and what type does it have?",
+      "question": "Which card faces are printed on the back side of a card, and what type do they have?",
       "kind": "SPARQL",
       "expects": "nonempty",
       "modules": "printings, cards",
@@ -324,7 +496,7 @@
       ],
       "pass": true,
       "error": null,
-      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT DISTINCT ?printingLayout ?faceName ?typeLine WHERE {\n  ?printing smtg:printingLayout ?printingLayout ; smtg:hasPrintedFace ?pf .\n  ?pf smtg:onSide <https://w3id.org/smtg/vocab/side/back> ; smtg:manifestsFace ?f .\n  ?f smtg:name ?faceName . OPTIONAL { ?f smtg:typeLine ?typeLine }\n} ORDER BY ?printingLayout ?faceName"
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT DISTINCT ?printingLayout ?faceName ?typeLine WHERE {\n  ?printing smtg:printingLayout ?printingLayout ; smtg:hasSide ?side .\n  ?side smtg:sidePosition <https://w3id.org/smtg/vocab/side/back> ; smtg:hasPrintedArea/smtg:printsFace ?f .\n  ?f smtg:name ?faceName . OPTIONAL { ?f smtg:typeLine ?typeLine }\n} ORDER BY ?printingLayout ?faceName"
     },
     {
       "id": "CQ-FL-05",
@@ -373,7 +545,7 @@
       "expects": "nonempty",
       "modules": "cards, taxonomies",
       "note": "why permanence is modelled per face (287 such Oracle cards in the 2026-11-03 data).",
-      "rowCount": 4,
+      "rowCount": 5,
       "rows": [
         {
           "card": "Abigale, Poet Laureate // Heroic Stanza",
@@ -394,6 +566,11 @@
           "card": "Invasion of Alara // Awaken the Maelstrom",
           "permanentFace": "Invasion of Alara",
           "spellFace": "Awaken the Maelstrom"
+        },
+        {
+          "card": "Lightning Colt",
+          "permanentFace": "Lightning Colt",
+          "spellFace": "Lightning Colt"
         }
       ],
       "pass": true,
@@ -420,7 +597,7 @@
       ],
       "pass": true,
       "error": null,
-      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?printing ?set ?printedName ?printedText WHERE {\n  ?card a smtg:OracleCard ; smtg:name \"Lightning Bolt\" .\n  ?printing smtg:isPrintingOf ?card ; smtg:inLanguage <https://w3id.org/smtg/vocab/language/it> ;\n            smtg:inSet/smtg:setCode ?set ; smtg:hasPrintedFace ?pf .\n  ?pf smtg:hasPrintedText ?n . ?n a smtg:PrintedName ; smtg:textValue ?printedName .\n  OPTIONAL { ?pf smtg:hasPrintedText ?t . ?t a smtg:PrintedRulesText ; smtg:textValue ?printedText . }\n}"
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?printing ?set ?printedName ?printedText WHERE {\n  ?card a smtg:OracleCard ; smtg:name \"Lightning Bolt\" .\n  ?printing smtg:isPrintingOf ?card ; smtg:inLanguage <https://w3id.org/smtg/vocab/language/it> ;\n            smtg:inSet/smtg:setCode ?set ; smtg:hasSide/smtg:hasPrintedArea ?area .\n  ?area smtg:hasPrintedText ?n . ?n a smtg:PrintedName ; smtg:textValue ?printedName .\n  OPTIONAL { ?area smtg:hasPrintedText ?t . ?t a smtg:PrintedRulesText ; smtg:textValue ?printedText . }\n}"
     },
     {
       "id": "CQ-ID-02",
@@ -496,7 +673,7 @@
       ],
       "pass": true,
       "error": null,
-      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?illustration (COUNT(DISTINCT ?printing) AS ?printings) (SAMPLE(?name) AS ?card) WHERE {\n  ?printing smtg:hasPrintedFace ?pf ; smtg:isPrintingOf/smtg:name ?name .\n  ?pf smtg:showsIllustration ?illustration .\n} GROUP BY ?illustration HAVING (COUNT(DISTINCT ?printing) > 1) ORDER BY DESC(?printings)"
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?illustration (COUNT(DISTINCT ?printing) AS ?printings) (SAMPLE(?name) AS ?card) WHERE {\n  ?printing smtg:hasSide/smtg:hasPrintedArea ?area ; smtg:isPrintingOf/smtg:name ?name .\n  ?area smtg:showsIllustration ?illustration .\n} GROUP BY ?illustration HAVING (COUNT(DISTINCT ?printing) > 1) ORDER BY DESC(?printings)"
     },
     {
       "id": "CQ-ID-03",
@@ -530,7 +707,7 @@
       "id": "CQ-ID-05",
       "file": "queries/competency/CQ-ID-05.rq",
       "title": "One Oracle card, normal and reversible printings",
-      "question": "Which Oracle cards have both an ordinary printing and a reversible-card printing, and how many printed faces does each printing have?",
+      "question": "Which Oracle cards have both an ordinary printing and a reversible-card printing, and how many printed sides does each printing have?",
       "kind": "SPARQL",
       "expects": "nonempty",
       "modules": "cards, printings",
@@ -540,31 +717,31 @@
         {
           "name": "Ghalta, Primal Hunger",
           "printingLayout": "smtgv:layout/normal",
-          "printedFaces": "1",
+          "printedSides": "1",
           "printing": "smtgid:printing/6a9c39e4-a8cf-42dd-8d0e-45634b335546"
         },
         {
           "name": "Ghalta, Primal Hunger",
           "printingLayout": "smtgv:layout/reversible_card",
-          "printedFaces": "2",
+          "printedSides": "2",
           "printing": "smtgid:printing/0489be0d-2117-46a8-97ab-31fe480685e2"
         },
         {
           "name": "Jinnie Fay, Jetmir's Second",
           "printingLayout": "smtgv:layout/normal",
-          "printedFaces": "1",
+          "printedSides": "1",
           "printing": "smtgid:printing/c5f9326a-2a41-45b3-97c3-548f0bdc0882"
         },
         {
           "name": "Jinnie Fay, Jetmir's Second",
           "printingLayout": "smtgv:layout/reversible_card",
-          "printedFaces": "2",
+          "printedSides": "2",
           "printing": "smtgid:printing/018830b2-dff9-45f3-9cc2-dc5b2eec0e54"
         }
       ],
       "pass": true,
       "error": null,
-      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?name ?printingLayout (COUNT(DISTINCT ?pf) AS ?printedFaces) ?printing WHERE {\n  ?card smtg:name ?name ; smtg:hasPrinting|^smtg:isPrintingOf ?printing .\n  ?printing smtg:printingLayout ?printingLayout ; smtg:hasPrintedFace ?pf .\n  FILTER EXISTS { ?card ^smtg:isPrintingOf/smtg:printingLayout <https://w3id.org/smtg/vocab/layout/reversible_card> }\n} GROUP BY ?name ?printingLayout ?printing ORDER BY ?name ?printingLayout"
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?name ?printingLayout (COUNT(DISTINCT ?side) AS ?printedSides) ?printing WHERE {\n  ?card smtg:name ?name ; smtg:hasPrinting|^smtg:isPrintingOf ?printing .\n  ?printing smtg:printingLayout ?printingLayout ; smtg:hasSide ?side .\n  FILTER EXISTS { ?card ^smtg:isPrintingOf/smtg:printingLayout <https://w3id.org/smtg/vocab/layout/reversible_card> }\n} GROUP BY ?name ?printingLayout ?printing ORDER BY ?name ?printingLayout"
     },
     {
       "id": "CQ-INF-01",
@@ -596,7 +773,7 @@
       "expects": "nonempty",
       "modules": "cards",
       "note": "[[Bonecrusher Giant // Stomp]] is (its primary face is a creature); [[Agadeem's Awakening // Agadeem, the Undercrypt]] is not (its front face is a sorcery), though its back face is a land.",
-      "rowCount": 13,
+      "rowCount": 14,
       "rows": [
         {
           "card": "Abigale, Poet Laureate // Heroic Stanza",
@@ -624,6 +801,10 @@
         },
         {
           "card": "Commit // Memory",
+          "permanentCard": "false"
+        },
+        {
+          "card": "Consecrate // Consume",
           "permanentCard": "false"
         },
         {
@@ -748,7 +929,7 @@
       "expects": "nonempty",
       "modules": "cards",
       "note": "absence of a cost triple would mean 'unknown'; both cases are explicit (AP-05): [[Ancestral Vision]] has no mana cost, [[Ornithopter]] costs {0}.",
-      "rowCount": 18,
+      "rowCount": 19,
       "rows": [
         {
           "faceName": "Ornithopter",
@@ -819,6 +1000,10 @@
           "kind": "no mana cost"
         },
         {
+          "faceName": "Surprise!",
+          "kind": "no mana cost"
+        },
+        {
           "faceName": "Tok-Tok, Volcano Born",
           "kind": "no mana cost"
         }
@@ -881,7 +1066,13 @@
           "claimClass": "Legality assertion",
           "status": "authoritative-report",
           "dataset": "Scryfall bulk: oracle_cards",
-          "n": "759"
+          "n": "736"
+        },
+        {
+          "claimClass": "Legality assertion",
+          "status": "authoritative-report",
+          "dataset": "Scryfall bulk: all_cards",
+          "n": "460"
         },
         {
           "claimClass": "Art tag assignment",
@@ -890,52 +1081,46 @@
           "n": "322"
         },
         {
-          "claimClass": "Legality assertion",
-          "status": "authoritative-report",
-          "dataset": "Scryfall bulk: all_cards",
-          "n": "230"
-        },
-        {
           "claimClass": "Ruling",
           "status": "authoritative-report",
           "dataset": "Scryfall bulk: rulings",
+          "n": "245"
+        },
+        {
+          "claimClass": "Price observation",
+          "status": "statistical-observation",
+          "dataset": "Scryfall bulk: oracle_cards",
           "n": "193"
+        },
+        {
+          "claimClass": "Price observation",
+          "status": "statistical-observation",
+          "dataset": "Scryfall bulk: all_cards",
+          "n": "178"
         },
         {
           "claimClass": "Oracle tag assignment",
           "status": "community-curated",
           "dataset": "Scryfall bulk: oracle_tags (Tagger)",
-          "n": "157"
-        },
-        {
-          "claimClass": "Price observation",
-          "status": "statistical-observation",
-          "dataset": "Scryfall bulk: oracle_cards",
-          "n": "156"
-        },
-        {
-          "claimClass": "Price observation",
-          "status": "statistical-observation",
-          "dataset": "Scryfall bulk: all_cards",
-          "n": "136"
+          "n": "159"
         },
         {
           "claimClass": "Rank observation",
           "status": "statistical-observation",
           "dataset": "Scryfall bulk: oracle_cards",
-          "n": "32"
+          "n": "31"
+        },
+        {
+          "claimClass": "Rank observation",
+          "status": "statistical-observation",
+          "dataset": "Scryfall bulk: all_cards",
+          "n": "12"
         },
         {
           "claimClass": "Combo variant",
           "status": "community-curated",
           "dataset": "Commander Spellbook bulk: variants",
           "n": "6"
-        },
-        {
-          "claimClass": "Rank observation",
-          "status": "statistical-observation",
-          "dataset": "Scryfall bulk: all_cards",
-          "n": "4"
         }
       ],
       "pass": true,
@@ -983,31 +1168,31 @@
       "rowCount": 7,
       "rows": [
         {
-          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "activity": "Rule materialisation (7 rules, 162 triples)",
           "rule": "Faces with a permanent card type"
         },
         {
-          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "activity": "Rule materialisation (7 rules, 162 triples)",
           "rule": "Faces with the instant or sorcery card type"
         },
         {
-          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "activity": "Rule materialisation (7 rules, 162 triples)",
           "rule": "Hybrid and Phyrexian mana symbols"
         },
         {
-          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "activity": "Rule materialisation (7 rules, 162 triples)",
           "rule": "Layout-defined classes (ModalDoubleFacedCard, AdventurerCard, …)"
         },
         {
-          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "activity": "Rule materialisation (7 rules, 162 triples)",
           "rule": "Mana a card can produce through a token it creates"
         },
         {
-          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "activity": "Rule materialisation (7 rules, 162 triples)",
           "rule": "Permanent cards (CR 110.4a): primary face is a permanent face, or a split card with a permanent half"
         },
         {
-          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "activity": "Rule materialisation (7 rules, 162 triples)",
           "rule": "Tokens a card can create (projection of all_parts)"
         }
       ],
@@ -1095,7 +1280,7 @@
       "kind": "SPARQL",
       "expects": "any",
       "modules": "cards, taxonomies",
-      "rowCount": 3,
+      "rowCount": 4,
       "rows": [
         {
           "face": "Jinnie Fay, Jetmir's Second",
@@ -1105,6 +1290,11 @@
         {
           "face": "Jinnie Fay, Jetmir's Second",
           "symbol": "{R/G}",
+          "kind": "hybrid"
+        },
+        {
+          "face": "Consecrate",
+          "symbol": "{W/B}",
           "kind": "hybrid"
         },
         {
@@ -1468,7 +1658,7 @@
       "kind": "SPARQL",
       "expects": "nonempty",
       "modules": "text-art, printings",
-      "rowCount": 29,
+      "rowCount": 30,
       "rows": [
         {
           "name": "Agadeem's Awakening // Agadeem, the Undercrypt",
@@ -1598,7 +1788,7 @@
       ],
       "pass": true,
       "error": null,
-      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?name ?set ?flavor WHERE {\n  ?printing smtg:isPrintingOf/smtg:name ?name ; smtg:inSet/smtg:setCode ?set ; smtg:hasPrintedFace/smtg:hasPrintedText ?ft .\n  ?ft a smtg:FlavorText ; smtg:textValue ?flavor .\n} ORDER BY ?name ?set"
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?name ?set ?flavor WHERE {\n  ?printing smtg:isPrintingOf/smtg:name ?name ; smtg:inSet/smtg:setCode ?set ; smtg:hasSide/smtg:hasPrintedArea/smtg:hasPrintedText ?ft .\n  ?ft a smtg:FlavorText ; smtg:textValue ?flavor .\n} ORDER BY ?name ?set"
     },
     {
       "id": "CQ-TX-02",
@@ -1618,7 +1808,7 @@
       ],
       "pass": true,
       "error": null,
-      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?oracleName ?flavorName ?set WHERE {\n  ?printing smtg:isPrintingOf/smtg:name ?oracleName ; smtg:inSet/smtg:setCode ?set ; smtg:hasPrintedFace/smtg:hasPrintedText ?fn .\n  ?fn a smtg:FlavorName ; smtg:textValue ?flavorName .\n}"
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?oracleName ?flavorName ?set WHERE {\n  ?printing smtg:isPrintingOf/smtg:name ?oracleName ; smtg:inSet/smtg:setCode ?set ; smtg:hasSide/smtg:hasPrintedArea/smtg:hasPrintedText ?fn .\n  ?fn a smtg:FlavorName ; smtg:textValue ?flavorName .\n}"
     },
     {
       "id": "CQ-TY-01",
@@ -1628,7 +1818,7 @@
       "kind": "SPARQL",
       "expects": "nonempty",
       "modules": "cards, taxonomies",
-      "rowCount": 43,
+      "rowCount": 49,
       "rows": [
         {
           "faceName": "Abigale, Poet Laureate",
@@ -1706,6 +1896,11 @@
           "scheme": "Creature types"
         },
         {
+          "faceName": "Gemrazer",
+          "subtype": "Beast",
+          "scheme": "Creature types"
+        },
+        {
           "faceName": "Ghalta, Primal Hunger",
           "subtype": "Dinosaur",
           "scheme": "Creature types"
@@ -1749,11 +1944,6 @@
           "faceName": "Jinnie Fay, Jetmir's Second",
           "subtype": "Druid",
           "scheme": "Creature types"
-        },
-        {
-          "faceName": "Jinnie Fay, Jetmir's Second",
-          "subtype": "Elf",
-          "scheme": "Creature types"
         }
       ],
       "pass": true,
@@ -1782,7 +1972,7 @@
       "kind": "SPARQL",
       "expects": "nonempty",
       "modules": "taxonomies",
-      "rowCount": 17,
+      "rowCount": 18,
       "rows": [
         {
           "face": "Abigale, Poet Laureate",
@@ -1815,6 +2005,10 @@
         {
           "face": "Gisela, the Broken Blade",
           "via": "Legendary"
+        },
+        {
+          "face": "History of Benalia",
+          "via": "Saga"
         },
         {
           "face": "Jinnie Fay, Jetmir's Second",

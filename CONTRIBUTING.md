@@ -36,7 +36,11 @@ the checks.
 ## Card names in documentation
 Write cards as `[[Lightning Bolt]]`, a printing as `[[Lightning Bolt|LEA|161]]`, an inline image as
 `[[!Lightning Bolt]]` (see *Card references* in `docs/ontology/authoring-conventions.md`), then run
-`npm run cards:resolve` and commit `docs/card-refs.json`.
+`npm run cards:resolve` and commit `docs/card-refs.json`. Every card shown as an image is also shown as
+an example instance (graph and Turtle) next to it, so its printing must exist in `examples/`: after
+adding an image, run `npm run fixtures` (needs the dumps; it adds the printing to
+`fixtures/scryfall/doc-examples.json`) and `npm run map:fixtures`. The docs build warns about images
+without an instance.
 
 ## Rules of thumb (see `docs/ontology/anti-patterns.md`)
 - Don't add `rdfs:domain`/`rdfs:range` or disjointness unless it is true for **every** use.

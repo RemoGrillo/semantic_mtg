@@ -77,6 +77,132 @@
     smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
     smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
     smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0bc2875b-3a5a-4885-86b9-16ab7330ac10/de83f4aeae0c> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0bc2875b-3a5a-4885-86b9-16ab7330ac10>;
+    smtg:rulingText "A creature’s level is based on how many level counters it has on it, not how many times its level up ability has been activated or has resolved. If a leveler gets level counters due to some other effect (such as Clockspinning) or loses level counters for some reason (such as Vampire Hexmage), its level is changed accordingly.";
+    smtg:publishedOn "2010-06-15"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0bc2875b-3a5a-4885-86b9-16ab7330ac10/ed67708c2b67> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0bc2875b-3a5a-4885-86b9-16ab7330ac10>;
+    smtg:rulingText "Effects that modify a leveler’s power or toughness, such as the effects of Giant Growth or Glorious Anthem, will apply to it no matter when they started to take effect. The same is true for counters that change the creature’s power or toughness (such as +1/+1 counters) and effects that switch its power and toughness.";
+    smtg:publishedOn "2010-06-15"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0bc2875b-3a5a-4885-86b9-16ab7330ac10/8b4aff9446eb> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0bc2875b-3a5a-4885-86b9-16ab7330ac10>;
+    smtg:rulingText "Effects that set a leveler’s power or toughness to a specific value, including the effects from a level symbol’s ability, apply in timestamp order. The timestamp of each level symbol’s ability is the same as the timestamp of the leveler itself, regardless of when the most recent level counter was put on it.";
+    smtg:publishedOn "2010-06-15"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0bc2875b-3a5a-4885-86b9-16ab7330ac10/d7b43931f170> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0bc2875b-3a5a-4885-86b9-16ab7330ac10>;
+    smtg:rulingText "If another creature becomes a copy of a leveler, all of the leveler’s printed abilities — including those represented by level symbols — are copied. The current characteristics of the leveler, and the number of level counters on it, are not. The abilities, power, and toughness of the copy will be determined based on how many level counters are on the copy.";
+    smtg:publishedOn "2010-06-15"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0bc2875b-3a5a-4885-86b9-16ab7330ac10/ba78142f1d81> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0bc2875b-3a5a-4885-86b9-16ab7330ac10>;
+    smtg:rulingText "The abilities a leveler grants to itself don’t overwrite any other abilities it may have. In particular, they don’t overwrite the creature’s level up ability; it always has that.";
+    smtg:publishedOn "2010-06-15"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0d8730b5-f7ba-48b0-928d-d8b7685347d3/0945cab10b28> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0d8730b5-f7ba-48b0-928d-d8b7685347d3>;
+    smtg:rulingText "\"Solved — [Triggered ability]\" means \"[Triggered ability]. This ability triggers only if this Case is solved.\" Triggered abilities use the word \"when,\" \"whenever,\" or \"at.\" They're often written as \"[Trigger condition], [effect].\"";
+    smtg:publishedOn "2024-02-02"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0d8730b5-f7ba-48b0-928d-d8b7685347d3/56b5acf0e583> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0d8730b5-f7ba-48b0-928d-d8b7685347d3>;
+    smtg:rulingText "\"Solved — [static ability]\" means \"As long as this Case is solved, [static ability].\" Static abilities are written as statements, such as \"Creatures you control get +1/+1\" or \"Instant and sorcery spells you cast cost {1} less to cast.\"";
+    smtg:publishedOn "2024-02-02"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0d8730b5-f7ba-48b0-928d-d8b7685347d3/6b6f9313c6c7> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0d8730b5-f7ba-48b0-928d-d8b7685347d3>;
+    smtg:rulingText "\"To Solve — [condition]\" means \"At the beginning of your end step, if [condition] and this Case is not solved, it becomes solved.\"";
+    smtg:publishedOn "2024-02-02"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0d8730b5-f7ba-48b0-928d-d8b7685347d3/550d704e5ac5> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0d8730b5-f7ba-48b0-928d-d8b7685347d3>;
+    smtg:rulingText "\"To solve\" abilities will check for their condition twice: once when the ability would trigger, and once when it resolves. If the condition isn't true at the beginning of your end step, the ability won't trigger at all. If the condition isn't true when the ability resolves, the Case won't become solved.";
+    smtg:publishedOn "2024-02-02"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0d8730b5-f7ba-48b0-928d-d8b7685347d3/a435f8d2e6d5> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0d8730b5-f7ba-48b0-928d-d8b7685347d3>;
+    smtg:rulingText "Being solved is not part of a permanent's copiable values. A permanent that becomes a copy of a solved Case is not solved. A solved Case that somehow becomes a copy of a different Case stays solved.";
+    smtg:publishedOn "2024-02-02"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0d8730b5-f7ba-48b0-928d-d8b7685347d3/3395311fdff5> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0d8730b5-f7ba-48b0-928d-d8b7685347d3>;
+    smtg:rulingText "Cases don't lose their other abilities when they become solved.";
+    smtg:publishedOn "2024-02-02"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0d8730b5-f7ba-48b0-928d-d8b7685347d3/6d9139b80bf1> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0d8730b5-f7ba-48b0-928d-d8b7685347d3>;
+    smtg:rulingText "Each Case has two special keyword abilities: to solve and solved.";
+    smtg:publishedOn "2024-02-02"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0d8730b5-f7ba-48b0-928d-d8b7685347d3/a71358a1b49f> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0d8730b5-f7ba-48b0-928d-d8b7685347d3>;
+    smtg:rulingText "Once a Case becomes solved, it stays solved until it leaves the battlefield.";
+    smtg:publishedOn "2024-02-02"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/0d8730b5-f7ba-48b0-928d-d8b7685347d3/41b71b62ede6> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/0d8730b5-f7ba-48b0-928d-d8b7685347d3>;
+    smtg:rulingText "The meaning of \"solved\" differs based on what type of ability follows it. \"Solved — [activated ability]\" means \"[Activated ability]. Activate only if this Case is solved.\" Activated abilities contain a colon. They're generally written \"[Cost]: [Effect].\" ";
+    smtg:publishedOn "2024-02-02"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
 <https://w3id.org/smtg/id/claim/ruling/11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5/9cfc951fd0e6> a smtg:Ruling;
     smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5>;
     smtg:rulingText "A face-up plane card that's turned face down becomes a new object with no relation to its previous existence. In particular, it loses all counters it may have had.";
@@ -108,6 +234,96 @@
     smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5>;
     smtg:rulingText "The controller of a face-up plane card is the player designated as the \"planar controller.\" Normally, the planar controller is whoever the active player is. However, if the current planar controller would leave the game, instead the next player in turn order that wouldn't leave the game becomes the planar controller, then the old planar controller leaves the game. The new planar controller retains that designation until they leave the game or a different player becomes the active player, whichever comes first.";
     smtg:publishedOn "2009-10-01"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/20e7a93f-77ce-466b-8586-35d390689d0c/5907a556170f> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/20e7a93f-77ce-466b-8586-35d390689d0c>;
+    smtg:rulingText "If the creature's power is negative, you don't lose or gain life.";
+    smtg:publishedOn "2019-01-25"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/20e7a93f-77ce-466b-8586-35d390689d0c/cb155cffd03b> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/20e7a93f-77ce-466b-8586-35d390689d0c>;
+    smtg:rulingText "If the target player controls more than one creature with the greatest power among creatures they control, that player chooses which to sacrifice.";
+    smtg:publishedOn "2019-01-25"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/20e7a93f-77ce-466b-8586-35d390689d0c/47581b905c69> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/20e7a93f-77ce-466b-8586-35d390689d0c>;
+    smtg:rulingText "The amount of life gained while Consume resolves is equal to the power of the creature as it last existed on the battlefield.";
+    smtg:publishedOn "2019-01-25"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/20e7a93f-77ce-466b-8586-35d390689d0c/f324c1d889e0> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/20e7a93f-77ce-466b-8586-35d390689d0c>;
+    smtg:rulingText "A split card's characteristics are a combination of its two halves while it is not on the stack. For example, Assault // Battery has a mana value of 5 while it is in your library. If an effect allows you to search your library for a card with mana value 4 or less, you can't find Assault // Battery.";
+    smtg:publishedOn "2022-12-08"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/20e7a93f-77ce-466b-8586-35d390689d0c/bfce8106552d> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/20e7a93f-77ce-466b-8586-35d390689d0c>;
+    smtg:rulingText "Each split card has two names. If an effect instructs you to choose a card name, you may choose one of those names, but not both.";
+    smtg:publishedOn "2022-12-08"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/20e7a93f-77ce-466b-8586-35d390689d0c/8df1af931034> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/20e7a93f-77ce-466b-8586-35d390689d0c>;
+    smtg:rulingText "Each split card is a single card. For example, if you discard a split card, you've discarded one card, not two. If an effect counts the number of sorcery cards in your graveyard, Assault // Battery counts once, not twice.";
+    smtg:publishedOn "2022-12-08"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/20e7a93f-77ce-466b-8586-35d390689d0c/a1b3a21dc821> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/20e7a93f-77ce-466b-8586-35d390689d0c>;
+    smtg:rulingText "If an effect allows you to cast a spell with certain characteristics, consider only the characteristics of the half you're casting. For example, if an effect allows you to cast a sorcery spell with mana value 2 or less from among cards in your graveyard, you could cast Assault this way, but not Battery.";
+    smtg:publishedOn "2022-12-08"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/20e7a93f-77ce-466b-8586-35d390689d0c/1b23df0a1907> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/20e7a93f-77ce-466b-8586-35d390689d0c>;
+    smtg:rulingText "If you copy a spell that's half of a split card, the copy copies that same half. For example, if you copy Assault, the copy is also Assault, not Battery.";
+    smtg:publishedOn "2022-12-08"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/20e7a93f-77ce-466b-8586-35d390689d0c/04c2810301b9> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/20e7a93f-77ce-466b-8586-35d390689d0c>;
+    smtg:rulingText "Split cards have two card faces on a single card. The characteristics of the half you didn't cast are ignored while the spell is on the stack.";
+    smtg:publishedOn "2022-12-08"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/20e7a93f-77ce-466b-8586-35d390689d0c/dfef5fc5d393> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/20e7a93f-77ce-466b-8586-35d390689d0c>;
+    smtg:rulingText "To cast a split card, choose one of its halves to cast. There's no way to cast both halves of this split card.";
+    smtg:publishedOn "2022-12-08"^^xsd:date;
     smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
     smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
     smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
@@ -693,6 +909,15 @@
     smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/61fbaaf2-4286-4e9a-b9cb-aa31262b596a>;
     smtg:rulingText "The tokens' characteristics are entirely replaced by either 2/2 green Cat creature token with haste or 3/1 green Dog creature token with vigilance. They don't have any other abilities the tokens would have been created with. Anything else specified in the effect creating the tokens (such as tapped, attacking, “That token gains haste,” or “Exile that token at end of combat”) still applies.";
     smtg:publishedOn "2022-04-29"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/710f1f8a-e5f7-4889-9f12-2611f42d5c73/38bde79e741c> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/710f1f8a-e5f7-4889-9f12-2611f42d5c73>;
+    smtg:rulingText "Each Ascendant is legendary in both its unflipped and flipped forms. This means that effects that look for legendary creature cards, such as Time of Need and Captain Sisay, can find an Ascendant.";
+    smtg:publishedOn "2005-06-01"^^xsd:date;
     smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
     smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
     smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
@@ -1526,6 +1751,78 @@
     smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
     smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
     smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/c15bb7eb-aaaa-4468-9641-8f706d6137e8/00aed7d9ac31> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/c15bb7eb-aaaa-4468-9641-8f706d6137e8>;
+    smtg:rulingText "A chapter ability doesn’t trigger if a lore counter is put on a Saga that already had a number of lore counters greater than or equal to that chapter’s number. For example, the third lore counter put on a Saga causes the III chapter ability to trigger, but I and II won’t trigger again.";
+    smtg:publishedOn "2018-04-27"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/c15bb7eb-aaaa-4468-9641-8f706d6137e8/3c9644fb5c65> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/c15bb7eb-aaaa-4468-9641-8f706d6137e8>;
+    smtg:rulingText "As a Saga enters the battlefield, its controller puts a lore counter on it. As your precombat main phase begins (immediately after your draw step), you put another lore counter on each Saga you control. Putting a lore counter on a Saga in either of these ways doesn’t use the stack.";
+    smtg:publishedOn "2018-04-27"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/c15bb7eb-aaaa-4468-9641-8f706d6137e8/622b82f428ad> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/c15bb7eb-aaaa-4468-9641-8f706d6137e8>;
+    smtg:rulingText "Each symbol on the left of a Saga’s text box represents a chapter ability. A chapter ability is a triggered ability that triggers when a lore counter that is put on the Saga causes the number of lore counters on the Saga to become equal to or greater than the ability’s chapter number. Chapter abilities are put onto the stack and may be responded to.";
+    smtg:publishedOn "2018-04-27"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/c15bb7eb-aaaa-4468-9641-8f706d6137e8/cc2649c0eb3f> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/c15bb7eb-aaaa-4468-9641-8f706d6137e8>;
+    smtg:rulingText "If counters are removed from a Saga, the appropriate chapter abilities will trigger again when the Saga receives lore counters. Removing lore counters won’t cause a previous chapter ability to trigger.";
+    smtg:publishedOn "2018-04-27"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/c15bb7eb-aaaa-4468-9641-8f706d6137e8/9c5f329e2f1f> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/c15bb7eb-aaaa-4468-9641-8f706d6137e8>;
+    smtg:rulingText "If multiple chapter abilities trigger at the same time, their controller puts them on the stack in any order. If any of them require targets, those targets are chosen as you put the abilities on the stack, before any of those abilities resolve.";
+    smtg:publishedOn "2018-04-27"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/c15bb7eb-aaaa-4468-9641-8f706d6137e8/fb87f5e9d835> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/c15bb7eb-aaaa-4468-9641-8f706d6137e8>;
+    smtg:rulingText "Once a chapter ability has triggered, the ability on the stack won’t be affected if the Saga gains or loses counters, or if it leaves the battlefield.";
+    smtg:publishedOn "2018-04-27"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/c15bb7eb-aaaa-4468-9641-8f706d6137e8/894633ef3809> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/c15bb7eb-aaaa-4468-9641-8f706d6137e8>;
+    smtg:rulingText "Once the number of lore counters on a Saga is greater than or equal to the greatest number among its chapter abilities—in the Dominaria set, this is always three—the Saga’s controller sacrifices it as soon as its chapter ability has left the stack, most likely by resolving or being countered. This state-based action doesn’t use the stack.";
+    smtg:publishedOn "2018-04-27"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/c15bb7eb-aaaa-4468-9641-8f706d6137e8/10237851c4d3> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/c15bb7eb-aaaa-4468-9641-8f706d6137e8>;
+    smtg:rulingText "The final chapter ability of History of Benalia affects only Knights you control at the time it resolves. Creatures you begin to control later in the turn or that become Knights later in the turn won’t get +2/+1.";
+    smtg:publishedOn "2018-04-27"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
 <https://w3id.org/smtg/id/claim/ruling/d6d72f5f-8f5d-4180-b514-f22ff5482902/43500e1e5b87> a smtg:Ruling;
     smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902>;
     smtg:rulingText "An adventurer card is a permanent card in every zone except the stack, as well as while on the stack if not cast as an Adventure. Ignore its alternative characteristics in those cases. For example, while it's in your graveyard, Giant Killer is a white creature card whose mana value is 1. It can't be the target of the triggered ability of Mystic Sanctuary.";
@@ -1661,6 +1958,114 @@
     smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
     smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
     smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/dcbcbf42-4654-487a-acad-21f2606d229b/9fb4e87de80d> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/dcbcbf42-4654-487a-acad-21f2606d229b>;
+    smtg:rulingText "Each Class has five abilities. The three in the major sections of its text box are class abilities. Class abilities can be static, activated, or triggered abilities. The other two are level abilities, one activated ability to advance the Class to level 2 and another to advance the Class to level 3.";
+    smtg:publishedOn "2021-07-23"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/dcbcbf42-4654-487a-acad-21f2606d229b/70786cf7530d> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/dcbcbf42-4654-487a-acad-21f2606d229b>;
+    smtg:rulingText "Each Class starts with only the first of three class abilities. As the first level ability resolves, the Class becomes level 2 and gains the second class ability. As the second level ability resolves, the Class becomes level 3 and gains the third class ability.";
+    smtg:publishedOn "2021-07-23"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/dcbcbf42-4654-487a-acad-21f2606d229b/a0410c225242> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/dcbcbf42-4654-487a-acad-21f2606d229b>;
+    smtg:rulingText "For the third ability, the power and toughness of the creature will change as the number of lands you control changes.";
+    smtg:publishedOn "2021-07-23"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/dcbcbf42-4654-487a-acad-21f2606d229b/4227f2671e27> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/dcbcbf42-4654-487a-acad-21f2606d229b>;
+    smtg:rulingText "Gaining a level is a normal activated ability. It uses the stack and can be responded to.";
+    smtg:publishedOn "2021-07-23"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/dcbcbf42-4654-487a-acad-21f2606d229b/4ef6ebe26325> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/dcbcbf42-4654-487a-acad-21f2606d229b>;
+    smtg:rulingText "Gaining a level won't remove abilities that a Class had at a previous level.";
+    smtg:publishedOn "2021-07-23"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/dcbcbf42-4654-487a-acad-21f2606d229b/5bf7ed5679f9> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/dcbcbf42-4654-487a-acad-21f2606d229b>;
+    smtg:rulingText "If you have more than one Druid Class at level 2 or higher, you can play that many additional lands per turn. For example, with two Druid Classes at level 2, you can play three lands during your turn.";
+    smtg:publishedOn "2021-07-23"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/dcbcbf42-4654-487a-acad-21f2606d229b/a7f68a5e8b61> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/dcbcbf42-4654-487a-acad-21f2606d229b>;
+    smtg:rulingText "Some Class cards have an effect that increases when more are under your control. For example, if you have multiple Barbarian Class cards, you roll that many additional dice and ignore that many of the lowest rolls.";
+    smtg:publishedOn "2021-07-23"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/dcbcbf42-4654-487a-acad-21f2606d229b/e614d345158a> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/dcbcbf42-4654-487a-acad-21f2606d229b>;
+    smtg:rulingText "You can multiclass or even control multiple Class enchantments of the same class. Each Class permanent tracks its own level separately.";
+    smtg:publishedOn "2021-07-23"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/dcbcbf42-4654-487a-acad-21f2606d229b/8977e5eb6316> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/dcbcbf42-4654-487a-acad-21f2606d229b>;
+    smtg:rulingText "You can't activate the first level ability of a Class unless that Class is level 1. Similarly, you can't activate the second level ability of a Class unless that Class is level 2.";
+    smtg:publishedOn "2021-07-23"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/dcbcbf42-4654-487a-acad-21f2606d229b/94fc28b61106> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/dcbcbf42-4654-487a-acad-21f2606d229b>;
+    smtg:rulingText "A landfall ability doesn't trigger if a permanent already on the battlefield becomes a land.";
+    smtg:publishedOn "2024-11-08"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/dcbcbf42-4654-487a-acad-21f2606d229b/e3b30bd2e1b7> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/dcbcbf42-4654-487a-acad-21f2606d229b>;
+    smtg:rulingText "A landfall ability triggers whenever a land you control enters for any reason. It triggers whenever you play a land, as well as whenever a spell or ability puts a land onto the battlefield under your control.";
+    smtg:publishedOn "2024-11-08"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/dcbcbf42-4654-487a-acad-21f2606d229b/1d640ab78242> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/dcbcbf42-4654-487a-acad-21f2606d229b>;
+    smtg:rulingText "Whenever a land you control enters, each landfall ability of the permanents you control will trigger. You can put them   on the stack in any order. The last ability you put on the stack will be the first one to resolve (As a result, you can have those abilities resolve in the order of your choosing.).";
+    smtg:publishedOn "2024-11-08"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
 <https://w3id.org/smtg/id/claim/ruling/edd531b9-f615-4399-8c8c-1c5e18c4acbf/4e43a43d866a> a smtg:Ruling;
     smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf>;
     smtg:rulingText "You may reveal the card even if it's not an instant or sorcery. Whether or not you reveal it, the card stays on top of your library.";
@@ -1701,6 +2106,69 @@
     smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22>;
     smtg:rulingText "In a Commander game, your commander may be Bruna, the Fading Light or Gisela, the Broken Blade, and the other may be in your deck. If they meld into Brisela, Voice of Nightmares, Brisela will also be your commander; but if Brisela leaves the battlefield, only the card chosen as your commander at the start of the game may be put into the command zone.";
     smtg:publishedOn "2016-07-13"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/fa5e1347-9bee-4103-8b74-5d0df35dd8ff/f37225110c30> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/fa5e1347-9bee-4103-8b74-5d0df35dd8ff>;
+    smtg:rulingText "Although {T} acts in many ways like mana, it is not mana. An ability that triggers from a creature tapping to add mana wouldn't trigger when you activate Sole Performer's ability, for example.";
+    smtg:publishedOn "2022-10-07"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/fa5e1347-9bee-4103-8b74-5d0df35dd8ff/d4b41b39e219> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/fa5e1347-9bee-4103-8b74-5d0df35dd8ff>;
+    smtg:rulingText "For example, say you control Prize Wall, which has \"{U}, {T}: You get {TK}.\" You activate Sole Performer to get {T}{T}. You then activate Prize Wall, spending {U} and one of the {T}s you got from Sole Performer. You could then activate Prize Wall again, spending another {U} and the other {T}. Prize Wall itself is still untapped at this point. You can then activate Prize Wall a third time, spending a third {U} and finally actually tapping Prize Wall.";
+    smtg:publishedOn "2022-10-07"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/fa5e1347-9bee-4103-8b74-5d0df35dd8ff/4440d3f38616> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/fa5e1347-9bee-4103-8b74-5d0df35dd8ff>;
+    smtg:rulingText "Sole Performer turns {T} into a resource you can add, much like mana. You spend {T} to pay for that symbol appearing in the costs of activated abilities. If you spend a {T} you have, you don't have to tap the permanent that has the ability.";
+    smtg:publishedOn "2022-10-07"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/fa5e1347-9bee-4103-8b74-5d0df35dd8ff/4dcad1a1e2d9> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/fa5e1347-9bee-4103-8b74-5d0df35dd8ff>;
+    smtg:rulingText "Spending {T} allows you to activate the tap ability of a creature that's already tapped. Normally, you couldn't pay the cost of tapping the creature because it's already tapped. With Sole Performer, you don't have to worry about that. You have {T}!";
+    smtg:publishedOn "2022-10-07"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/fa5e1347-9bee-4103-8b74-5d0df35dd8ff/833f561ad6fe> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/fa5e1347-9bee-4103-8b74-5d0df35dd8ff>;
+    smtg:rulingText "Spending {T} rather than tapping the permanent doesn't let you activate abilities of creatures that have \"summoning sickness.\" That is, if a creature's ability has {T} in the cost, and it hasn't been under your control since the beginning of your most recent turn, you can't activate the ability (unless the creature has haste), even if you intend to spend {T} rather than tap the creature.";
+    smtg:publishedOn "2022-10-07"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/fa5e1347-9bee-4103-8b74-5d0df35dd8ff/5c3f2ce09df0> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/fa5e1347-9bee-4103-8b74-5d0df35dd8ff>;
+    smtg:rulingText "You can't spend {T} to have a creature attack without tapping. You also can't use it to pay the cost of an ability that taps a creature without using the {T} symbol. For example, you can't activate an ability that says \"Tap an untapped creature you control: [Do something]\" with {T}.";
+    smtg:publishedOn "2022-10-07"^^xsd:date;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/knowledge-claim>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/ruling/fa5e1347-9bee-4103-8b74-5d0df35dd8ff/b151008b96ef> a smtg:Ruling;
+    smtg:rulingFor <https://w3id.org/smtg/id/oracle-card/fa5e1347-9bee-4103-8b74-5d0df35dd8ff>;
+    smtg:rulingText "You lose unused {T} as steps and phases end, at the same time you lose unspent mana.";
+    smtg:publishedOn "2022-10-07"^^xsd:date;
     smtg:claimedBy <https://w3id.org/smtg/id/agent/wizards>;
     smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00>;
     smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/authoritative-report>;

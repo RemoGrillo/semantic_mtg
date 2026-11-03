@@ -1,0 +1,19 @@
+# id: CQ-AR-02
+# title: Same face printed on both sides with different art
+# question: Which printings print the same card face on two sides, and with which illustrations?
+# kind: SPARQL
+# expects: nonempty
+# modules: printings, text-art
+# note: Reversible printings ([[Ghalta, Primal Hunger|SLD|1124]]): one Oracle card, one card face, two printed sides, two illustrations (RQ-ID-1).
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?printing ?faceName ?side1 ?illustration1 ?side2 ?illustration2 WHERE {
+  ?printing smtg:hasSide ?side1 , ?side2 . FILTER (STR(?side1) < STR(?side2))
+  ?side1 smtg:hasPrintedArea ?a1 . ?a1 smtg:printsFace ?face ; smtg:showsIllustration ?illustration1 .
+  ?side2 smtg:hasPrintedArea ?a2 . ?a2 smtg:printsFace ?face ; smtg:showsIllustration ?illustration2 .
+  ?face smtg:name ?faceName .
+} ORDER BY ?printing

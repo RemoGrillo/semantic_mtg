@@ -11,6 +11,6 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX v: <https://w3id.org/smtg/vocab/>
 SELECT ?oracleName ?flavorName ?set WHERE {
-  ?printing smtg:isPrintingOf/smtg:name ?oracleName ; smtg:inSet/smtg:setCode ?set ; smtg:hasPrintedFace/smtg:hasPrintedText ?fn .
+  ?printing smtg:isPrintingOf/smtg:name ?oracleName ; smtg:inSet/smtg:setCode ?set ; smtg:hasSide/smtg:hasPrintedArea/smtg:hasPrintedText ?fn .
   ?fn a smtg:FlavorName ; smtg:textValue ?flavorName .
 }

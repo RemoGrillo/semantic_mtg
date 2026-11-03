@@ -18,7 +18,7 @@
 smtgm:printings a owl:Ontology ;
   rdfs:label "SMTG-O Printings"@en ;
   dcterms:title "Printings: published card objects, printed faces, sets and observations"@en ;
-  dcterms:description """The manifestation level. A printing is one published card object — one set, collector number and language, as identified by a Scryfall card ID — and it manifests one Oracle card (a reversible printing shows the same Oracle card on both sides). Each printing has printed faces that carry the localised name and text, flavour text, artwork and images, and the physical side and orientation of each face. Volatile facts that the sources report about cards — legality in a format, prices, popularity ranks — are time-scoped observations, not timeless properties."""@en ;
+  dcterms:description """The manifestation level. A printing is one published card object — one set, collector number and language, as identified by a Scryfall card ID — and it manifests one Oracle card (a reversible printing shows the same Oracle card on both sides). Each printing has one or two printed sides, each with its images and its printed areas: one area per card face the side shows, carrying the localised name and text, the flavour text, the illustration and the credited artist. Volatile facts that the sources report about cards — legality in a format, prices, popularity ranks — are time-scoped observations, not timeless properties."""@en ;
   owl:versionInfo "0.1.0-draft" ;
   smtg:moduleOrder 3 ;
   vs:term_status "unstable" ;
@@ -39,15 +39,31 @@ smtg:CardPrinting a owl:Class ;
   owl:disjointWith smtg:OracleCard , smtg:CardFace ;
   rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
 
-smtg:PrintedFace a owl:Class ;
-  rdfs:label "Printed face"@en ;
-  skos:definition "A face as manifested on a particular printing: the conceptual face it shows, the physical side and orientation where it appears, and its printed (possibly localised) name, type line, text, flavour text, artwork and images."@en ;
-  skos:scopeNote """Two levels, two classes. A card face (smtg:CardFace) is a face of the Oracle card in the game: its name, mana cost, types, Oracle text and power/toughness, the same in every printing and every language. A printed face is what one particular printing shows: which card face (smtg:manifestsFace), on which physical side (smtg:onSide) and in which orientation (smtg:hasOrientation), with what varies between printings — the printed name, type line and text in the printing's language, the flavour text, the illustration and artist, the images.
+smtg:PrintedSide a owl:Class ;
+  rdfs:label "Printed side"@en ;
+  skos:definition "One physical side (front or back) of a printing, as published: the images of the whole side, and the printed areas on it, one per card face that the side shows."@en ;
+  skos:scopeNote """Three levels, three classes. A card face (smtg:CardFace) belongs to the Oracle card: name, mana cost, types and Oracle text, the same in every printing and every language. A printed side is a physical fact about one printing: a card has a front and, for double-sided layouts, a back; the source's images are images of sides (one image for the whole front of a split card, one per side of a transforming card). A printed area (smtg:PrintedArea) is the part of a side where one card face is printed, with everything of that face that varies between printings.
 
-The two usually correspond one to one, but not by position, and not always one to one. Split, flip and adventure cards print both faces on the front; transforming and modal double-faced cards print one face on each side; a reversible printing prints the same single face twice, front and back, with different artwork, so two printed faces manifest one card face. Every printing has at least one printed face, mirroring the card-face convention."""@en ;
-  skos:example """[[Fire // Ice|APC|128]]: two card faces, two printed faces, both on the front. [[Akki Lavarunner|CHK|153]]: two card faces on the front, the second printed upside down (inverted). [[Delver of Secrets|ISD|51]]: one face on each side. [[Ghalta, Primal Hunger|SLD|1124]], a reversible printing: one Oracle card with one card face, printed on both sides with two illustrations, so two printed faces that manifest the same card face. [[!Fire // Ice|APC|128]] [[!Akki Lavarunner|CHK|153]] [[!Delver of Secrets|ISD|51]] [[!Ghalta, Primal Hunger|SLD|1124]]"""@en ;
+Which faces a side shows depends on the layout. Ordinary cards: one front side with one area. Split, flip, adventure and prepare cards: one front side with two areas. Transforming and modal double-faced cards, double-faced tokens and art cards: a front and a back with one area each. A reversible printing: a front and a back that both print the same single card face, with different artwork. The standard Magic card back is not a printed side: the source does not describe it, and nothing printed on it varies.
+
+The orientation of an area on its side (rotated split halves, the upside-down half of a flip card) is deliberately not modelled: the source has no such field and no competency question needs it."""@en ;
+  skos:example """[[Fire // Ice|APC|128]]: one printed side (front) with two printed areas, Fire and Ice. [[Akki Lavarunner|CHK|153]]: one side, two areas. [[Delver of Secrets|ISD|51]]: two sides, one area each. [[Ghalta, Primal Hunger|SLD|1124]], reversible: two sides, each with one area that prints the same card face, with two different illustrations. [[!Fire // Ice|APC|128]] [[!Akki Lavarunner|CHK|153]] [[!Delver of Secrets|ISD|51]] [[!Ghalta, Primal Hunger|SLD|1124]]"""@en ;
+  smtg:sourceField "scryfall:image_uris" , "scryfall:card_faces[].image_uris" ;
+  smtg:reviewQuestion "RQ-CF-1" ;
+  rdfs:subClassOf [ a owl:Restriction ; owl:onProperty smtg:hasPrintedArea ; owl:someValuesFrom smtg:PrintedArea ] ;
+  owl:disjointWith smtg:CardFace , smtg:CardPrinting , smtg:OracleCard , smtg:PrintedArea ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:PrintedArea a owl:Class ;
+  rdfs:label "Printed area"@en ;
+  skos:definition "The part of a printed side where one card face is printed: the face it prints, and what that face shows on this printing only — the printed (possibly localised) name, type line and rules text, the flavour text and flavour name, the illustration, the credited artist, the watermark."@en ;
+  skos:scopeNote """Mirrors the source's card_faces[] on a printing: the data that exists per face, per printing. It is where art is attributed to a face. An illustration (smtg:Illustration) is a work that many printings reuse, including printings of other Oracle cards (art cards, front cards and tokens that reprint a card's art), so "which illustration goes with which face" is a fact about the printing, recorded on the area, never on the illustration. The artist credit is per area as well: on [[Fire // Ice|APC|128]] the source identifies one illustration for the whole front but credits Fire to David Martin and Ice to Franz Vohwinkel, so the illustration has two contributions and each area credits its own artist. Watermarks too can differ between the two halves of one side.
+
+Every printed side has at least one area, mirroring the card-face convention (ADR-0005): a single-faced card has one side with one area."""@en ;
+  skos:example """[[Fire // Ice|APC|128]]: two areas on the front; Fire credited to David Martin, Ice to Franz Vohwinkel, one illustration identified by the source. [[Bonecrusher Giant // Stomp|ELD|115]]: two areas on the front, the flavour text only in the creature's area. [[Lightning Bolt|M10|146|it]]: one area whose printed name is Fulmine and whose printed text is the Italian wording of its time. [[Ghalta, Primal Hunger|SLD|1124]]: two areas on two sides, both printing the same card face, each with its own illustration. [[Consecrate // Consume|RNA|224]]: the Orzhov watermark in the Consecrate area only. [[!Fire // Ice|APC|128]] [[!Bonecrusher Giant // Stomp|ELD|115]] [[!Lightning Bolt|M10|146|it]] [[!Ghalta, Primal Hunger|SLD|1124]] [[!Consecrate // Consume|RNA|224]]"""@en ;
   smtg:sourceField "scryfall:card_faces[]" ;
-  rdfs:subClassOf [ a owl:Restriction ; owl:onProperty smtg:manifestsFace ; owl:someValuesFrom smtg:CardFace ] ;
+  smtg:reviewQuestion "RQ-AR-1" ;
+  rdfs:subClassOf [ a owl:Restriction ; owl:onProperty smtg:printsFace ; owl:someValuesFrom smtg:CardFace ] ;
   owl:disjointWith smtg:CardFace , smtg:CardPrinting , smtg:OracleCard ;
   rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
 
@@ -103,36 +119,42 @@ smtg:hasPrinting a owl:ObjectProperty ;
   skos:definition "Relates an Oracle card to one of its printings."@en ;
   rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
 
-smtg:hasPrintedFace a owl:ObjectProperty ;
-  rdfs:label "has printed face"@en ;
-  skos:definition "Relates a printing to one of its printed faces."@en ;
-  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:PrintedFace ;
-  owl:inverseOf smtg:printedFaceOf ;
+smtg:hasSide a owl:ObjectProperty ;
+  rdfs:label "has side"@en ;
+  skos:definition "Relates a printing to one of its printed sides: one for single-sided layouts, two for double-sided ones."@en ;
+  rdfs:domain smtg:CardPrinting ; rdfs:range smtg:PrintedSide ;
+  owl:inverseOf smtg:sideOf ;
   rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
 
-smtg:printedFaceOf a owl:ObjectProperty , owl:FunctionalProperty ;
-  rdfs:label "printed face of"@en ;
-  skos:definition "Relates a printed face to the single printing it belongs to."@en ;
+smtg:sideOf a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "side of"@en ;
+  skos:definition "Relates a printed side to the single printing it belongs to."@en ;
   rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
 
-smtg:manifestsFace a owl:ObjectProperty , owl:FunctionalProperty ;
-  rdfs:label "manifests face"@en ;
-  skos:definition "Relates a printed face to the conceptual Oracle face it shows."@en ;
-  rdfs:domain smtg:PrintedFace ; rdfs:range smtg:CardFace ;
+smtg:sidePosition a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "side position"@en ;
+  skos:definition "Whether a printed side is the front or the back of the physical card."@en ;
+  rdfs:domain smtg:PrintedSide ; rdfs:range smtg:Side ;
   rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
 
-smtg:onSide a owl:ObjectProperty , owl:FunctionalProperty ;
-  rdfs:label "on side"@en ;
-  skos:definition "The physical side (front or back) on which a printed face appears."@en ;
-  rdfs:domain smtg:PrintedFace ; rdfs:range smtg:Side ;
-  smtg:reviewQuestion "RQ-CF-1" ;
+smtg:hasPrintedArea a owl:ObjectProperty ;
+  rdfs:label "has printed area"@en ;
+  skos:definition "Relates a printed side to one of the areas on it: one per card face the side prints."@en ;
+  rdfs:domain smtg:PrintedSide ; rdfs:range smtg:PrintedArea ;
+  owl:inverseOf smtg:areaOf ;
   rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
 
-smtg:hasOrientation a owl:ObjectProperty , owl:FunctionalProperty ;
-  rdfs:label "has orientation"@en ;
-  skos:definition "The orientation of a printed face on its side (upright, rotated, inverted)."@en ;
-  rdfs:domain smtg:PrintedFace ; rdfs:range smtg:Orientation ;
-  rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+smtg:areaOf a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "area of"@en ;
+  skos:definition "Relates a printed area to the single printed side it is on."@en ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
+
+smtg:printsFace a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "prints face"@en ;
+  skos:definition "Relates a printed area to the card face it prints."@en ;
+  rdfs:domain smtg:PrintedArea ; rdfs:range smtg:CardFace ;
+  smtg:sourceField "scryfall:card_faces[]" ;
+  rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
 
 smtg:printingLayout a owl:ObjectProperty , owl:FunctionalProperty ;
   rdfs:label "printing layout"@en ;
@@ -223,8 +245,9 @@ smtg:hasPromoType a owl:ObjectProperty ;
   smtg:sourceField "scryfall:promo_types" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
 
 smtg:hasWatermark a owl:ObjectProperty ;
-  rdfs:label "has watermark"@en ; skos:definition "A watermark printed on a printed face (or on the printing when the source gives it at card level)."@en ;
-  rdfs:range smtg:Watermark ; smtg:intendedDomain smtg:PrintedFace , smtg:CardPrinting ;
+  rdfs:label "has watermark"@en ; skos:definition "A watermark printed in a printed area (or on the printing when the source gives it at card level); the two halves of one side can differ."@en ;
+  skos:example "[[Consecrate // Consume|RNA|224]]: the Orzhov guild watermark is printed in the Consecrate half only. [[!Consecrate // Consume|RNA|224]]"@en ;
+  rdfs:range smtg:Watermark ; smtg:intendedDomain smtg:PrintedArea , smtg:CardPrinting ;
   smtg:sourceField "scryfall:watermark" , "scryfall:card_faces[].watermark" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "stable-draft" .
 
 smtg:hasImageStatus a owl:ObjectProperty , owl:FunctionalProperty ;
@@ -359,4 +382,5 @@ smtg:rankValue a owl:DatatypeProperty , owl:FunctionalProperty ;
 
 # --- Documentation examples (instances generated from real fixtures in examples/) ---
 smtg:CardPrinting smtg:docExample <https://w3id.org/smtg/id/printing/906e1087-e6e3-452b-a73f-b3bc1506d67b> .
-smtg:PrintedFace smtg:docExample <https://w3id.org/smtg/id/printing/906e1087-e6e3-452b-a73f-b3bc1506d67b/face/0> .
+smtg:PrintedSide smtg:docExample <https://w3id.org/smtg/id/printing/f98f4538-5b5b-475d-b98f-49d01dae6f04/side/0> .
+smtg:PrintedArea smtg:docExample <https://w3id.org/smtg/id/printing/f98f4538-5b5b-475d-b98f-49d01dae6f04/side/0/area/1> .

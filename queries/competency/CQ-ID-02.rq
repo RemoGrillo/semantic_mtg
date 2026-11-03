@@ -12,6 +12,6 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX v: <https://w3id.org/smtg/vocab/>
 SELECT ?illustration (COUNT(DISTINCT ?printing) AS ?printings) (SAMPLE(?name) AS ?card) WHERE {
-  ?printing smtg:hasPrintedFace ?pf ; smtg:isPrintingOf/smtg:name ?name .
-  ?pf smtg:showsIllustration ?illustration .
+  ?printing smtg:hasSide/smtg:hasPrintedArea ?area ; smtg:isPrintingOf/smtg:name ?name .
+  ?area smtg:showsIllustration ?illustration .
 } GROUP BY ?illustration HAVING (COUNT(DISTINCT ?printing) > 1) ORDER BY DESC(?printings)

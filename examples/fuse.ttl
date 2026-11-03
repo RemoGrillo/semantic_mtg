@@ -371,39 +371,93 @@
     smtg:inBooster true;
     smtg:isStorySpotlight false;
     smtg:isDigitalOnly false.
-<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/face/0> a smtg:PrintedFace;
-    rdfs:label "Alive — printed face 0 of DGM #121 (en)".
-<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198> smtg:hasPrintedFace <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/face/0>.
-<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/face/0> smtg:printedFaceOf <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198>;
-    smtg:manifestsFace <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5/face/0>;
-    smtg:onSide <https://w3id.org/smtg/vocab/side/front>;
-    smtg:creditedAs "Nils Hamm";
-    smtg:hasWatermark <https://w3id.org/smtg/vocab/watermark/selesnya>.
-<https://w3id.org/smtg/id/illustration/0c8fd763-d266-4ac8-ab17-e729cf179e89> a smtg:Illustration;
-    rdfs:label "Illustration of Alive by Nils Hamm".
-<https://w3id.org/smtg/id/identifier/scryfall-illustration-id/0c8fd763-d266-4ac8-ab17-e729cf179e89> a smtg:Identifier;
-    smtg:identifierValue "0c8fd763-d266-4ac8-ab17-e729cf179e89";
-    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-illustration-id>.
-<https://w3id.org/smtg/id/illustration/0c8fd763-d266-4ac8-ab17-e729cf179e89> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-illustration-id/0c8fd763-d266-4ac8-ab17-e729cf179e89>.
-<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/face/0> smtg:showsIllustration <https://w3id.org/smtg/id/illustration/0c8fd763-d266-4ac8-ab17-e729cf179e89>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> a smtg:PrintedSide;
+    rdfs:label "front of Alive // Well (DGM #121, en)".
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198> smtg:hasSide <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:sideOf <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198>;
+    smtg:sidePosition <https://w3id.org/smtg/vocab/side/front>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/area/0> a smtg:PrintedArea;
+    rdfs:label "Alive — printed area 0 of DGM #121 (en)".
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasPrintedArea <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/area/0>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/area/0> smtg:areaOf <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0>;
+    smtg:printsFace <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5/face/0>;
+    smtg:creditedAs "Nils Hamm".
 <https://w3id.org/smtg/id/artist/c540d1fc-1500-457f-93cf-d6069ee66546> a smtg:Artist.
 <https://w3id.org/smtg/id/identifier/scryfall-artist-id/c540d1fc-1500-457f-93cf-d6069ee66546> a smtg:Identifier;
     smtg:identifierValue "c540d1fc-1500-457f-93cf-d6069ee66546";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-artist-id>.
-<https://w3id.org/smtg/id/artist/c540d1fc-1500-457f-93cf-d6069ee66546> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-artist-id/c540d1fc-1500-457f-93cf-d6069ee66546>.
+<https://w3id.org/smtg/id/artist/c540d1fc-1500-457f-93cf-d6069ee66546> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-artist-id/c540d1fc-1500-457f-93cf-d6069ee66546>;
+    rdfs:label "Nils Hamm".
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/area/0> smtg:creditedArtist <https://w3id.org/smtg/id/artist/c540d1fc-1500-457f-93cf-d6069ee66546>;
+    smtg:hasWatermark <https://w3id.org/smtg/vocab/watermark/selesnya>.
+<https://w3id.org/smtg/id/illustration/0c8fd763-d266-4ac8-ab17-e729cf179e89> a smtg:Illustration;
+    rdfs:label "Illustration of Alive // Well".
+<https://w3id.org/smtg/id/identifier/scryfall-illustration-id/0c8fd763-d266-4ac8-ab17-e729cf179e89> a smtg:Identifier;
+    smtg:identifierValue "0c8fd763-d266-4ac8-ab17-e729cf179e89";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-illustration-id>.
+<https://w3id.org/smtg/id/illustration/0c8fd763-d266-4ac8-ab17-e729cf179e89> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-illustration-id/0c8fd763-d266-4ac8-ab17-e729cf179e89>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/area/0> smtg:showsIllustration <https://w3id.org/smtg/id/illustration/0c8fd763-d266-4ac8-ab17-e729cf179e89>.
 <https://w3id.org/smtg/id/illustration/0c8fd763-d266-4ac8-ab17-e729cf179e89/contribution/c540d1fc-1500-457f-93cf-d6069ee66546> a smtg:ArtisticContribution.
 <https://w3id.org/smtg/id/illustration/0c8fd763-d266-4ac8-ab17-e729cf179e89> smtg:hasContribution <https://w3id.org/smtg/id/illustration/0c8fd763-d266-4ac8-ab17-e729cf179e89/contribution/c540d1fc-1500-457f-93cf-d6069ee66546>.
 <https://w3id.org/smtg/id/illustration/0c8fd763-d266-4ac8-ab17-e729cf179e89/contribution/c540d1fc-1500-457f-93cf-d6069ee66546> smtg:contributor <https://w3id.org/smtg/id/artist/c540d1fc-1500-457f-93cf-d6069ee66546>;
     smtg:creditedAs "Nils Hamm".
-<https://w3id.org/smtg/id/artist/c540d1fc-1500-457f-93cf-d6069ee66546> rdfs:label "Nils Hamm".
-<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/face/1> a smtg:PrintedFace;
-    rdfs:label "Well — printed face 1 of DGM #121 (en)".
-<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198> smtg:hasPrintedFace <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/face/1>.
-<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/face/1> smtg:printedFaceOf <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198>;
-    smtg:manifestsFace <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5/face/1>;
-    smtg:onSide <https://w3id.org/smtg/vocab/side/front>;
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/area/1> a smtg:PrintedArea;
+    rdfs:label "Well — printed area 1 of DGM #121 (en)".
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasPrintedArea <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/area/1>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/area/1> smtg:areaOf <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0>;
+    smtg:printsFace <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5/face/1>;
     smtg:creditedAs "Nils Hamm";
+    smtg:creditedArtist <https://w3id.org/smtg/id/artist/c540d1fc-1500-457f-93cf-d6069ee66546>;
     smtg:hasWatermark <https://w3id.org/smtg/vocab/watermark/selesnya>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/small> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/small>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/small> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/small>;
+    smtg:contentURL "https://cards.scryfall.io/small/front/d/b/db84415e-048a-4cfc-9121-5ae17a412198.jpg?1783940017"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/normal> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/normal>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/normal> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/normal>;
+    smtg:contentURL "https://cards.scryfall.io/normal/front/d/b/db84415e-048a-4cfc-9121-5ae17a412198.jpg?1783940017"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/large> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/large>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/large> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/large>;
+    smtg:contentURL "https://cards.scryfall.io/large/front/d/b/db84415e-048a-4cfc-9121-5ae17a412198.jpg?1783940017"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/png> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/png>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/png> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/png>;
+    smtg:contentURL "https://cards.scryfall.io/png/front/d/b/db84415e-048a-4cfc-9121-5ae17a412198.png?1783940017"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/art_crop> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/art_crop>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/art_crop> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/art_crop>;
+    smtg:contentURL "https://cards.scryfall.io/art_crop/front/d/b/db84415e-048a-4cfc-9121-5ae17a412198.jpg?1783940017"^^xsd:anyURI;
+    smtg:depictsArtworkOf <https://w3id.org/smtg/id/illustration/0c8fd763-d266-4ac8-ab17-e729cf179e89>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/border_crop> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/border_crop>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/border_crop> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/border_crop>;
+    smtg:contentURL "https://cards.scryfall.io/border_crop/front/d/b/db84415e-048a-4cfc-9121-5ae17a412198.jpg?1783940017"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/thumb> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/thumb>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/thumb> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/thumb>;
+    smtg:contentURL "https://cards.scryfall.io/thumb/front/d/b/db84415e-048a-4cfc-9121-5ae17a412198.webp?1783940017"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/grid> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/grid>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/grid> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/grid>;
+    smtg:contentURL "https://cards.scryfall.io/grid/front/d/b/db84415e-048a-4cfc-9121-5ae17a412198.webp?1783940017"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/display> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/display>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/display> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/display>;
+    smtg:contentURL "https://cards.scryfall.io/display/front/d/b/db84415e-048a-4cfc-9121-5ae17a412198.webp?1783940017"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/art> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/art>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/art> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/art>;
+    smtg:contentURL "https://cards.scryfall.io/art/front/d/b/db84415e-048a-4cfc-9121-5ae17a412198.webp?1783940017"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/crop> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/crop>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/crop> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/crop>;
+    smtg:contentURL "https://cards.scryfall.io/crop/front/d/b/db84415e-048a-4cfc-9121-5ae17a412198.webp?1783940017"^^xsd:anyURI.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/jpeg> a smtg:DigitalImage.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0> smtg:hasImage <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/jpeg>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198/side/0/image/jpeg> smtg:imageVariant <https://w3id.org/smtg/vocab/image-variant/jpeg>;
+    smtg:contentURL "https://cards.scryfall.io/normal/front/d/b/db84415e-048a-4cfc-9121-5ae17a412198.jpg?1783940017"^^xsd:anyURI.
 <https://w3id.org/smtg/id/claim/price/db84415e-048a-4cfc-9121-5ae17a412198/usd/2afc8d49e9d9> a smtg:PriceObservation;
     smtg:priceOf <https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198>;
     smtg:priceCurrency <https://w3id.org/smtg/vocab/currency/usd>;

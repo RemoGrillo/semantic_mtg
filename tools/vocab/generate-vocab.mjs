@@ -193,8 +193,6 @@ allDifferent(layoutIris);
 // Sides & orientations & image variants (curated, structural)
 scheme('side', 'Physical sides', 'Side');
 for (const [k, d] of Object.entries(C.SIDES)) concept('side', k, 'Side', { label: title(k), def: d });
-scheme('orientation', 'Face orientations', 'Orientation');
-for (const [k, d] of Object.entries(C.ORIENTATIONS)) concept('orientation', k, 'Orientation', { label: title(k), def: d, status: 'unstable' });
 scheme('image-variant', 'Image variants', 'ImageVariant', 'Image renditions offered by Scryfall (keys of image_uris).');
 for (const k of Object.keys(obs('image_uris.key')).sort()) concept('image-variant', k, 'ImageVariant', { label: title(k), def: C.IMAGE_VARIANTS[k], count: obs('image_uris.key')[k], sourceValueOf: 'scryfall:image_uris.*' });
 

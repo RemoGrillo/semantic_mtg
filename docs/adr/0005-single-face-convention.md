@@ -6,10 +6,10 @@
 
 ## Decision
 Face-level characteristics (name, mana cost, type line, Oracle text, P/T, loyalty, defense, colours,
-colour indicator) are always on `CardFace` / `PrintedFace`, including for single-faced cards (face
-index 0, front side). The Oracle card carries only card-level facts: combined name, layout, colour
+colour indicator) are always on `CardFace` / `PrintedArea`, including for single-faced cards (face
+index 0, on the one printed side). The Oracle card carries only card-level facts: combined name, layout, colour
 identity, keywords, produced mana, mana value as reported, Reserved List.
 
 ## Consequences
 Queries do not branch on layout ("faces with card type Creature" works for every card). This costs
-roughly one extra node per single-faced card. SHACL requires `hasFace` ≥ 1 and `hasPrintedFace` ≥ 1.
+roughly one extra node per single-faced card. SHACL requires `hasFace` ≥ 1, `hasSide` ≥ 1 and `hasPrintedArea` ≥ 1 per side.

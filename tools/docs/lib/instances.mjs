@@ -206,3 +206,88 @@ function prettify(ttl) {
     .replace(/\n{3,}/g, '\n\n')
     .trim();
 }
+
+/**
+ * The "card view" of a printing: the printing, its sides and areas, and what hangs off them
+ * (card faces, printed texts, illustration and artists, two images per side). Used next to every
+ * card image in the documentation, so each example is also shown as a graph and as Turtle.
+ * Same return shape as neighbourhood().
+ */
+export function cardInstance(ex, focus) {
+  const g = ex.graph;
+  const S = NS.smtg;
+  const VIEW = {
+    CardPrinting: { follow: ['isPrintingOf', 'inSet', 'inLanguage', 'printingLayout', 'hasSide'], lits: ['collectorNumber'] },
+    PrintedSide: { follow: ['sidePosition', 'hasPrintedArea', 'hasImage'], max: { hasImage: 2 } },
+    PrintedArea: { follow: ['printsFace', 'hasPrintedText', 'showsIllustration', 'creditedArtist', 'hasWatermark'], lits: ['creditedAs'] },
+    CardFace: { lits: ['name', 'typeLine'] },
+    Illustration: { follow: ['hasContribution'] },
+    ArtisticContribution: { follow: ['contributor'], lits: ['creditedAs'] },
+    DigitalImage: { follow: ['imageVariant'], lits: ['contentURL'] },
+    TextExpression: { lits: ['textValue'] },
+  };
+  const nodes = new Map();
+  const edges = [];
+  const quads = [];
+  const seen = new Set();
+  const addQuad = (q) => {
+    const k = `${q.subject.value}|${q.predicate.value}|${q.object.value}`;
+    if (!seen.has(k)) {
+      seen.add(k);
+      quads.push(q);
+    }
+  };
+  const describe = (term, hop) => {
+    if (nodes.has(term.value)) return nodes.get(term.value);
+    const n = { term, types: [], literals: [], hop, truncated: false, label: labelOf(g, term) };
+    for (const q of g.quads(term, RDF_TYPE, null)) {
+      if (q.object.termType !== 'NamedNode') continue;
+      n.types.push(q.object.value);
+      addQuad(q);
+    }
+    for (const p of LABEL_PREDICATES) for (const q of g.quads(term, p, null)) addQuad(q);
+    nodes.set(term.value, n);
+    return n;
+  };
+  const specOf = (n) => {
+    for (const t of n.types) {
+      const local = t.startsWith(S) ? t.slice(S.length) : null;
+      if (local && VIEW[local]) return VIEW[local];
+    }
+    // printed texts are typed by their subclass (PrintedName, FlavorText, …)
+    if (g.quads(n.term, S + 'textValue', null).length) return VIEW.TextExpression;
+    return null;
+  };
+  const expand = (term, hop) => {
+    const n = describe(term, hop);
+    const spec = specOf(n);
+    if (!spec) return;
+    for (const p of spec.lits ?? []) {
+      for (const q of g.quads(term, S + p, null)) {
+        if (q.object.termType !== 'Literal') continue;
+        n.literals.push({ p: q.predicate.value, o: q.object });
+        addQuad(q);
+      }
+    }
+    for (const p of spec.follow ?? []) {
+      let out = g.quads(term, S + p, null).filter((q) => q.object.termType !== 'Literal');
+      if (p === 'hasImage') {
+        // the full card image and the art crop, not every size variant
+        const rank = (q) => {
+          const v = g.quads(q.object, S + 'imageVariant', null)[0]?.object.value ?? '';
+          return v.endsWith('/normal') ? 0 : v.endsWith('/art_crop') ? 1 : 2;
+        };
+        out = out.sort((a, b) => rank(a) - rank(b));
+      }
+      const max = spec.max?.[p] ?? Infinity;
+      if (out.length > max) n.truncated = true;
+      for (const q of out.slice(0, max)) {
+        addQuad(q);
+        edges.push({ from: term.value, p: q.predicate.value, to: q.object.value });
+        if (!nodes.has(q.object.value)) expand(q.object, hop + 1);
+      }
+    }
+  };
+  expand(focus, 0);
+  return { nodes, edges, quads };
+}

@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-03T19:57:58.228Z",
+  "generatedAt": "2026-11-03T20:51:16.940Z",
   "graph": "https://w3id.org/smtg/graph/inferred/rules",
-  "assertedTriples": 61076,
-  "inferredTriples": 144,
+  "assertedTriples": 67074,
+  "inferredTriples": 162,
   "iterations": 2,
   "rules": [
     {
@@ -11,7 +11,7 @@
       "title": "Faces with the instant or sorcery card type",
       "implements": "smtg:InstantOrSorceryFace owl:equivalentClass ( smtg:CardFace and (smtg:hasCardType some smtg:InstantOrSorceryCardType) )",
       "order": 1,
-      "count": 14
+      "count": 17
     },
     {
       "file": "rules/R-LAYOUT-CLASS.rq",
@@ -19,7 +19,7 @@
       "title": "Layout-defined classes (ModalDoubleFacedCard, AdventurerCard, …)",
       "implements": "every smtg:X owl:equivalentClass ( smtg:OracleCard and (smtg:hasLayout value L) ) recorded as L smtg:definedClass X",
       "order": 1,
-      "count": 14
+      "count": 15
     },
     {
       "file": "rules/R-PERMANENT-FACE.rq",
@@ -27,7 +27,7 @@
       "title": "Faces with a permanent card type",
       "implements": "smtg:PermanentFace owl:equivalentClass ( smtg:CardFace and (smtg:hasCardType some smtg:PermanentCardType) )",
       "order": 1,
-      "count": 36
+      "count": 43
     },
     {
       "file": "rules/R-SYMBOL-CLASS.rq",
@@ -59,7 +59,7 @@
       "title": "Permanent cards (CR 110.4a): primary face is a permanent face, or a split card with a permanent half",
       "implements": "smtg:PermanentCard owl:equivalentClass ( smtg:OracleCard and ((smtg:primaryFace some smtg:PermanentFace) or (smtg:hasLayout value layout/split and smtg:hasFace some smtg:PermanentFace)) )",
       "order": 2,
-      "count": 31
+      "count": 38
     }
   ]
 }

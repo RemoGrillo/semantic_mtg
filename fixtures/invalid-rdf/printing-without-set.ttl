@@ -7,6 +7,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 x:p1 a smtg:CardPrinting ; smtg:isPrintingOf x:o1 ; smtg:collectorNumber "1" ;
-  smtg:inLanguage <https://w3id.org/smtg/vocab/language/en> ; smtg:hasPrintedFace x:p1f0 .
-x:o1 a smtg:OracleCard .
-x:p1f0 a smtg:PrintedFace .
+  smtg:inLanguage <https://w3id.org/smtg/vocab/language/en> ; smtg:hasSide x:p1s0 .
+x:o1 a smtg:OracleCard ; smtg:hasFace x:o1f0 .
+x:o1f0 a smtg:CardFace .
+x:p1s0 a smtg:PrintedSide ; smtg:sidePosition <https://w3id.org/smtg/vocab/side/front> ; smtg:hasPrintedArea x:p1a0 .
+x:p1a0 a smtg:PrintedArea ; smtg:printsFace x:o1f0 .

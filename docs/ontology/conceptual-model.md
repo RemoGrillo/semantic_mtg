@@ -15,18 +15,20 @@ flowchart TB
     CF -->|hasCardType / hasSubtype| TY([CardType / Subtype])
   end
   subgraph Published["Manifestation level (printings module)"]
-    CP[CardPrinting] -->|hasPrintedFace 1..n| PF[PrintedFace]
+    CP[CardPrinting] -->|hasSide 1..2| PS[PrintedSide]
+    PS -->|hasPrintedArea 1..n| PA[PrintedArea]
     CP -->|inSet| SET[MtgSet]
-    PF -->|hasPrintedText| TX[PrintedName / FlavorText / …]
+    PA -->|hasPrintedText| TX[PrintedName / FlavorText / …]
   end
   subgraph Visual["Art level (text-art module)"]
     IL[Illustration] -->|hasContribution| AC[ArtisticContribution] -->|contributor| AR[Artist]
     IMG[DigitalImage] -->|depictsArtworkOf| IL
   end
   CP -->|isPrintingOf| OC
-  PF -->|manifestsFace| CF
-  PF -->|showsIllustration| IL
-  PF -->|hasImage| IMG
+  PA -->|printsFace| CF
+  PA -->|showsIllustration| IL
+  PA -->|creditedArtist| AR
+  PS -->|hasImage| IMG
   subgraph Claims["Claims (claims, tags, combos modules)"]
     TA[TagAssignment] -->|assignedTag| TG([OracleTag / ArtTag])
     LA[LegalityAssertion]
@@ -47,7 +49,8 @@ flowchart TB
 | Abstract identity | `OracleCard` | [[Bonecrusher Giant // Stomp]] (one Oracle ID) |
 | Conceptual face | `CardFace` | face 0 *Bonecrusher Giant* (Creature — Giant), face 1 *Stomp* (Instant — Adventure) |
 | Printing | `CardPrinting` | one Scryfall card ID: set, collector number, language |
-| Printed face | `PrintedFace` | face as printed: side, orientation, printed name, flavor text, artwork, images |
+| Printed side | `PrintedSide` | front or back of one printing: its images, and its printed areas |
+| Printed area | `PrintedArea` | one face as printed on a side: printed name, text and flavor text, illustration, credited artist, watermark |
 | Text expression | `OracleText`, `PrintedRulesText`, `FlavorText`, `PrintedName`, `FlavorName` … | the Italian *Fulmine* printed name of [[Lightning Bolt\|M10\|146\|it]] |
 | Visual work | `Illustration` | one `illustration_id`, shared by several printings |
 | Representation | `DigitalImage` | the `art_crop` URL of a printed face |

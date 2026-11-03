@@ -38,6 +38,28 @@ export function loadCardRefs(file, warnFn = () => {}) {
 const decode = (s) => String(s).replace(/&(amp|lt|gt|quot|#39);/g, (m, e) => ({ amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'" })[e]);
 const warned = new Set();
 
+// Every card shown as an image is also shown as an example instance (graph + Turtle): the docs
+// build installs a hook that renders the instance block for a resolved printing, or '' if there
+// is none. Disabled where there is no room for it (the layout matrix).
+let instanceHook = null;
+let instancesEnabled = true;
+export function setInstanceHook(fn) {
+  instanceHook = fn;
+}
+export function withCardInstances(enabled, fn) {
+  const before = instancesEnabled;
+  instancesEnabled = enabled;
+  try {
+    return fn();
+  } finally {
+    instancesEnabled = before;
+  }
+}
+const resolve = (inner) => {
+  const ref = parseCardRef(inner);
+  return { ref, hit: ref ? DATA.refs?.[ref.key] : null };
+};
+
 /** HTML for one reference (inner text without the brackets). */
 export function cardRefHtml(inner) {
   const ref = parseCardRef(inner);
@@ -64,9 +86,17 @@ export function cardRefHtml(inner) {
   return `<a class="cardref" href="${attr(hit.scryfall_uri)}" target="_blank" rel="noopener" title="${attr(title)}" data-card-img="${attr(imgs[0]?.normal ?? '')}"${imgs[1] ? ` data-card-img2="${attr(imgs[1].normal)}"` : ''}>${esc(label)}${set}</a>`;
 }
 
-/** A row of card images, for the inner texts of several image references ("!Name|SET…"). */
+/** A row of card images, for the inner texts of several image references ("!Name|SET…"), followed by their example instances. */
 export function cardRowHtml(inners) {
-  return `<span class="card-row">${inners.map((inner) => cardRefHtml(inner)).join('')}</span>`;
+  const row = `<span class="card-row">${inners.map((inner) => cardRefHtml(inner)).join('')}</span>`;
+  if (!instanceHook || !instancesEnabled) return row;
+  const shown = new Set();
+  const blocks = inners
+    .map(resolve)
+    .filter(({ hit }) => hit && !hit.unresolved && hit.printing_id && !shown.has(hit.printing_id) && shown.add(hit.printing_id))
+    .map(({ ref, hit }) => instanceHook(hit, ref))
+    .join('');
+  return row + blocks;
 }
 
 /** Replace [[…]] references inside already-escaped HTML text. */

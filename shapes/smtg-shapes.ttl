@@ -80,19 +80,28 @@ smtgsh:CardPrintingShape a sh:NodeShape ;
     sh:message "A printing belongs to exactly one set."@en ] ;
   sh:property [ sh:path smtg:collectorNumber ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
   sh:property [ sh:path smtg:inLanguage ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:Language ] ;
-  sh:property [ sh:path smtg:hasPrintedFace ; sh:minCount 1 ; sh:class smtg:PrintedFace ;
-    sh:message "A printing has at least one printed face."@en ] ;
+  sh:property [ sh:path smtg:hasSide ; sh:minCount 1 ; sh:maxCount 2 ; sh:class smtg:PrintedSide ;
+    sh:message "A printing has one or two printed sides."@en ] ;
   sh:property [
     sh:path ( smtg:hasIdentifier smtg:identifierScheme ) ;
     sh:qualifiedValueShape [ sh:hasValue <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-id> ] ;
     sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
     sh:message "A printing must carry exactly one Scryfall card ID identifier."@en ] .
 
-smtgsh:PrintedFaceShape a sh:NodeShape ;
-  sh:targetClass smtg:PrintedFace ;
-  sh:property [ sh:path smtg:manifestsFace ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:CardFace ] ;
-  sh:property [ sh:path smtg:onSide ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:Side ] ;
-  sh:property [ sh:path smtg:showsIllustration ; sh:maxCount 1 ; sh:class smtg:Illustration ] ;
+smtgsh:PrintedSideShape a sh:NodeShape ;
+  sh:targetClass smtg:PrintedSide ;
+  sh:property [ sh:path smtg:sidePosition ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:Side ;
+    sh:message "A printed side is the front or the back."@en ] ;
+  sh:property [ sh:path smtg:hasPrintedArea ; sh:minCount 1 ; sh:class smtg:PrintedArea ;
+    sh:message "A printed side has at least one printed area."@en ] ;
+  sh:property [ sh:path smtg:hasImage ; sh:class smtg:DigitalImage ] .
+
+smtgsh:PrintedAreaShape a sh:NodeShape ;
+  sh:targetClass smtg:PrintedArea ;
+  sh:property [ sh:path smtg:printsFace ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:CardFace ;
+    sh:message "A printed area prints exactly one card face."@en ] ;
+  sh:property [ sh:path smtg:showsIllustration ; sh:class smtg:Illustration ] ;
+  sh:property [ sh:path smtg:creditedArtist ; sh:class smtg:Artist ] ;
   sh:property [ sh:path smtg:hasPrintedText ; sh:class smtg:TextExpression ] .
 
 smtgsh:TextExpressionShape a sh:NodeShape ;

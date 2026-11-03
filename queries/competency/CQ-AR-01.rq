@@ -1,0 +1,19 @@
+# id: CQ-AR-01
+# title: Which artist painted which half
+# question: On the Apocalypse printing of [[Fire // Ice]], which artist is credited for each half, and what does the source identify as its illustration?
+# kind: SPARQL
+# expects: count=2
+# modules: printings, text-art
+# note: The source identifies one illustration for the whole front (on the first face) but credits each half to its own artist: the credit is a fact of the printed area, the contributions a fact of the illustration (RQ-AR-1).
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?half ?artist ?illustration (GROUP_CONCAT(DISTINCT ?contributor; separator=" & ") AS ?illustrationContributors) WHERE {
+  ?printing smtg:isPrintingOf/smtg:name "Fire // Ice" ; smtg:inSet/smtg:setCode "apc" ; smtg:hasSide ?side .
+  ?side smtg:hasPrintedArea ?area .
+  ?area smtg:printsFace/smtg:name ?half ; smtg:creditedArtist/rdfs:label ?artist .
+  OPTIONAL { ?area smtg:showsIllustration ?illustration . ?illustration smtg:hasContribution/smtg:contributor/rdfs:label ?contributor }
+} GROUP BY ?half ?artist ?illustration ORDER BY ?half

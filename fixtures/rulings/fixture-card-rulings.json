@@ -1,7 +1,7 @@
 {
   "slug": "fixture-card-rulings",
   "purpose": "All rulings (Wizards and Scryfall) for the Oracle cards in the Scryfall fixtures: input for the Ruling claims.",
-  "selector": "rulings: oracle_id in the 37 Oracle ids of fixtures/scryfall/*; sorted by (oracle_id, published_at, comment).",
+  "selector": "rulings: oracle_id in the 47 Oracle ids of fixtures/scryfall/*; sorted by (oracle_id, published_at, comment).",
   "source": {
     "key": "scryfall:rulings",
     "file": "rulings-20261103100035.jsonl.gz",
@@ -59,767 +59,767 @@
       "published_at": "2024-06-07"
     },
     {
-      "id": "11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5#7",
+      "id": "0bc2875b-3a5a-4885-86b9-16ab7330ac10#7",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2010-06-15"
+    },
+    {
+      "id": "0bc2875b-3a5a-4885-86b9-16ab7330ac10#8",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2010-06-15"
+    },
+    {
+      "id": "0bc2875b-3a5a-4885-86b9-16ab7330ac10#9",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2010-06-15"
+    },
+    {
+      "id": "0bc2875b-3a5a-4885-86b9-16ab7330ac10#10",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2010-06-15"
+    },
+    {
+      "id": "0bc2875b-3a5a-4885-86b9-16ab7330ac10#11",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2010-06-15"
+    },
+    {
+      "id": "0d8730b5-f7ba-48b0-928d-d8b7685347d3#12",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2024-02-02"
+    },
+    {
+      "id": "0d8730b5-f7ba-48b0-928d-d8b7685347d3#13",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2024-02-02"
+    },
+    {
+      "id": "0d8730b5-f7ba-48b0-928d-d8b7685347d3#14",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2024-02-02"
+    },
+    {
+      "id": "0d8730b5-f7ba-48b0-928d-d8b7685347d3#15",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2024-02-02"
+    },
+    {
+      "id": "0d8730b5-f7ba-48b0-928d-d8b7685347d3#16",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2024-02-02"
+    },
+    {
+      "id": "0d8730b5-f7ba-48b0-928d-d8b7685347d3#17",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2024-02-02"
+    },
+    {
+      "id": "0d8730b5-f7ba-48b0-928d-d8b7685347d3#18",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2024-02-02"
+    },
+    {
+      "id": "0d8730b5-f7ba-48b0-928d-d8b7685347d3#19",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2024-02-02"
+    },
+    {
+      "id": "0d8730b5-f7ba-48b0-928d-d8b7685347d3#20",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2024-02-02"
+    },
+    {
+      "id": "11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5#21",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2009-10-01"
     },
     {
-      "id": "11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5#8",
+      "id": "11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5#22",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2009-10-01"
     },
     {
-      "id": "11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5#9",
+      "id": "11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5#23",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2009-10-01"
     },
     {
-      "id": "11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5#10",
+      "id": "11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5#24",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2009-10-01"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#11",
+      "id": "20e7a93f-77ce-466b-8586-35d390689d0c#25",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2019-01-25"
+    },
+    {
+      "id": "20e7a93f-77ce-466b-8586-35d390689d0c#26",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2019-01-25"
+    },
+    {
+      "id": "20e7a93f-77ce-466b-8586-35d390689d0c#27",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2019-01-25"
+    },
+    {
+      "id": "20e7a93f-77ce-466b-8586-35d390689d0c#28",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-12-08"
+    },
+    {
+      "id": "20e7a93f-77ce-466b-8586-35d390689d0c#29",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-12-08"
+    },
+    {
+      "id": "20e7a93f-77ce-466b-8586-35d390689d0c#30",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-12-08"
+    },
+    {
+      "id": "20e7a93f-77ce-466b-8586-35d390689d0c#31",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-12-08"
+    },
+    {
+      "id": "20e7a93f-77ce-466b-8586-35d390689d0c#32",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-12-08"
+    },
+    {
+      "id": "20e7a93f-77ce-466b-8586-35d390689d0c#33",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-12-08"
+    },
+    {
+      "id": "20e7a93f-77ce-466b-8586-35d390689d0c#34",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-12-08"
+    },
+    {
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#35",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#12",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#36",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#13",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#37",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#14",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#38",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#15",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#39",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#16",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#40",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#17",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#41",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#18",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#42",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#19",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#43",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#20",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#44",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#21",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#45",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#22",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#46",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#23",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#47",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#24",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#48",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#25",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#49",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#26",
+      "id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf#50",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "310f141c-7f37-4729-aed6-dd9c09db448d#27",
+      "id": "310f141c-7f37-4729-aed6-dd9c09db448d#51",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2016-06-08"
     },
     {
-      "id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd#28",
+      "id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd#52",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-06-07"
     },
     {
-      "id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd#29",
+      "id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd#53",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-08-21"
     },
     {
-      "id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd#30",
+      "id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd#54",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-08-21"
     },
     {
-      "id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd#31",
+      "id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd#55",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-08-21"
     },
     {
-      "id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd#32",
+      "id": "45900b2f-f6a9-4c42-9642-008f3c1cf6dd#56",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-08-21"
     },
     {
-      "id": "45f1e957-09f0-4d46-8e32-238f26060a87#33",
+      "id": "45f1e957-09f0-4d46-8e32-238f26060a87#57",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2015-02-25"
     },
     {
-      "id": "45f1e957-09f0-4d46-8e32-238f26060a87#34",
+      "id": "45f1e957-09f0-4d46-8e32-238f26060a87#58",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2015-02-25"
     },
     {
-      "id": "45f1e957-09f0-4d46-8e32-238f26060a87#35",
+      "id": "45f1e957-09f0-4d46-8e32-238f26060a87#59",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2015-02-25"
     },
     {
-      "id": "45f1e957-09f0-4d46-8e32-238f26060a87#36",
+      "id": "45f1e957-09f0-4d46-8e32-238f26060a87#60",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2015-02-25"
     },
     {
-      "id": "45f1e957-09f0-4d46-8e32-238f26060a87#37",
+      "id": "45f1e957-09f0-4d46-8e32-238f26060a87#61",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2015-02-25"
     },
     {
-      "id": "562d71b9-1646-474e-9293-55da6947a758#38",
+      "id": "562d71b9-1646-474e-9293-55da6947a758#62",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-09-25"
     },
     {
-      "id": "562d71b9-1646-474e-9293-55da6947a758#39",
+      "id": "562d71b9-1646-474e-9293-55da6947a758#63",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-09-25"
     },
     {
-      "id": "562d71b9-1646-474e-9293-55da6947a758#40",
+      "id": "562d71b9-1646-474e-9293-55da6947a758#64",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-09-25"
     },
     {
-      "id": "562d71b9-1646-474e-9293-55da6947a758#41",
+      "id": "562d71b9-1646-474e-9293-55da6947a758#65",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-09-25"
     },
     {
-      "id": "562d71b9-1646-474e-9293-55da6947a758#42",
+      "id": "562d71b9-1646-474e-9293-55da6947a758#66",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-09-25"
     },
     {
-      "id": "562d71b9-1646-474e-9293-55da6947a758#43",
+      "id": "562d71b9-1646-474e-9293-55da6947a758#67",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-09-25"
     },
     {
-      "id": "562d71b9-1646-474e-9293-55da6947a758#44",
+      "id": "562d71b9-1646-474e-9293-55da6947a758#68",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-09-25"
     },
     {
-      "id": "562d71b9-1646-474e-9293-55da6947a758#45",
+      "id": "562d71b9-1646-474e-9293-55da6947a758#69",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-09-25"
     },
     {
-      "id": "562d71b9-1646-474e-9293-55da6947a758#46",
+      "id": "562d71b9-1646-474e-9293-55da6947a758#70",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-09-25"
     },
     {
-      "id": "562d71b9-1646-474e-9293-55da6947a758#47",
+      "id": "562d71b9-1646-474e-9293-55da6947a758#71",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-09-25"
     },
     {
-      "id": "562d71b9-1646-474e-9293-55da6947a758#48",
+      "id": "562d71b9-1646-474e-9293-55da6947a758#72",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-09-25"
     },
     {
-      "id": "562d71b9-1646-474e-9293-55da6947a758#49",
+      "id": "562d71b9-1646-474e-9293-55da6947a758#73",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-09-25"
     },
     {
-      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#50",
+      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#74",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#51",
+      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#75",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#52",
+      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#76",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#53",
+      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#77",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#54",
+      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#78",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#55",
+      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#79",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#56",
+      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#80",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#57",
+      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#81",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#58",
+      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#82",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#59",
+      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#83",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#60",
+      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#84",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#61",
+      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#85",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#62",
+      "id": "56fd8895-3be2-4591-86fa-87567d9cdc14#86",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-07-14"
     },
     {
-      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#63",
+      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#87",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2013-04-15"
     },
     {
-      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#64",
+      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#88",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2013-04-15"
     },
     {
-      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#65",
+      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#89",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2013-04-15"
     },
     {
-      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#66",
+      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#90",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2013-04-15"
     },
     {
-      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#67",
+      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#91",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2013-04-15"
     },
     {
-      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#68",
+      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#92",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2013-04-15"
     },
     {
-      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#69",
+      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#93",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2013-04-15"
     },
     {
-      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#70",
+      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#94",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2013-04-15"
     },
     {
-      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#71",
+      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#95",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2013-04-15"
     },
     {
-      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#72",
+      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#96",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2013-04-15"
     },
     {
-      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#73",
+      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#97",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2013-04-15"
     },
     {
-      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#74",
+      "id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5#98",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2013-04-15"
     },
     {
-      "id": "61fbaaf2-4286-4e9a-b9cb-aa31262b596a#75",
+      "id": "61fbaaf2-4286-4e9a-b9cb-aa31262b596a#99",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-04-29"
     },
     {
-      "id": "7185e345-d8a1-4dd3-a071-f90f265634b4#76",
+      "id": "710f1f8a-e5f7-4889-9f12-2611f42d5c73#100",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2005-06-01"
+    },
+    {
+      "id": "7185e345-d8a1-4dd3-a071-f90f265634b4#101",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-04-17"
     },
     {
-      "id": "7185e345-d8a1-4dd3-a071-f90f265634b4#77",
+      "id": "7185e345-d8a1-4dd3-a071-f90f265634b4#102",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-04-17"
     },
     {
-      "id": "7185e345-d8a1-4dd3-a071-f90f265634b4#78",
+      "id": "7185e345-d8a1-4dd3-a071-f90f265634b4#103",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2020-04-17"
     },
     {
-      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#79",
+      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#104",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-10-14"
     },
     {
-      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#80",
+      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#105",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-10-14"
     },
     {
-      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#81",
+      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#106",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-10-14"
     },
     {
-      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#82",
+      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#107",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-10-14"
     },
     {
-      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#83",
+      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#108",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-10-14"
     },
     {
-      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#84",
+      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#109",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-10-14"
     },
     {
-      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#85",
+      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#110",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-10-14"
     },
     {
-      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#86",
+      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#111",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-10-14"
     },
     {
-      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#87",
+      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#112",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-10-14"
     },
     {
-      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#88",
+      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#113",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-10-14"
     },
     {
-      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#89",
+      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#114",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-10-14"
     },
     {
-      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#90",
+      "id": "792f8235-f23b-4858-bdd4-c7a186b7a470#115",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-10-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#91",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#92",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#93",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#94",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#95",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#96",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#97",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#98",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#99",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#100",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#101",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#102",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#103",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#104",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#105",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#106",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#107",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#108",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#109",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#110",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#111",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#112",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#113",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#114",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
-    },
-    {
-      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#115",
-      "sourceKey": "scryfall:rulings",
-      "role": "ruling",
-      "source": "wotc",
-      "published_at": "2023-04-14"
     },
     {
       "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#116",
@@ -829,532 +829,896 @@
       "published_at": "2023-04-14"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#117",
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#117",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#118",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#119",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#120",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#121",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#122",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#123",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#124",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#125",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#126",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#127",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#128",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#129",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#130",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#131",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#132",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#133",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#134",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#135",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#136",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#137",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#138",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#139",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#140",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "8faa4330-07bb-4b65-810a-bbce29d3cd42#141",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2023-04-14"
+    },
+    {
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#142",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#118",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#143",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#119",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#144",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#120",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#145",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#121",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#146",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#122",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#147",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#123",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#148",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#124",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#149",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#125",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#150",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#126",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#151",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#127",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#152",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#128",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#153",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#129",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#154",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#130",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#155",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#131",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#156",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#132",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#157",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#133",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#158",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#134",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#159",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#135",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#160",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#136",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#161",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#137",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#162",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#138",
+      "id": "907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57#163",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2021-02-05"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#139",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#164",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2013-06-07"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#140",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#165",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#141",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#166",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#142",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#167",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#143",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#168",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#144",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#169",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#145",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#170",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#146",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#171",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#147",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#172",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#148",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#173",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#149",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#174",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#150",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#175",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#151",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#176",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#152",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#177",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#153",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#178",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#154",
+      "id": "9728dec9-d482-4c7a-8cdc-44d010dc878d#179",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2024-02-02"
     },
     {
-      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#155",
+      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#180",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-12-08"
     },
     {
-      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#156",
+      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#181",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-12-08"
     },
     {
-      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#157",
+      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#182",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-12-08"
     },
     {
-      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#158",
+      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#183",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-12-08"
     },
     {
-      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#159",
+      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#184",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-12-08"
     },
     {
-      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#160",
+      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#185",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-12-08"
     },
     {
-      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#161",
+      "id": "ae92942b-919c-4ea9-b693-85fcef765d5a#186",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2022-12-08"
     },
     {
-      "id": "b0b6be0c-41cf-4757-9f0e-87227b6ba6b3#162",
+      "id": "b0b6be0c-41cf-4757-9f0e-87227b6ba6b3#187",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2018-01-19"
     },
     {
-      "id": "b0b6be0c-41cf-4757-9f0e-87227b6ba6b3#163",
+      "id": "b0b6be0c-41cf-4757-9f0e-87227b6ba6b3#188",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2018-01-19"
     },
     {
-      "id": "b0b6be0c-41cf-4757-9f0e-87227b6ba6b3#164",
+      "id": "b0b6be0c-41cf-4757-9f0e-87227b6ba6b3#189",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2018-01-19"
     },
     {
-      "id": "b0b6be0c-41cf-4757-9f0e-87227b6ba6b3#165",
+      "id": "b0b6be0c-41cf-4757-9f0e-87227b6ba6b3#190",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2018-01-19"
     },
     {
-      "id": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c#166",
+      "id": "b23587e0-9fb7-492e-8bb4-f218e8e4ce6c#191",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2016-07-13"
     },
     {
-      "id": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850#167",
+      "id": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850#192",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2016-07-13"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#168",
+      "id": "c15bb7eb-aaaa-4468-9641-8f706d6137e8#193",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2018-04-27"
+    },
+    {
+      "id": "c15bb7eb-aaaa-4468-9641-8f706d6137e8#194",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2018-04-27"
+    },
+    {
+      "id": "c15bb7eb-aaaa-4468-9641-8f706d6137e8#195",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2018-04-27"
+    },
+    {
+      "id": "c15bb7eb-aaaa-4468-9641-8f706d6137e8#196",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2018-04-27"
+    },
+    {
+      "id": "c15bb7eb-aaaa-4468-9641-8f706d6137e8#197",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2018-04-27"
+    },
+    {
+      "id": "c15bb7eb-aaaa-4468-9641-8f706d6137e8#198",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2018-04-27"
+    },
+    {
+      "id": "c15bb7eb-aaaa-4468-9641-8f706d6137e8#199",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2018-04-27"
+    },
+    {
+      "id": "c15bb7eb-aaaa-4468-9641-8f706d6137e8#200",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2018-04-27"
+    },
+    {
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#201",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#169",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#202",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#170",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#203",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#171",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#204",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#172",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#205",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#173",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#206",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#174",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#207",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#175",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#208",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#176",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#209",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#177",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#210",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#178",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#211",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#179",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#212",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#180",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#213",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#181",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#214",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#182",
+      "id": "d6d72f5f-8f5d-4180-b514-f22ff5482902#215",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2019-10-04"
     },
     {
-      "id": "edd531b9-f615-4399-8c8c-1c5e18c4acbf#183",
+      "id": "dcbcbf42-4654-487a-acad-21f2606d229b#216",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2021-07-23"
+    },
+    {
+      "id": "dcbcbf42-4654-487a-acad-21f2606d229b#217",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2021-07-23"
+    },
+    {
+      "id": "dcbcbf42-4654-487a-acad-21f2606d229b#218",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2021-07-23"
+    },
+    {
+      "id": "dcbcbf42-4654-487a-acad-21f2606d229b#219",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2021-07-23"
+    },
+    {
+      "id": "dcbcbf42-4654-487a-acad-21f2606d229b#220",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2021-07-23"
+    },
+    {
+      "id": "dcbcbf42-4654-487a-acad-21f2606d229b#221",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2021-07-23"
+    },
+    {
+      "id": "dcbcbf42-4654-487a-acad-21f2606d229b#222",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2021-07-23"
+    },
+    {
+      "id": "dcbcbf42-4654-487a-acad-21f2606d229b#223",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2021-07-23"
+    },
+    {
+      "id": "dcbcbf42-4654-487a-acad-21f2606d229b#224",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2021-07-23"
+    },
+    {
+      "id": "dcbcbf42-4654-487a-acad-21f2606d229b#225",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2024-11-08"
+    },
+    {
+      "id": "dcbcbf42-4654-487a-acad-21f2606d229b#226",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2024-11-08"
+    },
+    {
+      "id": "dcbcbf42-4654-487a-acad-21f2606d229b#227",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2024-11-08"
+    },
+    {
+      "id": "edd531b9-f615-4399-8c8c-1c5e18c4acbf#228",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2011-09-22"
     },
     {
-      "id": "f00bc101-8082-4459-b987-f0c4b7a12344#184",
+      "id": "f00bc101-8082-4459-b987-f0c4b7a12344#229",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "f00bc101-8082-4459-b987-f0c4b7a12344#185",
+      "id": "f00bc101-8082-4459-b987-f0c4b7a12344#230",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "f00bc101-8082-4459-b987-f0c4b7a12344#186",
+      "id": "f00bc101-8082-4459-b987-f0c4b7a12344#231",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2026-03-20"
     },
     {
-      "id": "f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22#187",
+      "id": "f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22#232",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2016-07-13"
     },
     {
-      "id": "fdb96b5c-ecac-4db3-8b9a-24f824149f91#188",
+      "id": "fa5e1347-9bee-4103-8b74-5d0df35dd8ff#233",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-10-07"
+    },
+    {
+      "id": "fa5e1347-9bee-4103-8b74-5d0df35dd8ff#234",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-10-07"
+    },
+    {
+      "id": "fa5e1347-9bee-4103-8b74-5d0df35dd8ff#235",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-10-07"
+    },
+    {
+      "id": "fa5e1347-9bee-4103-8b74-5d0df35dd8ff#236",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-10-07"
+    },
+    {
+      "id": "fa5e1347-9bee-4103-8b74-5d0df35dd8ff#237",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-10-07"
+    },
+    {
+      "id": "fa5e1347-9bee-4103-8b74-5d0df35dd8ff#238",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-10-07"
+    },
+    {
+      "id": "fa5e1347-9bee-4103-8b74-5d0df35dd8ff#239",
+      "sourceKey": "scryfall:rulings",
+      "role": "ruling",
+      "source": "wotc",
+      "published_at": "2022-10-07"
+    },
+    {
+      "id": "fdb96b5c-ecac-4db3-8b9a-24f824149f91#240",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "fdb96b5c-ecac-4db3-8b9a-24f824149f91#189",
+      "id": "fdb96b5c-ecac-4db3-8b9a-24f824149f91#241",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "fdb96b5c-ecac-4db3-8b9a-24f824149f91#190",
+      "id": "fdb96b5c-ecac-4db3-8b9a-24f824149f91#242",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "fdb96b5c-ecac-4db3-8b9a-24f824149f91#191",
+      "id": "fdb96b5c-ecac-4db3-8b9a-24f824149f91#243",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
       "published_at": "2017-04-18"
     },
     {
-      "id": "fdb96b5c-ecac-4db3-8b9a-24f824149f91#192",
+      "id": "fdb96b5c-ecac-4db3-8b9a-24f824149f91#244",
       "sourceKey": "scryfall:rulings",
       "role": "ruling",
       "source": "wotc",
@@ -1369,10 +1733,34 @@
     {"object":"ruling","oracle_id":"01160cb5-6d83-4317-9522-74083b3a83bb","source":"wotc","published_at":"2024-06-07","comment":"No matter which combination of modes you choose, you always follow the instructions in the order they are written."},
     {"object":"ruling","oracle_id":"01160cb5-6d83-4317-9522-74083b3a83bb","source":"wotc","published_at":"2024-06-07","comment":"No player can cast spells or activate abilities in between the modes of a resolving spell. Any abilities that trigger won't be put onto the stack until a spell is done resolving."},
     {"object":"ruling","oracle_id":"01160cb5-6d83-4317-9522-74083b3a83bb","source":"wotc","published_at":"2024-06-07","comment":"You choose the modes as you cast the spell. Once modes are chosen, they can't be changed."},
+    {"object":"ruling","oracle_id":"0bc2875b-3a5a-4885-86b9-16ab7330ac10","source":"wotc","published_at":"2010-06-15","comment":"A creature’s level is based on how many level counters it has on it, not how many times its level up ability has been activated or has resolved. If a leveler gets level counters due to some other effect (such as Clockspinning) or loses level counters for some reason (such as Vampire Hexmage), its level is changed accordingly."},
+    {"object":"ruling","oracle_id":"0bc2875b-3a5a-4885-86b9-16ab7330ac10","source":"wotc","published_at":"2010-06-15","comment":"Effects that modify a leveler’s power or toughness, such as the effects of Giant Growth or Glorious Anthem, will apply to it no matter when they started to take effect. The same is true for counters that change the creature’s power or toughness (such as +1/+1 counters) and effects that switch its power and toughness."},
+    {"object":"ruling","oracle_id":"0bc2875b-3a5a-4885-86b9-16ab7330ac10","source":"wotc","published_at":"2010-06-15","comment":"Effects that set a leveler’s power or toughness to a specific value, including the effects from a level symbol’s ability, apply in timestamp order. The timestamp of each level symbol’s ability is the same as the timestamp of the leveler itself, regardless of when the most recent level counter was put on it."},
+    {"object":"ruling","oracle_id":"0bc2875b-3a5a-4885-86b9-16ab7330ac10","source":"wotc","published_at":"2010-06-15","comment":"If another creature becomes a copy of a leveler, all of the leveler’s printed abilities — including those represented by level symbols — are copied. The current characteristics of the leveler, and the number of level counters on it, are not. The abilities, power, and toughness of the copy will be determined based on how many level counters are on the copy."},
+    {"object":"ruling","oracle_id":"0bc2875b-3a5a-4885-86b9-16ab7330ac10","source":"wotc","published_at":"2010-06-15","comment":"The abilities a leveler grants to itself don’t overwrite any other abilities it may have. In particular, they don’t overwrite the creature’s level up ability; it always has that."},
+    {"object":"ruling","oracle_id":"0d8730b5-f7ba-48b0-928d-d8b7685347d3","source":"wotc","published_at":"2024-02-02","comment":"\"Solved — [Triggered ability]\" means \"[Triggered ability]. This ability triggers only if this Case is solved.\" Triggered abilities use the word \"when,\" \"whenever,\" or \"at.\" They're often written as \"[Trigger condition], [effect].\""},
+    {"object":"ruling","oracle_id":"0d8730b5-f7ba-48b0-928d-d8b7685347d3","source":"wotc","published_at":"2024-02-02","comment":"\"Solved — [static ability]\" means \"As long as this Case is solved, [static ability].\" Static abilities are written as statements, such as \"Creatures you control get +1/+1\" or \"Instant and sorcery spells you cast cost {1} less to cast.\""},
+    {"object":"ruling","oracle_id":"0d8730b5-f7ba-48b0-928d-d8b7685347d3","source":"wotc","published_at":"2024-02-02","comment":"\"To Solve — [condition]\" means \"At the beginning of your end step, if [condition] and this Case is not solved, it becomes solved.\""},
+    {"object":"ruling","oracle_id":"0d8730b5-f7ba-48b0-928d-d8b7685347d3","source":"wotc","published_at":"2024-02-02","comment":"\"To solve\" abilities will check for their condition twice: once when the ability would trigger, and once when it resolves. If the condition isn't true at the beginning of your end step, the ability won't trigger at all. If the condition isn't true when the ability resolves, the Case won't become solved."},
+    {"object":"ruling","oracle_id":"0d8730b5-f7ba-48b0-928d-d8b7685347d3","source":"wotc","published_at":"2024-02-02","comment":"Being solved is not part of a permanent's copiable values. A permanent that becomes a copy of a solved Case is not solved. A solved Case that somehow becomes a copy of a different Case stays solved."},
+    {"object":"ruling","oracle_id":"0d8730b5-f7ba-48b0-928d-d8b7685347d3","source":"wotc","published_at":"2024-02-02","comment":"Cases don't lose their other abilities when they become solved."},
+    {"object":"ruling","oracle_id":"0d8730b5-f7ba-48b0-928d-d8b7685347d3","source":"wotc","published_at":"2024-02-02","comment":"Each Case has two special keyword abilities: to solve and solved."},
+    {"object":"ruling","oracle_id":"0d8730b5-f7ba-48b0-928d-d8b7685347d3","source":"wotc","published_at":"2024-02-02","comment":"Once a Case becomes solved, it stays solved until it leaves the battlefield."},
+    {"object":"ruling","oracle_id":"0d8730b5-f7ba-48b0-928d-d8b7685347d3","source":"wotc","published_at":"2024-02-02","comment":"The meaning of \"solved\" differs based on what type of ability follows it. \"Solved — [activated ability]\" means \"[Activated ability]. Activate only if this Case is solved.\" Activated abilities contain a colon. They're generally written \"[Cost]: [Effect].\" "},
     {"object":"ruling","oracle_id":"11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5","source":"wotc","published_at":"2009-10-01","comment":"A face-up plane card that's turned face down becomes a new object with no relation to its previous existence. In particular, it loses all counters it may have had."},
     {"object":"ruling","oracle_id":"11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5","source":"wotc","published_at":"2009-10-01","comment":"A plane card is treated as if its text box included \"When you roll {PW}, put this card on the bottom of its owner's planar deck face down, then move the top card of your planar deck off that planar deck and turn it face up.\" This is called the \"planeswalking ability.\""},
     {"object":"ruling","oracle_id":"11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5","source":"wotc","published_at":"2009-10-01","comment":"If an ability of a plane refers to \"you,\" it's referring to whoever the plane's controller is at the time, not to the player that started the game with that plane card in their deck. Many abilities of plane cards affect all players, while many others affect only the planar controller, so read each ability carefully."},
     {"object":"ruling","oracle_id":"11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5","source":"wotc","published_at":"2009-10-01","comment":"The controller of a face-up plane card is the player designated as the \"planar controller.\" Normally, the planar controller is whoever the active player is. However, if the current planar controller would leave the game, instead the next player in turn order that wouldn't leave the game becomes the planar controller, then the old planar controller leaves the game. The new planar controller retains that designation until they leave the game or a different player becomes the active player, whichever comes first."},
+    {"object":"ruling","oracle_id":"20e7a93f-77ce-466b-8586-35d390689d0c","source":"wotc","published_at":"2019-01-25","comment":"If the creature's power is negative, you don't lose or gain life."},
+    {"object":"ruling","oracle_id":"20e7a93f-77ce-466b-8586-35d390689d0c","source":"wotc","published_at":"2019-01-25","comment":"If the target player controls more than one creature with the greatest power among creatures they control, that player chooses which to sacrifice."},
+    {"object":"ruling","oracle_id":"20e7a93f-77ce-466b-8586-35d390689d0c","source":"wotc","published_at":"2019-01-25","comment":"The amount of life gained while Consume resolves is equal to the power of the creature as it last existed on the battlefield."},
+    {"object":"ruling","oracle_id":"20e7a93f-77ce-466b-8586-35d390689d0c","source":"wotc","published_at":"2022-12-08","comment":"A split card's characteristics are a combination of its two halves while it is not on the stack. For example, Assault // Battery has a mana value of 5 while it is in your library. If an effect allows you to search your library for a card with mana value 4 or less, you can't find Assault // Battery."},
+    {"object":"ruling","oracle_id":"20e7a93f-77ce-466b-8586-35d390689d0c","source":"wotc","published_at":"2022-12-08","comment":"Each split card has two names. If an effect instructs you to choose a card name, you may choose one of those names, but not both."},
+    {"object":"ruling","oracle_id":"20e7a93f-77ce-466b-8586-35d390689d0c","source":"wotc","published_at":"2022-12-08","comment":"Each split card is a single card. For example, if you discard a split card, you've discarded one card, not two. If an effect counts the number of sorcery cards in your graveyard, Assault // Battery counts once, not twice."},
+    {"object":"ruling","oracle_id":"20e7a93f-77ce-466b-8586-35d390689d0c","source":"wotc","published_at":"2022-12-08","comment":"If an effect allows you to cast a spell with certain characteristics, consider only the characteristics of the half you're casting. For example, if an effect allows you to cast a sorcery spell with mana value 2 or less from among cards in your graveyard, you could cast Assault this way, but not Battery."},
+    {"object":"ruling","oracle_id":"20e7a93f-77ce-466b-8586-35d390689d0c","source":"wotc","published_at":"2022-12-08","comment":"If you copy a spell that's half of a split card, the copy copies that same half. For example, if you copy Assault, the copy is also Assault, not Battery."},
+    {"object":"ruling","oracle_id":"20e7a93f-77ce-466b-8586-35d390689d0c","source":"wotc","published_at":"2022-12-08","comment":"Split cards have two card faces on a single card. The characteristics of the half you didn't cast are ignored while the spell is on the stack."},
+    {"object":"ruling","oracle_id":"20e7a93f-77ce-466b-8586-35d390689d0c","source":"wotc","published_at":"2022-12-08","comment":"To cast a split card, choose one of its halves to cast. There's no way to cast both halves of this split card."},
     {"object":"ruling","oracle_id":"2f5f46ed-b8aa-4864-bd20-17281d4632bf","source":"wotc","published_at":"2026-03-20","comment":"A creature with a prepare spell can't become prepared more than once at the same time. For example, Emeritus of Ideation is on the battlefield and is prepared. When it attacks, its last ability triggers. When that ability resolves, its controller may still exile eight cards from their graveyard, but doing so won't cause Emeritus of Ideation to become prepared a second time or create a second copy of Ancestral Recall in exile."},
     {"object":"ruling","oracle_id":"2f5f46ed-b8aa-4864-bd20-17281d4632bf","source":"wotc","published_at":"2026-03-20","comment":"A creature without a prepare spell can't become prepared."},
     {"object":"ruling","oracle_id":"2f5f46ed-b8aa-4864-bd20-17281d4632bf","source":"wotc","published_at":"2026-03-20","comment":"A preparation card is a creature card in every zone. For example, while it's in your graveyard, Emeritus of Ideation is a blue creature whose mana value is 5. It can't be the target of Zealous Lorecaster's triggered ability (\"When this creature enters, return target instant or sorcery card from your graveyard to your hand.\")."},
@@ -1438,6 +1826,7 @@
     {"object":"ruling","oracle_id":"57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5","source":"wotc","published_at":"2013-04-15","comment":"When resolving a fused split spell with multiple targets, treat it as you would any spell with multiple targets. If all targets are illegal when the spell tries to resolve, the spell doesn’t resolve and none of its effects happen. If at least one target is still legal at that time, the spell resolves, but an illegal target can’t perform any actions or have any actions performed on it."},
     {"object":"ruling","oracle_id":"57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5","source":"wotc","published_at":"2013-04-15","comment":"You can choose the same object as the target of each half of a fused split spell, if appropriate."},
     {"object":"ruling","oracle_id":"61fbaaf2-4286-4e9a-b9cb-aa31262b596a","source":"wotc","published_at":"2022-04-29","comment":"The tokens' characteristics are entirely replaced by either 2/2 green Cat creature token with haste or 3/1 green Dog creature token with vigilance. They don't have any other abilities the tokens would have been created with. Anything else specified in the effect creating the tokens (such as tapped, attacking, “That token gains haste,” or “Exile that token at end of combat”) still applies."},
+    {"object":"ruling","oracle_id":"710f1f8a-e5f7-4889-9f12-2611f42d5c73","source":"wotc","published_at":"2005-06-01","comment":"Each Ascendant is legendary in both its unflipped and flipped forms. This means that effects that look for legendary creature cards, such as Time of Need and Captain Sisay, can find an Ascendant."},
     {"object":"ruling","oracle_id":"7185e345-d8a1-4dd3-a071-f90f265634b4","source":"wotc","published_at":"2020-04-17","comment":"Some cards with cycling have an ability that triggers when you cycle them, and some cards have an ability that triggers whenever you cycle any card. These triggered abilities resolve before you draw from the cycling ability."},
     {"object":"ruling","oracle_id":"7185e345-d8a1-4dd3-a071-f90f265634b4","source":"wotc","published_at":"2020-04-17","comment":"Triggered abilities from cycling a card and the cycling ability itself aren't spells. Effects that interact with spells (such as that of Cancel) won't affect them."},
     {"object":"ruling","oracle_id":"7185e345-d8a1-4dd3-a071-f90f265634b4","source":"wotc","published_at":"2020-04-17","comment":"You can cycle a card even if it has a triggered ability from cycling that won't have a legal target. This is because the cycling ability and the triggered ability are separate. This also means that if either ability is countered (with Disallow, for example), the other ability will still resolve."},
@@ -1530,6 +1919,14 @@
     {"object":"ruling","oracle_id":"b0b6be0c-41cf-4757-9f0e-87227b6ba6b3","source":"wotc","published_at":"2018-01-19","comment":"To determine Ghalta's total cost, start with the mana cost (or an alternative cost if another card's effect allows you to pay one instead), add any cost increases, then apply any cost reductions. Ghalta's mana value remains unchanged, no matter what the total cost to cast it was."},
     {"object":"ruling","oracle_id":"b23587e0-9fb7-492e-8bb4-f218e8e4ce6c","source":"wotc","published_at":"2016-07-13","comment":"For more information on meld cards, see the Eldritch Moon mechanics article (https://magic.wizards.com/en/articles/archive/feature/eldritch-moon-mechanics-2016-06-27)."},
     {"object":"ruling","oracle_id":"bce7e45d-b2c5-43aa-91a6-3a3c24f30850","source":"wotc","published_at":"2016-07-13","comment":"For more information on meld cards, see the Eldritch Moon mechanics article (https://magic.wizards.com/en/articles/archive/feature/eldritch-moon-mechanics-2016-06-27)."},
+    {"object":"ruling","oracle_id":"c15bb7eb-aaaa-4468-9641-8f706d6137e8","source":"wotc","published_at":"2018-04-27","comment":"A chapter ability doesn’t trigger if a lore counter is put on a Saga that already had a number of lore counters greater than or equal to that chapter’s number. For example, the third lore counter put on a Saga causes the III chapter ability to trigger, but I and II won’t trigger again."},
+    {"object":"ruling","oracle_id":"c15bb7eb-aaaa-4468-9641-8f706d6137e8","source":"wotc","published_at":"2018-04-27","comment":"As a Saga enters the battlefield, its controller puts a lore counter on it. As your precombat main phase begins (immediately after your draw step), you put another lore counter on each Saga you control. Putting a lore counter on a Saga in either of these ways doesn’t use the stack."},
+    {"object":"ruling","oracle_id":"c15bb7eb-aaaa-4468-9641-8f706d6137e8","source":"wotc","published_at":"2018-04-27","comment":"Each symbol on the left of a Saga’s text box represents a chapter ability. A chapter ability is a triggered ability that triggers when a lore counter that is put on the Saga causes the number of lore counters on the Saga to become equal to or greater than the ability’s chapter number. Chapter abilities are put onto the stack and may be responded to."},
+    {"object":"ruling","oracle_id":"c15bb7eb-aaaa-4468-9641-8f706d6137e8","source":"wotc","published_at":"2018-04-27","comment":"If counters are removed from a Saga, the appropriate chapter abilities will trigger again when the Saga receives lore counters. Removing lore counters won’t cause a previous chapter ability to trigger."},
+    {"object":"ruling","oracle_id":"c15bb7eb-aaaa-4468-9641-8f706d6137e8","source":"wotc","published_at":"2018-04-27","comment":"If multiple chapter abilities trigger at the same time, their controller puts them on the stack in any order. If any of them require targets, those targets are chosen as you put the abilities on the stack, before any of those abilities resolve."},
+    {"object":"ruling","oracle_id":"c15bb7eb-aaaa-4468-9641-8f706d6137e8","source":"wotc","published_at":"2018-04-27","comment":"Once a chapter ability has triggered, the ability on the stack won’t be affected if the Saga gains or loses counters, or if it leaves the battlefield."},
+    {"object":"ruling","oracle_id":"c15bb7eb-aaaa-4468-9641-8f706d6137e8","source":"wotc","published_at":"2018-04-27","comment":"Once the number of lore counters on a Saga is greater than or equal to the greatest number among its chapter abilities—in the Dominaria set, this is always three—the Saga’s controller sacrifices it as soon as its chapter ability has left the stack, most likely by resolving or being countered. This state-based action doesn’t use the stack."},
+    {"object":"ruling","oracle_id":"c15bb7eb-aaaa-4468-9641-8f706d6137e8","source":"wotc","published_at":"2018-04-27","comment":"The final chapter ability of History of Benalia affects only Knights you control at the time it resolves. Creatures you begin to control later in the turn or that become Knights later in the turn won’t get +2/+1."},
     {"object":"ruling","oracle_id":"d6d72f5f-8f5d-4180-b514-f22ff5482902","source":"wotc","published_at":"2019-10-04","comment":"An adventurer card is a permanent card in every zone except the stack, as well as while on the stack if not cast as an Adventure. Ignore its alternative characteristics in those cases. For example, while it's in your graveyard, Giant Killer is a white creature card whose mana value is 1. It can't be the target of the triggered ability of Mystic Sanctuary."},
     {"object":"ruling","oracle_id":"d6d72f5f-8f5d-4180-b514-f22ff5482902","source":"wotc","published_at":"2019-10-04","comment":"Bonecrusher Giant's ability resolves before the spell that caused it to trigger. It resolves even if that spell is countered."},
     {"object":"ruling","oracle_id":"d6d72f5f-8f5d-4180-b514-f22ff5482902","source":"wotc","published_at":"2019-10-04","comment":"Casting a card as an Adventure isn't casting it for an alternative cost. Effects that allow you to cast a spell for an alternative cost or without paying its mana cost may allow you to apply those to the Adventure."},
@@ -1545,11 +1942,30 @@
     {"object":"ruling","oracle_id":"d6d72f5f-8f5d-4180-b514-f22ff5482902","source":"wotc","published_at":"2019-10-04","comment":"Stomp only stops damage from being prevented by effects that specifically use the word \"prevent.\""},
     {"object":"ruling","oracle_id":"d6d72f5f-8f5d-4180-b514-f22ff5482902","source":"wotc","published_at":"2019-10-04","comment":"When casting a spell as an Adventure, use the alternative characteristics and ignore all of the card's normal characteristics. The spell's color, mana cost, mana value, and so on are determined by only those alternative characteristics. If the spell leaves the stack, it immediately resumes using its normal characteristics."},
     {"object":"ruling","oracle_id":"d6d72f5f-8f5d-4180-b514-f22ff5482902","source":"wotc","published_at":"2019-10-04","comment":"You must still follow any timing restrictions and permissions for the permanent spell you cast from exile. Normally, you'll be able to cast it only during your main phase while the stack is empty."},
+    {"object":"ruling","oracle_id":"dcbcbf42-4654-487a-acad-21f2606d229b","source":"wotc","published_at":"2021-07-23","comment":"Each Class has five abilities. The three in the major sections of its text box are class abilities. Class abilities can be static, activated, or triggered abilities. The other two are level abilities, one activated ability to advance the Class to level 2 and another to advance the Class to level 3."},
+    {"object":"ruling","oracle_id":"dcbcbf42-4654-487a-acad-21f2606d229b","source":"wotc","published_at":"2021-07-23","comment":"Each Class starts with only the first of three class abilities. As the first level ability resolves, the Class becomes level 2 and gains the second class ability. As the second level ability resolves, the Class becomes level 3 and gains the third class ability."},
+    {"object":"ruling","oracle_id":"dcbcbf42-4654-487a-acad-21f2606d229b","source":"wotc","published_at":"2021-07-23","comment":"For the third ability, the power and toughness of the creature will change as the number of lands you control changes."},
+    {"object":"ruling","oracle_id":"dcbcbf42-4654-487a-acad-21f2606d229b","source":"wotc","published_at":"2021-07-23","comment":"Gaining a level is a normal activated ability. It uses the stack and can be responded to."},
+    {"object":"ruling","oracle_id":"dcbcbf42-4654-487a-acad-21f2606d229b","source":"wotc","published_at":"2021-07-23","comment":"Gaining a level won't remove abilities that a Class had at a previous level."},
+    {"object":"ruling","oracle_id":"dcbcbf42-4654-487a-acad-21f2606d229b","source":"wotc","published_at":"2021-07-23","comment":"If you have more than one Druid Class at level 2 or higher, you can play that many additional lands per turn. For example, with two Druid Classes at level 2, you can play three lands during your turn."},
+    {"object":"ruling","oracle_id":"dcbcbf42-4654-487a-acad-21f2606d229b","source":"wotc","published_at":"2021-07-23","comment":"Some Class cards have an effect that increases when more are under your control. For example, if you have multiple Barbarian Class cards, you roll that many additional dice and ignore that many of the lowest rolls."},
+    {"object":"ruling","oracle_id":"dcbcbf42-4654-487a-acad-21f2606d229b","source":"wotc","published_at":"2021-07-23","comment":"You can multiclass or even control multiple Class enchantments of the same class. Each Class permanent tracks its own level separately."},
+    {"object":"ruling","oracle_id":"dcbcbf42-4654-487a-acad-21f2606d229b","source":"wotc","published_at":"2021-07-23","comment":"You can't activate the first level ability of a Class unless that Class is level 1. Similarly, you can't activate the second level ability of a Class unless that Class is level 2."},
+    {"object":"ruling","oracle_id":"dcbcbf42-4654-487a-acad-21f2606d229b","source":"wotc","published_at":"2024-11-08","comment":"A landfall ability doesn't trigger if a permanent already on the battlefield becomes a land."},
+    {"object":"ruling","oracle_id":"dcbcbf42-4654-487a-acad-21f2606d229b","source":"wotc","published_at":"2024-11-08","comment":"A landfall ability triggers whenever a land you control enters for any reason. It triggers whenever you play a land, as well as whenever a spell or ability puts a land onto the battlefield under your control."},
+    {"object":"ruling","oracle_id":"dcbcbf42-4654-487a-acad-21f2606d229b","source":"wotc","published_at":"2024-11-08","comment":"Whenever a land you control enters, each landfall ability of the permanents you control will trigger. You can put them   on the stack in any order. The last ability you put on the stack will be the first one to resolve (As a result, you can have those abilities resolve in the order of your choosing.)."},
     {"object":"ruling","oracle_id":"edd531b9-f615-4399-8c8c-1c5e18c4acbf","source":"wotc","published_at":"2011-09-22","comment":"You may reveal the card even if it's not an instant or sorcery. Whether or not you reveal it, the card stays on top of your library."},
     {"object":"ruling","oracle_id":"f00bc101-8082-4459-b987-f0c4b7a12344","source":"wotc","published_at":"2026-03-20","comment":"If multiple cards leave your graveyard at the same time, Advanced Reconstruction's level 2 ability will trigger only once."},
     {"object":"ruling","oracle_id":"f00bc101-8082-4459-b987-f0c4b7a12344","source":"wotc","published_at":"2026-03-20","comment":"To determine the total cost of a spell, start with the mana cost or alternative cost you're paying, add any cost increases, then apply any cost reductions (such as that of Advanced Reconstruction's level 3 ability). The mana value of the spell is determined by only its mana cost, no matter what the total cost to cast that spell was."},
     {"object":"ruling","oracle_id":"f00bc101-8082-4459-b987-f0c4b7a12344","source":"wotc","published_at":"2026-03-20","comment":"You pay all costs and follow all timing rules for cards played this way. For example, if the exiled card is a land card, you may play it only during your main phase while the stack is empty and only if you have an available land play remaining."},
     {"object":"ruling","oracle_id":"f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22","source":"wotc","published_at":"2016-07-13","comment":"In a Commander game, your commander may be Bruna, the Fading Light or Gisela, the Broken Blade, and the other may be in your deck. If they meld into Brisela, Voice of Nightmares, Brisela will also be your commander; but if Brisela leaves the battlefield, only the card chosen as your commander at the start of the game may be put into the command zone."},
+    {"object":"ruling","oracle_id":"fa5e1347-9bee-4103-8b74-5d0df35dd8ff","source":"wotc","published_at":"2022-10-07","comment":"Although {T} acts in many ways like mana, it is not mana. An ability that triggers from a creature tapping to add mana wouldn't trigger when you activate Sole Performer's ability, for example."},
+    {"object":"ruling","oracle_id":"fa5e1347-9bee-4103-8b74-5d0df35dd8ff","source":"wotc","published_at":"2022-10-07","comment":"For example, say you control Prize Wall, which has \"{U}, {T}: You get {TK}.\" You activate Sole Performer to get {T}{T}. You then activate Prize Wall, spending {U} and one of the {T}s you got from Sole Performer. You could then activate Prize Wall again, spending another {U} and the other {T}. Prize Wall itself is still untapped at this point. You can then activate Prize Wall a third time, spending a third {U} and finally actually tapping Prize Wall."},
+    {"object":"ruling","oracle_id":"fa5e1347-9bee-4103-8b74-5d0df35dd8ff","source":"wotc","published_at":"2022-10-07","comment":"Sole Performer turns {T} into a resource you can add, much like mana. You spend {T} to pay for that symbol appearing in the costs of activated abilities. If you spend a {T} you have, you don't have to tap the permanent that has the ability."},
+    {"object":"ruling","oracle_id":"fa5e1347-9bee-4103-8b74-5d0df35dd8ff","source":"wotc","published_at":"2022-10-07","comment":"Spending {T} allows you to activate the tap ability of a creature that's already tapped. Normally, you couldn't pay the cost of tapping the creature because it's already tapped. With Sole Performer, you don't have to worry about that. You have {T}!"},
+    {"object":"ruling","oracle_id":"fa5e1347-9bee-4103-8b74-5d0df35dd8ff","source":"wotc","published_at":"2022-10-07","comment":"Spending {T} rather than tapping the permanent doesn't let you activate abilities of creatures that have \"summoning sickness.\" That is, if a creature's ability has {T} in the cost, and it hasn't been under your control since the beginning of your most recent turn, you can't activate the ability (unless the creature has haste), even if you intend to spend {T} rather than tap the creature."},
+    {"object":"ruling","oracle_id":"fa5e1347-9bee-4103-8b74-5d0df35dd8ff","source":"wotc","published_at":"2022-10-07","comment":"You can't spend {T} to have a creature attack without tapping. You also can't use it to pay the cost of an ability that taps a creature without using the {T} symbol. For example, you can't activate an ability that says \"Tap an untapped creature you control: [Do something]\" with {T}."},
+    {"object":"ruling","oracle_id":"fa5e1347-9bee-4103-8b74-5d0df35dd8ff","source":"wotc","published_at":"2022-10-07","comment":"You lose unused {T} as steps and phases end, at the same time you lose unspent mana."},
     {"object":"ruling","oracle_id":"fdb96b5c-ecac-4db3-8b9a-24f824149f91","source":"wotc","published_at":"2017-04-18","comment":"If Nissa leaves the battlefield while her second ability is on the stack, use her last known loyalty to determine whether you may put the top card of your library onto the battlefield. If Nissa left the battlefield because she took enough damage to reduce her loyalty to 0, then her last known loyalty is 0."},
     {"object":"ruling","oracle_id":"fdb96b5c-ecac-4db3-8b9a-24f824149f91","source":"wotc","published_at":"2017-04-18","comment":"If X is 0, Nissa enters the battlefield with no loyalty and is put into her owner's graveyard before you can activate her abilities."},
     {"object":"ruling","oracle_id":"fdb96b5c-ecac-4db3-8b9a-24f824149f91","source":"wotc","published_at":"2017-04-18","comment":"Nissa's last ability sets the base power and toughness of the lands to 5/5. Any +1/+1 or -1/-1 counters that were on those lands will apply to those values."},

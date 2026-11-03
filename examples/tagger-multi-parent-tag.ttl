@@ -52,6 +52,15 @@
     smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/community-curated>;
     smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/belief>;
     smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
+<https://w3id.org/smtg/id/claim/tagging/d58bcedc-2dcd-42c3-8b52-5359457e6802/93bc4e17-bd0e-4516-af6f-09a25712a323> a smtg:OracleTagAssignment;
+    smtg:assignedTag <https://w3id.org/smtg/id/tag/oracle/d58bcedc-2dcd-42c3-8b52-5359457e6802>;
+    smtg:assignmentTarget <https://w3id.org/smtg/id/oracle-card/93bc4e17-bd0e-4516-af6f-09a25712a323>;
+    smtg:taggingWeight <https://w3id.org/smtg/vocab/tagging-weight/median>;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/tagger-community>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-oracle-tags-23d94bab24a5>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/community-curated>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/belief>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
 <https://w3id.org/smtg/id/claim/tagging/d58bcedc-2dcd-42c3-8b52-5359457e6802/4457ed35-7c10-48c8-9776-456485fdf070> a smtg:OracleTagAssignment;
     smtg:assignedTag <https://w3id.org/smtg/id/tag/oracle/d58bcedc-2dcd-42c3-8b52-5359457e6802>;
     smtg:assignmentTarget <https://w3id.org/smtg/id/oracle-card/4457ed35-7c10-48c8-9776-456485fdf070>;
@@ -154,6 +163,15 @@
 <https://w3id.org/smtg/id/tag/oracle/d91e421d-ff87-4aad-a4bf-5aefc51252b6> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tagger-tag-id/d91e421d-ff87-4aad-a4bf-5aefc51252b6>;
     smtg:sourceURL "https://tagger.scryfall.com/tags/card/removal-creature"^^xsd:anyURI;
     smtg:taggerParent <https://w3id.org/smtg/id/tag/oracle/444f824c-f910-4530-9dbe-ede7a84cd7f9>.
+<https://w3id.org/smtg/id/claim/tagging/d91e421d-ff87-4aad-a4bf-5aefc51252b6/20e7a93f-77ce-466b-8586-35d390689d0c> a smtg:OracleTagAssignment;
+    smtg:assignedTag <https://w3id.org/smtg/id/tag/oracle/d91e421d-ff87-4aad-a4bf-5aefc51252b6>;
+    smtg:assignmentTarget <https://w3id.org/smtg/id/oracle-card/20e7a93f-77ce-466b-8586-35d390689d0c>;
+    smtg:taggingWeight <https://w3id.org/smtg/vocab/tagging-weight/median>;
+    smtg:claimedBy <https://w3id.org/smtg/id/agent/tagger-community>;
+    smtg:observedIn <https://w3id.org/smtg/id/snapshot/scryfall-oracle-tags-23d94bab24a5>;
+    smtg:hasEpistemicStatus <https://w3id.org/smtg/vocab/epistemic-status/community-curated>;
+    smtg:hasAttitude <https://w3id.org/smtg/vocab/attitude/belief>;
+    smtg:hasLifecycleStatus <https://w3id.org/smtg/vocab/claim-lifecycle/current>.
 <https://w3id.org/smtg/id/claim/tagging/d91e421d-ff87-4aad-a4bf-5aefc51252b6/51042581-4add-4487-a1b6-85446539b975> a smtg:OracleTagAssignment;
     smtg:assignedTag <https://w3id.org/smtg/id/tag/oracle/d91e421d-ff87-4aad-a4bf-5aefc51252b6>;
     smtg:assignmentTarget <https://w3id.org/smtg/id/oracle-card/51042581-4add-4487-a1b6-85446539b975>;

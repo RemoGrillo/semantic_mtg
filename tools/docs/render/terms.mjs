@@ -4,6 +4,7 @@ import { NS, localName } from '../lib/rdf.mjs';
 import { ancestors, propertiesFrom, propertiesTo, termsOfModule, sortedModules } from '../lib/model.mjs';
 import { mentioned } from '../lib/axioms.mjs';
 import { classDiagram, moduleDiagram, propertyDiagram, instanceDiagram } from '../lib/diagrams.mjs';
+import { withCardInstances } from '../lib/cardrefs.mjs';
 import { pickInstance, neighbourhood, toTurtle } from '../lib/instances.mjs';
 import {
   link, exprHTML, propExprHTML, termHeader, annotationsBlock, refsBlock, otherAnnotationsBlock, sourceFieldsBlock,
@@ -624,7 +625,7 @@ export function layoutMatrix(ctx) {
       .map((t) => link(m, t.value))
       .join(', ');
     const oc = oracleLayouts[code] ?? A(c, 'observedCount')[0]?.value;
-    return `<tr><td class="nowrap"><a class="term" href="#/vocab/${attr(scheme?.key || 'layout')}/${attr(c.anchor)}">${esc(code)}</a></td><td>${esc(c.label)}</td><td class="layout-ex">${c.examples?.length ? c.examples.map((x) => mdInline(esc(x))).join('<br>') : '<span class="muted">—</span>'}</td><td class="num">${val(c, 'faceCount')}</td><td class="num">${val(
+    return `<tr><td class="nowrap"><a class="term" href="#/vocab/${attr(scheme?.key || 'layout')}/${attr(c.anchor)}">${esc(code)}</a></td><td>${esc(c.label)}</td><td class="layout-ex">${c.examples?.length ? withCardInstances(false, () => c.examples.map((x) => mdInline(esc(x))).join('<br>')) : '<span class="muted">—</span>'}</td><td class="num">${val(c, 'faceCount')}</td><td class="num">${val(
       c,
       'physicalSides',
     )}</td><td>${val(c, 'faceArrangement')}</td><td>${val(c, 'separateOracleIdentity')}</td>${hasFC ? `<td>${val(c, 'impliesFaceConfiguration')}</td>` : ''}<td>${def || '<span class="muted">—</span>'}</td><td class="num">${num(oc)}</td><td class="num">${num(layouts[code])}</td></tr>`;

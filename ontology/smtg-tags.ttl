@@ -105,7 +105,7 @@ smtg:ArtTagAssignment a owl:Class ;
     [ a owl:Restriction ; owl:onProperty smtg:assignmentTarget ; owl:allValuesFrom smtg:Illustration ] ;
   rdfs:label "Art tag assignment"@en ;
   skos:definition "A tag assignment of an art tag to an illustration."@en ;
-  skos:scopeNote "Classifies what an illustration shows or evokes; it is not by itself a claim that a real-world person or object is depicted (see smtg:ArtworkDepiction)."@en ;
+  skos:scopeNote "Classifies what an illustration shows or evokes; it is not by itself a claim that a specific person, character or object is depicted. No source makes such claims, so none is modelled: art tags are the only statement about what an illustration shows (RQ-AR-2)."@en ;
   smtg:sourceField "tagger:taggings[].illustration_id" ;
   rdfs:isDefinedBy smtgm:tags ; vs:term_status "stable-draft" .
 

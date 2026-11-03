@@ -232,6 +232,14 @@
   function fitSection(section) {
     $$('figure.diagram[data-done="1"]', section).forEach(fitDiagram);
   }
+  // diagrams inside a collapsed <details> are rendered unsized: fit them when it opens
+  document.addEventListener(
+    'toggle',
+    function (e) {
+      if (e.target && e.target.tagName === 'DETAILS' && e.target.open) fitSection(e.target);
+    },
+    true,
+  );
   var fitTimer = null;
   window.addEventListener('resize', function () {
     clearTimeout(fitTimer);

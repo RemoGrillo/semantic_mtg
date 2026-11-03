@@ -1,0 +1,18 @@
+# id: CQ-AR-04
+# title: Watermark on one half only
+# question: Which printed sides have a watermark in one printed area and none in the other?
+# kind: SPARQL
+# expects: nonempty
+# modules: printings
+# note: 240 such printings in the 2026-11-03 snapshot (guild-kit split cards, for instance): a watermark is a fact of the printed area, not of the printing.
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+SELECT ?printing ?watermarked ?watermark ?plain WHERE {
+  ?printing smtg:hasSide ?side . ?side smtg:hasPrintedArea ?a1 , ?a2 . FILTER (?a1 != ?a2)
+  ?a1 smtg:hasWatermark ?watermark ; smtg:printsFace/smtg:name ?watermarked .
+  ?a2 smtg:printsFace/smtg:name ?plain . FILTER NOT EXISTS { ?a2 smtg:hasWatermark ?w }
+} ORDER BY ?printing

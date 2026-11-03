@@ -14,8 +14,8 @@
 @prefix smtgid: <https://w3id.org/smtg/id/>.
 
 <https://w3id.org/smtg/id/activity/inference-rules-2026-11-03> a smtg:InferenceActivity;
-    rdfs:label "Rule materialisation (7 rules, 144 triples)";
-    prov:endedAtTime "2026-11-03T19:57:58.228Z"^^xsd:dateTime;
+    rdfs:label "Rule materialisation (7 rules, 162 triples)";
+    prov:endedAtTime "2026-11-03T20:51:16.940Z"^^xsd:dateTime;
     prov:wasAssociatedWith <https://w3id.org/smtg/id/agent/smtg-pipeline>;
     smtg:ontologyVersionUsed "0.1.0-draft".
 <https://w3id.org/smtg/graph/inferred/rules> a prov:Entity;
@@ -23,11 +23,11 @@
     rdfs:label "Inferred graph: rule materialisation".
 <https://w3id.org/smtg/id/activity/inference-rules-2026-11-03> prov:used <https://w3id.org/smtg/id/rule/R-INSTANT-SORCERY-FACE>, <https://w3id.org/smtg/id/rule/R-LAYOUT-CLASS>, <https://w3id.org/smtg/id/rule/R-PERMANENT-FACE>, <https://w3id.org/smtg/id/rule/R-SYMBOL-CLASS>, <https://w3id.org/smtg/id/rule/R-TOKEN>, <https://w3id.org/smtg/id/rule/R-MANA-VIA-TOKEN>, <https://w3id.org/smtg/id/rule/R-PERMANENT-CARD>.
 <https://w3id.org/smtg/id/rule/R-INSTANT-SORCERY-FACE> rdfs:label "Faces with the instant or sorcery card type";
-    rdfs:comment "Implements: smtg:InstantOrSorceryFace owl:equivalentClass ( smtg:CardFace and (smtg:hasCardType some smtg:InstantOrSorceryCardType) ). Source: rules/R-INSTANT-SORCERY-FACE.rq. Triples: 14.".
+    rdfs:comment "Implements: smtg:InstantOrSorceryFace owl:equivalentClass ( smtg:CardFace and (smtg:hasCardType some smtg:InstantOrSorceryCardType) ). Source: rules/R-INSTANT-SORCERY-FACE.rq. Triples: 17.".
 <https://w3id.org/smtg/id/rule/R-LAYOUT-CLASS> rdfs:label "Layout-defined classes (ModalDoubleFacedCard, AdventurerCard, …)";
-    rdfs:comment "Implements: every smtg:X owl:equivalentClass ( smtg:OracleCard and (smtg:hasLayout value L) ) recorded as L smtg:definedClass X. Source: rules/R-LAYOUT-CLASS.rq. Triples: 14.".
+    rdfs:comment "Implements: every smtg:X owl:equivalentClass ( smtg:OracleCard and (smtg:hasLayout value L) ) recorded as L smtg:definedClass X. Source: rules/R-LAYOUT-CLASS.rq. Triples: 15.".
 <https://w3id.org/smtg/id/rule/R-PERMANENT-FACE> rdfs:label "Faces with a permanent card type";
-    rdfs:comment "Implements: smtg:PermanentFace owl:equivalentClass ( smtg:CardFace and (smtg:hasCardType some smtg:PermanentCardType) ). Source: rules/R-PERMANENT-FACE.rq. Triples: 36.".
+    rdfs:comment "Implements: smtg:PermanentFace owl:equivalentClass ( smtg:CardFace and (smtg:hasCardType some smtg:PermanentCardType) ). Source: rules/R-PERMANENT-FACE.rq. Triples: 43.".
 <https://w3id.org/smtg/id/rule/R-SYMBOL-CLASS> rdfs:label "Hybrid and Phyrexian mana symbols";
     rdfs:comment "Implements: smtg:HybridManaSymbol ≡ ManaSymbol and (isHybrid value true); smtg:PhyrexianManaSymbol ≡ ManaSymbol and (isPhyrexian value true). Source: rules/R-SYMBOL-CLASS.rq. Triples: 47.".
 <https://w3id.org/smtg/id/rule/R-TOKEN> rdfs:label "Tokens a card can create (projection of all_parts)";
@@ -35,4 +35,4 @@
 <https://w3id.org/smtg/id/rule/R-MANA-VIA-TOKEN> rdfs:label "Mana a card can produce through a token it creates";
     rdfs:comment "Implements: smtg:producesManaViaToken owl:propertyChainAxiom ( smtg:createsToken smtg:producesManaSymbol ). Source: rules/R-MANA-VIA-TOKEN.rq. Triples: 1.".
 <https://w3id.org/smtg/id/rule/R-PERMANENT-CARD> rdfs:label "Permanent cards (CR 110.4a): primary face is a permanent face, or a split card with a permanent half";
-    rdfs:comment "Implements: smtg:PermanentCard owl:equivalentClass ( smtg:OracleCard and ((smtg:primaryFace some smtg:PermanentFace) or (smtg:hasLayout value layout/split and smtg:hasFace some smtg:PermanentFace)) ). Source: rules/R-PERMANENT-CARD.rq. Triples: 31.".
+    rdfs:comment "Implements: smtg:PermanentCard owl:equivalentClass ( smtg:OracleCard and ((smtg:primaryFace some smtg:PermanentFace) or (smtg:hasLayout value layout/split and smtg:hasFace some smtg:PermanentFace)) ). Source: rules/R-PERMANENT-CARD.rq. Triples: 38.".

@@ -263,11 +263,6 @@ smtg:Side a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
   skos:definition "Front or back of a physical card."@en ;
   rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
 
-smtg:Orientation a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
-  rdfs:label "Face orientation"@en ;
-  skos:definition "Orientation of a printed face relative to the card's upright reading direction: upright, rotated 90° (split/aftermath halves, battles), or inverted (flip cards)."@en ;
-  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
-
 smtg:PartComponent a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
   rdfs:label "Part component role"@en ;
   skos:definition "Role of a related object in a Scryfall all_parts relation: token, meld_part, meld_result, combo_piece."@en ;

@@ -14,7 +14,7 @@ PREFIX v: <https://w3id.org/smtg/vocab/>
 SELECT ?printing ?set ?printedName ?printedText WHERE {
   ?card a smtg:OracleCard ; smtg:name "Lightning Bolt" .
   ?printing smtg:isPrintingOf ?card ; smtg:inLanguage <https://w3id.org/smtg/vocab/language/it> ;
-            smtg:inSet/smtg:setCode ?set ; smtg:hasPrintedFace ?pf .
-  ?pf smtg:hasPrintedText ?n . ?n a smtg:PrintedName ; smtg:textValue ?printedName .
-  OPTIONAL { ?pf smtg:hasPrintedText ?t . ?t a smtg:PrintedRulesText ; smtg:textValue ?printedText . }
+            smtg:inSet/smtg:setCode ?set ; smtg:hasSide/smtg:hasPrintedArea ?area .
+  ?area smtg:hasPrintedText ?n . ?n a smtg:PrintedName ; smtg:textValue ?printedName .
+  OPTIONAL { ?area smtg:hasPrintedText ?t . ?t a smtg:PrintedRulesText ; smtg:textValue ?printedText . }
 }

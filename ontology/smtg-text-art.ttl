@@ -93,19 +93,19 @@ smtg:hasOracleText a owl:ObjectProperty ;
 
 smtg:hasPrintedText a owl:ObjectProperty ;
   rdfs:label "has printed text"@en ;
-  skos:definition "Relates a printed face to a text expression printed on it (printed rules text, flavour text, printed name, flavour name, printed type line)."@en ;
+  skos:definition "Relates a printed area to a text expression printed in it (printed rules text, flavour text, printed name, flavour name, printed type line)."@en ;
   rdfs:range smtg:TextExpression ;
-  smtg:intendedDomain smtg:PrintedFace ;
+  smtg:intendedDomain smtg:PrintedArea ;
   rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
 
 # -----------------------------------------------------------------------------
-#  Illustrations, artists, depictions, inscriptions
+#  Illustrations and artists
 # -----------------------------------------------------------------------------
 
 smtg:Illustration a owl:Class ;
   rdfs:label "Illustration"@en ;
   skos:definition "A visual artwork created for Magic, identified by Scryfall's illustration ID, which may appear on many printings and faces."@en ;
-  skos:scopeNote "An illustration is neither a printing nor an image file. Printings that share an illustration are not the same printing (AP-03), and a digital image is only a representation of (a crop of) a printed face or illustration (AP-14)."@en ;
+  skos:scopeNote "An illustration is a work, neither a printing nor an image file. Printings that share an illustration are not the same printing (AP-03), and a digital image is only a representation of a printed side or of (a crop of) an illustration (AP-14). In the 2026-11-03 snapshot 2,670 illustrations appear on printings of more than one Oracle card (art cards, front cards and tokens that reprint a card's art), so an illustration is never attributed to a card face by itself: the printed area that shows it records which face it goes with on that printing (RQ-AR-1)."@en ;
   smtg:sourceField "scryfall:illustration_id" , "scryfall:card_faces[].illustration_id" ;
   smtg:antiPattern "AP-03" , "AP-14" ;
   smtg:reviewQuestion "RQ-AR-1" ;
@@ -114,9 +114,10 @@ smtg:Illustration a owl:Class ;
 
 smtg:showsIllustration a owl:ObjectProperty ;
   rdfs:label "shows illustration"@en ;
-  skos:definition "Relates a printed face to the illustration that appears on it."@en ;
+  skos:definition "Relates a printed area to the illustration printed in it, as identified by the source."@en ;
+  skos:scopeNote "For split, flip, adventure and prepare cards the source identifies one illustration for the whole front and places it on the first face, even when the two halves have different art and different artists ([[Fire // Ice|APC|128]]); the per-half artist is on each area (smtg:creditedArtist). A few non-English printings list two illustration IDs on one side; both are kept."@en ;
   rdfs:range smtg:Illustration ;
-  smtg:intendedDomain smtg:PrintedFace ;
+  smtg:intendedDomain smtg:PrintedArea ;
   smtg:sourceField "scryfall:illustration_id" , "scryfall:card_faces[].illustration_id" ;
   rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
 
@@ -151,50 +152,17 @@ smtg:creditedAs a owl:DatatypeProperty ;
   rdfs:label "credited as"@en ;
   skos:definition "The credit string exactly as the source gives it."@en ;
   rdfs:range xsd:string ;
-  smtg:intendedDomain smtg:ArtisticContribution , smtg:PrintedFace ;
+  smtg:intendedDomain smtg:ArtisticContribution , smtg:PrintedArea ;
   smtg:sourceField "scryfall:artist" , "scryfall:card_faces[].artist" ;
   rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
 
-smtg:ArtworkDepiction a owl:Class ;
-  rdfs:subClassOf smtg:Claim ;
-  rdfs:label "Artwork depiction"@en ;
-  skos:definition "A claim that an illustration depicts a given subject (a character, creature, object, place or motif), with source and evidence."@en ;
-  skos:scopeNote "Distinguishes \"shows a recognisable subject\" from a thematic art tag. Not populated in v1; Tagger art-tag assignments may be mapped to depictions after review (RQ-AR-2)."@en ;
-  smtg:reviewQuestion "RQ-AR-2" ;
-  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "proposal" .
-
-smtg:depicts a owl:ObjectProperty ;
-  rdfs:label "depicts"@en ;
-  skos:definition "The subject that an artwork depiction claims is shown."@en ;
-  rdfs:domain smtg:ArtworkDepiction ;
-  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "proposal" .
-
-smtg:ArtworkInscription a owl:Class ;
-  rdfs:label "Artwork inscription"@en ;
-  skos:definition "Words visibly written inside an illustration (on a banner, a book, a sign…), as transcribed by a source, with language, location in the image and uncertainty."@en ;
-  skos:scopeNote "Not flavour text and not printed rules text: it is part of the picture (AP-13). No OCR in v1; only transcriptions with explicit provenance. Unknown inscriptions are simply absent, never asserted as empty (RQ-AR-3)."@en ;
-  smtg:antiPattern "AP-13" ;
-  smtg:reviewQuestion "RQ-AR-3" ;
-  owl:disjointWith smtg:TextExpression ;
-  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "proposal" .
-
-smtg:inscribedIn a owl:ObjectProperty , owl:FunctionalProperty ;
-  rdfs:label "inscribed in"@en ;
-  skos:definition "The illustration that contains the inscription."@en ;
-  rdfs:domain smtg:ArtworkInscription ; rdfs:range smtg:Illustration ;
-  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "proposal" .
-
-smtg:inscriptionText a owl:DatatypeProperty ;
-  rdfs:label "inscription text"@en ;
-  skos:definition "The transcribed words of the inscription."@en ;
-  rdfs:domain smtg:ArtworkInscription ;
-  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "proposal" .
-
-smtg:locationInImage a owl:DatatypeProperty ;
-  rdfs:label "location in image"@en ;
-  skos:definition "Free-text or region description of where the inscription appears in the image."@en ;
-  rdfs:domain smtg:ArtworkInscription ; rdfs:range xsd:string ;
-  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "proposal" .
+smtg:creditedArtist a owl:ObjectProperty ;
+  rdfs:label "credited artist"@en ;
+  skos:definition "Relates a printed area to an artist the source credits for it. With two artists on one side (split cards), each area credits its own artist, while the one illustration the source identifies has both as contributors."@en ;
+  skos:example "[[Fire // Ice|APC|128]]: the Fire area credits David Martin, the Ice area Franz Vohwinkel. [[!Fire // Ice|APC|128]]"@en ;
+  rdfs:domain smtg:PrintedArea ; rdfs:range smtg:Artist ;
+  smtg:sourceField "scryfall:card_faces[].artist_id" , "scryfall:artist_ids" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
 
 # -----------------------------------------------------------------------------
 #  Digital images
@@ -202,7 +170,7 @@ smtg:locationInImage a owl:DatatypeProperty ;
 
 smtg:DigitalImage a owl:Class ;
   rdfs:label "Digital image"@en ;
-  skos:definition "An image file published by a source (a scan or rendition of a printed face, or a crop of its artwork), with its URL, variant and rights metadata."@en ;
+  skos:definition "An image file published by a source (a scan or rendition of a printed side, or a crop of its artwork), with its URL, variant and rights metadata."@en ;
   skos:scopeNote "An image URL is not the artwork and not the printing (AP-14). SMTG links to source-hosted images and does not redistribute them."@en ;
   smtg:sourceField "scryfall:image_uris.*" , "scryfall:card_faces[].image_uris.*" ;
   smtg:antiPattern "AP-14" ;
@@ -211,9 +179,9 @@ smtg:DigitalImage a owl:Class ;
 
 smtg:hasImage a owl:ObjectProperty ;
   rdfs:label "has image"@en ;
-  skos:definition "Relates a printed face to a digital image of it."@en ;
+  skos:definition "Relates a printed side to a digital image of it: the source's images are per side (one for the whole front of a split card, one per side of a double-faced card)."@en ;
   rdfs:range smtg:DigitalImage ;
-  smtg:intendedDomain smtg:PrintedFace ;
+  smtg:intendedDomain smtg:PrintedSide ;
   rdfs:isDefinedBy smtgm:text-art ; vs:term_status "stable-draft" .
 
 smtg:imageVariant a owl:ObjectProperty , owl:FunctionalProperty ;

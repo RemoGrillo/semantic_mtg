@@ -736,45 +736,6 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab .
 
 
-# ---- Face orientations ----
-
-<https://w3id.org/smtg/vocab/orientation>
-  a skos:ConceptScheme ;
-  rdfs:label "Face orientations"@en ;
-  smtg:conceptClass smtg:Orientation ;
-  rdfs:isDefinedBy smtgm:vocab .
-
-<https://w3id.org/smtg/vocab/orientation/upright>
-  a smtg:Orientation ;
-  skos:inScheme <https://w3id.org/smtg/vocab/orientation> ;
-  skos:prefLabel "Upright"@en ;
-  rdfs:label "Upright"@en ;
-  skos:notation "upright" ;
-  skos:definition "Read in the card’s normal orientation."@en ;
-  vs:term_status "unstable" ;
-  rdfs:isDefinedBy smtgm:vocab .
-
-<https://w3id.org/smtg/vocab/orientation/rotated>
-  a smtg:Orientation ;
-  skos:inScheme <https://w3id.org/smtg/vocab/orientation> ;
-  skos:prefLabel "Rotated"@en ;
-  rdfs:label "Rotated"@en ;
-  skos:notation "rotated" ;
-  skos:definition "Rotated 90° relative to the card (aftermath halves, battles, split halves)."@en ;
-  vs:term_status "unstable" ;
-  rdfs:isDefinedBy smtgm:vocab .
-
-<https://w3id.org/smtg/vocab/orientation/inverted>
-  a smtg:Orientation ;
-  skos:inScheme <https://w3id.org/smtg/vocab/orientation> ;
-  skos:prefLabel "Inverted"@en ;
-  rdfs:label "Inverted"@en ;
-  skos:notation "inverted" ;
-  skos:definition "Upside down relative to the other face (flip cards)."@en ;
-  vs:term_status "unstable" ;
-  rdfs:isDefinedBy smtgm:vocab .
-
-
 # ---- Image variants ----
 
 <https://w3id.org/smtg/vocab/image-variant>

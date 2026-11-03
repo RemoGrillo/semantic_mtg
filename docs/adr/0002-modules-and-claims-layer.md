@@ -14,8 +14,8 @@ doxastic content, and needs a single place to plug in alternative semantics.
 ## Decision
 Add **`smtg-claims.ttl`**. It defines `Claim ⊑ prov:Entity`, `Observation`, and the epistemic status,
 propositional attitude, strength and lifecycle vocabularies. `TagAssignment`, `LegalityAssertion`,
-`PriceObservation`, `RankObservation`, `ComboVariant`, `SynergyHypothesis`, `ObservedAssociation`,
-`ArtworkDepiction` and `AffordanceStatement` are all subclasses of `Claim`. Generated vocabularies
+`PriceObservation`, `RankObservation`, `ComboVariant`, `SynergyHypothesis`, `ObservedAssociation`
+and `AffordanceStatement` are all subclasses of `Claim`. Generated vocabularies
 live in their own module (`smtgm:vocab`). Interpretation choices (SKOS hierarchy over Tagger parents,
 the `hasTag` projection) are **opt-in view modules** outside the default import closure.
 

@@ -1,6 +1,6 @@
 # SYNTHETIC invalid fixture — not source data.
-# why: printed text belongs to a printed face, not to the printing (smtg:intendedDomain of smtg:hasPrintedText). With rdfs:domain the reasoner would instead conclude that the printing IS a printed face, and since the two classes are disjoint the whole dataset would become inconsistent; SHACL reports the one misplaced triple.
-# expect: The subject of smtg:hasPrintedText must be a smtg:PrintedFace
+# why: printed text belongs to a printed area, not to the printing (smtg:intendedDomain of smtg:hasPrintedText). With rdfs:domain the reasoner would instead conclude that the printing IS a printed area, and since the two classes are disjoint the whole dataset would become inconsistent; SHACL reports the one misplaced triple.
+# expect: The subject of smtg:hasPrintedText must be a smtg:PrintedArea
 @prefix smtg: <https://w3id.org/smtg/ontology#> .
 @prefix x: <https://w3id.org/smtg/id/synthetic/> .
 x:p1 a smtg:CardPrinting ; smtg:hasPrintedText x:t1 .
