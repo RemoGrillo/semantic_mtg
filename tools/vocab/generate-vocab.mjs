@@ -13,45 +13,17 @@ import path from 'node:path';
 import { p, rawFile, rawManifest, readJSON, writeJSON, ensureDir, log } from '../lib/common.mjs';
 import { prefixBlock, iri, lit, en, slug, symbolSlug, block, V } from '../lib/rdf.mjs';
 import * as C from './curated.mjs';
+import { loadTypeSystem, parseTypeLine as parseTypeLineShared, SUBTYPE_CATALOGS } from '../lib/typeline.mjs';
 
 const FORCE = process.argv.includes('--rescan');
 const CACHE = p('data', 'derived', 'enum-values.json');
 
-const catalog = (name) => readJSON(rawFile(`scryfall:catalog:${name}`)).data;
-const SUPERTYPES = catalog('supertypes');
-const CARD_TYPES = catalog('card-types');
-const SUBTYPE_CATALOGS = {
-  'creature-type': ['creature-types', 'CreatureType', ['Creature', 'Kindred']],
-  'artifact-type': ['artifact-types', 'ArtifactType', ['Artifact']],
-  'enchantment-type': ['enchantment-types', 'EnchantmentType', ['Enchantment']],
-  'land-type': ['land-types', 'LandType', ['Land']],
-  'planeswalker-type': ['planeswalker-types', 'PlaneswalkerType', ['Planeswalker']],
-  'spell-type': ['spell-types', 'SpellType', ['Instant', 'Sorcery']],
-  'battle-type': ['battle-types', 'BattleType', ['Battle']],
-};
-const subtypeIndex = new Map(); // name -> [scheme,…]
-for (const [scheme, [cat]] of Object.entries(SUBTYPE_CATALOGS)) {
-  for (const n of catalog(cat)) subtypeIndex.set(n, [...(subtypeIndex.get(n) ?? []), scheme]);
-}
-const multiwordSubtypes = [...subtypeIndex.keys()].filter((n) => n.includes(' ')).sort((a, b) => b.length - a.length);
-
-function parseTypeLine(tl) {
-  // returns { left: [words], subtypes: [names] } for one face type line
-  const [left, right] = tl.split(' — ');
-  const leftWords = (left ?? '').trim().split(/\s+/).filter(Boolean);
-  const subs = [];
-  if (right) {
-    let rest = ` ${right.trim()} `;
-    for (const mw of multiwordSubtypes) {
-      if (rest.includes(` ${mw} `)) {
-        subs.push(mw);
-        rest = rest.replace(` ${mw} `, ' ');
-      }
-    }
-    subs.push(...rest.trim().split(/\s+/).filter(Boolean));
-  }
-  return { leftWords, subs };
-}
+const TS = loadTypeSystem();
+const catalog = TS.catalog;
+const SUPERTYPES = TS.supertypes;
+const CARD_TYPES = TS.cardTypes;
+const subtypeIndex = TS.subtypeIndex;
+const parseTypeLine = (tl) => parseTypeLineShared(tl, TS);
 
 async function scanAllCards() {
   if (!FORCE && fs.existsSync(CACHE)) return readJSON(CACHE);

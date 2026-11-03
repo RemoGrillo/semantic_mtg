@@ -16,16 +16,60 @@
   "userAgent": "SMTG-audit/0.1 (+research; contact via repository)",
   "sources": {
     "scryfallBulkManifest": "https://api.scryfall.com/bulk-data",
-    "scryfallBulkTypes": ["all_cards", "oracle_cards", "oracle_tags", "art_tags"],
+    "scryfallBulkTypes": [
+      "all_cards",
+      "oracle_cards",
+      "oracle_tags",
+      "art_tags"
+    ],
     "scryfallApi": "https://api.scryfall.com",
     "spellbookVariants": "https://json.commanderspellbook.com/variants.json.gz"
   },
   "reasoners": {
     "default": "hermit",
     "available": {
-      "hermit": { "kind": "robot", "arg": "hermit" },
-      "elk": { "kind": "robot", "arg": "ELK" },
-      "dec": { "kind": "external", "command": "", "note": "Placeholder for the DEC doxastic/conjectural OWL reasoner; fill in its CLI when available." }
+      "hermit": {
+        "kind": "robot",
+        "arg": "hermit"
+      },
+      "elk": {
+        "kind": "robot",
+        "arg": "ELK"
+      },
+      "dec": {
+        "kind": "external",
+        "command": "",
+        "note": "Placeholder for the DEC doxastic/conjectural OWL reasoner; fill in its CLI when available."
+      }
     }
+  },
+  "docs": {
+    "overviewClasses": [
+      "OracleCard",
+      "CardFace",
+      "ManaCost",
+      "CardPrinting",
+      "PrintedFace",
+      "MtgSet",
+      "Illustration",
+      "ArtisticContribution",
+      "Artist",
+      "DigitalImage",
+      "OracleText",
+      "FlavorText",
+      "PrintedName",
+      "TagConcept",
+      "TagAssignment",
+      "Claim",
+      "LegalityAssertion",
+      "ComboVariant",
+      "ComboCardUse",
+      "ComboFeature",
+      "SourceSnapshot",
+      "Layout",
+      "ColorCombination",
+      "CardType",
+      "Subtype"
+    ]
   }
 }
