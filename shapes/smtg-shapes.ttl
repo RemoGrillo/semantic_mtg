@@ -74,8 +74,8 @@ smtgsh:ManaCostShape a sh:NodeShape ;
 
 smtgsh:CardPrintingShape a sh:NodeShape ;
   sh:targetClass smtg:CardPrinting ;
-  sh:property [ sh:path smtg:isPrintingOf ; sh:minCount 1 ; sh:maxCount 2 ; sh:class smtg:OracleCard ;
-    sh:message "A printing manifests one Oracle card (two for reversible printings)."@en ] ;
+  sh:property [ sh:path smtg:isPrintingOf ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:OracleCard ;
+    sh:message "A printing manifests exactly one Oracle card (a reversible printing shows the same one on both sides; see RQ-ID-1)."@en ] ;
   sh:property [ sh:path smtg:inSet ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:MtgSet ;
     sh:message "A printing belongs to exactly one set."@en ] ;
   sh:property [ sh:path smtg:collectorNumber ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;

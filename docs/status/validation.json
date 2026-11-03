@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T15:54:01.095Z",
+  "generatedAt": "2026-11-03T19:23:05.884Z",
   "parse": [
     {
       "file": "ontology/smtg-cards.ttl",
@@ -29,7 +29,7 @@
     {
       "file": "ontology/smtg-printings.ttl",
       "ok": true,
-      "triples": 547
+      "triples": 549
     },
     {
       "file": "ontology/smtg-provenance.ttl",
@@ -476,7 +476,7 @@
         "examples/variable-loyalty.ttl",
         "examples/variable-pt.ttl"
       ],
-      "triples": 61065,
+      "triples": 61067,
       "conforms": true,
       "violations": 0,
       "results": []
@@ -683,7 +683,7 @@
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o2",
             "path": "https://w3id.org/smtg/ontology#isPrintingOf",
-            "message": "A printing manifests one Oracle card (two for reversible printings).",
+            "message": "A printing manifests exactly one Oracle card (a reversible printing shows the same one on both sides; see RQ-ID-1).",
             "constraint": "MinCountConstraintComponent",
             "shape": "n3-197"
           },

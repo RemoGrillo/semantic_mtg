@@ -16,10 +16,13 @@ integrity · **R3** claims, provenance & extensibility.
 ## R1 — Identity and bibliographic structure
 
 ### RQ-ID-1 — What is a "card" for reversible printings?
-*Draft:* A reversible printing (`printingLayout reversible_card`) `isPrintingOf` the Oracle card(s)
-named by the face-level `oracle_id`s, so one or two Oracle cards. In the fixtures both sides of
-[[Jinnie Fay, Jetmir's Second|SLD|1556]] and [[Ghalta, Primal Hunger|SLD|1124]] carry the *same* Oracle ID, so the printing manifests one Oracle card twice (see
-CQ-ID-05).
+*Draft:* A reversible printing (`printingLayout reversible_card`) `isPrintingOf` the Oracle card
+named by its face-level `oracle_id`s. Scryfall puts the Oracle ID on each face instead of on the
+card, but the two are always the same: all 83 reversible printings in the 2026-11-03 snapshot show
+one Oracle card on both sides, with two illustrations (e.g. [[Jinnie Fay, Jetmir's Second|SLD|1556]] and [[Ghalta, Primal Hunger|SLD|1124]]; see
+CQ-ID-05). So the printing has two printed faces that manifest the *same* card face. OWL leaves the
+number of Oracle cards per printing open; SHACL requires exactly one, so a printing showing two
+different Oracle cards would be flagged.
 *Alternatives:* (a) a `PackagingRelation` between two printings; (b) treat each side as a separate
 printing resource.
 *Consequence:* (b) breaks the 1:1 mapping between printing resources and Scryfall card IDs.

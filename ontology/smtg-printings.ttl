@@ -18,7 +18,7 @@
 smtgm:printings a owl:Ontology ;
   rdfs:label "SMTG-O Printings"@en ;
   dcterms:title "Printings: published card objects, printed faces, sets and observations"@en ;
-  dcterms:description """The manifestation level. A printing is one published card object — one set, collector number and language, as identified by a Scryfall card ID — and it manifests one Oracle card (two for reversible printings). Each printing has printed faces that carry the localised name and text, flavour text, artwork and images, and the physical side and orientation of each face. Volatile facts that the sources report about cards — legality in a format, prices, popularity ranks — are time-scoped observations, not timeless properties."""@en ;
+  dcterms:description """The manifestation level. A printing is one published card object — one set, collector number and language, as identified by a Scryfall card ID — and it manifests one Oracle card (a reversible printing shows the same Oracle card on both sides). Each printing has printed faces that carry the localised name and text, flavour text, artwork and images, and the physical side and orientation of each face. Volatile facts that the sources report about cards — legality in a format, prices, popularity ranks — are time-scoped observations, not timeless properties."""@en ;
   owl:versionInfo "0.1.0-draft" ;
   smtg:moduleOrder 3 ;
   vs:term_status "unstable" ;
@@ -30,7 +30,7 @@ smtgm:printings a owl:Ontology ;
 
 smtg:CardPrinting a owl:Class ;
   rdfs:label "Card printing"@en ;
-  skos:definition "A published card object: a specific edition of one or more Oracle cards in one set, with one collector number and one language, in one physical/digital form (identified by a Scryfall card ID)."@en ;
+  skos:definition "A published card object: a specific edition of an Oracle card in one set, with one collector number and one language, in one physical/digital form (identified by a Scryfall card ID)."@en ;
   skos:scopeNote """A printing manifests an Oracle card but is not one (disjoint; never subClassOf; never owl:sameAs — AP-01). Two printings that share an illustration are still two printings (AP-03). Attributes that vary between editions — set, rarity, frame, border, finishes, promo types, language, flavour text, artwork — are printing-level or printed-face-level, never Oracle-level."""@en ;
   skos:example "The Italian [[Lightning Bolt|M10|146|it]] (printed name Fulmine) and the original [[Lightning Bolt|LEA|161]] are two printings of one Oracle card. [[!Lightning Bolt|M10|146|it]] [[!Lightning Bolt|LEA|161]]"@en ;
   smtg:sourceField "scryfall:id" ;
@@ -42,7 +42,10 @@ smtg:CardPrinting a owl:Class ;
 smtg:PrintedFace a owl:Class ;
   rdfs:label "Printed face"@en ;
   skos:definition "A face as manifested on a particular printing: the conceptual face it shows, the physical side and orientation where it appears, and its printed (possibly localised) name, type line, text, flavour text, artwork and images."@en ;
-  skos:scopeNote "Every printing has at least one printed face, mirroring the card-face convention. A reversible printing has two printed faces that manifest faces of two different Oracle cards."@en ;
+  skos:scopeNote """Two levels, two classes. A card face (smtg:CardFace) is a face of the Oracle card in the game: its name, mana cost, types, Oracle text and power/toughness, the same in every printing and every language. A printed face is what one particular printing shows: which card face (smtg:manifestsFace), on which physical side (smtg:onSide) and in which orientation (smtg:hasOrientation), with what varies between printings — the printed name, type line and text in the printing's language, the flavour text, the illustration and artist, the images.
+
+The two usually correspond one to one, but not by position, and not always one to one. Split, flip and adventure cards print both faces on the front; transforming and modal double-faced cards print one face on each side; a reversible printing prints the same single face twice, front and back, with different artwork, so two printed faces manifest one card face. Every printing has at least one printed face, mirroring the card-face convention."""@en ;
+  skos:example """[[Fire // Ice|APC|128]]: two card faces, two printed faces, both on the front. [[Akki Lavarunner|CHK|153]]: two card faces on the front, the second printed upside down (inverted). [[Delver of Secrets|ISD|51]]: one face on each side. [[Ghalta, Primal Hunger|SLD|1124]], a reversible printing: one Oracle card with one card face, printed on both sides with two illustrations, so two printed faces that manifest the same card face. [[!Ghalta, Primal Hunger|SLD|1124]]"""@en ;
   smtg:sourceField "scryfall:card_faces[]" ;
   rdfs:subClassOf [ a owl:Restriction ; owl:onProperty smtg:manifestsFace ; owl:someValuesFrom smtg:CardFace ] ;
   owl:disjointWith smtg:CardFace , smtg:CardPrinting , smtg:OracleCard ;
@@ -87,7 +90,8 @@ smtg:RankObservation a owl:Class ;
 
 smtg:isPrintingOf a owl:ObjectProperty ;
   rdfs:label "is printing of"@en ;
-  skos:definition "Relates a printing to the Oracle card(s) it manifests. Exactly one for ordinary printings, two for reversible printings."@en ;
+  skos:definition "Relates a printing to the Oracle card it manifests."@en ;
+  skos:scopeNote "One Oracle card for every printing in the current snapshot, reversible printings included: Scryfall records their Oracle ID on each face instead of on the card, and the two values are always the same (all 83 reversible printings in the 2026-11-03 snapshot). OWL leaves the cardinality open; the SHACL shape allows exactly one, so a printing that showed two different Oracle cards would be flagged for review (RQ-ID-1)."@en ;
   rdfs:domain smtg:CardPrinting ; rdfs:range smtg:OracleCard ;
   owl:inverseOf smtg:hasPrinting ;
   smtg:sourceField "scryfall:oracle_id" , "scryfall:card_faces[].oracle_id" ;

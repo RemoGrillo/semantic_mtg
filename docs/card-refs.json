@@ -113,6 +113,32 @@
         "tools/vocab/curated.mjs"
       ]
     },
+    "akki lavarunner|chk|153|": {
+      "name": "Akki Lavarunner // Tok-Tok, Volcano Born",
+      "oracle_id": "47795817-73e5-4af6-bd1e-d69b193e8e9e",
+      "printing_id": "6ee6cd34-c117-4d7e-97d1-8f8464bfaac8",
+      "set": "chk",
+      "set_name": "Champions of Kamigawa",
+      "collector_number": "153",
+      "lang": "en",
+      "layout": "flip",
+      "type_line": "Creature — Goblin Warrior // Legendary Creature — Goblin Shaman",
+      "artist": "Matt Cavotta",
+      "scryfall_uri": "https://scryfall.com/card/chk/153/akki-lavarunner-tok-tok-volcano-born",
+      "images": [
+        {
+          "face": "Akki Lavarunner // Tok-Tok, Volcano Born",
+          "normal": "https://cards.scryfall.io/normal/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.jpg?1783944304",
+          "small": "https://cards.scryfall.io/small/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.jpg?1783944304",
+          "large": "https://cards.scryfall.io/large/front/6/e/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8.jpg?1783944304"
+        }
+      ],
+      "kind": "printing",
+      "ref": "[[Akki Lavarunner|CHK|153]]",
+      "files": [
+        "ontology/smtg-printings.ttl"
+      ]
+    },
     "alive // well|||": {
       "name": "Alive // Well",
       "oracle_id": "57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5",
@@ -400,6 +426,38 @@
         "tools/vocab/curated.mjs"
       ]
     },
+    "delver of secrets|isd|51|": {
+      "name": "Delver of Secrets // Insectile Aberration",
+      "oracle_id": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+      "printing_id": "11bf83bb-c95b-4b4f-9a56-ce7a1816307a",
+      "set": "isd",
+      "set_name": "Innistrad",
+      "collector_number": "51",
+      "lang": "en",
+      "layout": "transform",
+      "type_line": "Creature — Human Wizard // Creature — Human Insect",
+      "artist": "Nils Hamm",
+      "scryfall_uri": "https://scryfall.com/card/isd/51/delver-of-secrets-insectile-aberration",
+      "images": [
+        {
+          "face": "Delver of Secrets",
+          "normal": "https://cards.scryfall.io/normal/front/1/1/11bf83bb-c95b-4b4f-9a56-ce7a1816307a.jpg?1783940984",
+          "small": "https://cards.scryfall.io/small/front/1/1/11bf83bb-c95b-4b4f-9a56-ce7a1816307a.jpg?1783940984",
+          "large": "https://cards.scryfall.io/large/front/1/1/11bf83bb-c95b-4b4f-9a56-ce7a1816307a.jpg?1783940984"
+        },
+        {
+          "face": "Insectile Aberration",
+          "normal": "https://cards.scryfall.io/normal/back/1/1/11bf83bb-c95b-4b4f-9a56-ce7a1816307a.jpg?1783940984",
+          "small": "https://cards.scryfall.io/small/back/1/1/11bf83bb-c95b-4b4f-9a56-ce7a1816307a.jpg?1783940984",
+          "large": "https://cards.scryfall.io/large/back/1/1/11bf83bb-c95b-4b4f-9a56-ce7a1816307a.jpg?1783940984"
+        }
+      ],
+      "kind": "printing",
+      "ref": "[[Delver of Secrets|ISD|51]]",
+      "files": [
+        "ontology/smtg-printings.ttl"
+      ]
+    },
     "druid class|||": {
       "name": "Druid Class",
       "oracle_id": "dcbcbf42-4654-487a-acad-21f2606d229b",
@@ -575,6 +633,32 @@
         "tools/vocab/curated.mjs"
       ]
     },
+    "fire // ice|apc|128|": {
+      "name": "Fire // Ice",
+      "oracle_id": "ae92942b-919c-4ea9-b693-85fcef765d5a",
+      "printing_id": "f98f4538-5b5b-475d-b98f-49d01dae6f04",
+      "set": "apc",
+      "set_name": "Apocalypse",
+      "collector_number": "128",
+      "lang": "en",
+      "layout": "split",
+      "type_line": "Instant // Instant",
+      "artist": "David Martin & Franz Vohwinkel",
+      "scryfall_uri": "https://scryfall.com/card/apc/128/fire-ice",
+      "images": [
+        {
+          "face": "Fire // Ice",
+          "normal": "https://cards.scryfall.io/normal/front/f/9/f98f4538-5b5b-475d-b98f-49d01dae6f04.jpg?1783945328",
+          "small": "https://cards.scryfall.io/small/front/f/9/f98f4538-5b5b-475d-b98f-49d01dae6f04.jpg?1783945328",
+          "large": "https://cards.scryfall.io/large/front/f/9/f98f4538-5b5b-475d-b98f-49d01dae6f04.jpg?1783945328"
+        }
+      ],
+      "kind": "printing",
+      "ref": "[[Fire // Ice|APC|128]]",
+      "files": [
+        "ontology/smtg-printings.ttl"
+      ]
+    },
     "gemrazer|||": {
       "name": "Gemrazer",
       "oracle_id": "3dfb0c0a-b68f-43b9-8475-28d0192fc4ed",
@@ -631,7 +715,8 @@
       "kind": "printing",
       "ref": "[[Ghalta, Primal Hunger|SLD|1124]]",
       "files": [
-        "docs/ontology/review-questions.md"
+        "docs/ontology/review-questions.md",
+        "ontology/smtg-printings.ttl"
       ]
     },
     "gisela, the broken blade|||": {

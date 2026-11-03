@@ -31,7 +31,7 @@ smtgm:cards a owl:Ontology ;
 smtg:OracleCard a owl:Class ;
   rdfs:label "Oracle card"@en ;
   skos:definition "The abstract, game-relevant identity of a Magic card or other game object as maintained in Wizards' Oracle reference: what all printings of \"the same card\" share, independent of edition, language, artwork or physical form."@en ;
-  skos:scopeNote """Corresponds to a Scryfall Oracle ID. An Oracle card is never a printing (disjoint with CardPrinting) and printings are not subclasses of it (AP-01). Oracle cards include tokens, emblems, planes, schemes and similar objects; their kind is given by smtg:hasObjectKind rather than by separate top-level classes, so that new kinds of objects do not break the hierarchy. Reversible printings carry two Oracle identities (one per face); see RQ-ID-1."""@en ;
+  skos:scopeNote """Corresponds to a Scryfall Oracle ID. An Oracle card is never a printing (disjoint with CardPrinting) and printings are not subclasses of it (AP-01). Oracle cards include tokens, emblems, planes, schemes and similar objects; their kind is given by smtg:hasObjectKind rather than by separate top-level classes, so that new kinds of objects do not break the hierarchy. A reversible printing shows the same Oracle card on both sides; Scryfall records its Oracle ID on each face instead of on the card (RQ-ID-1)."""@en ;
   skos:example "[[Lightning Bolt]] (Oracle ID 4457ed35-…) is one Oracle card with well over a hundred printings, among them [[Lightning Bolt|LEA|161]] and the Italian [[Lightning Bolt|M10|146|it]]."@en ;
   smtg:sourceField "scryfall:oracle_id" , "scryfall:card_faces[].oracle_id" ;
   smtg:antiPattern "AP-01" , "AP-03" ;
