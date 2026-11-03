@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T19:32:55.372Z",
+  "generatedAt": "2026-11-03T19:57:59.845Z",
   "parse": [
     {
       "file": "ontology/smtg-cards.ttl",
@@ -29,7 +29,7 @@
     {
       "file": "ontology/smtg-printings.ttl",
       "ok": true,
-      "triples": 549
+      "triples": 550
     },
     {
       "file": "ontology/smtg-provenance.ttl",
@@ -382,6 +382,11 @@
       "triples": 3
     },
     {
+      "file": "fixtures/invalid-rdf/printed-text-on-printing.ttl",
+      "ok": true,
+      "triples": 4
+    },
+    {
       "file": "fixtures/invalid-rdf/printing-without-set.ttl",
       "ok": true,
       "triples": 7
@@ -476,7 +481,7 @@
         "examples/variable-loyalty.ttl",
         "examples/variable-pt.ttl"
       ],
-      "triples": 61075,
+      "triples": 61249,
       "conforms": true,
       "violations": 0,
       "results": []
@@ -725,6 +730,62 @@
         ]
       },
       {
+        "file": "fixtures/invalid-rdf/printed-text-on-printing.ttl",
+        "why": "printed text belongs to a printed face, not to the printing (smtg:intendedDomain of smtg:hasPrintedText). With rdfs:domain the reasoner would instead conclude that the printing IS a printed face, and since the two classes are disjoint the whole dataset would become inconsistent; SHACL reports the one misplaced triple.",
+        "expect": "The subject of smtg:hasPrintedText must be a smtg:PrintedFace",
+        "failedAsExpected": true,
+        "results": [
+          {
+            "focusNode": "https://w3id.org/smtg/id/synthetic/p1",
+            "message": "The subject of smtg:hasPrintedText must be a smtg:PrintedFace (smtg:intendedDomain).",
+            "constraint": "ClassConstraintComponent",
+            "shape": "n3-276"
+          },
+          {
+            "focusNode": "https://w3id.org/smtg/id/synthetic/p1",
+            "path": "https://w3id.org/smtg/ontology#isPrintingOf",
+            "message": "A printing manifests exactly one Oracle card (a reversible printing shows the same one on both sides; see RQ-ID-1).",
+            "constraint": "MinCountConstraintComponent",
+            "shape": "n3-197"
+          },
+          {
+            "focusNode": "https://w3id.org/smtg/id/synthetic/p1",
+            "path": "https://w3id.org/smtg/ontology#inSet",
+            "message": "A printing belongs to exactly one set.",
+            "constraint": "MinCountConstraintComponent",
+            "shape": "n3-198"
+          },
+          {
+            "focusNode": "https://w3id.org/smtg/id/synthetic/p1",
+            "path": "https://w3id.org/smtg/ontology#collectorNumber",
+            "message": "Less than 1 values",
+            "constraint": "MinCountConstraintComponent",
+            "shape": "n3-199"
+          },
+          {
+            "focusNode": "https://w3id.org/smtg/id/synthetic/p1",
+            "path": "https://w3id.org/smtg/ontology#inLanguage",
+            "message": "Less than 1 values",
+            "constraint": "MinCountConstraintComponent",
+            "shape": "n3-200"
+          },
+          {
+            "focusNode": "https://w3id.org/smtg/id/synthetic/p1",
+            "path": "https://w3id.org/smtg/ontology#hasPrintedFace",
+            "message": "A printing has at least one printed face.",
+            "constraint": "MinCountConstraintComponent",
+            "shape": "n3-201"
+          },
+          {
+            "focusNode": "https://w3id.org/smtg/id/synthetic/p1",
+            "path": "n3-203",
+            "message": "A printing must carry exactly one Scryfall card ID identifier.",
+            "constraint": "QualifiedMinCountConstraintComponent",
+            "shape": "n3-202"
+          }
+        ]
+      },
+      {
         "file": "fixtures/invalid-rdf/printing-without-set.ttl",
         "why": "a printing must belong to exactly one set",
         "expect": "A printing belongs to exactly one set.",
@@ -849,6 +910,6 @@
     "parseOk": true,
     "examplesConform": true,
     "negativeAllFail": true,
-    "negativeCount": 8
+    "negativeCount": 9
   }
 }

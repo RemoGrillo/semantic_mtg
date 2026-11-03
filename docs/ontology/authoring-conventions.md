@@ -69,6 +69,9 @@ Logical axioms (`rdfs:subClassOf`, `rdfs:domain`, `rdfs:range`, `owl:disjointWit
 leaving `rdfs:domain` out and documenting the intended subject class with
 `smtg:intendedDomain` (non-logical annotation) when a global domain would create false inferences.
 Likewise `smtg:intendedRange`. The docs draw both logical and intended edges (intended = dashed).
+Intended domains and ranges are still a contract: `npm run validate` generates a SHACL shape from
+each annotation (subjects, respectively values, must belong to one of the listed classes) and checks
+the examples together with the materialised inferred graph.
 
 ## Controlled vocabularies
 

@@ -288,11 +288,12 @@ smtg:printedSize a owl:DatatypeProperty , owl:FunctionalProperty ;
   rdfs:domain smtg:MtgSet ; rdfs:range xsd:nonNegativeInteger ;
   smtg:sourceField "scryfall-sets:printed_size" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
 smtg:foilOnlySet a owl:DatatypeProperty , owl:FunctionalProperty ;
-  rdfs:label "foil-only set"@en ; skos:definition "Whether every card in the set is foil."@en ;
+  rdfs:label "foil-only set"@en ; skos:definition "Whether the set has no nonfoil printings, as reported by Scryfall."@en ;
+  skos:scopeNote """Not the complement of smtg:nonfoilOnlySet, and the two are not mutually exclusive: printings come in three finishes (nonfoil, foil, etched), so two yes/no flags cannot describe a set. In the 2026-11-03 snapshot 5 sets have both flags true: four Display Commanders sets whose cards are etched only (oc21, oafc, omic, ovoc), and one announced set with no cards yet (nau, true for both because it has no cards at all); 503 sets have both false (mixed finishes). The finishes of each printing (smtg:availableInFinish) are the reliable fact; these flags are a source-level summary, kept as reported."""@en ;
   rdfs:domain smtg:MtgSet ; rdfs:range xsd:boolean ;
   smtg:sourceField "scryfall-sets:foil_only" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
 smtg:nonfoilOnlySet a owl:DatatypeProperty , owl:FunctionalProperty ;
-  rdfs:label "nonfoil-only set"@en ; skos:definition "Whether every card in the set is nonfoil."@en ;
+  rdfs:label "nonfoil-only set"@en ; skos:definition "Whether the set has no foil printings, as reported by Scryfall (see smtg:foilOnlySet for why the two flags can both be true)."@en ;
   rdfs:domain smtg:MtgSet ; rdfs:range xsd:boolean ;
   smtg:sourceField "scryfall-sets:nonfoil_only" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
 smtg:digitalSet a owl:DatatypeProperty , owl:FunctionalProperty ;

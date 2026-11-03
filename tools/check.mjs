@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Run, locally, everything the CI and the GitHub Pages workflows run, before pushing:
-//   validate → infer → cq → test → reason → docs:build → docs:smoke (headless Firefox)
+//   infer → validate → cq → test → reason → docs:build → docs:smoke (headless Firefox)
 // then check that the committed generated files (docs/status/*.json, inferred/*.ttl, …) are up to
 // date: the Pages build publishes them as they are committed, it does not regenerate them.
 //
@@ -23,8 +23,8 @@ const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 const git = (...a) => execFileSync('git', a, { cwd: ROOT, encoding: 'utf8' });
 
 const STEPS = [
-  ['validate', 'parse every Turtle file; SHACL on examples (must pass) and invalid fixtures (must fail)'],
   ['infer', 'materialise the rule-inferred graph'],
+  ['validate', 'parse every Turtle file; SHACL on examples + inferred graph (must pass) and invalid fixtures (must fail)'],
   ['cq', 'competency questions'],
   ['test', 'unit tests'],
   ...(args.has('--no-reason') ? [] : [['reason', 'OWL reasoning (HermiT via ROBOT)']]),

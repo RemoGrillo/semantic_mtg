@@ -31,6 +31,12 @@ parseFailures.forEach((x) => log('  PARSE ERROR', x.file, x.error));
 const quadsOf = (files) => files.flatMap((f) => parsed.get(f) ?? []);
 const tbox = quadsOf([...walk(p('ontology')).filter((f) => !f.includes(`${path.sep}views${path.sep}`))]);
 const shapes = new N3.Store(quadsOf(walk(p('shapes'))));
+// Non-logical domains and ranges (smtg:intendedDomain / smtg:intendedRange) are a contract, not
+// mere documentation: OWL draws no inference from them, SHACL checks them. The shapes are
+// generated here from the annotations, so the contract is written once, in the ontology.
+const generatedShapes = intendedShapes(tbox);
+shapes.addQuads(generatedShapes.quads);
+log(`generated ${generatedShapes.count} SHACL shapes from smtg:intendedDomain / smtg:intendedRange`);
 const exampleFiles = walk(p('examples'));
 const validator = () => new SHACLValidator(shapes);
 
@@ -42,8 +48,10 @@ const summarise = (report, limit = 50) => report.results.slice(0, limit).map((r)
   shape: r.sourceShape?.value,
 }));
 
-// (2) positive: examples must conform
-const posStore = new N3.Store([...tbox, ...quadsOf(exampleFiles)]);
+// (2) positive: examples must conform, together with the entailments materialised by the rules
+// (npm run infer): SHACL does no OWL reasoning, so a class defined in OWL (e.g. smtg:MeldCard, by
+// layout) is known to SHACL only through the materialised inferred graph
+const posStore = new N3.Store([...tbox, ...quadsOf(exampleFiles), ...quadsOf(walk(p('inferred')))]);
 const posReport = await validator().validate(posStore);
 const positive = {
   files: exampleFiles.map(rel),
@@ -108,3 +116,49 @@ writeJSON(p('docs', 'status', 'validation.json'), out);
 const ok = out.summary.parseOk && out.summary.examplesConform && out.summary.negativeAllFail;
 log(ok ? 'VALIDATION PASSED' : 'VALIDATION FAILED');
 process.exitCode = ok ? 0 : 1;
+
+/** SHACL shapes for every smtg:intendedDomain / smtg:intendedRange annotation in the TBox. */
+function intendedShapes(quads) {
+  const { namedNode, blankNode, literal, quad } = N3.DataFactory;
+  const SMTG = 'https://w3id.org/smtg/ontology#';
+  const SH = 'http://www.w3.org/ns/shacl#';
+  const RDF = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
+  const short = (iri) => iri.replace(SMTG, 'smtg:').replace('http://www.w3.org/2004/02/skos/core#', 'skos:');
+  const byProp = new Map(); // property -> { domain: [], range: [] }
+  for (const q of quads) {
+    const kind = q.predicate.value === SMTG + 'intendedDomain' ? 'domain' : q.predicate.value === SMTG + 'intendedRange' ? 'range' : null;
+    if (!kind || q.object.termType !== 'NamedNode') continue;
+    const e = byProp.get(q.subject.value) ?? byProp.set(q.subject.value, { domain: [], range: [] }).get(q.subject.value);
+    e[kind].push(q.object.value);
+  }
+  const out = [];
+  let count = 0;
+  const list = (items) => {
+    // an RDF list of the given nodes
+    if (!items.length) return namedNode(RDF + 'nil');
+    const head = blankNode();
+    out.push(quad(head, namedNode(RDF + 'first'), items[0]), quad(head, namedNode(RDF + 'rest'), list(items.slice(1))));
+    return head;
+  };
+  const classConstraint = (shape, classes) => {
+    if (classes.length === 1) return out.push(quad(shape, namedNode(SH + 'class'), namedNode(classes[0])));
+    const alts = classes.map((c) => {
+      const b = blankNode();
+      out.push(quad(b, namedNode(SH + 'class'), namedNode(c)));
+      return b;
+    });
+    out.push(quad(shape, namedNode(SH + 'or'), list(alts)));
+  };
+  for (const [prop, { domain, range }] of [...byProp].sort(([a], [b]) => a.localeCompare(b))) {
+    for (const [kind, classes, target] of [['domain', domain, 'targetSubjectsOf'], ['range', range, 'targetObjectsOf']]) {
+      if (!classes.length) continue;
+      const s = blankNode();
+      out.push(quad(s, namedNode(RDF + 'type'), namedNode(SH + 'NodeShape')), quad(s, namedNode(SH + target), namedNode(prop)));
+      classConstraint(s, classes);
+      const what = kind === 'domain' ? 'subject' : 'value';
+      out.push(quad(s, namedNode(SH + 'message'), literal(`The ${what} of ${short(prop)} must be a ${classes.map(short).join(' or ')} (smtg:intended${kind === 'domain' ? 'Domain' : 'Range'}).`, 'en')));
+      count++;
+    }
+  }
+  return { quads: out, count };
+}

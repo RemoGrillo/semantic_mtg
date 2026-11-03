@@ -10,8 +10,8 @@ jobs:
         with: { node-version: 22, cache: npm }
       - run: npm ci
       # Fixtures, examples and generated vocab are committed, so CI validates without downloading dumps.
-      - run: npm run validate
       - run: npm run infer
+      - run: npm run validate
       - run: npm run cq
       - run: npm test
       # The documentation site, built and checked in headless Firefox (see tools/docs/smoke.mjs).

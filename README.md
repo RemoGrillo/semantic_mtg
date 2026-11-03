@@ -25,7 +25,7 @@ SMTG-O keeps apart what card databases flatten:
 ```bash
 npm install
 npm run audit:fetch      # download source snapshots (manifest-driven, checksummed) into data/raw/
-npm run build            # vocab → fixture examples → SHACL → inferred graph (rules) → competency questions → docs
+npm run build            # vocab → fixture examples → inferred graph (rules) → SHACL → competency questions → docs
 npm run reason           # OWL DL check with HermiT (bootstraps a portable JRE + ROBOT in .tools/)
 open site/index.html     # the documentation: a single self-contained file that works offline
 npm run docs:serve       # review mode: per-concept suggestion box, saved under review/suggestions/

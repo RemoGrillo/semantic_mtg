@@ -15,7 +15,7 @@
 
 <https://w3id.org/smtg/id/activity/inference-rules-2026-11-03> a smtg:InferenceActivity;
     rdfs:label "Rule materialisation (7 rules, 144 triples)";
-    prov:endedAtTime "2026-11-03T19:32:55.712Z"^^xsd:dateTime;
+    prov:endedAtTime "2026-11-03T19:57:58.228Z"^^xsd:dateTime;
     prov:wasAssociatedWith <https://w3id.org/smtg/id/agent/smtg-pipeline>;
     smtg:ontologyVersionUsed "0.1.0-draft".
 <https://w3id.org/smtg/graph/inferred/rules> a prov:Entity;
