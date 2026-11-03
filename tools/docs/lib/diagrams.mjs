@@ -315,8 +315,8 @@ export function classDiagram(m, cls, shacl, { maxEdges = 36, maxIncoming = 8, ma
 
 // ---------- module / overview ----------
 
-export function moduleDiagram(m, shacl, classIris, { compartments = true, groupBy = null, maxEdges = 90, highlight = new Set() } = {}) {
-  const fb = new Flow('LR');
+export function moduleDiagram(m, shacl, classIris, { compartments = true, groupBy = null, maxEdges = 90, highlight = new Set(), direction = 'LR' } = {}) {
+  const fb = new Flow(direction);
   const inSet = new Set(classIris);
   if (groupBy) for (const [gid, label] of groupBy.groups) fb.group(gid, label);
   for (const v of classIris) {

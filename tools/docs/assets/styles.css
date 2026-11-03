@@ -67,8 +67,11 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
 /* ---------- layout ---------- */
 .layout { display: grid; grid-template-columns: var(--sidebar-w) minmax(0, 1fr); min-height: 100vh; }
 main { padding: 40px clamp(20px, 4vw, 64px) 32px; min-width: 0; outline: none; }
-main > section.route { max-width: 1080px; }
-.page > p, .page > ul, .page > ol, .lede, .prose, .page-head p { max-width: var(--measure); }
+/* full width: diagrams, tables and code use the whole column; running text keeps a readable measure */
+main > section.route { max-width: none; }
+/* readable measure for running text only; .prose itself is full width so its tables, code and diagrams are too */
+.page > p, .page > ul, .page > ol, .lede, .page-head p { max-width: var(--measure); }
+.prose > :is(p, ul, ol, dl, blockquote, h1, h2, h3, h4, h5, hr, .toc) { max-width: var(--measure); }
 .topbar { display: none; }
 
 /* ---------- sidebar ---------- */
@@ -348,8 +351,10 @@ ul.plain li { margin: 3px 0; }
 figure.diagram { margin: 0.8em 0 1.4em; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
 .diagram-bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 6px 8px 6px 14px; border-bottom: 1px solid var(--line); }
 .diagram-title { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.diagram-actions { display: flex; gap: 6px; flex: none; }
-.diagram-canvas { overflow: auto; padding: 18px; text-align: center; min-height: 90px; max-height: 78vh; }
+.diagram-actions { display: flex; align-items: center; gap: 6px; flex: none; }
+.fit-note { font-size: 0.72rem; color: var(--muted); margin-right: 4px; white-space: nowrap; }
+.fit-note:empty { display: none; }
+.diagram-canvas { overflow-x: auto; overflow-y: hidden; padding: 18px; text-align: center; min-height: 90px; }
 .diagram-canvas svg { max-width: none; height: auto; }
 .diagram-canvas .mmd-src { display: none; text-align: left; font-size: 0.75rem; }
 .diagram-canvas.failed .mmd-src { display: block; }
@@ -427,7 +432,7 @@ svg.chart .bar:focus-visible .ax { fill: var(--accent); font-weight: 600; }
 .cq-meta { font-size: 0.84rem; display: flex; flex-wrap: wrap; gap: 4px 16px; }
 
 /* ---------- footer ---------- */
-.site-foot { max-width: 1080px; margin-top: 5em; padding-top: 1.2em; border-top: 1px solid var(--line); font-size: 0.76rem; color: var(--muted); }
+.site-foot { max-width: none; margin-top: 5em; padding-top: 1.2em; border-top: 1px solid var(--line); font-size: 0.76rem; color: var(--muted); }
 .site-foot p { max-width: 95ch; }
 
 /* ---------- responsive: sidebar becomes a top drawer ---------- */

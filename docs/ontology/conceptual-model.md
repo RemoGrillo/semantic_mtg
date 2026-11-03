@@ -1,11 +1,11 @@
 # Conceptual model
 
-SMTG keeps apart levels that card databases usually flatten into one JSON object. Read the
-diagram from left to right: abstract game identity, published manifestations, visual works and
-their representations. Claims and provenance cut across all of them.
+SMTG keeps apart levels that card databases usually flatten into one JSON object. The diagram
+shows four of them: abstract game identity (Oracle level), published manifestations, visual works
+with their representations, and claims. Claims and provenance cut across all the others.
 
 ```mermaid
-flowchart LR
+flowchart TB
   subgraph Abstract["Oracle level (cards module)"]
     OC[OracleCard] -->|hasFace 1..n| CF[CardFace]
     CF -->|hasOracleText| OT[OracleText]

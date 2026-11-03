@@ -57,7 +57,7 @@ ${intro ? '' : '<p class="hero-sub">An identity-aware, provenance-rich ontology 
       return md ? `g_${md.id.replace(/[^A-Za-z0-9_]/g, '_')}` : null;
     };
     try {
-      const d = moduleDiagram(m, ctx.shacl, pick, { compartments: false, groupBy: { groups, of: gOf }, maxEdges: 120 });
+      const d = moduleDiagram(m, ctx.shacl, pick, { compartments: false, groupBy: { groups, of: gOf }, maxEdges: 120, direction: 'TB' });
       h += `<section class="block"><h2>The big picture</h2><p class="muted">Main classes and relations across modules${
         capped ? ' (the 45 best-connected classes; set <code>docs.overviewClasses</code> in <code>smtg.config.json</code> to choose)' : ''
       }. Click a class to open its page.</p>${ctx.diagram(d.src, { title: 'Big picture', legend: CLASS_LEGEND })}</section>`;

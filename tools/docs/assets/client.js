@@ -176,6 +176,7 @@
           svg.setAttribute('aria-label', (($('.diagram-title', fig) || {}).textContent || 'diagram'));
         }
         fig.setAttribute('data-done', '1');
+        fitDiagram(fig);
       })
       .catch(function (e) {
         var stray = document.getElementById('d' + id);
@@ -183,7 +184,63 @@
         failDiagram(fig, (e && e.message ? e.message : String(e)).split('\n')[0].slice(0, 160));
       });
   }
+  // Fit a rendered diagram to the column width. Never enlarge; never shrink below FIT_MIN
+  // (labels would become illegible) — wider diagrams scroll sideways and say so.
+  var FIT_MIN = 0.65;
+  function fitDiagram(fig) {
+    var canvas = $('.diagram-canvas', fig);
+    var svg = canvas && $('svg', canvas);
+    if (!svg || fig.getAttribute('data-done') !== '1' || !canvas.clientWidth) return;
+    var vb = svg.viewBox && svg.viewBox.baseVal;
+    var w = (vb && vb.width) || parseFloat(svg.getAttribute('width')) || 0;
+    if (!w) return;
+    var cs = getComputedStyle(canvas);
+    var avail = canvas.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    if (avail <= 0) return;
+    var scale = Math.min(1, avail / w);
+    var forced = fig.getAttribute('data-fit-all') === '1';
+    var fits = scale >= FIT_MIN || forced;
+    svg.style.maxWidth = 'none';
+    svg.style.width = Math.round(w * (fits ? scale : FIT_MIN)) + 'px';
+    svg.style.height = 'auto';
+    fig.classList.toggle('is-overflowing', !fits);
+    var bar = $('.diagram-actions', fig);
+    if (!bar) return;
+    var note = $('.fit-note', bar);
+    if (!note) {
+      note = document.createElement('span');
+      note.className = 'fit-note';
+      bar.insertBefore(note, bar.firstChild);
+    }
+    var toggle = $('[data-fit-toggle]', bar);
+    if (scale < FIT_MIN) {
+      if (!toggle) {
+        toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'btn-sm';
+        toggle.setAttribute('data-fit-toggle', '');
+        bar.insertBefore(toggle, note.nextSibling);
+      }
+      toggle.hidden = false;
+      toggle.textContent = forced ? 'Readable size' : 'Fit all';
+      note.textContent = forced ? 'whole diagram · ' + Math.round(scale * 100) + '%' : 'wider than the page — scroll sideways, Fit all or Enlarge';
+    } else {
+      if (toggle) toggle.hidden = true;
+      note.textContent = scale < 0.999 ? 'fitted to width · ' + Math.round(scale * 100) + '%' : '';
+    }
+  }
+  function fitSection(section) {
+    $$('figure.diagram[data-done="1"]', section).forEach(fitDiagram);
+  }
+  var fitTimer = null;
+  window.addEventListener('resize', function () {
+    clearTimeout(fitTimer);
+    fitTimer = setTimeout(function () {
+      $$('main > section.route:not([hidden])').forEach(fitSection);
+    }, 120);
+  });
   function renderDiagrams(section) {
+    fitSection(section); // diagrams rendered earlier, possibly at another window width
     var figs = $$('figure.diagram:not([data-done])', section);
     if (!figs.length) return Promise.resolve();
     queue = queue.then(waitFonts).then(function () {
@@ -518,6 +575,10 @@
       var fig = b.closest('figure.diagram');
       var src = fig.getAttribute('data-src') || (($('.mmd-src', fig) || {}).textContent || '');
       copyText(src).then(function () { feedback(b, true); }, function () { feedback(b, false); });
+    } else if ((b = t.closest('[data-fit-toggle]'))) {
+      var f3 = b.closest('figure.diagram');
+      f3.setAttribute('data-fit-all', f3.getAttribute('data-fit-all') === '1' ? '' : '1');
+      fitDiagram(f3);
     } else if ((b = t.closest('[data-enlarge]'))) {
       var f2 = b.closest('figure.diagram');
       if (f2.getAttribute('data-done') === '1') openOverlay(f2);
