@@ -6,12 +6,15 @@
 // it refuses to process more than MAX_RECORDS records per fixture file.
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import zlib from 'node:zlib';
 import readline from 'node:readline';
 import N3 from 'n3';
 import { p, rawManifest, rawFile, ensureDir, log, CONFIG } from '../lib/common.mjs';
 import { PREFIXES, V, ID, slug } from '../lib/rdf.mjs';
 import { loadTypeSystem, resolveTypeLine } from '../lib/typeline.mjs';
+import * as CUR from '../vocab/curated.mjs';
+import { readJSON } from '../lib/common.mjs';
 
 const MAX_RECORDS = 200;
 const { namedNode: nn, literal: lit, quad } = N3.DataFactory;
@@ -28,11 +31,18 @@ const EPI = (k) => nn(`${V}epistemic-status/${k}`);
 const ATT = (k) => nn(`${V}attitude/${k}`);
 const LIFE = (k) => nn(`${V}claim-lifecycle/${k}`);
 const ts = loadTypeSystem();
+// Only real mana symbols may be values of producesManaSymbol (Scryfall's produced_mana once contains "T").
+const MANA_SYMBOLS = new Set(readJSON(rawFile('scryfall:symbology')).data.filter((x) => x.represents_mana).map((x) => x.symbol));
+const quirks = { producedManaSkipped: [] };
+// Set metadata from the Scryfall /sets catalog (by id and by code).
+const SETS = readJSON(rawFile('scryfall:sets')).data;
+const setById = new Map(SETS.map((x) => [x.id, x]));
+const setByCode = new Map(SETS.map((x) => [x.code, x]));
 
 // ---------------------------------------------------------------------------
 // Snapshot nodes (one per raw source file)
 const manifest = rawManifest();
-const DATASET_OF = { 'scryfall:all_cards': 'scryfall-all-cards', 'scryfall:oracle_cards': 'scryfall-oracle-cards', 'scryfall:oracle_tags': 'scryfall-oracle-tags', 'scryfall:art_tags': 'scryfall-art-tags', 'spellbook:variants': 'spellbook-variants' };
+const DATASET_OF = { 'scryfall:all_cards': 'scryfall-all-cards', 'scryfall:oracle_cards': 'scryfall-oracle-cards', 'scryfall:oracle_tags': 'scryfall-oracle-tags', 'scryfall:art_tags': 'scryfall-art-tags', 'scryfall:rulings': 'scryfall-rulings', 'spellbook:variants': 'spellbook-variants' };
 const snapIri = (key) => {
   const f = manifest.files.filter((x) => x.key === key).at(-1);
   return f ? id('snapshot', `${key.replace(':', '-').replace('_', '-')}-${f.sha256.slice(0, 12)}`) : null;
@@ -147,7 +157,10 @@ function mapOracle(g, c, faceSources, oid, layoutCode, snapKey, snap) {
   if (c.reserved !== undefined) g.add(oc, sm('onReservedList'), bool(c.reserved));
   if (c.game_changer !== undefined) g.add(oc, sm('isGameChanger'), bool(c.game_changer));
   for (const k of c.keywords ?? []) g.add(oc, sm('hasKeyword'), nn(keywordIri(k)));
-  for (const m of c.produced_mana ?? []) g.add(oc, sm('producesManaSymbol'), vc('mana-symbol', symSlug(`{${m}}`)));
+  for (const m of c.produced_mana ?? []) {
+    if (MANA_SYMBOLS.has(`{${m}}`)) g.add(oc, sm('producesManaSymbol'), vc('mana-symbol', symSlug(`{${m}}`)));
+    else quirks.producedManaSkipped.push(`${c.name}: produced_mana "${m}" is not a mana symbol`);
+  }
   const kind = { token: 'token', double_faced_token: 'token', emblem: 'emblem', planar: 'plane', scheme: 'scheme', vanguard: 'vanguard', art_series: 'art-card', front_card: 'front-card' }[layoutCode] ?? 'traditional-card';
   g.add(oc, sm('hasObjectKind'), vc('object-kind', kind));
   faceSources.forEach((f, i) => {
@@ -157,6 +170,15 @@ function mapOracle(g, c, faceSources, oid, layoutCode, snapKey, snap) {
     g.add(face, sm('faceOf'), oc);
     g.label(face, f.name);
     g.add(face, sm('faceIndex'), typed(i, 'nonNegativeInteger'));
+    // primary face: per layout policy (curated, with CR reference); single-faced cards: face 0
+    const policy = CUR.PRIMARY_FACE[layoutCode];
+    const primaryIdx = faceSources.length === 1 ? 0 : policy ? policy[0] : 0;
+    if (primaryIdx === i) g.add(oc, sm('primaryFace'), face);
+    // keywords per face: all of them on single-faced cards; by name in the face text otherwise
+    for (const k of c.keywords ?? []) {
+      const inText = new RegExp(`(^|[^a-z])${k.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z]|$)`).test((f.oracle_text ?? '').toLowerCase());
+      if (faceSources.length === 1 || inText) g.add(face, sm('faceKeyword'), nn(keywordIri(k)));
+    }
     g.add(face, sm('name'), lit(f.name));
     manaCost(g, face, f.mana_cost);
     typeLine(g, face, f.type_line);
@@ -237,7 +259,9 @@ function mapCardObject(g, c, sourceKey) {
   g.add(set, sm('setCode'), lit(c.set));
   g.add(set, sm('hasSetType'), vc('set-type', c.set_type));
   identifier(g, set, 'scryfall-set-id', c.set_id); identifier(g, set, 'set-code', c.set);
+  mapSetMetadata(g, set, setById.get(c.set_id));
   g.add(pr, sm('inSet'), set);
+  identifier(g, pr, 'scryfall-card-back-id', c.card_back_id);
   g.add(pr, sm('collectorNumber'), lit(c.collector_number));
   g.add(pr, sm('inLanguage'), vc('language', c.lang));
   if (c.released_at) g.add(pr, sm('releasedOn'), typed(c.released_at, 'date'));
@@ -321,6 +345,32 @@ function mapCardObject(g, c, sourceKey) {
 }
 const pendingParts = [];
 
+function mapSetMetadata(g, set, x) {
+  if (!x) return;
+  if (x.released_at) g.add(set, sm('releasedOn'), typed(x.released_at, 'date'));
+  if (x.card_count !== undefined) g.add(set, sm('declaredCardCount'), typed(x.card_count, 'nonNegativeInteger'));
+  if (x.printed_size !== undefined) g.add(set, sm('printedSize'), typed(x.printed_size, 'nonNegativeInteger'));
+  for (const [prop, key] of [['digitalSet', 'digital'], ['foilOnlySet', 'foil_only'], ['nonfoilOnlySet', 'nonfoil_only']]) if (x[key] !== undefined) g.add(set, sm(prop), bool(x[key]));
+  if (x.block_code) g.add(set, sm('blockCode'), lit(x.block_code));
+  if (x.scryfall_uri) g.add(set, sm('sourceURL'), typed(x.scryfall_uri, 'anyURI'));
+  identifier(g, set, 'mtgo-set-code', x.mtgo_code); identifier(g, set, 'arena-set-code', x.arena_code); identifier(g, set, 'tcgplayer-set-id', x.tcgplayer_id);
+  if (x.icon_svg_uri) {
+    const icon = nn(`${set.value}/icon`);
+    g.type(icon, 'DigitalImage');
+    g.add(icon, sm('contentURL'), typed(x.icon_svg_uri, 'anyURI'));
+    g.add(set, sm('hasSetIcon'), icon);
+  }
+  const parent = x.parent_set_code && setByCode.get(x.parent_set_code);
+  if (parent) {
+    const ps = id('set', parent.id);
+    g.type(ps, 'MtgSet'); g.label(ps, parent.name);
+    g.add(ps, sm('setCode'), lit(parent.code));
+    g.add(ps, sm('hasSetType'), vc('set-type', parent.set_type));
+    identifier(g, ps, 'scryfall-set-id', parent.id); identifier(g, ps, 'set-code', parent.code);
+    g.add(set, sm('parentSet'), ps);
+  }
+}
+
 function resolveParts(g) {
   for (const { from, part } of pendingParts) {
     const targets = printingToOracle.get(part.id);
@@ -387,6 +437,8 @@ function mapVariant(g, v) {
     g.add(use, sm('quantity'), typed(u.quantity ?? 1, 'positiveInteger'));
     for (const z of u.zoneLocations ?? []) g.add(use, sm('startsInZone'), vc('zone', z));
     if (u.mustBeCommander !== undefined) g.add(use, sm('mustBeCommander'), bool(u.mustBeCommander));
+    // Spellbook usedFace is 1-based (values 1 and 2 on two-faced cards); faceIndex is 0-based
+    if (u.usedFace != null && u.card?.oracleId) g.add(use, sm('usesFace'), id('oracle-card', u.card.oracleId, 'face', Number(u.usedFace) - 1));
     for (const k of ['battlefieldCardState', 'exileCardState', 'libraryCardState', 'graveyardCardState']) if (u[k]) g.add(use, sm('requiredCardState'), lit(`${k.replace('CardState', '')}: ${u[k]}`));
   });
   (v.requires ?? []).forEach((r, i) => {
@@ -494,6 +546,26 @@ for (const [f, fx] of readFixtures('spellbook')) {
   written.push(`spellbook-${f.replace(/\.json$/, '.ttl')}`);
 }
 
+// Rulings (fixtures/rulings): dated, attributed text claims about Oracle cards
+for (const [f, fx] of readFixtures('rulings')) {
+  const recs = fx.records ?? [];
+  guard(f, recs);
+  const g = new Graph();
+  const snap = snapIri('scryfall:rulings');
+  for (const r of recs) {
+    const key = crypto.createHash('sha256').update(`${r.source}|${r.published_at}|${r.comment}`).digest('hex').slice(0, 12);
+    const ru = id('claim', 'ruling', r.oracle_id, key);
+    g.type(ru, 'Ruling');
+    g.add(ru, sm('rulingFor'), id('oracle-card', r.oracle_id));
+    g.add(ru, sm('rulingText'), lit(r.comment));
+    if (r.published_at) g.add(ru, sm('publishedOn'), typed(r.published_at, 'date'));
+    claimMeta(g, ru, r.source === 'wotc' ? 'wizards' : 'scryfall', snap, r.source === 'wotc' ? 'authoritative-report' : 'source-editorial', 'knowledge-claim');
+    referencedTargets.push(['oracle', r.oracle_id]);
+  }
+  await write(p('examples', `rulings-${f.replace(/\.json$/, '.ttl')}`), g.q, `Rulings fixture ${fx.slug ?? f}: ${fx.purpose ?? ''}`.replace(/\n/g, ' '));
+  written.push(`rulings-${f.replace(/\.json$/, '.ttl')}`);
+}
+
 // Referenced Oracle cards / illustrations not covered by Scryfall fixtures:
 // resolve Oracle cards from the oracle_cards snapshot (real data), so that the
 // example graph is closed under references. Illustrations get a minimal node.
@@ -524,3 +596,4 @@ if (refGraph.q.length) { await write(p('examples', '_referenced.ttl'), refGraph.
 
 log(`wrote ${written.length} example files; unresolved all_parts references: ${unresolved.length}; Oracle ids not found: ${missingOracle.size}`);
 if (missingOracle.size) log('missing:', [...missingOracle].join(', '));
+if (quirks.producedManaSkipped.length) log('produced_mana values skipped (not mana symbols):', [...new Set(quirks.producedManaSkipped)].join('; '));

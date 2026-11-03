@@ -181,6 +181,7 @@ for (const code of Object.keys(layoutObs).sort()) {
       ['smtg:faceArrangement', en(cur.arr)],
       ['smtg:separateOracleIdentity', lit(cur.sep ?? 'no')],
       ['smtg:definedClass', cur.cls ? `smtg:${cur.cls}` : undefined],
+      ['smtg:primaryFacePolicy', en(C.PRIMARY_FACE[code] ? (C.PRIMARY_FACE[code][0] === null ? C.PRIMARY_FACE[code][1] : `face ${C.PRIMARY_FACE[code][0]}: ${C.PRIMARY_FACE[code][1]}`) : 'face 0: the only face')],
       ['skos:scopeNote', cur.printingOnly ? en('Printing convention: recorded with smtg:printingLayout on the printing; the Oracle card keeps its game layout.') : undefined],
     ] : [],
   }));
@@ -235,6 +236,10 @@ for (const s of symbology) {
     extra: [
       ['smtg:symbol', lit(s.symbol)],
       ['smtg:representsMana', lit(String(!!s.represents_mana), 'xsd:boolean')],
+      ['smtg:isHybrid', lit(String(!!s.hybrid), 'xsd:boolean')],
+      ['smtg:isPhyrexian', lit(String(!!s.phyrexian), 'xsd:boolean')],
+      ['smtg:appearsInManaCosts', lit(String(!!s.appears_in_mana_costs), 'xsd:boolean')],
+      ['smtg:isFunny', lit(String(!!s.funny), 'xsd:boolean')],
       ['smtg:symbolManaValue', s.mana_value !== null && s.mana_value !== undefined ? lit(String(s.mana_value), 'xsd:decimal') : undefined],
       ...(s.colors ?? []).map((c) => ['smtg:symbolColor', iri(colorIri[c])]),
       ['skos:hiddenLabel', s.loose_variant ? lit(s.loose_variant) : undefined],
@@ -247,7 +252,13 @@ scheme('supertype', 'Supertypes', 'Supertype', 'Scryfall catalog "supertypes".')
 for (const t of SUPERTYPES) concept('supertype', slug(t), 'Supertype', { label: t, notation: t, count: obs('supertype')[t] ?? 0, sourceValueOf: 'scryfall:type_line' });
 scheme('card-type', 'Card types', 'CardType', 'Scryfall catalog "card-types".');
 const cardTypeIri = {};
-for (const t of CARD_TYPES) cardTypeIri[t] = concept('card-type', slug(t), 'CardType', { label: t, notation: t, count: obs('card_type')[t] ?? 0, sourceValueOf: 'scryfall:type_line' });
+for (const t of CARD_TYPES)
+  cardTypeIri[t] = concept('card-type', slug(t), 'CardType', {
+    label: t, notation: t, count: obs('card_type')[t] ?? 0, sourceValueOf: 'scryfall:type_line',
+    extra: C.PERMANENT_TYPES.includes(t) ? [['a', 'smtg:PermanentCardType'], ['smtg:comprehensiveRulesRef', lit('110.4')]]
+      : C.INSTANT_SORCERY_TYPES.includes(t) ? [['a', 'smtg:InstantOrSorceryCardType'], ['smtg:comprehensiveRulesRef', lit('110.4')]] : [],
+  });
+for (const t of [...C.PERMANENT_TYPES, ...C.INSTANT_SORCERY_TYPES]) if (!cardTypeIri[t]) throw new Error(`card type ${t} (CR 110.4) missing from the Scryfall card-types catalog`);
 for (const [schemeId, [cat, cls, applies]] of Object.entries(SUBTYPE_CATALOGS)) {
   scheme(schemeId, title(schemeId.replace('-', ' ')) + 's', cls, `Scryfall catalog "${cat}".`,
     applies.filter((t) => cardTypeIri[t]).map((t) => ['smtg:applicableToCardType', iri(cardTypeIri[t])]));
@@ -377,6 +388,29 @@ if (kwOther.length) {
   for (const k of kwOther.sort()) concept('keyword-other', slug(k), 'Keyword', { label: k, notation: k, count: obs('keywords')[k], status: 'unstable', sourceValueOf: 'scryfall:keywords' });
 }
 if (CR) writeCrossCheck(CR, crReport, crOnly, kwOther);
+
+// Type groups (historic, party, outlaw): SKOS collections, members checked against the rule text
+if (CR) {
+  out.push('\n# ---- Type groups (CR 700.6, 700.8, 700.12) ----\n');
+  for (const [id, g] of Object.entries(C.TYPE_GROUPS)) {
+    const ruleText = crBody.find((l) => l.startsWith(`${g.rule}. `)) ?? '';
+    const missing = g.members.filter(([, name]) => !new RegExp(`\\b${name}\\b`, 'i').test(ruleText));
+    if (!ruleText || missing.length) throw new Error(`type group ${id}: CR ${g.rule} ${ruleText ? `does not mention ${missing.map((m) => m[1]).join(', ')}` : 'not found'}`);
+    const members = g.members.map(([sch, name]) => {
+      const u = `${V}${sch}/${slug(name)}`;
+      if (!conceptIris[u]) throw new Error(`type group ${id}: member ${u} is not a generated concept`);
+      return u;
+    });
+    out.push(block(iri(`${V}type-group/${id}`), [
+      ['a', 'smtg:TypeGroup'],
+      ['rdfs:label', en(g.label)], ['skos:prefLabel', en(g.label)],
+      ['skos:definition', en(ruleText.replace(/^\d+\.\d+\.\s*/, ''))],
+      ...members.map((u) => ['skos:member', iri(u)]),
+      ['smtg:comprehensiveRulesRef', lit(g.rule)],
+      ['rdfs:isDefinedBy', 'smtgm:vocab'],
+    ]));
+  }
+}
 
 // Formats & legality
 scheme('format', 'Formats', 'Format', 'Formats for which Scryfall reports legality (keys of legalities).');

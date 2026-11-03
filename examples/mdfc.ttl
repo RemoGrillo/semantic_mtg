@@ -32,8 +32,9 @@
 <https://w3id.org/smtg/id/oracle-card/907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57/face/0>.
 <https://w3id.org/smtg/id/oracle-card/907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57>;
     rdfs:label "Valki, God of Lies";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
-    smtg:name "Valki, God of Lies".
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57/face/0>.
+<https://w3id.org/smtg/id/oracle-card/907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57/face/0> smtg:name "Valki, God of Lies".
 <https://w3id.org/smtg/id/oracle-card/907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57/face/0/mana-cost>.
 <https://w3id.org/smtg/id/oracle-card/907ae517-22d5-4ac7-bc3a-3f4d5eaeeb57/face/0/mana-cost> smtg:manaCostNotation "{1}{B}".
@@ -349,7 +350,28 @@
 <https://w3id.org/smtg/id/identifier/set-code/khm> a smtg:Identifier;
     smtg:identifierValue "khm";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/43057fad-b1c1-437f-bc48-0045bce6d8c9> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/khm>.
+<https://w3id.org/smtg/id/set/43057fad-b1c1-437f-bc48-0045bce6d8c9> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/khm>;
+    smtg:releasedOn "2021-02-05"^^xsd:date;
+    smtg:declaredCardCount "407"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:sourceURL "https://scryfall.com/sets/khm"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/khm> a smtg:Identifier;
+    smtg:identifierValue "khm";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/43057fad-b1c1-437f-bc48-0045bce6d8c9> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/khm>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/khm> a smtg:Identifier;
+    smtg:identifierValue "khm";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/43057fad-b1c1-437f-bc48-0045bce6d8c9> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/khm>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/2750> a smtg:Identifier;
+    smtg:identifierValue "2750";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/43057fad-b1c1-437f-bc48-0045bce6d8c9> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/2750>.
+<https://w3id.org/smtg/id/set/43057fad-b1c1-437f-bc48-0045bce6d8c9/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/khm.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/43057fad-b1c1-437f-bc48-0045bce6d8c9> smtg:hasSetIcon <https://w3id.org/smtg/id/set/43057fad-b1c1-437f-bc48-0045bce6d8c9/icon>.
 <https://w3id.org/smtg/id/printing/ea7e4c65-b4c4-4795-9475-3cba71c50ea5> smtg:inSet <https://w3id.org/smtg/id/set/43057fad-b1c1-437f-bc48-0045bce6d8c9>;
     smtg:collectorNumber "114";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
@@ -575,8 +597,9 @@
 <https://w3id.org/smtg/id/oracle-card/562d71b9-1646-474e-9293-55da6947a758> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/562d71b9-1646-474e-9293-55da6947a758/face/0>.
 <https://w3id.org/smtg/id/oracle-card/562d71b9-1646-474e-9293-55da6947a758/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/562d71b9-1646-474e-9293-55da6947a758>;
     rdfs:label "Agadeem's Awakening";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
-    smtg:name "Agadeem's Awakening".
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/562d71b9-1646-474e-9293-55da6947a758> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/562d71b9-1646-474e-9293-55da6947a758/face/0>.
+<https://w3id.org/smtg/id/oracle-card/562d71b9-1646-474e-9293-55da6947a758/face/0> smtg:name "Agadeem's Awakening".
 <https://w3id.org/smtg/id/oracle-card/562d71b9-1646-474e-9293-55da6947a758/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/562d71b9-1646-474e-9293-55da6947a758/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/562d71b9-1646-474e-9293-55da6947a758/face/0/mana-cost>.
 <https://w3id.org/smtg/id/oracle-card/562d71b9-1646-474e-9293-55da6947a758/face/0/mana-cost> smtg:manaCostNotation "{X}{B}{B}{B}".
@@ -868,7 +891,29 @@
 <https://w3id.org/smtg/id/identifier/set-code/znr> a smtg:Identifier;
     smtg:identifierValue "znr";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/f4e01fa7-b254-42dd-849f-69b58027a8c4> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/znr>.
+<https://w3id.org/smtg/id/set/f4e01fa7-b254-42dd-849f-69b58027a8c4> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/znr>;
+    smtg:releasedOn "2020-09-25"^^xsd:date;
+    smtg:declaredCardCount "392"^^xsd:nonNegativeInteger;
+    smtg:printedSize "280"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:sourceURL "https://scryfall.com/sets/znr"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/znr> a smtg:Identifier;
+    smtg:identifierValue "znr";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/f4e01fa7-b254-42dd-849f-69b58027a8c4> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/znr>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/znr> a smtg:Identifier;
+    smtg:identifierValue "znr";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/f4e01fa7-b254-42dd-849f-69b58027a8c4> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/znr>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/2648> a smtg:Identifier;
+    smtg:identifierValue "2648";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/f4e01fa7-b254-42dd-849f-69b58027a8c4> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/2648>.
+<https://w3id.org/smtg/id/set/f4e01fa7-b254-42dd-849f-69b58027a8c4/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/znr.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/f4e01fa7-b254-42dd-849f-69b58027a8c4> smtg:hasSetIcon <https://w3id.org/smtg/id/set/f4e01fa7-b254-42dd-849f-69b58027a8c4/icon>.
 <https://w3id.org/smtg/id/printing/67f4c93b-080c-4196-b095-6a120a221988> smtg:inSet <https://w3id.org/smtg/id/set/f4e01fa7-b254-42dd-849f-69b58027a8c4>;
     smtg:collectorNumber "90";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;

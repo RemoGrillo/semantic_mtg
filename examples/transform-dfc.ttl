@@ -32,7 +32,9 @@
 <https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf/face/0>.
 <https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf>;
     rdfs:label "Delver of Secrets";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf/face/0>.
+<https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf/face/0> smtg:faceKeyword <https://w3id.org/smtg/vocab/keyword-action/transform>;
     smtg:name "Delver of Secrets".
 <https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf/face/0/mana-cost>.
@@ -58,6 +60,7 @@
 <https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf/face/1> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/edd531b9-f615-4399-8c8c-1c5e18c4acbf>;
     rdfs:label "Insectile Aberration";
     smtg:faceIndex "1"^^xsd:nonNegativeInteger;
+    smtg:faceKeyword <https://w3id.org/smtg/vocab/keyword-ability/flying>;
     smtg:name "Insectile Aberration";
     smtg:hasNoManaCost true;
     smtg:typeLine "Creature — Human Insect";
@@ -324,7 +327,20 @@
 <https://w3id.org/smtg/id/identifier/set-code/inr> a smtg:Identifier;
     smtg:identifierValue "inr";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/inr>.
+<https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/inr>;
+    smtg:releasedOn "2025-01-24"^^xsd:date;
+    smtg:declaredCardCount "495"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:sourceURL "https://scryfall.com/sets/inr"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/23848> a smtg:Identifier;
+    smtg:identifierValue "23848";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/23848>.
+<https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/inr.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf> smtg:hasSetIcon <https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf/icon>.
 <https://w3id.org/smtg/id/printing/6904ea20-e504-47da-95a0-08739fdde260> smtg:inSet <https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf>;
     smtg:collectorNumber "60";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
@@ -577,7 +593,30 @@
 <https://w3id.org/smtg/id/identifier/set-code/isd> a smtg:Identifier;
     smtg:identifierValue "isd";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/d1026945-2969-42b9-be53-f941405a58cb> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/isd>.
+<https://w3id.org/smtg/id/set/d1026945-2969-42b9-be53-f941405a58cb> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/isd>;
+    smtg:releasedOn "2011-09-30"^^xsd:date;
+    smtg:declaredCardCount "264"^^xsd:nonNegativeInteger;
+    smtg:printedSize "264"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:blockCode "isd";
+    smtg:sourceURL "https://scryfall.com/sets/isd"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/isd> a smtg:Identifier;
+    smtg:identifierValue "isd";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/d1026945-2969-42b9-be53-f941405a58cb> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/isd>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/isd> a smtg:Identifier;
+    smtg:identifierValue "isd";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/d1026945-2969-42b9-be53-f941405a58cb> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/isd>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/59> a smtg:Identifier;
+    smtg:identifierValue "59";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/d1026945-2969-42b9-be53-f941405a58cb> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/59>.
+<https://w3id.org/smtg/id/set/d1026945-2969-42b9-be53-f941405a58cb/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/isd.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/d1026945-2969-42b9-be53-f941405a58cb> smtg:hasSetIcon <https://w3id.org/smtg/id/set/d1026945-2969-42b9-be53-f941405a58cb/icon>.
 <https://w3id.org/smtg/id/printing/11bf83bb-c95b-4b4f-9a56-ce7a1816307a> smtg:inSet <https://w3id.org/smtg/id/set/d1026945-2969-42b9-be53-f941405a58cb>;
     smtg:collectorNumber "51";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;

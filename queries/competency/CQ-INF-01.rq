@@ -1,0 +1,15 @@
+# id: CQ-INF-01
+# title: Mana a card can produce through a token it creates (inferred)
+# question: Which cards can create a token that can produce mana, which token, and which mana?
+# kind: SPARQL
+# expects: nonempty
+# modules: cards
+# note: producesManaViaToken is the property chain createsToken ∘ producesManaSymbol, materialised by rule R-MANA-VIA-TOKEN into the inferred graph.
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?card ?token ?mana WHERE {
+  GRAPH <https://w3id.org/smtg/graph/inferred/rules> { ?c smtg:producesManaViaToken ?m ; smtg:createsToken ?t . }
+  ?c smtg:name ?card . ?t smtg:name ?token . ?t smtg:producesManaSymbol ?m . ?m skos:notation ?mana .
+}

@@ -22,6 +22,8 @@ export function normaliseMappings(files, prefixes) {
         disposition: String(e.disposition || 'unspecified').toLowerCase(),
         terms: (Array.isArray(e.terms) ? e.terms : e.terms ? [e.terms] : []).map((t) => prefixes.expand(String(t))),
         note: e.note || '',
+        present: e.present ?? null,
+        check: e.fixtureCheck ?? null,
       });
     }
   }
@@ -64,15 +66,18 @@ export function coverageData(inputs, entries) {
   if (inputs.census) sources.add('scryfall');
   const out = [];
   for (const source of [...sources].sort((a, b) => (a === 'scryfall' ? -1 : b === 'scryfall' ? 1 : a.localeCompare(b)))) {
-    const fields = observedFields(inputs, source);
     const ents = entries.filter((e) => e.source === source);
+    // sources without a census/profile field list: the mapping file itself lists every source field
+    let fields = observedFields(inputs, source);
+    const fromMapping = !fields.length && ents.length > 0;
+    if (fromMapping) fields = ents.map((e) => ({ path: e.path, present: e.present }));
     const rows = fields.map((f) => {
       const hit = matchPath(f.path, ents);
       return { field: f, entry: hit?.entry || null, how: hit?.how || null, disposition: hit ? hit.entry.disposition : 'unmapped' };
     });
     const observed = new Set(fields.map((f) => f.path));
     const unobserved = ents.filter((e) => !e.path.includes('*') && !observed.has(e.path) && !fields.some((f) => f.path.startsWith(e.path + '.') || f.path.startsWith(e.path + '[]')));
-    out.push({ source, fields, entries: ents, rows, unobserved, records: recordsOf(inputs, source) });
+    out.push({ source, fields, entries: ents, rows, unobserved, records: recordsOf(inputs, source), fromMapping });
   }
   return out;
 }
@@ -308,6 +313,11 @@ export function coveragePage(ctx) {
         ...order.filter((k) => counts[k]).map((k) => ({ label: k, value: `${fmtInt(counts[k])}<span class="kpi-unit"> · ${fmtPct(counts[k] / total)}</span>` })),
       ]);
       h += segmentedBar(parts, { title: `${human(cov.source)} field paths by disposition` });
+      if (cov.fromMapping) h += '<p class="muted small">Field list taken from the mapping file, which lists every field of this source.</p>';
+      const notEmitted = cov.entries.filter((e) => e.check === 'NOT EMITTED');
+      const checked = cov.entries.filter((e) => e.check);
+      if (checked.length)
+        h += `<p class="small">${notEmitted.length ? `<span class="badge bad"><span aria-hidden="true">✕</span> ${notEmitted.length} claimed but not emitted</span>` : '<span class="badge ok"><span aria-hidden="true">✓</span> fixture check</span>'} Of the ${checked.length} <em>mapped</em> paths, ${checked.filter((e) => e.check === 'emitted').length} are emitted by the prototype mapper for the fixtures, ${checked.filter((e) => e.check === 'not in fixtures').length} do not occur (non-empty) in the fixtures. The check is per term, not per field.</p>`;
       h += `<h3>${unmapped.length ? '<span class="badge bad"><span aria-hidden="true">✕</span> ' + unmapped.length + ' unmapped</span> ' : ''}Unmapped paths</h3>`;
       h += unmapped.length
         ? `<div class="table-wrap"><table class="data flag-table"><thead><tr><th>Path</th><th>Present</th><th>Types</th><th>Top values</th></tr></thead><tbody>${unmapped
@@ -327,12 +337,12 @@ export function coveragePage(ctx) {
     h += `<h3>Mapping entries <span class="h-note">${cov.entries.length}</span></h3>`;
     if (cov.entries.length) {
       const tid = `map-${cov.source}`;
-      h += `<div class="filter-row"><label class="filter"><span class="sr-only">Filter mapping entries</span><input type="search" placeholder="Filter entries…" data-filter-table="${tid}"></label><span class="muted small" data-filter-count="${tid}"></span></div><div class="table-wrap"><table class="data" id="${tid}"><thead><tr><th>Path</th><th>Scope</th><th>Disposition</th><th>Terms</th><th>Note</th></tr></thead><tbody>${cov.entries
+      h += `<div class="filter-row"><label class="filter"><span class="sr-only">Filter mapping entries</span><input type="search" placeholder="Filter entries…" data-filter-table="${tid}"></label><span class="muted small" data-filter-count="${tid}"></span></div><div class="table-wrap"><table class="data" id="${tid}"><thead><tr><th>Path</th><th>Scope</th><th>Disposition</th><th>Fixture check</th><th>Terms</th><th>Note</th></tr></thead><tbody>${cov.entries
         .map(
           (e) =>
             `<tr${cov.unobserved.includes(e) ? ' class="dim"' : ''}><td><code class="path">${esc(e.path)}</code>${
               cov.unobserved.includes(e) && cov.fields.length ? ' <span class="chip" title="This path does not occur in the census snapshot">not observed</span>' : ''
-            }</td><td>${esc(e.scope ?? '')}</td><td>${dispositionChip(e.disposition)}</td><td>${e.terms.map((t) => link(m, t)).join(', ')}</td><td>${esc(e.note)}</td></tr>`,
+            }</td><td>${esc(e.scope ?? '')}</td><td>${dispositionChip(e.disposition)}</td><td>${e.check ? `<span class="chip${e.check === 'emitted' ? ' chk-ok' : e.check === 'NOT EMITTED' ? ' chk-bad' : ''}">${esc(e.check)}</span>` : ''}</td><td>${e.terms.map((t) => link(m, t)).join(', ')}</td><td>${esc(e.note)}</td></tr>`,
         )
         .join('')}</tbody></table></div><p class="muted small">From ${[...new Set(cov.entries.map((e) => e.file))].map((f) => `<code>${esc(f)}</code>`).join(', ')}.</p>`;
     } else h += '<p class="muted">No mapping file for this source yet.</p>';

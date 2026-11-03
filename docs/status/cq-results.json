@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-03T14:24:53.149Z",
-  "triples": 55564,
+  "generatedAt": "2026-11-03T15:25:01.477Z",
+  "triples": 61203,
   "results": [
     {
       "id": "CQ-CB-01",
@@ -46,6 +46,26 @@
       "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?variant ?template ?query WHERE {\n  ?variant smtg:hasTemplateRequirement/smtg:requiresTemplate ?t . ?t rdfs:label ?template . OPTIONAL { ?t smtg:templateQuery ?query }\n}"
     },
     {
+      "id": "CQ-CB-03",
+      "file": "queries/competency/CQ-CB-03.rq",
+      "title": "Combos that use a specific face",
+      "question": "Which documented combo variants use a specific face of a multi-faced card?",
+      "kind": "SPARQL",
+      "expects": "nonempty",
+      "modules": "combos",
+      "rowCount": 1,
+      "rows": [
+        {
+          "variant": "smtgid:combo-variant/816-4525",
+          "card": "Rune-Tail, Kitsune Ascendant // Rune-Tail's Essence",
+          "face": "Rune-Tail's Essence"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nSELECT ?variant ?card ?face WHERE {\n  ?v smtg:hasCardUse ?u . ?u smtg:usesFace ?f .\n  ?f smtg:name ?face ; smtg:faceOf/smtg:name ?card . BIND(STR(?v) AS ?variant)\n}"
+    },
+    {
       "id": "CQ-CL-01",
       "file": "queries/competency/CQ-CL-01.rq",
       "title": "Colour identity within a commander's colours",
@@ -54,7 +74,7 @@
       "expects": "nonempty",
       "modules": "cards, taxonomies",
       "note": "subCombinationOf is a true partial order, safe to traverse (contrast with Tagger parents).",
-      "rowCount": 18,
+      "rowCount": 21,
       "rows": [
         {
           "name": "Agadeem's Awakening // Agadeem, the Undercrypt",
@@ -82,6 +102,10 @@
         },
         {
           "name": "Ashnod's Altar",
+          "identity": "Colorless"
+        },
+        {
+          "name": "Eldrazi Confluence",
           "identity": "Colorless"
         },
         {
@@ -118,6 +142,14 @@
         },
         {
           "name": "Gisela, the Broken Blade",
+          "identity": "W (Mono-white)"
+        },
+        {
+          "name": "Palisade Giant",
+          "identity": "W (Mono-white)"
+        },
+        {
+          "name": "Rune-Tail, Kitsune Ascendant // Rune-Tail's Essence",
           "identity": "W (Mono-white)"
         },
         {
@@ -197,7 +229,7 @@
       "expects": "nonempty",
       "modules": "cards, taxonomies",
       "note": "uses the layout → face-configuration mapping instead of memorising layout codes.",
-      "rowCount": 6,
+      "rowCount": 7,
       "rows": [
         {
           "name": "Bonecrusher Giant // Stomp",
@@ -206,6 +238,11 @@
         },
         {
           "name": "Akki Lavarunner // Tok-Tok, Volcano Born",
+          "layoutLabel": "Flip",
+          "faces": "2"
+        },
+        {
+          "name": "Rune-Tail, Kitsune Ascendant // Rune-Tail's Essence",
           "layoutLabel": "Flip",
           "faces": "2"
         },
@@ -326,6 +363,42 @@
       "pass": true,
       "error": null,
       "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?card WHERE {\n  ?card smtg:name \"Kolaghan's Command\" ; smtg:hasLayout <https://w3id.org/smtg/vocab/layout/modal_dfc> .\n}"
+    },
+    {
+      "id": "CQ-FL-07",
+      "file": "queries/competency/CQ-FL-07.rq",
+      "title": "Cards with a permanent face and an instant or sorcery face",
+      "question": "Which Oracle cards have one face with a permanent card type and another face that is an instant or sorcery?",
+      "kind": "SPARQL",
+      "expects": "nonempty",
+      "modules": "cards, taxonomies",
+      "note": "why permanence is modelled per face (287 such Oracle cards in the 2026-11-03 data).",
+      "rowCount": 4,
+      "rows": [
+        {
+          "card": "Abigale, Poet Laureate // Heroic Stanza",
+          "permanentFace": "Abigale, Poet Laureate",
+          "spellFace": "Heroic Stanza"
+        },
+        {
+          "card": "Agadeem's Awakening // Agadeem, the Undercrypt",
+          "permanentFace": "Agadeem, the Undercrypt",
+          "spellFace": "Agadeem's Awakening"
+        },
+        {
+          "card": "Bonecrusher Giant // Stomp",
+          "permanentFace": "Bonecrusher Giant",
+          "spellFace": "Stomp"
+        },
+        {
+          "card": "Invasion of Alara // Awaken the Maelstrom",
+          "permanentFace": "Invasion of Alara",
+          "spellFace": "Awaken the Maelstrom"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nSELECT DISTINCT ?card ?permanentFace ?spellFace WHERE {\n  ?c smtg:name ?card ; smtg:hasFace ?f1 , ?f2 .\n  ?f1 smtg:hasCardType/a smtg:PermanentCardType ; smtg:name ?permanentFace .\n  ?f2 smtg:hasCardType/a smtg:InstantOrSorceryCardType ; smtg:name ?spellFace .\n} ORDER BY ?card"
     },
     {
       "id": "CQ-ID-01",
@@ -494,6 +567,179 @@
       "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?name ?printingLayout (COUNT(DISTINCT ?pf) AS ?printedFaces) ?printing WHERE {\n  ?card smtg:name ?name ; smtg:hasPrinting|^smtg:isPrintingOf ?printing .\n  ?printing smtg:printingLayout ?printingLayout ; smtg:hasPrintedFace ?pf .\n  FILTER EXISTS { ?card ^smtg:isPrintingOf/smtg:printingLayout <https://w3id.org/smtg/vocab/layout/reversible_card> }\n} GROUP BY ?name ?printingLayout ?printing ORDER BY ?name ?printingLayout"
     },
     {
+      "id": "CQ-INF-01",
+      "file": "queries/competency/CQ-INF-01.rq",
+      "title": "Mana a card can produce through a token it creates (inferred)",
+      "question": "Which cards can create a token that can produce mana, which token, and which mana?",
+      "kind": "SPARQL",
+      "expects": "nonempty",
+      "modules": "cards",
+      "note": "producesManaViaToken is the property chain createsToken ∘ producesManaSymbol, materialised by rule R-MANA-VIA-TOKEN into the inferred graph.",
+      "rowCount": 1,
+      "rows": [
+        {
+          "card": "Eldrazi Confluence",
+          "token": "Eldrazi Scion",
+          "mana": "{C}"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nSELECT ?card ?token ?mana WHERE {\n  GRAPH <https://w3id.org/smtg/graph/inferred/rules> { ?c smtg:producesManaViaToken ?m ; smtg:createsToken ?t . }\n  ?c smtg:name ?card . ?t smtg:name ?token . ?t smtg:producesManaSymbol ?m . ?m skos:notation ?mana .\n}"
+    },
+    {
+      "id": "CQ-INF-02",
+      "file": "queries/competency/CQ-INF-02.rq",
+      "title": "Permanent cards among multi-faced cards (inferred)",
+      "question": "For each multi-faced Oracle card, is it a permanent card in hand (CR 110.4a), and what is its primary face?",
+      "kind": "SPARQL",
+      "expects": "nonempty",
+      "modules": "cards",
+      "note": "Bonecrusher Giant is (its primary face is a creature); Agadeem's Awakening is not (its front face is a sorcery), though its back face is a land.",
+      "rowCount": 13,
+      "rows": [
+        {
+          "card": "Abigale, Poet Laureate // Heroic Stanza",
+          "primaryFace": "Abigale, Poet Laureate",
+          "permanentCard": "true"
+        },
+        {
+          "card": "Agadeem's Awakening // Agadeem, the Undercrypt",
+          "primaryFace": "Agadeem's Awakening",
+          "permanentCard": "false"
+        },
+        {
+          "card": "Akki Lavarunner // Tok-Tok, Volcano Born",
+          "primaryFace": "Akki Lavarunner",
+          "permanentCard": "true"
+        },
+        {
+          "card": "Alive // Well",
+          "permanentCard": "false"
+        },
+        {
+          "card": "Bonecrusher Giant // Stomp",
+          "primaryFace": "Bonecrusher Giant",
+          "permanentCard": "true"
+        },
+        {
+          "card": "Commit // Memory",
+          "permanentCard": "false"
+        },
+        {
+          "card": "Delver of Secrets // Insectile Aberration",
+          "primaryFace": "Delver of Secrets",
+          "permanentCard": "true"
+        },
+        {
+          "card": "Fell Beast's Shriek // Fell Beast's Shriek",
+          "permanentCard": "false"
+        },
+        {
+          "card": "Fire // Ice",
+          "permanentCard": "false"
+        },
+        {
+          "card": "Invasion of Alara // Awaken the Maelstrom",
+          "primaryFace": "Invasion of Alara",
+          "permanentCard": "true"
+        },
+        {
+          "card": "Punchcard // Punchcard",
+          "primaryFace": "Punchcard",
+          "permanentCard": "false"
+        },
+        {
+          "card": "Rune-Tail, Kitsune Ascendant // Rune-Tail's Essence",
+          "primaryFace": "Rune-Tail, Kitsune Ascendant",
+          "permanentCard": "true"
+        },
+        {
+          "card": "Valki, God of Lies // Tibalt, Cosmic Impostor",
+          "primaryFace": "Valki, God of Lies",
+          "permanentCard": "true"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nSELECT ?card ?primaryFace ?permanentCard WHERE {\n  ?c a smtg:OracleCard ; smtg:name ?card ; smtg:hasFace ?f1 , ?f2 . FILTER(?f1 != ?f2)\n  OPTIONAL { ?c smtg:primaryFace/smtg:name ?primaryFace }\n  BIND(EXISTS { GRAPH <https://w3id.org/smtg/graph/inferred/rules> { ?c a smtg:PermanentCard } } AS ?permanentCard)\n} GROUP BY ?card ?primaryFace ?permanentCard ORDER BY ?card"
+    },
+    {
+      "id": "CQ-INF-03",
+      "file": "queries/competency/CQ-INF-03.rq",
+      "title": "Negative test — an MDFC with a sorcery front face is not a permanent card",
+      "question": "Is Agadeem's Awakening // Agadeem, the Undercrypt inferred to be a permanent card?",
+      "kind": "negative",
+      "expects": "empty",
+      "modules": "cards",
+      "rowCount": 0,
+      "rows": [],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nSELECT ?c WHERE {\n  ?c smtg:name \"Agadeem's Awakening // Agadeem, the Undercrypt\" .\n  GRAPH <https://w3id.org/smtg/graph/inferred/rules> { ?c a smtg:PermanentCard }\n}"
+    },
+    {
+      "id": "CQ-KW-01",
+      "file": "queries/competency/CQ-KW-01.rq",
+      "title": "Keywords attributed to a specific face",
+      "question": "On multi-faced cards, which face does each keyword belong to?",
+      "kind": "SPARQL",
+      "expects": "nonempty",
+      "modules": "cards",
+      "note": "Scryfall gives keywords per card only; faceKeyword is a documented normalisation (keyword name found in the face's Oracle text).",
+      "rowCount": 9,
+      "rows": [
+        {
+          "card": "Abigale, Poet Laureate // Heroic Stanza",
+          "face": "Abigale, Poet Laureate",
+          "keyword": "Prepared"
+        },
+        {
+          "card": "Abigale, Poet Laureate // Heroic Stanza",
+          "face": "Abigale, Poet Laureate",
+          "keyword": "Flying"
+        },
+        {
+          "card": "Akki Lavarunner // Tok-Tok, Volcano Born",
+          "face": "Akki Lavarunner",
+          "keyword": "Haste"
+        },
+        {
+          "card": "Akki Lavarunner // Tok-Tok, Volcano Born",
+          "face": "Tok-Tok, Volcano Born",
+          "keyword": "Protection"
+        },
+        {
+          "card": "Alive // Well",
+          "face": "Alive",
+          "keyword": "Fuse"
+        },
+        {
+          "card": "Alive // Well",
+          "face": "Well",
+          "keyword": "Fuse"
+        },
+        {
+          "card": "Commit // Memory",
+          "face": "Memory",
+          "keyword": "Aftermath"
+        },
+        {
+          "card": "Delver of Secrets // Insectile Aberration",
+          "face": "Delver of Secrets",
+          "keyword": "Transform"
+        },
+        {
+          "card": "Delver of Secrets // Insectile Aberration",
+          "face": "Insectile Aberration",
+          "keyword": "Flying"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nSELECT ?card ?face ?keyword WHERE {\n  ?c smtg:name ?card ; smtg:hasFace ?f , ?other . FILTER(?f != ?other)\n  ?f smtg:faceKeyword/skos:prefLabel ?keyword ; smtg:name ?face .\n} GROUP BY ?card ?face ?keyword ORDER BY ?card ?face"
+    },
+    {
       "id": "CQ-MC-01",
       "file": "queries/competency/CQ-MC-01.rq",
       "title": "No mana cost versus zero mana cost",
@@ -502,7 +748,7 @@
       "expects": "nonempty",
       "modules": "cards",
       "note": "absence of a cost triple would mean 'unknown'; both cases are explicit (AP-05).",
-      "rowCount": 16,
+      "rowCount": 18,
       "rows": [
         {
           "faceName": "Ornithopter",
@@ -522,6 +768,10 @@
         },
         {
           "faceName": "Brisela, Voice of Nightmares",
+          "kind": "no mana cost"
+        },
+        {
+          "faceName": "Eldrazi Scion",
           "kind": "no mana cost"
         },
         {
@@ -557,6 +807,10 @@
           "kind": "no mana cost"
         },
         {
+          "faceName": "Rune-Tail's Essence",
+          "kind": "no mana cost"
+        },
+        {
           "faceName": "Sisters of Stone Death Avatar",
           "kind": "no mana cost"
         },
@@ -572,6 +826,25 @@
       "pass": true,
       "error": null,
       "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?faceName ?kind WHERE {\n  { ?f smtg:hasNoManaCost true ; smtg:name ?faceName . BIND(\"no mana cost\" AS ?kind) }\n  UNION\n  { ?f smtg:hasManaCost/smtg:manaCostNotation \"{0}\" ; smtg:name ?faceName . BIND(\"cost {0}\" AS ?kind) }\n} ORDER BY ?kind ?faceName"
+    },
+    {
+      "id": "CQ-MV-01",
+      "file": "queries/competency/CQ-MV-01.rq",
+      "title": "Converted mana cost is mana value",
+      "question": "Which property should someone use when looking for \"converted mana cost\" (Scryfall: cmc)?",
+      "kind": "SPARQL",
+      "expects": "nonempty",
+      "modules": "cards",
+      "rowCount": 1,
+      "rows": [
+        {
+          "property": "smtg:manaValue",
+          "label": "mana value"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nSELECT DISTINCT ?property ?label WHERE {\n  ?property skos:altLabel ?alias ; rdfs:label ?label . FILTER(LCASE(STR(?alias)) IN (\"converted mana cost\", \"cmc\"))\n}"
     },
     {
       "id": "CQ-PT-01",
@@ -602,13 +875,13 @@
       "expects": "nonempty",
       "modules": "claims, provenance",
       "note": "documented combos, tag beliefs, authoritative legality reports and statistical observations stay distinguishable.",
-      "rowCount": 9,
+      "rowCount": 10,
       "rows": [
         {
           "claimClass": "Legality assertion",
           "status": "authoritative-report",
           "dataset": "Scryfall bulk: oracle_cards",
-          "n": "690"
+          "n": "759"
         },
         {
           "claimClass": "Art tag assignment",
@@ -620,7 +893,13 @@
           "claimClass": "Legality assertion",
           "status": "authoritative-report",
           "dataset": "Scryfall bulk: all_cards",
-          "n": "207"
+          "n": "230"
+        },
+        {
+          "claimClass": "Ruling",
+          "status": "authoritative-report",
+          "dataset": "Scryfall bulk: rulings",
+          "n": "193"
         },
         {
           "claimClass": "Oracle tag assignment",
@@ -632,25 +911,25 @@
           "claimClass": "Price observation",
           "status": "statistical-observation",
           "dataset": "Scryfall bulk: oracle_cards",
-          "n": "142"
+          "n": "156"
         },
         {
           "claimClass": "Price observation",
           "status": "statistical-observation",
           "dataset": "Scryfall bulk: all_cards",
-          "n": "132"
+          "n": "136"
         },
         {
           "claimClass": "Rank observation",
           "status": "statistical-observation",
           "dataset": "Scryfall bulk: oracle_cards",
-          "n": "29"
+          "n": "32"
         },
         {
           "claimClass": "Combo variant",
           "status": "community-curated",
           "dataset": "Commander Spellbook bulk: variants",
-          "n": "5"
+          "n": "6"
         },
         {
           "claimClass": "Rank observation",
@@ -692,6 +971,151 @@
       "pass": true,
       "error": null,
       "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?format ?status ?observedAt WHERE {\n  ?card smtg:name \"Lightning Bolt\" .\n  ?la smtg:legalityOf ?card ; smtg:inFormat ?f ; smtg:hasLegalityStatus/skos:notation ?status ; smtg:observedIn/smtg:sourceUpdatedAt ?observedAt .\n  ?f skos:notation ?format . FILTER(?format IN (\"modern\", \"legacy\", \"standard\"))\n} ORDER BY ?format"
+    },
+    {
+      "id": "CQ-PV-03",
+      "file": "queries/competency/CQ-PV-03.rq",
+      "title": "Provenance of the inferred graph",
+      "question": "Which activity generated the inferred graph, with which rules?",
+      "kind": "SPARQL",
+      "expects": "nonempty",
+      "modules": "provenance",
+      "rowCount": 7,
+      "rows": [
+        {
+          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "rule": "Faces with a permanent card type"
+        },
+        {
+          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "rule": "Faces with the instant or sorcery card type"
+        },
+        {
+          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "rule": "Hybrid and Phyrexian mana symbols"
+        },
+        {
+          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "rule": "Layout-defined classes (ModalDoubleFacedCard, AdventurerCard, …)"
+        },
+        {
+          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "rule": "Mana a card can produce through a token it creates"
+        },
+        {
+          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "rule": "Permanent cards (CR 110.4a): primary face is a permanent face, or a split card with a permanent half"
+        },
+        {
+          "activity": "Rule materialisation (7 rules, 144 triples)",
+          "rule": "Tokens a card can create (projection of all_parts)"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nSELECT ?activity ?rule WHERE {\n  <https://w3id.org/smtg/graph/inferred/rules> prov:wasGeneratedBy ?act . ?act rdfs:label ?activity ; prov:used/rdfs:label ?rule .\n} ORDER BY ?rule"
+    },
+    {
+      "id": "CQ-PV-04",
+      "file": "queries/competency/CQ-PV-04.rq",
+      "title": "Negative test — inferred triples stay out of the asserted graph",
+      "question": "Does any inferred-only property (producesManaViaToken, createsToken) or inferred class appear in the asserted (default) graph?",
+      "kind": "negative",
+      "expects": "empty",
+      "modules": "provenance, cards",
+      "rowCount": 0,
+      "rows": [],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nSELECT ?s ?p WHERE {\n  { ?s smtg:producesManaViaToken ?o . BIND(smtg:producesManaViaToken AS ?p) }\n  UNION { ?s smtg:createsToken ?o . BIND(smtg:createsToken AS ?p) }\n  UNION { ?s a smtg:PermanentCard . BIND(smtg:PermanentCard AS ?p) }\n}"
+    },
+    {
+      "id": "CQ-RU-01",
+      "file": "queries/competency/CQ-RU-01.rq",
+      "title": "Dated, attributed rulings",
+      "question": "Which rulings exist for Blood Artist, when were they published, and by whom?",
+      "kind": "SPARQL",
+      "expects": "nonempty",
+      "modules": "text-art, claims",
+      "rowCount": 1,
+      "rows": [
+        {
+          "date": "2016-06-08",
+          "by": "Wizards of the Coast",
+          "status": "authoritative-report",
+          "ruling": "If Blood Artist and one or more other creatures die at the same time, its ability will trigger for e"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nSELECT ?date ?by ?status (SUBSTR(?text, 1, 100) AS ?ruling) WHERE {\n  ?r a smtg:Ruling ; smtg:rulingFor/smtg:name \"Blood Artist\" ; smtg:publishedOn ?date ; smtg:rulingText ?text ;\n     smtg:claimedBy/rdfs:label ?by ; smtg:hasEpistemicStatus/skos:notation ?status .\n} ORDER BY ?date"
+    },
+    {
+      "id": "CQ-ST-01",
+      "file": "queries/competency/CQ-ST-01.rq",
+      "title": "Set metadata",
+      "question": "For the sets of Lightning Bolt's printings, what is the printed size, the number of cards and the parent set?",
+      "kind": "SPARQL",
+      "expects": "nonempty",
+      "modules": "printings",
+      "rowCount": 4,
+      "rows": [
+        {
+          "set": "Limited Edition Alpha",
+          "code": "lea",
+          "cards": "295"
+        },
+        {
+          "set": "Magic 2010",
+          "code": "m10",
+          "printedSize": "249",
+          "cards": "249"
+        },
+        {
+          "set": "Marvel Super Heroes Commander",
+          "code": "msc",
+          "cards": "866",
+          "parent": "msh"
+        },
+        {
+          "set": "Secret Lair Drop",
+          "code": "sld",
+          "cards": "2866"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nSELECT DISTINCT ?set ?code ?printedSize ?cards ?parent WHERE {\n  ?p smtg:isPrintingOf/smtg:name \"Lightning Bolt\" ; smtg:inSet ?s . ?s rdfs:label ?set ; smtg:setCode ?code .\n  OPTIONAL { ?s smtg:printedSize ?printedSize } OPTIONAL { ?s smtg:declaredCardCount ?cards } OPTIONAL { ?s smtg:parentSet/smtg:setCode ?parent }\n} ORDER BY ?code"
+    },
+    {
+      "id": "CQ-SY-01",
+      "file": "queries/competency/CQ-SY-01.rq",
+      "title": "Hybrid and Phyrexian mana in costs",
+      "question": "Which faces in the examples have a hybrid or Phyrexian mana symbol in their cost?",
+      "kind": "SPARQL",
+      "expects": "any",
+      "modules": "cards, taxonomies",
+      "rowCount": 3,
+      "rows": [
+        {
+          "face": "Jinnie Fay, Jetmir's Second",
+          "symbol": "{G/W}",
+          "kind": "hybrid"
+        },
+        {
+          "face": "Jinnie Fay, Jetmir's Second",
+          "symbol": "{R/G}",
+          "kind": "hybrid"
+        },
+        {
+          "face": "Heroic Stanza",
+          "symbol": "{W/B}",
+          "kind": "hybrid"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nSELECT ?face ?symbol ?kind WHERE {\n  ?f smtg:hasManaCost/smtg:hasSymbolOccurrence/smtg:occurrenceOf ?s ; smtg:name ?face . ?s skos:notation ?symbol .\n  { ?s smtg:isHybrid true . BIND(\"hybrid\" AS ?kind) } UNION { ?s smtg:isPhyrexian true . BIND(\"Phyrexian\" AS ?kind) }\n}"
     },
     {
       "id": "CQ-TG-01",
@@ -1044,7 +1468,7 @@
       "kind": "SPARQL",
       "expects": "nonempty",
       "modules": "text-art, printings",
-      "rowCount": 28,
+      "rowCount": 29,
       "rows": [
         {
           "name": "Agadeem's Awakening // Agadeem, the Undercrypt",
@@ -1167,9 +1591,9 @@
           "flavor": "\"It has been my honor to improve on Thran's original design. Perhaps history will remember me in some small part for my work.\"\n—Urza, in his apprenticeship"
         },
         {
-          "name": "Sliver Queen",
-          "set": "tpr",
-          "flavor": "Her children are ever part of her."
+          "name": "Palisade Giant",
+          "set": "rtr",
+          "flavor": "Refusing guild allegiances, she fights for those who can't protect themselves."
         }
       ],
       "pass": true,
@@ -1204,7 +1628,7 @@
       "kind": "SPARQL",
       "expects": "nonempty",
       "modules": "cards, taxonomies",
-      "rowCount": 37,
+      "rowCount": 43,
       "rows": [
         {
           "faceName": "Abigale, Poet Laureate",
@@ -1272,6 +1696,16 @@
           "scheme": "Creature types"
         },
         {
+          "faceName": "Eldrazi Scion",
+          "subtype": "Eldrazi",
+          "scheme": "Creature types"
+        },
+        {
+          "faceName": "Eldrazi Scion",
+          "subtype": "Scion",
+          "scheme": "Creature types"
+        },
+        {
           "faceName": "Ghalta, Primal Hunger",
           "subtype": "Dinosaur",
           "scheme": "Creature types"
@@ -1320,16 +1754,6 @@
           "faceName": "Jinnie Fay, Jetmir's Second",
           "subtype": "Elf",
           "scheme": "Creature types"
-        },
-        {
-          "faceName": "Ornithopter",
-          "subtype": "Thopter",
-          "scheme": "Creature types"
-        },
-        {
-          "faceName": "Sliver Queen",
-          "subtype": "Sliver",
-          "scheme": "Creature types"
         }
       ],
       "pass": true,
@@ -1349,6 +1773,89 @@
       "pass": true,
       "error": null,
       "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX v: <https://w3id.org/smtg/vocab/>\nSELECT ?word (GROUP_CONCAT(DISTINCT ?schemeLabel; separator=' | ') AS ?schemes) WHERE {\n  ?c a/rdfs:subClassOf smtg:Subtype ; skos:notation ?word ; skos:inScheme/rdfs:label ?schemeLabel .\n} GROUP BY ?word HAVING (COUNT(DISTINCT ?c) > 1) ORDER BY ?word"
+    },
+    {
+      "id": "CQ-TY-03",
+      "file": "queries/competency/CQ-TY-03.rq",
+      "title": "Historic faces (type group, CR 700.6)",
+      "question": "Which faces are historic (legendary, artifact or Saga), and through which member of the group?",
+      "kind": "SPARQL",
+      "expects": "nonempty",
+      "modules": "taxonomies",
+      "rowCount": 17,
+      "rows": [
+        {
+          "face": "Abigale, Poet Laureate",
+          "via": "Legendary"
+        },
+        {
+          "face": "Age of Ultron",
+          "via": "Saga"
+        },
+        {
+          "face": "Arcane Proxy",
+          "via": "Artifact"
+        },
+        {
+          "face": "Ashnod's Altar",
+          "via": "Artifact"
+        },
+        {
+          "face": "Brisela, Voice of Nightmares",
+          "via": "Legendary"
+        },
+        {
+          "face": "Bruna, the Fading Light",
+          "via": "Legendary"
+        },
+        {
+          "face": "Ghalta, Primal Hunger",
+          "via": "Legendary"
+        },
+        {
+          "face": "Gisela, the Broken Blade",
+          "via": "Legendary"
+        },
+        {
+          "face": "Jinnie Fay, Jetmir's Second",
+          "via": "Legendary"
+        },
+        {
+          "face": "Nissa, Steward of Elements",
+          "via": "Legendary"
+        },
+        {
+          "face": "Ornithopter",
+          "via": "Artifact"
+        },
+        {
+          "face": "Rune-Tail's Essence",
+          "via": "Legendary"
+        },
+        {
+          "face": "Rune-Tail, Kitsune Ascendant",
+          "via": "Legendary"
+        },
+        {
+          "face": "Sliver Queen",
+          "via": "Legendary"
+        },
+        {
+          "face": "Tibalt, Cosmic Impostor",
+          "via": "Legendary"
+        },
+        {
+          "face": "Tok-Tok, Volcano Born",
+          "via": "Legendary"
+        },
+        {
+          "face": "Valki, God of Lies",
+          "via": "Legendary"
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "query": "PREFIX smtg: <https://w3id.org/smtg/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nSELECT DISTINCT ?face ?via WHERE {\n  <https://w3id.org/smtg/vocab/type-group/historic> skos:member ?m .\n  ?f smtg:hasSupertype|smtg:hasCardType|smtg:hasSubtype ?m ; smtg:name ?face .\n  ?m skos:prefLabel ?via .\n} ORDER BY ?face"
     }
   ]
 }

@@ -279,6 +279,27 @@ smtg:blockCode a owl:DatatypeProperty , owl:FunctionalProperty ;
   rdfs:label "block code"@en ; skos:definition "Code of the block the set belongs to, if any."@en ;
   rdfs:domain smtg:MtgSet ; rdfs:range xsd:string ;
   smtg:sourceField "scryfall-sets:block_code" , "scryfall-sets:block" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+smtg:printedSize a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "printed size"@en ; skos:definition "The number of cards the set's own collector numbering announces (\"of N\"), which can differ from the number of cards Scryfall lists."@en ;
+  rdfs:domain smtg:MtgSet ; rdfs:range xsd:nonNegativeInteger ;
+  smtg:sourceField "scryfall-sets:printed_size" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+smtg:foilOnlySet a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "foil-only set"@en ; skos:definition "Whether every card in the set is foil."@en ;
+  rdfs:domain smtg:MtgSet ; rdfs:range xsd:boolean ;
+  smtg:sourceField "scryfall-sets:foil_only" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+smtg:nonfoilOnlySet a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "nonfoil-only set"@en ; skos:definition "Whether every card in the set is nonfoil."@en ;
+  rdfs:domain smtg:MtgSet ; rdfs:range xsd:boolean ;
+  smtg:sourceField "scryfall-sets:nonfoil_only" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+smtg:digitalSet a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "digital set"@en ; skos:definition "Whether the set is only released digitally."@en ;
+  rdfs:domain smtg:MtgSet ; rdfs:range xsd:boolean ;
+  smtg:sourceField "scryfall-sets:digital" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+smtg:hasSetIcon a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "has set icon"@en ; skos:definition "A digital image of the set's expansion symbol, as published by the source (linked, not stored; the symbol is © Wizards of the Coast)."@en ;
+  rdfs:domain smtg:MtgSet ; rdfs:range smtg:DigitalImage ;
+  smtg:sourceField "scryfall-sets:icon_svg_uri" ; rdfs:isDefinedBy smtgm:printings ; vs:term_status "unstable" .
+
 smtg:declaredCardCount a owl:DatatypeProperty , owl:FunctionalProperty ;
   rdfs:label "declared card count"@en ; skos:definition "Number of cards in the set as reported by the source."@en ;
   rdfs:domain smtg:MtgSet ; rdfs:range xsd:nonNegativeInteger ;

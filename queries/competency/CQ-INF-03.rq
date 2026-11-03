@@ -1,0 +1,14 @@
+# id: CQ-INF-03
+# title: Negative test — an MDFC with a sorcery front face is not a permanent card
+# question: Is Agadeem's Awakening // Agadeem, the Undercrypt inferred to be a permanent card?
+# kind: negative
+# expects: empty
+# modules: cards
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?c WHERE {
+  ?c smtg:name "Agadeem's Awakening // Agadeem, the Undercrypt" .
+  GRAPH <https://w3id.org/smtg/graph/inferred/rules> { ?c a smtg:PermanentCard }
+}

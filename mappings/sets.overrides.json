@@ -1,0 +1,6 @@
+{
+  "_comment": "Explicit dispositions for Scryfall /sets fields not covered by smtg:sourceField annotations.",
+  "object": { "disposition": "excluded", "note": "JSON object-type discriminator (\"set\")." },
+  "name": { "disposition": "mapped", "note": "rdfs:label of the MtgSet." },
+  "search_uri": { "disposition": "derived", "note": "API search URL for the set's cards; recoverable from the set code." }
+}

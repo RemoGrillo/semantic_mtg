@@ -32,7 +32,9 @@
 <https://w3id.org/smtg/id/oracle-card/dc4e2134-f0c2-49aa-9ea3-ebf83af1445c> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/dc4e2134-f0c2-49aa-9ea3-ebf83af1445c/face/0>.
 <https://w3id.org/smtg/id/oracle-card/dc4e2134-f0c2-49aa-9ea3-ebf83af1445c/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/dc4e2134-f0c2-49aa-9ea3-ebf83af1445c>;
     rdfs:label "Spirit";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/dc4e2134-f0c2-49aa-9ea3-ebf83af1445c> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/dc4e2134-f0c2-49aa-9ea3-ebf83af1445c/face/0>.
+<https://w3id.org/smtg/id/oracle-card/dc4e2134-f0c2-49aa-9ea3-ebf83af1445c/face/0> smtg:faceKeyword <https://w3id.org/smtg/vocab/keyword-ability/flying>;
     smtg:name "Spirit";
     smtg:hasNoManaCost true;
     smtg:typeLine "Token Creature — Spirit";
@@ -282,8 +284,34 @@
 <https://w3id.org/smtg/id/identifier/set-code/tmm2> a smtg:Identifier;
     smtg:identifierValue "tmm2";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/f7aa47c6-c1e2-4de5-9a68-4406d84bd6bb> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/tmm2>.
-<https://w3id.org/smtg/id/printing/0000a54c-a511-4925-92dc-01b937f9afad> smtg:inSet <https://w3id.org/smtg/id/set/f7aa47c6-c1e2-4de5-9a68-4406d84bd6bb>;
+<https://w3id.org/smtg/id/set/f7aa47c6-c1e2-4de5-9a68-4406d84bd6bb> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/tmm2>;
+    smtg:releasedOn "2015-05-22"^^xsd:date;
+    smtg:declaredCardCount "16"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet true;
+    smtg:sourceURL "https://scryfall.com/sets/tmm2"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/f7aa47c6-c1e2-4de5-9a68-4406d84bd6bb/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/mm2.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/f7aa47c6-c1e2-4de5-9a68-4406d84bd6bb> smtg:hasSetIcon <https://w3id.org/smtg/id/set/f7aa47c6-c1e2-4de5-9a68-4406d84bd6bb/icon>.
+<https://w3id.org/smtg/id/set/28cac015-43df-4e88-90d0-95dcdd894834> a smtg:MtgSet;
+    rdfs:label "Modern Masters 2015";
+    smtg:setCode "mm2";
+    smtg:hasSetType <https://w3id.org/smtg/vocab/set-type/masters>.
+<https://w3id.org/smtg/id/identifier/scryfall-set-id/28cac015-43df-4e88-90d0-95dcdd894834> a smtg:Identifier;
+    smtg:identifierValue "28cac015-43df-4e88-90d0-95dcdd894834";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-set-id>.
+<https://w3id.org/smtg/id/set/28cac015-43df-4e88-90d0-95dcdd894834> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-set-id/28cac015-43df-4e88-90d0-95dcdd894834>.
+<https://w3id.org/smtg/id/identifier/set-code/mm2> a smtg:Identifier;
+    smtg:identifierValue "mm2";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
+<https://w3id.org/smtg/id/set/28cac015-43df-4e88-90d0-95dcdd894834> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/mm2>.
+<https://w3id.org/smtg/id/set/f7aa47c6-c1e2-4de5-9a68-4406d84bd6bb> smtg:parentSet <https://w3id.org/smtg/id/set/28cac015-43df-4e88-90d0-95dcdd894834>.
+<https://w3id.org/smtg/id/printing/0000a54c-a511-4925-92dc-01b937f9afad> smtg:inSet <https://w3id.org/smtg/id/set/f7aa47c6-c1e2-4de5-9a68-4406d84bd6bb>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7> a smtg:Identifier;
+    smtg:identifierValue "0aeebaf5-8c7d-4636-9e82-8c27447861f7";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/0000a54c-a511-4925-92dc-01b937f9afad> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "5";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2015-05-22"^^xsd:date;

@@ -1,7 +1,7 @@
 [
   {
     "path": "bracketTag",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Commander bracket classification by Spellbook; time-sensitive claim.",
@@ -9,71 +9,78 @@
   },
   {
     "path": "description",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "mapped",
     "terms": [
       "smtg:stepsDescription"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "easyPrerequisites",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "mapped",
     "terms": [
       "smtg:easyPrerequisites"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "not in fixtures"
   },
   {
     "path": "id",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "mapped",
     "terms": [
       "smtg:ComboVariant",
       "smtg:hasIdentifier"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "identity",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "mapped",
     "terms": [
       "smtg:comboColorIdentity"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "includes",
-    "scope": "printing",
+    "scope": "combo recipe",
     "disposition": "mapped",
     "terms": [],
     "note": "smtg:includesRecipe (one per includes[].id).",
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "mapped by rule (no term annotation)"
   },
   {
     "path": "includes[]",
-    "scope": "printing",
+    "scope": "combo recipe",
     "disposition": "mapped",
     "terms": [],
     "note": "smtg:includesRecipe.",
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "mapped by rule (no term annotation)"
   },
   {
     "path": "includes[].id",
-    "scope": "printing",
+    "scope": "combo recipe",
     "disposition": "mapped",
     "terms": [
       "smtg:ComboRecipe",
       "smtg:includesRecipe"
     ],
     "note": "smtg:includesRecipe.",
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "legalities",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -81,7 +88,7 @@
   },
   {
     "path": "legalities.alchemy",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -89,7 +96,7 @@
   },
   {
     "path": "legalities.brawl",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -97,7 +104,7 @@
   },
   {
     "path": "legalities.commander",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -105,7 +112,7 @@
   },
   {
     "path": "legalities.competitiveBrawl",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -113,7 +120,7 @@
   },
   {
     "path": "legalities.legacy",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -121,7 +128,7 @@
   },
   {
     "path": "legalities.modern",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -129,7 +136,7 @@
   },
   {
     "path": "legalities.oathbreaker",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -137,7 +144,7 @@
   },
   {
     "path": "legalities.pauper",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -145,7 +152,7 @@
   },
   {
     "path": "legalities.pauperCommander",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -153,7 +160,7 @@
   },
   {
     "path": "legalities.pauperCommanderMain",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -161,7 +168,7 @@
   },
   {
     "path": "legalities.pioneer",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -169,7 +176,7 @@
   },
   {
     "path": "legalities.predh",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -177,7 +184,7 @@
   },
   {
     "path": "legalities.premodern",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -185,7 +192,7 @@
   },
   {
     "path": "legalities.standard",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -193,7 +200,7 @@
   },
   {
     "path": "legalities.standardBrawl",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -201,7 +208,7 @@
   },
   {
     "path": "legalities.vintage",
-    "scope": "observation (Oracle card)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Spellbook's computed variant legality; would be a LegalityAssertion about a ComboVariant (claimed by Spellbook). Key names differ from Scryfall's (camelCase).",
@@ -209,34 +216,37 @@
   },
   {
     "path": "manaNeeded",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "mapped",
     "terms": [
       "smtg:manaNeeded"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "manaValueNeeded",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "mapped",
     "terms": [
       "smtg:manaNeeded"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "notablePrerequisites",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "mapped",
     "terms": [
       "smtg:notablePrerequisites"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "notes",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Free-text curator notes; candidate text expression.",
@@ -244,23 +254,25 @@
   },
   {
     "path": "of",
-    "scope": "printing",
+    "scope": "combo recipe",
     "disposition": "mapped",
     "terms": [],
     "note": "smtg:generatedFromRecipe (one per of[].id).",
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "mapped by rule (no term annotation)"
   },
   {
     "path": "of[]",
-    "scope": "printing",
+    "scope": "combo recipe",
     "disposition": "mapped",
     "terms": [],
     "note": "smtg:generatedFromRecipe.",
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "mapped by rule (no term annotation)"
   },
   {
     "path": "of[].id",
-    "scope": "printing",
+    "scope": "combo recipe",
     "disposition": "mapped",
     "terms": [
       "smtg:ComboRecipe",
@@ -268,11 +280,12 @@
       "smtg:hasIdentifier"
     ],
     "note": "smtg:generatedFromRecipe.",
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "popularity",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Usage statistic; candidate ObservedAssociation/RankObservation (claimed by Spellbook).",
@@ -280,7 +293,7 @@
   },
   {
     "path": "prices",
-    "scope": "observation (printing)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Aggregate prices per vendor; PriceObservation about a variant (RQ-PR-2).",
@@ -288,7 +301,7 @@
   },
   {
     "path": "prices.cardkingdom",
-    "scope": "observation (printing)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Aggregate prices per vendor; PriceObservation about a variant (RQ-PR-2).",
@@ -296,7 +309,7 @@
   },
   {
     "path": "prices.cardmarket",
-    "scope": "observation (printing)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Aggregate prices per vendor; PriceObservation about a variant (RQ-PR-2).",
@@ -304,7 +317,7 @@
   },
   {
     "path": "prices.tcgplayer",
-    "scope": "observation (printing)",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Aggregate prices per vendor; PriceObservation about a variant (RQ-PR-2).",
@@ -312,170 +325,189 @@
   },
   {
     "path": "produces",
-    "scope": "printing",
+    "scope": "feature production",
     "disposition": "mapped",
     "terms": [
       "smtg:FeatureProduction"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "produces[]",
-    "scope": "printing",
+    "scope": "feature production",
     "disposition": "mapped",
     "terms": [
       "smtg:FeatureProduction"
     ],
-    "present": 117874
+    "present": 117874,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "produces[].feature",
-    "scope": "printing",
+    "scope": "feature production",
     "disposition": "mapped",
     "terms": [
       "smtg:ComboFeature"
     ],
-    "present": 117874
+    "present": 117874,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "produces[].feature.id",
-    "scope": "printing",
+    "scope": "feature production",
     "disposition": "mapped",
     "terms": [
       "smtg:hasIdentifier"
     ],
-    "present": 117874
+    "present": 117874,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "produces[].feature.name",
-    "scope": "printing",
+    "scope": "feature production",
     "disposition": "mapped",
     "terms": [],
     "note": "rdfs:label of ComboFeature.",
-    "present": 117874
+    "present": 117874,
+    "fixtureCheck": "mapped by rule (no term annotation)"
   },
   {
     "path": "produces[].feature.status",
-    "scope": "printing",
+    "scope": "feature production",
     "disposition": "mapped",
     "terms": [
       "smtg:featureStatusCode"
     ],
-    "present": 117874
+    "present": 117874,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "produces[].feature.uncountable",
-    "scope": "printing",
+    "scope": "feature production",
     "disposition": "mapped",
     "terms": [
       "smtg:featureUncountable"
     ],
-    "present": 117874
+    "present": 117874,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "produces[].quantity",
-    "scope": "printing",
+    "scope": "feature production",
     "disposition": "mapped",
     "terms": [
       "smtg:quantity"
     ],
-    "present": 117874
+    "present": 117874,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "requires",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [
       "smtg:TemplateRequirement"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "requires[]",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [
       "smtg:TemplateRequirement"
     ],
-    "present": 6472
+    "present": 6472,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "requires[].battlefieldCardState",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [],
     "note": "smtg:requiredCardState on TemplateRequirement.",
-    "present": 6472
+    "present": 6472,
+    "fixtureCheck": "not in fixtures"
   },
   {
     "path": "requires[].exileCardState",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [],
     "note": "smtg:requiredCardState.",
-    "present": 6472
+    "present": 6472,
+    "fixtureCheck": "not in fixtures"
   },
   {
     "path": "requires[].graveyardCardState",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [],
     "note": "smtg:requiredCardState.",
-    "present": 6472
+    "present": 6472,
+    "fixtureCheck": "not in fixtures"
   },
   {
     "path": "requires[].libraryCardState",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [],
     "note": "smtg:requiredCardState.",
-    "present": 6472
+    "present": 6472,
+    "fixtureCheck": "not in fixtures"
   },
   {
     "path": "requires[].mustBeCommander",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [],
     "note": "smtg:mustBeCommander.",
-    "present": 6472
+    "present": 6472,
+    "fixtureCheck": "mapped by rule (no term annotation)"
   },
   {
     "path": "requires[].quantity",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [
       "smtg:quantity"
     ],
-    "present": 6472
+    "present": 6472,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "requires[].template",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [
       "smtg:ComboTemplate"
     ],
-    "present": 6472
+    "present": 6472,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "requires[].template.id",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [],
     "note": "Identifier (spellbook-template-id).",
-    "present": 6472
+    "present": 6472,
+    "fixtureCheck": "mapped by rule (no term annotation)"
   },
   {
     "path": "requires[].template.name",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [],
     "note": "rdfs:label of ComboTemplate.",
-    "present": 6472
+    "present": 6472,
+    "fixtureCheck": "mapped by rule (no term annotation)"
   },
   {
     "path": "requires[].template.scryfallApi",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "derived",
     "terms": [],
     "note": "API URL form of scryfallQuery.",
@@ -483,31 +515,34 @@
   },
   {
     "path": "requires[].template.scryfallQuery",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [],
     "note": "smtg:templateQuery.",
-    "present": 6472
+    "present": 6472,
+    "fixtureCheck": "mapped by rule (no term annotation)"
   },
   {
     "path": "requires[].zoneLocations",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [],
     "note": "smtg:startsInZone.",
-    "present": 6472
+    "present": 6472,
+    "fixtureCheck": "mapped by rule (no term annotation)"
   },
   {
     "path": "requires[].zoneLocations[]",
-    "scope": "printing",
+    "scope": "template requirement",
     "disposition": "mapped",
     "terms": [],
     "note": "smtg:startsInZone.",
-    "present": 6472
+    "present": 6472,
+    "fixtureCheck": "mapped by rule (no term annotation)"
   },
   {
     "path": "salt",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Community 'salt' score; a doxastic, aggregated judgement — good DEC example.",
@@ -515,7 +550,7 @@
   },
   {
     "path": "saltVoteCount",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "See salt.",
@@ -523,7 +558,7 @@
   },
   {
     "path": "spoiler",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Variant involves unreleased cards.",
@@ -531,44 +566,48 @@
   },
   {
     "path": "status",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "mapped",
     "terms": [
       "smtg:ComboVariant",
       "smtg:spellbookStatus"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "uses",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "mapped",
     "terms": [
       "smtg:ComboCardUse"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "uses[]",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "mapped",
     "terms": [
       "smtg:ComboCardUse"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "uses[].battlefieldCardState",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "mapped",
     "terms": [
       "smtg:requiredCardState"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "not in fixtures"
   },
   {
     "path": "uses[].card",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "derived",
     "terms": [],
     "note": "Embedded card summary; only oracleId is used (→ smtg:usesCard). Other subfields are denormalised Scryfall data.",
@@ -576,7 +615,7 @@
   },
   {
     "path": "uses[].card.faces",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "derived",
     "terms": [],
     "note": "Face count of the card (recoverable from the Oracle card).",
@@ -584,17 +623,18 @@
   },
   {
     "path": "uses[].card.id",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "mapped",
     "terms": [
       "smtg:hasIdentifier"
     ],
     "note": "Embedded card summary; only oracleId is used (→ smtg:usesCard). Other subfields are denormalised Scryfall data.",
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "uses[].card.imageUriBackArtCrop",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "excluded",
     "terms": [],
     "note": "See imageUriFrontPng.",
@@ -602,7 +642,7 @@
   },
   {
     "path": "uses[].card.imageUriBackLarge",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "excluded",
     "terms": [],
     "note": "See imageUriFrontPng.",
@@ -610,7 +650,7 @@
   },
   {
     "path": "uses[].card.imageUriBackNormal",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "excluded",
     "terms": [],
     "note": "See imageUriFrontPng.",
@@ -618,7 +658,7 @@
   },
   {
     "path": "uses[].card.imageUriBackPng",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "excluded",
     "terms": [],
     "note": "See imageUriFrontPng.",
@@ -626,7 +666,7 @@
   },
   {
     "path": "uses[].card.imageUriBackSmall",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "excluded",
     "terms": [],
     "note": "See imageUriFrontPng.",
@@ -634,7 +674,7 @@
   },
   {
     "path": "uses[].card.imageUriFrontArtCrop",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "excluded",
     "terms": [],
     "note": "See imageUriFrontPng.",
@@ -642,7 +682,7 @@
   },
   {
     "path": "uses[].card.imageUriFrontLarge",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "excluded",
     "terms": [],
     "note": "See imageUriFrontPng.",
@@ -650,7 +690,7 @@
   },
   {
     "path": "uses[].card.imageUriFrontNormal",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "excluded",
     "terms": [],
     "note": "See imageUriFrontPng.",
@@ -658,7 +698,7 @@
   },
   {
     "path": "uses[].card.imageUriFrontPng",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "excluded",
     "terms": [],
     "note": "Scryfall image URLs duplicated by Spellbook; images come from Scryfall directly.",
@@ -666,7 +706,7 @@
   },
   {
     "path": "uses[].card.imageUriFrontSmall",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "excluded",
     "terms": [],
     "note": "See imageUriFrontPng.",
@@ -674,7 +714,7 @@
   },
   {
     "path": "uses[].card.layoutRotationFront",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "excluded",
     "terms": [],
     "note": "Display hint for image rotation.",
@@ -682,7 +722,7 @@
   },
   {
     "path": "uses[].card.name",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "derived",
     "terms": [],
     "note": "Denormalised copy of the Oracle name (recoverable via oracleId).",
@@ -690,17 +730,18 @@
   },
   {
     "path": "uses[].card.oracleId",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "mapped",
     "terms": [
       "smtg:usesCard"
     ],
     "note": "Embedded card summary; only oracleId is used (→ smtg:usesCard). Other subfields are denormalised Scryfall data.",
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "uses[].card.spoiler",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "deferred",
     "terms": [],
     "note": "Spoiler flag (unreleased card); to be mapped together with variant spoiler status.",
@@ -708,7 +749,7 @@
   },
   {
     "path": "uses[].card.typeLine",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "derived",
     "terms": [],
     "note": "Denormalised copy of the Oracle type line.",
@@ -716,79 +757,89 @@
   },
   {
     "path": "uses[].exileCardState",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "mapped",
     "terms": [
       "smtg:requiredCardState"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "not in fixtures"
   },
   {
     "path": "uses[].graveyardCardState",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "mapped",
     "terms": [
       "smtg:requiredCardState"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "not in fixtures"
   },
   {
     "path": "uses[].libraryCardState",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "mapped",
     "terms": [
       "smtg:requiredCardState"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "not in fixtures"
   },
   {
     "path": "uses[].mustBeCommander",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "mapped",
     "terms": [
       "smtg:mustBeCommander"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "uses[].quantity",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "mapped",
     "terms": [
       "smtg:quantity"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "uses[].usedFace",
-    "scope": "printing",
-    "disposition": "deferred",
-    "terms": [],
+    "scope": "combo card use",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:usesFace"
+    ],
     "note": "Which face of a multi-faced card the combo uses; to be linked to CardFace.",
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "uses[].zoneLocations",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "mapped",
     "terms": [
       "smtg:startsInZone"
     ],
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "uses[].zoneLocations[]",
-    "scope": "printing",
+    "scope": "combo card use",
     "disposition": "mapped",
     "terms": [
       "smtg:startsInZone"
     ],
     "note": "smtg:startsInZone.",
-    "present": 117875
+    "present": 117875,
+    "fixtureCheck": "emitted"
   },
   {
     "path": "variantCount",
-    "scope": "printing",
+    "scope": "combo variant",
     "disposition": "deferred",
     "terms": [],
     "note": "Number of variants of the recipe; derived statistic.",

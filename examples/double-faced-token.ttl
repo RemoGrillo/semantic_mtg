@@ -31,8 +31,9 @@
 <https://w3id.org/smtg/id/oracle-card/96247b92-0c7a-4410-85a4-598916541b1d> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/96247b92-0c7a-4410-85a4-598916541b1d/face/0>.
 <https://w3id.org/smtg/id/oracle-card/96247b92-0c7a-4410-85a4-598916541b1d/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/96247b92-0c7a-4410-85a4-598916541b1d>;
     rdfs:label "Punchcard";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
-    smtg:name "Punchcard";
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/96247b92-0c7a-4410-85a4-598916541b1d> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/96247b92-0c7a-4410-85a4-598916541b1d/face/0>.
+<https://w3id.org/smtg/id/oracle-card/96247b92-0c7a-4410-85a4-598916541b1d/face/0> smtg:name "Punchcard";
     smtg:hasNoManaCost true;
     smtg:typeLine "Card";
     smtg:hasColors <https://w3id.org/smtg/vocab/color-combination/C>.
@@ -271,7 +272,37 @@
 <https://w3id.org/smtg/id/identifier/set-code/teoe> a smtg:Identifier;
     smtg:identifierValue "teoe";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/8c318768-896e-4388-9211-48462b98245e> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/teoe>.
+<https://w3id.org/smtg/id/set/8c318768-896e-4388-9211-48462b98245e> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/teoe>;
+    smtg:releasedOn "2025-08-01"^^xsd:date;
+    smtg:declaredCardCount "12"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:sourceURL "https://scryfall.com/sets/teoe"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/teoe> a smtg:Identifier;
+    smtg:identifierValue "teoe";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/8c318768-896e-4388-9211-48462b98245e> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/teoe>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/teoe> a smtg:Identifier;
+    smtg:identifierValue "teoe";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/8c318768-896e-4388-9211-48462b98245e> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/teoe>.
+<https://w3id.org/smtg/id/set/8c318768-896e-4388-9211-48462b98245e/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/eoe.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/8c318768-896e-4388-9211-48462b98245e> smtg:hasSetIcon <https://w3id.org/smtg/id/set/8c318768-896e-4388-9211-48462b98245e/icon>.
+<https://w3id.org/smtg/id/set/452951cf-378b-4472-b7fe-572fe2af2ac0> a smtg:MtgSet;
+    rdfs:label "Edge of Eternities";
+    smtg:setCode "eoe";
+    smtg:hasSetType <https://w3id.org/smtg/vocab/set-type/expansion>.
+<https://w3id.org/smtg/id/identifier/scryfall-set-id/452951cf-378b-4472-b7fe-572fe2af2ac0> a smtg:Identifier;
+    smtg:identifierValue "452951cf-378b-4472-b7fe-572fe2af2ac0";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-set-id>.
+<https://w3id.org/smtg/id/set/452951cf-378b-4472-b7fe-572fe2af2ac0> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-set-id/452951cf-378b-4472-b7fe-572fe2af2ac0>.
+<https://w3id.org/smtg/id/identifier/set-code/eoe> a smtg:Identifier;
+    smtg:identifierValue "eoe";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
+<https://w3id.org/smtg/id/set/452951cf-378b-4472-b7fe-572fe2af2ac0> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/eoe>.
+<https://w3id.org/smtg/id/set/8c318768-896e-4388-9211-48462b98245e> smtg:parentSet <https://w3id.org/smtg/id/set/452951cf-378b-4472-b7fe-572fe2af2ac0>.
 <https://w3id.org/smtg/id/printing/006f53ab-e200-4242-9e8f-494f8d574826> smtg:inSet <https://w3id.org/smtg/id/set/8c318768-896e-4388-9211-48462b98245e>;
     smtg:collectorNumber "12";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;

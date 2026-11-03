@@ -1,0 +1,14 @@
+# id: CQ-CB-03
+# title: Combos that use a specific face
+# question: Which documented combo variants use a specific face of a multi-faced card?
+# kind: SPARQL
+# expects: nonempty
+# modules: combos
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?variant ?card ?face WHERE {
+  ?v smtg:hasCardUse ?u . ?u smtg:usesFace ?f .
+  ?f smtg:name ?face ; smtg:faceOf/smtg:name ?card . BIND(STR(?v) AS ?variant)
+}

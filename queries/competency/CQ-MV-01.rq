@@ -1,0 +1,13 @@
+# id: CQ-MV-01
+# title: Converted mana cost is mana value
+# question: Which property should someone use when looking for "converted mana cost" (Scryfall: cmc)?
+# kind: SPARQL
+# expects: nonempty
+# modules: cards
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT DISTINCT ?property ?label WHERE {
+  ?property skos:altLabel ?alias ; rdfs:label ?label . FILTER(LCASE(STR(?alias)) IN ("converted mana cost", "cmc"))
+}

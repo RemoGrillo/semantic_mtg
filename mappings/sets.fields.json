@@ -1,0 +1,208 @@
+[
+  {
+    "path": "arena_code",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier"
+    ],
+    "present": 230,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "block",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:blockCode"
+    ],
+    "present": 418,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "block_code",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:blockCode"
+    ],
+    "present": 418,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "card_count",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:declaredCardCount"
+    ],
+    "present": 1066,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "code",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier",
+      "smtg:setCode"
+    ],
+    "present": 1066,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "digital",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:digitalSet"
+    ],
+    "present": 1066,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "foil_only",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:foilOnlySet"
+    ],
+    "present": 1066,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "icon_svg_uri",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasSetIcon"
+    ],
+    "present": 1066,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "id",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier"
+    ],
+    "present": 1066,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "mtgo_code",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier"
+    ],
+    "present": 230,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "name",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [],
+    "note": "rdfs:label of the MtgSet.",
+    "present": 1066,
+    "fixtureCheck": "mapped by rule (no term annotation)"
+  },
+  {
+    "path": "nonfoil_only",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:nonfoilOnlySet"
+    ],
+    "present": 1066,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "object",
+    "scope": "set",
+    "disposition": "excluded",
+    "terms": [],
+    "note": "JSON object-type discriminator (\"set\").",
+    "present": 1066
+  },
+  {
+    "path": "parent_set_code",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:parentSet"
+    ],
+    "present": 563,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "printed_size",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:printedSize"
+    ],
+    "present": 169,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "released_at",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:releasedOn"
+    ],
+    "present": 1066,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "scryfall_uri",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:sourceURL"
+    ],
+    "present": 1066,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "search_uri",
+    "scope": "set",
+    "disposition": "derived",
+    "terms": [],
+    "note": "API search URL for the set's cards; recoverable from the set code.",
+    "present": 1066
+  },
+  {
+    "path": "set_type",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasSetType"
+    ],
+    "present": 1066,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "tcgplayer_id",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:hasIdentifier"
+    ],
+    "present": 377,
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "uri",
+    "scope": "set",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:sourceURL"
+    ],
+    "present": 1066,
+    "fixtureCheck": "emitted"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "path": "object",
+    "scope": "ruling (claim about an Oracle card)",
+    "disposition": "excluded",
+    "terms": [],
+    "note": "JSON object-type discriminator (\"ruling\")."
+  },
+  {
+    "path": "oracle_id",
+    "scope": "ruling (claim about an Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:rulingFor"
+    ],
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "source",
+    "scope": "ruling (claim about an Oracle card)",
+    "disposition": "mapped",
+    "terms": [],
+    "note": "wotc → claimedBy Wizards, epistemic status authoritative-report; scryfall → claimedBy Scryfall, source-editorial.",
+    "fixtureCheck": "mapped by rule (no term annotation)"
+  },
+  {
+    "path": "published_at",
+    "scope": "ruling (claim about an Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:publishedOn"
+    ],
+    "fixtureCheck": "emitted"
+  },
+  {
+    "path": "comment",
+    "scope": "ruling (claim about an Oracle card)",
+    "disposition": "mapped",
+    "terms": [
+      "smtg:rulingText"
+    ],
+    "fixtureCheck": "emitted"
+  }
+]

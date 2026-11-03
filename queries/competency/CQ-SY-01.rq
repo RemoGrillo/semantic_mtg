@@ -1,0 +1,14 @@
+# id: CQ-SY-01
+# title: Hybrid and Phyrexian mana in costs
+# question: Which faces in the examples have a hybrid or Phyrexian mana symbol in their cost?
+# kind: SPARQL
+# expects: any
+# modules: cards, taxonomies
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?face ?symbol ?kind WHERE {
+  ?f smtg:hasManaCost/smtg:hasSymbolOccurrence/smtg:occurrenceOf ?s ; smtg:name ?face . ?s skos:notation ?symbol .
+  { ?s smtg:isHybrid true . BIND("hybrid" AS ?kind) } UNION { ?s smtg:isPhyrexian true . BIND("Phyrexian" AS ?kind) }
+}

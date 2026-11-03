@@ -32,7 +32,9 @@
 <https://w3id.org/smtg/id/oracle-card/2f5f46ed-b8aa-4864-bd20-17281d4632bf> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/2f5f46ed-b8aa-4864-bd20-17281d4632bf/face/0>.
 <https://w3id.org/smtg/id/oracle-card/2f5f46ed-b8aa-4864-bd20-17281d4632bf/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/2f5f46ed-b8aa-4864-bd20-17281d4632bf>;
     rdfs:label "Abigale, Poet Laureate";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/2f5f46ed-b8aa-4864-bd20-17281d4632bf> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/2f5f46ed-b8aa-4864-bd20-17281d4632bf/face/0>.
+<https://w3id.org/smtg/id/oracle-card/2f5f46ed-b8aa-4864-bd20-17281d4632bf/face/0> smtg:faceKeyword <https://w3id.org/smtg/vocab/keyword-ability/flying>, <https://w3id.org/smtg/vocab/keyword-action/prepared>;
     smtg:name "Abigale, Poet Laureate".
 <https://w3id.org/smtg/id/oracle-card/2f5f46ed-b8aa-4864-bd20-17281d4632bf/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/2f5f46ed-b8aa-4864-bd20-17281d4632bf/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/2f5f46ed-b8aa-4864-bd20-17281d4632bf/face/0/mana-cost>.
@@ -335,8 +337,33 @@
 <https://w3id.org/smtg/id/identifier/set-code/sos> a smtg:Identifier;
     smtg:identifierValue "sos";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/e487c9ce-5e76-4756-bcd0-e4b7db5c38a3> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/sos>.
-<https://w3id.org/smtg/id/printing/77285d12-e658-4eb3-ba13-ff202afab9c8> smtg:inSet <https://w3id.org/smtg/id/set/e487c9ce-5e76-4756-bcd0-e4b7db5c38a3>;
+<https://w3id.org/smtg/id/set/e487c9ce-5e76-4756-bcd0-e4b7db5c38a3> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/sos>;
+    smtg:releasedOn "2026-04-24"^^xsd:date;
+    smtg:declaredCardCount "368"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:sourceURL "https://scryfall.com/sets/sos"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/sos> a smtg:Identifier;
+    smtg:identifierValue "sos";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/e487c9ce-5e76-4756-bcd0-e4b7db5c38a3> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/sos>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/sos> a smtg:Identifier;
+    smtg:identifierValue "sos";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/e487c9ce-5e76-4756-bcd0-e4b7db5c38a3> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/sos>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/24601> a smtg:Identifier;
+    smtg:identifierValue "24601";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/e487c9ce-5e76-4756-bcd0-e4b7db5c38a3> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/24601>.
+<https://w3id.org/smtg/id/set/e487c9ce-5e76-4756-bcd0-e4b7db5c38a3/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/sos.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/e487c9ce-5e76-4756-bcd0-e4b7db5c38a3> smtg:hasSetIcon <https://w3id.org/smtg/id/set/e487c9ce-5e76-4756-bcd0-e4b7db5c38a3/icon>.
+<https://w3id.org/smtg/id/printing/77285d12-e658-4eb3-ba13-ff202afab9c8> smtg:inSet <https://w3id.org/smtg/id/set/e487c9ce-5e76-4756-bcd0-e4b7db5c38a3>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7> a smtg:Identifier;
+    smtg:identifierValue "0aeebaf5-8c7d-4636-9e82-8c27447861f7";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/77285d12-e658-4eb3-ba13-ff202afab9c8> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "170";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2026-04-24"^^xsd:date;

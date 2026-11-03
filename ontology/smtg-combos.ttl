@@ -133,6 +133,14 @@ smtg:usesCard a owl:ObjectProperty , owl:FunctionalProperty ;
   smtg:sourceField "spellbook:variants[].uses[].card.oracleId" ;
   rdfs:isDefinedBy smtgm:combos ; vs:term_status "stable-draft" .
 
+smtg:usesFace a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:label "uses face"@en ;
+  skos:definition "The specific face of a multi-faced card that the combo uses (e.g. the flipped half of a flip card)."@en ;
+  skos:scopeNote "Spellbook gives usedFace 1-based (observed values 1 and 2, only on two-faced cards); the mapper converts it to the 0-based smtg:faceIndex."@en ;
+  rdfs:domain smtg:ComboCardUse ; rdfs:range smtg:CardFace ;
+  smtg:sourceField "spellbook:variants[].uses[].usedFace" ;
+  rdfs:isDefinedBy smtgm:combos ; vs:term_status "unstable" .
+
 smtg:quantity a owl:DatatypeProperty , owl:FunctionalProperty ;
   rdfs:label "quantity"@en ;
   skos:definition "How many copies or instances are required or produced."@en ;

@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-11-03T15:25:00.884Z",
+  "graph": "https://w3id.org/smtg/graph/inferred/rules",
+  "assertedTriples": 61030,
+  "inferredTriples": 144,
+  "iterations": 2,
+  "rules": [
+    {
+      "file": "rules/R-INSTANT-SORCERY-FACE.rq",
+      "id": "R-INSTANT-SORCERY-FACE",
+      "title": "Faces with the instant or sorcery card type",
+      "implements": "smtg:InstantOrSorceryFace owl:equivalentClass ( smtg:CardFace and (smtg:hasCardType some smtg:InstantOrSorceryCardType) )",
+      "order": 1,
+      "count": 14
+    },
+    {
+      "file": "rules/R-LAYOUT-CLASS.rq",
+      "id": "R-LAYOUT-CLASS",
+      "title": "Layout-defined classes (ModalDoubleFacedCard, AdventurerCard, …)",
+      "implements": "every smtg:X owl:equivalentClass ( smtg:OracleCard and (smtg:hasLayout value L) ) recorded as L smtg:definedClass X",
+      "order": 1,
+      "count": 14
+    },
+    {
+      "file": "rules/R-PERMANENT-FACE.rq",
+      "id": "R-PERMANENT-FACE",
+      "title": "Faces with a permanent card type",
+      "implements": "smtg:PermanentFace owl:equivalentClass ( smtg:CardFace and (smtg:hasCardType some smtg:PermanentCardType) )",
+      "order": 1,
+      "count": 36
+    },
+    {
+      "file": "rules/R-SYMBOL-CLASS.rq",
+      "id": "R-SYMBOL-CLASS",
+      "title": "Hybrid and Phyrexian mana symbols",
+      "implements": "smtg:HybridManaSymbol ≡ ManaSymbol and (isHybrid value true); smtg:PhyrexianManaSymbol ≡ ManaSymbol and (isPhyrexian value true)",
+      "order": 1,
+      "count": 47
+    },
+    {
+      "file": "rules/R-TOKEN.rq",
+      "id": "R-TOKEN",
+      "title": "Tokens a card can create (projection of all_parts)",
+      "implements": "smtg:createsToken — projection of smtg:PartRelationship with smtg:partRole part-component/token",
+      "order": 1,
+      "count": 1
+    },
+    {
+      "file": "rules/R-MANA-VIA-TOKEN.rq",
+      "id": "R-MANA-VIA-TOKEN",
+      "title": "Mana a card can produce through a token it creates",
+      "implements": "smtg:producesManaViaToken owl:propertyChainAxiom ( smtg:createsToken smtg:producesManaSymbol )",
+      "order": 2,
+      "count": 1
+    },
+    {
+      "file": "rules/R-PERMANENT-CARD.rq",
+      "id": "R-PERMANENT-CARD",
+      "title": "Permanent cards (CR 110.4a): primary face is a permanent face, or a split card with a permanent half",
+      "implements": "smtg:PermanentCard owl:equivalentClass ( smtg:OracleCard and ((smtg:primaryFace some smtg:PermanentFace) or (smtg:hasLayout value layout/split and smtg:hasFace some smtg:PermanentFace)) )",
+      "order": 2,
+      "count": 31
+    }
+  ]
+}

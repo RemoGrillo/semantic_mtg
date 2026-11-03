@@ -19,10 +19,11 @@
     "reason": "node tools/reason/reason.mjs",
     "docs:build": "node tools/docs/build.mjs",
     "docs:serve": "node tools/docs/serve.mjs",
-    "build": "npm run vocab && npm run map:fixtures && npm run map:coverage && npm run validate && npm run cq && npm run docs:build",
-    "test": "node --test tools/",
+    "build": "npm run vocab && npm run map:fixtures && npm run map:coverage && npm run validate && npm run infer && npm run cq && npm run docs:build",
+    "test": "node --test \"tools/**/*.test.mjs\"",
     "map:coverage": "node tools/map/build-mapping.mjs",
-    "build:docs-only": "npm run map:coverage && npm run validate && npm run cq && npm run docs:build"
+    "build:docs-only": "npm run map:coverage && npm run validate && npm run infer && npm run cq && npm run docs:build",
+    "infer": "node tools/reason/materialize.mjs"
   },
   "dependencies": {
     "@fontsource/alegreya": "5.3.0",

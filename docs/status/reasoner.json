@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T14:25:00.706Z",
+  "generatedAt": "2026-11-03T15:22:35.784Z",
   "reasoner": "hermit",
   "steps": [
     {
@@ -30,10 +30,10 @@
       "name": "ROBOT report generated",
       "ok": true,
       "byRule": {
-        "ERROR duplicate_label": 127,
-        "ERROR missing_label": 48,
-        "WARN missing_definition": 332,
-        "INFO missing_superclass": 25
+        "ERROR duplicate_label": 129,
+        "ERROR missing_label": 52,
+        "WARN missing_definition": 360,
+        "INFO missing_superclass": 30
       }
     }
   ],
@@ -45,24 +45,24 @@
       "file": "fixtures/invalid-owl/adventure-and-mdfc.ttl",
       "inconsistentAsExpected": true,
       "log": [
-        "2026-11-03 15:25:38,431 ERROR org.obolibrary.robot.ReasonerHelper - The ontology is inconsistent. TIP: use a tool like Protege to find explanations"
+        "2026-11-03 16:23:49,903 ERROR org.obolibrary.robot.ReasonerHelper - The ontology is inconsistent. TIP: use a tool like Protege to find explanations"
       ]
     },
     {
       "file": "fixtures/invalid-owl/printing-is-oracle-card.ttl",
       "inconsistentAsExpected": true,
       "log": [
-        "2026-11-03 15:25:42,457 ERROR org.obolibrary.robot.ReasonerHelper - The ontology is inconsistent. TIP: use a tool like Protege to find explanations"
+        "2026-11-03 16:23:54,987 ERROR org.obolibrary.robot.ReasonerHelper - The ontology is inconsistent. TIP: use a tool like Protege to find explanations"
       ]
     }
   ],
   "report": {
-    "rows": 532,
+    "rows": 571,
     "byRule": {
-      "ERROR duplicate_label": 127,
-      "ERROR missing_label": 48,
-      "WARN missing_definition": 332,
-      "INFO missing_superclass": 25
+      "ERROR duplicate_label": 129,
+      "ERROR missing_label": 52,
+      "WARN missing_definition": 360,
+      "INFO missing_superclass": 30
     },
     "sample": [
       [

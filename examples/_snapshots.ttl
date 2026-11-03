@@ -42,6 +42,13 @@
     smtg:retrievedAt "2026-11-03T10:47:10.758Z"^^xsd:dateTime;
     smtg:downloadURL "https://data.scryfall.io/art-tags/art-tags-20261103100113.jsonl.gz"^^xsd:anyURI;
     smtg:sourceUpdatedAt "2026-11-03T10:01:13.387Z"^^xsd:dateTime.
+<https://w3id.org/smtg/id/snapshot/scryfall-rulings-91f484351c00> a smtg:SourceSnapshot;
+    smtg:snapshotOf <https://w3id.org/smtg/id/dataset/scryfall-rulings>;
+    rdfs:label "scryfall:rulings snapshot 2026-11-03T10:00:35.047+00:00";
+    smtg:sha256 "91f484351c0051c4da640ee0692c132256b0835c626c6d9c5ed74dd448fe25c2";
+    smtg:retrievedAt "2026-11-03T15:12:19.232Z"^^xsd:dateTime;
+    smtg:downloadURL "https://data.scryfall.io/rulings/rulings-20261103100035.jsonl.gz"^^xsd:anyURI;
+    smtg:sourceUpdatedAt "2026-11-03T10:00:35.047Z"^^xsd:dateTime.
 <https://w3id.org/smtg/id/snapshot/spellbook-variants-86f908606cf2> a smtg:SourceSnapshot;
     smtg:snapshotOf <https://w3id.org/smtg/id/dataset/spellbook-variants>;
     rdfs:label "spellbook:variants snapshot Tue, 03 Nov 2026 10:39:14 GMT";

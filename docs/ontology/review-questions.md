@@ -54,6 +54,21 @@ what Scryfall's JSON does).
 *Draft:* derived from the layout code (token, emblem, planar …), otherwise "traditional card".
 Dungeons, attractions, stickers and contraptions need a better rule (type line, set type).
 
+### RQ-CF-5 — Primary face policy
+*Draft:* `smtg:primaryFace` names the face whose characteristics a card has outside the
+battlefield and stack. It is face 0 for double-faced, adventure, flip and preparation cards
+(CR 712.8a, 715.4, 710.1, 722.2) and absent for split cards (CR 709.4). The policy is written on
+each layout concept. *Questions:* meld results never exist outside the battlefield, so should they
+have no primary face? Should a face-level "castable as" relation replace the single primary face
+for MDFCs, whose back face can also be played?
+
+### RQ-INF-1 — Rule materialisation vs OWL reasoning
+*Draft:* selected OWL axioms (layout classes, permanent faces and cards, the mana-via-token
+chain, symbol classes) are materialised by SPARQL rules (`rules/*.rq`) into a separate inferred
+graph. HermiT checks the axioms but is not used for ABox materialisation, which would not scale to
+the full corpus. *Question:* should CI also check, on the fixtures, that every rule-inferred
+triple is entailed by HermiT (a soundness test of the rules against the axioms)?
+
 ### RQ-CF-4 — Meld and all_parts
 *Draft:* `PartRelationship` (qualified) plus the projection `meldsInto`. Scryfall `all_parts` points
 to *printings*; the prototype resolves them to Oracle cards only when the target printing is

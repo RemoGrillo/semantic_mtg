@@ -1,0 +1,15 @@
+# id: CQ-TY-03
+# title: Historic faces (type group, CR 700.6)
+# question: Which faces are historic (legendary, artifact or Saga), and through which member of the group?
+# kind: SPARQL
+# expects: nonempty
+# modules: taxonomies
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT DISTINCT ?face ?via WHERE {
+  <https://w3id.org/smtg/vocab/type-group/historic> skos:member ?m .
+  ?f smtg:hasSupertype|smtg:hasCardType|smtg:hasSubtype ?m ; smtg:name ?face .
+  ?m skos:prefLabel ?via .
+} ORDER BY ?face

@@ -31,8 +31,9 @@
 <https://w3id.org/smtg/id/oracle-card/17549447-6f19-4d87-8af1-58b6bb387003> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/17549447-6f19-4d87-8af1-58b6bb387003/face/0>.
 <https://w3id.org/smtg/id/oracle-card/17549447-6f19-4d87-8af1-58b6bb387003/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/17549447-6f19-4d87-8af1-58b6bb387003>;
     rdfs:label "Elspeth, Knight-Errant Emblem";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
-    smtg:name "Elspeth, Knight-Errant Emblem";
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/17549447-6f19-4d87-8af1-58b6bb387003> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/17549447-6f19-4d87-8af1-58b6bb387003/face/0>.
+<https://w3id.org/smtg/id/oracle-card/17549447-6f19-4d87-8af1-58b6bb387003/face/0> smtg:name "Elspeth, Knight-Errant Emblem";
     smtg:hasNoManaCost true;
     smtg:typeLine "Emblem — Elspeth";
     smtg:hasCardType <https://w3id.org/smtg/vocab/card-type/emblem>;
@@ -276,8 +277,34 @@
 <https://w3id.org/smtg/id/identifier/set-code/tmma> a smtg:Identifier;
     smtg:identifierValue "tmma";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/e03160f8-6045-4613-9869-f5f4fa12604d> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/tmma>.
-<https://w3id.org/smtg/id/printing/014c0557-11b8-49da-8486-0dd14b919338> smtg:inSet <https://w3id.org/smtg/id/set/e03160f8-6045-4613-9869-f5f4fa12604d>;
+<https://w3id.org/smtg/id/set/e03160f8-6045-4613-9869-f5f4fa12604d> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/tmma>;
+    smtg:releasedOn "2013-06-07"^^xsd:date;
+    smtg:declaredCardCount "16"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet true;
+    smtg:sourceURL "https://scryfall.com/sets/tmma"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/e03160f8-6045-4613-9869-f5f4fa12604d/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/mma.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/e03160f8-6045-4613-9869-f5f4fa12604d> smtg:hasSetIcon <https://w3id.org/smtg/id/set/e03160f8-6045-4613-9869-f5f4fa12604d/icon>.
+<https://w3id.org/smtg/id/set/0b7020f2-336d-4706-9ce6-f6710b9ebd5c> a smtg:MtgSet;
+    rdfs:label "Modern Masters";
+    smtg:setCode "mma";
+    smtg:hasSetType <https://w3id.org/smtg/vocab/set-type/masters>.
+<https://w3id.org/smtg/id/identifier/scryfall-set-id/0b7020f2-336d-4706-9ce6-f6710b9ebd5c> a smtg:Identifier;
+    smtg:identifierValue "0b7020f2-336d-4706-9ce6-f6710b9ebd5c";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-set-id>.
+<https://w3id.org/smtg/id/set/0b7020f2-336d-4706-9ce6-f6710b9ebd5c> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-set-id/0b7020f2-336d-4706-9ce6-f6710b9ebd5c>.
+<https://w3id.org/smtg/id/identifier/set-code/mma> a smtg:Identifier;
+    smtg:identifierValue "mma";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
+<https://w3id.org/smtg/id/set/0b7020f2-336d-4706-9ce6-f6710b9ebd5c> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/mma>.
+<https://w3id.org/smtg/id/set/e03160f8-6045-4613-9869-f5f4fa12604d> smtg:parentSet <https://w3id.org/smtg/id/set/0b7020f2-336d-4706-9ce6-f6710b9ebd5c>.
+<https://w3id.org/smtg/id/printing/014c0557-11b8-49da-8486-0dd14b919338> smtg:inSet <https://w3id.org/smtg/id/set/e03160f8-6045-4613-9869-f5f4fa12604d>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7> a smtg:Identifier;
+    smtg:identifierValue "0aeebaf5-8c7d-4636-9e82-8c27447861f7";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/014c0557-11b8-49da-8486-0dd14b919338> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "16";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2013-06-07"^^xsd:date;

@@ -31,8 +31,9 @@
 <https://w3id.org/smtg/id/oracle-card/61fbaaf2-4286-4e9a-b9cb-aa31262b596a> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/61fbaaf2-4286-4e9a-b9cb-aa31262b596a/face/0>.
 <https://w3id.org/smtg/id/oracle-card/61fbaaf2-4286-4e9a-b9cb-aa31262b596a/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/61fbaaf2-4286-4e9a-b9cb-aa31262b596a>;
     rdfs:label "Jinnie Fay, Jetmir's Second";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
-    smtg:name "Jinnie Fay, Jetmir's Second".
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/61fbaaf2-4286-4e9a-b9cb-aa31262b596a> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/61fbaaf2-4286-4e9a-b9cb-aa31262b596a/face/0>.
+<https://w3id.org/smtg/id/oracle-card/61fbaaf2-4286-4e9a-b9cb-aa31262b596a/face/0> smtg:name "Jinnie Fay, Jetmir's Second".
 <https://w3id.org/smtg/id/oracle-card/61fbaaf2-4286-4e9a-b9cb-aa31262b596a/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/61fbaaf2-4286-4e9a-b9cb-aa31262b596a/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/61fbaaf2-4286-4e9a-b9cb-aa31262b596a/face/0/mana-cost>.
 <https://w3id.org/smtg/id/oracle-card/61fbaaf2-4286-4e9a-b9cb-aa31262b596a/face/0/mana-cost> smtg:manaCostNotation "{R/G}{G}{G/W}".
@@ -93,7 +94,20 @@
 <https://w3id.org/smtg/id/identifier/set-code/sld> a smtg:Identifier;
     smtg:identifierValue "sld";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/4d92a8a7-ccb0-437d-abdc-9d70fc5ed672> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/sld>.
+<https://w3id.org/smtg/id/set/4d92a8a7-ccb0-437d-abdc-9d70fc5ed672> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/sld>;
+    smtg:releasedOn "2019-12-02"^^xsd:date;
+    smtg:declaredCardCount "2866"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:sourceURL "https://scryfall.com/sets/sld"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/2576> a smtg:Identifier;
+    smtg:identifierValue "2576";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/4d92a8a7-ccb0-437d-abdc-9d70fc5ed672> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/2576>.
+<https://w3id.org/smtg/id/set/4d92a8a7-ccb0-437d-abdc-9d70fc5ed672/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/star.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/4d92a8a7-ccb0-437d-abdc-9d70fc5ed672> smtg:hasSetIcon <https://w3id.org/smtg/id/set/4d92a8a7-ccb0-437d-abdc-9d70fc5ed672/icon>.
 <https://w3id.org/smtg/id/printing/018830b2-dff9-45f3-9cc2-dc5b2eec0e54> smtg:inSet <https://w3id.org/smtg/id/set/4d92a8a7-ccb0-437d-abdc-9d70fc5ed672>;
     smtg:collectorNumber "1556";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
@@ -291,8 +305,9 @@
 <https://w3id.org/smtg/id/oracle-card/b0b6be0c-41cf-4757-9f0e-87227b6ba6b3> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/b0b6be0c-41cf-4757-9f0e-87227b6ba6b3/face/0>.
 <https://w3id.org/smtg/id/oracle-card/b0b6be0c-41cf-4757-9f0e-87227b6ba6b3/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/b0b6be0c-41cf-4757-9f0e-87227b6ba6b3>;
     rdfs:label "Ghalta, Primal Hunger";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
-    smtg:name "Ghalta, Primal Hunger".
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/b0b6be0c-41cf-4757-9f0e-87227b6ba6b3> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/b0b6be0c-41cf-4757-9f0e-87227b6ba6b3/face/0>.
+<https://w3id.org/smtg/id/oracle-card/b0b6be0c-41cf-4757-9f0e-87227b6ba6b3/face/0> smtg:name "Ghalta, Primal Hunger".
 <https://w3id.org/smtg/id/oracle-card/b0b6be0c-41cf-4757-9f0e-87227b6ba6b3/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/b0b6be0c-41cf-4757-9f0e-87227b6ba6b3/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/b0b6be0c-41cf-4757-9f0e-87227b6ba6b3/face/0/mana-cost>.
 <https://w3id.org/smtg/id/oracle-card/b0b6be0c-41cf-4757-9f0e-87227b6ba6b3/face/0/mana-cost> smtg:manaCostNotation "{10}{G}{G}".
@@ -580,8 +595,34 @@
 <https://w3id.org/smtg/id/identifier/set-code/snc> a smtg:Identifier;
     smtg:identifierValue "snc";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/df837242-8c15-42e4-b049-c933a02dc501> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/snc>.
-<https://w3id.org/smtg/id/printing/c5f9326a-2a41-45b3-97c3-548f0bdc0882> smtg:inSet <https://w3id.org/smtg/id/set/df837242-8c15-42e4-b049-c933a02dc501>;
+<https://w3id.org/smtg/id/set/df837242-8c15-42e4-b049-c933a02dc501> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/snc>;
+    smtg:releasedOn "2022-04-29"^^xsd:date;
+    smtg:declaredCardCount "469"^^xsd:nonNegativeInteger;
+    smtg:printedSize "281"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:sourceURL "https://scryfall.com/sets/snc"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/snc> a smtg:Identifier;
+    smtg:identifierValue "snc";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/df837242-8c15-42e4-b049-c933a02dc501> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/snc>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/snc> a smtg:Identifier;
+    smtg:identifierValue "snc";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/df837242-8c15-42e4-b049-c933a02dc501> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/snc>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/3026> a smtg:Identifier;
+    smtg:identifierValue "3026";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/df837242-8c15-42e4-b049-c933a02dc501> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/3026>.
+<https://w3id.org/smtg/id/set/df837242-8c15-42e4-b049-c933a02dc501/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/snc.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/df837242-8c15-42e4-b049-c933a02dc501> smtg:hasSetIcon <https://w3id.org/smtg/id/set/df837242-8c15-42e4-b049-c933a02dc501/icon>.
+<https://w3id.org/smtg/id/printing/c5f9326a-2a41-45b3-97c3-548f0bdc0882> smtg:inSet <https://w3id.org/smtg/id/set/df837242-8c15-42e4-b049-c933a02dc501>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7> a smtg:Identifier;
+    smtg:identifierValue "0aeebaf5-8c7d-4636-9e82-8c27447861f7";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/c5f9326a-2a41-45b3-97c3-548f0bdc0882> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "195";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2022-04-29"^^xsd:date;
@@ -765,8 +806,31 @@
 <https://w3id.org/smtg/id/identifier/set-code/fdn> a smtg:Identifier;
     smtg:identifierValue "fdn";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/a7ecb771-d1b6-4dec-8cf5-8d45179f21e0> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/fdn>.
+<https://w3id.org/smtg/id/set/a7ecb771-d1b6-4dec-8cf5-8d45179f21e0> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/fdn>;
+    smtg:releasedOn "2024-11-15"^^xsd:date;
+    smtg:declaredCardCount "771"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:blockCode "lea";
+    smtg:sourceURL "https://scryfall.com/sets/fdn"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/fdn> a smtg:Identifier;
+    smtg:identifierValue "fdn";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/a7ecb771-d1b6-4dec-8cf5-8d45179f21e0> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/fdn>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/fdn> a smtg:Identifier;
+    smtg:identifierValue "fdn";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/a7ecb771-d1b6-4dec-8cf5-8d45179f21e0> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/fdn>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/23556> a smtg:Identifier;
+    smtg:identifierValue "23556";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/a7ecb771-d1b6-4dec-8cf5-8d45179f21e0> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/23556>.
+<https://w3id.org/smtg/id/set/a7ecb771-d1b6-4dec-8cf5-8d45179f21e0/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/fdn.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/a7ecb771-d1b6-4dec-8cf5-8d45179f21e0> smtg:hasSetIcon <https://w3id.org/smtg/id/set/a7ecb771-d1b6-4dec-8cf5-8d45179f21e0/icon>.
 <https://w3id.org/smtg/id/printing/6a9c39e4-a8cf-42dd-8d0e-45634b335546> smtg:inSet <https://w3id.org/smtg/id/set/a7ecb771-d1b6-4dec-8cf5-8d45179f21e0>;
+    smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "222";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2024-11-15"^^xsd:date;

@@ -1,0 +1,13 @@
+# id: R-PERMANENT-FACE
+# title: Faces with a permanent card type
+# implements: smtg:PermanentFace owl:equivalentClass ( smtg:CardFace and (smtg:hasCardType some smtg:PermanentCardType) )
+# order: 1
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+CONSTRUCT { ?face a smtg:PermanentFace }
+WHERE {
+  ?face a smtg:CardFace ; smtg:hasCardType ?type .
+  ?type a smtg:PermanentCardType .
+}

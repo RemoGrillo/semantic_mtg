@@ -15,7 +15,7 @@ const rel = (f) => path.relative(ROOT, f);
 
 const parsed = new Map();
 const parse = [];
-for (const f of [...walk(p('ontology')), ...walk(p('shapes')), ...walk(p('examples')), ...walk(p('fixtures', 'invalid-rdf')), ...walk(p('fixtures', 'invalid-owl')), ...walk(p('proposals'))]) {
+for (const f of [...walk(p('ontology')), ...walk(p('shapes')), ...walk(p('examples')), ...walk(p('fixtures', 'invalid-rdf')), ...walk(p('fixtures', 'invalid-owl')), ...walk(p('proposals')), ...walk(p('inferred'))]) {
   try {
     const quads = new N3.Parser({ baseIRI: 'file://' + f }).parse(fs.readFileSync(f, 'utf8'));
     parsed.set(f, quads);

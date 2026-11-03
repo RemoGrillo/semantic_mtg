@@ -1,0 +1,14 @@
+# id: CQ-ST-01
+# title: Set metadata
+# question: For the sets of Lightning Bolt's printings, what is the printed size, the number of cards and the parent set?
+# kind: SPARQL
+# expects: nonempty
+# modules: printings
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT DISTINCT ?set ?code ?printedSize ?cards ?parent WHERE {
+  ?p smtg:isPrintingOf/smtg:name "Lightning Bolt" ; smtg:inSet ?s . ?s rdfs:label ?set ; smtg:setCode ?code .
+  OPTIONAL { ?s smtg:printedSize ?printedSize } OPTIONAL { ?s smtg:declaredCardCount ?cards } OPTIONAL { ?s smtg:parentSet/smtg:setCode ?parent }
+} ORDER BY ?code

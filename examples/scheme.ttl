@@ -31,8 +31,9 @@
 <https://w3id.org/smtg/id/oracle-card/79df732b-9414-4a8e-b63d-4cbae8c038bd> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/79df732b-9414-4a8e-b63d-4cbae8c038bd/face/0>.
 <https://w3id.org/smtg/id/oracle-card/79df732b-9414-4a8e-b63d-4cbae8c038bd/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/79df732b-9414-4a8e-b63d-4cbae8c038bd>;
     rdfs:label "My Champion Stands Supreme";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
-    smtg:name "My Champion Stands Supreme";
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/79df732b-9414-4a8e-b63d-4cbae8c038bd> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/79df732b-9414-4a8e-b63d-4cbae8c038bd/face/0>.
+<https://w3id.org/smtg/id/oracle-card/79df732b-9414-4a8e-b63d-4cbae8c038bd/face/0> smtg:name "My Champion Stands Supreme";
     smtg:hasNoManaCost true;
     smtg:typeLine "Ongoing Scheme";
     smtg:hasSupertype <https://w3id.org/smtg/vocab/supertype/ongoing>;
@@ -280,8 +281,39 @@
 <https://w3id.org/smtg/id/identifier/set-code/dsc> a smtg:Identifier;
     smtg:identifierValue "dsc";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/4c822528-83c3-42c7-8708-dd1d37166819> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/dsc>.
-<https://w3id.org/smtg/id/printing/034530f2-0a63-4b9e-a043-948507b45faa> smtg:inSet <https://w3id.org/smtg/id/set/4c822528-83c3-42c7-8708-dd1d37166819>;
+<https://w3id.org/smtg/id/set/4c822528-83c3-42c7-8708-dd1d37166819> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/dsc>;
+    smtg:releasedOn "2024-09-27"^^xsd:date;
+    smtg:declaredCardCount "373"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:blockCode "cmd";
+    smtg:sourceURL "https://scryfall.com/sets/dsc"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/23551> a smtg:Identifier;
+    smtg:identifierValue "23551";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/4c822528-83c3-42c7-8708-dd1d37166819> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/23551>.
+<https://w3id.org/smtg/id/set/4c822528-83c3-42c7-8708-dd1d37166819/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/dsc.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/4c822528-83c3-42c7-8708-dd1d37166819> smtg:hasSetIcon <https://w3id.org/smtg/id/set/4c822528-83c3-42c7-8708-dd1d37166819/icon>.
+<https://w3id.org/smtg/id/set/a111d8a9-b647-48ec-afab-2b78f92173f5> a smtg:MtgSet;
+    rdfs:label "Duskmourn: House of Horror";
+    smtg:setCode "dsk";
+    smtg:hasSetType <https://w3id.org/smtg/vocab/set-type/expansion>.
+<https://w3id.org/smtg/id/identifier/scryfall-set-id/a111d8a9-b647-48ec-afab-2b78f92173f5> a smtg:Identifier;
+    smtg:identifierValue "a111d8a9-b647-48ec-afab-2b78f92173f5";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-set-id>.
+<https://w3id.org/smtg/id/set/a111d8a9-b647-48ec-afab-2b78f92173f5> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-set-id/a111d8a9-b647-48ec-afab-2b78f92173f5>.
+<https://w3id.org/smtg/id/identifier/set-code/dsk> a smtg:Identifier;
+    smtg:identifierValue "dsk";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
+<https://w3id.org/smtg/id/set/a111d8a9-b647-48ec-afab-2b78f92173f5> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/dsk>.
+<https://w3id.org/smtg/id/set/4c822528-83c3-42c7-8708-dd1d37166819> smtg:parentSet <https://w3id.org/smtg/id/set/a111d8a9-b647-48ec-afab-2b78f92173f5>.
+<https://w3id.org/smtg/id/printing/034530f2-0a63-4b9e-a043-948507b45faa> smtg:inSet <https://w3id.org/smtg/id/set/4c822528-83c3-42c7-8708-dd1d37166819>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/1b2396d4-9048-439d-96bd-354288518841> a smtg:Identifier;
+    smtg:identifierValue "1b2396d4-9048-439d-96bd-354288518841";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/034530f2-0a63-4b9e-a043-948507b45faa> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/1b2396d4-9048-439d-96bd-354288518841>;
     smtg:collectorNumber "341";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2024-09-27"^^xsd:date;

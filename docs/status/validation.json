@@ -1,25 +1,25 @@
 {
-  "generatedAt": "2026-11-03T14:24:52.762Z",
+  "generatedAt": "2026-11-03T15:25:17.051Z",
   "parse": [
     {
       "file": "ontology/smtg-cards.ttl",
       "ok": true,
-      "triples": 520
+      "triples": 636
     },
     {
       "file": "ontology/smtg-claims.ttl",
       "ok": true,
-      "triples": 251
+      "triples": 257
     },
     {
       "file": "ontology/smtg-combos.ttl",
       "ok": true,
-      "triples": 295
+      "triples": 305
     },
     {
       "file": "ontology/smtg-core.ttl",
       "ok": true,
-      "triples": 330
+      "triples": 357
     },
     {
       "file": "ontology/smtg-decks.ttl",
@@ -29,12 +29,12 @@
     {
       "file": "ontology/smtg-printings.ttl",
       "ok": true,
-      "triples": 502
+      "triples": 547
     },
     {
       "file": "ontology/smtg-provenance.ttl",
       "ok": true,
-      "triples": 187
+      "triples": 191
     },
     {
       "file": "ontology/smtg-strategy.ttl",
@@ -49,12 +49,12 @@
     {
       "file": "ontology/smtg-taxonomies.ttl",
       "ok": true,
-      "triples": 449
+      "triples": 540
     },
     {
       "file": "ontology/smtg-text-art.ttl",
       "ok": true,
-      "triples": 256
+      "triples": 292
     },
     {
       "file": "ontology/smtg.ttl",
@@ -74,147 +74,157 @@
     {
       "file": "ontology/vocab/smtg-vocab.ttl",
       "ok": true,
-      "triples": 21084
+      "triples": 21491
     },
     {
       "file": "shapes/smtg-shapes.ttl",
       "ok": true,
-      "triples": 317
+      "triples": 364
     },
     {
       "file": "examples/_part-relationships.ttl",
       "ok": true,
-      "triples": 26
+      "triples": 34
     },
     {
       "file": "examples/_referenced.ttl",
       "ok": true,
-      "triples": 2579
+      "triples": 3637
     },
     {
       "file": "examples/_snapshots.ttl",
       "ok": true,
-      "triples": 34
+      "triples": 41
     },
     {
       "file": "examples/adventure.ttl",
       "ok": true,
-      "triples": 529
+      "triples": 571
     },
     {
       "file": "examples/aftermath.ttl",
       "ok": true,
-      "triples": 511
+      "triples": 575
     },
     {
       "file": "examples/art-series.ttl",
       "ok": true,
-      "triples": 431
+      "triples": 453
     },
     {
       "file": "examples/ashnods-altar.ttl",
       "ok": true,
-      "triples": 573
+      "triples": 614
     },
     {
       "file": "examples/battle-defense.ttl",
       "ok": true,
-      "triples": 581
+      "triples": 603
     },
     {
       "file": "examples/blood-artist.ttl",
       "ok": true,
-      "triples": 599
+      "triples": 663
     },
     {
       "file": "examples/class.ttl",
       "ok": true,
-      "triples": 437
+      "triples": 478
     },
     {
       "file": "examples/double-faced-token.ttl",
       "ok": true,
-      "triples": 389
+      "triples": 420
     },
     {
       "file": "examples/emblem.ttl",
       "ok": true,
-      "triples": 375
+      "triples": 402
     },
     {
       "file": "examples/flavor-name.ttl",
       "ok": true,
-      "triples": 648
+      "triples": 678
     },
     {
       "file": "examples/flip.ttl",
       "ok": true,
-      "triples": 465
+      "triples": 495
     },
     {
       "file": "examples/fuse.ttl",
       "ok": true,
-      "triples": 453
+      "triples": 482
     },
     {
       "file": "examples/lightning-bolt.ttl",
       "ok": true,
-      "triples": 868
+      "triples": 953
     },
     {
       "file": "examples/mana-cost-absent-vs-zero.ttl",
       "ok": true,
-      "triples": 1166
+      "triples": 1261
+    },
+    {
+      "file": "examples/mana-token-maker.ttl",
+      "ok": true,
+      "triples": 859
     },
     {
       "file": "examples/mdfc.ttl",
       "ok": true,
-      "triples": 1504
+      "triples": 1549
     },
     {
       "file": "examples/meld.ttl",
       "ok": true,
-      "triples": 1638
+      "triples": 1708
     },
     {
       "file": "examples/modal-spell.ttl",
       "ok": true,
-      "triples": 600
+      "triples": 643
     },
     {
       "file": "examples/multi-artist.ttl",
       "ok": true,
-      "triples": 496
+      "triples": 525
     },
     {
       "file": "examples/planar.ttl",
       "ok": true,
-      "triples": 379
+      "triples": 406
     },
     {
       "file": "examples/prepare.ttl",
       "ok": true,
-      "triples": 469
+      "triples": 497
     },
     {
       "file": "examples/prototype.ttl",
       "ok": true,
-      "triples": 483
+      "triples": 511
     },
     {
       "file": "examples/reversible-card.ttl",
       "ok": true,
-      "triples": 906
+      "triples": 970
+    },
+    {
+      "file": "examples/rulings-fixture-card-rulings.ttl",
+      "ok": true,
+      "triples": 1737
     },
     {
       "file": "examples/saga.ttl",
       "ok": true,
-      "triples": 439
+      "triples": 471
     },
     {
       "file": "examples/scheme.ttl",
       "ok": true,
-      "triples": 378
+      "triples": 410
     },
     {
       "file": "examples/spellbook-aliases.ttl",
@@ -237,9 +247,14 @@
       "triples": 86
     },
     {
+      "file": "examples/spellbook-variant-with-used-face.ttl",
+      "ok": true,
+      "triples": 75
+    },
+    {
       "file": "examples/split.ttl",
       "ok": true,
-      "triples": 531
+      "triples": 572
     },
     {
       "file": "examples/tagger-adventure.ttl",
@@ -319,27 +334,27 @@
     {
       "file": "examples/token.ttl",
       "ok": true,
-      "triples": 381
+      "triples": 409
     },
     {
       "file": "examples/transform-dfc.ttl",
       "ok": true,
-      "triples": 755
+      "triples": 794
     },
     {
       "file": "examples/vanguard.ttl",
       "ok": true,
-      "triples": 367
+      "triples": 389
     },
     {
       "file": "examples/variable-loyalty.ttl",
       "ok": true,
-      "triples": 571
+      "triples": 623
     },
     {
       "file": "examples/variable-pt.ttl",
       "ok": true,
-      "triples": 614
+      "triples": 664
     },
     {
       "file": "fixtures/invalid-rdf/art-tag-on-oracle-card.ttl",
@@ -390,6 +405,16 @@
       "file": "fixtures/invalid-owl/printing-is-oracle-card.ttl",
       "ok": true,
       "triples": 2
+    },
+    {
+      "file": "inferred/_provenance.ttl",
+      "ok": true,
+      "triples": 29
+    },
+    {
+      "file": "inferred/rules.ttl",
+      "ok": true,
+      "triples": 144
     }
   ],
   "shacl": {
@@ -412,6 +437,7 @@
         "examples/fuse.ttl",
         "examples/lightning-bolt.ttl",
         "examples/mana-cost-absent-vs-zero.ttl",
+        "examples/mana-token-maker.ttl",
         "examples/mdfc.ttl",
         "examples/meld.ttl",
         "examples/modal-spell.ttl",
@@ -420,12 +446,14 @@
         "examples/prepare.ttl",
         "examples/prototype.ttl",
         "examples/reversible-card.ttl",
+        "examples/rulings-fixture-card-rulings.ttl",
         "examples/saga.ttl",
         "examples/scheme.ttl",
         "examples/spellbook-aliases.ttl",
         "examples/spellbook-ashnods-altar-variants.ttl",
         "examples/spellbook-blood-artist-variants.ttl",
         "examples/spellbook-variant-with-template.ttl",
+        "examples/spellbook-variant-with-used-face.ttl",
         "examples/split.ttl",
         "examples/tagger-adventure.ttl",
         "examples/tagger-art-tag-weak-and-annotated.ttl",
@@ -448,7 +476,7 @@
         "examples/variable-loyalty.ttl",
         "examples/variable-pt.ttl"
       ],
-      "triples": 55564,
+      "triples": 61030,
       "conforms": true,
       "violations": 0,
       "results": []
@@ -465,42 +493,42 @@
             "path": "https://w3id.org/smtg/ontology#name",
             "message": "An Oracle card must have exactly one (combined) name.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-142"
+            "shape": "n3-172"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o3",
             "path": "https://w3id.org/smtg/ontology#hasFace",
             "message": "An Oracle card must have at least one CardFace (single-faced cards included).",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-143"
+            "shape": "n3-173"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o3",
             "path": "https://w3id.org/smtg/ontology#hasLayout",
             "message": "An Oracle card must have exactly one layout concept.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-144"
+            "shape": "n3-174"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o3",
-            "path": "n3-147",
+            "path": "n3-177",
             "message": "An Oracle card must carry exactly one Scryfall Oracle ID identifier.",
             "constraint": "QualifiedMinCountConstraintComponent",
-            "shape": "n3-146"
+            "shape": "n3-176"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/a1",
             "path": "https://w3id.org/smtg/ontology#observedIn",
             "message": "A claim must be observed in at least one SourceSnapshot.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-183"
+            "shape": "n3-215"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/a1",
             "path": "https://w3id.org/smtg/ontology#assignmentTarget",
             "message": "An art tag is assigned to an illustration, not to a card.",
             "constraint": "ClassConstraintComponent",
-            "shape": "n3-193"
+            "shape": "n3-225"
           }
         ]
       },
@@ -515,35 +543,35 @@
             "path": "https://w3id.org/smtg/ontology#name",
             "message": "An Oracle card must have exactly one (combined) name.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-142"
+            "shape": "n3-172"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o4",
             "path": "https://w3id.org/smtg/ontology#hasFace",
             "message": "An Oracle card must have at least one CardFace (single-faced cards included).",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-143"
+            "shape": "n3-173"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o4",
             "path": "https://w3id.org/smtg/ontology#hasLayout",
             "message": "An Oracle card must have exactly one layout concept.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-144"
+            "shape": "n3-174"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o4",
-            "path": "n3-147",
+            "path": "n3-177",
             "message": "An Oracle card must carry exactly one Scryfall Oracle ID identifier.",
             "constraint": "QualifiedMinCountConstraintComponent",
-            "shape": "n3-146"
+            "shape": "n3-176"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/a2",
             "path": "https://w3id.org/smtg/ontology#observedIn",
             "message": "A claim must be observed in at least one SourceSnapshot.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-183"
+            "shape": "n3-215"
           }
         ]
       },
@@ -558,28 +586,28 @@
             "path": "https://w3id.org/smtg/ontology#name",
             "message": "An Oracle card must have exactly one (combined) name.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-142"
+            "shape": "n3-172"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o9",
             "path": "https://w3id.org/smtg/ontology#hasLayout",
             "message": "An Oracle card must have exactly one layout concept.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-144"
+            "shape": "n3-174"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o9",
-            "path": "n3-147",
+            "path": "n3-177",
             "message": "An Oracle card must carry exactly one Scryfall Oracle ID identifier.",
             "constraint": "QualifiedMinCountConstraintComponent",
-            "shape": "n3-146"
+            "shape": "n3-176"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/f9",
             "path": "https://w3id.org/smtg/ontology#faceIndex",
             "message": "A face needs exactly one nonNegativeInteger faceIndex.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-153"
+            "shape": "n3-184"
           }
         ]
       },
@@ -600,21 +628,21 @@
             "path": "https://w3id.org/smtg/ontology#faceOf",
             "message": "A face belongs to exactly one Oracle card.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-152"
+            "shape": "n3-183"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/f5",
             "path": "https://w3id.org/smtg/ontology#faceIndex",
             "message": "A face needs exactly one nonNegativeInteger faceIndex.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-153"
+            "shape": "n3-184"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/f5",
             "path": "https://w3id.org/smtg/ontology#name",
             "message": "A face needs exactly one name.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-154"
+            "shape": "n3-185"
           }
         ]
       },
@@ -629,70 +657,70 @@
             "path": "https://w3id.org/smtg/ontology#hasFace",
             "message": "An Oracle card must have at least one CardFace (single-faced cards included).",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-143"
+            "shape": "n3-173"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o2",
             "path": "https://w3id.org/smtg/ontology#hasLayout",
             "message": "An Oracle card must have exactly one layout concept.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-144"
+            "shape": "n3-174"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o2",
-            "path": "n3-147",
+            "path": "n3-177",
             "message": "An Oracle card must carry exactly one Scryfall Oracle ID identifier.",
             "constraint": "QualifiedMinCountConstraintComponent",
-            "shape": "n3-146"
+            "shape": "n3-176"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o2",
             "path": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
             "message": "An Oracle card must not also be typed as a printing (AP-01).",
             "constraint": "NotConstraintComponent",
-            "shape": "n3-150"
+            "shape": "n3-180"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o2",
             "path": "https://w3id.org/smtg/ontology#isPrintingOf",
             "message": "A printing manifests one Oracle card (two for reversible printings).",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-165"
+            "shape": "n3-197"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o2",
             "path": "https://w3id.org/smtg/ontology#inSet",
             "message": "A printing belongs to exactly one set.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-166"
+            "shape": "n3-198"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o2",
             "path": "https://w3id.org/smtg/ontology#collectorNumber",
             "message": "Less than 1 values",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-167"
+            "shape": "n3-199"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o2",
             "path": "https://w3id.org/smtg/ontology#inLanguage",
             "message": "Less than 1 values",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-168"
+            "shape": "n3-200"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o2",
             "path": "https://w3id.org/smtg/ontology#hasPrintedFace",
             "message": "A printing has at least one printed face.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-169"
+            "shape": "n3-201"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o2",
-            "path": "n3-171",
+            "path": "n3-203",
             "message": "A printing must carry exactly one Scryfall card ID identifier.",
             "constraint": "QualifiedMinCountConstraintComponent",
-            "shape": "n3-170"
+            "shape": "n3-202"
           }
         ]
       },
@@ -707,56 +735,56 @@
             "path": "https://w3id.org/smtg/ontology#name",
             "message": "An Oracle card must have exactly one (combined) name.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-142"
+            "shape": "n3-172"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o1",
             "path": "https://w3id.org/smtg/ontology#hasFace",
             "message": "An Oracle card must have at least one CardFace (single-faced cards included).",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-143"
+            "shape": "n3-173"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o1",
             "path": "https://w3id.org/smtg/ontology#hasLayout",
             "message": "An Oracle card must have exactly one layout concept.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-144"
+            "shape": "n3-174"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/o1",
-            "path": "n3-147",
+            "path": "n3-177",
             "message": "An Oracle card must carry exactly one Scryfall Oracle ID identifier.",
             "constraint": "QualifiedMinCountConstraintComponent",
-            "shape": "n3-146"
+            "shape": "n3-176"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/p1",
             "path": "https://w3id.org/smtg/ontology#inSet",
             "message": "A printing belongs to exactly one set.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-166"
+            "shape": "n3-198"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/p1",
-            "path": "n3-171",
+            "path": "n3-203",
             "message": "A printing must carry exactly one Scryfall card ID identifier.",
             "constraint": "QualifiedMinCountConstraintComponent",
-            "shape": "n3-170"
+            "shape": "n3-202"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/p1f0",
             "path": "https://w3id.org/smtg/ontology#manifestsFace",
             "message": "Less than 1 values",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-174"
+            "shape": "n3-206"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/p1f0",
             "path": "https://w3id.org/smtg/ontology#onSide",
             "message": "Less than 1 values",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-175"
+            "shape": "n3-207"
           }
         ]
       },
@@ -771,7 +799,7 @@
             "path": "http://www.w3.org/2002/07/owl#sameAs",
             "message": "owl:sameAs is not used in SMTG instance data (two printings sharing an image, or two cards sharing a name, are not identical — AP-03, AP-04).",
             "constraint": "MaxCountConstraintComponent",
-            "shape": "n3-207"
+            "shape": "n3-240"
           }
         ]
       },
@@ -786,35 +814,35 @@
             "path": "https://w3id.org/smtg/ontology#faceOf",
             "message": "A face belongs to exactly one Oracle card.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-152"
+            "shape": "n3-183"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/f6",
             "path": "https://w3id.org/smtg/ontology#faceIndex",
             "message": "A face needs exactly one nonNegativeInteger faceIndex.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-153"
+            "shape": "n3-184"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/f6",
             "path": "https://w3id.org/smtg/ontology#name",
             "message": "A face needs exactly one name.",
             "constraint": "MinCountConstraintComponent",
-            "shape": "n3-154"
+            "shape": "n3-185"
           },
           {
             "focusNode": "https://w3id.org/smtg/id/synthetic/f6",
             "path": "https://w3id.org/smtg/ontology#hasSubtype",
             "message": "Subtypes must be concepts of a type-qualified subtype scheme, not strings.",
             "constraint": "ClassConstraintComponent",
-            "shape": "n3-156"
+            "shape": "n3-187"
           }
         ]
       }
     ]
   },
   "lint": {
-    "terms": 329,
+    "terms": 357,
     "incomplete": []
   },
   "summary": {

@@ -1,0 +1,14 @@
+# id: CQ-RU-01
+# title: Dated, attributed rulings
+# question: Which rulings exist for Blood Artist, when were they published, and by whom?
+# kind: SPARQL
+# expects: nonempty
+# modules: text-art, claims
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?date ?by ?status (SUBSTR(?text, 1, 100) AS ?ruling) WHERE {
+  ?r a smtg:Ruling ; smtg:rulingFor/smtg:name "Blood Artist" ; smtg:publishedOn ?date ; smtg:rulingText ?text ;
+     smtg:claimedBy/rdfs:label ?by ; smtg:hasEpistemicStatus/skos:notation ?status .
+} ORDER BY ?date

@@ -265,6 +265,21 @@ export function statusPage(ctx) {
   } else h += emptyState('No <code>docs/status/reasoner.json</code> yet — run <code>npm run reason</code>.');
   h += '</section>';
 
+  // rule materialisation (inferred graph)
+  const inf = inputs.inference;
+  h += '<section class="block"><h2 data-anchor="inference">Inferred graph</h2>';
+  if (inf) {
+    h += kpis([
+      { label: 'Inferred triples', value: inf.inferredTriples },
+      { label: 'Asserted triples', value: inf.assertedTriples },
+      { label: 'Rules', value: (inf.rules || []).length },
+      { label: 'Rounds to fixpoint', value: inf.iterations },
+    ]);
+    h += `<p class="muted small">Graph <code>${esc(inf.graph)}</code>, generated ${esc(inf.generatedAt)}. Each rule implements a named OWL axiom; see <a href="#/page/inference-rules">Inference rules</a>.</p>`;
+    h += objectTable(m, (inf.rules || []).map((r) => ({ rule: r.id, derives: r.title, triples: r.count })));
+  } else h += emptyState('No <code>docs/status/inference.json</code> yet — run <code>npm run infer</code>.');
+  h += '</section>';
+
   // documentation build report
   const W = ctx.warnings;
   h += `<section class="block"><h2 data-anchor="docs-build">Documentation build report</h2><p class="muted small">Issues the docs generator noticed while reading the sources (built ${esc(ctx.builtAt)}).</p>`;

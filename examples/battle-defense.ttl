@@ -32,8 +32,9 @@
 <https://w3id.org/smtg/id/oracle-card/8faa4330-07bb-4b65-810a-bbce29d3cd42> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/8faa4330-07bb-4b65-810a-bbce29d3cd42/face/0>.
 <https://w3id.org/smtg/id/oracle-card/8faa4330-07bb-4b65-810a-bbce29d3cd42/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/8faa4330-07bb-4b65-810a-bbce29d3cd42>;
     rdfs:label "Invasion of Alara";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
-    smtg:name "Invasion of Alara".
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/8faa4330-07bb-4b65-810a-bbce29d3cd42> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/8faa4330-07bb-4b65-810a-bbce29d3cd42/face/0>.
+<https://w3id.org/smtg/id/oracle-card/8faa4330-07bb-4b65-810a-bbce29d3cd42/face/0> smtg:name "Invasion of Alara".
 <https://w3id.org/smtg/id/oracle-card/8faa4330-07bb-4b65-810a-bbce29d3cd42/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/8faa4330-07bb-4b65-810a-bbce29d3cd42/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/8faa4330-07bb-4b65-810a-bbce29d3cd42/face/0/mana-cost>.
 <https://w3id.org/smtg/id/oracle-card/8faa4330-07bb-4b65-810a-bbce29d3cd42/face/0/mana-cost> smtg:manaCostNotation "{W}{U}{B}{R}{G}".
@@ -340,7 +341,28 @@
 <https://w3id.org/smtg/id/identifier/set-code/mom> a smtg:Identifier;
     smtg:identifierValue "mom";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/392f7315-dc53-40a3-a2cc-5482dbd498b3> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/mom>.
+<https://w3id.org/smtg/id/set/392f7315-dc53-40a3-a2cc-5482dbd498b3> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/mom>;
+    smtg:releasedOn "2023-04-21"^^xsd:date;
+    smtg:declaredCardCount "387"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:sourceURL "https://scryfall.com/sets/mom"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/mom> a smtg:Identifier;
+    smtg:identifierValue "mom";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/392f7315-dc53-40a3-a2cc-5482dbd498b3> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/mom>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/mom> a smtg:Identifier;
+    smtg:identifierValue "mom";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/392f7315-dc53-40a3-a2cc-5482dbd498b3> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/mom>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/22875> a smtg:Identifier;
+    smtg:identifierValue "22875";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/392f7315-dc53-40a3-a2cc-5482dbd498b3> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/22875>.
+<https://w3id.org/smtg/id/set/392f7315-dc53-40a3-a2cc-5482dbd498b3/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/mom.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/392f7315-dc53-40a3-a2cc-5482dbd498b3> smtg:hasSetIcon <https://w3id.org/smtg/id/set/392f7315-dc53-40a3-a2cc-5482dbd498b3/icon>.
 <https://w3id.org/smtg/id/printing/318c363b-61cc-4e2f-8f86-a4287539ea07> smtg:inSet <https://w3id.org/smtg/id/set/392f7315-dc53-40a3-a2cc-5482dbd498b3>;
     smtg:collectorNumber "230";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;

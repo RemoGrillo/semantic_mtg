@@ -78,6 +78,23 @@ smtg:OtherSubtype a owl:Class ; rdfs:subClassOf smtg:Subtype ; rdfs:label "Other
 [] a owl:AllDisjointClasses ;
   owl:members ( smtg:Supertype smtg:CardType smtg:Subtype ) .
 
+smtg:PermanentCardType a owl:Class ; rdfs:subClassOf smtg:CardType ;
+  rdfs:label "Permanent card type"@en ;
+  skos:definition "One of the six permanent types: artifact, battle, creature, enchantment, land, planeswalker (CR 110.4)."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:InstantOrSorceryCardType a owl:Class ; rdfs:subClassOf smtg:CardType ;
+  rdfs:label "Instant or sorcery card type"@en ;
+  skos:definition "Instant or sorcery: card types whose cards can't enter the battlefield (CR 110.4)."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:TypeGroup a owl:Class ; rdfs:subClassOf skos:Collection ;
+  rdfs:label "Type group"@en ;
+  skos:definition "A rules-defined group of type-line concepts that cards refer to collectively: historic (CR 700.6), party (CR 700.8), outlaw (CR 700.12)."@en ;
+  skos:scopeNote "A SKOS collection whose members are supertype, card-type or subtype concepts; membership is checked against the rule text when the vocabulary is generated."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "unstable" .
+skos:Collection a owl:Class .
+skos:member a owl:ObjectProperty .
+
 smtg:applicableToCardType a owl:ObjectProperty ;
   rdfs:label "applicable to card type"@en ;
   skos:definition "States that the subtypes of a subtype scheme may accompany the given card type (e.g. the creature-type scheme is applicable to Creature and Kindred)."@en ;
@@ -145,6 +162,35 @@ smtg:representsMana a owl:DatatypeProperty , owl:FunctionalProperty ;
   rdfs:domain smtg:ManaSymbol ; rdfs:range xsd:boolean ;
   smtg:sourceField "scryfall-symbology:represents_mana" ;
   rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+
+smtg:isHybrid a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "is hybrid"@en ; skos:definition "Whether the symbol is a hybrid mana symbol (payable with either of two kinds of mana)."@en ;
+  rdfs:domain smtg:ManaSymbol ; rdfs:range xsd:boolean ; smtg:sourceField "scryfall-symbology:hybrid" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:isPhyrexian a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "is Phyrexian"@en ; skos:definition "Whether the symbol is a Phyrexian mana symbol (payable with 2 life)."@en ;
+  rdfs:domain smtg:ManaSymbol ; rdfs:range xsd:boolean ; smtg:sourceField "scryfall-symbology:phyrexian" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:appearsInManaCosts a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "appears in mana costs"@en ; skos:definition "Whether the symbol can appear in a mana cost (true for {W}, false for {T})."@en ;
+  rdfs:domain smtg:ManaSymbol ; rdfs:range xsd:boolean ; smtg:sourceField "scryfall-symbology:appears_in_mana_costs" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:isFunny a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "is funny"@en ; skos:definition "Whether the symbol only appears on Un-cards and other non-tournament (\"funny\") cards."@en ;
+  rdfs:domain smtg:ManaSymbol ; rdfs:range xsd:boolean ; smtg:sourceField "scryfall-symbology:funny" ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:HybridManaSymbol a owl:Class ;
+  owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:ManaSymbol [ a owl:Restriction ; owl:onProperty smtg:isHybrid ; owl:hasValue true ] ) ] ;
+  rdfs:label "Hybrid mana symbol"@en ; skos:definition "A mana symbol flagged hybrid by the source (e.g. {W/U}, {2/R}, {G/U/P})."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:PhyrexianManaSymbol a owl:Class ;
+  owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:ManaSymbol [ a owl:Restriction ; owl:onProperty smtg:isPhyrexian ; owl:hasValue true ] ) ] ;
+  rdfs:label "Phyrexian mana symbol"@en ; skos:definition "A mana symbol flagged Phyrexian by the source (e.g. {B/P}, {G/U/P})."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies ; vs:term_status "stable-draft" .
+smtg:primaryFacePolicy a owl:AnnotationProperty ;
+  rdfs:label "primary face policy"@en ;
+  skos:definition "On a layout concept: which face is the card's primary face (smtg:primaryFace), with the Comprehensive Rules reference."@en ;
+  rdfs:isDefinedBy smtgm:taxonomies .
 
 smtg:Keyword a owl:Class ; rdfs:subClassOf smtg:VocabularyConcept ;
   rdfs:label "Keyword"@en ;

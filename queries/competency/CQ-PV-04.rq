@@ -1,0 +1,15 @@
+# id: CQ-PV-04
+# title: Negative test — inferred triples stay out of the asserted graph
+# question: Does any inferred-only property (producesManaViaToken, createsToken) or inferred class appear in the asserted (default) graph?
+# kind: negative
+# expects: empty
+# modules: provenance, cards
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?s ?p WHERE {
+  { ?s smtg:producesManaViaToken ?o . BIND(smtg:producesManaViaToken AS ?p) }
+  UNION { ?s smtg:createsToken ?o . BIND(smtg:createsToken AS ?p) }
+  UNION { ?s a smtg:PermanentCard . BIND(smtg:PermanentCard AS ?p) }
+}

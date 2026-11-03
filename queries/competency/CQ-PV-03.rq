@@ -1,0 +1,13 @@
+# id: CQ-PV-03
+# title: Provenance of the inferred graph
+# question: Which activity generated the inferred graph, with which rules?
+# kind: SPARQL
+# expects: nonempty
+# modules: provenance
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?activity ?rule WHERE {
+  <https://w3id.org/smtg/graph/inferred/rules> prov:wasGeneratedBy ?act . ?act rdfs:label ?activity ; prov:used/rdfs:label ?rule .
+} ORDER BY ?rule

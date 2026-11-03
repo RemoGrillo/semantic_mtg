@@ -505,3 +505,6 @@ table.vocab .ms.ms-cost { font-size: 1.15em; }
 .sym-chip.sym-r { background: #f0d3c8; }
 .sym-chip.sym-g { background: #d3e5d3; }
 .sym-chip.sym-c { background: #e4e0d8; }
+
+.chip.chk-ok { color: var(--ok); background: var(--ok-bg); }
+.chip.chk-bad { color: var(--bad); background: var(--bad-bg); }

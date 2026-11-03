@@ -19,6 +19,8 @@ the checks.
    npm run build      # regenerates vocab and examples, validates, runs the CQs, rebuilds the docs
    npm run reason     # HermiT: consistency, unsatisfiable classes, negative OWL tests
    ```
+   If you add an OWL axiom whose consequences should be queryable, add a rule in `rules/` that
+   names it (`# implements:`); `npm run infer` materialises it into the inferred graph.
    Add or adjust a competency question in `queries/competency/` when you change meaning, and an
    ADR in `docs/adr/` (copy `0000-template.md`) for any decision with wide impact.
 4. **Propose an alternative module (radical changes).** Put it in `proposals/<short-name>/`. It does

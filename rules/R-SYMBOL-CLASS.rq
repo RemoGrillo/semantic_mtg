@@ -1,0 +1,15 @@
+# id: R-SYMBOL-CLASS
+# title: Hybrid and Phyrexian mana symbols
+# implements: smtg:HybridManaSymbol ≡ ManaSymbol and (isHybrid value true); smtg:PhyrexianManaSymbol ≡ ManaSymbol and (isPhyrexian value true)
+# order: 1
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+CONSTRUCT { ?s a ?class }
+WHERE {
+  ?s a smtg:ManaSymbol .
+  { ?s smtg:isHybrid true . BIND(smtg:HybridManaSymbol AS ?class) }
+  UNION
+  { ?s smtg:isPhyrexian true . BIND(smtg:PhyrexianManaSymbol AS ?class) }
+}

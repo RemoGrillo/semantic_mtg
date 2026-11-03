@@ -32,7 +32,9 @@
 <https://w3id.org/smtg/id/oracle-card/7185e345-d8a1-4dd3-a071-f90f265634b4> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/7185e345-d8a1-4dd3-a071-f90f265634b4/face/0>.
 <https://w3id.org/smtg/id/oracle-card/7185e345-d8a1-4dd3-a071-f90f265634b4/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/7185e345-d8a1-4dd3-a071-f90f265634b4>;
     rdfs:label "Void Beckoner";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/7185e345-d8a1-4dd3-a071-f90f265634b4> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/7185e345-d8a1-4dd3-a071-f90f265634b4/face/0>.
+<https://w3id.org/smtg/id/oracle-card/7185e345-d8a1-4dd3-a071-f90f265634b4/face/0> smtg:faceKeyword <https://w3id.org/smtg/vocab/keyword-ability/cycling>, <https://w3id.org/smtg/vocab/keyword-ability/deathtouch>;
     smtg:name "Void Beckoner".
 <https://w3id.org/smtg/id/oracle-card/7185e345-d8a1-4dd3-a071-f90f265634b4/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/7185e345-d8a1-4dd3-a071-f90f265634b4/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/7185e345-d8a1-4dd3-a071-f90f265634b4/face/0/mana-cost>.
@@ -304,8 +306,34 @@
 <https://w3id.org/smtg/id/identifier/set-code/iko> a smtg:Identifier;
     smtg:identifierValue "iko";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/19feda43-15ab-427e-a0e4-148a4bf2b03a> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/iko>.
-<https://w3id.org/smtg/id/printing/1ca7065e-88c1-44bb-ac68-e6e1df9e0726> smtg:inSet <https://w3id.org/smtg/id/set/19feda43-15ab-427e-a0e4-148a4bf2b03a>;
+<https://w3id.org/smtg/id/set/19feda43-15ab-427e-a0e4-148a4bf2b03a> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/iko>;
+    smtg:releasedOn "2020-04-24"^^xsd:date;
+    smtg:declaredCardCount "389"^^xsd:nonNegativeInteger;
+    smtg:printedSize "274"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:sourceURL "https://scryfall.com/sets/iko"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/iko> a smtg:Identifier;
+    smtg:identifierValue "iko";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/19feda43-15ab-427e-a0e4-148a4bf2b03a> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/iko>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/iko> a smtg:Identifier;
+    smtg:identifierValue "iko";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/19feda43-15ab-427e-a0e4-148a4bf2b03a> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/iko>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/2603> a smtg:Identifier;
+    smtg:identifierValue "2603";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/19feda43-15ab-427e-a0e4-148a4bf2b03a> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/2603>.
+<https://w3id.org/smtg/id/set/19feda43-15ab-427e-a0e4-148a4bf2b03a/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/iko.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/19feda43-15ab-427e-a0e4-148a4bf2b03a> smtg:hasSetIcon <https://w3id.org/smtg/id/set/19feda43-15ab-427e-a0e4-148a4bf2b03a/icon>.
+<https://w3id.org/smtg/id/printing/1ca7065e-88c1-44bb-ac68-e6e1df9e0726> smtg:inSet <https://w3id.org/smtg/id/set/19feda43-15ab-427e-a0e4-148a4bf2b03a>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7> a smtg:Identifier;
+    smtg:identifierValue "0aeebaf5-8c7d-4636-9e82-8c27447861f7";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/1ca7065e-88c1-44bb-ac68-e6e1df9e0726> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "373";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2020-04-24"^^xsd:date;
@@ -470,6 +498,7 @@
 <https://w3id.org/smtg/id/printing/a1523cda-c47d-4419-a5d3-fd6ed9867c56> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/cardmarket-id/450988>;
     smtg:sourceURL "https://scryfall.com/card/iko/104/void-beckoner?utm_source=api"^^xsd:anyURI;
     smtg:inSet <https://w3id.org/smtg/id/set/19feda43-15ab-427e-a0e4-148a4bf2b03a>;
+    smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "104";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2020-04-24"^^xsd:date;

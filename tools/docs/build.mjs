@@ -177,6 +177,7 @@ async function main() {
     validation: readJsonSafe('docs/status/validation.json'),
     cq: readJsonSafe('docs/status/cq-results.json'),
     reasoner: readJsonSafe('docs/status/reasoner.json'),
+    inference: readJsonSafe('docs/status/inference.json'),
     rq: walk(path.join(INPUT, 'queries', 'competency'), /\.rq$/i).map((abs) => {
       const text = readText(abs) || '';
       return { ...parseRq(text), rel: toPosix(path.relative(INPUT, abs)), file: path.basename(abs, '.rq') };

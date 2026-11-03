@@ -275,7 +275,29 @@
 <https://w3id.org/smtg/id/identifier/set-code/altc> a smtg:Identifier;
     smtg:identifierValue "altc";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/32dcab1f-9781-4cb5-9ed3-3d1881f906be> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/altc>.
+<https://w3id.org/smtg/id/set/32dcab1f-9781-4cb5-9ed3-3d1881f906be> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/altc>;
+    smtg:releasedOn "2023-11-04"^^xsd:date;
+    smtg:declaredCardCount "24"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet true;
+    smtg:sourceURL "https://scryfall.com/sets/altc"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/32dcab1f-9781-4cb5-9ed3-3d1881f906be/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/ltc.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/32dcab1f-9781-4cb5-9ed3-3d1881f906be> smtg:hasSetIcon <https://w3id.org/smtg/id/set/32dcab1f-9781-4cb5-9ed3-3d1881f906be/icon>.
+<https://w3id.org/smtg/id/set/e567c19c-0fe4-446e-a7bf-fce8a150cd2e> a smtg:MtgSet;
+    rdfs:label "Tales of Middle-earth Commander";
+    smtg:setCode "ltc";
+    smtg:hasSetType <https://w3id.org/smtg/vocab/set-type/commander>.
+<https://w3id.org/smtg/id/identifier/scryfall-set-id/e567c19c-0fe4-446e-a7bf-fce8a150cd2e> a smtg:Identifier;
+    smtg:identifierValue "e567c19c-0fe4-446e-a7bf-fce8a150cd2e";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-set-id>.
+<https://w3id.org/smtg/id/set/e567c19c-0fe4-446e-a7bf-fce8a150cd2e> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-set-id/e567c19c-0fe4-446e-a7bf-fce8a150cd2e>.
+<https://w3id.org/smtg/id/identifier/set-code/ltc> a smtg:Identifier;
+    smtg:identifierValue "ltc";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
+<https://w3id.org/smtg/id/set/e567c19c-0fe4-446e-a7bf-fce8a150cd2e> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/ltc>.
+<https://w3id.org/smtg/id/set/32dcab1f-9781-4cb5-9ed3-3d1881f906be> smtg:parentSet <https://w3id.org/smtg/id/set/e567c19c-0fe4-446e-a7bf-fce8a150cd2e>.
 <https://w3id.org/smtg/id/printing/000225fc-9bc3-4eb3-905e-02c19c873b0b> smtg:inSet <https://w3id.org/smtg/id/set/32dcab1f-9781-4cb5-9ed3-3d1881f906be>;
     smtg:collectorNumber "18";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;

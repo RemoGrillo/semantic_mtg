@@ -10,6 +10,7 @@ jobs:
       - run: npm ci
       # Fixtures, examples and generated vocab are committed, so CI validates without downloading dumps.
       - run: npm run validate
+      - run: npm run infer
       - run: npm run cq
       - run: npm test
       # Portable JRE + ROBOT are downloaded by `npm run reason`; cache them between runs.

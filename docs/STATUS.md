@@ -16,7 +16,9 @@ ontology is reviewed.
   message.
 - Real fixtures for the plan's §4.2 edge cases, and the example RDF generated from them by a
   fixture-only prototype mapper.
-- 27 competency questions (SPARQL) with results.
+- 40 competency questions (SPARQL) with results, including inferred-graph and negative tests.
+- Rule materialisation (`npm run infer`): 7 rules implementing documented OWL axioms → separate inferred graph with PROV provenance.
+- Model review of 2026-11-03 (`docs/ontology/model-review-2026-11-03.md`): permanent/spell faces, primary face, mana via tokens, per-face keywords, symbol flags, type groups, rulings, set metadata, fixture check of mapping coverage.
 - HermiT (via ROBOT on a portable JRE): TBox consistent, no unsatisfiable classes; TBox + examples
   consistent; 2 negative OWL tests inconsistent as intended.
 - Mapping coverage for every observed source path (Scryfall 198, Spellbook 94, Tagger 19): mapped,

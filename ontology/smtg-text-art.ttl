@@ -231,3 +231,35 @@ smtg:depictsArtworkOf a owl:ObjectProperty ;
   skos:definition "Relates an art-crop image to the illustration it reproduces."@en ;
   rdfs:domain smtg:DigitalImage ; rdfs:range smtg:Illustration ;
   rdfs:isDefinedBy smtgm:text-art ; vs:term_status "unstable" .
+
+# -----------------------------------------------------------------------------
+#  Rulings (added 2026-11-03): stored as dated, attributed text claims, not interpreted
+# -----------------------------------------------------------------------------
+
+smtg:Ruling a owl:Class ;
+  rdfs:subClassOf smtg:Claim ;
+  rdfs:label "Ruling"@en ;
+  skos:definition "A published clarification about how an Oracle card works, issued by Wizards of the Coast or by Scryfall, with its publication date and text."@en ;
+  skos:scopeNote "Rulings are kept as text and not turned into formal semantics (PLAN §1.3); they hang off the Oracle card, so adding them needs no change to the identity model. Attitude: knowledge-claim; epistemic status: authoritative report (Wizards) or source report (Scryfall)."@en ;
+  smtg:sourceField "scryfall-rulings:*" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "unstable" .
+
+smtg:rulingFor a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:subPropertyOf smtg:aboutEntity ;
+  rdfs:label "ruling for"@en ; skos:definition "The Oracle card the ruling is about."@en ;
+  rdfs:domain smtg:Ruling ; rdfs:range smtg:OracleCard ;
+  smtg:sourceField "scryfall-rulings:oracle_id" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "unstable" .
+
+smtg:rulingText a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "ruling text"@en ; skos:definition "The text of the ruling, verbatim."@en ;
+  rdfs:domain smtg:Ruling ; rdfs:range xsd:string ;
+  smtg:sourceField "scryfall-rulings:comment" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "unstable" .
+
+smtg:publishedOn a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:label "published on"@en ; skos:definition "Date on which the ruling was published."@en ;
+  rdfs:domain smtg:Ruling ; rdfs:range xsd:date ;
+  smtg:sourceField "scryfall-rulings:published_at" ;
+  rdfs:isDefinedBy smtgm:text-art ; vs:term_status "unstable" .
+

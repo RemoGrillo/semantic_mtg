@@ -1,0 +1,15 @@
+# id: R-TOKEN
+# title: Tokens a card can create (projection of all_parts)
+# implements: smtg:createsToken — projection of smtg:PartRelationship with smtg:partRole part-component/token
+# order: 1
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+CONSTRUCT { ?card smtg:createsToken ?token }
+WHERE {
+  ?card smtg:hasPartRelationship ?rel .
+  ?rel smtg:partRole <https://w3id.org/smtg/vocab/part-component/token> ; smtg:relatedObject ?token .
+  ?token a smtg:OracleCard .
+  FILTER(?card != ?token)
+}

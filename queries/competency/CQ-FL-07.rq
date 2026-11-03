@@ -1,0 +1,16 @@
+# id: CQ-FL-07
+# title: Cards with a permanent face and an instant or sorcery face
+# question: Which Oracle cards have one face with a permanent card type and another face that is an instant or sorcery?
+# kind: SPARQL
+# expects: nonempty
+# modules: cards, taxonomies
+# note: why permanence is modelled per face (287 such Oracle cards in the 2026-11-03 data).
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT DISTINCT ?card ?permanentFace ?spellFace WHERE {
+  ?c smtg:name ?card ; smtg:hasFace ?f1 , ?f2 .
+  ?f1 smtg:hasCardType/a smtg:PermanentCardType ; smtg:name ?permanentFace .
+  ?f2 smtg:hasCardType/a smtg:InstantOrSorceryCardType ; smtg:name ?spellFace .
+} ORDER BY ?card

@@ -1,0 +1,13 @@
+# id: R-MANA-VIA-TOKEN
+# title: Mana a card can produce through a token it creates
+# implements: smtg:producesManaViaToken owl:propertyChainAxiom ( smtg:createsToken smtg:producesManaSymbol )
+# order: 2
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+CONSTRUCT { ?card smtg:producesManaViaToken ?mana }
+WHERE {
+  ?card smtg:createsToken ?token .
+  ?token smtg:producesManaSymbol ?mana .
+}

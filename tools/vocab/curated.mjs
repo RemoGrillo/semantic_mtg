@@ -110,3 +110,31 @@ export const LANGUAGES = {
   la: ['Latin', 'la'], grc: ['Ancient Greek', 'grc'], ar: ['Arabic', 'ar'], sa: ['Sanskrit', 'sa'],
   ph: ['Phyrexian', null], qya: ['Quenya', 'qya'],
 };
+
+// Which face is the card's primary face (smtg:primaryFace): index + Comprehensive Rules reference.
+// Layouts not listed have a single face (index 0). null = no single primary face.
+export const PRIMARY_FACE = {
+  transform: [0, 'front face (CR 712.8a)'],
+  modal_dfc: [0, 'front face (CR 712.8a)'],
+  double_faced_token: [0, 'front face (CR 712.8a)'],
+  meld: [0, 'front face (CR 712.8b)'],
+  adventure: [0, 'normal characteristics, not the Adventure (CR 715.4)'],
+  flip: [0, 'normal (right-side-up) characteristics (CR 710.1)'],
+  prepare: [0, 'normal characteristics, not the prepare spell (CR 722.2)'],
+  split: [null, 'none: both halves combined (CR 709.4)'],
+  art_series: [null, 'none: not a game card'],
+  front_card: [null, 'none: not a game card'],
+  reversible_card: [null, 'printing layout: each side is its own Oracle card'],
+};
+
+// Rules-defined type groups (SKOS collections). Members are [scheme, catalog name]; the generator
+// checks that every member name occurs in the cited rule's text.
+export const TYPE_GROUPS = {
+  historic: { label: 'Historic', rule: '700.6', members: [['supertype', 'Legendary'], ['card-type', 'Artifact'], ['enchantment-type', 'Saga']] },
+  party: { label: 'Party', rule: '700.8', members: [['creature-type', 'Cleric'], ['creature-type', 'Rogue'], ['creature-type', 'Warrior'], ['creature-type', 'Wizard']] },
+  outlaw: { label: 'Outlaw', rule: '700.12', members: [['creature-type', 'Assassin'], ['creature-type', 'Mercenary'], ['creature-type', 'Pirate'], ['creature-type', 'Rogue'], ['creature-type', 'Warlock']] },
+};
+
+// Permanent and instant/sorcery card types (CR 110.4).
+export const PERMANENT_TYPES = ['Artifact', 'Battle', 'Creature', 'Enchantment', 'Land', 'Planeswalker'];
+export const INSTANT_SORCERY_TYPES = ['Instant', 'Sorcery'];

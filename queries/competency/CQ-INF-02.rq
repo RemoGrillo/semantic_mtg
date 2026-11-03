@@ -1,0 +1,16 @@
+# id: CQ-INF-02
+# title: Permanent cards among multi-faced cards (inferred)
+# question: For each multi-faced Oracle card, is it a permanent card in hand (CR 110.4a), and what is its primary face?
+# kind: SPARQL
+# expects: nonempty
+# modules: cards
+# note: Bonecrusher Giant is (its primary face is a creature); Agadeem's Awakening is not (its front face is a sorcery), though its back face is a land.
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?card ?primaryFace ?permanentCard WHERE {
+  ?c a smtg:OracleCard ; smtg:name ?card ; smtg:hasFace ?f1 , ?f2 . FILTER(?f1 != ?f2)
+  OPTIONAL { ?c smtg:primaryFace/smtg:name ?primaryFace }
+  BIND(EXISTS { GRAPH <https://w3id.org/smtg/graph/inferred/rules> { ?c a smtg:PermanentCard } } AS ?permanentCard)
+} GROUP BY ?card ?primaryFace ?permanentCard ORDER BY ?card

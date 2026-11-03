@@ -97,8 +97,8 @@ smtg:AdventurerCard a owl:Class ;
 smtg:PrepareCard a owl:Class ;
   rdfs:label "Prepare card"@en ;
   owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue layout:prepare ] ) ] ;
-  skos:definition "An Oracle card with Scryfall layout prepare (observed from 2026): a creature face and a spell face on the same side; while the permanent is prepared, a copy of the spell may be cast."@en ;
-  skos:scopeNote "Included as a live example of a layout that appeared after the plan was written: it was absorbed as a new vocabulary concept without changing any class axiom (ADR-0004). Definition taken from the reminder text on the observed cards; to be confirmed by reviewers."@en ;
+  skos:definition "An Oracle card with Scryfall layout prepare: a preparation card (CR 722) whose inset frame, the prepare spell, defines alternative characteristics; while the permanent is prepared, a copy with those characteristics may be cast."@en ;
+  skos:scopeNote "A live example of a layout that appeared after the plan was written: absorbed as a new vocabulary concept without changing any class axiom (ADR-0004)."@en ;
   smtg:reviewQuestion "RQ-LY-3" ;
   rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
 
@@ -262,8 +262,9 @@ smtg:occurrenceCount a owl:DatatypeProperty , owl:FunctionalProperty ;
 
 smtg:manaValue a owl:DatatypeProperty ;
   rdfs:label "mana value"@en ;
-  skos:definition "The mana value (formerly \"converted mana cost\") as reported by the source. Decimal, because some Un-cards have fractional values."@en ;
-  skos:scopeNote "Taken from the source, not recomputed from the cost: for split cards and other layouts the card-level value follows special rules."@en ;
+  skos:altLabel "converted mana cost"@en , "CMC"@en , "cmc"@en ;
+  skos:definition "The mana value (formerly \"converted mana cost\", renamed by Wizards in 2021) as reported by the source. Decimal, because some Un-cards have fractional values."@en ;
+  skos:scopeNote "Scryfall still calls this field cmc. Taken from the source, not recomputed from the cost: for split cards and other layouts the card-level value follows special rules (CR 202.3, 709.4)."@en ;
   rdfs:range xsd:decimal ;
   smtg:intendedDomain smtg:OracleCard , smtg:CardFace ;
   smtg:sourceField "scryfall:cmc" , "scryfall:card_faces[].cmc" ;
@@ -413,6 +414,69 @@ smtg:lifeModifierText a owl:DatatypeProperty ;
   skos:definition "Vanguard starting-life modifier as printed (e.g. -3)."@en ;
   smtg:intendedDomain smtg:CardFace ; rdfs:range xsd:string ;
   smtg:sourceField "scryfall:life_modifier" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+# -----------------------------------------------------------------------------
+#  Which face counts where; permanents (added 2026-11-03, model review)
+# -----------------------------------------------------------------------------
+
+smtg:primaryFace a owl:ObjectProperty , owl:FunctionalProperty ;
+  rdfs:subPropertyOf smtg:hasFace ;
+  rdfs:label "primary face"@en ;
+  skos:definition "The face whose characteristics the card has outside the battlefield and the stack: the front face of a double-faced card (CR 712.8a), the normal characteristics of an adventurer (CR 715.4), flip (CR 710.1) or preparation card (CR 722.2), and the only face of a single-faced card. Split cards have none: their characteristics are those of both halves combined (CR 709.4)."@en ;
+  skos:scopeNote "Derived per layout by a documented mapping (each Layout concept states smtg:primaryFacePolicy). This is what \"is this a permanent card in my hand?\" depends on."@en ;
+  rdfs:domain smtg:OracleCard ; rdfs:range smtg:CardFace ;
+  smtg:sourceField "scryfall:card_faces[]" , "scryfall:layout" ;
+  smtg:docExample <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902> ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:PermanentFace a owl:Class ;
+  owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:CardFace [ a owl:Restriction ; owl:onProperty smtg:hasCardType ; owl:someValuesFrom smtg:PermanentCardType ] ) ] ;
+  rdfs:label "Permanent face"@en ;
+  skos:definition "A card face with at least one permanent card type: artifact, battle, creature, enchantment, land or planeswalker (CR 110.4)."@en ;
+  skos:scopeNote "Defined at face level because 287 Oracle cards (2026-11-03) have one permanent face and one instant or sorcery face (adventures, some MDFCs). Not disjoint with InstantOrSorceryFace: three Un-cards are typed, e.g., \"Instant Creature\"."@en ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:InstantOrSorceryFace a owl:Class ;
+  owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:CardFace [ a owl:Restriction ; owl:onProperty smtg:hasCardType ; owl:someValuesFrom smtg:InstantOrSorceryCardType ] ) ] ;
+  rdfs:label "Instant or sorcery face"@en ;
+  skos:definition "A card face with the instant or sorcery card type; such a card can't enter the battlefield (CR 110.4)."@en ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:PermanentCard a owl:Class ;
+  owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( smtg:OracleCard [ a owl:Class ; owl:unionOf (
+      [ a owl:Restriction ; owl:onProperty smtg:primaryFace ; owl:someValuesFrom smtg:PermanentFace ]
+      [ a owl:Class ; owl:intersectionOf ( [ a owl:Restriction ; owl:onProperty smtg:hasLayout ; owl:hasValue <https://w3id.org/smtg/vocab/layout/split> ] [ a owl:Restriction ; owl:onProperty smtg:hasFace ; owl:someValuesFrom smtg:PermanentFace ] ) ] ) ] ) ] ;
+  rdfs:label "Permanent card"@en ;
+  skos:definition "An Oracle card that is a \"permanent card\" in the sense of CR 110.4a (an artifact, battle, creature, enchantment, land or planeswalker card) in zones other than the battlefield and the stack: its primary face is a permanent face, or it is a split card one of whose halves is (the halves' characteristics combine, CR 709.4)."@en ;
+  skos:scopeNote "A modal double-faced card such as Agadeem's Awakening // Agadeem, the Undercrypt is not a permanent card in hand (its front face is a sorcery), even though it can be played as a land via its back face."@en ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:createsToken a owl:ObjectProperty ;
+  rdfs:label "creates token"@en ;
+  skos:definition "Projection: the Oracle card is related by the source to a token it can create (Scryfall all_parts with component \"token\")."@en ;
+  skos:scopeNote "Lossy projection of smtg:PartRelationship (role token), materialised by rule R-TOKEN (rules/). Scryfall's token links are curated, mostly mean \"can create\", and are not guaranteed exhaustive."@en ;
+  smtg:projectionOf smtg:PartRelationship ;
+  smtg:inferenceRule "R-TOKEN" ;
+  rdfs:domain smtg:OracleCard ; rdfs:range smtg:OracleCard ;
+  smtg:sourceField "scryfall:all_parts[].component" ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:producesManaViaToken a owl:ObjectProperty ;
+  owl:propertyChainAxiom ( smtg:createsToken smtg:producesManaSymbol ) ;
+  rdfs:label "produces mana via token"@en ;
+  skos:definition "Inferred: the card can create a token that can produce this kind of mana (e.g. Eldrazi Confluence → Eldrazi Scion → {C})."@en ;
+  skos:scopeNote "Defined by the property chain createsToken ∘ producesManaSymbol and materialised by rule R-MANA-VIA-TOKEN into the inferred graph, never into source graphs. Conditional (the token must be created) and only as complete as Scryfall's token links and produced_mana."@en ;
+  smtg:inferenceRule "R-MANA-VIA-TOKEN" ;
+  rdfs:domain smtg:OracleCard ; rdfs:range smtg:ManaSymbol ;
+  rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
+
+smtg:faceKeyword a owl:ObjectProperty ;
+  rdfs:label "face keyword"@en ;
+  skos:definition "A keyword that belongs to a specific face. Derived by normalisation from the card-level keyword list: on single-faced cards every keyword; on multi-faced cards the keywords whose name occurs in that face's Oracle text."@en ;
+  skos:scopeNote "Scryfall gives keywords only per card; 717 multi-face Oracle cards (2026-11-03) have keywords without saying which face. Keywords matched on no face stay only on the card (smtg:hasKeyword)."@en ;
+  rdfs:domain smtg:CardFace ; rdfs:range smtg:Keyword ;
+  smtg:sourceField "scryfall:keywords" , "scryfall:card_faces[].oracle_text" ;
   rdfs:isDefinedBy smtgm:cards ; vs:term_status "unstable" .
 
 # --- Documentation examples (instances generated from real fixtures in examples/) ---

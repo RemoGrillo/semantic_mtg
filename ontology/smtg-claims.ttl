@@ -168,6 +168,10 @@ epi:authoritative-report a smtg:EpistemicStatus ; skos:inScheme smtgv:epistemic-
   skos:prefLabel "Authoritative source report"@en ; skos:notation "authoritative-report" ;
   skos:definition "Reported by a source that mirrors the authority for the fact (e.g. Scryfall reporting Wizards' Oracle text or format legality)."@en ;
   rdfs:isDefinedBy smtgm:claims .
+epi:source-editorial a smtg:EpistemicStatus ; skos:inScheme smtgv:epistemic-status ;
+  skos:prefLabel "Source editorial"@en ; skos:notation "source-editorial" ;
+  skos:definition "Stated by the source itself in its own editorial voice, not as a mirror of the authority (e.g. Scryfall's own ruling notes)."@en ;
+  rdfs:isDefinedBy smtgm:claims .
 epi:community-curated a smtg:EpistemicStatus ; skos:inScheme smtgv:epistemic-status ;
   skos:prefLabel "Community-curated"@en ; skos:notation "community-curated" ;
   skos:definition "Produced by a community curation process with its own editorial rules (Tagger tags, Commander Spellbook combos)."@en ;

@@ -1,0 +1,15 @@
+# id: CQ-KW-01
+# title: Keywords attributed to a specific face
+# question: On multi-faced cards, which face does each keyword belong to?
+# kind: SPARQL
+# expects: nonempty
+# modules: cards
+# note: Scryfall gives keywords per card only; faceKeyword is a documented normalisation (keyword name found in the face's Oracle text).
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?card ?face ?keyword WHERE {
+  ?c smtg:name ?card ; smtg:hasFace ?f , ?other . FILTER(?f != ?other)
+  ?f smtg:faceKeyword/skos:prefLabel ?keyword ; smtg:name ?face .
+} GROUP BY ?card ?face ?keyword ORDER BY ?card ?face

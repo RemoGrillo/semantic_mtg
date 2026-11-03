@@ -94,6 +94,11 @@ smtg:replacesTerm a owl:AnnotationProperty ;
   skos:definition "On a term in a proposal module: a core term that this proposed term would replace."@en ;
   rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
 
+smtg:inferenceRule a owl:AnnotationProperty ;
+  rdfs:label "inference rule"@en ;
+  skos:definition "Identifier of the rule (rules/*.rq) that materialises values of the annotated property or members of the annotated class into the inferred graph."@en ;
+  rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
+
 smtg:projectionOf a owl:AnnotationProperty ;
   rdfs:label "projection of"@en ;
   skos:definition "Marks a convenience property as a lossy projection of a qualified (reified) pattern; values of the projection are generated into a separate named graph and never asserted as source facts."@en ;
@@ -188,7 +193,8 @@ smtg:hasIdentifier a owl:ObjectProperty ;
   smtg:sourceField "scryfall:id" , "scryfall:oracle_id" , "scryfall:illustration_id" , "scryfall:set_id" , "scryfall:artist_ids" ,
     "scryfall:multiverse_ids" , "scryfall:mtgo_id" , "scryfall:mtgo_foil_id" , "scryfall:arena_id" , "scryfall:tcgplayer_id" ,
     "scryfall:tcgplayer_etched_id" , "scryfall:cardmarket_id" , "scryfall:card_back_id" , "tagger:id" ,
-    "spellbook:variants[].id" , "spellbook:variants[].uses[].card.id" , "spellbook:variants[].of[].id" , "spellbook:variants[].produces[].feature.id" ;
+    "spellbook:variants[].id" , "spellbook:variants[].uses[].card.id" , "spellbook:variants[].of[].id" , "spellbook:variants[].produces[].feature.id" ,
+    "scryfall-sets:id" , "scryfall-sets:code" , "scryfall-sets:mtgo_code" , "scryfall-sets:arena_code" , "scryfall-sets:tcgplayer_id" ;
   rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
 
 smtg:identifierValue a owl:DatatypeProperty , owl:FunctionalProperty ;
@@ -225,7 +231,7 @@ smtg:sourceURL a owl:DatatypeProperty ;
   rdfs:label "source URL"@en ;
   skos:definition "A URL at which a source publishes a human- or machine-readable description of the entity (e.g. the Scryfall card page or API URI). A URL is a pointer to a description, not an identity criterion."@en ;
   rdfs:range xsd:anyURI ;
-  smtg:sourceField "scryfall:uri" , "scryfall:scryfall_uri" , "scryfall:rulings_uri" , "scryfall:prints_search_uri" , "tagger:uri" ;
+  smtg:sourceField "scryfall:uri" , "scryfall:scryfall_uri" , "scryfall:rulings_uri" , "scryfall:prints_search_uri" , "tagger:uri" , "scryfall-sets:uri" , "scryfall-sets:scryfall_uri" ;
   rdfs:isDefinedBy smtgm:core ; vs:term_status "stable-draft" .
 
 smtgv:identifier-scheme a skos:ConceptScheme ;
@@ -255,6 +261,12 @@ idscheme:scryfall-card-back-id a smtg:IdentifierScheme ; skos:inScheme smtgv:ide
 idscheme:set-code a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
   skos:prefLabel "Set code"@en ; skos:notation "set" ;
   skos:definition "Short code of a set as used by Scryfall (usually Wizards' official code, lower-cased)."@en ; rdfs:isDefinedBy smtgm:core .
+idscheme:mtgo-set-code a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "MTGO set code"@en ; skos:notation "mtgo_code" ; rdfs:isDefinedBy smtgm:core .
+idscheme:arena-set-code a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "MTG Arena set code"@en ; skos:notation "arena_code" ; rdfs:isDefinedBy smtgm:core .
+idscheme:tcgplayer-set-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
+  skos:prefLabel "TCGplayer group ID"@en ; skos:notation "tcgplayer_id (set)" ; rdfs:isDefinedBy smtgm:core .
 idscheme:multiverse-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;
   skos:prefLabel "Gatherer multiverse ID"@en ; skos:notation "multiverse_ids" ; rdfs:isDefinedBy smtgm:core .
 idscheme:mtgo-id a smtg:IdentifierScheme ; skos:inScheme smtgv:identifier-scheme ;

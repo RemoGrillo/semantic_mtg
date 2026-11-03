@@ -31,8 +31,9 @@
 <https://w3id.org/smtg/id/oracle-card/0415bb62-819c-4c42-bc76-b9cfa9f5bb51> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/0415bb62-819c-4c42-bc76-b9cfa9f5bb51/face/0>.
 <https://w3id.org/smtg/id/oracle-card/0415bb62-819c-4c42-bc76-b9cfa9f5bb51/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/0415bb62-819c-4c42-bc76-b9cfa9f5bb51>;
     rdfs:label "Sisters of Stone Death Avatar";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
-    smtg:name "Sisters of Stone Death Avatar";
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/0415bb62-819c-4c42-bc76-b9cfa9f5bb51> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/0415bb62-819c-4c42-bc76-b9cfa9f5bb51/face/0>.
+<https://w3id.org/smtg/id/oracle-card/0415bb62-819c-4c42-bc76-b9cfa9f5bb51/face/0> smtg:name "Sisters of Stone Death Avatar";
     smtg:hasNoManaCost true;
     smtg:typeLine "Vanguard";
     smtg:hasCardType <https://w3id.org/smtg/vocab/card-type/vanguard>;
@@ -277,8 +278,29 @@
 <https://w3id.org/smtg/id/identifier/set-code/pmoa> a smtg:Identifier;
     smtg:identifierValue "pmoa";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/f8778e61-ae6b-43ee-a611-f042439fa737> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/pmoa>.
-<https://w3id.org/smtg/id/printing/02e51227-01c5-4609-9273-f8bf7ac47b4c> smtg:inSet <https://w3id.org/smtg/id/set/f8778e61-ae6b-43ee-a611-f042439fa737>;
+<https://w3id.org/smtg/id/set/f8778e61-ae6b-43ee-a611-f042439fa737> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/pmoa>;
+    smtg:releasedOn "2003-01-01"^^xsd:date;
+    smtg:declaredCardCount "85"^^xsd:nonNegativeInteger;
+    smtg:digitalSet true;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:sourceURL "https://scryfall.com/sets/pmoa"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/pmoa> a smtg:Identifier;
+    smtg:identifierValue "pmoa";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/f8778e61-ae6b-43ee-a611-f042439fa737> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/pmoa>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/pmoa> a smtg:Identifier;
+    smtg:identifierValue "pmoa";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/f8778e61-ae6b-43ee-a611-f042439fa737> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/pmoa>.
+<https://w3id.org/smtg/id/set/f8778e61-ae6b-43ee-a611-f042439fa737/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/mtgo.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/f8778e61-ae6b-43ee-a611-f042439fa737> smtg:hasSetIcon <https://w3id.org/smtg/id/set/f8778e61-ae6b-43ee-a611-f042439fa737/icon>.
+<https://w3id.org/smtg/id/printing/02e51227-01c5-4609-9273-f8bf7ac47b4c> smtg:inSet <https://w3id.org/smtg/id/set/f8778e61-ae6b-43ee-a611-f042439fa737>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7> a smtg:Identifier;
+    smtg:identifierValue "0aeebaf5-8c7d-4636-9e82-8c27447861f7";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/02e51227-01c5-4609-9273-f8bf7ac47b4c> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "55";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2003-01-01"^^xsd:date;

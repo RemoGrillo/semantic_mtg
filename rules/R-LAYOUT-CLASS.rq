@@ -1,0 +1,13 @@
+# id: R-LAYOUT-CLASS
+# title: Layout-defined classes (ModalDoubleFacedCard, AdventurerCard, …)
+# implements: every smtg:X owl:equivalentClass ( smtg:OracleCard and (smtg:hasLayout value L) ) recorded as L smtg:definedClass X
+# order: 1
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+CONSTRUCT { ?card a ?class }
+WHERE {
+  ?card a smtg:OracleCard ; smtg:hasLayout ?layout .
+  ?layout smtg:definedClass ?class .
+}

@@ -1,0 +1,5 @@
+{
+  "_comment": "Explicit dispositions for Scryfall rulings bulk fields not covered by smtg:sourceField annotations.",
+  "object": { "disposition": "excluded", "note": "JSON object-type discriminator (\"ruling\")." },
+  "source": { "disposition": "mapped", "note": "wotc → claimedBy Wizards, epistemic status authoritative-report; scryfall → claimedBy Scryfall, source-editorial." }
+}

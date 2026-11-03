@@ -32,7 +32,9 @@
 <https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850/face/0>.
 <https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850>;
     rdfs:label "Bruna, the Fading Light";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850/face/0>.
+<https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850/face/0> smtg:faceKeyword <https://w3id.org/smtg/vocab/keyword-ability/flying>, <https://w3id.org/smtg/vocab/keyword-ability/vigilance>;
     smtg:name "Bruna, the Fading Light".
 <https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850/face/0/mana-cost>.
@@ -309,8 +311,25 @@
 <https://w3id.org/smtg/id/identifier/set-code/inr> a smtg:Identifier;
     smtg:identifierValue "inr";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/inr>.
-<https://w3id.org/smtg/id/printing/6fccdb60-5fce-4a6e-a709-b986f9a4b653> smtg:inSet <https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf>;
+<https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/inr>;
+    smtg:releasedOn "2025-01-24"^^xsd:date;
+    smtg:declaredCardCount "495"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:sourceURL "https://scryfall.com/sets/inr"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/23848> a smtg:Identifier;
+    smtg:identifierValue "23848";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/23848>.
+<https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/inr.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf> smtg:hasSetIcon <https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf/icon>.
+<https://w3id.org/smtg/id/printing/6fccdb60-5fce-4a6e-a709-b986f9a4b653> smtg:inSet <https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/5353eb15-86a9-42fb-87e6-10d0b2fda365> a smtg:Identifier;
+    smtg:identifierValue "5353eb15-86a9-42fb-87e6-10d0b2fda365";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/6fccdb60-5fce-4a6e-a709-b986f9a4b653> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/5353eb15-86a9-42fb-87e6-10d0b2fda365>;
     smtg:collectorNumber "14";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2025-01-24"^^xsd:date;
@@ -472,7 +491,9 @@
 <https://w3id.org/smtg/id/oracle-card/f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22/face/0>.
 <https://w3id.org/smtg/id/oracle-card/f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22>;
     rdfs:label "Gisela, the Broken Blade";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22/face/0>.
+<https://w3id.org/smtg/id/oracle-card/f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22/face/0> smtg:faceKeyword <https://w3id.org/smtg/vocab/keyword-ability/flying>, <https://w3id.org/smtg/vocab/keyword-ability/lifelink>, <https://w3id.org/smtg/vocab/keyword-ability/first-strike>, <https://w3id.org/smtg/vocab/keyword-action/meld>;
     smtg:name "Gisela, the Broken Blade".
 <https://w3id.org/smtg/id/oracle-card/f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/f3e23d5e-bd88-4e7c-a3fb-db2a8cb05b22/face/0/mana-cost>.
@@ -738,7 +759,11 @@
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/cardmarket-id>.
 <https://w3id.org/smtg/id/printing/04506bad-3856-4184-8dda-941ded60f41a> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/cardmarket-id/805028>;
     smtg:sourceURL "https://scryfall.com/card/inr/24/gisela-the-broken-blade?utm_source=api"^^xsd:anyURI;
-    smtg:inSet <https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf>;
+    smtg:inSet <https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/130c9fd0-22e2-434a-afc9-0890ce7b368c> a smtg:Identifier;
+    smtg:identifierValue "130c9fd0-22e2-434a-afc9-0890ce7b368c";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/04506bad-3856-4184-8dda-941ded60f41a> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/130c9fd0-22e2-434a-afc9-0890ce7b368c>;
     smtg:collectorNumber "24";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2025-01-24"^^xsd:date;
@@ -894,7 +919,9 @@
 <https://w3id.org/smtg/id/oracle-card/b23587e0-9fb7-492e-8bb4-f218e8e4ce6c> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/b23587e0-9fb7-492e-8bb4-f218e8e4ce6c/face/0>.
 <https://w3id.org/smtg/id/oracle-card/b23587e0-9fb7-492e-8bb4-f218e8e4ce6c/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/b23587e0-9fb7-492e-8bb4-f218e8e4ce6c>;
     rdfs:label "Brisela, Voice of Nightmares";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/b23587e0-9fb7-492e-8bb4-f218e8e4ce6c> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/b23587e0-9fb7-492e-8bb4-f218e8e4ce6c/face/0>.
+<https://w3id.org/smtg/id/oracle-card/b23587e0-9fb7-492e-8bb4-f218e8e4ce6c/face/0> smtg:faceKeyword <https://w3id.org/smtg/vocab/keyword-ability/flying>, <https://w3id.org/smtg/vocab/keyword-ability/lifelink>, <https://w3id.org/smtg/vocab/keyword-ability/vigilance>, <https://w3id.org/smtg/vocab/keyword-ability/first-strike>;
     smtg:name "Brisela, Voice of Nightmares";
     smtg:hasNoManaCost true;
     smtg:typeLine "Legendary Creature — Eldrazi Angel";
@@ -1129,7 +1156,11 @@
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/multiverse-id>.
 <https://w3id.org/smtg/id/printing/7e926e19-553c-470a-afde-358541af5caa> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/multiverse-id/686144>;
     smtg:sourceURL "https://scryfall.com/card/inr/14b/brisela-voice-of-nightmares?utm_source=api"^^xsd:anyURI;
-    smtg:inSet <https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf>;
+    smtg:inSet <https://w3id.org/smtg/id/set/b9618c8c-9f31-4b42-9798-2991893c27bf>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7> a smtg:Identifier;
+    smtg:identifierValue "0aeebaf5-8c7d-4636-9e82-8c27447861f7";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/7e926e19-553c-470a-afde-358541af5caa> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "14b";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2025-01-24"^^xsd:date;
@@ -1256,8 +1287,35 @@
 <https://w3id.org/smtg/id/identifier/set-code/emn> a smtg:Identifier;
     smtg:identifierValue "emn";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/5f0e4093-334f-4439-bbb5-a0affafd0ffc> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/emn>.
-<https://w3id.org/smtg/id/printing/27907985-b5f6-4098-ab43-15a0c2bf94d5> smtg:inSet <https://w3id.org/smtg/id/set/5f0e4093-334f-4439-bbb5-a0affafd0ffc>;
+<https://w3id.org/smtg/id/set/5f0e4093-334f-4439-bbb5-a0affafd0ffc> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/emn>;
+    smtg:releasedOn "2016-07-22"^^xsd:date;
+    smtg:declaredCardCount "208"^^xsd:nonNegativeInteger;
+    smtg:printedSize "205"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:blockCode "soi";
+    smtg:sourceURL "https://scryfall.com/sets/emn"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/emn> a smtg:Identifier;
+    smtg:identifierValue "emn";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/5f0e4093-334f-4439-bbb5-a0affafd0ffc> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/emn>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/emn> a smtg:Identifier;
+    smtg:identifierValue "emn";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/5f0e4093-334f-4439-bbb5-a0affafd0ffc> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/emn>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/1790> a smtg:Identifier;
+    smtg:identifierValue "1790";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/5f0e4093-334f-4439-bbb5-a0affafd0ffc> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/1790>.
+<https://w3id.org/smtg/id/set/5f0e4093-334f-4439-bbb5-a0affafd0ffc/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/emn.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/5f0e4093-334f-4439-bbb5-a0affafd0ffc> smtg:hasSetIcon <https://w3id.org/smtg/id/set/5f0e4093-334f-4439-bbb5-a0affafd0ffc/icon>.
+<https://w3id.org/smtg/id/printing/27907985-b5f6-4098-ab43-15a0c2bf94d5> smtg:inSet <https://w3id.org/smtg/id/set/5f0e4093-334f-4439-bbb5-a0affafd0ffc>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/b226f2b2-3d2e-4a4f-92fc-0bb52ca107b3> a smtg:Identifier;
+    smtg:identifierValue "b226f2b2-3d2e-4a4f-92fc-0bb52ca107b3";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/27907985-b5f6-4098-ab43-15a0c2bf94d5> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/b226f2b2-3d2e-4a4f-92fc-0bb52ca107b3>;
     smtg:collectorNumber "15";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2016-07-22"^^xsd:date;
@@ -1409,7 +1467,11 @@
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/cardmarket-id>.
 <https://w3id.org/smtg/id/printing/c75c035a-7da9-4b36-982d-fca8220b1797> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/cardmarket-id/290930>;
     smtg:sourceURL "https://scryfall.com/card/emn/28/gisela-the-broken-blade?utm_source=api"^^xsd:anyURI;
-    smtg:inSet <https://w3id.org/smtg/id/set/5f0e4093-334f-4439-bbb5-a0affafd0ffc>;
+    smtg:inSet <https://w3id.org/smtg/id/set/5f0e4093-334f-4439-bbb5-a0affafd0ffc>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/431aff8a-4a63-43b2-8a91-604b5afe1fbb> a smtg:Identifier;
+    smtg:identifierValue "431aff8a-4a63-43b2-8a91-604b5afe1fbb";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/c75c035a-7da9-4b36-982d-fca8220b1797> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/431aff8a-4a63-43b2-8a91-604b5afe1fbb>;
     smtg:collectorNumber "28";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2016-07-22"^^xsd:date;
@@ -1550,6 +1612,7 @@
 <https://w3id.org/smtg/id/printing/5a7a212e-e0b6-4f12-a95c-173cae023f93> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/multiverse-id/414305>;
     smtg:sourceURL "https://scryfall.com/card/emn/15b/brisela-voice-of-nightmares?utm_source=api"^^xsd:anyURI;
     smtg:inSet <https://w3id.org/smtg/id/set/5f0e4093-334f-4439-bbb5-a0affafd0ffc>;
+    smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "15b";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2016-07-22"^^xsd:date;

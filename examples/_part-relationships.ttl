@@ -14,6 +14,14 @@
 @prefix smtgv: <https://w3id.org/smtg/vocab/>.
 @prefix smtgid: <https://w3id.org/smtg/id/>.
 
+<https://w3id.org/smtg/id/oracle-card/01160cb5-6d83-4317-9522-74083b3a83bb/part/token/0eb3cd4b-c34e-448c-a9ab-e7b0b4524833> a smtg:PartRelationship.
+<https://w3id.org/smtg/id/oracle-card/01160cb5-6d83-4317-9522-74083b3a83bb> smtg:hasPartRelationship <https://w3id.org/smtg/id/oracle-card/01160cb5-6d83-4317-9522-74083b3a83bb/part/token/0eb3cd4b-c34e-448c-a9ab-e7b0b4524833>.
+<https://w3id.org/smtg/id/oracle-card/01160cb5-6d83-4317-9522-74083b3a83bb/part/token/0eb3cd4b-c34e-448c-a9ab-e7b0b4524833> smtg:relatedObject <https://w3id.org/smtg/id/oracle-card/0eb3cd4b-c34e-448c-a9ab-e7b0b4524833>;
+    smtg:partRole <https://w3id.org/smtg/vocab/part-component/token>.
+<https://w3id.org/smtg/id/oracle-card/0eb3cd4b-c34e-448c-a9ab-e7b0b4524833/part/combo_piece/01160cb5-6d83-4317-9522-74083b3a83bb> a smtg:PartRelationship.
+<https://w3id.org/smtg/id/oracle-card/0eb3cd4b-c34e-448c-a9ab-e7b0b4524833> smtg:hasPartRelationship <https://w3id.org/smtg/id/oracle-card/0eb3cd4b-c34e-448c-a9ab-e7b0b4524833/part/combo_piece/01160cb5-6d83-4317-9522-74083b3a83bb>.
+<https://w3id.org/smtg/id/oracle-card/0eb3cd4b-c34e-448c-a9ab-e7b0b4524833/part/combo_piece/01160cb5-6d83-4317-9522-74083b3a83bb> smtg:relatedObject <https://w3id.org/smtg/id/oracle-card/01160cb5-6d83-4317-9522-74083b3a83bb>;
+    smtg:partRole <https://w3id.org/smtg/vocab/part-component/combo_piece>.
 <https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850/part/meld_result/b23587e0-9fb7-492e-8bb4-f218e8e4ce6c> a smtg:PartRelationship.
 <https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850> smtg:hasPartRelationship <https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850/part/meld_result/b23587e0-9fb7-492e-8bb4-f218e8e4ce6c>.
 <https://w3id.org/smtg/id/oracle-card/bce7e45d-b2c5-43aa-91a6-3a3c24f30850/part/meld_result/b23587e0-9fb7-492e-8bb4-f218e8e4ce6c> smtg:relatedObject <https://w3id.org/smtg/id/oracle-card/b23587e0-9fb7-492e-8bb4-f218e8e4ce6c>;

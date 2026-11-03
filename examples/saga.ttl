@@ -31,8 +31,9 @@
 <https://w3id.org/smtg/id/oracle-card/51042581-4add-4487-a1b6-85446539b975> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/51042581-4add-4487-a1b6-85446539b975/face/0>.
 <https://w3id.org/smtg/id/oracle-card/51042581-4add-4487-a1b6-85446539b975/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/51042581-4add-4487-a1b6-85446539b975>;
     rdfs:label "Age of Ultron";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
-    smtg:name "Age of Ultron".
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/51042581-4add-4487-a1b6-85446539b975> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/51042581-4add-4487-a1b6-85446539b975/face/0>.
+<https://w3id.org/smtg/id/oracle-card/51042581-4add-4487-a1b6-85446539b975/face/0> smtg:name "Age of Ultron".
 <https://w3id.org/smtg/id/oracle-card/51042581-4add-4487-a1b6-85446539b975/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/51042581-4add-4487-a1b6-85446539b975/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/51042581-4add-4487-a1b6-85446539b975/face/0/mana-cost>.
 <https://w3id.org/smtg/id/oracle-card/51042581-4add-4487-a1b6-85446539b975/face/0/mana-cost> smtg:manaCostNotation "{4}{B}".
@@ -299,8 +300,39 @@
 <https://w3id.org/smtg/id/identifier/set-code/msc> a smtg:Identifier;
     smtg:identifierValue "msc";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/9d739461-c5ac-43a1-af41-3d5a585b5c8d> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/msc>.
-<https://w3id.org/smtg/id/printing/54050442-c9b1-481a-a1cd-77c147e9013e> smtg:inSet <https://w3id.org/smtg/id/set/9d739461-c5ac-43a1-af41-3d5a585b5c8d>;
+<https://w3id.org/smtg/id/set/9d739461-c5ac-43a1-af41-3d5a585b5c8d> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/msc>;
+    smtg:releasedOn "2026-06-26"^^xsd:date;
+    smtg:declaredCardCount "866"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:blockCode "cmd";
+    smtg:sourceURL "https://scryfall.com/sets/msc"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/24554> a smtg:Identifier;
+    smtg:identifierValue "24554";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/9d739461-c5ac-43a1-af41-3d5a585b5c8d> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/24554>.
+<https://w3id.org/smtg/id/set/9d739461-c5ac-43a1-af41-3d5a585b5c8d/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/msc.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/9d739461-c5ac-43a1-af41-3d5a585b5c8d> smtg:hasSetIcon <https://w3id.org/smtg/id/set/9d739461-c5ac-43a1-af41-3d5a585b5c8d/icon>.
+<https://w3id.org/smtg/id/set/ba9bf625-681c-4a4e-ab48-399b2fecac6b> a smtg:MtgSet;
+    rdfs:label "Marvel Super Heroes";
+    smtg:setCode "msh";
+    smtg:hasSetType <https://w3id.org/smtg/vocab/set-type/expansion>.
+<https://w3id.org/smtg/id/identifier/scryfall-set-id/ba9bf625-681c-4a4e-ab48-399b2fecac6b> a smtg:Identifier;
+    smtg:identifierValue "ba9bf625-681c-4a4e-ab48-399b2fecac6b";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-set-id>.
+<https://w3id.org/smtg/id/set/ba9bf625-681c-4a4e-ab48-399b2fecac6b> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-set-id/ba9bf625-681c-4a4e-ab48-399b2fecac6b>.
+<https://w3id.org/smtg/id/identifier/set-code/msh> a smtg:Identifier;
+    smtg:identifierValue "msh";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
+<https://w3id.org/smtg/id/set/ba9bf625-681c-4a4e-ab48-399b2fecac6b> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/msh>.
+<https://w3id.org/smtg/id/set/9d739461-c5ac-43a1-af41-3d5a585b5c8d> smtg:parentSet <https://w3id.org/smtg/id/set/ba9bf625-681c-4a4e-ab48-399b2fecac6b>.
+<https://w3id.org/smtg/id/printing/54050442-c9b1-481a-a1cd-77c147e9013e> smtg:inSet <https://w3id.org/smtg/id/set/9d739461-c5ac-43a1-af41-3d5a585b5c8d>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7> a smtg:Identifier;
+    smtg:identifierValue "0aeebaf5-8c7d-4636-9e82-8c27447861f7";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/54050442-c9b1-481a-a1cd-77c147e9013e> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "41";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2026-06-26"^^xsd:date;

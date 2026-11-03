@@ -1,0 +1,15 @@
+# id: R-PERMANENT-CARD
+# title: Permanent cards (CR 110.4a): primary face is a permanent face, or a split card with a permanent half
+# implements: smtg:PermanentCard owl:equivalentClass ( smtg:OracleCard and ((smtg:primaryFace some smtg:PermanentFace) or (smtg:hasLayout value layout/split and smtg:hasFace some smtg:PermanentFace)) )
+# order: 2
+PREFIX smtg: <https://w3id.org/smtg/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX v: <https://w3id.org/smtg/vocab/>
+CONSTRUCT { ?card a smtg:PermanentCard }
+WHERE {
+  ?card a smtg:OracleCard .
+  { ?card smtg:primaryFace ?face . ?face a smtg:PermanentFace . }
+  UNION
+  { ?card smtg:hasLayout <https://w3id.org/smtg/vocab/layout/split> ; smtg:hasFace ?face . ?face a smtg:PermanentFace . }
+}

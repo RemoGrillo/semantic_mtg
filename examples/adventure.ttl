@@ -31,8 +31,9 @@
 <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902/face/0>.
 <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902>;
     rdfs:label "Bonecrusher Giant";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
-    smtg:name "Bonecrusher Giant".
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902/face/0>.
+<https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902/face/0> smtg:name "Bonecrusher Giant".
 <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902/face/0/mana-cost>.
 <https://w3id.org/smtg/id/oracle-card/d6d72f5f-8f5d-4180-b514-f22ff5482902/face/0/mana-cost> smtg:manaCostNotation "{2}{R}".
@@ -330,8 +331,27 @@
 <https://w3id.org/smtg/id/identifier/set-code/clb> a smtg:Identifier;
     smtg:identifierValue "clb";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/5e4c3fe8-fd57-4b20-ad56-c03790a16cea> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/clb>.
-<https://w3id.org/smtg/id/printing/b5b71cd2-de35-451f-b16e-2e3936169407> smtg:inSet <https://w3id.org/smtg/id/set/5e4c3fe8-fd57-4b20-ad56-c03790a16cea>;
+<https://w3id.org/smtg/id/set/5e4c3fe8-fd57-4b20-ad56-c03790a16cea> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/clb>;
+    smtg:releasedOn "2022-06-10"^^xsd:date;
+    smtg:declaredCardCount "936"^^xsd:nonNegativeInteger;
+    smtg:printedSize "361"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:blockCode "cmd";
+    smtg:sourceURL "https://scryfall.com/sets/clb"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/3047> a smtg:Identifier;
+    smtg:identifierValue "3047";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/5e4c3fe8-fd57-4b20-ad56-c03790a16cea> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/3047>.
+<https://w3id.org/smtg/id/set/5e4c3fe8-fd57-4b20-ad56-c03790a16cea/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/clb.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/5e4c3fe8-fd57-4b20-ad56-c03790a16cea> smtg:hasSetIcon <https://w3id.org/smtg/id/set/5e4c3fe8-fd57-4b20-ad56-c03790a16cea/icon>.
+<https://w3id.org/smtg/id/printing/b5b71cd2-de35-451f-b16e-2e3936169407> smtg:inSet <https://w3id.org/smtg/id/set/5e4c3fe8-fd57-4b20-ad56-c03790a16cea>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7> a smtg:Identifier;
+    smtg:identifierValue "0aeebaf5-8c7d-4636-9e82-8c27447861f7";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/b5b71cd2-de35-451f-b16e-2e3936169407> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "781";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2022-06-10"^^xsd:date;
@@ -453,8 +473,30 @@
 <https://w3id.org/smtg/id/identifier/set-code/eld> a smtg:Identifier;
     smtg:identifierValue "eld";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/a90a7b2f-9dd8-4fc7-9f7d-8ea2797ec782> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/eld>.
+<https://w3id.org/smtg/id/set/a90a7b2f-9dd8-4fc7-9f7d-8ea2797ec782> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/eld>;
+    smtg:releasedOn "2019-10-04"^^xsd:date;
+    smtg:declaredCardCount "397"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:sourceURL "https://scryfall.com/sets/eld"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/eld> a smtg:Identifier;
+    smtg:identifierValue "eld";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/a90a7b2f-9dd8-4fc7-9f7d-8ea2797ec782> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/eld>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/eld> a smtg:Identifier;
+    smtg:identifierValue "eld";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/a90a7b2f-9dd8-4fc7-9f7d-8ea2797ec782> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/eld>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/2494> a smtg:Identifier;
+    smtg:identifierValue "2494";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/a90a7b2f-9dd8-4fc7-9f7d-8ea2797ec782> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/2494>.
+<https://w3id.org/smtg/id/set/a90a7b2f-9dd8-4fc7-9f7d-8ea2797ec782/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/eld.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/a90a7b2f-9dd8-4fc7-9f7d-8ea2797ec782> smtg:hasSetIcon <https://w3id.org/smtg/id/set/a90a7b2f-9dd8-4fc7-9f7d-8ea2797ec782/icon>.
 <https://w3id.org/smtg/id/printing/09fd2d9c-1793-4beb-a3fb-7a869f660cd4> smtg:inSet <https://w3id.org/smtg/id/set/a90a7b2f-9dd8-4fc7-9f7d-8ea2797ec782>;
+    smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "115";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2019-10-04"^^xsd:date;

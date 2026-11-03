@@ -56,6 +56,7 @@
 <https://w3id.org/smtg/id/oracle-card/56fd8895-3be2-4591-86fa-87567d9cdc14/face/1> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/56fd8895-3be2-4591-86fa-87567d9cdc14>;
     rdfs:label "Memory";
     smtg:faceIndex "1"^^xsd:nonNegativeInteger;
+    smtg:faceKeyword <https://w3id.org/smtg/vocab/keyword-ability/aftermath>;
     smtg:name "Memory".
 <https://w3id.org/smtg/id/oracle-card/56fd8895-3be2-4591-86fa-87567d9cdc14/face/1/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/56fd8895-3be2-4591-86fa-87567d9cdc14/face/1> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/56fd8895-3be2-4591-86fa-87567d9cdc14/face/1/mana-cost>.
@@ -325,8 +326,47 @@
 <https://w3id.org/smtg/id/identifier/set-code/lcc> a smtg:Identifier;
     smtg:identifierValue "lcc";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/d253edc3-5bc7-4cf1-9446-a8540dedffa5> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/lcc>.
-<https://w3id.org/smtg/id/printing/855af9a8-31fc-4290-8204-04ee026f8853> smtg:inSet <https://w3id.org/smtg/id/set/d253edc3-5bc7-4cf1-9446-a8540dedffa5>;
+<https://w3id.org/smtg/id/set/d253edc3-5bc7-4cf1-9446-a8540dedffa5> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/lcc>;
+    smtg:releasedOn "2023-11-17"^^xsd:date;
+    smtg:declaredCardCount "370"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:blockCode "cmd";
+    smtg:sourceURL "https://scryfall.com/sets/lcc"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/lcc> a smtg:Identifier;
+    smtg:identifierValue "lcc";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/d253edc3-5bc7-4cf1-9446-a8540dedffa5> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/lcc>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/lcc> a smtg:Identifier;
+    smtg:identifierValue "lcc";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/d253edc3-5bc7-4cf1-9446-a8540dedffa5> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/lcc>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/23316> a smtg:Identifier;
+    smtg:identifierValue "23316";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/d253edc3-5bc7-4cf1-9446-a8540dedffa5> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/23316>.
+<https://w3id.org/smtg/id/set/d253edc3-5bc7-4cf1-9446-a8540dedffa5/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/lcc.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/d253edc3-5bc7-4cf1-9446-a8540dedffa5> smtg:hasSetIcon <https://w3id.org/smtg/id/set/d253edc3-5bc7-4cf1-9446-a8540dedffa5/icon>.
+<https://w3id.org/smtg/id/set/70169a6e-89d1-4a3a-aef7-3152958d55ac> a smtg:MtgSet;
+    rdfs:label "The Lost Caverns of Ixalan";
+    smtg:setCode "lci";
+    smtg:hasSetType <https://w3id.org/smtg/vocab/set-type/expansion>.
+<https://w3id.org/smtg/id/identifier/scryfall-set-id/70169a6e-89d1-4a3a-aef7-3152958d55ac> a smtg:Identifier;
+    smtg:identifierValue "70169a6e-89d1-4a3a-aef7-3152958d55ac";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-set-id>.
+<https://w3id.org/smtg/id/set/70169a6e-89d1-4a3a-aef7-3152958d55ac> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-set-id/70169a6e-89d1-4a3a-aef7-3152958d55ac>.
+<https://w3id.org/smtg/id/identifier/set-code/lci> a smtg:Identifier;
+    smtg:identifierValue "lci";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
+<https://w3id.org/smtg/id/set/70169a6e-89d1-4a3a-aef7-3152958d55ac> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/lci>.
+<https://w3id.org/smtg/id/set/d253edc3-5bc7-4cf1-9446-a8540dedffa5> smtg:parentSet <https://w3id.org/smtg/id/set/70169a6e-89d1-4a3a-aef7-3152958d55ac>.
+<https://w3id.org/smtg/id/printing/855af9a8-31fc-4290-8204-04ee026f8853> smtg:inSet <https://w3id.org/smtg/id/set/d253edc3-5bc7-4cf1-9446-a8540dedffa5>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7> a smtg:Identifier;
+    smtg:identifierValue "0aeebaf5-8c7d-4636-9e82-8c27447861f7";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/855af9a8-31fc-4290-8204-04ee026f8853> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "147";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2023-11-17"^^xsd:date;
@@ -440,8 +480,32 @@
 <https://w3id.org/smtg/id/identifier/set-code/akh> a smtg:Identifier;
     smtg:identifierValue "akh";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/02d1c536-68bc-4208-9b65-7741ef1f9da8> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/akh>.
+<https://w3id.org/smtg/id/set/02d1c536-68bc-4208-9b65-7741ef1f9da8> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/akh>;
+    smtg:releasedOn "2017-04-28"^^xsd:date;
+    smtg:declaredCardCount "287"^^xsd:nonNegativeInteger;
+    smtg:printedSize "269"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:blockCode "akh";
+    smtg:sourceURL "https://scryfall.com/sets/akh"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/akh> a smtg:Identifier;
+    smtg:identifierValue "akh";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/02d1c536-68bc-4208-9b65-7741ef1f9da8> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/akh>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/akh> a smtg:Identifier;
+    smtg:identifierValue "akh";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/02d1c536-68bc-4208-9b65-7741ef1f9da8> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/akh>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/1882> a smtg:Identifier;
+    smtg:identifierValue "1882";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/02d1c536-68bc-4208-9b65-7741ef1f9da8> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/1882>.
+<https://w3id.org/smtg/id/set/02d1c536-68bc-4208-9b65-7741ef1f9da8/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/akh.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/02d1c536-68bc-4208-9b65-7741ef1f9da8> smtg:hasSetIcon <https://w3id.org/smtg/id/set/02d1c536-68bc-4208-9b65-7741ef1f9da8/icon>.
 <https://w3id.org/smtg/id/printing/06c9e2e8-2b4c-4087-9141-6aa25a506626> smtg:inSet <https://w3id.org/smtg/id/set/02d1c536-68bc-4208-9b65-7741ef1f9da8>;
+    smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "211";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2017-04-28"^^xsd:date;

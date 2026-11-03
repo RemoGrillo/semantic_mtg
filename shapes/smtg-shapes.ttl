@@ -37,7 +37,10 @@ smtgsh:OracleCardShape a sh:NodeShape ;
     sh:message "An Oracle card must carry exactly one Scryfall Oracle ID identifier."@en ] ;
   sh:property [
     sh:path rdf:type ; sh:not [ sh:hasValue smtg:CardPrinting ] ;
-    sh:message "An Oracle card must not also be typed as a printing (AP-01)."@en ] .
+    sh:message "An Oracle card must not also be typed as a printing (AP-01)."@en ] ;
+  sh:property [
+    sh:path smtg:primaryFace ; sh:maxCount 1 ; sh:class smtg:CardFace ;
+    sh:message "An Oracle card has at most one primary face (none for split cards)."@en ] .
 
 smtgsh:CardFaceShape a sh:NodeShape ;
   sh:targetClass smtg:CardFace ;
@@ -51,7 +54,9 @@ smtgsh:CardFaceShape a sh:NodeShape ;
   sh:property [ sh:path smtg:hasSubtype ; sh:class smtg:Subtype ;
     sh:message "Subtypes must be concepts of a type-qualified subtype scheme, not strings."@en ] ;
   sh:property [ sh:path smtg:powerText ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
-  sh:property [ sh:path smtg:powerValue ; sh:maxCount 1 ; sh:datatype xsd:decimal ] .
+  sh:property [ sh:path smtg:powerValue ; sh:maxCount 1 ; sh:datatype xsd:decimal ] ;
+  sh:property [ sh:path smtg:faceKeyword ; sh:class smtg:Keyword ;
+    sh:message "Face keywords must be keyword concepts."@en ] .
 
 smtgsh:ManaCostXorEmpty a sh:NodeShape ;
   sh:targetClass smtg:CardFace ;
@@ -159,7 +164,9 @@ smtgsh:ComboCardUseShape a sh:NodeShape ;
   sh:targetClass smtg:ComboCardUse ;
   sh:property [ sh:path smtg:usesCard ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:OracleCard ;
     sh:message "A card use refers to exactly one Oracle card (templates are TemplateRequirements)."@en ] ;
-  sh:property [ sh:path smtg:quantity ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:positiveInteger ] .
+  sh:property [ sh:path smtg:quantity ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:positiveInteger ] ;
+  sh:property [ sh:path smtg:usesFace ; sh:maxCount 1 ; sh:class smtg:CardFace ;
+    sh:message "A card use names at most one face of its card."@en ] .
 
 smtgsh:SourceSnapshotShape a sh:NodeShape ;
   sh:targetClass smtg:SourceSnapshot ;
@@ -171,3 +178,16 @@ smtgsh:NoSameAs a sh:NodeShape ;
   sh:targetSubjectsOf <http://www.w3.org/2002/07/owl#sameAs> ;
   sh:property [ sh:path <http://www.w3.org/2002/07/owl#sameAs> ; sh:maxCount 0 ;
     sh:message "owl:sameAs is not used in SMTG instance data (two printings sharing an image, or two cards sharing a name, are not identical — AP-03, AP-04)."@en ] .
+
+smtgsh:RulingShape a sh:NodeShape ;
+  sh:targetClass smtg:Ruling ;
+  sh:property [ sh:path smtg:rulingFor ; sh:minCount 1 ; sh:maxCount 1 ; sh:class smtg:OracleCard ;
+    sh:message "A ruling is about exactly one Oracle card."@en ] ;
+  sh:property [ sh:path smtg:rulingText ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path smtg:publishedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] .
+
+smtgsh:MtgSetShape a sh:NodeShape ;
+  sh:targetClass smtg:MtgSet ;
+  sh:property [ sh:path smtg:setCode ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path smtg:printedSize ; sh:maxCount 1 ; sh:datatype xsd:nonNegativeInteger ] ;
+  sh:property [ sh:path smtg:hasSetIcon ; sh:maxCount 1 ; sh:class smtg:DigitalImage ] .

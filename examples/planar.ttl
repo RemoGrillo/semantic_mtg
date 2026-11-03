@@ -32,8 +32,9 @@
 <https://w3id.org/smtg/id/oracle-card/11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5/face/0>.
 <https://w3id.org/smtg/id/oracle-card/11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5>;
     rdfs:label "Llanowar";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
-    smtg:name "Llanowar";
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5/face/0>.
+<https://w3id.org/smtg/id/oracle-card/11b3fcb2-0b66-4d8b-8e66-a21a5da1c1f5/face/0> smtg:name "Llanowar";
     smtg:hasNoManaCost true;
     smtg:typeLine "Plane — Dominaria";
     smtg:hasCardType <https://w3id.org/smtg/vocab/card-type/plane>;
@@ -281,8 +282,34 @@
 <https://w3id.org/smtg/id/identifier/set-code/opca> a smtg:Identifier;
     smtg:identifierValue "opca";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/ada3345c-d416-49bc-92e0-73363ddee5c8> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/opca>.
-<https://w3id.org/smtg/id/printing/00832a47-dec8-411e-9708-b3ebbd3a2dfc> smtg:inSet <https://w3id.org/smtg/id/set/ada3345c-d416-49bc-92e0-73363ddee5c8>;
+<https://w3id.org/smtg/id/set/ada3345c-d416-49bc-92e0-73363ddee5c8> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/opca>;
+    smtg:releasedOn "2016-11-25"^^xsd:date;
+    smtg:declaredCardCount "86"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet true;
+    smtg:sourceURL "https://scryfall.com/sets/opca"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/ada3345c-d416-49bc-92e0-73363ddee5c8/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/pca.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/ada3345c-d416-49bc-92e0-73363ddee5c8> smtg:hasSetIcon <https://w3id.org/smtg/id/set/ada3345c-d416-49bc-92e0-73363ddee5c8/icon>.
+<https://w3id.org/smtg/id/set/ceadd605-dfba-4998-b96d-e8e8138aa20f> a smtg:MtgSet;
+    rdfs:label "Planechase Anthology";
+    smtg:setCode "pca";
+    smtg:hasSetType <https://w3id.org/smtg/vocab/set-type/planechase>.
+<https://w3id.org/smtg/id/identifier/scryfall-set-id/ceadd605-dfba-4998-b96d-e8e8138aa20f> a smtg:Identifier;
+    smtg:identifierValue "ceadd605-dfba-4998-b96d-e8e8138aa20f";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-set-id>.
+<https://w3id.org/smtg/id/set/ceadd605-dfba-4998-b96d-e8e8138aa20f> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-set-id/ceadd605-dfba-4998-b96d-e8e8138aa20f>.
+<https://w3id.org/smtg/id/identifier/set-code/pca> a smtg:Identifier;
+    smtg:identifierValue "pca";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
+<https://w3id.org/smtg/id/set/ceadd605-dfba-4998-b96d-e8e8138aa20f> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/pca>.
+<https://w3id.org/smtg/id/set/ada3345c-d416-49bc-92e0-73363ddee5c8> smtg:parentSet <https://w3id.org/smtg/id/set/ceadd605-dfba-4998-b96d-e8e8138aa20f>.
+<https://w3id.org/smtg/id/printing/00832a47-dec8-411e-9708-b3ebbd3a2dfc> smtg:inSet <https://w3id.org/smtg/id/set/ada3345c-d416-49bc-92e0-73363ddee5c8>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/7840c131-f96b-4700-9347-2215c43156e6> a smtg:Identifier;
+    smtg:identifierValue "7840c131-f96b-4700-9347-2215c43156e6";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/00832a47-dec8-411e-9708-b3ebbd3a2dfc> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/7840c131-f96b-4700-9347-2215c43156e6>;
     smtg:collectorNumber "48";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2016-11-25"^^xsd:date;

@@ -33,6 +33,7 @@
 <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5>;
     rdfs:label "Alive";
     smtg:faceIndex "0"^^xsd:nonNegativeInteger;
+    smtg:faceKeyword <https://w3id.org/smtg/vocab/keyword-ability/fuse>;
     smtg:name "Alive".
 <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5/face/0/mana-cost>.
@@ -56,6 +57,7 @@
 <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5/face/1> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5>;
     rdfs:label "Well";
     smtg:faceIndex "1"^^xsd:nonNegativeInteger;
+    smtg:faceKeyword <https://w3id.org/smtg/vocab/keyword-ability/fuse>;
     smtg:name "Well".
 <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5/face/1/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5/face/1> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5/face/1/mana-cost>.
@@ -321,8 +323,35 @@
 <https://w3id.org/smtg/id/identifier/set-code/dgm> a smtg:Identifier;
     smtg:identifierValue "dgm";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/c8bd8520-cd98-45cd-b533-8d40c2087426> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/dgm>.
-<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198> smtg:inSet <https://w3id.org/smtg/id/set/c8bd8520-cd98-45cd-b533-8d40c2087426>;
+<https://w3id.org/smtg/id/set/c8bd8520-cd98-45cd-b533-8d40c2087426> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/dgm>;
+    smtg:releasedOn "2013-05-03"^^xsd:date;
+    smtg:declaredCardCount "156"^^xsd:nonNegativeInteger;
+    smtg:printedSize "156"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:blockCode "rtr";
+    smtg:sourceURL "https://scryfall.com/sets/dgm"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/dgm> a smtg:Identifier;
+    smtg:identifierValue "dgm";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/c8bd8520-cd98-45cd-b533-8d40c2087426> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/dgm>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/dgm> a smtg:Identifier;
+    smtg:identifierValue "dgm";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/c8bd8520-cd98-45cd-b533-8d40c2087426> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/dgm>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/570> a smtg:Identifier;
+    smtg:identifierValue "570";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/c8bd8520-cd98-45cd-b533-8d40c2087426> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/570>.
+<https://w3id.org/smtg/id/set/c8bd8520-cd98-45cd-b533-8d40c2087426/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/dgm.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/c8bd8520-cd98-45cd-b533-8d40c2087426> smtg:hasSetIcon <https://w3id.org/smtg/id/set/c8bd8520-cd98-45cd-b533-8d40c2087426/icon>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198> smtg:inSet <https://w3id.org/smtg/id/set/c8bd8520-cd98-45cd-b533-8d40c2087426>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7> a smtg:Identifier;
+    smtg:identifierValue "0aeebaf5-8c7d-4636-9e82-8c27447861f7";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/db84415e-048a-4cfc-9121-5ae17a412198> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "121";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2013-05-03"^^xsd:date;

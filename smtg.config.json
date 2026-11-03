@@ -24,7 +24,8 @@
       "all_cards",
       "oracle_cards",
       "oracle_tags",
-      "art_tags"
+      "art_tags",
+      "rulings"
     ],
     "scryfallApi": "https://api.scryfall.com",
     "spellbookVariants": "https://json.commanderspellbook.com/variants.json.gz"

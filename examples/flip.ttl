@@ -32,7 +32,9 @@
 <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e> smtg:hasFace <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e/face/0>.
 <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e/face/0> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e>;
     rdfs:label "Akki Lavarunner";
-    smtg:faceIndex "0"^^xsd:nonNegativeInteger;
+    smtg:faceIndex "0"^^xsd:nonNegativeInteger.
+<https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e> smtg:primaryFace <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e/face/0>.
+<https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e/face/0> smtg:faceKeyword <https://w3id.org/smtg/vocab/keyword-ability/haste>;
     smtg:name "Akki Lavarunner".
 <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e/face/0/mana-cost> a smtg:ManaCost.
 <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e/face/0> smtg:hasManaCost <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e/face/0/mana-cost>.
@@ -61,6 +63,7 @@
 <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e/face/1> smtg:faceOf <https://w3id.org/smtg/id/oracle-card/47795817-73e5-4af6-bd1e-d69b193e8e9e>;
     rdfs:label "Tok-Tok, Volcano Born";
     smtg:faceIndex "1"^^xsd:nonNegativeInteger;
+    smtg:faceKeyword <https://w3id.org/smtg/vocab/keyword-ability/protection>;
     smtg:name "Tok-Tok, Volcano Born";
     smtg:hasNoManaCost true;
     smtg:typeLine "Legendary Creature — Goblin Shaman";
@@ -330,8 +333,35 @@
 <https://w3id.org/smtg/id/identifier/set-code/chk> a smtg:Identifier;
     smtg:identifierValue "chk";
     smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/set-code>.
-<https://w3id.org/smtg/id/set/6183d21f-a0af-4118-ba58-aca1d8719c01> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/chk>.
-<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8> smtg:inSet <https://w3id.org/smtg/id/set/6183d21f-a0af-4118-ba58-aca1d8719c01>;
+<https://w3id.org/smtg/id/set/6183d21f-a0af-4118-ba58-aca1d8719c01> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/set-code/chk>;
+    smtg:releasedOn "2004-10-01"^^xsd:date;
+    smtg:declaredCardCount "307"^^xsd:nonNegativeInteger;
+    smtg:printedSize "306"^^xsd:nonNegativeInteger;
+    smtg:digitalSet false;
+    smtg:foilOnlySet false;
+    smtg:nonfoilOnlySet false;
+    smtg:blockCode "chk";
+    smtg:sourceURL "https://scryfall.com/sets/chk"^^xsd:anyURI.
+<https://w3id.org/smtg/id/identifier/mtgo-set-code/chk> a smtg:Identifier;
+    smtg:identifierValue "chk";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/mtgo-set-code>.
+<https://w3id.org/smtg/id/set/6183d21f-a0af-4118-ba58-aca1d8719c01> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/mtgo-set-code/chk>.
+<https://w3id.org/smtg/id/identifier/arena-set-code/chk> a smtg:Identifier;
+    smtg:identifierValue "chk";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/arena-set-code>.
+<https://w3id.org/smtg/id/set/6183d21f-a0af-4118-ba58-aca1d8719c01> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/arena-set-code/chk>.
+<https://w3id.org/smtg/id/identifier/tcgplayer-set-id/20> a smtg:Identifier;
+    smtg:identifierValue "20";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/tcgplayer-set-id>.
+<https://w3id.org/smtg/id/set/6183d21f-a0af-4118-ba58-aca1d8719c01> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/tcgplayer-set-id/20>.
+<https://w3id.org/smtg/id/set/6183d21f-a0af-4118-ba58-aca1d8719c01/icon> a smtg:DigitalImage;
+    smtg:contentURL "https://svgs.scryfall.io/sets/chk.svg?1793595600"^^xsd:anyURI.
+<https://w3id.org/smtg/id/set/6183d21f-a0af-4118-ba58-aca1d8719c01> smtg:hasSetIcon <https://w3id.org/smtg/id/set/6183d21f-a0af-4118-ba58-aca1d8719c01/icon>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8> smtg:inSet <https://w3id.org/smtg/id/set/6183d21f-a0af-4118-ba58-aca1d8719c01>.
+<https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7> a smtg:Identifier;
+    smtg:identifierValue "0aeebaf5-8c7d-4636-9e82-8c27447861f7";
+    smtg:identifierScheme <https://w3id.org/smtg/vocab/identifier-scheme/scryfall-card-back-id>.
+<https://w3id.org/smtg/id/printing/6ee6cd34-c117-4d7e-97d1-8f8464bfaac8> smtg:hasIdentifier <https://w3id.org/smtg/id/identifier/scryfall-card-back-id/0aeebaf5-8c7d-4636-9e82-8c27447861f7>;
     smtg:collectorNumber "153";
     smtg:inLanguage <https://w3id.org/smtg/vocab/language/en>;
     smtg:releasedOn "2004-10-01"^^xsd:date;

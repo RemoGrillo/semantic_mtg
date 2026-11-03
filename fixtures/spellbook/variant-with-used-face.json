@@ -1,0 +1,175 @@
+{
+  "slug": "variant-with-used-face",
+  "purpose": "A variant that names which face of a multi-faced card it uses (uses[].usedFace, 1-based), to map card uses to a specific CardFace.",
+  "selector": "variants: some uses[].usedFace != null; sorted by (uses.length, requires.length, serialized length, id) ascending; first 1.",
+  "source": {
+    "key": "spellbook:variants",
+    "file": "variants-2026-11-03.json.gz",
+    "sha256": "86f908606cf2216d7bfed47970a6280172d8424243f6b27ea2c94c568d72d425",
+    "sourceUpdatedAt": null,
+    "exportTimestamp": "2026-11-03T10:39:04.244417+00:00",
+    "exportVersion": "7.3.4"
+  },
+  "recordIndex": [
+    {
+      "id": "816-4525",
+      "role": "variant",
+      "status": "OK",
+      "cards": [
+        "Rune-Tail, Kitsune Ascendant // Rune-Tail's Essence",
+        "Palisade Giant"
+      ],
+      "templates": [],
+      "features": 3
+    }
+  ],
+  "records": [
+    {
+      "id": "816-4525",
+      "status": "OK",
+      "uses": [
+        {
+          "card": {
+            "id": 816,
+            "name": "Rune-Tail, Kitsune Ascendant // Rune-Tail's Essence",
+            "oracleId": "710f1f8a-e5f7-4889-9f12-2611f42d5c73",
+            "spoiler": false,
+            "faces": 2,
+            "typeLine": "Legendary Creature — Fox Monk // Legendary Enchantment",
+            "imageUriFrontPng": "https://cards.scryfall.io/png/front/4/2/42ba0e13-d20f-47f9-9c86-2b0b13c39ada.png?1783944168",
+            "imageUriFrontLarge": "https://cards.scryfall.io/display/front/4/2/42ba0e13-d20f-47f9-9c86-2b0b13c39ada.webp?1783944168",
+            "imageUriFrontNormal": "https://cards.scryfall.io/grid/front/4/2/42ba0e13-d20f-47f9-9c86-2b0b13c39ada.webp?1783944168",
+            "imageUriFrontSmall": "https://cards.scryfall.io/thumb/front/4/2/42ba0e13-d20f-47f9-9c86-2b0b13c39ada.webp?1783944168",
+            "imageUriFrontArtCrop": "https://cards.scryfall.io/art/front/4/2/42ba0e13-d20f-47f9-9c86-2b0b13c39ada.webp?1783944168",
+            "layoutRotationFront": "flip",
+            "imageUriBackPng": null,
+            "imageUriBackLarge": null,
+            "imageUriBackNormal": null,
+            "imageUriBackSmall": null,
+            "imageUriBackArtCrop": null
+          },
+          "zoneLocations": [
+            "B"
+          ],
+          "battlefieldCardState": "",
+          "exileCardState": "",
+          "libraryCardState": "",
+          "graveyardCardState": "",
+          "mustBeCommander": false,
+          "quantity": 1,
+          "usedFace": 2
+        },
+        {
+          "card": {
+            "id": 4525,
+            "name": "Palisade Giant",
+            "oracleId": "f38fe1e9-8997-4b63-9109-7513034bac88",
+            "spoiler": false,
+            "faces": 1,
+            "typeLine": "Creature — Giant Soldier",
+            "imageUriFrontPng": "https://cards.scryfall.io/png/front/f/d/fdfd37ca-e4c9-4674-a75f-15d8ebcce72b.png?1783940375",
+            "imageUriFrontLarge": "https://cards.scryfall.io/display/front/f/d/fdfd37ca-e4c9-4674-a75f-15d8ebcce72b.webp?1783940375",
+            "imageUriFrontNormal": "https://cards.scryfall.io/grid/front/f/d/fdfd37ca-e4c9-4674-a75f-15d8ebcce72b.webp?1783940375",
+            "imageUriFrontSmall": "https://cards.scryfall.io/thumb/front/f/d/fdfd37ca-e4c9-4674-a75f-15d8ebcce72b.webp?1783940375",
+            "imageUriFrontArtCrop": "https://cards.scryfall.io/art/front/f/d/fdfd37ca-e4c9-4674-a75f-15d8ebcce72b.webp?1783940375",
+            "layoutRotationFront": null,
+            "imageUriBackPng": null,
+            "imageUriBackLarge": null,
+            "imageUriBackNormal": null,
+            "imageUriBackSmall": null,
+            "imageUriBackArtCrop": null
+          },
+          "zoneLocations": [
+            "B"
+          ],
+          "battlefieldCardState": "",
+          "exileCardState": "",
+          "libraryCardState": "",
+          "graveyardCardState": "",
+          "mustBeCommander": false,
+          "quantity": 1,
+          "usedFace": null
+        }
+      ],
+      "requires": [],
+      "produces": [
+        {
+          "feature": {
+            "id": 1476,
+            "name": "Prevent all damage that would be dealt to permanents you control",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 249,
+            "name": "Prevent all damage that would be dealt to you",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        },
+        {
+          "feature": {
+            "id": 2617,
+            "name": "Lock",
+            "uncountable": true,
+            "status": "H"
+          },
+          "quantity": 1
+        }
+      ],
+      "of": [
+        {
+          "id": 26636
+        }
+      ],
+      "includes": [
+        {
+          "id": 26636
+        },
+        {
+          "id": 32032
+        }
+      ],
+      "identity": "W",
+      "manaNeeded": "",
+      "manaValueNeeded": 0,
+      "easyPrerequisites": "",
+      "notablePrerequisites": "",
+      "description": "Palisade Giant redirects all damage that would be dealt to you or a permanent you control to it.\nBecause Rune-Tail's Essence prevents any damage that would be dealt to Palisade Giant, no damage can be dealt to you or permanents you control.",
+      "notes": "",
+      "popularity": 1159,
+      "salt": null,
+      "saltVoteCount": 0,
+      "spoiler": false,
+      "bracketTag": "S",
+      "legalities": {
+        "commander": true,
+        "pauperCommanderMain": false,
+        "pauperCommander": false,
+        "oathbreaker": true,
+        "predh": false,
+        "standardBrawl": false,
+        "brawl": false,
+        "competitiveBrawl": false,
+        "alchemy": false,
+        "vintage": true,
+        "legacy": true,
+        "premodern": false,
+        "modern": true,
+        "pioneer": false,
+        "standard": false,
+        "pauper": false
+      },
+      "prices": {
+        "tcgplayer": "4.64",
+        "cardkingdom": "5.48",
+        "cardmarket": "1.03"
+      },
+      "variantCount": 1
+    }
+  ]
+}

@@ -136,5 +136,7 @@ dataset:scryfall-oracle-tags a smtg:SourceDataset ; rdfs:label "Scryfall bulk: o
   prov:wasAttributedTo agent:scryfall ; rdfs:isDefinedBy smtgm:provenance .
 dataset:scryfall-art-tags a smtg:SourceDataset ; rdfs:label "Scryfall bulk: art_tags (Tagger)"@en ;
   prov:wasAttributedTo agent:scryfall ; rdfs:isDefinedBy smtgm:provenance .
+dataset:scryfall-rulings a smtg:SourceDataset ; rdfs:label "Scryfall bulk: rulings"@en ;
+  prov:wasAttributedTo agent:scryfall ; rdfs:isDefinedBy smtgm:provenance .
 dataset:spellbook-variants a smtg:SourceDataset ; rdfs:label "Commander Spellbook bulk: variants"@en ;
   prov:wasAttributedTo agent:commander-spellbook ; rdfs:isDefinedBy smtgm:provenance .

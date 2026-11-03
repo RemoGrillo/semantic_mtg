@@ -25,6 +25,7 @@ const ORA = 'scryfall:oracle_cards';
 const OTAG = 'scryfall:oracle_tags';
 const ATAG = 'scryfall:art_tags';
 const SB = 'spellbook:variants';
+const RUL = 'scryfall:rulings';
 
 // ---------------------------------------------------------------------------------------
 // Fixture definitions (Scryfall). `oracles` = exact oracle_cards names (game cards only).
@@ -54,6 +55,7 @@ const CARD_FIXTURES = [
   { slug: 'saga', purpose: 'Saga layout (chapter abilities).', query: { describe: "oracle_cards: layout == 'saga'; first by name", pick: (c) => c.layout === 'saga' } },
   { slug: 'prepare', purpose: 'Layout `prepare` (new in the 2026 data, Adventure-like two-face layout; not in older Scryfall docs).', query: { describe: "oracle_cards: layout == 'prepare'; first by name", pick: (c) => c.layout === 'prepare' } },
   { slug: 'ashnods-altar', purpose: 'Oracle card used by the Spellbook fixtures (cross-source link target).', oracles: ["Ashnod's Altar"] },
+  { slug: 'mana-token-maker', purpose: 'A card that creates a token which can itself produce mana (Eldrazi Scion), with the exact token printings its all_parts point to: input for the producesManaViaToken inference.', oracles: ['Eldrazi Confluence'], withTokens: true },
 ];
 
 // Printing-level / layout-level fixtures selected while streaming all_cards.
@@ -74,7 +76,7 @@ const PRINT_FIXTURES = [
 const byKey = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
 const printKey = (c) => `${c.released_at ?? '9999'}|${c.id}`;
 const sha = {};
-for (const k of [ALL, ORA, OTAG, ATAG, SB]) sha[k] = manifestEntry(k);
+for (const k of [ALL, ORA, OTAG, ATAG, SB, RUL]) sha[k] = manifestEntry(k);
 
 function fixtureFile(dir, slug, body) {
   const file = p('fixtures', dir, `${slug}.json`);
@@ -208,6 +210,7 @@ function writeScryfall(slug, purpose, selector, items) {
   scryfallTargets.set(slug, t);
 }
 
+const deferredWithTokens = [];
 for (const f of CARD_FIXTURES) {
   const oracles = oracleRecords.get(f.slug);
   const items = oracles.map((o) => ({ record: o, sourceKey: ORA, role: 'oracle', note: 'oracle_cards representative object for this oracle_id' }));
@@ -231,7 +234,26 @@ for (const f of CARD_FIXTURES) {
     }
     sel += `pick per oracle_id: ${EARLIEST_EN}.`;
   }
-  writeScryfall(f.slug, f.purpose, sel, items);
+  if (f.withTokens) deferredWithTokens.push({ f, sel, items });
+  else writeScryfall(f.slug, f.purpose, sel, items);
+}
+// fixtures that also need the token printings referenced by their all_parts (component == token)
+if (deferredWithTokens.length) {
+  const tokenIds = new Map(); // printing id -> slug
+  for (const { f, items } of deferredWithTokens)
+    for (const { record } of items) for (const part of record.all_parts ?? []) if (part.component === 'token' && part.id !== record.id) tokenIds.set(part.id, f.slug);
+  log(`pass 2c: all_cards (token printings referenced by all_parts: ${tokenIds.size})`);
+  const tokenRecs = new Map();
+  for await (const c of records(ALL)) if (tokenIds.has(c.id)) tokenRecs.set(c.id, c);
+  for (const { f, sel, items } of deferredWithTokens) {
+    const ids = [...tokenIds].filter(([, s]) => s === f.slug).map(([id]) => id).sort();
+    for (const id of ids) {
+      const t = tokenRecs.get(id);
+      if (t) items.push({ record: t, sourceKey: ALL, role: 'token', note: 'token printing referenced by all_parts (component token) of the records above' });
+      else log(`  WARNING token printing ${id} not found in all_cards`);
+    }
+    writeScryfall(f.slug, f.purpose, `${sel} Plus every token printing whose id appears in all_parts[] (component == 'token') of those records, sorted by id.`, items);
+  }
 }
 
 for (const f of PRINT_FIXTURES) {
@@ -404,7 +426,7 @@ const cmpKey = (a, b) => {
   for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return a[i] < b[i] ? -1 : 1;
   return 0;
 };
-const best = { ba: [], aa: [], tpl: [], nonok: [], aliasNull: [], aliasRedirect: [] };
+const best = { ba: [], aa: [], tpl: [], nonok: [], aliasNull: [], aliasRedirect: [], usedFace: [] };
 const keepBest = (arr, v, k, key) => {
   const kv = key(v);
   if (arr.length < k || cmpKey(kv, arr[arr.length - 1].k) < 0) {
@@ -435,6 +457,7 @@ await streamJSONGz(p(sha[SB].localPath), filter, (v) => {
   if (v.status === 'OK' && oids.has(AA) && !oids.has(BA)) keepBest(best.aa, v, 2, sizeKey);
   if ((v.requires ?? []).length) keepBest(best.tpl, v, 1, (x) => [[...oids].some((o) => fixtureOracleIds.has(o)) ? 0 : 1, ...sizeKey(x)]);
   if (v.status !== 'OK') keepBest(best.nonok, v, 1, sizeKey);
+  if ((v.uses ?? []).some((u) => u.usedFace != null)) keepBest(best.usedFace, v, 1, sizeKey);
 });
 const sbSource = { ...sourceOf(SB), exportTimestamp: meta.timestamp ?? null, exportVersion: meta.version ?? null };
 const SIZE_RULE = 'sorted by (uses.length, requires.length, serialized length, id) ascending';
@@ -452,10 +475,29 @@ function writeSpellbook(slug, purpose, selector, variants, role = 'variant') {
 writeSpellbook('blood-artist-variants', 'Small Commander Spellbook variants using Blood Artist (cards → features), linkable to fixtures/scryfall/blood-artist.json.', `variants: status == 'OK' and uses[].card.oracleId == ${BA} (Blood Artist); ${SIZE_RULE}; first 2.`, best.ba.map((x) => x.v));
 writeSpellbook('ashnods-altar-variants', "Small Commander Spellbook variants using Ashnod's Altar (and not Blood Artist), linkable to fixtures/scryfall/ashnods-altar.json.", `variants: status == 'OK' and uses[].card.oracleId == ${AA} (Ashnod's Altar) and not Blood Artist; ${SIZE_RULE}; first 2.`, best.aa.map((x) => x.v));
 writeSpellbook('variant-with-template', 'A variant whose requirements include a template (requires[].template), i.e. "any card matching …" rather than a named card (PLAN §4.2 #15).', `variants: requires non-empty; prefer variants using any Scryfall fixture oracle id, then ${SIZE_RULE}; first 1.`, best.tpl.map((x) => x.v));
+writeSpellbook('variant-with-used-face', 'A variant that names which face of a multi-faced card it uses (uses[].usedFace, 1-based), to map card uses to a specific CardFace.', `variants: some uses[].usedFace != null; ${SIZE_RULE}; first 1.`, best.usedFace.map((x) => x.v));
 if (best.nonok.length) writeSpellbook('variant-non-ok-status', 'A variant whose status is not OK.', `variants: status != 'OK'; ${SIZE_RULE}; first 1.`, best.nonok.map((x) => x.v));
 else log(`  no variant with status != OK in this export (statuses: ${JSON.stringify(statusCounts)}) — no non-OK fixture written`);
 writeSpellbook('aliases', 'Alias records from the export: former variant ids that redirect to a current variant id, or to null.', 'aliases: variant == null → first 2 by id; variant != null → first 2 by id.', [...best.aliasNull, ...best.aliasRedirect].map((x) => x.v), 'alias');
 log(`  wrote ${written.filter((w) => w.dir === 'spellbook').length} Spellbook fixtures`);
+
+// 5b. Rulings: every ruling of every Oracle card in the Scryfall fixtures --------------------
+log('pass 6: rulings');
+const rulingOracles = new Set([...scryfallTargets.values()].flatMap((t) => [...t.oracle]));
+const rulings = [];
+for await (const r of records(RUL)) if (rulingOracles.has(r.oracle_id)) rulings.push(r);
+rulings.sort((a, b) => byKey(a.oracle_id, b.oracle_id) || byKey(a.published_at, b.published_at) || byKey(a.comment, b.comment));
+written.push(
+  fixtureFile('rulings', 'fixture-card-rulings', {
+    slug: 'fixture-card-rulings',
+    purpose: 'All rulings (Wizards and Scryfall) for the Oracle cards in the Scryfall fixtures: input for the Ruling claims.',
+    selector: `rulings: oracle_id in the ${rulingOracles.size} Oracle ids of fixtures/scryfall/*; sorted by (oracle_id, published_at, comment).`,
+    source: sourceOf(RUL),
+    recordIndex: rulings.map((r, i) => ({ id: `${r.oracle_id}#${i}`, sourceKey: RUL, role: 'ruling', source: r.source, published_at: r.published_at })),
+    records: rulings,
+  }),
+);
+log(`  wrote ${rulings.length} rulings for ${new Set(rulings.map((r) => r.oracle_id)).size} Oracle cards`);
 
 // 6. README -------------------------------------------------------------------------------
 const snap = (s) => `${s.key} \`${s.file}\` (sha256 \`${s.sha256.slice(0, 12)}…\`${s.sourceUpdatedAt ? `, updated ${s.sourceUpdatedAt}` : ''}${s.exportTimestamp ? `, export ${s.exportTimestamp} v${s.exportVersion}` : ''})`;
@@ -483,6 +525,7 @@ const readme = [
   section('scryfall', 'Scryfall (`fixtures/scryfall/`)'),
   section('tagger', 'Scryfall Tagger (`fixtures/tagger/`)'),
   section('spellbook', 'Commander Spellbook (`fixtures/spellbook/`)'),
+  section('rulings', 'Scryfall rulings (`fixtures/rulings/`)'),
   best.nonok.length ? '' : `No variant with a status other than \`OK\` exists in this Spellbook export (statuses: ${Object.entries(statusCounts).map(([a, b]) => `\`${a}\` ${fmt(b)}`).join(', ')}), so there is no non-OK variant fixture.`,
   '',
 ].join('\n');

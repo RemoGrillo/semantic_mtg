@@ -228,7 +228,8 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "main face + inset spell"@en ;
   smtg:separateOracleIdentity "no" ;
-  smtg:definedClass smtg:AdventurerCard .
+  smtg:definedClass smtg:AdventurerCard ;
+  smtg:primaryFacePolicy "face 0: normal characteristics, not the Adventure (CR 715.4)"@en .
 
 <https://w3id.org/smtg/vocab/layout/art_series>
   a smtg:Layout ;
@@ -246,6 +247,7 @@ smtg:observedCount
   smtg:physicalSides "2" ;
   smtg:faceArrangement "art front / art back"@en ;
   smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "none: not a game card"@en ;
   skos:scopeNote "Printing convention: recorded with smtg:printingLayout on the printing; the Oracle card keeps its game layout."@en .
 
 <https://w3id.org/smtg/vocab/layout/augment>
@@ -263,7 +265,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face (half-card)"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/case>
   a smtg:Layout ;
@@ -280,7 +283,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/class>
   a smtg:Layout ;
@@ -297,7 +301,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face, level bands"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/double_faced_token>
   a smtg:Layout ;
@@ -314,7 +319,8 @@ smtg:observedCount
   smtg:faceCount "2" ;
   smtg:physicalSides "2" ;
   smtg:faceArrangement "front / back"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: front face (CR 712.8a)"@en .
 
 <https://w3id.org/smtg/vocab/layout/emblem>
   a smtg:Layout ;
@@ -331,7 +337,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/flip>
   a smtg:Layout ;
@@ -349,7 +356,8 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "second face inverted"@en ;
   smtg:separateOracleIdentity "no" ;
-  smtg:definedClass smtg:FlipCard .
+  smtg:definedClass smtg:FlipCard ;
+  smtg:primaryFacePolicy "face 0: normal (right-side-up) characteristics (CR 710.1)"@en .
 
 <https://w3id.org/smtg/vocab/layout/front_card>
   a smtg:Layout ;
@@ -367,7 +375,8 @@ smtg:observedCount
   smtg:faceCount "0–1" ;
   smtg:physicalSides "1–2" ;
   smtg:faceArrangement "non-game card"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "none: not a game card"@en .
 
 <https://w3id.org/smtg/vocab/layout/host>
   a smtg:Layout ;
@@ -384,7 +393,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/leveler>
   a smtg:Layout ;
@@ -401,7 +411,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face, level bands"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/meld>
   a smtg:Layout ;
@@ -419,7 +430,8 @@ smtg:observedCount
   smtg:physicalSides "2" ;
   smtg:faceArrangement "two fronts; back halves form the result"@en ;
   smtg:separateOracleIdentity "yes: halves and result are three Oracle cards" ;
-  smtg:definedClass smtg:MeldCard .
+  smtg:definedClass smtg:MeldCard ;
+  smtg:primaryFacePolicy "face 0: front face (CR 712.8b)"@en .
 
 <https://w3id.org/smtg/vocab/layout/modal_dfc>
   a smtg:Layout ;
@@ -437,7 +449,8 @@ smtg:observedCount
   smtg:physicalSides "2" ;
   smtg:faceArrangement "front / back, either playable"@en ;
   smtg:separateOracleIdentity "no" ;
-  smtg:definedClass smtg:ModalDoubleFacedCard .
+  smtg:definedClass smtg:ModalDoubleFacedCard ;
+  smtg:primaryFacePolicy "face 0: front face (CR 712.8a)"@en .
 
 <https://w3id.org/smtg/vocab/layout/mutate>
   a smtg:Layout ;
@@ -454,7 +467,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/normal>
   a smtg:Layout ;
@@ -471,7 +485,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face, front"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/planar>
   a smtg:Layout ;
@@ -488,7 +503,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face, landscape"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/prepare>
   a smtg:Layout ;
@@ -507,7 +523,8 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "creature face + spell face"@en ;
   smtg:separateOracleIdentity "no" ;
-  smtg:definedClass smtg:PrepareCard .
+  smtg:definedClass smtg:PrepareCard ;
+  smtg:primaryFacePolicy "face 0: normal characteristics, not the prepare spell (CR 722.2)"@en .
 
 <https://w3id.org/smtg/vocab/layout/prototype>
   a smtg:Layout ;
@@ -524,7 +541,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face with prototype inset"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/reversible_card>
   a smtg:Layout ;
@@ -542,6 +560,7 @@ smtg:observedCount
   smtg:physicalSides "2" ;
   smtg:faceArrangement "same or different card on each side"@en ;
   smtg:separateOracleIdentity "yes: Oracle ID on each face" ;
+  smtg:primaryFacePolicy "printing layout: each side is its own Oracle card"@en ;
   skos:scopeNote "Printing convention: recorded with smtg:printingLayout on the printing; the Oracle card keeps its game layout."@en .
 
 <https://w3id.org/smtg/vocab/layout/saga>
@@ -559,7 +578,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face, vertical text"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/scheme>
   a smtg:Layout ;
@@ -576,7 +596,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/split>
   a smtg:Layout ;
@@ -594,7 +615,8 @@ smtg:observedCount
   smtg:physicalSides "1" ;
   smtg:faceArrangement "halves side by side (aftermath: rotated)"@en ;
   smtg:separateOracleIdentity "no" ;
-  smtg:definedClass smtg:SplitCard .
+  smtg:definedClass smtg:SplitCard ;
+  smtg:primaryFacePolicy "none: both halves combined (CR 709.4)"@en .
 
 <https://w3id.org/smtg/vocab/layout/token>
   a smtg:Layout ;
@@ -611,7 +633,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 <https://w3id.org/smtg/vocab/layout/transform>
   a smtg:Layout ;
@@ -629,7 +652,8 @@ smtg:observedCount
   smtg:physicalSides "2" ;
   smtg:faceArrangement "front / back"@en ;
   smtg:separateOracleIdentity "no" ;
-  smtg:definedClass smtg:TransformingDoubleFacedCard .
+  smtg:definedClass smtg:TransformingDoubleFacedCard ;
+  smtg:primaryFacePolicy "face 0: front face (CR 712.8a)"@en .
 
 <https://w3id.org/smtg/vocab/layout/vanguard>
   a smtg:Layout ;
@@ -646,7 +670,8 @@ smtg:observedCount
   smtg:faceCount "1" ;
   smtg:physicalSides "1" ;
   smtg:faceArrangement "one face"@en ;
-  smtg:separateOracleIdentity "no" .
+  smtg:separateOracleIdentity "no" ;
+  smtg:primaryFacePolicy "face 0: the only face"@en .
 
 [] a owl:AllDifferent ; owl:distinctMembers ( <https://w3id.org/smtg/vocab/layout/adventure> <https://w3id.org/smtg/vocab/layout/art_series> <https://w3id.org/smtg/vocab/layout/augment> <https://w3id.org/smtg/vocab/layout/case> <https://w3id.org/smtg/vocab/layout/class> <https://w3id.org/smtg/vocab/layout/double_faced_token> <https://w3id.org/smtg/vocab/layout/emblem> <https://w3id.org/smtg/vocab/layout/flip> <https://w3id.org/smtg/vocab/layout/front_card> <https://w3id.org/smtg/vocab/layout/host> <https://w3id.org/smtg/vocab/layout/leveler> <https://w3id.org/smtg/vocab/layout/meld> <https://w3id.org/smtg/vocab/layout/modal_dfc> <https://w3id.org/smtg/vocab/layout/mutate> <https://w3id.org/smtg/vocab/layout/normal> <https://w3id.org/smtg/vocab/layout/planar> <https://w3id.org/smtg/vocab/layout/prepare> <https://w3id.org/smtg/vocab/layout/prototype> <https://w3id.org/smtg/vocab/layout/reversible_card> <https://w3id.org/smtg/vocab/layout/saga> <https://w3id.org/smtg/vocab/layout/scheme> <https://w3id.org/smtg/vocab/layout/split> <https://w3id.org/smtg/vocab/layout/token> <https://w3id.org/smtg/vocab/layout/transform> <https://w3id.org/smtg/vocab/layout/vanguard> ) .
 
@@ -1660,6 +1685,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{T}" ;
   smtg:representsMana "false"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "0"^^xsd:decimal .
 
 <https://w3id.org/smtg/vocab/mana-symbol/Q>
@@ -1673,6 +1702,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{Q}" ;
   smtg:representsMana "false"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "0"^^xsd:decimal .
 
 <https://w3id.org/smtg/vocab/mana-symbol/E>
@@ -1686,6 +1719,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{E}" ;
   smtg:representsMana "false"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "0"^^xsd:decimal .
 
 <https://w3id.org/smtg/vocab/mana-symbol/P>
@@ -1699,6 +1736,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{P}" ;
   smtg:representsMana "false"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "0"^^xsd:decimal .
 
 <https://w3id.org/smtg/vocab/mana-symbol/PW>
@@ -1712,6 +1753,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{PW}" ;
   smtg:representsMana "false"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "0"^^xsd:decimal .
 
 <https://w3id.org/smtg/vocab/mana-symbol/CHAOS>
@@ -1725,6 +1770,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{CHAOS}" ;
   smtg:representsMana "false"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "0"^^xsd:decimal .
 
 <https://w3id.org/smtg/vocab/mana-symbol/A>
@@ -1738,6 +1787,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{A}" ;
   smtg:representsMana "false"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "true"^^xsd:boolean ;
   smtg:symbolManaValue "0"^^xsd:decimal .
 
 <https://w3id.org/smtg/vocab/mana-symbol/TK>
@@ -1751,6 +1804,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{TK}" ;
   smtg:representsMana "false"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "0"^^xsd:decimal .
 
 <https://w3id.org/smtg/vocab/mana-symbol/X>
@@ -1764,6 +1821,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{X}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "0"^^xsd:decimal ;
   skos:hiddenLabel "X" .
 
@@ -1778,6 +1839,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{Y}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "true"^^xsd:boolean ;
   smtg:symbolManaValue "0"^^xsd:decimal ;
   skos:hiddenLabel "Y" .
 
@@ -1792,6 +1857,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{Z}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "true"^^xsd:boolean ;
   smtg:symbolManaValue "0"^^xsd:decimal ;
   skos:hiddenLabel "Z" .
 
@@ -1806,6 +1875,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{0}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "0"^^xsd:decimal ;
   skos:hiddenLabel "0" .
 
@@ -1820,6 +1893,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{½}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "true"^^xsd:boolean ;
   smtg:symbolManaValue "0.5"^^xsd:decimal ;
   skos:hiddenLabel "½" .
 
@@ -1834,6 +1911,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{1}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   skos:hiddenLabel "1" .
 
@@ -1848,6 +1929,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{2}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "2"^^xsd:decimal ;
   skos:hiddenLabel "2" .
 
@@ -1862,6 +1947,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{3}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "3"^^xsd:decimal ;
   skos:hiddenLabel "3" .
 
@@ -1876,6 +1965,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{4}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "4"^^xsd:decimal ;
   skos:hiddenLabel "4" .
 
@@ -1890,6 +1983,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{5}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "5"^^xsd:decimal ;
   skos:hiddenLabel "5" .
 
@@ -1904,6 +2001,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{6}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "6"^^xsd:decimal ;
   skos:hiddenLabel "6" .
 
@@ -1918,6 +2019,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{7}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "7"^^xsd:decimal ;
   skos:hiddenLabel "7" .
 
@@ -1932,6 +2037,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{8}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "8"^^xsd:decimal ;
   skos:hiddenLabel "8" .
 
@@ -1946,6 +2055,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{9}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "9"^^xsd:decimal ;
   skos:hiddenLabel "9" .
 
@@ -1960,6 +2073,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{10}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "10"^^xsd:decimal ;
   skos:hiddenLabel "10" .
 
@@ -1974,6 +2091,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{11}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "11"^^xsd:decimal ;
   skos:hiddenLabel "11" .
 
@@ -1988,6 +2109,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{12}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "12"^^xsd:decimal ;
   skos:hiddenLabel "12" .
 
@@ -2002,6 +2127,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{13}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "13"^^xsd:decimal ;
   skos:hiddenLabel "13" .
 
@@ -2016,6 +2145,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{14}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "14"^^xsd:decimal ;
   skos:hiddenLabel "14" .
 
@@ -2030,6 +2163,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{15}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "15"^^xsd:decimal ;
   skos:hiddenLabel "15" .
 
@@ -2044,6 +2181,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{16}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "16"^^xsd:decimal ;
   skos:hiddenLabel "16" .
 
@@ -2058,6 +2199,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{17}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "17"^^xsd:decimal ;
   skos:hiddenLabel "17" .
 
@@ -2072,6 +2217,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{18}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "18"^^xsd:decimal ;
   skos:hiddenLabel "18" .
 
@@ -2086,6 +2235,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{19}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "19"^^xsd:decimal ;
   skos:hiddenLabel "19" .
 
@@ -2100,6 +2253,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{20}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "20"^^xsd:decimal ;
   skos:hiddenLabel "20" .
 
@@ -2114,6 +2271,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{100}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "true"^^xsd:boolean ;
   smtg:symbolManaValue "100"^^xsd:decimal ;
   skos:hiddenLabel "100" .
 
@@ -2128,6 +2289,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{1000000}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "true"^^xsd:boolean ;
   smtg:symbolManaValue "1000000"^^xsd:decimal ;
   skos:hiddenLabel "1000000" .
 
@@ -2142,6 +2307,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{∞}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "true"^^xsd:boolean ;
   skos:hiddenLabel "∞" .
 
 <https://w3id.org/smtg/vocab/mana-symbol/W-U>
@@ -2155,6 +2324,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{W/U}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/W> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/U> .
@@ -2170,6 +2343,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{W/B}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/W> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/B> .
@@ -2185,6 +2362,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{B/R}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/B> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/R> .
@@ -2200,6 +2381,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{B/G}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/B> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/G> .
@@ -2215,6 +2400,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{U/B}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/U> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/B> .
@@ -2230,6 +2419,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{U/R}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/U> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/R> .
@@ -2245,6 +2438,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{R/G}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/R> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/G> .
@@ -2260,6 +2457,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{R/W}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/W> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/R> .
@@ -2275,6 +2476,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{G/W}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/W> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/G> .
@@ -2290,6 +2495,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{G/U}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/U> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/G> .
@@ -2305,6 +2514,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{B/G/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/B> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/G> .
@@ -2320,6 +2533,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{B/R/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/B> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/R> .
@@ -2335,6 +2552,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{G/U/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/U> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/G> .
@@ -2350,6 +2571,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{G/W/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/W> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/G> .
@@ -2365,6 +2590,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{R/G/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/R> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/G> .
@@ -2380,6 +2609,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{R/W/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/W> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/R> .
@@ -2395,6 +2628,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{U/B/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/U> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/B> .
@@ -2410,6 +2647,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{U/R/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/U> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/R> .
@@ -2425,6 +2666,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{W/B/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/W> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/B> .
@@ -2440,6 +2685,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{W/U/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/W> ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/U> .
@@ -2455,6 +2704,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{C/W}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/W> .
 
@@ -2469,6 +2722,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{C/U}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/U> .
 
@@ -2483,6 +2740,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{C/B}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/B> .
 
@@ -2497,6 +2758,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{C/R}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/R> .
 
@@ -2511,6 +2776,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{C/G}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/G> .
 
@@ -2525,6 +2794,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{2/W}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "2"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/W> .
 
@@ -2539,6 +2812,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{2/U}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "2"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/U> .
 
@@ -2553,6 +2830,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{2/B}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "2"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/B> .
 
@@ -2567,6 +2848,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{2/R}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "2"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/R> .
 
@@ -2581,6 +2866,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{2/G}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "true"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "2"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/G> .
 
@@ -2595,6 +2884,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{H}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal .
 
 <https://w3id.org/smtg/vocab/mana-symbol/W-P>
@@ -2608,6 +2901,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{W/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/W> .
 
@@ -2622,6 +2919,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{U/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/U> .
 
@@ -2636,6 +2937,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{B/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/B> .
 
@@ -2650,6 +2955,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{R/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/R> .
 
@@ -2664,6 +2973,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{G/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/G> .
 
@@ -2678,6 +2991,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{C/P}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "true"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "true"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal .
 
 <https://w3id.org/smtg/vocab/mana-symbol/HW>
@@ -2691,6 +3008,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{HW}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "true"^^xsd:boolean ;
   smtg:symbolManaValue "0.5"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/W> .
 
@@ -2705,6 +3026,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{HR}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "false"^^xsd:boolean ;
+  smtg:isFunny "true"^^xsd:boolean ;
   smtg:symbolManaValue "0.5"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/R> .
 
@@ -2719,6 +3044,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{W}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/W> ;
   skos:hiddenLabel "W" .
@@ -2734,6 +3063,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{U}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/U> ;
   skos:hiddenLabel "U" .
@@ -2749,6 +3082,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{B}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/B> ;
   skos:hiddenLabel "B" .
@@ -2764,6 +3101,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{R}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/R> ;
   skos:hiddenLabel "R" .
@@ -2779,6 +3120,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{G}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   smtg:symbolColor <https://w3id.org/smtg/vocab/color/G> ;
   skos:hiddenLabel "G" .
@@ -2794,6 +3139,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{C}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   skos:hiddenLabel "C" .
 
@@ -2808,6 +3157,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{S}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "false"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   skos:hiddenLabel "S" .
 
@@ -2822,6 +3175,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{L}" ;
   smtg:representsMana "true"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "true"^^xsd:boolean ;
   smtg:symbolManaValue "1"^^xsd:decimal ;
   skos:hiddenLabel "L" .
 
@@ -2836,6 +3193,10 @@ smtg:observedCount
   rdfs:isDefinedBy smtgm:vocab ;
   smtg:symbol "{D}" ;
   smtg:representsMana "false"^^xsd:boolean ;
+  smtg:isHybrid "false"^^xsd:boolean ;
+  smtg:isPhyrexian "false"^^xsd:boolean ;
+  smtg:appearsInManaCosts "true"^^xsd:boolean ;
+  smtg:isFunny "true"^^xsd:boolean ;
   smtg:symbolManaValue "0"^^xsd:decimal ;
   skos:hiddenLabel "D" .
 
@@ -2937,7 +3298,9 @@ smtg:observedCount
   skos:notation "Artifact" ;
   smtg:sourceValueOf "scryfall:type_line" ;
   smtg:observedCount 13493 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  a smtg:PermanentCardType ;
+  smtg:comprehensiveRulesRef "110.4" .
 
 <https://w3id.org/smtg/vocab/card-type/battle>
   a smtg:CardType ;
@@ -2947,7 +3310,9 @@ smtg:observedCount
   skos:notation "Battle" ;
   smtg:sourceValueOf "scryfall:type_line" ;
   smtg:observedCount 56 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  a smtg:PermanentCardType ;
+  smtg:comprehensiveRulesRef "110.4" .
 
 <https://w3id.org/smtg/vocab/card-type/boss>
   a smtg:CardType ;
@@ -2977,7 +3342,9 @@ smtg:observedCount
   skos:notation "Creature" ;
   smtg:sourceValueOf "scryfall:type_line" ;
   smtg:observedCount 56624 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  a smtg:PermanentCardType ;
+  smtg:comprehensiveRulesRef "110.4" .
 
 <https://w3id.org/smtg/vocab/card-type/dungeon>
   a smtg:CardType ;
@@ -3007,7 +3374,9 @@ smtg:observedCount
   skos:notation "Enchantment" ;
   smtg:sourceValueOf "scryfall:type_line" ;
   smtg:observedCount 11278 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  a smtg:PermanentCardType ;
+  smtg:comprehensiveRulesRef "110.4" .
 
 <https://w3id.org/smtg/vocab/card-type/event>
   a smtg:CardType ;
@@ -3037,7 +3406,9 @@ smtg:observedCount
   skos:notation "Instant" ;
   smtg:sourceValueOf "scryfall:type_line" ;
   smtg:observedCount 12209 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  a smtg:InstantOrSorceryCardType ;
+  smtg:comprehensiveRulesRef "110.4" .
 
 <https://w3id.org/smtg/vocab/card-type/kindred>
   a smtg:CardType ;
@@ -3057,7 +3428,9 @@ smtg:observedCount
   skos:notation "Land" ;
   smtg:sourceValueOf "scryfall:type_line" ;
   smtg:observedCount 12811 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  a smtg:PermanentCardType ;
+  smtg:comprehensiveRulesRef "110.4" .
 
 <https://w3id.org/smtg/vocab/card-type/phenomenon>
   a smtg:CardType ;
@@ -3087,7 +3460,9 @@ smtg:observedCount
   skos:notation "Planeswalker" ;
   smtg:sourceValueOf "scryfall:type_line" ;
   smtg:observedCount 1630 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  a smtg:PermanentCardType ;
+  smtg:comprehensiveRulesRef "110.4" .
 
 <https://w3id.org/smtg/vocab/card-type/scheme>
   a smtg:CardType ;
@@ -3107,7 +3482,9 @@ smtg:observedCount
   skos:notation "Sorcery" ;
   smtg:sourceValueOf "scryfall:type_line" ;
   smtg:observedCount 12379 ;
-  rdfs:isDefinedBy smtgm:vocab .
+  rdfs:isDefinedBy smtgm:vocab ;
+  a smtg:InstantOrSorceryCardType ;
+  smtg:comprehensiveRulesRef "110.4" .
 
 <https://w3id.org/smtg/vocab/card-type/vanguard>
   a smtg:CardType ;
@@ -22326,6 +22703,45 @@ smtg:observedCount
 <https://w3id.org/smtg/vocab/keyword-action/plot> skos:exactMatch <https://w3id.org/smtg/vocab/keyword-ability/plot> .
 
 <https://w3id.org/smtg/vocab/ability-word/start-your-engines> skos:exactMatch <https://w3id.org/smtg/vocab/keyword-ability/start-your-engines> .
+
+
+# ---- Type groups (CR 700.6, 700.8, 700.12) ----
+
+<https://w3id.org/smtg/vocab/type-group/historic>
+  a smtg:TypeGroup ;
+  rdfs:label "Historic"@en ;
+  skos:prefLabel "Historic"@en ;
+  skos:definition "The term historic refers to an object that has the legendary supertype, the artifact card type, or the Saga subtype."@en ;
+  skos:member <https://w3id.org/smtg/vocab/supertype/legendary> ;
+  skos:member <https://w3id.org/smtg/vocab/card-type/artifact> ;
+  skos:member <https://w3id.org/smtg/vocab/enchantment-type/saga> ;
+  smtg:comprehensiveRulesRef "700.6" ;
+  rdfs:isDefinedBy smtgm:vocab .
+
+<https://w3id.org/smtg/vocab/type-group/party>
+  a smtg:TypeGroup ;
+  rdfs:label "Party"@en ;
+  skos:prefLabel "Party"@en ;
+  skos:definition "Some cards refer to a player’s party. A player’s party consists of up to one Cleric creature that player controls, up to one Rogue creature they control, up to one Warrior creature they control, and up to one Wizard creature they control."@en ;
+  skos:member <https://w3id.org/smtg/vocab/creature-type/cleric> ;
+  skos:member <https://w3id.org/smtg/vocab/creature-type/rogue> ;
+  skos:member <https://w3id.org/smtg/vocab/creature-type/warrior> ;
+  skos:member <https://w3id.org/smtg/vocab/creature-type/wizard> ;
+  smtg:comprehensiveRulesRef "700.8" ;
+  rdfs:isDefinedBy smtgm:vocab .
+
+<https://w3id.org/smtg/vocab/type-group/outlaw>
+  a smtg:TypeGroup ;
+  rdfs:label "Outlaw"@en ;
+  skos:prefLabel "Outlaw"@en ;
+  skos:definition "The term outlaw refers to an object that has the Assassin, Mercenary, Pirate, Rogue, and/or Warlock creature types."@en ;
+  skos:member <https://w3id.org/smtg/vocab/creature-type/assassin> ;
+  skos:member <https://w3id.org/smtg/vocab/creature-type/mercenary> ;
+  skos:member <https://w3id.org/smtg/vocab/creature-type/pirate> ;
+  skos:member <https://w3id.org/smtg/vocab/creature-type/rogue> ;
+  skos:member <https://w3id.org/smtg/vocab/creature-type/warlock> ;
+  smtg:comprehensiveRulesRef "700.12" ;
+  rdfs:isDefinedBy smtgm:vocab .
 
 
 # ---- Formats ----
